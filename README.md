@@ -1,2 +1,2 @@
 # DynamicData
-Dynamic Data Construction and graph based search on tumor beard case reports
+Dynamic Data Construction and graph based search on cancer case reports
