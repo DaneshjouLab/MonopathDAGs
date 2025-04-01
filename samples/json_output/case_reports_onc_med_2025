@@ -1,1 +1,114 @@
+{
+  "nodes": [
+    {
+      "node_id": "A",
+      "step_index": 1,
+      "data": {
+        "demographics": {
+          "age": 41,
+          "sex": "Female",
+          "medical_history": "Nonsmoker, no known asbestos exposure, no family cancer history"
+        },
+        "conditions": ["Dyspnea", "Flank pain", "Left supraclavicular swelling"],
+        "observations": ["Subclavian tumor thrombus", "Left pleural effusion", "Diffuse nodular pleural thickening", "Mediastinal, supraclavicular, hilar lymphadenopathy"],
+        "commentary": "Initial presentation at local hospital"
+      }
+    },
+    {
+      "node_id": "B",
+      "step_index": 2,
+      "data": {
+        "procedures": ["Video-assisted thoracoscopic surgery (VATS) biopsy", "Talc pleurodesis", "Left supraclavicular lymph node biopsy"],
+        "observations": ["Poorly differentiated spindle cell neoplasm"],
+        "labs": ["Positive staining WT1, calretinin"],
+        "conditions": ["Presumed mesothelioma"],
+        "treatments": ["Cisplatin/pemetrexed Cycle 1"],
+        "commentary": "Initial biopsy misdiagnosis and first chemotherapy treatment"
+      }
+    },
+    {
+      "node_id": "C",
+      "step_index": 3,
+      "data": {
+        "observations": ["Persistent dyspnea, chest tightness, back pain"],
+        "imaging_results": ["MRI: Extensive left pleural disease, spinal metastases", "PET-CT: Extensive left-sided pleural thickening with soft tissue extension into neck, involvement of left brachiocephalic and jugular veins"],
+        "commentary": "Presentation at tertiary care hospital"
+      }
+    },
+    {
+      "node_id": "D",
+      "step_index": 4,
+      "data": {
+        "procedures": ["CT-guided percutaneous pleural biopsy (core+FNA)"],
+        "labs": ["Negative staining for cytokeratin, calretinin, WT1", "Positive staining for ERG, CD31, nuclear CAMTA-1", "Gene sequencing: WWTR1:CAMTA-1 fusion alteration"],
+        "conditions": ["Confirmed diagnosis of Epithelioid Hemangioendothelioma (EHE)"],
+        "commentary": "Corrected diagnosis after second biopsy and genetic confirmation"
+      }
+    },
+    {
+      "node_id": "E",
+      "step_index": 5,
+      "data": {
+        "treatments": ["Chemotherapy: Gemcitabine and Docetaxel, 6 cycles completed"],
+        "observations": ["Surveillance imaging showing no further disease progression"],
+        "conditions": ["Pancytopenia"],
+        "commentary": "Chemotherapy response, delayed Cycle 7 due to pancytopenia"
+      }
+    }
+  ],
+
+  "edges": [
+    {
+      "edge_id": "A_to_B",
+      "from_node": "A",
+      "to_node": "B",
+      "step_index": 1,
+      "event_type": "Observation",
+      "changes": [
+        {"field": "conditions", "change_type": "add", "value": "Presumed mesothelioma", "reason": "Initial biopsy results"},
+        {"field": "treatments", "change_type": "add", "value": "Cisplatin/pemetrexed Cycle 1"}
+      ]
+    },
+    {
+      "edge_id": "B_to_C",
+      "from_node": "B",
+      "to_node": "C",
+      "step_index": 2,
+      "event_type": "Observation",
+      "changes": [
+        {"field": "imaging_results", "change_type": "add", "value": "Extensive metastatic pleural and osseous involvement"},
+        {"field": "observations", "change_type": "add", "value": "Persistent symptoms post chemotherapy"}
+      ]
+    },
+    {
+      "edge_id": "C_to_D",
+      "from_node": "C",
+      "to_node": "D",
+      "step_index": 3,
+      "event_type": "Reinterpretation",
+      "changes": [
+        {"field": "conditions", "change_type": "reinterpretation", "from": "Mesothelioma", "to": "Epithelioid Hemangioendothelioma (EHE)", "reason": "Second biopsy and genomic sequencing"}
+      ]
+    },
+    {
+      "edge_id": "D_to_E",
+      "from_node": "D",
+      "to_node": "E",
+      "step_index": 4,
+      "event_type": "Intervention",
+      "changes": [
+        {"field": "treatments", "change_type": "add", "value": "Gemcitabine and Docetaxel chemotherapy initiated"},
+        {"field": "conditions", "change_type": "add", "value": "Pancytopenia"},
+        {"field": "observations", "change_type": "add", "value": "Stable disease on surveillance imaging"}
+      ]
+    }
+  ],
+
+  "metadata": {
+    "journal_id": "9459565",
+    "doi": "10.1155/crom/9459565",
+    "corpus_timestamp": "2025-01-11T00:00:00Z",
+    "schema_version": "1.0"
+  }
+}
 
