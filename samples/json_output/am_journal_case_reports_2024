@@ -1,1 +1,135 @@
-
+{
+  "nodes": [
+    {
+      "node_id": "A",
+      "step_index": 1,
+      "timestamp": "2015-12-01T00:00:00Z",
+      "data": {
+        "demographics": {
+          "age": 37,
+          "gender": "male"
+        },
+        "conditions": [{"name": "bilateral painless testicular masses", "OMOP_concept": "testicular mass"}],
+        "observations": [
+          {"modality": "ultrasound", "findings": "bilateral macro-orchitis with multifocal hyperechoic lesions"},
+          {"modality": "MRI", "findings": "bilateral lesions with intense contrast enhancement"}
+        ],
+        "labs": [{"AFP": "normal"}, {"b-hCG": "normal"}, {"LDH": "normal"}],
+        "commentary": "Initial presentation with bilateral testicular masses."
+      }
+    },
+    {
+      "node_id": "B",
+      "step_index": 2,
+      "data": {
+        "clinical_procedure": [{"name": "testis-sparing surgery", "OMOP_concept": "testicular surgery"}],
+        "observations": [{"modality": "histology", "findings": "benign large-cell calcifying Sertoli cell tumor, <5cm, no atypia"}],
+        "commentary": "Benign histology; patient managed conservatively."
+      }
+    },
+    {
+      "node_id": "C",
+      "step_index": 3,
+      "timestamp": "2021-06-01T00:00:00Z",
+      "data": {
+        "conditions": [{"name": "lymph node metastases", "OMOP_concept": "metastasis"}],
+        "clinical_procedure": [{"name": "bilateral radical orchiectomy and lymphadenectomy", "OMOP_concept": "orchiectomy"}],
+        "observations": [
+          {"modality": "histology", "findings": "malignant LCCSCT with vascular permeation and spermatic cord invasion"},
+          {"modality": "CT scan", "findings": "para-aortic lymphadenopathy, pulmonary nodules, spine lesions"}
+        ],
+        "commentary": "Progression to metastatic disease."
+      }
+    },
+    {
+      "node_id": "D",
+      "step_index": 4,
+      "timestamp": "2021-11-01T00:00:00Z",
+      "data": {
+        "conditions": [
+          {"name": "pleural metastases", "OMOP_concept": "pleural metastasis"},
+          {"name": "pulmonary metastases", "OMOP_concept": "lung metastasis"},
+          {"name": "bone metastases", "OMOP_concept": "bone metastasis"}
+        ],
+        "treatments": [
+          {"name": "chemotherapy (vinblastine, cisplatin, ifosfamide)", "OMOP_concept": "chemotherapy"},
+          {"name": "chemotherapy (paclitaxel)", "OMOP_concept": "chemotherapy"}
+        ],
+        "commentary": "Disease progression despite chemotherapy."
+      }
+    },
+    {
+      "node_id": "E",
+      "step_index": 5,
+      "timestamp": "2022-12-01T00:00:00Z",
+      "data": {
+        "conditions": [{"name": "rapid disease progression", "OMOP_concept": "disease progression"}],
+        "treatments": [{"name": "clinical trial (Axitinib, pazopanib)", "OMOP_concept": "clinical trial"}],
+        "commentary": "Clinical trial initiated, but ultimately ineffective."
+      }
+    },
+    {
+      "node_id": "F",
+      "step_index": 6,
+      "timestamp": "2023-07-01T00:00:00Z",
+      "data": {
+        "conditions": [{"name": "terminal stage", "OMOP_concept": "end-stage disease"}],
+        "commentary": "Patient died in palliative care."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "A_to_B",
+      "from_node": "A",
+      "to_node": "B",
+      "step_index": 1,
+      "event_type": "Intervention",
+      "changes": [
+        {"field": "clinical_procedure", "change_type": "add", "value": "testis-sparing surgery"},
+        {"field": "observations", "change_type": "add", "value": "benign histological diagnosis"}
+      ],
+      "commentary": "Initial surgical approach."
+    },
+    {
+      "edge_id": "B_to_C",
+      "from_node": "B",
+      "to_node": "C",
+      "step_index": 2,
+      "event_type": "Observation",
+      "changes": [
+        {"field": "conditions", "change_type": "add", "value": "lymph node metastases"},
+        {"field": "clinical_procedure", "change_type": "add", "value": "radical orchiectomy and lymphadenectomy"},
+        {"field": "observations", "change_type": "update", "value": "malignant behavior confirmed"}
+      ],
+      "commentary": "Emergence of metastatic disease."
+    },
+    {
+      "edge_id": "C_to_D",
+      "from_node": "C",
+      "to_node": "D",
+      "step_index": 3,
+      "event_type": "Observation",
+      "changes": [{"field": "conditions", "change_type": "add", "value": "widespread metastases"}],
+      "commentary": "Further metastatic spread observed."
+    },
+    {
+      "edge_id": "D_to_E",
+      "from_node": "D",
+      "to_node": "E",
+      "step_index": 4,
+      "event_type": "Intervention",
+      "changes": [{"field": "treatments", "change_type": "add", "value": "clinical trial (Axitinib, pazopanib)"}],
+      "commentary": "Initiation of clinical trial due to chemotherapy failure."
+    },
+    {
+      "edge_id": "E_to_F",
+      "from_node": "E",
+      "to_node": "F",
+      "step_index": 5,
+      "event_type": "SpontaneousChange",
+      "changes": [{"field": "conditions", "change_type": "update", "value": "terminal stage"}],
+      "commentary": "Progression to terminal stage and death."
+    }
+  ]
+}
