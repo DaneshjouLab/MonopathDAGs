@@ -1,1 +1,125 @@
-
+{
+  "nodes": [
+    {
+      "node_id": "A",
+      "step_index": 1,
+      "data": {
+        "demographics": {"age": 21, "sex": "female"},
+        "conditions": [
+          {"name": "Neck swelling", "location": "Right submandibular and parotid region", "duration": "4 months"}
+        ],
+        "observations": [
+          {"type": "Physical Exam", "findings": "Irregular edges, firm consistency, fixed mass"},
+          {"type": "Ultrasound", "findings": "Hypoechoic oval mass 30x16 mm, cervical lymphadenopathy"},
+          {"type": "Lab", "findings": "Elevated ESR"},
+          {"type": "CT Lung", "findings": "3-4 lung lesions, largest 27x19 mm"},
+          {"type": "FNA", "findings": "Possible pleomorphic adenoma"}
+        ],
+        "metadata": {
+          "journal_id": "Ann Oncol Case Rep",
+          "doi": null,
+          "corpus_timestamp": "2024-12-09T00:00:00Z",
+          "schema_version": "1.0"
+        }
+      },
+      "commentary": "Initial presentation with suspicion of pleomorphic adenoma and metastatic lung lesions"
+    },
+    {
+      "node_id": "B",
+      "step_index": 2,
+      "data": {
+        "conditions": [
+          {"name": "Carcinoma ex Pleomorphic Adenoma (CA-ex-PA)", "location": "Right parotid gland", "stage": "High-grade invasive with lymph node involvement and lung metastasis"}
+        ],
+        "treatments": [
+          {"type": "Surgical", "details": "Total parotidectomy and lymphadenectomy"}
+        ],
+        "observations": [
+          {"type": "Pathology", "findings": "CA-ex-PA, high-grade, lymph node and margin involvement"}
+        ]
+      },
+      "commentary": "Surgical confirmation of CA-ex-PA with metastatic involvement"
+    },
+    {
+      "node_id": "C",
+      "step_index": 3,
+      "data": {
+        "treatments": [
+          {"type": "Chemotherapy", "regimen": "5-FU, Cisplatin, Docetaxel, Epirubicin", "cycles": 3}
+        ],
+        "observations": [
+          {"type": "CT Lung", "findings": "Significant reduction in lung metastases size (>50% reduction)"}
+        ]
+      },
+      "commentary": "Positive response after initial chemotherapy cycles"
+    },
+    {
+      "node_id": "D",
+      "step_index": 4,
+      "data": {
+        "treatments": [
+          {"type": "Chemotherapy", "regimen": "5-FU, Cisplatin, Docetaxel, Epirubicin", "cycles": 3}
+        ],
+        "observations": [
+          {"type": "CT Lung", "findings": "Only one 8 mm ground glass lesion remains"},
+          {"type": "PET Scan", "findings": "Negative for malignancy"}
+        ]
+      },
+      "commentary": "Marked response to chemotherapy, minimal residual disease"
+    },
+    {
+      "node_id": "E",
+      "step_index": 5,
+      "data": {
+        "conditions": [{"name": "CA-ex-PA remission", "status": "No recurrence detected"}],
+        "observations": [{"type": "Follow-up CT", "findings": "No lesions detected"}],
+        "timestamp": "2025-11-01T00:00:00Z"
+      },
+      "commentary": "Stable disease-free follow-up at 11 months"
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "A_to_B",
+      "from_node": "A",
+      "to_node": "B",
+      "step_index": 1,
+      "event_type": "Intervention",
+      "changes": [
+        {"field": "conditions", "change_type": "update", "from": "Possible pleomorphic adenoma", "to": "Confirmed CA-ex-PA with metastases"},
+        {"field": "treatments", "change_type": "add", "value": "Total parotidectomy and lymphadenectomy"}
+      ]
+    },
+    {
+      "edge_id": "B_to_C",
+      "from_node": "B",
+      "to_node": "C",
+      "step_index": 2,
+      "event_type": "Intervention",
+      "changes": [
+        {"field": "treatments", "change_type": "add", "value": "Chemotherapy initiated"},
+        {"field": "observations", "change_type": "update", "from": "Initial lung lesions", "to": "Reduced lung lesions size"}
+      ]
+    },
+    {
+      "edge_id": "C_to_D",
+      "from_node": "C",
+      "to_node": "D",
+      "step_index": 3,
+      "event_type": "Intervention",
+      "changes": [
+        {"field": "observations", "change_type": "update", "from": "Reduced lung lesions size", "to": "Minimal residual disease"}
+      ]
+    },
+    {
+      "edge_id": "D_to_E",
+      "from_node": "D",
+      "to_node": "E",
+      "step_index": 4,
+      "event_type": "Observation",
+      "changes": [
+        {"field": "conditions", "change_type": "update", "from": "Minimal residual disease", "to": "No recurrence"}
+      ]
+    }
+  ]
+}
