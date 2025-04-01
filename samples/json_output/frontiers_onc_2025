@@ -1,1 +1,170 @@
+{
+  "nodes": [
+    {
+      "node_id": "A",
+      "step_index": 1,
+      "data": {
+        "demographics": {
+          "age": 29,
+          "sex": "male"
+        },
+        "conditions": [
+          {
+            "name": "Acute urinary retention",
+            "OMOP_concept_id": 4332086
+          },
+          {
+            "name": "Urethral mass",
+            "description": "Fungating penile mass, 2x3 cm at glans tip"
+          }
+        ],
+        "observations": [
+          "Mass biopsy shows granulomatous inflammation and lambda light chain-expressing plasma cells.",
+          "Bone marrow examination negative for systemic disease.",
+          "No end-organ damage detected."
+        ],
+        "labs": [
+          "No detectable paraprotein."
+        ],
+        "metadata": {
+          "journal_id": "frontiers_onc",
+          "doi": "10.3389/fonc.2025.1528536",
+          "schema_version": "1.0"
+        }
+      },
+      "commentary": "Initial presentation and diagnostic findings indicating primary urethral plasmacytoma."
+    },
+    {
+      "node_id": "B",
+      "step_index": 2,
+      "data": {
+        "conditions": [
+          {
+            "name": "Primary urethral plasmacytoma",
+            "description": "Localized plasma cell neoplasm, confirmed via histology."
+          }
+        ],
+        "observations": [
+          "CECT shows bilateral inguinal and iliac lymphadenopathy.",
+          "Excisional biopsy of lymph nodes negative for malignancy."
+        ],
+        "treatments": [
+          "45 Gy radiotherapy delivered in 25 fractions targeting penis and right inguinal nodes using 6-MV photons and 3D-EBRT."
+        ],
+        "metadata": {
+          "journal_id": "frontiers_onc",
+          "doi": "10.3389/fonc.2025.1528536",
+          "schema_version": "1.0"
+        }
+      },
+      "commentary": "Diagnosis confirmed and radiotherapy initiated as primary treatment modality."
+    },
+    {
+      "node_id": "C",
+      "step_index": 3,
+      "data": {
+        "conditions": [
+          {
+            "name": "Complete response to radiotherapy",
+            "description": "Complete resolution of penile mass post-radiotherapy."
+          }
+        ],
+        "observations": [
+          "No urinary or sexual dysfunction post-treatment.",
+          "Removal of suprapubic catheter via flexible cystoscopy."
+        ],
+        "metadata": {
+          "journal_id": "frontiers_onc",
+          "doi": "10.3389/fonc.2025.1528536",
+          "schema_version": "1.0"
+        }
+      },
+      "commentary": "Successful radiotherapy outcome with preservation of organ function."
+    },
+    {
+      "node_id": "D",
+      "step_index": 4,
+      "timestamp": "2027-02-13T00:00:00Z",
+      "data": {
+        "conditions": [
+          {
+            "name": "Disease-free",
+            "description": "No recurrence or progression at 2-year follow-up."
+          }
+        ],
+        "observations": [
+          "No long-term side effects from radiotherapy observed."
+        ],
+        "metadata": {
+          "journal_id": "frontiers_onc",
+          "doi": "10.3389/fonc.2025.1528536",
+          "schema_version": "1.0"
+        }
+      },
+      "commentary": "Stable patient state confirmed at 2-year follow-up."
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "A_to_B",
+      "from_node": "A",
+      "to_node": "B",
+      "step_index": 1,
+      "event_type": "Intervention",
+      "changes": [
+        {
+          "field": "conditions",
+          "change_type": "add",
+          "value": "Primary urethral plasmacytoma confirmed via histology."
+        },
+        {
+          "field": "treatments",
+          "change_type": "add",
+          "value": "Radiotherapy initiated."
+        }
+      ],
+      "confidence": 0.95,
+      "commentary": "Diagnostic process completed, definitive treatment started."
+    },
+    {
+      "edge_id": "B_to_C",
+      "from_node": "B",
+      "to_node": "C",
+      "step_index": 2,
+      "event_type": "Observation",
+      "changes": [
+        {
+          "field": "conditions",
+          "change_type": "update",
+          "from": "Active disease",
+          "to": "Complete response to radiotherapy"
+        },
+        {
+          "field": "observations",
+          "change_type": "add",
+          "value": "Penile mass resolved; no dysfunction observed."
+        }
+      ],
+      "confidence": 0.98,
+      "commentary": "Treatment resulted in complete resolution of plasmacytoma."
+    },
+    {
+      "edge_id": "C_to_D",
+      "from_node": "C",
+      "to_node": "D",
+      "step_index": 3,
+      "event_type": "Observation",
+      "changes": [
+        {
+          "field": "conditions",
+          "change_type": "update",
+          "from": "Post-treatment response",
+          "to": "Disease-free state maintained"
+        }
+      ],
+      "confidence": 0.99,
+      "commentary": "Long-term surveillance confirms no recurrence or progression."
+    }
+  ]
+}
 
