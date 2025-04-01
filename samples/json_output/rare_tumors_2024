@@ -1,1 +1,128 @@
+{
+  "nodes": [
+    {
+      "node_id": "A",
+      "step_index": 1,
+      "timestamp": "2022-07-01T00:00:00Z",
+      "data": {
+        "demographics": {"age": 21, "gender": "female", "history": ["bipolar disorder"]},
+        "conditions": ["abdominal distention", "weight gain", "breast mass"],
+        "observations": ["abdominal ascites", "reduced air entry in lungs", "breast lump (left, hard, warm)"]
+      },
+      "commentary": "Initial clinical presentation with abdominal distention and left breast mass."
+    },
+    {
+      "node_id": "B",
+      "step_index": 2,
+      "data": {
+        "labs": {"CA-125": "elevated", "LDH": "elevated"},
+        "observations": ["ovarian mass (12x10 cm)", "breast mass (4.2x2.8 cm)", "lung lesions"]
+      },
+      "commentary": "Imaging identified ovarian, breast, and lung lesions; elevated tumor markers suggest malignancy."
+    },
+    {
+      "node_id": "C",
+      "step_index": 3,
+      "data": {
+        "conditions": ["extraskeletal Ewing sarcoma"],
+        "labs": {"biopsy": "CD99+, NKX2.2+, FLI-1+, EWSR1-FLI1 fusion+"}
+      },
+      "commentary": "Confirmed ESW diagnosis via biopsy of breast mass, ovarian lesion confirmed as primary tumor."
+    },
+    {
+      "node_id": "D",
+      "step_index": 4,
+      "data": {
+        "treatments": ["VDC/IE chemotherapy", "unilateral salpingo-oophorectomy"],
+        "observations": ["tumor size reduction", "resolution of breast mass", "reduction of lung lesions"]
+      },
+      "commentary": "Effective initial treatment with chemotherapy and surgery resulted in significant tumor reduction."
+    },
+    {
+      "node_id": "E",
+      "step_index": 5,
+      "timestamp": "2023-08-01T00:00:00Z",
+      "data": {
+        "conditions": ["metastatic recurrence (brain, spine, bone)", "optic nerve involvement"],
+        "observations": ["back pain", "vision loss (left eye)"]
+      },
+      "commentary": "Severe metastatic recurrence to dura, spine, bone, and optic nerve; marked clinical deterioration."
+    },
+    {
+      "node_id": "F",
+      "step_index": 6,
+      "timestamp": "2024-04-01T00:00:00Z",
+      "data": {
+        "conditions": ["patient deceased"],
+        "treatments": ["radiotherapy", "high-dose Ifosfamide chemotherapy"],
+        "observations": ["no response to treatments"]
+      },
+      "commentary": "Patient deceased due to extensive metastatic progression and lack of treatment response."
+    }
+  ],
+
+  "edges": [
+    {
+      "edge_id": "A_to_B",
+      "from_node": "A",
+      "to_node": "B",
+      "step_index": 1,
+      "event_type": "Observation",
+      "changes": [
+        {"field": "conditions", "change_type": "add", "value": ["ovarian mass", "lung lesions"]},
+        {"field": "labs", "change_type": "add", "value": {"CA-125": "elevated", "LDH": "elevated"}}
+      ],
+      "commentary": "Further diagnostic workup identified ovarian mass and widespread metastasis."
+    },
+    {
+      "edge_id": "B_to_C",
+      "from_node": "B",
+      "to_node": "C",
+      "step_index": 2,
+      "event_type": "Observation",
+      "changes": [
+        {"field": "conditions", "change_type": "add", "value": "extraskeletal Ewing sarcoma"},
+        {"field": "labs", "change_type": "add", "value": "biopsy confirming EWSR1-FLI1 fusion"}
+      ],
+      "commentary": "Diagnosis confirmed via histological and molecular analysis."
+    },
+    {
+      "edge_id": "C_to_D",
+      "from_node": "C",
+      "to_node": "D",
+      "step_index": 3,
+      "event_type": "Intervention",
+      "changes": [
+        {"field": "treatments", "change_type": "add", "value": ["VDC/IE chemotherapy", "unilateral salpingo-oophorectomy"]},
+        {"field": "observations", "change_type": "update", "from": "widespread metastatic lesions", "to": "reduced tumor burden"}
+      ],
+      "commentary": "Successful initial chemotherapy and surgery."
+    },
+    {
+      "edge_id": "D_to_E",
+      "from_node": "D",
+      "to_node": "E",
+      "step_index": 4,
+      "event_type": "SpontaneousChange",
+      "branch_flag": true,
+      "changes": [
+        {"field": "conditions", "change_type": "add", "value": ["brain, spine, bone metastasis"]},
+        {"field": "observations", "change_type": "add", "value": ["back pain", "vision loss"]}
+      ],
+      "commentary": "Aggressive recurrence of metastasis involving critical structures."
+    },
+    {
+      "edge_id": "E_to_F",
+      "from_node": "E",
+      "to_node": "F",
+      "step_index": 5,
+      "event_type": "Intervention",
+      "changes": [
+        {"field": "treatments", "change_type": "add", "value": ["radiotherapy", "high-dose Ifosfamide"]},
+        {"field": "conditions", "change_type": "update", "from": "aggressive metastatic recurrence", "to": "patient deceased"}
+      ],
+      "commentary": "Ineffective intervention; disease progression to patient death."
+    }
+  ]
+}
 
