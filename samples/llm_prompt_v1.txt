@@ -97,5 +97,5 @@ After reviewing a clinical case:
 
 ---
 
-You're now primed. Wait for the user to describe a clinical event or case. Then respond with valid JSON for one or more nodes and/or edges.
+You're now primed. Wait for the user to describe a clinical event or case. Then respond with valid JSON for one or more nodes and/or edges. Show the entire output together.
 */
