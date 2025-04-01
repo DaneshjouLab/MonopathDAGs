@@ -1,0 +1,294 @@
+{
+  "nodes": [
+    {
+      "node_id": "A",
+      "step_index": 0,
+      "timestamp": "2015-01-01T00:00:00Z",
+      "commentary": "Initial presentation with right flank pain and bloody stools. Diagnosis of metastatic KRAS wild-type colorectal cancer.",
+      "data": {
+        "demographics": {
+          "age": 48,
+          "sex": "unknown"
+        },
+        "conditions": [
+          {
+            "condition": "Metastatic colorectal cancer",
+            "evidence": "Liver, lung, and adrenal metastases on CT",
+            "site": ["liver", "lung", "adrenal"],
+            "diagnosis_method": "core needle biopsy of liver nodule"
+          },
+          {
+            "condition": "Anemia",
+            "evidence": "Hemoglobin 7.1 g/dL"
+          }
+        ],
+        "labs": [
+          {
+            "test": "Hemoglobin",
+            "value": 7.1,
+            "unit": "g/dL"
+          }
+        ],
+        "observations": [
+          {
+            "finding": "Bloody stools",
+            "duration": "1 week"
+          },
+          {
+            "finding": "Right flank pain"
+          }
+        ],
+        "treatments": [],
+        "metadata": {
+          "journal_id": "JCO_Precision_Oncology_2017",
+          "doi": "10.1200/PO.16.00055",
+          "corpus_timestamp": "2017-06-27T00:00:00Z",
+          "schema_version": "1.0"
+        }
+      }
+    },
+    {
+      "node_id": "B",
+      "step_index": 1,
+      "timestamp": "2015-01-15T00:00:00Z",
+      "commentary": "Initiation of first-line palliative chemotherapy with capecitabine and oxaliplatin. Bevacizumab not given due to rectal bleeding and DVT history.",
+      "data": {
+        "treatments": [
+          {
+            "agent": "Capecitabine",
+            "indication": "mCRC",
+            "route": "oral",
+            "regimen": "every 3 weeks"
+          },
+          {
+            "agent": "Oxaliplatin",
+            "indication": "mCRC",
+            "route": "IV",
+            "regimen": "every 3 weeks"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "Metastatic colorectal cancer",
+            "status": "stable disease"
+          }
+        ],
+        "metadata": {
+          "journal_id": "JCO_Precision_Oncology_2017",
+          "doi": "10.1200/PO.16.00055",
+          "corpus_timestamp": "2017-06-27T00:00:00Z",
+          "schema_version": "1.0"
+        }
+      }
+    },
+    {
+      "node_id": "C",
+      "step_index": 2,
+      "timestamp": "2015-07-15T00:00:00Z",
+      "commentary": "Disease progression after 6 months. Liver and lung lesions increased in size; new adrenal metastasis.",
+      "data": {
+        "conditions": [
+          {
+            "condition": "Metastatic colorectal cancer",
+            "status": "progressive disease",
+            "sites": ["liver", "lung", "adrenal"]
+          }
+        ],
+        "observations": [
+          {
+            "finding": "New adrenal gland metastasis"
+          }
+        ],
+        "metadata": {
+          "journal_id": "JCO_Precision_Oncology_2017",
+          "doi": "10.1200/PO.16.00055",
+          "corpus_timestamp": "2017-06-27T00:00:00Z",
+          "schema_version": "1.0"
+        }
+      }
+    },
+    {
+      "node_id": "D",
+      "step_index": 3,
+      "timestamp": "2015-10-01T00:00:00Z",
+      "commentary": "Subsequent lines of therapy: capecitabine + irinotecan ± cetuximab, then regorafenib (poorly tolerated). No response.",
+      "data": {
+        "treatments": [
+          {
+            "agent": "Capecitabine + irinotecan ± cetuximab",
+            "indication": "Progressive mCRC",
+            "status": "failed"
+          },
+          {
+            "agent": "Regorafenib",
+            "indication": "Refractory mCRC",
+            "status": "discontinued",
+            "reason": "poorly tolerated"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "Metastatic colorectal cancer",
+            "status": "progressive disease"
+          }
+        ],
+        "metadata": {
+          "journal_id": "JCO_Precision_Oncology_2017",
+          "doi": "10.1200/PO.16.00055",
+          "corpus_timestamp": "2017-06-27T00:00:00Z",
+          "schema_version": "1.0"
+        }
+      }
+    },
+    {
+      "node_id": "E",
+      "step_index": 4,
+      "timestamp": "2016-01-01T00:00:00Z",
+      "commentary": "Next-gen sequencing revealed HER2 amplification. Tumor board deemed it actionable. Started trastuzumab (unsuccessful).",
+      "data": {
+        "labs": [
+          {
+            "test": "Next-generation sequencing",
+            "findings": [
+              "HER2 (ERBB2) amplification",
+              "APC R232*",
+              "TP53 splice site 97_1G>A"
+            ]
+          }
+        ],
+        "treatments": [
+          {
+            "agent": "Trastuzumab",
+            "indication": "HER2+ mCRC",
+            "status": "failed"
+          }
+        ],
+        "metadata": {
+          "journal_id": "JCO_Precision_Oncology_2017",
+          "doi": "10.1200/PO.16.00055",
+          "corpus_timestamp": "2017-06-27T00:00:00Z",
+          "schema_version": "1.0"
+        }
+      }
+    },
+    {
+      "node_id": "F",
+      "step_index": 5,
+      "timestamp": "2016-04-01T00:00:00Z",
+      "commentary": "Initiated ado-trastuzumab emtansine (T-DM1). Durable partial response over 15 months; lesion shrank from 5.3 cm to 2.1 cm. Patient eventually progressed and died under hospice care.",
+      "data": {
+        "treatments": [
+          {
+            "agent": "Ado-trastuzumab emtansine (T-DM1)",
+            "route": "IV",
+            "regimen": "every 21 days",
+            "duration": "15 months",
+            "response": "partial response"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "Metastatic colorectal cancer",
+            "status": "responsive (partial)",
+            "evidence": "Target lesion reduction from 5.3 to 2.1 cm; two lesions fully resolved"
+          }
+        ],
+        "metadata": {
+          "journal_id": "JCO_Precision_Oncology_2017",
+          "doi": "10.1200/PO.16.00055",
+          "corpus_timestamp": "2017-06-27T00:00:00Z",
+          "schema_version": "1.0"
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "A_to_B",
+      "from_node": "A",
+      "to_node": "B",
+      "step_index": 1,
+      "event_type": "Intervention",
+      "commentary": "Initiation of first-line chemotherapy with capecitabine and oxaliplatin.",
+      "changes": [
+        {
+          "field": "treatments",
+          "change_type": "add",
+          "value": ["Capecitabine", "Oxaliplatin"]
+        }
+      ]
+    },
+    {
+      "edge_id": "B_to_C",
+      "from_node": "B",
+      "to_node": "C",
+      "step_index": 2,
+      "event_type": "Observation",
+      "commentary": "Disease progression after 6 months of first-line therapy.",
+      "changes": [
+        {
+          "field": "conditions",
+          "change_type": "update",
+          "from": "stable disease",
+          "to": "progressive disease"
+        }
+      ]
+    },
+    {
+      "edge_id": "C_to_D",
+      "from_node": "C",
+      "to_node": "D",
+      "step_index": 3,
+      "event_type": "Intervention",
+      "commentary": "Second and third-line therapies attempted without success.",
+      "changes": [
+        {
+          "field": "treatments",
+          "change_type": "add",
+          "value": ["Capecitabine + irinotecan ± cetuximab", "Regorafenib"]
+        }
+      ]
+    },
+    {
+      "edge_id": "D_to_E",
+      "from_node": "D",
+      "to_node": "E",
+      "step_index": 4,
+      "event_type": "Observation",
+      "commentary": "Molecular tumor board identifies HER2 amplification. Trastuzumab initiated but ineffective.",
+      "changes": [
+        {
+          "field": "labs",
+          "change_type": "add",
+          "value": ["HER2 amplification via NGS"]
+        },
+        {
+          "field": "treatments",
+          "change_type": "add",
+          "value": ["Trastuzumab"]
+        }
+      ]
+    },
+    {
+      "edge_id": "E_to_F",
+      "from_node": "E",
+      "to_node": "F",
+      "step_index": 5,
+      "event_type": "Intervention",
+      "commentary": "T-DM1 initiated with partial durable response. Eventually patient dies.",
+      "changes": [
+        {
+          "field": "treatments",
+          "change_type": "add",
+          "value": ["Ado-trastuzumab emtansine (T-DM1)"]
+        },
+        {
+          "field": "conditions",
+          "change_type": "update",
+          "from": "progressive disease",
+          "to": "responsive (partial)"
+        }
+      ]
+    }
+  ]
+}
