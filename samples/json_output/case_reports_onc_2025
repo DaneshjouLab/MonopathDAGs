@@ -1,1 +1,165 @@
+{
+  "nodes": [
+    {
+      "node_id": "A",
+      "step_index": 0,
+      "timestamp": "2022-02-01T00:00:00Z",
+      "data": {
+        "demographics": {"age": 37, "sex": "female"},
+        "conditions": ["Gestational Trophoblastic Neoplasia (GTN)"],
+        "observations": ["Progressive dyspnea", "Hemoptysis"],
+        "labs": {"HCG": 14391},
+        "imaging": ["Bilateral pulmonary infiltrates"],
+        "metadata": {"journal_id": "CaseRepOncol2025", "DOI": "10.1159/000543518", "schema_version": "1.0"}
+      }
+    },
+    {
+      "node_id": "B",
+      "step_index": 1,
+      "data": {
+        "conditions": ["Acute Respiratory Distress Syndrome (ARDS)"],
+        "treatments": ["Mechanical Ventilation", "Empirical Antibiotics", "Corticosteroids"],
+        "labs": {"HCG": 18703}
+      },
+      "commentary": "Condition deteriorates, diagnosis of GTN suspected due to elevated HCG."
+    },
+    {
+      "node_id": "C",
+      "step_index": 2,
+      "data": {
+        "conditions": ["Confirmed GTN stage III, high-risk (FIGO 10)", "ARDS", "Pulmonary Metastases"],
+        "treatments": ["Veno-Venous ECMO", "Induction chemotherapy (weekly etoposide and cisplatin)"]
+      },
+      "commentary": "Critical care initiated with ECMO to support chemotherapy."
+    },
+    {
+      "node_id": "D",
+      "step_index": 3,
+      "data": {
+        "conditions": ["Neutropenic fever", "Ventilator-associated pneumonia"],
+        "treatments": ["Cefepime", "Filgrastim", "Prone positioning", "Continued ECMO"]
+      },
+      "commentary": "Complications managed, patient weaned from ECMO after clinical improvement."
+    },
+    {
+      "node_id": "E",
+      "step_index": 4,
+      "data": {
+        "conditions": ["Ischemic cholangiopathy", "Hepatic abscesses", "Biological complete remission (GTN)"],
+        "observations": ["HCG dropped to 76 IU/L"],
+        "treatments": ["Multiple ERCP procedures", "Biliary stenting", "Long-term antibiotics"]
+      },
+      "commentary": "Prolonged complications limited further chemotherapy."
+    },
+    {
+      "node_id": "F",
+      "step_index": 5,
+      "data": {
+        "conditions": ["Recurrence of GTN"],
+        "labs": {"HCG": "Rising"},
+        "treatments": ["Carboplatin monotherapy"]
+      },
+      "commentary": "Carboplatin ineffective, switched to immunotherapy due to frailty and complications."
+    },
+    {
+      "node_id": "G",
+      "step_index": 6,
+      "data": {
+        "conditions": ["Significant response to Pembrolizumab", "Pure red cell aplasia", "Hemophagocytic lymphohistiocytosis syndrome"],
+        "labs": {"HCG": "Plateau"},
+        "treatments": ["Pembrolizumab discontinued", "Corticosteroids", "IV immunoglobulin"]
+      },
+      "commentary": "Immunotherapy induced severe hematologic toxicity."
+    },
+    {
+      "node_id": "H",
+      "step_index": 7,
+      "data": {
+        "conditions": ["Cerebral hemorrhagic metastases"],
+        "outcome": "Death"
+      },
+      "commentary": "Rapid neurological deterioration and death despite treatments."
+    }
+  ],
 
+  "edges": [
+    {
+      "edge_id": "A_to_B",
+      "from_node": "A",
+      "to_node": "B",
+      "step_index": 1,
+      "event_type": "SpontaneousChange",
+      "changes": [
+        {"field": "conditions", "change_type": "add", "value": "ARDS"},
+        {"field": "labs.HCG", "change_type": "update", "from": 14391, "to": 18703}
+      ]
+    },
+    {
+      "edge_id": "B_to_C",
+      "from_node": "B",
+      "to_node": "C",
+      "step_index": 2,
+      "event_type": "Intervention",
+      "branch_flag": true,
+      "changes": [
+        {"field": "treatments", "change_type": "composite", "value": ["ECMO", "Chemotherapy"]}
+      ],
+      "commentary": "Intensive treatments initiated due to critical respiratory status."
+    },
+    {
+      "edge_id": "C_to_D",
+      "from_node": "C",
+      "to_node": "D",
+      "step_index": 3,
+      "event_type": "Observation",
+      "changes": [
+        {"field": "conditions", "change_type": "add", "value": ["Neutropenic fever", "Pneumonia"]},
+        {"field": "treatments", "change_type": "composite", "value": ["Antibiotics", "Filgrastim", "Prone positioning"]}
+      ]
+    },
+    {
+      "edge_id": "D_to_E",
+      "from_node": "D",
+      "to_node": "E",
+      "step_index": 4,
+      "event_type": "Observation",
+      "changes": [
+        {"field": "conditions", "change_type": "composite", "value": ["Ischemic cholangiopathy", "Abscesses", "Biological remission"]},
+        {"field": "labs.HCG", "change_type": "update", "to": 76}
+      ]
+    },
+    {
+      "edge_id": "E_to_F",
+      "from_node": "E",
+      "to_node": "F",
+      "step_index": 5,
+      "event_type": "Observation",
+      "changes": [
+        {"field": "conditions", "change_type": "add", "value": "GTN recurrence"},
+        {"field": "labs.HCG", "change_type": "update", "to": "Rising"}
+      ]
+    },
+    {
+      "edge_id": "F_to_G",
+      "from_node": "F",
+      "to_node": "G",
+      "step_index": 6,
+      "event_type": "Intervention",
+      "changes": [
+        {"field": "treatments", "change_type": "composite", "value": "Pembrolizumab"},
+        {"field": "conditions", "change_type": "composite", "value": ["Hematologic toxicities"]}
+      ]
+    },
+    {
+      "edge_id": "G_to_H",
+      "from_node": "G",
+      "to_node": "H",
+      "step_index": 7,
+      "event_type": "SpontaneousChange",
+      "changes": [
+        {"field": "conditions", "change_type": "add", "value": "Cerebral metastases"},
+        {"field": "outcome", "change_type": "add", "value": "Death"}
+      ]
+    }
+  ]
+}
