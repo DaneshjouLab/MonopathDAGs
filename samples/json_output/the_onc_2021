@@ -1,1 +1,114 @@
+{
+  "nodes": [
+    {
+      "node_id": "A",
+      "step_index": 1,
+      "commentary": "Initial diagnosis and staging of locally advanced rectal adenocarcinoma in a patient with Lynch syndrome",
+      "data": {
+        "demographics": {"age": 33, "sex": "male", "condition": "Lynch syndrome"},
+        "conditions": [
+          {"diagnosis": "Rectal adenocarcinoma", "stage": "cT3 cN2 cEMVI+ cM0", "location": "7 cm from anocutaneous line"}
+        ],
+        "observations": ["Rectal bleeding"],
+        "labs": {
+          "imaging": {"MRI": "Locally advanced, serosal invasion, regional lymph node involvement, EMVI+, no distant metastases"},
+          "histopathology": "Moderately differentiated adenocarcinoma with inflammatory infiltrates"
+        },
+        "metadata": {"journal_id": "The Oncologist 2021;26:e2110-e2114", "doi": "10.1002/onco.13955", "schema_version": "1.0"}
+      }
+    },
+    {
+      "node_id": "B",
+      "step_index": 2,
+      "commentary": "Confirmation of MSI-H/dMMR phenotype through immunohistochemistry and genetic analysis",
+      "data": {
+        "labs": {
+          "genetics": {"MSI status": "MSI-H", "MMR status": "dMMR", "Germline mutation": "MSH2:c.187del(p.Gly62_Val63insTer)"},
+          "immunohistochemistry": "Loss of MSH2, MSH6; retention of MLH1, PMS2"
+        },
+        "metadata": {"journal_id": "The Oncologist 2021;26:e2110-e2114", "doi": "10.1002/onco.13955", "schema_version": "1.0"}
+      }
+    },
+    {
+      "node_id": "C",
+      "step_index": 3,
+      "commentary": "Neoadjuvant short-course immunotherapy initiated (ipilimumab and nivolumab)",
+      "data": {
+        "treatments": [
+          {"drug": "Ipilimumab", "dose": "1 mg/kg IV", "day": 1},
+          {"drug": "Nivolumab", "dose": "3 mg/kg IV", "days": [1, 15]}
+        ],
+        "metadata": {"journal_id": "The Oncologist 2021;26:e2110-e2114", "doi": "10.1002/onco.13955", "schema_version": "1.0"}
+      }
+    },
+    {
+      "node_id": "D",
+      "step_index": 4,
+      "commentary": "Complete clinical response documented after short-course immunotherapy",
+      "data": {
+        "observations": ["Complete clinical response"],
+        "labs": {
+          "imaging": "MRI showing minimal residual rectal wall thickening, small perirectal lymph nodes",
+          "endoscopy": "No visible tumor, biopsies negative"
+        },
+        "metadata": {"journal_id": "The Oncologist 2021;26:e2110-e2114", "doi": "10.1002/onco.13955", "schema_version": "1.0"}
+      }
+    },
+    {
+      "node_id": "E",
+      "step_index": 5,
+      "commentary": "Surgical resection (robotic-assisted total mesorectal excision) confirms complete pathological response",
+      "data": {
+        "treatments": [{"procedure": "Robotic-assisted total mesorectal excision"}],
+        "observations": ["Complete pathological response, pyT0 pyN0 (0/16)"],
+        "metadata": {"journal_id": "The Oncologist 2021;26:e2110-e2114", "doi": "10.1002/onco.13955", "schema_version": "1.0"}
+      }
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "A_to_B",
+      "from_node": "A",
+      "to_node": "B",
+      "step_index": 1,
+      "event_type": "Observation",
+      "changes": [
+        {"field": "labs.genetics", "change_type": "add", "value": "MSI-H and dMMR confirmed"},
+        {"field": "labs.immunohistochemistry", "change_type": "add", "value": "Loss of MSH2, MSH6 proteins"}
+      ]
+    },
+    {
+      "edge_id": "B_to_C",
+      "from_node": "B",
+      "to_node": "C",
+      "step_index": 2,
+      "event_type": "Intervention",
+      "changes": [
+        {"field": "treatments", "change_type": "add", "value": "Ipilimumab and nivolumab treatment started"}
+      ]
+    },
+    {
+      "edge_id": "C_to_D",
+      "from_node": "C",
+      "to_node": "D",
+      "step_index": 3,
+      "event_type": "Observation",
+      "changes": [
+        {"field": "observations", "change_type": "add", "value": "Complete clinical response"},
+        {"field": "labs.imaging", "change_type": "update", "from": "Initial MRI staging", "to": "Minimal residual thickening"}
+      ]
+    },
+    {
+      "edge_id": "D_to_E",
+      "from_node": "D",
+      "to_node": "E",
+      "step_index": 4,
+      "event_type": "Intervention",
+      "changes": [
+        {"field": "treatments", "change_type": "add", "value": "Surgical resection performed"},
+        {"field": "observations", "change_type": "add", "value": "Pathological confirmation of complete response"}
+      ]
+    }
+  ]
+}
 
