@@ -1,1 +1,133 @@
+{
+  "nodes": [
+    {
+      "node_id": "A",
+      "step_index": 1,
+      "data": {
+        "demographics": {
+          "age": 78,
+          "sex": "male"
+        },
+        "conditions": [
+          {
+            "diagnosis": "Recurrent, metastatic sacral chordoma",
+            "location": ["sacrum", "liver", "lung", "thoracic and lumbar spine"]
+          }
+        ],
+        "treatments": [
+          "Surgical resection",
+          "Proton beam therapy (42 sessions)",
+          "Partial hepatectomy"
+        ],
+        "observations": [
+          "Multiple recurrences",
+          "Oligometastatic progression"
+        ],
+        "labs": [
+          {
+            "test": "Thymidylate Synthase (TS) immunohistochemistry",
+            "result": "Negative"
+          }
+        ],
+        "metadata": {
+          "journal_id": "Current Problems in Cancer: Case Reports 17 (2025) 100340",
+          "doi": "10.1016/j.cpccr.2024.100340",
+          "schema_version": "1.0"
+        }
+      },
+      "commentary": "Initial patient snapshot with multiple treatments and metastatic disease"
+    },
+    {
+      "node_id": "B",
+      "step_index": 2,
+      "data": {
+        "treatments": [
+          {
+            "medication": "Pemetrexed",
+            "dose": "500 mg/m2",
+            "frequency": "Every 3 weeks"
+          }
+        ],
+        "observations": [
+          "Improvement in liver lesions size after two cycles",
+          "Stable lung lesions"
+        ]
+      },
+      "commentary": "Patient initiates pemetrexed treatment with early positive radiological response."
+    },
+    {
+      "node_id": "C",
+      "step_index": 3,
+      "data": {
+        "treatments": [
+          {
+            "medication": "Pemetrexed",
+            "dose": "900 mg/m2",
+            "frequency": "Every 3 weeks"
+          }
+        ],
+        "observations": [
+          "Further decrease in liver lesions and reduction of lung lesion size",
+          "Stable bone lesions",
+          "Improved right leg weakness and gait",
+          "Increased fatigue and nausea post-infusion"
+        ]
+      },
+      "commentary": "Dose increased, significant clinical improvement noted despite manageable side effects"
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "A_to_B",
+      "from_node": "A",
+      "to_node": "B",
+      "step_index": 1,
+      "event_type": "Intervention",
+      "changes": [
+        {
+          "field": "treatments",
+          "change_type": "add",
+          "value": "Pemetrexed initiation"
+        },
+        {
+          "field": "observations",
+          "change_type": "update",
+          "from": "Disease progression",
+          "to": "Improvement in liver lesions, stable lung lesions"
+        }
+      ],
+      "confidence": 0.95,
+      "commentary": "Transition to salvage therapy due to progressive metastatic disease and negative TS expression"
+    },
+    {
+      "edge_id": "B_to_C",
+      "from_node": "B",
+      "to_node": "C",
+      "step_index": 2,
+      "event_type": "Intervention",
+      "changes": [
+        {
+          "field": "treatments.dose",
+          "change_type": "update",
+          "from": "500 mg/m2",
+          "to": "900 mg/m2",
+          "reason": "Patient tolerance and emerging evidence"
+        },
+        {
+          "field": "observations",
+          "change_type": "update",
+          "from": "Initial radiological response",
+          "to": "Continued improvement and symptom resolution"
+        },
+        {
+          "field": "side_effects",
+          "change_type": "add",
+          "value": ["Fatigue", "Nausea"]
+        }
+      ],
+      "confidence": 0.9,
+      "commentary": "Dose escalated based on clinical tolerance, further improvement observed"
+    }
+  ]
+}
 
