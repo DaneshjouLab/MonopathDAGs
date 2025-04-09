@@ -6,9 +6,10 @@
 """
 
 
-from typing import Optional, Dict, List, Tuple
-
-
+from typing import Optional, Dict, List
+from .node.node_protocol import NodeProtocol as Node
+from .edge.edge_protocol import EdgeProtocol as Edge
+from .graph_protocol import Graph
 
 
 class GraphBuilder:
@@ -40,4 +41,4 @@ class GraphBuilder:
     def build(self) -> Graph:
         """Return an immutable Graph object."""
         return Graph(nodes=self._nodes, edges=self._edges, root=self._root)
-        return Graph(self._nodes, self._edges, self._root)
+    
