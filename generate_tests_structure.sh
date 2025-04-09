@@ -9,54 +9,61 @@ if [[ "$1" == "--force" ]]; then
     FORCE=true
     echo "⚠️  Forcing overwrite of all test files"
 fi
+
 generate_test_skeleton() {
     local src_file="$1"
     local test_file="$2"
 
-    local in_class=0
-    local class_name=""
-    local indent=""
+    python3 - "$src_file" "$test_file" <<EOF
+import ast
+import sys
+from pathlib import Path
 
-    echo "" > "$test_file"
+src = Path(sys.argv[1])
+dst = Path(sys.argv[2])
 
-    while IFS= read -r line; do
-        # Match class definitions
-        if [[ "$line" =~ ^([[:space:]]*)class[[:space:]]+([A-Za-z_][A-Za-z0-9_]*) ]]; then
-            indent="${BASH_REMATCH[1]}"
-            class_name="${BASH_REMATCH[2]}"
-            echo -e "class Test${class_name}:" >> "$test_file"
-            in_class=1
-            continue
-        fi
+def generate(src_path, test_path):
+    with open(src_path, "r") as f:
+        source = f.read()
 
-        # Match top-level function (only if not inside a class)
-        if [[ "$in_class" -eq 0 && "$line" =~ ^[[:space:]]*def[[:space:]]+([a-zA-Z_][a-zA-Z0-9_]*) ]]; then
-            func="${BASH_REMATCH[1]}"
-            [[ "$func" == "__init__" ]] && continue
-            echo -e "def test_${func}():\n    pass\n" >> "$test_file"
-            continue
-        fi
+    tree = ast.parse(source)
+    lines = []
 
-        # Match method inside a class
-        if [[ "$in_class" -eq 1 && "$line" =~ ^${indent}[[:space:]]{4}def[[:space:]]+([a-zA-Z_][a-zA-Z0-9_]*) ]]; then
-            method="${BASH_REMATCH[1]}"
-            [[ "$method" == "__init__" ]] && continue
-            echo -e "    def test_${method}(self):\n        pass\n" >> "$test_file"
-            continue
-        fi
+    for node in tree.body:
+        if isinstance(node, ast.FunctionDef) and node.name != "__init__":
+            lines.append(f"def test_{node.name}():")
+            lines.append("    pass\n")
 
-        # Detect end of class (non-indented line after class)
-        if [[ "$in_class" -eq 1 && ! "$line" =~ ^${indent}[[:space:]] ]]; then
-            echo "" >> "$test_file"
-            in_class=0
-        fi
-    done < "$src_file"
+        elif isinstance(node, ast.ClassDef):
+            lines.append(f"class Test{node.name}:")
+
+            methods = [
+                n for n in node.body
+                if isinstance(n, ast.FunctionDef) and n.name != "__init__"
+            ]
+
+            if methods:
+                for method in methods:
+                    lines.append(f"    def test_{method.name}(self):")
+                    lines.append("        pass\n")
+            else:
+                lines.append("    def test_placeholder(self):")
+                lines.append("        pass\n")
+
+            lines.append("")  # extra newline
+
+    test_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(test_path, "w") as f:
+        f.write("\\n".join(lines))
+        f.write("\\n")
+
+generate(src, dst)
+EOF
 }
 
-
-# Step 1: Create or update test skeletons
-find "$SRC_DIR" -type f -name "*.py" ! -name "__init__.py" | while read -r src_file; do
-    rel_path="${src_file#$SRC_DIR/}"
+# Step 1: Walk src and build test files
+find "$SRC_DIR" -type f -name "*.py" ! -name "__init__.py" | while read -r src_path; do
+    rel_path="${src_path#$SRC_DIR/}"
     src_dir=$(dirname "$rel_path")
     src_base=$(basename "$rel_path")
 
@@ -69,8 +76,8 @@ find "$SRC_DIR" -type f -name "*.py" ! -name "__init__.py" | while read -r src_f
     mkdir -p "$test_dir"
 
     if [[ "$FORCE" == true || ! -s "$test_file" ]]; then
-        generate_test_skeleton "$src_file" "$test_file"
-        echo "🧪 Skeleton created: $test_file"
+        generate_test_skeleton "$src_path" "$test_file"
+        echo "🧪 Generated: $test_file"
     else
         echo "✔️  Skipped existing non-empty: $test_file"
     fi
