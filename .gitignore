@@ -175,3 +175,5 @@ cython_debug/
 
 
 todo.md
+
+*.DS_Store
