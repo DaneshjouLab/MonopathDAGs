@@ -1,6 +1,10 @@
+""" 
+This file is an example workflow for anson, 
 
 
 
+
+"""
 # TODO set up workflow for the dspy setyup, 
 # TODO create workflow for extraction. 
 
@@ -12,7 +16,7 @@ from ...data.data_processors.pdf_to_text import extract_text_from_pdf
 
 
 #here 
-fullText=extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024.pdf")
+fullText = extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024.pdf")
 
 class Text2Data(dspy.Signature):
     """
@@ -135,6 +139,8 @@ dspy.configure(lm = lm, adapter = dspy.JSONAdapter())
 prog = dspy.ChainOfThought(Text2Data)
 
 
+
+#  lets continue forward on this, 
 
 
 
