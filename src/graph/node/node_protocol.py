@@ -12,7 +12,7 @@ This file should contian an edge protocol.
 from dataclasses import dataclass, fields, is_dataclass, MISSING
 from typing import Any, Type, get_origin, get_args
 from typing  import Protocol,Union,Optional,Iterable,List,Dict
-from dataclasses import dataclass,field,replace
+from dataclasses import dataclass,field
 from uuid import UUID
 from typing_extensions import Self
 
@@ -90,14 +90,8 @@ class BaseData:
 @dataclass
 class NodeData(BaseData):
     """ Class for indicting data stored in node. """
-    # TODO must conform to a structure that is recursivley a dictionary- done in base data move to appropriate folder, 
-    # TODO should inlcude id and data at minimum.
     id: Union[int, UUID]
     data: RecursiveDict
-    
-
-
-
 
 
 class NodeProtocol(Protocol):
@@ -121,9 +115,6 @@ class NodeProtocol(Protocol):
         raise NotImplementedError()
     def set_parent(self, parent:Self):
         raise NotImplementedError()
-
-# implement a version 
-
 
 
 @dataclass(frozen=True)
@@ -149,7 +140,9 @@ class ImmutableNode(NodeProtocol):
             parent=parent,
             children=self.children
         )
-
+    def get_data(self):
+        "read only return of data. "
+        return self.data
 
 @dataclass
 class MutableNode(NodeProtocol):
@@ -177,9 +170,10 @@ class MutableNode(NodeProtocol):
 
 
 
+
+
 class NodeFactory:
     """Factory for creating node instances, 
-# this function m
     default is immutable.. this allows parallel creation and no race issues. 
     """
     def __init__(self, immutable: bool = True) -> None:
@@ -195,8 +189,10 @@ class NodeFactory:
         Returns:
             NodeProtocol: An instance of a node (immutable by default).
         """
-        node_id = data.id if data.id is not None else uuid4()
+        node_id = data.id if data.id is not None else UUID()
         if self.immutable:
             return ImmutableNode(id=node_id, data=data)
         else:
             return MutableNode(id=node_id, data=data)
+        
+    def create_node_from_node(self, )
