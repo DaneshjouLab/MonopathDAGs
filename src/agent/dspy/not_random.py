@@ -24,7 +24,7 @@ docstring_dict={
     - Use separate nodes when events are clearly sequential or clinically distinct.    
 
     Required node fields:
-    - node_id (required): Unique identifier (Use capital letter of alphabet \"A"\ and so on and so forth and move to \"AA"\ after all letters are used up)
+    - node_id (required): Unique identifier (Use capital letter of alphabet \"A"\ and then \"B"\ and so on and so forth.)
     - step_index: Integer for sequence ordering
     - timestamp (optional, only include if clearly given): ISO 8601 datetime (e.g., \"2025-03-01T10:00:00Z\")
     - branch_label (optional): String or boolean label for branches/merges
@@ -68,30 +68,78 @@ dspy.configure(lm = lm, adapter = dspy.JSONAdapter())
 class nodeConstruct(dspy.Signature):
     """
     """
-
     report_text: str = dspy.InputField(desc="body of text extracted from a case report")
     node_output = dspy.OutputField(type='list[dict]', desc='A list of dictionaries, where each dictionary represents a node')
 
 class edgeConstruct(dspy.Signature):
     """
     """
-
     report_text: str = dspy.InputField(desc="body of text extracted from a case report")
     node_output: list[dict] = dspy.InputField(desc="A list of nodes with which to connect with edges")
     edge_output = dspy.OutputField(type='list[dict]', desc='A list of dictionaries, where each dictionary represents an edge')
 
+class branchConstruct(dspy.Signature):
+    """
+    """
+    report_text: str = dspy.InputField(desc="body of text extracted from a case report")
+    node_output: list[dict] = dspy.InputField(desc="A list of nodes with which to connect with edges")
+    edge_output: list[dict] = dspy.InputField(desc="A list of edges which connect nodes")
+
+class determineSideBranch(dspy.Signature):
+    """
+    """
+    report_text: str = dspy.InputField(desc="body of text extracted from a case report")
+    node_output: list[dict] = dspy.InputField(desc="A list of nodes with which to connect with edges")
+    edge_output: list[dict] = dspy.InputField(desc="A list of edges which connect nodes")
+
+
+
 ########################################
 
 ########################################
+
+# Multi-stage module
+# Combine these together
+
+class dagGenerate(dspy.Module):
+    """
+    Use the signatures above to do a multi-stage pipeline to generate the graph
+    """
+
+    def __init__(self):
+        """
+        """
+    
+    def generate_node(str):
+        """
+        """
+
+    def generate_edge(str):
+        """
+        """
+    
+    # Decide if this can be standalone, or will take in generate_node and generate_edge
+    def generate_dag(str):
+        """
+        Use the signatures above and apply modules
+        """
+
+
+
+########################################
+
+########################################
+
 
 # Form docstrings using the docstring_dict
 nodeConstruct.__doc__ = docstring_dict["dag_primer"] + docstring_dict['node_instructions']
 edgeConstruct.__doc__ = docstring_dict["dag_primer"] + docstring_dict['edge_instructions']
 
-
 # Will replace this later with extracted text
 case_report = "A 58-year-old male with a 35-pack-year smoking history presented to the outpatient clinic with complaints of chronic cough, hemoptysis, and progressive dyspnea over the past 2 months. Initial physical examination revealed decreased breath sounds in the right lung field. Chest X-ray showed a right hilar mass, and subsequent contrast-enhanced CT of the chest identified a 5.5 cm mass in the right upper lobe with involvement of mediastinal lymph nodes and possible pleural effusion. CT-guided biopsy confirmed the diagnosis of poorly differentiated squamous cell carcinoma of the lung. Further staging with PET-CT revealed metabolic activity in the primary lesion, mediastinal nodes, and a suspicious lesion in the liver, suggesting stage IV disease. Brain MRI was negative for metastasis. Molecular profiling was performed and returned negative for EGFR, ALK, ROS1, and PD-L1 expression was low (<1%). Given the histology, stage, and biomarker profile, the patient was deemed a candidate for platinum-based chemotherapy. He was initiated on carboplatin and paclitaxel every three weeks. After two cycles, restaging scans demonstrated a partial response, with reduction in tumor size and decreased lymphadenopathy. The patient reported mild nausea and alopecia but tolerated the regimen well overall. After four cycles, the patient developed increasing fatigue, low-grade fever, and productive cough. Repeat imaging showed a new left lower lobe infiltrate and worsening pleural effusion. Thoracentesis revealed exudative effusion with malignant cells, confirming progressive disease. Second-line therapy was initiated with docetaxel and ramucirumab. The patient experienced transient stabilization of symptoms, but imaging at 12 weeks revealed hepatic progression and a new 1.8 cm brain metastasis in the right frontal lobe. Given the disease progression and declining performance status (ECOG 2), the patient was not a candidate for further systemic chemotherapy. He was referred for palliative whole-brain radiation therapy (WBRT) and symptomatic management. Supportive care was optimized, including low-dose opioids for dyspnea and corticosteroids for cerebral edema. Two months after WBRT, the patient presented with worsening confusion and hemiparesis. MRI revealed progression of brain metastases. After discussion with his family and care team, the decision was made to transition to hospice care. He died peacefully at home three weeks later. This case illustrates the challenges of treating advanced squamous cell lung cancer with limited molecular targets and the importance of supportive and palliative care in late-stage disease management."
 
+
+# These will go inside the class dagConstruct
 node_module = dspy.ChainOfThought(nodeConstruct)
 node = node_module(report_text=case_report)
 
