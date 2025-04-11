@@ -96,16 +96,6 @@ class edgeConstruct(dspy.Signature):
    
     edge_output = dspy.OutputField(type='list[dict]', desc='A list of dictionaries, where each dictionary represents an edge')
 
-class branchConstruct(dspy.Signature):
-    """
-    """
-    # Insert the edge as a new dict in between the relevant nodes
-    report_text: str = dspy.InputField(desc="body of text extracted from a case report")
-    node_input: list[dict] = dspy.InputField(desc="A list of nodes with which to connect with edges")
-    edge_input: list[dict] = dspy.InputField(desc="A list of edges which connect nodes")
-    
-    branch_output: list[dict] = dspy.OutputField(type='list[dict]', desc='Conneted nodes and edges based on ')
-
 class determineBranch(dspy.Signature):
     """
     """
@@ -114,7 +104,8 @@ class determineBranch(dspy.Signature):
 
     branch_bool: bool = dspy.OutputField()
 
-    # Make this a boolean and map the branching, tag whether it will be a side branch; later reconstruct
+    # Make this a boolean and map the branching, tag whether it will be a side branch
+    # Need to go back and edit the branch and labels if true
 
 
 
@@ -124,6 +115,7 @@ class determineBranch(dspy.Signature):
 
 # Multi-stage module
 # Combine these together
+# Split variables in nodes
 
 class dagGenerate(dspy.Module):
    
@@ -142,19 +134,8 @@ class dagGenerate(dspy.Module):
     # Actually don't need to generate the actual graph because I think that's Aaron's thing
 
     """
-    def generate_dag(self, report_text):
-        node_result = self.generate_node(report_text)
-        edge_result = self.generate_edge(report_text, node_result.node_output)
-        return {
-            "nodes": node_result,
-            "edges": edge_result
-        }
+
     """
-
-
-
-
-########################################
 
 ########################################
 
