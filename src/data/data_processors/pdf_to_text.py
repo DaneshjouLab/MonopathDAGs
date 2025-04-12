@@ -1,9 +1,4 @@
 
-
-
-
-
-
 import pymupdf  # This is correct — fitz is an alias
 
 def extract_text_from_pdf(pdf_path: str) -> str:
@@ -20,4 +15,4 @@ def extract_text_from_pdf(pdf_path: str) -> str:
         return "\f".join(page.get_text("text") for page in doc)
 
 
-print(extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024.pdf"))
+#print(extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024.pdf"))

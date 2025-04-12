@@ -1,4 +1,5 @@
 import dspy
+from src.data.data_processors.pdf_to_text import extract_text_from_pdf
 
 docstring_dict={
 "dag_primer":
@@ -25,9 +26,10 @@ docstring_dict={
 
     Required node fields:
     - node_id (required): Unique identifier (Use capital letter of alphabet \"A"\ and then \"B"\ and so on and so forth.)
-    - step_index: Integer for sequence ordering
+    - step_index (required): Integer for sequence ordering
     - timestamp (optional, only include if clearly given): ISO 8601 datetime (e.g., \"2025-03-01T10:00:00Z\")
-    - branch_label (optional): String or boolean label for branches/merges
+    - branch_label (required): boolean label for branches, mark "TRUE" if a side branch, "FALSE" if otherwise
+    - branch_id (required): str label for which branch, main branch is 0, and use increasing numerical id as side branches emerge
     - confidence (optional): Float from 0–1 for certainty, particularly from LLM outputs
     - commentary (optional): Free-text interpretation or summary
 
@@ -59,6 +61,20 @@ docstring_dict={
     - Additional fields depending on change_type (`from`, `to`, `value`, `reason`, etc.)
     - Include `ambiguity_flag` and `temporal_reference` for uncertain timing or ambiguous sequencing.
     """,
+
+"branch_instructions":
+    """
+
+    Branches arise when physiologic changes or complications aren't part of the main pathway but impact patient states. Specifically, when a state is ephemeral.
+
+    Mark side branches clearly:
+    - Edge leading to branch: branch_flag = true
+    - Nodes in branch: use branch_label clearly distinguishing alternate tracks.
+    - Rejoin explicitly when interventions successfully revert to previous stable states.
+    - Modular structure for easy modification or removal.
+
+    """
+    # Will put in a training set of what branches and what doesn't
 }
 
 # Language model
@@ -69,28 +85,27 @@ class nodeConstruct(dspy.Signature):
     """
     """
     report_text: str = dspy.InputField(desc="body of text extracted from a case report")
+   
     node_output = dspy.OutputField(type='list[dict]', desc='A list of dictionaries, where each dictionary represents a node')
 
 class edgeConstruct(dspy.Signature):
     """
     """
     report_text: str = dspy.InputField(desc="body of text extracted from a case report")
-    node_output: list[dict] = dspy.InputField(desc="A list of nodes with which to connect with edges")
+    node_input: list[dict] = dspy.InputField(desc="A list of nodes with which to connect with edges")
+   
     edge_output = dspy.OutputField(type='list[dict]', desc='A list of dictionaries, where each dictionary represents an edge')
 
-class branchConstruct(dspy.Signature):
+class determineBranch(dspy.Signature):
     """
     """
     report_text: str = dspy.InputField(desc="body of text extracted from a case report")
-    node_output: list[dict] = dspy.InputField(desc="A list of nodes with which to connect with edges")
-    edge_output: list[dict] = dspy.InputField(desc="A list of edges which connect nodes")
+    branch_input: list[dict] = dspy.InputField(desc="A list of ordered nodes and edges")
 
-class determineSideBranch(dspy.Signature):
-    """
-    """
-    report_text: str = dspy.InputField(desc="body of text extracted from a case report")
-    node_output: list[dict] = dspy.InputField(desc="A list of nodes with which to connect with edges")
-    edge_output: list[dict] = dspy.InputField(desc="A list of edges which connect nodes")
+    branch_bool: bool = dspy.OutputField()
+
+    # Make this a boolean and map the branching, tag whether it will be a side branch
+    # Need to go back and edit the branch and labels if true
 
 
 
@@ -100,33 +115,27 @@ class determineSideBranch(dspy.Signature):
 
 # Multi-stage module
 # Combine these together
+# Split variables in nodes
 
 class dagGenerate(dspy.Module):
-    """
-    Use the signatures above to do a multi-stage pipeline to generate the graph
-    """
-
+   
     def __init__(self):
-        """
-        """
-    
-    def generate_node(str):
-        """
-        """
+        return None
 
-    def generate_edge(str):
-        """
-        """
-    
-    # Decide if this can be standalone, or will take in generate_node and generate_edge
-    def generate_dag(str):
-        """
-        Use the signatures above and apply modules
-        """
+    def generate_node(self, report_text):
+        self.node_module = dspy.Predict(nodeConstruct)
+        return self.node_module(report_text=report_text)
 
+    def generate_edge(self, report_text, node_output):
+        self.edge_module = dspy.Predict(edgeConstruct)
+        return self.edge_module(report_text=report_text, node_input=node_output)
 
+    # No branching yet
+    # Actually don't need to generate the actual graph because I think that's Aaron's thing
 
-########################################
+    """
+
+    """
 
 ########################################
 
@@ -135,20 +144,18 @@ class dagGenerate(dspy.Module):
 nodeConstruct.__doc__ = docstring_dict["dag_primer"] + docstring_dict['node_instructions']
 edgeConstruct.__doc__ = docstring_dict["dag_primer"] + docstring_dict['edge_instructions']
 
-# Will replace this later with extracted text
-case_report = "A 58-year-old male with a 35-pack-year smoking history presented to the outpatient clinic with complaints of chronic cough, hemoptysis, and progressive dyspnea over the past 2 months. Initial physical examination revealed decreased breath sounds in the right lung field. Chest X-ray showed a right hilar mass, and subsequent contrast-enhanced CT of the chest identified a 5.5 cm mass in the right upper lobe with involvement of mediastinal lymph nodes and possible pleural effusion. CT-guided biopsy confirmed the diagnosis of poorly differentiated squamous cell carcinoma of the lung. Further staging with PET-CT revealed metabolic activity in the primary lesion, mediastinal nodes, and a suspicious lesion in the liver, suggesting stage IV disease. Brain MRI was negative for metastasis. Molecular profiling was performed and returned negative for EGFR, ALK, ROS1, and PD-L1 expression was low (<1%). Given the histology, stage, and biomarker profile, the patient was deemed a candidate for platinum-based chemotherapy. He was initiated on carboplatin and paclitaxel every three weeks. After two cycles, restaging scans demonstrated a partial response, with reduction in tumor size and decreased lymphadenopathy. The patient reported mild nausea and alopecia but tolerated the regimen well overall. After four cycles, the patient developed increasing fatigue, low-grade fever, and productive cough. Repeat imaging showed a new left lower lobe infiltrate and worsening pleural effusion. Thoracentesis revealed exudative effusion with malignant cells, confirming progressive disease. Second-line therapy was initiated with docetaxel and ramucirumab. The patient experienced transient stabilization of symptoms, but imaging at 12 weeks revealed hepatic progression and a new 1.8 cm brain metastasis in the right frontal lobe. Given the disease progression and declining performance status (ECOG 2), the patient was not a candidate for further systemic chemotherapy. He was referred for palliative whole-brain radiation therapy (WBRT) and symptomatic management. Supportive care was optimized, including low-dose opioids for dyspnea and corticosteroids for cerebral edema. Two months after WBRT, the patient presented with worsening confusion and hemiparesis. MRI revealed progression of brain metastases. After discussion with his family and care team, the decision was made to transition to hospice care. He died peacefully at home three weeks later. This case illustrates the challenges of treating advanced squamous cell lung cancer with limited molecular targets and the importance of supportive and palliative care in late-stage disease management."
+
+# Extract text from PDF
+#report_text = extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024.pdf")
+report_text = "A 64-year-old male with a history of hypertension, type 2 diabetes mellitus, and a 40-pack-year smoking history presented to the emergency department with progressive shortness of breath, dry cough, and unintentional weight loss over the past two months. He denied chest pain or hemoptysis."
 
 
-# These will go inside the class dagConstruct
-node_module = dspy.ChainOfThought(nodeConstruct)
-node = node_module(report_text=case_report)
+# Instantiate and generate nodes and edges
+dagGenerate = dagGenerate()
+node_result = dagGenerate.generate_node(report_text)
+edge_result = dagGenerate.generate_edge(report_text, node_result)
 
-edge_module = dspy.ChainOfThought(edgeConstruct)
-edge = edge_module(report_text=case_report, node_output=node)
 
-print("")
-print("NODES:   ", node.node_output)
-print("")
-print("EDGES:   ", edge.edge_output)
-    
+print("Nodes:\n", node_result)
+print("\nEdges:\n", edge_result)
 
