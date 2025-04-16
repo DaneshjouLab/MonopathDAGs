@@ -168,7 +168,7 @@ class DetermineBranch(dspy.Module):
     def forward(self, report_text, branch_input):
         return self.program(report_text=report_text, branch_input=branch_input)
 
-# metric function
+# Metric function
 
 def branching_accuracy(gold, pred):
     return int(gold["branch_bool"] == pred["branch_bool"])
