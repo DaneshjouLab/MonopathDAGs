@@ -1,6 +1,10 @@
 import dspy
 from src.data.data_processors.pdf_to_text import extract_text_from_pdf
 
+# =====================================
+# DOCSTRING CONTENT
+# =====================================
+
 docstring_dict={
 "dag_primer":
     """
@@ -65,21 +69,28 @@ docstring_dict={
 "branch_instructions":
     """
 
-    Branches arise when physiologic changes or complications aren't part of the main pathway but impact patient states. Specifically, when a state is ephemeral.
+    Branches arise when physiologic changes or complications aren't part of the main pathway but impact patient states. Specifically, we are thinking of ephemeral changes.
 
     Mark side branches clearly:
     - Edge leading to branch: branch_flag = true
     - Nodes in branch: use branch_label clearly distinguishing alternate tracks.
-    - Rejoin explicitly when interventions successfully revert to previous stable states.
-    - Modular structure for easy modification or removal.
+
+    
 
     """
     # Will put in a training set of what branches and what doesn't
 }
 
-# Language model
+# =====================================
+# SELECTED LLM
+# =====================================
+
 lm = dspy.LM('ollama_chat/llama3.2', api_base='http://localhost:11434', api_key='')
 dspy.configure(lm = lm, adapter = dspy.JSONAdapter())
+
+# =====================================
+# DSPY SIGNATURES
+# =====================================
 
 class nodeConstruct(dspy.Signature):
     """
@@ -108,16 +119,25 @@ class determineBranch(dspy.Signature):
     # Need to go back and edit the branch and labels if true
 
 
+# =====================================
+# FORM AND APPLY DOCSTRINGS
+# =====================================
 
-########################################
 
-########################################
+# Form docstrings using the docstring_dict
+nodeConstruct.__doc__ = docstring_dict["dag_primer"] + docstring_dict['node_instructions']
+edgeConstruct.__doc__ = docstring_dict["dag_primer"] + docstring_dict['edge_instructions']
+determineBranch.__doc__ = docstring_dict["dag_primer"] + docstring_dict['branch_instructions']
+
+# =====================================
+# MODULES
+# =====================================
 
 # Multi-stage module
 # Combine these together
 # Split variables in nodes
 
-class dagGenerate(dspy.Module):
+class NodeEdgeGenerate(dspy.Module):
    
     def __init__(self):
         return None
@@ -132,17 +152,42 @@ class dagGenerate(dspy.Module):
 
     # No branching yet
     # Actually don't need to generate the actual graph because I think that's Aaron's thing
+    # Actually yeah don't need to generate a graph BUT need to take in the bool from the determineBranch signature and use that to remodel the node/edge branch_flag
+    # Make sure to give more rigid structure? For 
 
-    """
+# =====================================
+# FEW-SHOT OPTIMIZATION
+# =====================================
 
-    """
+# Define wrapper for determineBranch
+
+class DetermineBranch(dspy.Module):
+
+    def __init__(self):
+        super().__init__()
+        self.program = dspy.Predict(determineBranch)
+
+    def forward(self, report_text, branch_input):
+        return self.program(report_text=report_text, branch_input=branch_input)
+
+# metric function
+
+def branching_accuracy(gold, pred):
+    return int(gold["branch_bool"] == pred["branch_bool"])
+
+
+
+
+
+
+
+
 
 ########################################
 
 
-# Form docstrings using the docstring_dict
-nodeConstruct.__doc__ = docstring_dict["dag_primer"] + docstring_dict['node_instructions']
-edgeConstruct.__doc__ = docstring_dict["dag_primer"] + docstring_dict['edge_instructions']
+
+
 
 
 # Extract text from PDF
