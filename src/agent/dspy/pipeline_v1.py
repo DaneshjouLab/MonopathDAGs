@@ -23,19 +23,19 @@ docstring_dict={
     """
     Each node represents the patient at a specific point in time or logical step.
 
-    Explicit guidelines for node boundaries:
+    Explicit guidelines for nodes:
     - Define nodes based on distinct clinical events or logical steps.
     - Combine simultaneous lab and imaging results into the same node.
     - Use separate nodes when events are clearly sequential or clinically distinct.    
 
-    Required node fields:
+    Node fields:
     - node_id (required): Unique identifier (Use capital letter of alphabet \"A"\ and then \"B"\ and so on and so forth.)
-    - step_index (required): Integer for sequence ordering
+    - node_step_index (required): Integer for sequence ordering
     - timestamp (optional, only include if clearly given): ISO 8601 datetime (e.g., \"2025-03-01T10:00:00Z\")
     - branch_label (required): boolean label for branches, mark "TRUE" if a side branch, "FALSE" if otherwise
     - branch_id (required): str label for which branch, main branch is 0, and use increasing numerical id as side branches emerge
     - confidence (optional): Float from 0–1 for certainty, particularly from LLM outputs
-    - commentary (optional): Free-text interpretation or summary
+    - content (required): Free-text interpretation or summary
 
     """,
 
@@ -43,27 +43,24 @@ docstring_dict={
     """
     Each edge represents a change from one node to another.
 
-    Explicit handling for edge types:
-    - Branch only for actionable physiological or clinical events.
-    - Informational updates (no immediate clinical impact) should NOT branch.
-    - Rejoin explicitly when patient state aligns structurally with prior nodes.
+    Explicit guidelines for edges:
+    - Create edges only when there is a clear clinical progression or change between nodes.
+    - Maintain narrative or logical order — edges should flow from earlier to later events.
+    - Combine co-occurring findings into the same node, not across multiple edges.
 
-    Explicit guidelines for node boundaries:
+    Edge fields:
     - edge_id (required): Unique identifier (Use format "node_id"_to_"node_id", such that the first "node_id" is the upstream node and the second "node_id" is the downstream node bounding the edge)
-    - from_node, to_node (required): IDs referencing source/target nodes
-    - step_index (required): Integer for narrative ordering
-    - event_type: \"Intervention\" | \"Observation\" | \"SpontaneousChange\" | \"Reinterpretation\"
-    - branch_flag (optional): Boolean if this starts a branch
+    - edge_step_index (required): Integer for narrative ordering
+    - event_type (required): \"Intervention\" | \"Observation\" | \"SpontaneousChange\" | \"Reinterpretation\"
+    - branch_initiate_flag (required): Boolean if this starts a side branch
     - confidence (optional): Float from 0–1, especially useful from LLM annotations
-    - timestamp (optional)
-    - commentary (optional)
-
-    Changes Array — required:
-    Each item includes:
-    - field: What changed
+    - timestamp (optional, only include if clearly given): ISO 8601 datetime (e.g., \"2025-03-01T10:00:00Z\")
+    - content (required): Free-text interpretation or summary of what changed between the nodes
     - change_type: \"add\" | \"remove\" | \"update\" | \"reinterpretation\" | \"composite\" | \"narrative_add\" | \"split\" | \"merge\"
     - Additional fields depending on change_type (`from`, `to`, `value`, `reason`, etc.)
     - Include `ambiguity_flag` and `temporal_reference` for uncertain timing or ambiguous sequencing.
+
+
     """,
 
 "branch_instructions":
@@ -74,11 +71,12 @@ docstring_dict={
     Mark side branches clearly:
     - Edge leading to branch: branch_flag = true
     - Nodes in branch: use branch_label clearly distinguishing alternate tracks.
-
-    
+    #### ^^ nah make something else for changing labels, this is just boolean
 
     """
     # Will put in a training set of what branches and what doesn't
+    # Maybe put all content in "commentary" and then in subsequent step parse it out???
+    # Yeah that might be the best tbh
 }
 
 # =====================================
@@ -177,30 +175,39 @@ def branching_accuracy(gold, pred):
 
 
 
+######################################
+######################################
+######################################
 
 
-
-
-
-
-########################################
-
-
-
-
+# =====================================
+# RUN PIPELINE
+# =====================================
 
 
 # Extract text from PDF
 #report_text = extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024.pdf")
 report_text = "A 64-year-old male with a history of hypertension, type 2 diabetes mellitus, and a 40-pack-year smoking history presented to the emergency department with progressive shortness of breath, dry cough, and unintentional weight loss over the past two months. He denied chest pain or hemoptysis."
 
-
 # Instantiate and generate nodes and edges
-dagGenerate = dagGenerate()
-node_result = dagGenerate.generate_node(report_text)
-edge_result = dagGenerate.generate_edge(report_text, node_result)
-
+NodeEdgeGenerate = NodeEdgeGenerate()
+node_result = NodeEdgeGenerate.generate_node(report_text)
+edge_result = NodeEdgeGenerate.generate_edge(report_text, node_result)
 
 print("Nodes:\n", node_result)
 print("\nEdges:\n", edge_result)
+
+
+# =====================================
+# RUN PIPELINE - USE determineBranch
+# =====================================
+
+
+
+
+
+
+
+
+
 
