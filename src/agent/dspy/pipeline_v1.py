@@ -1,8 +1,6 @@
 from __future__ import annotations
 import csv
-<<<<<<< HEAD
 import dspy.predict
-=======
 import random
 import dspy
 from dspy import Example
@@ -101,7 +99,6 @@ docstring_dict={
 
 
 
-<<<<<<< HEAD
 # Language model
 lm = dspy.LM('ollama_chat/llama3.3', api_base='http://localhost:11434', api_key='')
 dspy.configure(lm = lm, adapter = dspy.ChatAdapter())
@@ -187,7 +184,6 @@ class determineBranch(dspy.Signature):
 
 
 # Form docstrings using the docstring_dict
-<<<<<<< HEAD
 
 ########################################
 
@@ -198,7 +194,6 @@ determineBranch.__doc__ = docstring_dict["dag_primer"] + docstring_dict['branch_
 # =====================================
 # MODULES
 # =====================================
->>>>>>> origin/Aaron's_pullRequest_1.0
 
 # Multi-stage module
 # Combine these together
@@ -207,12 +202,7 @@ determineBranch.__doc__ = docstring_dict["dag_primer"] + docstring_dict['branch_
 class NodeEdgeGenerate(dspy.Module):
    
     def __init__(self):
-<<<<<<< HEAD
-        
-        return None
-=======
         super().__init__()
->>>>>>> origin/Aaron's_pullRequest_1.0
 
     def generate_node(self, report_text):
         self.node_module = dspy.Predict(nodeConstruct)
@@ -233,7 +223,6 @@ class NodeEdgeGenerate(dspy.Module):
 
 # Define wrapper for determineBranch
 
-<<<<<<< HEAD
 
 
 ########################################
@@ -248,15 +237,14 @@ report_text = extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024
 
 print(report_text)
 # Instantiate and generate nodes and edges
-dagGenerate = dagGenerate()
-node_result = dagGenerate.generate_node(report_text)
-edge_result = dagGenerate.generate_edge(report_text, node_result)
+NodeEdgeGenerate = NodeEdgeGenerate()
+node_result = NodeEdgeGenerate.generate_node(report_text)
+edge_result = NodeEdgeGenerate.generate_edge(report_text, node_result)
 print("DOC used by nodeConstruct:\n", nodeConstruct.__doc__)
-print("DOC used in module:\n", dagGenerate.node_module.__doc__)
-# print("here",dagGenerate.node_module.parameters())
+print("DOC used in module:\n", NodeEdgeGenerate.node_module.__doc__)
+# print("here",NodeEdgeGenerate.node_module.parameters())
 
 
-=======
 class DetermineBranch(dspy.Module):
 
     def __init__(self):
@@ -349,10 +337,6 @@ print("🔁 Updated edge:", edge_result["edge_output"][-1])
 print("Nodes:\n", node_result)
 print("\nEdges:\n", edge_result)
 
-<<<<<<< HEAD
-print(dspy.inspect_history(3))
-=======
-
 # =====================================
 # RUN PIPELINE - USE determineBranch
 # =====================================
@@ -381,4 +365,3 @@ else:
 
 
 
->>>>>>> origin/Aaron's_pullRequest_1.0
