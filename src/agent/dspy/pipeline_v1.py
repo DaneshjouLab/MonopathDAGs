@@ -1,4 +1,6 @@
+from __future__ import annotations
 import dspy
+import dspy.predict
 from src.data.data_processors.pdf_to_text import extract_text_from_pdf
 
 docstring_dict={
@@ -78,23 +80,60 @@ docstring_dict={
 }
 
 # Language model
-lm = dspy.LM('ollama_chat/llama3.2', api_base='http://localhost:11434', api_key='')
-dspy.configure(lm = lm, adapter = dspy.JSONAdapter())
+lm = dspy.LM('ollama_chat/llama3.3', api_base='http://localhost:11434', api_key='')
+dspy.configure(lm = lm, adapter = dspy.ChatAdapter())
+
+
+
+
+# class nodeConstruct(dspy.Signature):
+#     """
+#     """
+#     report_text: str = dspy.InputField(desc="body of text extracted from a case report")
+# the  
+#     node_output = dspy.OutputField(type=list[dict], desc='A list of dictionaries, where each dictionary represents a node')
+
+# class edgeConstruct(dspy.Signature):
+#     """
+#     """
+#     report_text: str = dspy.InputField(desc="body of text extracted from a case report")
+#     node_input: list[dict] = dspy.InputField(desc="A list of nodes with which to connect with edges")
+   
+#     edge_output = dspy.OutputField(type=list[dict], desc='A list of dictionaries, where each dictionary represents an edge')
+
+
+from typing import Union, List, Dict
+from pydantic import RootModel
+
+
+
+from typing import Union, List, Dict
+from pydantic import BaseModel, Field
+
+class PatientEntity(BaseModel):
+    id: str = Field(..., description="Unique ID of the entity")
+    description: str = Field(..., description="What this entity is")
+    value: Union[
+        str,
+        int,
+        float,
+        bool,
+        None,
+        List[PatientEntity],
+        Dict[str, PatientEntity]
+    ] = Field(..., description="Arbitrary value or nested structure")
+
+PatientEntity.model_rebuild()  # required for recursive models
 
 class nodeConstruct(dspy.Signature):
-    """
-    """
-    report_text: str = dspy.InputField(desc="body of text extracted from a case report")
-   
-    node_output = dspy.OutputField(type='list[dict]', desc='A list of dictionaries, where each dictionary represents a node')
+    report_text: str = dspy.InputField(desc="Body of text extracted from a case report")
+    node_output: PatientEntity = dspy.OutputField(desc="List of dictionaries; each represents a node, detailing the patient state, only static information at that time point ",)
 
 class edgeConstruct(dspy.Signature):
-    """
-    """
-    report_text: str = dspy.InputField(desc="body of text extracted from a case report")
-    node_input: list[dict] = dspy.InputField(desc="A list of nodes with which to connect with edges")
-   
-    edge_output = dspy.OutputField(type='list[dict]', desc='A list of dictionaries, where each dictionary represents an edge')
+    report_text: str = dspy.InputField(desc="Body of text extracted from a case report")
+    node_input: list[dict] = dspy.InputField(desc="List of nodes used to build edges")
+    edge_output: list[dict] = dspy.OutputField(desc="List of edge dictionaries in the DAG")
+
 
 class determineBranch(dspy.Signature):
     """
@@ -111,6 +150,8 @@ class determineBranch(dspy.Signature):
 
 ########################################
 
+# Form docstrings using the docstring_dict
+
 ########################################
 
 # Multi-stage module
@@ -120,6 +161,7 @@ class determineBranch(dspy.Signature):
 class dagGenerate(dspy.Module):
    
     def __init__(self):
+        
         return None
 
     def generate_node(self, report_text):
@@ -137,25 +179,30 @@ class dagGenerate(dspy.Module):
 
     """
 
+
+
 ########################################
 
-
-# Form docstrings using the docstring_dict
 nodeConstruct.__doc__ = docstring_dict["dag_primer"] + docstring_dict['node_instructions']
 edgeConstruct.__doc__ = docstring_dict["dag_primer"] + docstring_dict['edge_instructions']
 
 
 # Extract text from PDF
-#report_text = extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024.pdf")
-report_text = "A 64-year-old male with a history of hypertension, type 2 diabetes mellitus, and a 40-pack-year smoking history presented to the emergency department with progressive shortness of breath, dry cough, and unintentional weight loss over the past two months. He denied chest pain or hemoptysis."
+report_text = extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024.pdf")
+# report_text = "A 64-year-old male with a history of hypertension, type 2 diabetes mellitus, and a 40-pack-year smoking history presented to the emergency department with progressive shortness of breath, dry cough, and unintentional weight loss over the past two months. He denied chest pain or hemoptysis."
 
-
+print(report_text)
 # Instantiate and generate nodes and edges
 dagGenerate = dagGenerate()
 node_result = dagGenerate.generate_node(report_text)
 edge_result = dagGenerate.generate_edge(report_text, node_result)
+print("DOC used by nodeConstruct:\n", nodeConstruct.__doc__)
+print("DOC used in module:\n", dagGenerate.node_module.__doc__)
+# print("here",dagGenerate.node_module.parameters())
+
 
 
 print("Nodes:\n", node_result)
 print("\nEdges:\n", edge_result)
 
+print(dspy.inspect_history(3))
