@@ -1,7 +1,11 @@
-import dspy
+import csv
 import random
+import dspy
+from dspy import Example
 from dspy.teleprompt import BootstrapFewShot
+from dspy.evaluate import Evaluate
 from src.data.data_processors.pdf_to_text import extract_text_from_pdf
+
 
 # =====================================
 # DOCSTRING CONTENT
@@ -54,7 +58,7 @@ docstring_dict={
     - edge_id (required): Unique identifier (Use format "node_id"_to_"node_id", such that the first "node_id" is the upstream node and the second "node_id" is the downstream node bounding the edge)
     - edge_step_index (required): Integer for narrative ordering
     - event_type (required): \"Intervention\" | \"Observation\" | \"SpontaneousChange\" | \"Reinterpretation\"
-    - branch_initiate_flag (required): Boolean if this starts a side branch
+    - branch_flag (required): Boolean if this starts a side branch
     - confidence (optional): Float from 0–1, especially useful from LLM annotations
     - timestamp (optional, only include if clearly given): ISO 8601 datetime (e.g., \"2025-03-01T10:00:00Z\")
     - content (required): Free-text interpretation or summary of what changed between the nodes
@@ -80,6 +84,12 @@ docstring_dict={
     # Maybe put all content in "commentary" and then in subsequent step parse it out???
     # Yeah that might be the best tbh
 }
+
+# =====================================
+# OTHER FUNCTIONS
+# =====================================
+
+
 
 # =====================================
 # SELECTED LLM
@@ -178,36 +188,29 @@ def branching_accuracy(gold, pred):
 
 
 #####
-### Insert branch examples here
 
-# Giving a couple raw examples right now but later get convert from csv
-# Need to fix structure
-branch_examples = [
-    {
-        "commentary": "Sudden drop in systolic blood pressure to 80 mmHg",
-        "branch_bool": True
-    },
-    {
-        "commentary": "Diagnosis of Parkinson’s disease after neurologist consult",
-        "branch_bool": False
-    },
-    {
-        "commentary": "Spiking fever of 39.5°C post-surgery",
-        "branch_bool": True
-    },
-    {
-        "commentary": "Positive blood cultures for Staphylococcus aureus",
-        "branch_bool": True
-    },
-    {
-        "commentary": "Mild anemia noted incidentally on routine CBC",
-        "branch_bool": True
-    },
-]
+def load_branch_examples_from_csv(csv_path):
+    examples = []
+    with open(csv_path, newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        reader.fieldnames = [field.strip() for field in reader.fieldnames]
+        for row in reader:
+            # Convert string to bool
+            bool_val = row['branch_bool'].strip().upper() == "TRUE"
+            examples.append(
+                Example(
+                    report_text=row['report_text'],
+                    branch_input=[{"from_node": "A", "to_node": "B", "event_type": "Observation"}],
+                    branch_bool=bool_val
+                )
+            )
+    return examples
 
+branch_examples = load_branch_examples_from_csv("/Users/ansonzhou/Desktop/Daneshjou Lab/DynamicData/src/data/branch_data.csv")
 random.shuffle(branch_examples)
 trainset = branch_examples[:85]
 devset = branch_examples[85:]
+
 
 # Run BootstrapFewShot
 # Identify the best few-shot examples to feed into LLM
@@ -228,6 +231,12 @@ optimized_determine_branch = teleprompter.compile(
 print("\nSelected few-shot demonstrations:")
 print(teleprompter.demonstrations)
 
+# Check to see how well the optimized model performs on unseen examples
+evaluate = Evaluate(devset=devset, metric=branching_accuracy, display_progress=True)
+eval_result = evaluate(optimized_determine_branch)
+print("\n📊 Evaluation result on dev set:", eval_result)
+
+
 
 ######################################
 
@@ -247,6 +256,9 @@ report_text = "A 64-year-old male with a history of hypertension, type 2 diabete
 NodeEdgeGenerate = NodeEdgeGenerate()
 node_result = NodeEdgeGenerate.generate_node(report_text)
 edge_result = NodeEdgeGenerate.generate_edge(report_text, node_result)
+# Print updated edge
+print("🔁 Updated edge:", edge_result["edge_output"][-1])
+
 
 print("Nodes:\n", node_result)
 print("\nEdges:\n", edge_result)
@@ -266,9 +278,12 @@ print("\nBranch decision:", branch_result.branch_bool)
 # Use output to update DAG flags in edge
 # Need to check on this though
 
-if branch_result.branch_bool:
-        print("Updating edge with brnch_flag=TRUE")
-        edge_result["edge_output"][-1]["branch_initiate_flag"] = True
+if branch_result.branch_bool and edge_result['edge_output']:
+    print("Branching triggered — updating edge with branch_flag = TRUE")
+    edge_result['edge_output'][-1]['branch_flag'] = True
+else:
+    print("No branch triggered or no edges available to update.")
+
 
 
 
