@@ -1,4 +1,6 @@
 import dspy
+import random
+from dspy.teleprompt import BootstrapFewShot
 from src.data.data_processors.pdf_to_text import extract_text_from_pdf
 
 # =====================================
@@ -138,7 +140,7 @@ determineBranch.__doc__ = docstring_dict["dag_primer"] + docstring_dict['branch_
 class NodeEdgeGenerate(dspy.Module):
    
     def __init__(self):
-        return None
+        super().__init__()
 
     def generate_node(self, report_text):
         self.node_module = dspy.Predict(nodeConstruct)
@@ -169,14 +171,66 @@ class DetermineBranch(dspy.Module):
         return self.program(report_text=report_text, branch_input=branch_input)
 
 # Metric function
+# Need to think about this more
 
 def branching_accuracy(gold, pred):
     return int(gold["branch_bool"] == pred["branch_bool"])
 
 
+#####
+### Insert branch examples here
+
+# Giving a couple raw examples right now but later get convert from csv
+# Need to fix structure
+branch_examples = [
+    {
+        "commentary": "Sudden drop in systolic blood pressure to 80 mmHg",
+        "branch_bool": True
+    },
+    {
+        "commentary": "Diagnosis of Parkinson’s disease after neurologist consult",
+        "branch_bool": False
+    },
+    {
+        "commentary": "Spiking fever of 39.5°C post-surgery",
+        "branch_bool": True
+    },
+    {
+        "commentary": "Positive blood cultures for Staphylococcus aureus",
+        "branch_bool": True
+    },
+    {
+        "commentary": "Mild anemia noted incidentally on routine CBC",
+        "branch_bool": True
+    },
+]
+
+random.shuffle(branch_examples)
+trainset = branch_examples[:85]
+devset = branch_examples[85:]
+
+# Run BootstrapFewShot
+# Identify the best few-shot examples to feed into LLM
+
+teleprompter = BootstrapFewShot(
+    metric=branching_accuracy,
+    max_bootstrapped_demos=8,
+    max_labeled_demos=85,
+    max_rounds=1
+)
+
+# This is now a trained version of DetermineBranch
+optimized_determine_branch = teleprompter.compile(
+    DetermineBranch(),
+    trainset=trainset
+)
+
+print("\nSelected few-shot demonstrations:")
+print(teleprompter.demonstrations)
+
 
 ######################################
-######################################
+
 ######################################
 
 
@@ -202,7 +256,19 @@ print("\nEdges:\n", edge_result)
 # RUN PIPELINE - USE determineBranch
 # =====================================
 
+branch_result = optimized_determine_branch(
+    report_text=report_text,
+    branch_input=edge_result['edge_output']
+)
 
+print("\nBranch decision:", branch_result.branch_bool)
+
+# Use output to update DAG flags in edge
+# Need to check on this though
+
+if branch_result.branch_bool:
+        print("Updating edge with brnch_flag=TRUE")
+        edge_result["edge_output"][-1]["branch_initiate_flag"] = True
 
 
 
