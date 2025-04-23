@@ -10,10 +10,11 @@ File for some graph procotols including the DAG one,
 """
 
 
-from typing import Protocol, Iterable,runtime_checkable,Set,List
+from typing import Protocol, Iterable,runtime_checkable,Set,List,Optional,Union,Dict
+from collections import defaultdict
+from uuid import UUID
 from .node.node_protocol import NodeProtocol as Node
 from .edge.edge_protocol import EdgeProtocol as Edge
-
 
 
 __all__ = [ "Graph", "DAG"]
@@ -43,11 +44,53 @@ class Graph(Protocol):
         """Return all directly connected neighbors of the given node."""
         raise NotImplementedError
 
+class GraphImplemented(Graph):
+    def __init__(self,
+                 nodes: Optional[Iterable[Node]] = None,
+                 edges: Optional[Iterable[Edge]] = None,
+                 root: Optional[Union[int, UUID]] = None):
+        self._nodes: Dict[Union[int, UUID], Node] = {}
+        self._edges: Dict[Union[int, UUID], Edge] = {}
+        self._adjacency: Dict[Union[int, UUID], List[Node]] = defaultdict(list)
+        self._root = root
 
+        if nodes:
+            for node in nodes:
+                
+                self._nodes[node.id] = node
 
+        if edges:
+            for edge in edges:
+                edge_id = edge.id
+                self._edges[edge_id] = edge
+                self._adjacency[edge.source.id].append(edge.target)
+
+    def nodes(self) -> Iterable[Node]:
+        return self._nodes.values()
+
+    def edges(self) -> Iterable[Edge]:
+        return self._edges
+
+    def has_node(self, node: Node) -> bool:
+        return node.id in self._nodes
+
+    def has_edge(self, source: Node, target: Node) -> bool:
+        return target in self._adjacency.get(source.id, [])
+
+    def neighbors(self, node: Node) -> Iterable[Node]:
+        return self._adjacency.get(node.id, [])
+    def get_root_id(self):
+        "get the roo id"
+        return self._root
+    def get_root_node(self):
+        " get the root node"
+        return self._nodes[self._root]
 
 class DAG(Graph, Protocol):
-    """Protocol representing a directed acyclic graph (DAG)."""
+    """Protocol representing a directed acyclic graph (DAG).
+    ALL FUNCTIONS SHOULD BE READ ONLY, GRa
+    
+    """
 
     def topological_sort(self) -> List[Node]:
         """Return nodes in a valid topological order."""
@@ -69,3 +112,10 @@ class DAG(Graph, Protocol):
         """Return all nodes with no outgoing edges."""
         raise NotImplementedError
     
+
+class DAG_Implemented(DAG):
+    def __init__(self, root: Node, edge):
+        """init the graph, 
+
+
+        """

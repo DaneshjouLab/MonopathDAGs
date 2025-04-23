@@ -9,10 +9,11 @@ This file should contian an edge protocol.
 # TODO: implement the following, 
 
 """
-from dataclasses import dataclass, fields, is_dataclass, MISSING
+from dataclasses import dataclass, fields, is_dataclass, MISSING,field
 from typing import Any, Type, get_origin, get_args
 from typing  import Protocol,Union,Optional,Iterable,List,Dict
-from dataclasses import dataclass,field
+
+import copy
 from uuid import UUID
 from typing_extensions import Self
 
@@ -94,15 +95,17 @@ class NodeData(BaseData):
     data: RecursiveDict
 
 
+
+
 class NodeProtocol(Protocol):
     """
     this
     Args:
         Protocol (_type_): _description_
     """
-    def __init__(self, id:Union[int,UUID],):
+    def __init__(self, node_id:Union[int,UUID],):
 
-        self.id = id
+        self.id = node_id
         self.neighbors = set()
 
     def get_data(self)-> Union[dict, None, NodeData]:
@@ -110,12 +113,11 @@ class NodeProtocol(Protocol):
         raise NotImplementedError("every node should be readable")
     def get_parent(self):
         raise NotImplementedError()
-        
     def get_children(self):
         raise NotImplementedError()
     def set_parent(self, parent:Self):
         raise NotImplementedError()
-
+#
 
 @dataclass(frozen=True)
 class ImmutableNode(NodeProtocol):
@@ -164,7 +166,7 @@ class MutableNode(NodeProtocol):
     def set_parent(self, parent: Self) -> Self:
         self.parent = parent
         return self
-    def set_children(self,children:List[NodeProtocol,None]):
+    def set_children(self,children:Optional[List[NodeProtocol]]):
         raise NotImplementedError("make")
 
 
@@ -195,4 +197,62 @@ class NodeFactory:
         else:
             return MutableNode(id=node_id, data=data)
         
-    def create_node_from_node(self, )
+
+
+
+    def clone_and_modify_node(self, source_node: NodeProtocol, new_node_data: NodeData):
+        """Creates a new node based on a source node, applying specified modifications.
+
+        This method initializes the new node's data by taking a copy of the
+        `source_node`'s data. It then updates this copied data by overwriting
+        any fields that are present in the `new_node_data` structure. Fields
+        from the `source_node` that do not have a corresponding entry in
+        `new_node_data` are retained in the new node.
+
+        Args:
+            source_node (NodeProtocol): The node to use as the base template. Its data
+                                       provides the initial values for the new node.
+            new_node_data (NodeData): A data structure containing the fields and their
+                                      new values that should overwrite the corresponding
+                                      fields copied from the `source_node`.
+
+        Returns:
+            NodeProtocol: A new node instance resulting from applying the updates
+                          in `new_node_data` to the data from `source_node`.
+        """
+        # Implementation would go here, for example:
+        # 1. Extract data from source_node (e.g., source_data = source_node.get_data())
+        # 2. Create a mutable copy (e.g., final_data = source_data.copy())
+        # 3. Iterate through new_node_data and update final_data
+        #    (e.g., for key, value in new_node_data.items(): final_data[key] = value)
+        # 4. Create and return the new node using final_data
+        #    (e.g., return self.create_node(final_data)) # Assuming create_node exists
+        try:
+            source_data = source_node.get_data()
+        except AttributeError as exc:
+            # Raise a more informative AttributeError, chaining the original exception
+            raise AttributeError(
+                "The provided 'source_node' object does not have the required 'get_data' method."
+                                 ) from exc
+        # 2. Create a deep copy to avoid modifying the original node's data,
+        #    especially important if data contains nested lists/dicts.
+        #    Use source_data.copy() if a shallow copy is sufficient and safe.
+        final_data = copy.deepcopy(source_data)
+
+        # 3. & 4. Iterate through the new data and update/overwrite the copied data
+        try:
+            for key, value in new_node_data.items():
+                final_data[key] = value
+        except AttributeError as exc:
+            raise AttributeError(
+                 "new_node_data must have an 'items' method (be dict-like)."
+                 ) from exc
+
+        # 5. Create and return the new node instance using the final combined data
+        try:
+            new_node = self.create_node(final_data)
+            return new_node
+        except Exception as e:
+            # Handle or log node creation errors if necessary
+            print(f"Error creating new node instance: {e}")
+            raise

@@ -1,7 +1,16 @@
+
+
+
+"""
+Class is done too early come back when you want fully extensible..
+
+
+"""
 from typing import Protocol
 from .message import Message #TODO need to implement, 
-from .response import AgentResponse #TODO need to implmet, type or 
+from .response import AgentResponse #TODO need to implment
 from .tool import ToolCall #TODO need tto implment, copy anthropics mcp? or just go to base data and extend class. 
+
 
 
 class AgentProtocol(Protocol):
@@ -51,4 +60,5 @@ class AgentProtocol(Protocol):
             AgentResponse: The result of the tool invocation.
         """
         ...
+
     
