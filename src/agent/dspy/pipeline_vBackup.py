@@ -257,26 +257,20 @@ class nodeConstruct(dspy.Signature):
     node_output = dspy.OutputField(type=list[dict], desc="A list of node dictionaries with node_id, node_step_index, content, optional timestamp and clinical_data")
 
 class edgeConstruct(dspy.Signature):
-    node_input: list[dict] = dspy.InputField(desc="""
-        A list of nodes, each a dict with:
-        - node_id (str): Unique identifier
-        - node_step_index (int): Step in sequence
-        - content (str): Description of patient state at that node
-    """)
+    text_input: str = dspy.InputField(desc="body of text extracted from a case report")
     edge_output: list[dict] = dspy.OutputField(desc="""
-        A list of edges. Each edge is a dict with:
-        - edge_id (str): Format "A_to_B"
-        - branch_flag (bool)
-        - content (str)
+        A list of dictionaries where each dictionary has:
+        - edge_id (str): Identifier in format "A_to_B"
+        - branch_flag (bool): True if this starts a side branch
+        - content (str): Narrative text describing the edge
         - transition_event (dict, optional): {
             "trigger_type": str,
             "trigger_entities": list of str,
             "change_type": str,
             "target_domain": str,
             "timestamp": str
-        }
+          }
     """)
-
 
 class nodeClinicalDataExtract(dspy.Signature):
     # Optional: You can comment this out to rely only on atomic_sentences
@@ -306,7 +300,8 @@ class NodeEdgeGenerate(dspy.Module):
     def __init__(self):
         super().__init__()
         self.node_module = dspy.Predict(nodeConstruct)
-        self.edge_module = dspy.Predict(edgeConstruct, examples=edge_fewshot_examples)
+        #self.edge_module = dspy.Predict(edgeConstruct)
+        self.edge_module = dspy.Predict(edgeConstruct, examples=edge_fewshot_examples) # With some examples to reinforce structure
 
     def generate_node(self, text_input):
         result = self.node_module(text_input=text_input)
@@ -326,8 +321,8 @@ class NodeEdgeGenerate(dspy.Module):
 
         return {"node_output": nodes}
 
-    def generate_edge(self, nodes_list):
-        result = self.edge_module(node_input=nodes_list)
+    def generate_edge(self, text_input, node_output):
+        result = self.edge_module(text_input=text_input, node_input=node_output)
         edges = result.get("edge_output", [])
 
         # Handle stringified JSON if returned as text
@@ -377,9 +372,6 @@ class BranchClassifier(dspy.Module):
 # FEW-SHOT EXAMPLES - EDGE CONSTRUCTION
 # ---------------------------------------
 
-edge_fewshot_examples = None
-
-"""
 # Structure not coming out right with edges so doing these to reinforce output
 
 edge_example_1 = dspy.Example(
@@ -432,7 +424,7 @@ edge_example_3 = dspy.Example(
 
 edge_fewshot_examples = [edge_example_1, edge_example_2, edge_example_3]
 
-"""
+
 
 # =====================================
 # FEW-SHOT EXAMPLES - BRANCH CLASSIFY
@@ -701,7 +693,7 @@ nodes_obj = node_result["node_output"]
 
 # Generate edges once all nodes are collected
 # This uses the original edge generator from NodeEdgeGenerate
-edge_result = generator.generate_edge(nodes_list=nodes_obj)
+edge_result = generator.generate_edge(text_input=case_report, node_output=nodes_obj)
 edges_obj = edge_result["edge_output"]
 
 
