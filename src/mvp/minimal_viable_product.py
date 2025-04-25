@@ -111,6 +111,7 @@ def __main__():
     builder.add_edge(fake_one)
     print(builder._nodes)
     print(builder._edges)
+    # the following lets see, th e
     
     #breaks here... lets see
     
@@ -119,8 +120,10 @@ def __main__():
     print(graph_struct.edges())
     # ok cool you have the graph struct, then you need to construct the followig, 
     # construct the graph, then move on from this, 
+    
 
 
+    # the follwoing should be done and in this case, 
     # rules for branching
     # inner branch resolves, 
     
@@ -128,6 +131,7 @@ def __main__():
     # lets assume perfection then move onto the next things, 
 
     # manager=GraphManager(graph_struct)
+    
     
     # start with this structure then move into building the rest of it, 
 
