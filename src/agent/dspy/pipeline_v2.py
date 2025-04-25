@@ -3,12 +3,7 @@ import csv
 import random
 import dspy
 import json
-import time
-import warnings
-warnings.filterwarnings("ignore", category=UserWarning, module="urllib3")
-
 from pprint import pprint
-from tqdm import tqdm
 from dspy import Example
 from dspy.teleprompt import BootstrapFewShot
 from dspy.evaluate import Evaluate
@@ -25,17 +20,11 @@ from src.agent.dspy.testing_more import (extract_paragraphs, recursively_decompo
 # Need to do better job with the clinical data, it is not putting anything in right now
 
 
-# Make sure chunking is working - DONE
-# Need the content extraction to be more exhuastive - Does not work, but probs a model problem
-# Then convert content to atomic - yah but model problem
-# And then view the atomic statements in aggregate to fill in clinical data - yah
-# Clinical data needs to be standalone signature and module - DONE
-
-# NOW NEED TO MAKE BRANCH CLASSIFY
-# MAKE EDGES FINE AND CORRECT LABELS
-# MAKE NEAT
-# Make atomic less intensive please
-# Right now commented out atomic so it doesn't keep killing my computer
+# Make sure chunking is working
+# Need the content extraction to be more exhuastive
+# Then convert content to atomic
+# And then view the atomic statements in aggregate to fill in clinical data
+# Clinical data needs to be standalone signature and module
 
 # =====================================
 # DOCSTRING CONTENT
@@ -55,9 +44,7 @@ docstring_dict = {
     - If a concept isn't covered by UMLS, use clear, logical labeling.
 
     Text extraction guidance:
-    - When looking at the case report input, ignore the references, background, conclusions etc. sections
-    - We only want to extract on content relating to the specific patient discussed in the case report
-
+    - When looking at the case report input, ignore the references and conclusion sections
 
     """,
 
@@ -65,61 +52,36 @@ docstring_dict = {
     """
     You are given a clinical case report. Your task is to extract a sequence of nodes representing the patient's evolving clinical state.
 
-    Guidelines:
-    - Create one node per clinically meaningful state.
-    - Combine co-occurring labs/imaging into the same node.
-    - Use separate nodes for clearly sequential or distinct events.
-    - Do not return anything outside the list format. Should be in JSON compatible style.
-
     Output format:
-    Return a list of node dictionaries, in this order, each with:
-    - node_id (In ascending alphabetical order, e.g., "A", "B", "C")
+    Return a list of node dictionaries, each with:
+    - node_id (e.g., "A", "B", "C")
     - node_step_index (integer for order)
     - content (exhuastive clinical content, include all relevant details for the given node)
     - timestamp (optional, ISO8601)
+    - clinical_data (optional, structured and UMLS-linked only)
 
     Example:
     [
       {
         "node_id": "A",
         "node_step_index": 0,
-        "content": "The patient presented with bilateral painless testicular masses."
+        "content": "The patient presented with bilateral painless testicular masses.",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "C0030039",
+              "body_part": "C0040580",
+              "modality": "Ultrasound",
+              "finding": "Multiple hyperechoic lesions",
+              "impression": "Suggestive of Sertoli cell tumor",
+              "date": "2015-12-01T00:00:00Z"
+            }
+          ]
+        }
       }
     ]
 
-
-    """,
-
-    "edge_instructions": 
-        """
-    Each edge represents a change from one node to another.
-
-    Guidelines for edges:
-    - Create edges only when there is a clear clinical progression or change between nodes.
-    - Maintain narrative or logical order — edges should flow from earlier to later events.
-    - Combine co-occurring findings into the same node, not across multiple edges.
-
-    Output format:
-    Return a list of edge dictionaries, in this order, each with:
-    - edge_id: Unique identifier (Use format "node_id"_to_"node_id", such that the first "node_id" is the upstream node and the second "node_id" is the downstream node bounding the edge)
-    - branch_flag: Boolean if this starts a side branch, default = True
-    - content: Exhuastive clinical content, include all relevant details for the given node
-
-    Optional structured field for edge-level transitions:
-    transition_event = {
-        "trigger_type": "procedure | lab_change | medication_change | symptom_onset | interpretation | spontaneous",
-        "trigger_entities": ["UMLS_CUI_1", "UMLS_CUI_2"],  # e.g., C0025598 = Metformin, C0011581 = Chest Pain
-        "change_type": "addition | discontinuation | escalation | deescalation | reinterpretation | resolution | progression | other",  # Nature of the change
-        "target_domain": "medication | symptom | diagnosis | lab | imaging | procedure | functional_status | vital_sign",  # What category was affected
-        "timestamp": "ISO 8601 datetime (e.g., "2025-03-01T10:00:00Z"), only include if explicitly given and can be converted to datetime"
-    }
-
-    """,
-
-    "node_clinical_data_instructions": 
-        """
     Each node includes an optional structured field `clinical_data`, formatted as a dictionary with categories mapping to lists of dictionaries. Values should only be included if matched to the UMLS Metathesaurus; otherwise, omit and do not print/store it.
-    
     clinical_data = {
         "medications": [
             {
@@ -226,8 +188,39 @@ docstring_dict = {
             }
         ]
 
+    Guidelines:
+    - Create one node per clinically meaningful state.
+    - Combine co-occurring labs/imaging into the same node.
+    - Use separate nodes for clearly sequential or distinct events.
+    - Only include clinical_data fields when concepts are UMLS-mappable.
+    - Do not return anything outside the list format.
+
     """,
-    
+
+    "edge_instructions": 
+        """
+    Each edge represents a change from one node to another.
+
+    Guidelines for edges:
+    - Create edges only when there is a clear clinical progression or change between nodes.
+    - Maintain narrative or logical order — edges should flow from earlier to later events.
+    - Combine co-occurring findings into the same node, not across multiple edges.
+
+    Edge fields:
+    - edge_id (required): Unique identifier (Use format "node_id"_to_"node_id", such that the first "node_id" is the upstream node and the second "node_id" is the downstream node bounding the edge)
+    - branch_flag (required): Boolean if this starts a side branch
+    - content (required): Exhuastive clinical content, include all relevant details for the given node
+
+    Optional structured field for edge-level transitions:
+    transition_event = {
+        "trigger_type": "procedure | lab_change | medication_change | symptom_onset | interpretation | spontaneous",
+        "trigger_entities": ["UMLS_CUI_1", "UMLS_CUI_2"],  # e.g., C0025598 = Metformin, C0011581 = Chest Pain
+        "change_type": "addition | discontinuation | escalation | deescalation | reinterpretation | resolution | progression | other",  # Nature of the change
+        "target_domain": "medication | symptom | diagnosis | lab | imaging | procedure | functional_status | vital_sign",  # What category was affected
+        "timestamp": "ISO 8601 datetime (e.g., "2025-03-01T10:00:00Z"), only include if explicitly given and can be converted to datetime"
+    }
+    """,
+
     "branch_instructions":
         """
     Branches arise when physiologic changes or complications aren't part of the main pathway but impact patient states. Specifically, we are thinking of ephemeral changes.
@@ -244,7 +237,7 @@ docstring_dict = {
 
 #lm = dspy.LM('ollama_chat/llama3.2', api_base='http://localhost:11434', api_key='')
 lm = dspy.LM('ollama_chat/llama3.1', api_base='http://localhost:11434', api_key='')
-#dspy.configure(lm=lm, adapter=dspy.JSONAdapter())
+# dspy.configure(lm=lm, adapter=dspy.JSONAdapter())
 dspy.configure(lm=lm, adapter=dspy.ChatAdapter())
 
 # =====================================
@@ -260,12 +253,6 @@ class edgeConstruct(dspy.Signature):
     node_input: list[dict] = dspy.InputField(desc="A list of nodes with which to connect with edges")
     edge_output = dspy.OutputField(type=list[dict], desc="A list of edge dictionaries with edge_id, branch_flag, content, and optional transition_event")
 
-class nodeClinicalDataExtract(dspy.Signature):
-    # Optional: You can comment this out to rely only on atomic_sentences
-    content: str = dspy.InputField(desc="Narrative clinical content from a node")
-    atomic_sentences: list[str] = dspy.InputField(desc="List of atomic-level clinical statements derived from the node content")
-    clinical_data: dict = dspy.OutputField(desc="Structured clinical data dictionary with fields like medications, labs, imaging, etc.")
-
 class branchClassify(dspy.Signature):
     content: str = dspy.InputField(desc="content section from either a node or an edge")
     branch_bool: bool = dspy.OutputField()
@@ -276,13 +263,11 @@ class branchClassify(dspy.Signature):
 
 nodeConstruct.__doc__ = docstring_dict["dag_primer"] + docstring_dict['node_instructions']
 edgeConstruct.__doc__ = docstring_dict["dag_primer"] + docstring_dict['edge_instructions']
-nodeClinicalDataExtract.__doc__ = docstring_dict["dag_primer"] + docstring_dict["node_clinical_data_instructions"]
 branchClassify.__doc__ = docstring_dict["dag_primer"] + docstring_dict['branch_instructions']
 
 # =====================================
 # MODULES
 # =====================================
-
 
 class NodeEdgeGenerate(dspy.Module):
     def __init__(self):
@@ -293,54 +278,26 @@ class NodeEdgeGenerate(dspy.Module):
     def generate_node(self, text_input):
         result = self.node_module(text_input=text_input)
         nodes = result.get("node_output", [])
-
-        # Handle stringified JSON if returned as text
         if isinstance(nodes, str):
             try:
-                parsed = json.loads(nodes)
-                if isinstance(parsed, list):
-                    nodes = parsed
-                else:
-                    raise ValueError("Parsed node output is not a list.")
-            except Exception as e:
-                print(f"Warning: Node output not valid JSON. Error: {e}")
+                nodes = json.loads(nodes)
+            except json.JSONDecodeError:
+                print("Warning: Node output not valid JSON. Returning empty list.")
                 nodes = []
-
         return {"node_output": nodes}
 
     def generate_edge(self, text_input, node_output):
         result = self.edge_module(text_input=text_input, node_input=node_output)
         edges = result.get("edge_output", [])
-
-        # Handle stringified JSON if returned as text
         if isinstance(edges, str):
             try:
-                parsed = json.loads(edges)
-                if isinstance(parsed, list):
-                    edges = parsed
-                else:
-                    raise ValueError("Parsed edge output is not a list.")
-            except Exception as e:
-                print(f"Warning: Edge output not valid JSON. Error: {e}")
+                edges = json.loads(edges)
+            except json.JSONDecodeError:
+                print("Warning: Edge output not valid JSON. Returning empty list.")
                 edges = []
-
         return {"edge_output": edges}
 
 
-class ClinicalDataExtractor(dspy.Module):
-    def __init__(self):
-        super().__init__()
-        self.extractor = dspy.Predict(nodeClinicalDataExtract)
-
-    def forward(self, content: str = "", atomic_sentences: list[str] = []):
-        result = self.extractor(content=content, atomic_sentences=atomic_sentences)
-        clinical_data = result.get("clinical_data", {})
-        
-        if not isinstance(clinical_data, dict):
-            print("Warning: clinical_data is not a valid dictionary. Skipping.")
-            clinical_data = {}
-
-        return clinical_data
 
 
 class BranchClassifier(dspy.Module):
@@ -357,7 +314,6 @@ class BranchClassifier(dspy.Module):
 # =====================================
 
 # Pull examples from csv file
-# Not in use right now but built into pipeline, need to see why it's not picking up examples
 
 def load_branch_examples_from_csv(csv_path):
     examples = []
@@ -467,24 +423,7 @@ def decompose_content_to_atomic_statements(content_block: str) -> list[str]:
     return atomic_statements
 
 
-# Filter out irrelevant content (author list, conclusion, references, etc.)
-
-class FilterIrrelevantSections(dspy.Signature):
-    full_text: str = dspy.InputField(desc="The full text of a clinical case report, including any irrelevant sections like background, discussion, and references.")
-    cleaned_text: str = dspy.OutputField(desc="The original text with only irrelevant sections (authors, references, conclusion etc.) removed. Do not summarize or paraphrase. Preserve all remaining formatting and content exactly.")
-
-
-class FilterIrrelevantSectionsModule(dspy.Module):
-    def __init__(self):
-        super().__init__()
-        self.program = dspy.Predict(FilterIrrelevantSections)
-
-    def forward(self, full_text: str):
-        result = self.program(full_text=full_text)
-        return result.cleaned_text
-
 # Use dspy to chunk and and generate nodes intelligently
-
 
 class ChunkedNodeGenerator(dspy.Signature):
     case_report: str = dspy.InputField(desc="Full clinical case report text")
@@ -498,13 +437,7 @@ class ChunkingNodeModule(dspy.Module):
         self.generator = generator
 
     def forward(self, case_report: str, max_words_per_chunk: int = 150, max_chunks: int = None):
-        # This is for if / when the filter irrelevant (above) works well
-        # filter_module = FilterIrrelevantSectionsModule()
-        # cleaned_text = filter_module(full_text=case_report)
-        # paragraphs = extract_paragraphs(cleaned_text)
-
         paragraphs = extract_paragraphs(case_report)
-
         chunks = []
         current_chunk = []
         word_count = 0
@@ -516,42 +449,32 @@ class ChunkingNodeModule(dspy.Module):
                 current_chunk.append(p_text)
                 word_count += len(p_words)
             else:
-                chunk_text = "\n".join(current_chunk).strip()
-                print(f"\n Chunk {len(chunks)+1} — {word_count} words:\n{'-'*40}\n{chunk_text}\n{'='*60}")
-                chunks.append(chunk_text)
+                chunks.append("\n".join(current_chunk).strip())
                 current_chunk = [p_text]
                 word_count = len(p_words)
 
         if current_chunk:
-            chunk_text = "\n".join(current_chunk).strip()
-            print(f"\n Chunk {len(chunks)+1} — {word_count} words:\n{'-'*40}\n{chunk_text}\n{'='*60}")
-            chunks.append(chunk_text)
+            chunks.append("\n".join(current_chunk).strip())
 
         if max_chunks is not None:
             chunks = chunks[:max_chunks]
 
-        start_time = time.time()
-        failed_chunks = 0
         all_nodes = []
-
-        for chunk in tqdm(chunks, desc="Generating nodes", unit="chunk"):
+        for chunk in chunks:
             result = self.generator.generate_node(text_input=chunk)
             nodes = result.get("node_output", [])
             if isinstance(nodes, str):
                 try:
                     nodes = json.loads(nodes)
                 except json.JSONDecodeError:
-                    print("Warning: Node output not valid JSON. Skipping chunk.")
-                    failed_chunks += 1
+                    print("Warning: Node output not valid JSON.")
                     continue
             if isinstance(nodes, list):
                 all_nodes.extend(nodes)
 
-        end_time = time.time()
-        print(f"\nNode generation completed in {end_time - start_time:.2f} seconds.")
-        print(f"Failed chunks: {failed_chunks}/{len(chunks)}")
-
         return {"node_output": all_nodes}
+
+
 
 
 
@@ -577,20 +500,6 @@ edges_obj = edge_result["edge_output"]
 
 """
 
-# Start lobal timer
-global_start = time.time()
-
-# Instantiate the filter module
-filter_module = FilterIrrelevantSectionsModule()
-# Run it and get the cleaned case report text
-cleaned_text = filter_module(full_text=case_report)
-# Print cleaned result for debugging
-print("\n🧹 Cleaned Case Report (filtered output):")
-print("=" * 60)
-print(cleaned_text)
-print("=" * 60)
-
-
 generator = NodeEdgeGenerate()
 chunked_node_module = ChunkingNodeModule(generator) # For node, requires chunking
 
@@ -610,10 +519,9 @@ pprint(nodes_obj)
 print("\nEdges:")
 pprint(edges_obj)
 
+"""
 
 # Loop through nodes and edges and extract atomic statements from content output
-
-"""
 for node in nodes_obj:
     content_str = node.get("content", "")
     atomic_sents = decompose_content_to_atomic_statements(content_str)
@@ -621,8 +529,6 @@ for node in nodes_obj:
     print(f"\nAtomic breakdown of content from node_id {node.get('node_id', 'unknown')}:")
     for s in atomic_sents:
         print(f"- {s}")
-
-
 
 for edge in edges_obj:
     content_str = edge.get("content", "")
@@ -633,26 +539,6 @@ for edge in edges_obj:
         print(f"- {s}")
 
 """
-
-
-# Use atomic statements and content to generate clinical data dict to append to nodes
-
-clinical_data_extractor = ClinicalDataExtractor()
-
-for node in nodes_obj:
-    content_str = node.get("content", "")
-    #atomic_sents = decompose_content_to_atomic_statements(content_str)
-
-    # You can comment out `content=content_str` if you want atomic_sents only
-    clinical_data = clinical_data_extractor(
-        content=content_str,
-        atomic_sentences=None
-    )
-    
-    node["clinical_data"] = clinical_data  # append to original node
-
-print("Nodes:")
-pprint(nodes_obj)
 
 """
 
@@ -681,7 +567,3 @@ else:
 
 
 """
-
-# End global timer
-global_end = time.time()
-print(f"\n=== Full DAG generation pipeline completed in {global_end - global_start:.2f} seconds ===")
