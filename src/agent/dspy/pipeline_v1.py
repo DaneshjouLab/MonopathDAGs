@@ -1,3 +1,4 @@
+
 from __future__ import annotations
 import csv
 import random
@@ -270,7 +271,6 @@ class edgeConstruct(dspy.Signature):
             "timestamp": str
           }
     """)
-    edge_output = dspy.OutputField(type=list[dict], desc="A list of edge dictionaries with edge_id, branch_flag, content, and optional transition_event")
 
 class nodeClinicalDataExtract(dspy.Signature):
     # Optional: You can comment this out to rely only on atomic_sentences
@@ -471,8 +471,8 @@ devset   = branch_examples[85:]
 # Search labeled examples to select best demos for few-shot prompts
 teleprompter = BootstrapFewShot(
     metric=branching_accuracy,
-    max_bootstrapped_demos=8,
-    max_labeled_demos=85,
+    max_bootstrapped_demos=4,
+    max_labeled_demos=40,
     max_rounds=1
 )
 
@@ -494,7 +494,7 @@ if selected_demos:
 else: # if none selected, just select the first X examples
     num_examples = 2
     print("No few-shot demonstrations found.")
-    print("Using fallback: selecting the first {num_examples} examples from trainset.")
+    print(f"Using fallback: selecting the first {num_examples} examples from trainset.")
     selected_demos = trainset[:num_examples]
 
 # Final classifier using selected or fallback examples
