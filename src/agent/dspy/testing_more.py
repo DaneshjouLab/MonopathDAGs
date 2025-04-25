@@ -213,12 +213,13 @@ def recursively_decompose_to_atomic_sentences(sentence: str, depth: int = 0, max
     return output
 
 
-input_sentence = """ At 17 years post-initial diagnosis, he developed 
-an oligometastatic liver lesion and a lung lesion and underwent partial hepatectomy"""
 
-# this is not working, 
-atomic_results = recursively_decompose_to_atomic_sentences(input_sentence)
+# input_sentence = """ At 17 years post-initial diagnosis, he developed 
+# an oligometastatic liver lesion and a lung lesion and underwent partial hepatectomy"""
 
-for i, s in enumerate(atomic_results, 1):
-    print(f"{i}. {s}")
+# # this is not working, 
+# atomic_results = recursively_decompose_to_atomic_sentences(input_sentence)
+
+# for i, s in enumerate(atomic_results, 1):
+#     print(f"{i}. {s}")
 
