@@ -1,4 +1,3 @@
-
 from __future__ import annotations
 import csv
 import random
@@ -245,6 +244,8 @@ docstring_dict = {
 
 #lm = dspy.LM('ollama_chat/llama3.2', api_base='http://localhost:11434', api_key='')
 lm = dspy.LM('ollama_chat/llama3.1', api_base='http://localhost:11434', api_key='')
+#lm = dspy.LM(model='ollama_chat/meta-llama-3-8b-instruct', api_base='http://localhost:11434', api_key='') # 8B parameter
+
 #dspy.configure(lm=lm, adapter=dspy.JSONAdapter())
 dspy.configure(lm=lm, adapter=dspy.ChatAdapter())
 
@@ -258,19 +259,8 @@ class nodeConstruct(dspy.Signature):
 
 class edgeConstruct(dspy.Signature):
     text_input: str = dspy.InputField(desc="body of text extracted from a case report")
-    edge_output: list[dict] = dspy.OutputField(desc="""
-        A list of dictionaries where each dictionary has:
-        - edge_id (str): Identifier in format "A_to_B"
-        - branch_flag (bool): True if this starts a side branch
-        - content (str): Narrative text describing the edge
-        - transition_event (dict, optional): {
-            "trigger_type": str,
-            "trigger_entities": list of str,
-            "change_type": str,
-            "target_domain": str,
-            "timestamp": str
-          }
-    """)
+    node_input: list[dict] = dspy.InputField(desc="A list of nodes with which to connect with edges")
+    edge_output = dspy.OutputField(type=list[dict], desc="A list of edge dictionaries with edge_id, branch_flag, content, and optional transition_event")
 
 class nodeClinicalDataExtract(dspy.Signature):
     # Optional: You can comment this out to rely only on atomic_sentences
@@ -300,8 +290,7 @@ class NodeEdgeGenerate(dspy.Module):
     def __init__(self):
         super().__init__()
         self.node_module = dspy.Predict(nodeConstruct)
-        #self.edge_module = dspy.Predict(edgeConstruct)
-        self.edge_module = dspy.Predict(edgeConstruct, examples=edge_fewshot_examples) # With some examples to reinforce structure
+        self.edge_module = dspy.Predict(edgeConstruct)
 
     def generate_node(self, text_input):
         result = self.node_module(text_input=text_input)
@@ -340,7 +329,6 @@ class NodeEdgeGenerate(dspy.Module):
         return {"edge_output": edges}
 
 
-
 class ClinicalDataExtractor(dspy.Module):
     def __init__(self):
         super().__init__()
@@ -366,71 +354,12 @@ class BranchClassifier(dspy.Module):
         return self.program(content=content)
 
 
-
-
-# ---------------------------------------
-# FEW-SHOT EXAMPLES - EDGE CONSTRUCTION
-# ---------------------------------------
-
-# Structure not coming out right with edges so doing these to reinforce output
-
-edge_example_1 = dspy.Example(
-    text_input="The patient reported a severe headache. CT showed a subdural hematoma.",
-    node_input=[{"node_id": "A"}, {"node_id": "B"}],
-    edge_output=[{
-        "edge_id": "A_to_B",
-        "branch_flag": True,
-        "content": "Severe headache led to CT finding of subdural hematoma.",
-        "transition_event": {
-            "trigger_type": "symptom_onset",
-            "trigger_entities": ["C0018681", "C0038454"],  # e.g., UMLS CUIs
-            "change_type": "progression",
-            "target_domain": "imaging"
-        }
-    }]
-).with_inputs("text_input", "node_input")
-
-edge_example_2 = dspy.Example(
-    text_input="After 3 days of antibiotics, the patient developed a rash.",
-    node_input=[{"node_id": "B"}, {"node_id": "C"}],
-    edge_output=[{
-        "edge_id": "B_to_C",
-        "branch_flag": True,
-        "content": "Rash developed after antibiotics.",
-        "transition_event": {
-            "trigger_type": "medication_change",
-            "trigger_entities": ["C0003232", "C0037274"],  # Antibiotics, Rash
-            "change_type": "adverse_effect",
-            "target_domain": "symptom"
-        }
-    }]
-).with_inputs("text_input", "node_input")
-
-edge_example_3 = dspy.Example(
-    text_input="The patient underwent a PET-CT, which showed disease regression.",
-    node_input=[{"node_id": "C"}, {"node_id": "D"}],
-    edge_output=[{
-        "edge_id": "C_to_D",
-        "branch_flag": False,
-        "content": "PET-CT showed regression of disease.",
-        "transition_event": {
-            "trigger_type": "interpretation",
-            "trigger_entities": ["C0151744"],  # Regression
-            "change_type": "resolution",
-            "target_domain": "diagnosis"
-        }
-    }]
-).with_inputs("text_input", "node_input")
-
-edge_fewshot_examples = [edge_example_1, edge_example_2, edge_example_3]
-
-
-
 # =====================================
-# FEW-SHOT EXAMPLES - BRANCH CLASSIFY
+# FEW-SHOT OPTIMIZATION
 # =====================================
 
 # Pull examples from csv file
+# Not in use right now but built into pipeline, need to see why it's not picking up examples
 
 def load_branch_examples_from_csv(csv_path):
     examples = []
@@ -461,6 +390,7 @@ def branching_accuracy(gold, pred,trace=None):
     return int(gold.branch_bool == pred.branch_bool)
 
 
+"""
 # Calling CSV with examples of content and bool pairs
 branch_examples = load_branch_examples_from_csv("src/data/branch_data.csv")
 random.shuffle(branch_examples)
@@ -468,40 +398,33 @@ random.shuffle(branch_examples)
 trainset = branch_examples[:85]
 devset   = branch_examples[85:]
 
-# Search labeled examples to select best demos for few-shot prompts
+# Search labeled examples to select best demos fro few-shot prompts
 teleprompter = BootstrapFewShot(
     metric=branching_accuracy,
-    max_bootstrapped_demos=4,
-    max_labeled_demos=40,
+    max_bootstrapped_demos=8,
+    max_labeled_demos=85,
     max_rounds=1
 )
 
-# Try bootstrapping few-shot examples
-teleprompter.compile(
-    dspy.Predict(branchClassify),  # compile only returns optimized Predict, not needed here
+# New version of BranchClassifier injected with best few-shot examples
+optimizedBranchClassifier = teleprompter.compile(
+    BranchClassifier(),
     trainset=trainset
 )
 
-# Extract selected demos
+# Print the examples that were selected for few-shot
 selected_demos = teleprompter.get_params().get("demos", [])
-
 if selected_demos:
-    print("\nSelected few-shot demonstrations:") # Check if any selected via bootstrap
+    print("\nSelected few-shot demonstrations:")
     for i, ex in enumerate(selected_demos):
         print(f"Example {i+1}:")
         print("  Inputs:", ex.inputs)
         print("  Outputs:", ex.outputs)
-else: # if none selected, just select the first X examples
-    num_examples = 2
+else:
     print("No few-shot demonstrations found.")
-    print(f"Using fallback: selecting the first {num_examples} examples from trainset.")
-    selected_demos = trainset[:num_examples]
-
-# Final classifier using selected or fallback examples
-optimizedBranchClassifier = dspy.Predict(branchClassify, examples=selected_demos)
 
 
-"""
+
 # =====================================
 # (OPTIONAL) EVALUATE FEW-SHOT
 # =====================================
@@ -516,8 +439,8 @@ if run_eval == "y":
 else:
     print("Skipping evaluation.")
 
-"""
-    
+
+"""    
 
 # =====================================
 # EXTRACTION PROCESS FUNCTIONS
@@ -546,11 +469,7 @@ def decompose_content_to_atomic_statements(content_block: str) -> list[str]:
     return atomic_statements
 
 
-# Move these up to the right section later
-
-
 # Filter out irrelevant content (author list, conclusion, references, etc.)
-# Right now the model is too week and this is just devolving into summarization, so not going to use for now
 
 class FilterIrrelevantSections(dspy.Signature):
     full_text: str = dspy.InputField(desc="The full text of a clinical case report, including any irrelevant sections like background, discussion, and references.")
@@ -566,8 +485,9 @@ class FilterIrrelevantSectionsModule(dspy.Module):
         result = self.program(full_text=full_text)
         return result.cleaned_text
 
-
 # Use dspy to chunk and and generate nodes intelligently
+
+
 class ChunkedNodeGenerator(dspy.Signature):
     case_report: str = dspy.InputField(desc="Full clinical case report text")
     max_words_per_chunk: int = dspy.InputField(desc="Maximum number of words per chunk", default=250)
@@ -579,14 +499,13 @@ class ChunkingNodeModule(dspy.Module):
         super().__init__()
         self.generator = generator
 
-
-    def forward(self, case_report: str, max_words_per_chunk: int, max_chunks: int = None):
-        paragraphs = extract_paragraphs(case_report)
-
+    def forward(self, case_report: str, max_words_per_chunk: int = 150, max_chunks: int = None):
         # This is for if / when the filter irrelevant (above) works well
         # filter_module = FilterIrrelevantSectionsModule()
         # cleaned_text = filter_module(full_text=case_report)
         # paragraphs = extract_paragraphs(cleaned_text)
+
+        paragraphs = extract_paragraphs(case_report)
 
         chunks = []
         current_chunk = []
@@ -595,26 +514,6 @@ class ChunkingNodeModule(dspy.Module):
         for para in paragraphs:
             p_text = para["paragraph"].strip()
             p_words = p_text.split()
-
-            if len(p_words) > max_words_per_chunk:
-                # Oversized paragraph - break into smaller subchunks
-                sub_chunk = []
-                sub_word_count = 0
-                for word in p_words:
-                    sub_chunk.append(word)
-                    sub_word_count += 1
-                    if sub_word_count >= max_words_per_chunk:
-                        chunk_text = " ".join(sub_chunk).strip()
-                        print(f"\n Chunk (split from long paragraph) — {sub_word_count} words:\n{'-'*40}\n{chunk_text}\n{'='*60}")
-                        chunks.append(chunk_text)
-                        sub_chunk = []
-                        sub_word_count = 0
-                if sub_chunk:
-                    chunk_text = " ".join(sub_chunk).strip()
-                    print(f"\n Final mini-chunk:\n{'-'*40}\n{chunk_text}\n{'='*60}")
-                    chunks.append(chunk_text)
-                continue  # Skip normal logic for this paragraph
-
             if word_count + len(p_words) <= max_words_per_chunk:
                 current_chunk.append(p_text)
                 word_count += len(p_words)
@@ -625,10 +524,9 @@ class ChunkingNodeModule(dspy.Module):
                 current_chunk = [p_text]
                 word_count = len(p_words)
 
-        # Final chunk
         if current_chunk:
             chunk_text = "\n".join(current_chunk).strip()
-            print(f"\n Final Chunk {len(chunks)+1} — {word_count} words:\n{'-'*40}\n{chunk_text}\n{'='*60}")
+            print(f"\n Chunk {len(chunks)+1} — {word_count} words:\n{'-'*40}\n{chunk_text}\n{'='*60}")
             chunks.append(chunk_text)
 
         if max_chunks is not None:
@@ -669,6 +567,17 @@ case_report = extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024
 #case_report = "A 64-year-old male with a past medical history of hypertension, type 2 diabetes mellitus, and a 40-pack-year smoking history initially presented to his primary care provider with a two-month history of progressive exertional dyspnea, dry cough, and unintentional weight loss. Initial outpatient labs, including a complete blood count and basic metabolic panel, were unremarkable. A chest X-ray revealed a left upper lobe opacity, prompting referral to pulmonology. High-resolution CT of the chest demonstrated a 4.2 cm spiculated mass in the left upper lobe with associated mediastinal lymphadenopathy. PET-CT confirmed hypermetabolic activity in the mass and mediastinal nodes without distant metastasis. Bronchoscopy with transbronchial biopsy was performed, and histopathology revealed poorly differentiated non-small cell lung carcinoma (NSCLC). Molecular testing showed no actionable mutations. The patient was staged as clinical stage IIB (T2bN1M0) and discussed at multidisciplinary tumor board. He was deemed a surgical candidate and underwent left upper lobectomy with mediastinal lymph node dissection via VATS. Pathology confirmed NSCLC with negative margins but 2/12 positive nodes, confirming stage IIB disease. He recovered well postoperatively without complications and was discharged home on postoperative day three. Following recovery, he was referred to medical oncology, and adjuvant cisplatin-based chemotherapy was initiated six weeks post-surgery. He completed four cycles of chemotherapy over three months without major adverse effects aside from mild fatigue and nausea. Surveillance imaging at three months post-treatment showed no evidence of disease recurrence. He continues routine follow-up every three months with thoracic surgery and oncology. The case highlights the importance of early symptom recognition, timely referral, and coordinated multidisciplinary care in managing operable lung cancer."
 #case_report = "Testicular tumefaction is a common concern in urology. Most causes can be easily identified through anamnesis, clinical examination, blood tests, or ultrasonography. However, for testicular masses, differential diagnosis can be challenging. The 2022 WHO classification of tumors of the urinary system and the male genital organs lists 43 different types of testicular tumors, of which 8 are categorized as having unspecified, borderline, or uncertain behavior. Given that testicular cancers primarily affect young males, accurate diagnosis and assessment of pathological progression are crucial for determining the most appropriate therapeutic strategy. However, data on the management of many types of testicular tumors are scarce, and existing case studies are often only partially comparable. Consequently, it can be difficult to choose between a more radical treatment option and favoring the conservation of fertility and endocrine function, especially face-to-face to a young patient. In this clinical case, we share our experience with a 37-year-old patient with a multifocal, bilateral testicular LCCSCT presenting as painless testicular masses that took an unexpected course, resulting in a fatal outcome. A 37-year-old man was referred to our institution in December 2015. He noticed bilateral painless testicular masses. Physical examination revealed no gynecomastia or skin anomalies. Ultrasound showed bilateral macro-orchitis with multiple intratesticular hyperechoic lesions with acoustic shadowing. These lesions were 2.4 cm and 2.1 cm on the left and right testicles, respectively. A pelvic MRI was performed, showing bilateral intratesticular lesions with clear hypointense T1 and T2 signals, which take intense contrast enhancement after gadolinium injection. The MRI revealed 10 lesions on the left testicle and 5 lesions on the right. Serum alpha-fetoprotein (AFP), beta-hCG, LDH, testosterone, estradiol, and gonadotropin levels were in normal range. A surgical testicular exploration was performed, and a right testicular nodule was enucleated and sent to pathology. Histology revealed a benign large-cell calcifying Sertoli cell tumor under 5 cm, with no mitosis, cytological atypia, vascular permeation, or necrosis. Immunohistochemistry was positive for vimentin, calretinin, inhibin, and cytokeratin AE1/AE3. Given the benign histology, radical orchiectomy was not pursued; instead, regular follow-up was initiated. Follow-up consisted of testicular exams and sonography every 6 months for 2 years, then annually. No genetic testing was performed due to absence of syndromic features or family history. Endocrine tests ruled out glucose, thyroid, adrenal, and pheochromocytoma abnormalities. In June 2021, testicular exam revealed left-sided induration; MRI confirmed tumor infiltration into the spermatic cord. A left radical orchiectomy was performed. Pathology revealed a multifocal large-cell calcifying Sertoli cell tumor (largest 6.5 cm) with spermatic cord invasion and neoplastic vascular permeation. CT scan showed para-aortic lymphadenopathy, pulmonary nodules, and sclerotic spinal lesions. PET confirmed left inguinal and iliac lymphadenopathy and a penile lesion, but no lung uptake. The patient underwent lymph node dissection and right radical orchiectomy, revealing metastatic disease and multifocal LCCSCT. By November 2021, local extension into the penis and inguinal canal had occurred, with widespread metastases by December. Chemotherapy with vinblastine, cisplatin, and ifosfamide was ineffective. Paclitaxel was then given, but the disease progressed. The patient enrolled in a trial with Axitinib and pazopanib but died 7 months later in palliative care. This case highlights that despite benign histological features, LCCSCTs can be aggressive, especially in sporadic bilateral cases. Although most are benign, large, multifocal, sporadic tumors may behave malignantly. WHO classification lists size >5 cm, necrosis, pleomorphism, and invasive growth as risk factors. Some studies suggest lowering size threshold to >2.4 cm. Diagnosis requires histopathology and immunohistochemistry. Sertoli cell tumors express inhibin, calretinin, vimentin, and keratin, but typically lack beta-catenin nuclear staining. Testis-sparing surgery (TSS) may be considered for tumors with 0–1 risk factor. Retroperitoneal lymph node dissection (RPLND) offers benefit for regional spread, but systemic chemotherapy and radiation have low efficacy. Bilateral orchiectomy should have been the initial strategy in this case."
 
+"""
+# Generate the initial nodes and edges
+generator = NodeEdgeGenerate()
+node_result = generator.generate_node(case_report)
+edge_result = generator.generate_edge(case_report, node_result["node_output"])
+
+# Store nodes and edges as Python objects for further processing
+nodes_obj = node_result["node_output"]
+edges_obj = edge_result["edge_output"]
+
+"""
 
 # Start lobal timer
 global_start = time.time()
@@ -688,13 +597,20 @@ generator = NodeEdgeGenerate()
 chunked_node_module = ChunkingNodeModule(generator) # For node, requires chunking
 
 # Generate nodes in chunks to avoid overload for smaller models, use chunk module
-node_result = chunked_node_module(case_report=case_report, max_words_per_chunk=450, max_chunks=None)
+node_result = chunked_node_module(case_report=case_report, max_words_per_chunk=150, max_chunks=None)
 nodes_obj = node_result["node_output"]
 
 # Generate edges once all nodes are collected
 # This uses the original edge generator from NodeEdgeGenerate
 edge_result = generator.generate_edge(text_input=case_report, node_output=nodes_obj)
 edges_obj = edge_result["edge_output"]
+
+# Print full results
+print("Nodes:")
+pprint(nodes_obj)
+
+print("\nEdges:")
+pprint(edges_obj)
 
 
 # Loop through nodes and edges and extract atomic statements from content output
@@ -732,63 +648,41 @@ for node in nodes_obj:
     # You can comment out `content=content_str` if you want atomic_sents only
     clinical_data = clinical_data_extractor(
         content=content_str,
-        atomic_sentences=None # Currently none because we have atomic_sents commented out jut to reduce run time
+        atomic_sentences=None
     )
     
     node["clinical_data"] = clinical_data  # append to original node
 
-print("=" * 60)
-print("Nodes (with clinical data):")
-print("=" * 60)
+print("Nodes:")
+pprint(nodes_obj)
 
-for i, node in enumerate(nodes_obj):
-    print(f"\n Node {i+1}:")
-    pprint(node)
-    print("-" * 60)
+"""
 
-
-print("=" * 60)
-print("Edges:")
-print("=" * 60)
-
-for i, edge in enumerate(edges_obj):
-    print(f"\n Edge {i+1}: edge_id = {edge.get('edge_id', 'N/A')}")
-    pprint(edge)
-    print("-" * 60)
-
-
-
-# Evaluate and update the first edge that triggers a branch
-if edges_obj:
-    branch_triggered = False
-
-    for edge in edges_obj:
-        # Extract the content used to evaluate branching logic
-        transition_content = edge.get("content", "")
-        if not transition_content:
-            continue  # Skip edge if no content is available
-
-        # Run branching classifier on this specific edge content
-        branch_result = optimizedBranchClassifier(content=transition_content)
-
-        # Logging evaluation info
-        print(f"\nEvaluating edge: {edge.get('edge_id', 'unknown')}")
-        print(f"Content: {transition_content}")
-        print(f"Branch decision: {branch_result.branch_bool}")
-
-        if branch_result.branch_bool:
-            # Update branch_flag only for the first edge that qualifies
-            print(f"Branch triggered — setting branch_flag = True on edge {edge['edge_id']}")
-            edge['branch_flag'] = True
-            branch_triggered = True
-            break  # Stop after marking the first branching edge
-
-    if not branch_triggered:
-        print("No edges met branching criteria.")
+# Extract content to use for classification — only doing for edges
+if edges:
+    transition_content = json.dumps(edges)
 else:
-    print("No edges available to evaluate.")
+    transition_content = ""
+    print("No content found")
+
+# Run BranchClassifier classifier
+branch_result = optimizedBranchClassifier(
+    content=transition_content,
+)
+
+print("\nClinical transition being evaluated:")
+print(transition_content)
+
+print("\nBranch decision:", branch_result.branch_bool)
+
+if branch_result.branch_bool and edges:
+    print("Branch triggered — updating edge with branch_flag = TRUE")
+    edges[-1]['branch_flag'] = True
+else:
+    print("No branch triggered or no edges available to update.")
 
 
+"""
 
 # End global timer
 global_end = time.time()
