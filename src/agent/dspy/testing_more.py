@@ -1,10 +1,12 @@
 from typing import List, Dict
 import dspy
 import dspy.predict
+import dspy.signatures
+import os
 
 # 1. Load text from PDF
 from src.data.data_processors.pdf_to_text import extract_text_from_pdf
-raw_text = extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024.pdf")
+# raw_text = extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024.pdf")
 
 # 2. Use paragraph extractor
 def extract_paragraphs(text: str) -> List[dict]:
@@ -36,10 +38,11 @@ def extract_paragraphs(text: str) -> List[dict]:
         })
     return blocks
 
-paragraphs = extract_paragraphs(raw_text)
-
+# paragraphs = extract_paragraphs(raw_text)
+gemini_api_key=os.environ.get("GEMINI_API_KEY","")
 # 3. Configure DSPy LLM and module
-lm = dspy.LM('ollama_chat/llama3.3', api_base='http://localhost:11434', api_key='')
+lm = dspy.LM('ollama_chat/llama3.1', api_base='http://localhost:11434',cache=True, api_key='')
+
 dspy.configure(lm=lm, adapter=dspy.ChatAdapter())
 
 class clinicalEventExtract(dspy.Signature):
@@ -214,6 +217,17 @@ def recursively_decompose_to_atomic_sentences(sentence: str, depth: int = 0, max
 
 
 
+# import pymupdf
+# import pymupdf4llm
+
+# raw_text=extract_text_from_pdf("/Users/aaronfanous/Desktop/AnsonProjects/DynamicData/samples/pdfs/case_reports_onc_2025.pdf")
+# doc = pymupdf.open("/Users/aaronfanous/Desktop/AnsonProjects/DynamicData/samples/pdfs/case_reports_onc_2025.pdf")
+
+# md= pymupdf4llm.to_markdown("/Users/aaronfanous/Desktop/AnsonProjects/DynamicData/samples/pdfs/case_reports_onc_2025.pdf")
+
+# print(md)
+# print(doc.get_toc())
+# print(lm("tell me which sections of the TOC beginning and end will have article info" +" TOC:" +str(doc.get_toc())+" \n      only give me answer as \{ 'begin':..., 'end':...  \}  "))
 # input_sentence = """ At 17 years post-initial diagnosis, he developed 
 # an oligometastatic liver lesion and a lung lesion and underwent partial hepatectomy"""
 
@@ -222,4 +236,678 @@ def recursively_decompose_to_atomic_sentences(sentence: str, depth: int = 0, max
 
 # for i, s in enumerate(atomic_results, 1):
 #     print(f"{i}. {s}")
+# context length is around 130k, pa
 
+## split
+
+
+
+class RecordPatientHistory(dspy.Signature):
+    
+    """
+    You are to keep all the detail and render the patient timeline from the article text, return the information in sequential strs, utilize exact sentences from the article  """
+    article_text: str = dspy.InputField(desc="the corpus that you parse")
+    patient_history:List[str] = dspy.OutputField(desc=" the entire timeline from start to finish of the patient")
+
+
+from bs4 import BeautifulSoup
+
+def preprocess_pmc_article_text(html_path: str) -> str:
+    """
+    Extract clean PMC article text from HTML file,
+    excluding any content inside Abstract sections,
+    and stopping at References or Bibliography headings.
+    Preserves section titles, paragraphs, and tables.
+
+    Args:
+        html_path (str): Path to the PMC article HTML file.
+
+    Returns:
+        str: Preprocessed article text.
+    """
+    def is_stop_section(text: str) -> bool:
+        """Return True if text signals the start of References or Bibliography."""
+        lowered = text.lower()
+        return any(keyword in lowered for keyword in ("references", "bibliography"))
+
+    with open(html_path, "r", encoding="utf-8") as file:
+        soup = BeautifulSoup(file, "lxml")
+
+    # Remove unwanted tags
+    for tag in soup(["script", "style", "header", "footer", "nav", "aside"]):
+        tag.decompose()
+
+    # Remove all Abstract sections
+    for abstract_tag in soup.find_all(["div", "section"], class_=lambda c: c and "abstract" in c.lower()):
+        abstract_tag.decompose()
+
+    # Identify main body
+    body = soup.find("body") or soup.find("article") or soup.find("div", class_="body")
+    if body is None:
+        body = soup
+
+    lines = []
+
+    for tag in body.find_all(["h1", "h2", "h3", "h4", "h5", "h6", "p", "table"]):
+        text = tag.get_text(strip=True)
+        if not text:
+            continue
+
+        if is_stop_section(text):
+            break
+
+        if tag.name == "table":
+            table_text = []
+            for row in tag.find_all("tr"):
+                row_text = [cell.get_text(strip=True) for cell in row.find_all(["th", "td"])]
+                if row_text:
+                    table_text.append("\t".join(row_text))
+            if table_text:
+                lines.append("\n".join(table_text))
+        else:
+            lines.append(text)
+
+    return "\n\n".join(lines)
+
+
+# blockText = dspy.Predict(RecordPatientHistory)
+# print(blockText(article_text=raw_text))
+# print(lm("with this article text " + raw_text +"\n extract the entire patient history from the case report, be explicit and keep detail"))
+
+# print(dspy.inspect_history())
+
+
+# chunk overlap within the text, create readable context , update context then continue to improve on it
+
+
+# steps for iteration on this, start by generating the splites
+import spacy
+from spacy.cli import download
+
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    print("Downloading spaCy model: en_core_web_sm...")
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
+
+def split_into_sentences(text, n=3):
+    """Split text into sentences and join every n sentences into one string."""
+    doc = nlp(text)
+    sentences = [sent.text.strip() for sent in doc.sents if sent.text.strip()]
+    return [' '.join(sentences[i:i+n]) for i in range(0, len(sentences), n)]
+# assume it is split paragraphs,
+# after split you process each block
+
+# each block contains stateful inforamation break it down into meaningful sentences. maintain the sentence along with the information. 
+
+# contine
+
+
+from dspy import Signature
+
+class ExtractPatientStatesFromParagraph(Signature):
+    """Extract highly specific, discrete patient states from a paragraph of a case report.
+    
+    The goal is to identify and extract each distinct patient state or event mentioned, maintaining maximum clinical specificity and avoiding summarization or paraphrasing.
+    
+    Instructions:
+    - Work directly from the paragraph; do not infer or summarize.
+    - Extract each specific patient state separately.
+    - Preserve factual clinical details exactly as described (e.g., medications administered, vitals recorded, symptoms observed, diagnostics performed).
+    - Avoid combining multiple states into one extraction.
+    - If no patient state is identifiable in part of the paragraph, omit that part without creating assumptions.
+    """
+    
+    paragraph: str = dspy.InputField(desc="A paragraph from a case report containing clinical descriptions.")
+    extracted_states: list[str] = dspy.OutputField(desc="A list of discrete, highly specific patient states extracted directly from the paragraph, maintaining all clinical detail and granularity.")
+
+
+
+def analyze_sentences(sentences: list[str]) -> None:
+    """Analyze a list of sentences and extract patient states."""
+    extractor = dspy.Predict(ExtractPatientStatesFromParagraph)
+
+    for idx, sentence in enumerate(sentences):
+        result = extractor(paragraph=sentence)
+        print(f"Sentence {idx+1}:")
+        print(f"Original: {sentence}")
+        print(f"Extracted States: {result.extracted_states}")
+        print("-" * 80)
+# analyze_sentences(split_into_sentences(raw_text,10))
+
+
+import dspy
+
+
+class ExtractHPIFragments(dspy.Signature):
+    """Extract historical patient information (HPI) fragments prior to the onset of the current clinical case.
+
+    Definition of HPI for this task:
+    - Chronic conditions (e.g., hypertension, diabetes)
+    - Prior medical history (e.g., surgeries, hospitalizations, treatments)
+    - Baseline functional status (e.g., ambulatory status, mental baseline)
+    - Longstanding lifestyle factors (e.g., smoking, alcohol use, occupational exposures)
+    - Demographic background (e.g., age, sex, ethnicity) if relevant to medical history
+
+    DO NOT extract:
+    - Presenting symptoms (e.g., 'The patient complained of chest pain')
+    - Findings upon admission (e.g., vitals, imaging findings at admission)
+    - Any acute changes, complaints, labs, or interventions that occur after presentation
+    - Any new diagnostics or treatments after arrival
+
+    Explicit stopping instructions:
+    - If the paragraph includes descriptions that suggest the case has started (e.g., 'The patient presented with...', 'On admission...', 'Upon evaluation...'), do not extract anything further, even if historical details are mixed in.
+
+    Output:
+    - Return a list of discrete, factual fragments related only to pre-existing historical details.
+    - If the paragraph is entirely post-presentation, return an empty list.
+    """
+
+    paragraph: str = dspy.InputField(desc="A paragraph from a case report.")
+    extracted_fragments: list[str] = dspy.OutputField(
+        desc="List of extracted patient history/background fragments before case onset."
+    )
+
+class ClassifyHPIFragment(dspy.Signature):
+    """Classify an extracted fragment as either past medical history, current presentation, or uncertain.
+
+    Instructions:
+    - Label 'past history' if the fragment describes an event, diagnosis, procedure, lifestyle factor, or condition that existed prior to the current hospitalization.
+    - Label 'current presentation' if the fragment describes symptoms, findings, diagnostics, or treatments at or after admission.
+    - Label 'uncertain' if classification cannot be confidently determined from the fragment alone.
+
+    Also provide a short explanation (1-2 sentences) justifying the classification.
+    """
+
+    fragment: str = dspy.InputField(desc="One extracted fragment from case report.")
+    classification: str = dspy.OutputField(
+        desc="Label as 'past history', 'current presentation', or 'uncertain'."
+    )
+    explanation: str = dspy.OutputField(
+        desc="Short explanation justifying why this fragment was classified this way."
+    )
+
+class ConsolidateHPINode(dspy.Signature):
+    """Consolidate clean validated history fragments into only history, no patient timeline"""
+    history_fragments: list[str] = dspy.InputField(
+        desc="List of verified patient history fragments."
+    )
+    consolidated_hpi: str = dspy.OutputField(
+        desc="Final coherent paragraph summarizing pre-existing patient history."
+    )
+
+class DetectCaseStart(dspy.Signature):
+    """Determine if a paragraph marks the start of the current clinical case.
+
+    Instructions:
+    - Return 'True' if the paragraph describes new presenting symptoms, findings on admission, or events during the current hospitalization.
+    - Return 'False' if the paragraph still discusses prior history or background only.
+    - return false if information is from an abstract
+    """
+
+    paragraph: str = dspy.InputField(desc="Paragraph from the case report.")
+    case_started: bool = dspy.OutputField(
+        desc="True if current case events have started; False if still background history or information is in abstract"
+    )
+    
+class VerifyHPIFragment(dspy.Signature):
+    """Verify if a fragment describes true pre-existing patient history (not presentation).
+
+    Must be:
+    - Past diagnoses
+    - Past procedures
+    - Past lifestyle
+    - Pre-existing conditions
+
+    """
+
+    fragment: str = dspy.InputField(desc="One fragment from extracted data.")
+    is_valid_history: bool = dspy.OutputField(
+        desc="True if this fragment describes valid past history. False otherwise."
+    )
+
+
+from tqdm import tqdm
+
+class BuildHPINodeModule(dspy.Module):
+    """Extract, classify, and consolidate clean HPI nodes from case report paragraphs with full progress tracking."""
+
+    def __init__(self):
+        super().__init__()
+        self.extractor = dspy.ChainOfThought(ExtractHPIFragments)
+        self.classifier = dspy.ChainOfThought(ClassifyHPIFragment)
+        self.consolidator = dspy.ChainOfThought(ConsolidateHPINode)
+
+    def forward(self, paragraphs: list[str]) -> str:
+        """Full pipeline: extract, classify, and consolidate fragments into HPI."""
+        valid_fragments = []
+
+        all_fragments = []
+
+        # Progress bar over paragraphs
+        for paragraph in tqdm(paragraphs, desc="Extracting fragments", ncols=100):
+            extraction = self.extractor(paragraph=paragraph)
+            all_fragments.extend(extraction.extracted_fragments)
+
+        # Progress bar over individual fragment verification
+        for fragment in tqdm(all_fragments, desc="Classifying fragments", ncols=100):
+            classification = self.classifier(fragment=fragment)
+            if classification.classification == "past history":
+                print(classification)
+                valid_fragments.append(fragment)
+
+            
+
+        consolidation = self.consolidator(history_fragments=valid_fragments)
+        return consolidation.consolidated_hpi
+
+
+
+# so you have to be able to pull in the information, 
+
+
+
+class CreatePatientTimeline(dspy.Signature):
+    "You are a researcher extracting information relative to a timeline. Your goal is find the initial presentation information, from the patient history with respect to the whole article. Any actions indicated to be taken by the team including treatment and actions is considered false, as you go forward you should  "
+    previous_timeline: str = dspy.InputField(desc="previously processed information summary")
+    paragraph:str= dspy.InputField(desc="independent paragraph or sentences from the case report")
+    patient_time_line : str= dspy.OutputField(desc="all information of the patient timeline")
+    inital_patient_history:str =dspy.OutputField(desc="only intial patient history, no mangement or treatemnt.")
+
+
+# path_raw="./samples/html/Small Cell Lung Cancer in the Course of Idiopathic Pulmonary Fibrosis—Case Report and Literature Review - PMC.html"
+# raw_text=preprocess_pmc_article_text(path_raw)
+# paragraphs=split_into_sentences(raw_text,10)
+# patient_timeline=dspy.Predict(CreatePatientTimeline)
+# initalstate="Start:"
+# patient_initial_states=[]
+# for x in paragraphs:
+#     timeline_output=patient_timeline(previous_timeline=initalstate,paragraph=x)
+#     initalstate+= timeline_output.patient_time_line
+#     patient_initial_states.append(timeline_output.inital_patient_history)
+#     print(timeline_output)
+
+
+from typing import Any, Dict, Union
+import json
+from typing import Any
+
+def pretty_print_json(obj: Any) -> None:
+    """Pretty-print a Python object as formatted JSON."""
+    print(json.dumps(obj, indent=2, ensure_ascii=False))
+
+import dspy
+from typing import Any, Dict
+
+
+
+class GenerateNodeFromText(dspy.Signature):
+    """
+    Generate a single node representing extracted patient state information from a text excerpt.
+
+    The generated node must contain:
+    - 'node_id': str, a unique identifier for the node.
+    - 'step_index': int, the sequential order of the node.
+    - 'summary': str, a concise one-line summary of the patient state.
+    - 'data': dict, structured into clear clinical categories.
+
+    For the 'data' field:
+    - Organize information into the following top-level categories:
+        - Demographics
+        - Medical History
+        - Social History
+        - Lifestyle Factors
+        - Symptoms
+        - Functional Status
+        - Mental Status
+        - Review of Systems (ROS)
+        - Diagnoses
+        - Medications
+        - Allergies
+        - Vitals
+        - Labs
+        - Imaging
+        - Procedures
+    - Each entry inside a category must be a dictionary with:
+        - 'value': the actual extracted data (e.g., measurement, condition, observation, boolean, etc.)
+        - 'evidence': the exact text fragment supporting this data extraction.
+
+    Additional requirements:
+    - Prefer structured, specific values (e.g., dose + frequency for medications, value + unit for labs/vitals).
+    - Do not hallucinate; only populate fields with clear evidence from the provided text.
+    - Maintain consistent formatting for all entries to allow structured parsing.
+    - Include observation timestamp or offset day if available.
+
+    Example:
+    {
+      "Blood Pressure": {
+        "value": {"systolic": 130, "diastolic": 85, "unit": "mmHg"},
+        "evidence": "Blood pressure measured at 130/85 mmHg."
+      }
+    }
+    """
+
+    text: str = dspy.InputField(desc="The text excerpt describing the patient's state, clinical findings, and relevant information.")
+
+    node: Dict[str, Any] = dspy.OutputField(
+        desc="A dictionary representing a single structured node including extracted patient state information and source evidence."
+    )
+
+
+
+# patient_initial_states[-1]
+# generateNode=dspy.Predict(GenerateNodeFromText)
+
+
+# pretty_print_json(generateNode(text=patient_initial_states[-1]).node)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# import dspy
+# from typing import List, Dict
+
+# # Signature 1: Classify the paragraph impact
+# class ClassifyParagraphImpact(dspy.Signature):
+#     """
+#     Classify whether the paragraph contains:
+#     - PatientEvent (direct patient update)
+#     - BackgroundInfo (general medical background)
+#     - Noise (irrelevant content)
+#     """
+#     paragraph: str = dspy.InputField(desc="Paragraph to classify.")
+
+#     impact_type: str = dspy.OutputField(desc="PatientEvent, BackgroundInfo, or Noise.")
+#     classification_reasoning: str = dspy.OutputField(desc="Reason for classification decision.")
+
+# # Signature 2: Extract atomic patient events with direct evidence
+# class ExtractPatientEvents(dspy.Signature):
+#     """
+#     Extract atomic patient-specific events with evidence.
+
+#     Requirements:
+#     - Only extract events directly describing THIS patient's real state, treatment, diagnosis, symptoms, or outcomes.
+#     - Every extracted event MUST have:
+#       - 'event_summary': concise description of the patient event.
+#       - 'evidence_fragment': exact sentence or fragment from the paragraph that supports it.
+#     - If multiple events are in one paragraph, extract each separately.
+#     - Ignore general medical background, research studies, mechanisms, and unrelated theory.
+#     - DO NOT guess or invent if no direct evidence exists.
+#     - DO NOT extract if there is no patient-specific evidence.
+
+#     Example Valid Event:
+#     {
+#       "event_summary": "Patient presented with cough and dyspnea in September 2014.",
+#       "evidence_fragment": "A 38-year-old Chinese man with no smoking history presented with cough and dyspnoea in September 2014."
+#     }
+#     """
+#     paragraph: str = dspy.InputField(desc="Paragraph of clinical text.")
+
+#     extracted_events: List[Dict[str, str]] = dspy.OutputField(
+#         desc="List of atomic patient-specific events with mandatory evidence."
+#     )
+
+
+
+# # Predictors
+# classify_impact = dspy.Predict(ClassifyParagraphImpact)
+# extract_events = dspy.Predict(ExtractPatientEvents)
+
+# # Timeline memory
+# timeline_text = "Patient timeline starts:"
+# evidence_fragments = []
+# full_history = []
+
+# # Paragraph processing loop
+# for idx, paragraph in enumerate(paragraphs):
+#     impact = classify_impact(paragraph=paragraph)
+
+#     history_entry = {
+#         "paragraph_index": idx,
+#         "paragraph_text": paragraph,
+#         "impact_type": impact.impact_type,
+#         "classification_reasoning": impact.classification_reasoning,
+#     }
+
+#     if impact.impact_type == "PatientEvent":
+#         events_output = extract_events(paragraph=paragraph)
+
+#         valid_events = []
+#         if events_output.extracted_events:
+#             for e in events_output.extracted_events:
+#                 if (
+#                     isinstance(e, dict)
+#                     and "evidence_fragment" in e
+#                     and e["evidence_fragment"].strip() != ""
+#                     and any(keyword in e["evidence_fragment"].lower() for keyword in ["patient", "he", "she", "man", "woman", "underwent", "was treated", "was diagnosed", "presented"])
+#                 ):
+#                     valid_events.append(e)
+
+
+#         for event in valid_events:
+#             timeline_text += " " + event["event_summary"]
+#             evidence_fragments.append(event["evidence_fragment"])
+
+#         history_entry["extracted_events"] = valid_events
+#     else:
+#         history_entry["extracted_events"] = []
+
+#     history_entry["updated_timeline_text"] = timeline_text
+#     full_history.append(history_entry)
+
+import dspy
+from typing import List, Dict, Any
+
+class PatientTimeline(dspy.Signature):
+    """
+    Your task is to extract structured patient timeline from a clinical paragraph. First evaluate if the information is part of the clinical case, or just introduction.
+    Your goal is to verify that it is a part of the clinical case and keep patient management and care in order. 
+    your goal is to include everything including lab findings
+    INCLUDE ALL LAB FINDINGS VERBATIM AND ALL IMAGING FINDINGS VERBATIM
+    ONLY INCLUDE PATIENT DATA
+    DO NOT BULLET POINT, this is a str output, keep specific lab and imaging in as well as procedure values. No explanations
+    """
+
+    paragraph: str = dspy.InputField(desc="Paragraph of clinical text to extract patient information from.")
+    previous_memory: List[str] = dspy.InputField(desc="List of patient history extracted so far.")
+
+    # nodes: List[Dict[str, Any]] = dspy.OutputField(
+    #     desc="List of new structured patient state nodes extracted from the paragraph."
+    # )
+    pt_timeline: str = dspy.OutputField(
+        desc="Concatenated highly specific human-readable patient timeline including new events extracted in order."
+
+    )
+    #steps in this case are evaluate the ordering, and the
+
+class BuildNodes(dspy.Signature):
+    """ build fully json compliant nodes of each sentence you are given splitting per atomic entity with reference to the patient, each node must have a step index increasing iteratively
+    step
+    step_index:int
+    clinical_data = {
+        "medications": [
+            {
+                "drug": "UMLS_CUI or string",
+                "dosage": "string",
+                "frequency": "string",
+                "modality": "oral | IV | IM | subcutaneous | transdermal | inhaled | other",
+                "start_date": "ISO8601",
+                "end_date": "ISO8601 or null",
+                "indication": "UMLS_CUI or string"
+            }
+        ],
+        "vitals": [
+            {
+                "type": "UMLS_CUI or string",
+                "value": "numeric or string",
+                "unit": "string",
+                "timestamp": "ISO8601"
+            }
+        ],
+        "labs": [
+            {
+                "test": "UMLS_CUI or string",
+                "value": "numeric or string",
+                "unit": "string",
+                "flag": "normal | abnormal | critical | borderline | unknown",
+                "reference_range": "string",
+                "timestamp": "ISO8601"
+            }
+        ],
+        "imaging": [
+            {
+                "type": "UMLS_CUI or string",
+                "body_part": "UMLS_CUI or string",
+                "modality": "X-ray | CT | MRI | Ultrasound | PET | other",
+                "finding": "string",
+                "impression": "string",
+                "date": "ISO8601"
+            }
+        ],
+        "procedures": [
+            {
+                "name": "UMLS_CUI or string",
+                "approach": "open | laparoscopic | endoscopic | percutaneous | other",
+                "date": "ISO8601",
+                "location": "string",
+                "performed_by": "string or provider ID",
+                "outcome": "string or UMLS_CUI"
+            }
+        ],
+        "HPI": [
+            {
+                "summary": "string",
+                "duration": "string or ISO8601",
+                "onset": "string or ISO8601",
+                "progression": "gradual | sudden | fluctuating | unknown",
+                "associated_symptoms": ["UMLS_CUI or strings"],
+                "alleviating_factors": ["UMLS_CUI or strings"],
+                "exacerbating_factors": ["UMLS_CUI or strings"]
+            }
+        ],
+        "ROS": [
+            {
+                "system": "constitutional | cardiovascular | respiratory | GI | GU | neuro | psych | etc.",
+                "findings": ["UMLS_CUI or strings"]
+            }
+        ],
+        "functional_status": [
+            {
+                "domain": "mobility | cognition | ADLs | IADLs | speech | hearing | vision",
+                "description": "string",
+                "score": "numeric (if validated scale used)",
+                "scale": "Barthel Index | MMSE | MoCA | other"
+            }
+        ],
+        "mental_status": [
+            {
+                "domain": "orientation | memory | judgment | mood | speech",
+                "finding": "UMLS_CUI or string",
+                "timestamp": "ISO8601"
+            }
+        ],
+        "social_history": [
+            {
+                "category": "smoking | alcohol | drug use | housing | employment | caregiver | support",
+                "status": "current | past | never | unknown",
+                "description": "string"
+            }
+        ],
+        "allergies": [
+            {
+                "substance": "UMLS_CUI or string",
+                "reaction": "UMLS_CUI or string",
+                "severity": "mild | moderate | severe | anaphylaxis",
+                "date_recorded": "ISO8601"
+            }
+        ],
+        "diagnoses": [
+            {
+                "code": "ICD10 or SNOMED or UMLS_CUI",
+                "label": "string",
+                "status": "active | resolved | historical | suspected",
+                "onset_date": "ISO8601 or null"
+            }
+        ]
+
+    """
+    previous_step_index:int = dspy.InputField(desc="previous step index ")
+    sentence_to_parse:str = dspy.InputField(desc="sentence to parse atomically for all independent enities relative to patient")
+    outputNodes:List[Dict[str,Any]]=dspy.OutputField(desc="list of nodes to represent the patient snapshot ")
+    
+
+    # If you want to see the raw nodes:
+    # pretty_print_json(output.nodes)
+
+# builder = BuildHPINodeModule()
+# final_hpi = builder(split_into_sentences(raw_text,10))
+# print(final_hpi)
+# print(dspy.inspect_history(30))
+
+
+
+from dotenv import load_dotenv
+import os
+
+def __main__():
+    load_dotenv("./.configs/.env")
+    gemini_api_key=os.environ.get("GEMINI_API_KEY","")
+    gptkey = os.environ.get("GPTKEY","")
+    
+
+# 3. Configure DSPy LLM and module
+    # lm = dspy.LM('ollama_chat/llama3.1', api_base='http://localhost:11434',cache=True, api_key='')
+    lm = dspy.LM('gemini/gemini-2.0-flash', api_key=gemini_api_key,temperature=0.2)
+
+    dspy.configure(lm=lm, adapter=dspy.ChatAdapter())
+
+    raw_text=preprocess_pmc_article_text("./samples/html/Small Cell Lung Cancer in the Course of Idiopathic Pulmonary Fibrosis—Case Report and Literature Review - PMC.html")
+    split_into_sentences(raw_text,10)
+    paragraphs=split_into_sentences(raw_text,10)
+    predict_patient_timeline = dspy.Predict(PatientTimeline)
+    nodebuilding=dspy.Predict(BuildNodes)
+    # Initialize memory
+    prev_memory = [""]
+
+    for paragraph in paragraphs:
+        output = predict_patient_timeline(
+            paragraph=paragraph,
+            previous_memory=[prev_memory[-1]]
+        )
+        
+        # Only extend memory with nodes
+        prev_memory.append(output.pt_timeline)
+        
+        # Print human-readable timeline (optional)
+        print("-"*30,output.pt_timeline)
+
+    y = split_into_sentences(prev_memory[-1],2)
+    valueToStart=0
+    for x in y:
+        # with dspy.context( lm=dspy.LM('ollama_chat/llama3.3', api_base='http://localhost:11434',cache=True, api_key='')):
+            print("-"*80,x,"-"*80)
+            atomic_results = recursively_decompose_to_atomic_sentences(x)
+            print(atomic_results)
+            # nodes_probably=nodebuilding(previous_step_index=valueToStart,sentence_to_parse=x )
+            # pretty_print_json(nodes_probably.outputNodes)
+            # valueToStart= nodes_probably.outputNodes[-1]["step_index"]
+
+
+
+        
+
+
+if __name__=="__main__":
+
+    # 
+    __main__()
