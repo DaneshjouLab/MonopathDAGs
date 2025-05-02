@@ -18,12 +18,20 @@ function initGraph(graph) {
 
     const container = document.getElementById('mynetwork');
     const data = { nodes, edges };
-    const options = { interaction: { multiselect: true } };
+    const options = {
+        interaction: {
+            multiselect: false,
+            hover: true  // <-- REQUIRED for hoverNode and hoverEdge
+        }
+    };
 
     const network = new Network(container, data, options);
 
     network.on("select", (params) => {
         updateSidebar(params, nodes, edges);
+    });
+    network.on("hoverNode", function (params) {
+        console.log("Hovering over node:", params.node);
     });
 }
 
@@ -49,10 +57,21 @@ function updateSidebar(params, nodes, edges) {
 
         content += `<b>Data:</b><br>${formatCustomData(customData)}`;
         infoDiv.innerHTML = content;
+
+        sendSelectionToServer({
+            id,
+            label,
+            from,
+            to,
+            customData
+        });
+    
+        
     } else {
         infoDiv.innerHTML = 'Click a node or edge to view details here.';
     }
 }
+
 
 function formatCustomData(data) {
     if (!data || typeof data !== 'object') {
@@ -68,4 +87,21 @@ function formatCustomData(data) {
     });
 
     return entries.join('');
+}
+async function sendSelectionToServer(data) {
+    try {
+        const response = await fetch('/api/selection', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            console.error('Failed to send selection to server:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error sending selection to server:', error);
+    }
 }
