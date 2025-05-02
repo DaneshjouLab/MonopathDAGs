@@ -92,6 +92,7 @@ class BaseData:
 class NodeData(BaseData):
     """ Class for indicting data stored in node. """
     id: Union[int, UUID]
+    
     data: RecursiveDict
 
 

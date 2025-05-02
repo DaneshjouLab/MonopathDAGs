@@ -13,11 +13,6 @@ from ..graph.graph_protocol import Graph
 from .. graph.build_graph import GraphBuilder
 from uuid import uuid4
 
-###############################################################################################################################################
-# Each p
-# 
-# 
-###############################################################################################################################################
 
 from dataclasses import dataclass
 from typing import Dict, Any
@@ -88,6 +83,7 @@ def __main__():
 
     # text = pdf().... done 
     # text = extract_text_from_pdf(filePath)
+    # actually get the edges and nodes, 
     
 
 
@@ -103,12 +99,14 @@ def __main__():
    
     node2 = node_factory(2)
     fake_one=edge_factory(edge_id=uuid4(),source=singleNode, target=node2, attrs={"data":"main"})
+    # should update the nodes they touch 
     builder=GraphBuilder()
 
     builder.add_node(singleNode)
     builder.add_node(node2)
-
+    builder.set_root(singleNode)
     builder.add_edge(fake_one)
+    
     print(builder._nodes)
     print(builder._edges)
     # the following lets see, th e
@@ -118,7 +116,14 @@ def __main__():
     graph_struct=builder.build()#implement should produce a graph, 
 
     print(graph_struct.edges())
-    # ok cool you have the graph struct, then you need to construct the followig, 
+    root_node=graph_struct.get_root_node()
+    print(root_node.get_children())
+    # What would you 
+
+
+    # ok cool you have the graph struct, then you need to construct the 
+    
+    # process that you need to do 
     # construct the graph, then move on from this, 
     
 
@@ -161,6 +166,7 @@ def __main__():
     # Ok so you have the following things that need to be done, and then more... lets keep it going, 
     # 5 The following thing should be loooked into the following shoudl sfk df 
     
+
     # 6 
     
 if __name__ == "__main__":

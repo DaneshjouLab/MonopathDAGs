@@ -13,7 +13,7 @@ from .edge.edge_protocol import EdgeProtocol as Edge
 from .graph_protocol import Graph, GraphImplemented
 
 # the following should be don ein this you hsould have the following things, a graph that elts you build the folloinw,g 
-class GraphBuilder:
+class GraphBuilder: 
     """
     Constructs a graph from Node and Edge objects before handing off
     to a read-only Graph instance.
@@ -28,6 +28,7 @@ class GraphBuilder:
 
     def set_root(self, node: Node) -> None:
         """Set the root node."""
+        
         self._root = node.id
         # this is dumb why is it adding the thing to a dict, 
         self._nodes[node.id] = node
@@ -105,27 +106,27 @@ class GraphBuilder:
     #     graph = Graph(nodes=self._nodes, edges=self._edges, root=self._root)
     #     return graph_validation_callback(graph) if graph_validation_callback else graph
 
-    def build_graph_from_edge_list(
-        self,
-        edge_list: List[tuple],
-        node_factory: Callable[[str], Node],
-        edge_factory: Callable[[str, str], Edge],
-        graph_validation_callback: Optional[Callable[[Graph], Graph]] = None,
-    ) -> Graph:
-        """
-        Build a graph from an edge list representation.
-        Each tuple contains (source_id, target_id)
-        """
-        for source_id, target_id in edge_list:
-            if source_id not in self._nodes:
-                self._nodes[source_id] = node_factory(source_id)
-            if target_id not in self._nodes:
-                self._nodes[target_id] = node_factory(target_id)
-            edge = edge_factory(source_id, target_id)
-            self._edges.append(edge)
+    # def build_graph_from_edge_list(
+    #     self,
+    #     edge_list: List[tuple],
+    #     node_factory: Callable[[str], Node],
+    #     edge_factory: Callable[[str, str], Edge],
+    #     graph_validation_callback: Optional[Callable[[Graph], Graph]] = None,
+    # ) -> Graph:
+    #     """
+    #     Build a graph from an edge list representation.
+    #     Each tuple contains (source_id, target_id)
+    #     """
+    #     for source_id, target_id in edge_list:
+    #         if source_id not in self._nodes:
+    #             self._nodes[source_id] = node_factory(source_id)
+    #         if target_id not in self._nodes:
+    #             self._nodes[target_id] = node_factory(target_id)
+    #         edge = edge_factory(source_id, target_id)
+    #         self._edges.append(edge)
 
-        graph = Graph(nodes=self._nodes, edges=self._edges, root=self._root)
-        return graph_validation_callback(graph) if graph_validation_callback else graph
+    #     graph = Graph(nodes=self._nodes, edges=self._edges, root=self._root)
+    #     return graph_validation_callback(graph) if graph_validation_callback else graph
     
 
 # the follwoing should be built next in this case, 

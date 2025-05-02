@@ -730,113 +730,89 @@ class PatientTimeline(dspy.Signature):
     )
     #steps in this case are evaluate the ordering, and the
 
+class CreateEdge(dspy.Signature):
+    """
+    
+
+
+    Args:
+        dspy (_type_): _description_
+    """
+class CheckEdges(dspy.Signature):
+    """
+    Check if the edges are possible to get the followigk
+
+
+
+
+    """
+    
+    first_edge:dspy.InputField(desc="")
+
+
+
+
 class BuildNodes(dspy.Signature):
     """ build fully json compliant nodes of each sentence you are given splitting per atomic entity with reference to the patient, each node must have a step index increasing iteratively
     step
     step_index:int
-    clinical_data = {
+    clinical_data = {}
         "medications": [
             {
-                "drug": "UMLS_CUI or string",
-                "dosage": "string",
-                "frequency": "string",
-                "modality": "oral | IV | IM | subcutaneous | transdermal | inhaled | other",
-                "start_date": "ISO8601",
-                "end_date": "ISO8601 or null",
-                "indication": "UMLS_CUI or string"
+
             }
         ],
         "vitals": [
             {
-                "type": "UMLS_CUI or string",
-                "value": "numeric or string",
-                "unit": "string",
-                "timestamp": "ISO8601"
+              
             }
         ],
         "labs": [
             {
-                "test": "UMLS_CUI or string",
-                "value": "numeric or string",
-                "unit": "string",
-                "flag": "normal | abnormal | critical | borderline | unknown",
-                "reference_range": "string",
-                "timestamp": "ISO8601"
-            }
+        }
         ],
         "imaging": [
             {
-                "type": "UMLS_CUI or string",
-                "body_part": "UMLS_CUI or string",
-                "modality": "X-ray | CT | MRI | Ultrasound | PET | other",
-                "finding": "string",
-                "impression": "string",
-                "date": "ISO8601"
+         
             }
         ],
         "procedures": [
             {
-                "name": "UMLS_CUI or string",
-                "approach": "open | laparoscopic | endoscopic | percutaneous | other",
-                "date": "ISO8601",
-                "location": "string",
-                "performed_by": "string or provider ID",
-                "outcome": "string or UMLS_CUI"
+          
             }
         ],
         "HPI": [
             {
-                "summary": "string",
-                "duration": "string or ISO8601",
-                "onset": "string or ISO8601",
-                "progression": "gradual | sudden | fluctuating | unknown",
-                "associated_symptoms": ["UMLS_CUI or strings"],
-                "alleviating_factors": ["UMLS_CUI or strings"],
-                "exacerbating_factors": ["UMLS_CUI or strings"]
+            
             }
         ],
         "ROS": [
             {
-                "system": "constitutional | cardiovascular | respiratory | GI | GU | neuro | psych | etc.",
-                "findings": ["UMLS_CUI or strings"]
+              
             }
         ],
         "functional_status": [
             {
-                "domain": "mobility | cognition | ADLs | IADLs | speech | hearing | vision",
-                "description": "string",
-                "score": "numeric (if validated scale used)",
-                "scale": "Barthel Index | MMSE | MoCA | other"
+              
             }
         ],
         "mental_status": [
             {
-                "domain": "orientation | memory | judgment | mood | speech",
-                "finding": "UMLS_CUI or string",
-                "timestamp": "ISO8601"
+             
             }
         ],
         "social_history": [
             {
-                "category": "smoking | alcohol | drug use | housing | employment | caregiver | support",
-                "status": "current | past | never | unknown",
-                "description": "string"
             }
         ],
         "allergies": [
             {
-                "substance": "UMLS_CUI or string",
-                "reaction": "UMLS_CUI or string",
-                "severity": "mild | moderate | severe | anaphylaxis",
-                "date_recorded": "ISO8601"
+          
             }
         ],
         "diagnoses": [
             {
-                "code": "ICD10 or SNOMED or UMLS_CUI",
-                "label": "string",
-                "status": "active | resolved | historical | suspected",
-                "onset_date": "ISO8601 or null"
+        
             }
         ]
 
@@ -894,19 +870,16 @@ def __main__():
     y = split_into_sentences(prev_memory[-1],2)
     valueToStart=0
     for x in y:
-        # with dspy.context( lm=dspy.LM('ollama_chat/llama3.3', api_base='http://localhost:11434',cache=True, api_key='')):
+        # with dspy.context( lm=dspy.LM('ollama_chat/llama3.1', api_base='http://localhost:11434',cache=True, api_key='')):
             print("-"*80,x,"-"*80)
             atomic_results = recursively_decompose_to_atomic_sentences(x)
             print(atomic_results)
-            # nodes_probably=nodebuilding(previous_step_index=valueToStart,sentence_to_parse=x )
-            # pretty_print_json(nodes_probably.outputNodes)
-            # valueToStart= nodes_probably.outputNodes[-1]["step_index"]
+            nodes_probably=nodebuilding(previous_step_index=valueToStart,sentence_to_parse=x )
+            pretty_print_json(nodes_probably.outputNodes)
+            valueToStart= nodes_probably.outputNodes[-1]["step_index"]
 
-
-
-        
-
-
+            # this issue so far is that it is not able to handle independent step indexe... 
+            # need to create independent ones or pass in 
 if __name__=="__main__":
 
     # 

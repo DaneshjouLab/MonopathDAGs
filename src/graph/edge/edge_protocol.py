@@ -8,7 +8,7 @@ This file should contian an edge protocol.
 
 """
 
-from typing import Union,Protocol
+from typing import Union,Protocol,List
 from ..node.node_protocol import NodeProtocol, BaseData,RecursiveDict
 from dataclasses import dataclass
 from uuid import UUID,uuid4
@@ -27,7 +27,7 @@ class EdgeData(BaseData):
 
 class EdgeProtocol(Protocol):
     "Edge Protocol"
-    def __init__(self,edge_id:Union[int, UUID], source:Union[NodeProtocol], destination:Union[NodeProtocol]):
+    def __init__(self,edge_id:Union[int, UUID], source:Union[NodeProtocol,List[NodeProtocol]], destination:Union[NodeProtocol]):
         self.id=edge_id
         self.source = source
         self.target = destination

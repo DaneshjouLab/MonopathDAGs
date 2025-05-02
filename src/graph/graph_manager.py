@@ -11,7 +11,7 @@ from typing import Union,Optional
 from .node.node_protocol import NodeProtocol as Node
 from .edge.edge_protocol import EdgeProtocol as Edge
 from .build_graph import GraphBuilder
-from .graph_protocol import Graph #TODO: create a better way to increa
+from .graph_protocol import Graph 
 
 
 # confused as to what you are doing here, 
@@ -25,12 +25,13 @@ class GraphManager:
         [ ] set_active_pointer
         [ ] build 
     [ ] create_branch
-    [ ] single graph instancem 
+    [ ] single graph instanc
     logic needs to be the followig 
-    # ok basica stuff you have a node and a graph 
+   
     """
     def __init__(self, graph_start: Union[Node, Graph],pointer:Optional[Node]=None):
-        """ actually think this thourhg, each graph manager should have a starting point, 
+        """ 
+        point, 
         Args:
         start_data: Union[Node,Graph] basically
 
@@ -60,12 +61,14 @@ class GraphManager:
         
         # 
         # inserting node should basically take the take the edge, and insert it from the parent, f
-        assert 
+        
     
         
         # planning for this requires, 
         
         return success
+    # things to accomplish you need to add the nodes here and then move forard form that and then move onto the next part.... so the next thing you should do in this case is try to get your stuff working
+    #what should be done her.e 
     
     def setup_branching(self,):
         """this function should go through the existing graph and construct an initial dictionary of branches with the array of nodes
@@ -73,7 +76,7 @@ class GraphManager:
         """
         # step wise what is needed for this?
         # bracnching action
-        
+
 
 
 
@@ -81,7 +84,7 @@ class GraphManager:
         """add a new connection within the node."""
         # get pointer
         assert self.__pointer, "pointer should not be empty"
-
+        # the following should be built in this case and then what 
         
 
         
@@ -96,6 +99,8 @@ class GraphManager:
         
         """
         self.graph_builder.add_node(node)
+        # creating a new way to build 
+
 
 
     def set_active_pointer(self, target: Node)->bool:
