@@ -17,6 +17,7 @@ from dspy.evaluate import Evaluate
 from src.data.data_processors.pdf_to_text import extract_text_from_pdf
 from src.agent.dspy.testing_more import (extract_paragraphs, recursively_decompose_to_atomic_sentences)
 
+import pandas as pd
 
 
 
@@ -253,14 +254,15 @@ load_dotenv(".config/.env")
 import os
 gemini_api_key = os.environ.get("GEMINI_APIKEY")
 
+
 print(gemini_api_key)
 #lm = dspy.LM('ollama_chat/llama3.2', api_base='http://localhost:11434', api_key='')
 #lm = dspy.LM('ollama_chat/llama3.1', api_base='http://localhost:11434', api_key='')
 #lm = dspy.LM(model='ollama_chat/meta-llama-3-8b-instruct', api_base='http://localhost:11434', api_key='') # 8B parameter
 
-lm = dspy.LM('gemini/gemini-2.0-flash', api_key=gemini_api_key,temperature=0.2)
+lm = dspy.LM('gemini/gemini-2.0-flash', api_key=gemini_api_key,temperature=0.1)
 
-print
+
 
 #dspy.configure(lm=lm, adapter=dspy.JSONAdapter())
 dspy.configure(lm=lm, adapter=dspy.ChatAdapter())
@@ -479,7 +481,7 @@ def branching_accuracy(gold, pred,trace=None):
 
 
 # Calling CSV with examples of content and bool pairs
-branch_examples = load_branch_examples_from_csv("src/data/branch_data.csv")
+branch_examples = load_branch_examples_from_csv("./src/data/branch_data.csv")
 random.shuffle(branch_examples)
 
 trainset = branch_examples[:85]
@@ -726,10 +728,30 @@ class ReorganizeNodes(dspy.Signature):
 # RUN PIPELINE
 # =====================================
 
-#case_report = extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024.pdf")
-case_report = extract_text_from_pdf("samples/pdfs/npj_precision_onc_2024.pdf")
-#from testing_more import preprocess_pmc_article_text
-#case_report=preprocess_pmc_article_text("samples/html/Small Cell Lung Cancer in the Course of Idiopathic Pulmonary Fibrosis—Case Report and Literature Review - PMC.html")
+case_report = extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024.pdf")
+# case_report = extract_text_from_pdf("samples/pdfs/npj_precision_onc_2024.pdf")
+
+
+from testing_more import preprocess_pmc_article_text,split_into_sentences, PatientTimeline
+raw_text=preprocess_pmc_article_text("./samples/html/Small Cell Lung Cancer in the Course of Idiopathic Pulmonary Fibrosis—Case Report and Literature Review - PMC.html")
+split_into_sentences(raw_text,10)
+paragraphs=split_into_sentences(raw_text,10)
+predict_patient_timeline = dspy.Predict(PatientTimeline)
+prev_memory = [""]
+
+for paragraph in paragraphs:
+    output = predict_patient_timeline(
+        paragraph=paragraph,
+        previous_memory=prev_memory[-3:]
+    )
+    
+    # Only extend memory with nodes
+    prev_memory.append(output.pt_timeline)
+    
+    # Print human-readable timeline (optional)
+    print("-"*30,output.pt_timeline)
+# the following, should be done in thiscas,e
+case_report=prev_memory[-1]
 #case_report = "A 64-year-old male with a history of hypertension, type 2 diabetes mellitus, and a 40-pack-year smoking history presented to the emergency department with progressive shortness of breath, dry cough, and unintentional weight loss over the past two months. He denied chest pain or hemoptysis."
 #case_report = "A 64-year-old male with a past medical history of hypertension, type 2 diabetes mellitus, and a 40-pack-year smoking history initially presented to his primary care provider with a two-month history of progressive exertional dyspnea, dry cough, and unintentional weight loss. Initial outpatient labs, including a complete blood count and basic metabolic panel, were unremarkable. A chest X-ray revealed a left upper lobe opacity, prompting referral to pulmonology. High-resolution CT of the chest demonstrated a 4.2 cm spiculated mass in the left upper lobe with associated mediastinal lymphadenopathy. PET-CT confirmed hypermetabolic activity in the mass and mediastinal nodes without distant metastasis. Bronchoscopy with transbronchial biopsy was performed, and histopathology revealed poorly differentiated non-small cell lung carcinoma (NSCLC). Molecular testing showed no actionable mutations. The patient was staged as clinical stage IIB (T2bN1M0) and discussed at multidisciplinary tumor board. He was deemed a surgical candidate and underwent left upper lobectomy with mediastinal lymph node dissection via VATS. Pathology confirmed NSCLC with negative margins but 2/12 positive nodes, confirming stage IIB disease. He recovered well postoperatively without complications and was discharged home on postoperative day three. Following recovery, he was referred to medical oncology, and adjuvant cisplatin-based chemotherapy was initiated six weeks post-surgery. He completed four cycles of chemotherapy over three months without major adverse effects aside from mild fatigue and nausea. Surveillance imaging at three months post-treatment showed no evidence of disease recurrence. He continues routine follow-up every three months with thoracic surgery and oncology. The case highlights the importance of early symptom recognition, timely referral, and coordinated multidisciplinary care in managing operable lung cancer."
 #case_report = "Testicular tumefaction is a common concern in urology. Most causes can be easily identified through anamnesis, clinical examination, blood tests, or ultrasonography. However, for testicular masses, differential diagnosis can be challenging. The 2022 WHO classification of tumors of the urinary system and the male genital organs lists 43 different types of testicular tumors, of which 8 are categorized as having unspecified, borderline, or uncertain behavior. Given that testicular cancers primarily affect young males, accurate diagnosis and assessment of pathological progression are crucial for determining the most appropriate therapeutic strategy. However, data on the management of many types of testicular tumors are scarce, and existing case studies are often only partially comparable. Consequently, it can be difficult to choose between a more radical treatment option and favoring the conservation of fertility and endocrine function, especially face-to-face to a young patient. In this clinical case, we share our experience with a 37-year-old patient with a multifocal, bilateral testicular LCCSCT presenting as painless testicular masses that took an unexpected course, resulting in a fatal outcome. A 37-year-old man was referred to our institution in December 2015. He noticed bilateral painless testicular masses. Physical examination revealed no gynecomastia or skin anomalies. Ultrasound showed bilateral macro-orchitis with multiple intratesticular hyperechoic lesions with acoustic shadowing. These lesions were 2.4 cm and 2.1 cm on the left and right testicles, respectively. A pelvic MRI was performed, showing bilateral intratesticular lesions with clear hypointense T1 and T2 signals, which take intense contrast enhancement after gadolinium injection. The MRI revealed 10 lesions on the left testicle and 5 lesions on the right. Serum alpha-fetoprotein (AFP), beta-hCG, LDH, testosterone, estradiol, and gonadotropin levels were in normal range. A surgical testicular exploration was performed, and a right testicular nodule was enucleated and sent to pathology. Histology revealed a benign large-cell calcifying Sertoli cell tumor under 5 cm, with no mitosis, cytological atypia, vascular permeation, or necrosis. Immunohistochemistry was positive for vimentin, calretinin, inhibin, and cytokeratin AE1/AE3. Given the benign histology, radical orchiectomy was not pursued; instead, regular follow-up was initiated. Follow-up consisted of testicular exams and sonography every 6 months for 2 years, then annually. No genetic testing was performed due to absence of syndromic features or family history. Endocrine tests ruled out glucose, thyroid, adrenal, and pheochromocytoma abnormalities. In June 2021, testicular exam revealed left-sided induration; MRI confirmed tumor infiltration into the spermatic cord. A left radical orchiectomy was performed. Pathology revealed a multifocal large-cell calcifying Sertoli cell tumor (largest 6.5 cm) with spermatic cord invasion and neoplastic vascular permeation. CT scan showed para-aortic lymphadenopathy, pulmonary nodules, and sclerotic spinal lesions. PET confirmed left inguinal and iliac lymphadenopathy and a penile lesion, but no lung uptake. The patient underwent lymph node dissection and right radical orchiectomy, revealing metastatic disease and multifocal LCCSCT. By November 2021, local extension into the penis and inguinal canal had occurred, with widespread metastases by December. Chemotherapy with vinblastine, cisplatin, and ifosfamide was ineffective. Paclitaxel was then given, but the disease progressed. The patient enrolled in a trial with Axitinib and pazopanib but died 7 months later in palliative care. This case highlights that despite benign histological features, LCCSCTs can be aggressive, especially in sporadic bilateral cases. Although most are benign, large, multifocal, sporadic tumors may behave malignantly. WHO classification lists size >5 cm, necrosis, pleomorphism, and invasive growth as risk factors. Some studies suggest lowering size threshold to >2.4 cm. Diagnosis requires histopathology and immunohistochemistry. Sertoli cell tumors express inhibin, calretinin, vimentin, and keratin, but typically lack beta-catenin nuclear staining. Testis-sparing surgery (TSS) may be considered for tumors with 0–1 risk factor. Retroperitoneal lymph node dissection (RPLND) offers benefit for regional spread, but systemic chemotherapy and radiation have low efficacy. Bilateral orchiectomy should have been the initial strategy in this case."
@@ -739,9 +761,9 @@ case_report = extract_text_from_pdf("samples/pdfs/npj_precision_onc_2024.pdf")
 global_start = time.time()
 
 # Instantiate the filter module
-filter_module = FilterIrrelevantSectionsModule()
+# filter_module = FilterIrrelevantSectionsModule()
 # Run it and get the cleaned case report text
-cleaned_text = filter_module(full_text=case_report)
+cleaned_text = case_report# filter_module(full_text=case_report)
 # Print cleaned result for debugging
 print("\n🧹 Cleaned Case Report (filtered output):")
 print("=" * 60)
@@ -880,8 +902,69 @@ else:
 
 
 print("EDGES OBJECT ++++++++++++++++++++++++++")
+
 print(edges_obj)
+print(nodes_obj)
+
 
 # End global timer
 global_end = time.time()
 print(f"\n=== Full DAG generation pipeline completed in {global_end - global_start:.2f} seconds ===")
+
+import json
+import requests
+
+
+import json
+import requests
+
+
+def format_nodes(raw_nodes):
+    """
+    Format node list for server API, including all fields under customData.
+    """
+    return [
+        {
+            "id": f"N{idx + 1}",
+            "label": f"Step {idx + 1}",
+            "customData": node  # include entire node dictionary
+        }
+        for idx, node in enumerate(raw_nodes)
+    ]
+
+
+def format_edges(raw_edges, node_lookup):
+    """
+    Format directed edge list, including all fields under data.
+    """
+    return [
+        {
+            "from": f"N{node_lookup[source] + 1}",
+            "to": f"N{node_lookup[target] + 1}",
+            "data": edge  # include entire edge dictionary
+        }
+        for edge in raw_edges
+        for source, target in [edge["edge_id"].split("_to_")]
+    ]
+
+
+def send_graph_data(api_url, formatted_nodes, formatted_edges):
+    """
+    Send formatted graph data to server API.
+    """
+    payload = {"nodes": formatted_nodes, "edges": formatted_edges}
+    headers = {"Content-Type": "application/json"}
+
+    response = requests.post(api_url, headers=headers, data=json.dumps(payload))
+    response.raise_for_status()
+    return response.json()
+
+# Prepare your data
+node_lookup = {node["node_id"]: idx for idx, node in enumerate(nodes_obj)}
+formatted_nodes = format_nodes(nodes_obj)
+formatted_edges = format_edges(edges_obj, node_lookup)
+
+# Send
+api_url = "http://localhost:8000/graph-data"
+response = send_graph_data(api_url, formatted_nodes, formatted_edges)
+print(response)

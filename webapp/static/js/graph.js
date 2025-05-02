@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function initGraph(graph) {
-    console.log(graph.nodes)
+    console.log(graph.nodes);
     const nodes = new DataSet(graph.nodes);
     const edges = new DataSet(graph.edges);
 
@@ -21,7 +21,7 @@ function initGraph(graph) {
     const options = {
         interaction: {
             multiselect: false,
-            hover: true  // <-- REQUIRED for hoverNode and hoverEdge
+            hover: true
         }
     };
 
@@ -30,32 +30,36 @@ function initGraph(graph) {
     network.on("select", (params) => {
         updateSidebar(params, nodes, edges);
     });
-    network.on("hoverNode", function (params) {
+
+    network.on("hoverNode", (params) => {
         console.log("Hovering over node:", params.node);
+    });
+
+    network.on("hoverEdge", (params) => {
+        console.log("Hovering over edge:", params.edge);
     });
 }
 
 function updateSidebar(params, nodes, edges) {
     const infoDiv = document.getElementById('info');
-
     let selectedData = null;
 
     if (params.nodes.length > 0) {
-        const node = nodes.get(params.nodes[0]);
-        selectedData = node;
+        selectedData = nodes.get(params.nodes[0]);
     } else if (params.edges.length > 0) {
-        const edge = edges.get(params.edges[0]);
-        selectedData = edge;
+        selectedData = edges.get(params.edges[0]);
     }
 
     if (selectedData) {
-        const { id, label, from, to, customData } = selectedData;
+        const { id, label, from, to, customData, data } = selectedData;
 
         let content = `<b>${label || 'Edge Selected'}</b><br>`;
         if (id !== undefined) content += `ID: ${id}<br>`;
         if (from !== undefined && to !== undefined) content += `From: ${from} → To: ${to}<br>`;
 
-        content += `<b>Data:</b><br>${formatCustomData(customData)}`;
+        const payloadData = customData || data;
+        content += `<b>Data:</b><br>${formatCustomData(payloadData)}`;
+
         infoDiv.innerHTML = content;
 
         sendSelectionToServer({
@@ -63,15 +67,13 @@ function updateSidebar(params, nodes, edges) {
             label,
             from,
             to,
-            customData
+            customData: payloadData
         });
-    
-        
+
     } else {
         infoDiv.innerHTML = 'Click a node or edge to view details here.';
     }
 }
-
 
 function formatCustomData(data) {
     if (!data || typeof data !== 'object') {
@@ -88,13 +90,12 @@ function formatCustomData(data) {
 
     return entries.join('');
 }
+
 async function sendSelectionToServer(data) {
     try {
         const response = await fetch('/api/selection', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         });
 
