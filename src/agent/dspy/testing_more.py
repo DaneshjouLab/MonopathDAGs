@@ -1,7 +1,7 @@
 from typing import List, Dict
 import dspy
 import dspy.predict
-import dspy.signatures
+from dspy import Signature
 import os
 
 # 1. Load text from PDF
@@ -39,11 +39,11 @@ def extract_paragraphs(text: str) -> List[dict]:
     return blocks
 
 # paragraphs = extract_paragraphs(raw_text)
-gemini_api_key=os.environ.get("GEMINI_API_KEY","")
-# 3. Configure DSPy LLM and module
-lm = dspy.LM('ollama_chat/llama3.1', api_base='http://localhost:11434',cache=True, api_key='')
+# gemini_api_key=os.environ.get("GEMINI_API_KEY","")
+# # 3. Configure DSPy LLM and module
+# lm = dspy.LM('ollama_chat/llama3.1', api_base='http://localhost:11434',cache=True, api_key='')
 
-dspy.configure(lm=lm, adapter=dspy.ChatAdapter())
+# dspy.configure(lm=lm, adapter=dspy.ChatAdapter())
 
 class clinicalEventExtract(dspy.Signature):
     """
@@ -344,7 +344,7 @@ def split_into_sentences(text, n=3):
 # contine
 
 
-from dspy import Signature
+
 
 class ExtractPatientStatesFromParagraph(Signature):
     """Extract highly specific, discrete patient states from a paragraph of a case report.
@@ -377,7 +377,7 @@ def analyze_sentences(sentences: list[str]) -> None:
 # analyze_sentences(split_into_sentences(raw_text,10))
 
 
-import dspy
+
 
 
 class ExtractHPIFragments(dspy.Signature):
@@ -730,24 +730,24 @@ class PatientTimeline(dspy.Signature):
     )
     #steps in this case are evaluate the ordering, and the
 
-class CreateEdge(dspy.Signature):
-    """
+# class CreateEdge(dspy.Signature):
+#     """
     
 
 
-    Args:
-        dspy (_type_): _description_
-    """
-class CheckEdges(dspy.Signature):
-    """
-    Check if the edges are possible to get the followigk
+#     Args:
+#         dspy (_type_): _description_
+#     """
+# class CheckEdges(dspy.Signature):
+#     """
+#     Check if the edges are possible to get the followigk
 
 
 
 
-    """
+#     """
     
-    first_edge:dspy.InputField(desc="")
+#     first_edge:dspy.InputField(desc="")
 
 
 
