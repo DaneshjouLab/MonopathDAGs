@@ -124,6 +124,78 @@ async def get_user_data(request: Request, db: AsyncSession = Depends(get_db)):
         raise HTTPException(status_code=404, detail="User not found")
 
     return {"status": "ok", "data": {"id": user.id, "username": user.username}}
+@app.get("/api/get-synthetic-reports")
+async def get_synthetic_reports():
+    # Example static list; replace with DB or dynamic source
+    reports = [
+        {"id": 1, "title": "Synthetic Case A", "content": "Case A description..."},
+        {"id": 2, "title": "Synthetic Case B", "content": "Case B description..."},
+        {"id": 3, "title": "Synthetic Case C", "content": "Case C description..."}
+    ]
+    return {"reports": reports}
+@app.post("/api/submit-synthetic-evals")
+async def submit_synthetic_evals(request: Request):
+    data = await request.json()
+    print("Received synthetic evaluations:", data)
+    # TODO: save to DB or process
+    return {"status": "ok"}
+
+
+
+
+
+@app.get("/api/get-graph-data")
+async def get_graph_data():
+    # Replace with real graph source or DB
+    nodes = [
+        {"id": 1, "label": "Start"},
+        {"id": 2, "label": "Checkup"},
+        {"id": 3, "label": "Diagnosis"}
+    ]
+    edges = [
+        {"from": 1, "to": 2},
+        {"from": 2, "to": 3}
+    ]
+    return {"nodes": nodes, "edges": edges}
+
+
+# @app.get("/api/get-node/{node_id}")
+# async def get_node(node_id: int):
+#     # Replace with real node details + HTML content
+#     return {
+#         "description": f"Details about node {node_id}",
+#         "html_content": f"<p>Case content for node {node_id}</p>"
+#     }
+import re
+
+def clean_html(html):
+    html = re.sub(r'<script.*?>.*?</script>', '', html, flags=re.DOTALL | re.IGNORECASE)
+    html = re.sub(r'<link.*?>', '', html, flags=re.IGNORECASE)
+    html = re.sub(r'<img.*?>', '', html, flags=re.IGNORECASE)
+    return html
+
+@app.get("/api/get-node/{node_id}")
+async def get_node(node_id: int):
+    html_path = "./samples/html/Small Cell Lung Cancer in the Course of Idiopathic Pulmonary Fibrosis—Case Report and Literature Review - PMC.html"
+    try:
+        with open(html_path, "r", encoding="utf-8") as f:
+            
+            html_content = f.read()
+            html_stuff=clean_html(html_content)
+    except FileNotFoundError:
+        html_content = f"<p>File not found for node {node_id}</p>"
+
+    return {
+        "description": f"Details about node {node_id}",
+        "html_content": html_stuff
+    }
+
+@app.post("/api/submit-node-eval")
+async def submit_node_eval(request: Request):
+    data = await request.json()
+    print("Received node evaluation:", data)
+    # TODO: Save to DB or process
+    return {"status": "ok"}
 
 
 @app.on_event("startup")

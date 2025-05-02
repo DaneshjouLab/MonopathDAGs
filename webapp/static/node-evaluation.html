@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Node Evaluation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .graph-area {
+            flex: 1 1 auto;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .html-viewer {
+            flex: 1 1 auto;
+            overflow-y: auto;
+            background: #fff;
+            padding: 0.5rem;
+        }
+        .eval-panel {
+            flex: 0 0 auto;
+            background: #f0f0f0;
+            border-top: 1px solid #ccc;
+            padding: 1rem;
+        }
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+            .graph-area, .html-viewer {
+                flex: 2 1 60%;
+                border-right: 1px solid #ccc;
+            }
+            .eval-panel {
+                flex: 1 1 40%;
+                border-top: none;
+                border-left: 1px solid #ccc;
+                overflow-y: auto;
+            }
+        }
+        button {
+            padding: 0.5rem 1rem;
+            margin-top: 0.5rem;
+        }
+        .question-group {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+     
+
+        <!-- HTML content viewer -->
+        <div class="html-viewer" id="html-viewer">
+            <h3>Case Report Viewer</h3>
+            <div id="report-content">
+                <em>Loading case report...</em>
+            </div>
+        </div>
+           <!-- Graph area -->
+           <div class="graph-area" id="graph-container">
+            <!-- vis.js graph will be inserted here -->
+        </div>
+        <!-- Evaluation sidebar/panel -->
+        <div class="eval-panel" id="eval-panel">
+            <h3>Node Evaluation</h3>
+            <div id="node-info">
+                <em>Select a node to see details.</em>
+            </div>
+            <form id="eval-form"></form>
+            <button onclick="submitNodeEvaluation()">Submit Evaluation</button>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script>
+        let network;
+        let nodes = new vis.DataSet([]);
+        let edges = new vis.DataSet([]);
+        let selectedNodeId = null;
+    
+        document.addEventListener("DOMContentLoaded", async () => {
+            await loadGraphData();
+            initializeGraph();
+        
+            // 🔥 Auto-load the first node after graph is ready
+            const firstNodeId = nodes.getIds()[0];
+            if (firstNodeId !== undefined) {
+                selectedNodeId = firstNodeId;
+                loadNodeDetails(firstNodeId);
+            }
+        });
+        
+    
+        async function loadGraphData() {
+            const response = await fetch('/api/get-graph-data');
+            const data = await response.json();
+            nodes = new vis.DataSet(data.nodes);
+            edges = new vis.DataSet(data.edges);
+        }
+    
+        function initializeGraph() {
+            const container = document.getElementById('graph-container');
+            const data = { nodes, edges };
+            const options = {
+                interaction: { hover: true },
+                nodes: { shape: 'dot', size: 20 },
+                edges: { arrows: 'to' }
+            };
+            network = new vis.Network(container, data, options);
+    
+            network.on("selectNode", (params) => {
+                const nodeId = params.nodes[0];
+                selectedNodeId = nodeId;
+                loadNodeDetails(nodeId);
+            });
+        }
+    
+        async function loadNodeDetails(nodeId) {
+            const response = await fetch(`/api/get-node/${nodeId}`);
+            const data = await response.json();
+    
+            document.getElementById('node-info').innerHTML = `
+                <strong>Node ${nodeId}</strong><br>
+                <em>${data.description}</em>
+            `;
+    
+            document.getElementById('eval-form').innerHTML = `
+                <div class="question-group">
+                    <label>Correct Order?</label><br>
+                    <input type="radio" name="order" value="yes"> Yes
+                    <input type="radio" name="order" value="no"> No
+                </div>
+                <div class="question-group">
+                    <label>Relevant to Case?</label><br>
+                    <input type="radio" name="relevance" value="yes"> Yes
+                    <input type="radio" name="relevance" value="no"> No
+                </div>
+            `;
+    
+            // Load HTML content into viewer
+            loadCaseReport(data.html_content);
+        }
+    
+        function loadCaseReport(htmlContent) {
+            document.getElementById('report-content').innerHTML = htmlContent;
+        }
+    
+        async function submitNodeEvaluation() {
+            if (!selectedNodeId) {
+                alert("Please select a node first.");
+                return;
+            }
+    
+            const form = document.getElementById('eval-form');
+            const formData = new FormData(form);
+            const payload = {
+                node_id: selectedNodeId,
+                order: formData.get('order'),
+                relevance: formData.get('relevance')
+            };
+    
+            const response = await fetch('/api/submit-node-eval', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+    
+            if (response.ok) {
+                alert('Evaluation saved!');
+            } else {
+                alert('Failed to save evaluation.');
+            }
+        }
+    </script>
+    
+</body>
+</html>
