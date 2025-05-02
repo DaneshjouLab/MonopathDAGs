@@ -71,9 +71,13 @@ docstring_dict = {
     - Combine co-occurring labs/imaging into the same node.
     - Use separate nodes for clearly sequential or distinct events.
     - Do not return anything outside the list format. Should be in JSON compatible style.
+    - Keep imaging content packaged in one node if no clear temporal change is indicated
+    - Keep pathology / histology content packaged in one node if no clear temporal change is indicated
+
+
 
     Output format:
-    Return a list of node dictionaries, in this order, each with:
+    Return a list of node dictionaries, in this order from top to bottom, each with:
     - node_id (In ascending alphabetical order, e.g., "A", "B", "C")
     - node_step_index (integer for order)
     - content (exhuastive clinical content, include all relevant details for the given node)
@@ -265,6 +269,7 @@ dspy.configure(lm=lm, adapter=dspy.ChatAdapter())
 
 class nodeConstruct(dspy.Signature):
     text_input: str = dspy.InputField(desc="body of text extracted from a case report")
+    
     node_output = dspy.OutputField(type=list[dict], desc="A list of node dictionaries with node_id, node_step_index, content, optional timestamp and clinical_data")
 
 
@@ -378,7 +383,6 @@ class BranchClassifier(dspy.Module):
 # Structure not coming out right with edges so doing these to reinforce output
 
 edge_example_1 = dspy.Example(
-    text_input="The patient reported a severe headache. CT showed a subdural hematoma.",
     node_input=[{"node_id": "A"}, {"node_id": "B"}],
     edge_output=[{
         "edge_id": "A_to_B",
@@ -391,10 +395,9 @@ edge_example_1 = dspy.Example(
             "target_domain": "imaging"
         }
     }]
-).with_inputs("text_input", "node_input")
+).with_inputs("node_input")
 
 edge_example_2 = dspy.Example(
-    text_input="After 3 days of antibiotics, the patient developed a rash.",
     node_input=[{"node_id": "B"}, {"node_id": "C"}],
     edge_output=[{
         "edge_id": "B_to_C",
@@ -407,10 +410,9 @@ edge_example_2 = dspy.Example(
             "target_domain": "symptom"
         }
     }]
-).with_inputs("text_input", "node_input")
+).with_inputs("node_input")
 
 edge_example_3 = dspy.Example(
-    text_input="The patient underwent a PET-CT, which showed disease regression.",
     node_input=[{"node_id": "C"}, {"node_id": "D"}],
     edge_output=[{
         "edge_id": "C_to_D",
@@ -423,7 +425,7 @@ edge_example_3 = dspy.Example(
             "target_domain": "diagnosis"
         }
     }]
-).with_inputs("text_input", "node_input")
+).with_inputs("node_input")
 
 edge_fewshot_examples = [edge_example_1, edge_example_2, edge_example_3]
 
@@ -659,6 +661,34 @@ class ChunkingNodeModule(dspy.Module):
         print(f"Failed chunks: {failed_chunks}/{len(chunks)}")
 
         return {"node_output": all_nodes}
+
+
+
+"""
+
+#For sentence chunking, integrate this
+# Also get rid of the few shot examples for ephemeral becuase now we are just doing comparison
+# Also do this moving window for edges as well because it's too confusing for the model; but only show two at a time and then content is what changed between the two
+
+import spacy
+from spacy.cli import download
+
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    print("Downloading spaCy model: en_core_web_sm...")
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
+
+def split_into_sentences(text, n=3):
+    "Split text into sentences and join every n sentences into one string."
+    doc = nlp(text)
+    sentences = [sent.text.strip() for sent in doc.sents if sent.text.strip()]
+    return [' '.join(sentences[i:i+n]) for i in range(0, len(sentences), n)]
+
+"""
+
+
 
 
 

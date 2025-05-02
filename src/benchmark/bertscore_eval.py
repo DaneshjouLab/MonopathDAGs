@@ -15,6 +15,8 @@ import dspy
 
 Graph = nx.DiGraph
 
+
+# Let's change this to GEMINI
 # DSPy LLM settings
 LM_MODEL     = "ollama_chat/llama3.2"
 LM_API_BASE  = "http://localhost:11434"
@@ -22,6 +24,7 @@ LM_API_KEY   = ""  # or your local key if required
 
 # BERTScore model settings
 #BERTSCORE_MODEL = "emilyalsentzer/Bio_ClinicalBERT"
+#Let's get this to work
 BERTSCORE_MODEL = "bert-base-uncased"
 
 
