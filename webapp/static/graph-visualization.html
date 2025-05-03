@@ -21,34 +21,35 @@
   
 <script>
 
-
-    const divider = document.getElementById('divider');
-    const sidebar = document.getElementById('sidebar');
-    const container = document.getElementById('container');
-
-    let isDragging = false;
-
-    divider.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        document.body.style.cursor = 'col-resize';
-    });
-
-    document.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-
-        const containerRect = container.getBoundingClientRect();
-        const newSidebarWidth = containerRect.right - e.clientX;
-
-        if (newSidebarWidth > 150 && newSidebarWidth < containerRect.width * 0.6) {
-            sidebar.style.width = `${newSidebarWidth}px`;
-        }
-    });
-
-    document.addEventListener('mouseup', () => {
-        isDragging = false;
-        document.body.style.cursor = 'default';
-    });
-
+  const divider = document.getElementById('divider');
+  const sidebar = document.getElementById('sidebar');
+  const container = document.getElementById('container');
+  
+  let isDragging = false;
+  
+  divider.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      document.body.style.cursor = 'col-resize';
+      document.body.style.userSelect = 'none';  // disable text selection
+  });
+  
+  document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+  
+      const containerRect = container.getBoundingClientRect();
+      const newSidebarWidth = containerRect.right - e.clientX;
+  
+      if (newSidebarWidth > 150 && newSidebarWidth < containerRect.width * 0.6) {
+          sidebar.style.width = `${newSidebarWidth}px`;
+      }
+  });
+  
+  document.addEventListener('mouseup', () => {
+      isDragging = false;
+      document.body.style.cursor = 'default';
+      document.body.style.userSelect = 'auto';  // re-enable text selection
+  });
+  
   async function logout() {
       const response = await fetch("/logout");
       if (response.ok) {
