@@ -15,6 +15,7 @@ function initGraph(graph) {
     console.log(graph.nodes);
     const nodes = new DataSet(graph.nodes);
     const edges = new DataSet(graph.edges);
+    console.log("Loaded edges into DataSet:", graph.edges);
 
     const container = document.getElementById('mynetwork');
     const data = { nodes, edges };
@@ -43,7 +44,7 @@ function initGraph(graph) {
 function updateSidebar(params, nodes, edges) {
     const infoDiv = document.getElementById('info');
     let selectedData = null;
-
+    console.log("Loaded edges into DataSet:", edges);
     if (params.nodes.length > 0) {
         selectedData = nodes.get(params.nodes[0]);
     } else if (params.edges.length > 0) {

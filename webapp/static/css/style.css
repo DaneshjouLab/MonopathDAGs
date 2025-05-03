@@ -30,11 +30,5 @@ html, body {
 }
 
 #info {
-  width: 300px;
-  max-width: 50%;
-  overflow-wrap: break-word;
-  overflow-y: auto;
-  resize: horizontal;
-  border: 1px solid #ccc;
-  padding: 10px;
+  margin-top: 1rem;
 }
