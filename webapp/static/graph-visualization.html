@@ -8,17 +8,48 @@
   
 </head>
 <body>
-    <div id="container">
-      <div id="mynetwork"></div>
-      <div id="sidebar">
+  <div id="container">
+    <div id="mynetwork"></div>
+    <div id="divider"></div>
+    <div id="sidebar">
         <button onclick="logout()">Logout</button>
         <h2>Selection Info</h2>
         <div id="info">Click a node or edge to view details here.</div>
-      </div>
     </div>
+</div>
   </body>
   
 <script>
+
+  const divider = document.getElementById('divider');
+  const sidebar = document.getElementById('sidebar');
+  const container = document.getElementById('container');
+  
+  let isDragging = false;
+  
+  divider.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      document.body.style.cursor = 'col-resize';
+      document.body.style.userSelect = 'none';  // disable text selection
+  });
+  
+  document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+  
+      const containerRect = container.getBoundingClientRect();
+      const newSidebarWidth = containerRect.right - e.clientX;
+  
+      if (newSidebarWidth > 150 && newSidebarWidth < containerRect.width * 0.6) {
+          sidebar.style.width = `${newSidebarWidth}px`;
+      }
+  });
+  
+  document.addEventListener('mouseup', () => {
+      isDragging = false;
+      document.body.style.cursor = 'default';
+      document.body.style.userSelect = 'auto';  // re-enable text selection
+  });
+  
   async function logout() {
       const response = await fetch("/logout");
       if (response.ok) {
@@ -27,5 +58,8 @@
           console.error("Failed to logout");
       }
   }
+
   </script>
+
+
 </html>
