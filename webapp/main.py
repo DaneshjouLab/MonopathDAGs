@@ -8,6 +8,10 @@ from .shared_graph_state import get_graph,set_graph
 import os
 import asyncio
 
+
+#try to minimize backend computations and move ot the front end to reduce costs and such.....
+
+
 DATABASE_URL = "sqlite+aiosqlite:///./webapp/.data/localdata.db"
 
 engine = create_async_engine(DATABASE_URL, echo=True)
@@ -65,13 +69,15 @@ async def serve_synthetic_evaluation():
     file_path = os.path.join(STATIC_DIR, "synthetic-evaluation.html")
     with open(file_path, "r", encoding="utf-8") as f:
         return HTMLResponse(content=f.read())
-
+##update this 
 @app.get("/graph-visualization", response_class=HTMLResponse)
 async def serve_graph_visualization():
     file_path = os.path.join(STATIC_DIR, "graph-visualization.html")
     with open(file_path, "r", encoding="utf-8") as f:
         return HTMLResponse(content=f.read())
 
+
+#this needs to be fixed to graph visualization... cause this is wrong, 
 @app.get("/graph-data", response_class=JSONResponse)
 async def serve_graph_data():
     return get_graph()
@@ -82,6 +88,8 @@ async def update_graph_data(request: Request):
     set_graph(payload)
     return {"status": "ok"}
 
+
+#this is fine, 
 @app.post("/api/login", response_class=JSONResponse)
 async def api_login(request: Request, response: Response, db: AsyncSession = Depends(get_db)):
     data = await request.json()
@@ -99,19 +107,21 @@ async def api_login(request: Request, response: Response, db: AsyncSession = Dep
     response.set_cookie(key="user_id", value=str(user.id), httponly=True, max_age=3600)
     return {"status": "ok", "user_id": user.id}
 
-
+#fine
 @app.get("/logout")
 async def logout(response: Response):
     response.delete_cookie("user_id")
     return {"status": "ok", "message": "Logged out"}
 
+
+#ehh naming schema fro routes is off. 
 @app.post("/api/selection")
 async def receive_selection(request: Request):
     data = await request.json()
     print("Received selection:", data)
     return {"status": "received"}
 
-
+# the user-data login thing, imagine how user db should work... nodes and edge stored as objects for the thing, 
 @app.get("/api/user-data")
 async def get_user_data(request: Request, db: AsyncSession = Depends(get_db)):
     user_id = request.cookies.get("user_id")
@@ -124,6 +134,8 @@ async def get_user_data(request: Request, db: AsyncSession = Depends(get_db)):
         raise HTTPException(status_code=404, detail="User not found")
 
     return {"status": "ok", "data": {"id": user.id, "username": user.username}}
+
+# generate synthetic repors. 
 @app.get("/api/get-synthetic-reports")
 async def get_synthetic_reports():
     # Example static list; replace with DB or dynamic source
@@ -133,6 +145,8 @@ async def get_synthetic_reports():
         {"id": 3, "title": "Synthetic Case C", "content": "Case C description..."}
     ]
     return {"reports": reports}
+
+#post should recieve and update the db... the writes should be easy.... loading should 
 @app.post("/api/submit-synthetic-evals")
 async def submit_synthetic_evals(request: Request):
     data = await request.json()

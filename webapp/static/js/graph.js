@@ -2,6 +2,8 @@ import { Network } from "https://esm.sh/vis-network/peer";
 import { DataSet } from "https://esm.sh/vis-data/peer";
 import { fetchGraphData } from "./api.js";
 
+let network=null;
+// adds the event listener to attach graph data when DOM loaded, 
 document.addEventListener("DOMContentLoaded", async () => {
     try {
         const graph = await fetchGraphData();
@@ -11,6 +13,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
+
+// init graph, the 
 function initGraph(graph) {
     console.log(graph.nodes);
     const nodes = new DataSet(graph.nodes);
@@ -26,7 +30,7 @@ function initGraph(graph) {
         }
     };
 
-    const network = new Network(container, data, options);
+    network = new Network(container, data, options);
 
     network.on("select", (params) => {
         updateSidebar(params, nodes, edges);
@@ -40,6 +44,49 @@ function initGraph(graph) {
         console.log("Hovering over edge:", params.edge);
     });
 }
+
+export function updateGraphData(newNodes, newEdges) {
+    if (!network) {
+        console.warn('Network is not initialized yet.');
+        return;
+    }
+    // cleaning up old memory in case i held onto it. 
+    const oldData = network.body.data;
+    const oldNodes = oldData?.nodes;
+    const oldEdges = oldData?.edges;
+
+    // Clear old datasets explicitly
+    if (oldNodes && typeof oldNodes.clear === 'function') {
+        oldNodes.clear();
+    }
+    if (oldEdges && typeof oldEdges.clear === 'function') {
+        oldEdges.clear();
+    }
+
+    // actually setting the nodes. 
+    network.setData({ nodes: newNodes, edges: newEdges });
+
+    // Clear old listeners to avoid stacking
+    network.off('select');
+    network.off('hoverNode');
+    network.off('hoverEdge');
+
+    // Re-bind listeners
+    network.on('select', (params) => {
+        updateSidebar(params, newNodes, newEdges);
+    });
+
+    network.on('hoverNode', (params) => {
+        console.log('Hovering over node:', params.node);
+    });
+
+    network.on('hoverEdge', (params) => {
+        console.log('Hovering over edge:', params.edge);
+    });
+
+    console.log('✅ Graph data updated and listeners reattached.');
+}
+
 
 function updateSidebar(params, nodes, edges) {
     const infoDiv = document.getElementById('info');

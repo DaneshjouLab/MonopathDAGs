@@ -1,0 +1,549 @@
+{
+  "nodes": [
+    {
+      "id": "N1",
+      "label": "Step 1",
+      "customData": {
+        "node_id": "A",
+        "node_step_index": 0,
+        "content": "76-year-old man admitted in November 2019 due to intensifying symptoms of dry cough, exercise dyspnea, exercise intolerance, and general weakness. History of chronic obstructive pulmonary disease since 2013, treated with home oxygen therapy. Former smoker of 40 pack-years. Past medical history includes arterial hypertension and ischemic heart disease.",
+        "clinical_data": {
+          "HPI": [
+            {
+              "summary": "intensifying symptoms of dry cough, exercise dyspnea, exercise intolerance, and general weakness",
+              "onset": "November 2019",
+              "progression": "intensifying",
+              "associated_symptoms": [
+                "C0011991",
+                "C0015971",
+                "C0231655",
+                "C0043150"
+              ]
+            }
+          ],
+          "diagnoses": [
+            {
+              "code": "J44.9",
+              "label": "chronic obstructive pulmonary disease",
+              "status": "active",
+              "onset_date": "2013"
+            },
+            {
+              "code": "I10",
+              "label": "arterial hypertension",
+              "status": "historical"
+            },
+            {
+              "code": "I25.9",
+              "label": "ischemic heart disease",
+              "status": "historical"
+            }
+          ],
+          "social_history": [
+            {
+              "category": "smoking",
+              "status": "past",
+              "description": "Former smoker of 40 pack-years"
+            }
+          ],
+          "medications": [
+            {
+              "drug": "oxygen",
+              "modality": "inhaled",
+              "indication": "C0024117"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N2",
+      "label": "Step 2",
+      "customData": {
+        "node_id": "B",
+        "node_step_index": 1,
+        "content": "CT examination revealed massive honeycomb pulmonary fibrosis with a predominance distribution in subpleural and basal areas, reticular abnormalities, increased lung density, bronchial tree dilatation and emphysema. HRCT showed small air traps. Pulmonary function tests showed restrictive-type ventilation disorders: decreased FEV1 66% of predicted, decreased VC MAX 64% predicted with normal FEV1%/VC MAX ratio, significantly decreased TLC 61% predicted.",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "Computed tomography",
+              "body_part": "Lung",
+              "modality": "CT",
+              "finding": "massive honeycomb pulmonary fibrosis with a predominance distribution in subpleural and basal areas, reticular abnormalities, increased lung density, bronchial tree dilatation and emphysema",
+              "impression": "massive honeycomb pulmonary fibrosis with a predominance distribution in subpleural and basal areas, reticular abnormalities, increased lung density, bronchial tree dilatation and emphysema"
+            },
+            {
+              "type": "High-resolution computed tomography",
+              "body_part": "Lung",
+              "modality": "CT",
+              "finding": "small air traps",
+              "impression": "small air traps"
+            }
+          ],
+          "labs": [
+            {
+              "test": "Forced expiratory volume in 1 second",
+              "value": "66",
+              "unit": "% predicted",
+              "flag": "abnormal"
+            },
+            {
+              "test": "Vital capacity",
+              "value": "64",
+              "unit": "% predicted",
+              "flag": "abnormal"
+            },
+            {
+              "test": "Total lung capacity",
+              "value": "61",
+              "unit": "% predicted",
+              "flag": "abnormal"
+            }
+          ],
+          "diagnoses": [
+            {
+              "code": "77434008",
+              "label": "Restrictive ventilatory defect",
+              "status": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N3",
+      "label": "Step 3",
+      "customData": {
+        "node_id": "C",
+        "node_step_index": 2,
+        "content": "Patient has decreased DLCO 37% predicted. Infection of Mycobacterium tuberculosis was excluded. No skin or mucosal changes, arthritis or muscle weakness were present. Laboratory tests revealed no cytopenia, ANA and ANCA were absent.",
+        "clinical_data": {
+          "labs": [
+            {
+              "test": "DLCO",
+              "value": "37",
+              "unit": "% predicted",
+              "flag": "abnormal"
+            }
+          ],
+          "diagnoses": [
+            {
+              "code": "C0015221",
+              "label": "Tuberculosis",
+              "status": "resolved"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N4",
+      "label": "Step 4",
+      "customData": {
+        "node_id": "D",
+        "node_step_index": 3,
+        "content": "CT scan showed ground glass opacities in the upper lungs. Bronchoalveolar lavage (BAL) showed an increased percentage of lymphocytes.",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "CT scan",
+              "body_part": "upper lungs",
+              "modality": "CT",
+              "finding": "ground glass opacities"
+            }
+          ],
+          "labs": [
+            {
+              "test": "Bronchoalveolar lavage (BAL)",
+              "value": "increased percentage of lymphocytes"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N5",
+      "label": "Step 5",
+      "customData": {
+        "node_id": "E",
+        "node_step_index": 4,
+        "content": "Treatment with oral glucocorticosteroids was initiated but discontinued after two weeks due to lack of effectiveness.",
+        "clinical_data": {
+          "medications": [
+            {
+              "drug": "Glucocorticoids",
+              "dosage": null,
+              "frequency": null,
+              "modality": "oral",
+              "start_date": null,
+              "end_date": null,
+              "indication": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N6",
+      "label": "Step 6",
+      "customData": {
+        "node_id": "F",
+        "node_step_index": 5,
+        "content": "Based on radiological diagnostics, known causes of pulmonary fibrosis were excluded, and idiopathic pulmonary fibrosis was diagnosed.",
+        "clinical_data": {
+          "diagnoses": [
+            {
+              "code": "C0034104",
+              "label": "Pulmonary Fibrosis",
+              "status": "active",
+              "onset_date": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N7",
+      "label": "Step 7",
+      "customData": {
+        "node_id": "G",
+        "node_step_index": 6,
+        "content": "December 2019: Pirfenidone treatment was initiated.",
+        "clinical_data": {
+          "medications": [
+            {
+              "drug": "Pirfenidone",
+              "start_date": "2019-12",
+              "end_date": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N8",
+      "label": "Step 8",
+      "customData": {
+        "node_id": "H",
+        "node_step_index": 7,
+        "content": "After 11 months of pirfenidone treatment, TLC increased to 80% predicted and DLCO increased to 55% predicted.",
+        "clinical_data": {
+          "medications": [
+            {
+              "drug": "C1621728",
+              "dosage": null,
+              "frequency": null,
+              "modality": null,
+              "start_date": null,
+              "end_date": null,
+              "indication": null
+            }
+          ],
+          "labs": [
+            {
+              "test": "C0040042",
+              "value": "80",
+              "unit": "% predicted",
+              "flag": null,
+              "reference_range": null,
+              "timestamp": null
+            },
+            {
+              "test": "C0012448",
+              "value": "55",
+              "unit": "% predicted",
+              "flag": null,
+              "reference_range": null,
+              "timestamp": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N9",
+      "label": "Step 9",
+      "customData": {
+        "node_id": "I",
+        "node_step_index": 8,
+        "content": "March 2021: Follow-up CT of the chest with the HRCT option showed a slight progression of pulmonary fibrosis with a honeycomb image.",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "Computed tomography of chest",
+              "body_part": "Chest",
+              "modality": "CT",
+              "finding": "slight progression of pulmonary fibrosis with a honeycomb image",
+              "date": "2021-03"
+            }
+          ],
+          "diagnoses": [
+            {
+              "code": "C0034065",
+              "label": "Pulmonary Fibrosis",
+              "status": "active",
+              "onset_date": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N10",
+      "label": "Step 10",
+      "customData": {
+        "node_id": "J",
+        "node_step_index": 9,
+        "content": "February 2022: Patient re-hospitalized for a large infiltrative lesion on the chest CT, including the lower and partially upper lobe of the left lung and lymphadenopathy of both cavities, which were not present on the CT from March 2021. Patient reported dyspnea at rest for about two weeks and increased cough with residual secretions in the respiratory tract.",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "Lesion (finding)",
+              "body_part": "Lung",
+              "modality": "CT",
+              "finding": "Large infiltrative lesion",
+              "date": "2022-02"
+            },
+            {
+              "type": "Lymphadenopathy",
+              "body_part": "Mediastinum",
+              "modality": "CT",
+              "finding": "Lymphadenopathy of both cavities",
+              "date": "2022-02"
+            }
+          ],
+          "HPI": [
+            {
+              "summary": "Dyspnea at rest",
+              "duration": "2 weeks",
+              "onset": "unknown"
+            },
+            {
+              "summary": "Increased cough with residual secretions in the respiratory tract",
+              "duration": "unknown",
+              "onset": "unknown"
+            }
+          ],
+          "diagnoses": [
+            {
+              "code": "R06.02",
+              "label": "Shortness of breath",
+              "status": "active",
+              "onset_date": "2022-02"
+            },
+            {
+              "code": "R05",
+              "label": "Cough",
+              "status": "active",
+              "onset_date": "2022-02"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N11",
+      "label": "Step 11",
+      "customData": {
+        "node_id": "K",
+        "node_step_index": 10,
+        "content": "Patient denied hemoptysis and chest pain. Oxygen saturation was 89% without oxygen therapy. Arterial blood gases: pH 7.43, pCO2 44 mmHg, pO2 48 mmHg. Positive COVID-19 antigen test result (patient was not vaccinated against COVID-19).",
+        "clinical_data": {
+          "ROS": [
+            {
+              "system": "respiratory",
+              "findings": [
+                "C0018944"
+              ]
+            }
+          ],
+          "vitals": [
+            {
+              "type": "C0023635",
+              "value": "89",
+              "unit": "%",
+              "timestamp": null
+            }
+          ],
+          "labs": [
+            {
+              "test": "C0003895",
+              "value": "7.43",
+              "unit": null,
+              "flag": null,
+              "reference_range": null,
+              "timestamp": null
+            },
+            {
+              "test": "C0009258",
+              "value": "44",
+              "unit": "mmHg",
+              "flag": null,
+              "reference_range": null,
+              "timestamp": null
+            },
+            {
+              "test": "C0032288",
+              "value": "48",
+              "unit": "mmHg",
+              "flag": null,
+              "reference_range": null,
+              "timestamp": null
+            },
+            {
+              "test": "COVID-19 antigen test",
+              "value": "positive",
+              "unit": null,
+              "flag": null,
+              "reference_range": null,
+              "timestamp": null
+            }
+          ],
+          "diagnoses": [
+            {
+              "code": "C4723444",
+              "label": "COVID-19",
+              "status": "active",
+              "onset_date": null
+            }
+          ],
+          "social_history": [
+            {
+              "category": "vaccination",
+              "status": "never",
+              "description": "patient was not vaccinated against COVID-19"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N12",
+      "label": "Step 12",
+      "customData": {
+        "node_id": "L",
+        "node_step_index": 11,
+        "content": "March 2022: Chest CT showed polycyclic confluent tissue masses, infiltrative in the left lung occupying a significant part of the lower lobe and the dorsal parts of the upper lobe with radiological features of the neoplastic lesion. Compared to the CT performed in February, progression of nodal lesions in the mediastinum and hilars was visible. Nodal changes modeled adjacent structures, including vessels.",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "Mass of tissue",
+              "body_part": "Lung",
+              "modality": "CT",
+              "finding": "Polycyclic confluent tissue masses, infiltrative in the left lung occupying a significant part of the lower lobe and the dorsal parts of the upper lobe with radiological features of the neoplastic lesion",
+              "date": "2022-03"
+            },
+            {
+              "type": "Nodal lesion",
+              "body_part": "Mediastinum",
+              "modality": "CT",
+              "finding": "Progression of nodal lesions in the mediastinum and hilars was visible. Nodal changes modeled adjacent structures, including vessels.",
+              "date": "2022-03"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "N1",
+      "to": "N2",
+      "data": {
+        "edge_id": "A_to_B",
+        "branch_flag": true,
+        "content": "Patient's condition progressed from initial symptoms to CT findings indicative of pulmonary fibrosis."
+      }
+    },
+    {
+      "from": "N2",
+      "to": "N3",
+      "data": {
+        "edge_id": "B_to_C",
+        "branch_flag": true,
+        "content": "Further diagnostic tests were performed to exclude other conditions and assess lung function."
+      }
+    },
+    {
+      "from": "N3",
+      "to": "N4",
+      "data": {
+        "edge_id": "C_to_D",
+        "branch_flag": true,
+        "content": "Additional CT scan and bronchoalveolar lavage (BAL) revealed ground glass opacities and increased lymphocytes."
+      }
+    },
+    {
+      "from": "N4",
+      "to": "N5",
+      "data": {
+        "edge_id": "D_to_E",
+        "branch_flag": true,
+        "content": "Treatment with oral glucocorticosteroids was initiated but discontinued due to lack of effectiveness."
+      }
+    },
+    {
+      "from": "N5",
+      "to": "N6",
+      "data": {
+        "edge_id": "E_to_F",
+        "branch_flag": true,
+        "content": "Based on radiological diagnostics and exclusion of other causes, a diagnosis of idiopathic pulmonary fibrosis was made."
+      }
+    },
+    {
+      "from": "N6",
+      "to": "N7",
+      "data": {
+        "edge_id": "F_to_G",
+        "branch_flag": true,
+        "content": "Pirfenidone treatment was initiated in December 2019."
+      }
+    },
+    {
+      "from": "N7",
+      "to": "N8",
+      "data": {
+        "edge_id": "G_to_H",
+        "branch_flag": true,
+        "content": "After 11 months of pirfenidone treatment, TLC and DLCO showed improvement."
+      }
+    },
+    {
+      "from": "N8",
+      "to": "N9",
+      "data": {
+        "edge_id": "H_to_I",
+        "branch_flag": true,
+        "content": "Follow-up CT in March 2021 showed a slight progression of pulmonary fibrosis."
+      }
+    },
+    {
+      "from": "N9",
+      "to": "N10",
+      "data": {
+        "edge_id": "I_to_J",
+        "branch_flag": true,
+        "content": "Patient re-hospitalized in February 2022 with a large infiltrative lesion on the chest CT and worsening respiratory symptoms."
+      }
+    },
+    {
+      "from": "N10",
+      "to": "N11",
+      "data": {
+        "edge_id": "J_to_K",
+        "branch_flag": true,
+        "content": "Patient's condition assessed with oxygen saturation and arterial blood gases, and tested positive for COVID-19."
+      }
+    },
+    {
+      "from": "N11",
+      "to": "N12",
+      "data": {
+        "edge_id": "K_to_L",
+        "branch_flag": true,
+        "content": "Chest CT in March 2022 revealed polycyclic confluent tissue masses and progression of nodal lesions, indicating a neoplastic lesion."
+      }
+    }
+  ]
+}

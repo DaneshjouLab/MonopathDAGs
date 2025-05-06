@@ -830,22 +830,90 @@ class BuildNodes(dspy.Signature):
 # print(final_hpi)
 # print(dspy.inspect_history(30))
 
+class ClassifyBranchingEdges(dspy.Signature):
+    """
+
+    With a an edge A and an Edge B, your goal is to ascertain whether edge B is the opposite or reverses Edge
+    """
+
+    # start_node=dspy.InputField(desc="")
+    EdgeA=dspy.InputField(desc="edge to compare to")
+
+    EdgeB=dspy.InputField(desc="edge to classify as opposite or reversing the comparison edge")
+    # end_node=dspy.InputField(desc="")
+    
+
+    branch_reversible:bool= dspy.OutputField(desc="bool indicating if edge b is opposite or reversing edge a")
+    reason=dspy.OutputField(desc="why you made the decision?")
 
 
+#
 from dotenv import load_dotenv
 import os
 
 def __main__():
-    load_dotenv("./.configs/.env")
-    gemini_api_key=os.environ.get("GEMINI_API_KEY","")
+
+
+
+    load_dotenv("./.config/.env")
+    gemini_api_key=os.environ.get("GEMINI_APIKEY","")
     gptkey = os.environ.get("GPTKEY","")
+
     
 
 # 3. Configure DSPy LLM and module
     # lm = dspy.LM('ollama_chat/llama3.1', api_base='http://localhost:11434',cache=True, api_key='')
-    lm = dspy.LM('gemini/gemini-2.0-flash', api_key=gemini_api_key,temperature=0.2)
+    # lm = dspy.LM('gemini/gemini-2.0-flash', api_key=gemini_api_key,temperature=0.3)
 
-    dspy.configure(lm=lm, adapter=dspy.ChatAdapter())
+    # dspy.configure(lm=lm, adapter=dspy.ChatAdapter())
+
+
+#     edge1 = """
+# Edge 1: edge_id = A_to_B
+# {
+#  'content': 'Patient started systemic corticosteroid therapy (prednisone 40 mg daily) '
+#             'to manage suspected interstitial lung disease, following assessment of symptoms '
+#             'and initial imaging.',
+#  'edge_id': 'A_to_B'}
+# """
+#     edge2 = """
+# Edge 5: edge_id = E_to_F
+# {
+#  'content': 'Systemic corticosteroid therapy (prednisone) was discontinued due to clinical stability '
+#             'and tapering protocol completion, with decision supported by follow-up evaluations.',
+#  'edge_id': 'E_to_F',
+#  'transition_event': {'change_type': 'management',
+#                       'target_domain': 'treatment',
+#                       'trigger_entities': ['C0032961'],
+#                       'trigger_type': 'medication_stop'}}
+# """
+    edge1 = """ 
+    Edge 1: edge_id = A_to_B
+    {'content': 'Patient initiated on methotrexate for management of interstitial lung disease, '
+                'following multidisciplinary team recommendation and baseline laboratory clearance.',
+    'edge_id': 'A_to_B'}
+    """
+
+    edge2 = """
+    Edge 5: edge_id = E_to_F
+    {'content': 'Due to intolerance and adverse gastrointestinal reactions, patient transitioned to an alternative immunosuppressive regimen using mycophenolate mofetil, with careful dose escalation and monitoring.',
+    'edge_id': 'E_to_F',
+    'transition_event': {'change_type': 'medication_substitution',
+                        'target_domain': 'treatment',
+                        'trigger_entities': ['C0025677'],
+                        'trigger_type': 'medication_start'}}
+    """
+    
+
+    # edging=dspy.Predict(ClassifyBranchingEdges)
+
+    # print(edging(EdgeA=edge1,EdgeB=edge2))
+    
+    if (True):
+        return
+
+
+    # everything after wards needs to be ignored 
 
     raw_text=preprocess_pmc_article_text("./samples/html/Small Cell Lung Cancer in the Course of Idiopathic Pulmonary Fibrosis—Case Report and Literature Review - PMC.html")
     split_into_sentences(raw_text,10)
@@ -880,6 +948,8 @@ def __main__():
 
             # this issue so far is that it is not able to handle independent step indexe... 
             # need to create independent ones or pass in 
+
+
 if __name__=="__main__":
 
     # 
