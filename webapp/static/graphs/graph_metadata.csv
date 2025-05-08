@@ -1,5 +1,11 @@
 graph_id,json_path,source_file
 graph_001,webapp/static/graphs/graph_001.json,./samples/html/Small Cell Lung Cancer in the Course of Idiopathic Pulmonary Fibrosis—Case Report and Literature Review - PMC.html
-graph_001,webapp/static/graphs/graph_001.json,./samples/html/Small Cell Lung Cancer in the Course of Idiopathic Pulmonary Fibrosis—Case Report and Literature Review - PMC.html
-graph_001,webapp/static/graphs/graph_001.json,./samples/html/Small Cell Lung Cancer in the Course of Idiopathic Pulmonary Fibrosis—Case Report and Literature Review - PMC.html
-graph_001,webapp/static/graphs/graph_001.json,./samples/html/Small Cell Lung Cancer in the Course of Idiopathic Pulmonary Fibrosis—Case Report and Literature Review - PMC.html
+graph_001,webapp/static/graphs/graph_001.json,./pmc_htmls/Intriguing_Encounter__Unveiling_Squamous_Cell_Carcinoma_Lung_with_Rare_Bilateral_PMC12020972.html
+graph_002,webapp/static/graphs/graph_002.json,./pmc_htmls/_A_Case_of_Multiple_Primary_Pulmonary_Neuroendocrine_Carcinoma_with_EML4_ALK_Fus_PMC11986677.html
+graph_003,webapp/static/graphs/graph_003.json,./pmc_htmls/Management_of_malignant_inferior_vena_cava_syndrome__IVCS__by_endovascular_bridg_PMC12019825.html
+graph_004,webapp/static/graphs/graph_004.json,./pmc_htmls/Metastatic_INI_1_deficient_undifferentiated_lung_cancer_with_EGFR_19del_mutation_PMC12021797.html
+graph_005,webapp/static/graphs/graph_005.json,./pmc_htmls/Neoadjuvant_Targeted_Therapy_with_Dacomitinib_in_a_Stage_IIIA_Non_Small_Cell_Lun_PMC11980937.html
+graph_006,webapp/static/graphs/graph_006.json,./pmc_htmls/Lung_cancer_with_diabetes_mellitus_and_polymyalgia_rheumatica_during_long_term_n_PMC12001326.html
+graph_007,webapp/static/graphs/graph_007.json,./pmc_htmls/Case_Report__A_novel_ELMOD3_ALK_and_EML4_ALK_double_fusion_responses_to_neoadjuv_PMC12034634.html
+graph_008,webapp/static/graphs/graph_008.json,./pmc_htmls/Case_report__pulmonary_lymphoepithelial_carcinoma_mimicking_tuberculosis__PMC11987468.html
+graph_009,webapp/static/graphs/graph_009.json,./pmc_htmls/Radiotherapy_for_Lung_Cancer__An_Unrecognized_Cause_of_Lung_Torsion__PMC11962223.html

@@ -1,0 +1,461 @@
+{
+  "nodes": [
+    {
+      "id": "N1",
+      "label": "Step 1",
+      "customData": {
+        "node_id": "A",
+        "node_step_index": 0,
+        "content": "April 2019: Patient followed up for right lung primary tumor until August 2023, with progression-free survival (PFS) of 53 months.",
+        "clinical_data": {
+          "diagnoses": [
+            {
+              "code": "C34.9",
+              "label": "Malignant neoplasm of unspecified part of bronchus or lung",
+              "status": "active",
+              "onset_date": "2019-04"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N2",
+      "label": "Step 2",
+      "customData": {
+        "node_id": "B",
+        "node_step_index": 1,
+        "content": "October 2023: Patient followed up for second primary bronchial tumor until January 2025, with progression-free survival (PFS) of 16 months.",
+        "clinical_data": {
+          "diagnoses": [
+            {
+              "code": "C34",
+              "label": "Malignant neoplasm of bronchus and lung",
+              "status": "active",
+              "onset_date": "2023-10"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N3",
+      "label": "Step 3",
+      "customData": {
+        "node_id": "C",
+        "node_step_index": 2,
+        "content": "2023-08-28: PET/CT: slight narrowing of the left main bronchus.",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "Positron emission tomography",
+              "body_part": "Bronchus",
+              "modality": "PET",
+              "finding": "slight narrowing of the left main bronchus",
+              "date": "2023-08-28"
+            },
+            {
+              "type": "Computed tomography",
+              "body_part": "Bronchus",
+              "modality": "CT",
+              "finding": "slight narrowing of the left main bronchus",
+              "date": "2023-08-28"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N4",
+      "label": "Step 4",
+      "customData": {
+        "node_id": "D",
+        "node_step_index": 3,
+        "content": "2023-10-08: Chest CT: stenosis of the left main bronchus was significantly aggravated compared with 2023-08-28 PET/CT.",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "Computed tomography of chest",
+              "body_part": "Thorax",
+              "modality": "CT",
+              "finding": "stenosis of the left main bronchus was significantly aggravated",
+              "date": "2023-10-08"
+            },
+            {
+              "type": "Positron emission tomography/computed tomography",
+              "body_part": "Thorax",
+              "modality": "PET/CT",
+              "date": "2023-08-28"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N5",
+      "label": "Step 5",
+      "customData": {
+        "node_id": "E",
+        "node_step_index": 4,
+        "content": "2023-10-10: Bronchoscopy: smooth residual end of the right middle and lower lobes after surgery, and a new growth in the left main bronchus obstructing approximately 50% of the lumen.",
+        "clinical_data": {
+          "procedures": [
+            {
+              "name": "Bronchoscopy",
+              "date": "2023-10-10",
+              "location": "right middle lobe",
+              "outcome": "smooth residual end"
+            },
+            {
+              "name": "Bronchoscopy",
+              "date": "2023-10-10",
+              "location": "right lower lobe",
+              "outcome": "smooth residual end"
+            },
+            {
+              "name": "Bronchoscopy",
+              "date": "2023-10-10",
+              "location": "left main bronchus",
+              "outcome": "new growth obstructing approximately 50% of the lumen"
+            }
+          ],
+          "imaging": [
+            {
+              "type": "Bronchoscopy",
+              "body_part": "right middle lobe",
+              "modality": "other",
+              "finding": "smooth residual end",
+              "date": "2023-10-10"
+            },
+            {
+              "type": "Bronchoscopy",
+              "body_part": "right lower lobe",
+              "modality": "other",
+              "finding": "smooth residual end",
+              "date": "2023-10-10"
+            },
+            {
+              "type": "Bronchoscopy",
+              "body_part": "left main bronchus",
+              "modality": "other",
+              "finding": "new growth obstructing approximately 50% of the lumen",
+              "date": "2023-10-10"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N6",
+      "label": "Step 6",
+      "customData": {
+        "node_id": "F",
+        "node_step_index": 5,
+        "content": "2023-10-13: Bronchial tissue pathology biopsy results: HE staining showed tumor cells arranged in nests, beams, and clusters.",
+        "clinical_data": {
+          "labs": [
+            {
+              "test": "Biopsy",
+              "value": "Tumor cells arranged in nests, beams, and clusters",
+              "timestamp": "2023-10-13"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N7",
+      "label": "Step 7",
+      "customData": {
+        "node_id": "G",
+        "node_step_index": 6,
+        "content": "2023-10-13: Bronchial tissue pathology biopsy immunohistochemistry results: TTF-1 (+); Syn (+); CgA (-); Ki-67 proliferation index 70%; CD56 (+); LCA (-); CK5/6 (-); CK7 (+); CKp (-); Napsin A (-); P40 (-); P63 (-). Cells were round or oval, some nuclei were irregular, the cytoplasm was sparse, the chromatin was fine granular, and mitosis was visible.",
+        "clinical_data": {
+          "labs": [
+            {
+              "test": "TTF-1",
+              "value": "positive",
+              "unit": null,
+              "flag": null,
+              "reference_range": null,
+              "timestamp": "2023-10-13"
+            },
+            {
+              "test": "Syn",
+              "value": "positive",
+              "unit": null,
+              "flag": null,
+              "reference_range": null,
+              "timestamp": "2023-10-13"
+            },
+            {
+              "test": "CgA",
+              "value": "negative",
+              "unit": null,
+              "flag": null,
+              "reference_range": null,
+              "timestamp": "2023-10-13"
+            },
+            {
+              "test": "Ki-67 proliferation index",
+              "value": "70",
+              "unit": "%",
+              "flag": null,
+              "reference_range": null,
+              "timestamp": "2023-10-13"
+            },
+            {
+              "test": "CD56",
+              "value": "positive",
+              "unit": null,
+              "flag": null,
+              "reference_range": null,
+              "timestamp": "2023-10-13"
+            },
+            {
+              "test": "LCA",
+              "value": "negative",
+              "unit": null,
+              "flag": null,
+              "reference_range": null,
+              "timestamp": "2023-10-13"
+            },
+            {
+              "test": "CK5/6",
+              "value": "negative",
+              "unit": null,
+              "flag": null,
+              "reference_range": null,
+              "timestamp": "2023-10-13"
+            },
+            {
+              "test": "CK7",
+              "value": "positive",
+              "unit": null,
+              "flag": null,
+              "reference_range": null,
+              "timestamp": "2023-10-13"
+            },
+            {
+              "test": "CKp",
+              "value": "negative",
+              "unit": null,
+              "flag": null,
+              "reference_range": null,
+              "timestamp": "2023-10-13"
+            },
+            {
+              "test": "Napsin A",
+              "value": "negative",
+              "unit": null,
+              "flag": null,
+              "reference_range": null,
+              "timestamp": "2023-10-13"
+            },
+            {
+              "test": "P40",
+              "value": "negative",
+              "unit": null,
+              "flag": null,
+              "reference_range": null,
+              "timestamp": "2023-10-13"
+            },
+            {
+              "test": "P63",
+              "value": "negative",
+              "unit": null,
+              "flag": null,
+              "reference_range": null,
+              "timestamp": "2023-10-13"
+            }
+          ],
+          "procedures": [
+            {
+              "name": "Biopsy",
+              "approach": null,
+              "date": "2023-10-13",
+              "location": "Bronchial tissue",
+              "performed_by": null,
+              "outcome": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N8",
+      "label": "Step 8",
+      "customData": {
+        "node_id": "H",
+        "node_step_index": 7,
+        "content": "2024-05-13: Chest CT reexamination 7 months after taking alectinib: stenosis of the left main bronchus was significantly improved.",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "Computed tomography",
+              "body_part": "Chest",
+              "modality": "CT",
+              "finding": "stenosis of the left main bronchus was significantly improved",
+              "date": "2024-05-13"
+            }
+          ],
+          "medications": [
+            {
+              "drug": "alectinib",
+              "start_date": null,
+              "end_date": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N9",
+      "label": "Step 9",
+      "customData": {
+        "node_id": "I",
+        "node_step_index": 8,
+        "content": "2024-05-14: Bronchoscopy reexamination 7 months after taking alectinib: smooth mucosa at the surgical stump of the right middle and lower lobes, unobstructed lumen of the left main bronchus, and normal lumen and mucosa of the left upper and lower lobe bronchi.",
+        "clinical_data": {
+          "procedures": [
+            {
+              "name": "Bronchoscopy",
+              "date": "2024-05-14",
+              "location": "surgical stump of the right middle and lower lobes, left main bronchus, left upper and lower lobe bronchi",
+              "outcome": "smooth mucosa at the surgical stump of the right middle and lower lobes, unobstructed lumen of the left main bronchus, and normal lumen and mucosa of the left upper and lower lobe bronchi"
+            }
+          ],
+          "medications": [
+            {
+              "drug": "alectinib",
+              "start_date": "2023-10-14"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N10",
+      "label": "Step 10",
+      "customData": {
+        "node_id": "J",
+        "node_step_index": 9,
+        "content": "2024-10-23: Chest CT reexamination 12 months after taking alectinib: no disease progression was seen.",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "Computed tomography of chest",
+              "body_part": "Chest",
+              "modality": "CT",
+              "finding": "no disease progression was seen",
+              "date": "2024-10-23"
+            }
+          ],
+          "medications": [
+            {
+              "drug": "alectinib",
+              "start_date": "2023-10-23",
+              "end_date": "2024-10-23"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "N1",
+      "to": "N2",
+      "data": {
+        "edge_id": "A_to_B",
+        "branch_flag": true,
+        "content": "Patient followed up for right lung primary tumor until August 2023, then followed up for second primary bronchial tumor in October 2023.",
+        "transition_event": {
+          "trigger_type": "symptom_onset",
+          "trigger_entities": [
+            "C0027051"
+          ],
+          "change_type": "progression",
+          "target_domain": "diagnosis",
+          "timestamp": "2023-10"
+        }
+      }
+    },
+    {
+      "from": "N2",
+      "to": "N3",
+      "data": {
+        "edge_id": "B_to_C",
+        "branch_flag": true,
+        "content": "From October 2023 to August 2023, patient followed up for second primary bronchial tumor, then PET/CT showed slight narrowing of the left main bronchus.",
+        "transition_event": {
+          "trigger_type": "imaging",
+          "trigger_entities": [],
+          "change_type": "progression",
+          "target_domain": "imaging",
+          "timestamp": "2023-08-28"
+        }
+      }
+    },
+    {
+      "from": "N3",
+      "to": "N4",
+      "data": {
+        "edge_id": "C_to_D",
+        "branch_flag": true,
+        "content": "August 2023: PET/CT showed slight narrowing of the left main bronchus. October 2023: Chest CT showed stenosis of the left main bronchus was significantly aggravated compared with August 2023 PET/CT.",
+        "transition_event": {
+          "trigger_type": "imaging",
+          "trigger_entities": [],
+          "change_type": "progression",
+          "target_domain": "imaging",
+          "timestamp": "2023-10-08"
+        }
+      }
+    },
+    {
+      "from": "N4",
+      "to": "N5",
+      "data": {
+        "edge_id": "D_to_E",
+        "branch_flag": true,
+        "content": "October 8, 2023: Chest CT showed stenosis of the left main bronchus was significantly aggravated. October 10, 2023: Bronchoscopy showed smooth residual end of the right middle and lower lobes after surgery, and a new growth in the left main bronchus obstructing approximately 50% of the lumen.",
+        "transition_event": {
+          "trigger_type": "procedure",
+          "trigger_entities": [],
+          "change_type": "progression",
+          "target_domain": "imaging",
+          "timestamp": "2023-10-10"
+        }
+      }
+    },
+    {
+      "from": "N5",
+      "to": "N6",
+      "data": {
+        "edge_id": "E_to_F",
+        "branch_flag": true,
+        "content": "October 10, 2023: Bronchoscopy showed smooth residual end of the right middle and lower lobes after surgery, and a new growth in the left main bronchus obstructing approximately 50% of the lumen. October 13, 2023: Bronchial tissue pathology biopsy results showed tumor cells arranged in nests, beams, and clusters.",
+        "transition_event": {
+          "trigger_type": "lab_change",
+          "trigger_entities": [],
+          "change_type": "addition",
+          "target_domain": "lab",
+          "timestamp": "2023-10-13"
+        }
+      }
+    },
+    {
+      "from": "N6",
+      "to": "N7",
+      "data": {
+        "edge_id": "F_to_G",
+        "branch_flag": true,
+        "content": "October 13, 2023: Bronchial tissue pathology biopsy results showed tumor cells arranged in nests, beams, and clusters. October 13, 2023: Bronchial tissue pathology biopsy immunohistochemistry results: TTF-1 (+); Syn (+); CgA (-); Ki-67 proliferation index 70%; CD56 (+); LCA (-); CK5/6 (-); CK7 (+); CKp (-); Napsin A (-); P40 (-); P63 (-). Cells were round or oval, some nuclei were irregular, the cytoplasm was sparse, the chromatin was fine granular, and mitosis was visible.",
+        "transition_event": {
+          "trigger_type": "lab"
+        }
+      }
+    }
+  ]
+}

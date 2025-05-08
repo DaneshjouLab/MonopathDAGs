@@ -1,0 +1,241 @@
+{
+  "nodes": [
+    {
+      "id": "N1",
+      "label": "Step 1",
+      "customData": {
+        "node_id": "A",
+        "node_step_index": 0,
+        "content": "54-year-old Chinese male with a 30-year smoking history presented with a worsening cough for 3 months. Performance status score of 1.",
+        "clinical_data": {
+          "HPI": [
+            {
+              "summary": "worsening cough for 3 months",
+              "duration": "3 months",
+              "progression": "worsening"
+            }
+          ],
+          "social_history": [
+            {
+              "category": "smoking",
+              "status": "past",
+              "description": "30-year smoking history"
+            }
+          ],
+          "functional_status": [
+            {
+              "domain": "general",
+              "description": "Performance status score of 1",
+              "score": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N2",
+      "label": "Step 2",
+      "customData": {
+        "node_id": "B",
+        "node_step_index": 1,
+        "content": "April 2023 enhanced CT revealed a 22 mm \u00d7 12 mm \u00d7 16 mm mass in the right upper lobe with invasion in the right hilum and mediastinal.",
+        "timestamp": "2023-04",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "Mass",
+              "body_part": "Right upper lobe",
+              "modality": "CT",
+              "finding": "22 mm \u00d7 12 mm \u00d7 16 mm mass in the right upper lobe with invasion in the right hilum and mediastinal",
+              "date": "2023-04"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N3",
+      "label": "Step 3",
+      "customData": {
+        "node_id": "C",
+        "node_step_index": 2,
+        "content": "PET-CT scan confirmed the CT findings of a mass in the right upper lobe with invasion in the right hilum and mediastinal. Immunohistochemistry (IHC) analysis of the biopsy from the lesion in the upper right lobe of the lung was positive for TTF-1, NpA, CK7, CD5/6 and Ki67 (60%); and negative for p40, p63 and CD56. Diagnosed with stage IIIA lung adenocarcinoma (cT1cN2M0). Targeted NGS analysis of his lung lesion biopsy identified an EGFRG719X with a mutant allele frequency (MAF) of 3.8%.",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "Positron emission tomography and computed tomography",
+              "body_part": "Lung",
+              "modality": "PET-CT",
+              "finding": "mass in the right upper lobe with invasion in the right hilum and mediastinal",
+              "impression": "mass in the right upper lobe with invasion in the right hilum and mediastinal"
+            }
+          ],
+          "labs": [
+            {
+              "test": "Immunohistochemistry",
+              "value": "positive for TTF-1, NpA, CK7, CD5/6 and Ki67 (60%); and negative for p40, p63 and CD56"
+            },
+            {
+              "test": "NGS analysis",
+              "value": "EGFRG719X with a mutant allele frequency (MAF) of 3.8%"
+            }
+          ],
+          "diagnoses": [
+            {
+              "code": "C34.9",
+              "label": "Lung adenocarcinoma",
+              "status": "active",
+              "onset_date": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N4",
+      "label": "Step 4",
+      "customData": {
+        "node_id": "D",
+        "node_step_index": 3,
+        "content": "Initial tumor was considered unresectable due to metastasis in the right hilum and mediastinum.",
+        "clinical_data": {
+          "diagnoses": [
+            {
+              "code": "C78.0",
+              "label": "Secondary malignant neoplasm of lung",
+              "status": "active",
+              "onset_date": null
+            },
+            {
+              "code": "C79.51",
+              "label": "Secondary malignant neoplasm of bone",
+              "status": "active",
+              "onset_date": null
+            }
+          ],
+          "imaging": [
+            {
+              "type": "Finding",
+              "body_part": "Lung",
+              "modality": "CT",
+              "finding": "metastasis in the right hilum and mediastinum",
+              "impression": "Initial tumor was considered unresectable due to metastasis in the right hilum and mediastinum.",
+              "date": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N5",
+      "label": "Step 5",
+      "customData": {
+        "node_id": "E",
+        "node_step_index": 4,
+        "content": "May 2023, patient received two cycles of PC chemotherapy (pemetrexed 0.9g d1 and carboplatin 600mg d1) and dacomitinib (30mg).",
+        "timestamp": "2023-05",
+        "clinical_data": {
+          "medications": [
+            {
+              "drug": "Pemetrexed",
+              "dosage": "0.9g",
+              "frequency": "d1",
+              "modality": "IV",
+              "start_date": "2023-05",
+              "end_date": null
+            },
+            {
+              "drug": "Carboplatin",
+              "dosage": "600mg",
+              "frequency": "d1",
+              "modality": "IV",
+              "start_date": "2023-05",
+              "end_date": null
+            },
+            {
+              "drug": "Dacomitinib",
+              "dosage": "30mg",
+              "frequency": "daily",
+              "modality": "oral",
+              "start_date": "2023-05",
+              "end_date": null
+            }
+          ],
+          "procedures": [
+            {
+              "name": "chemotherapy",
+              "date": "2023-05",
+              "outcome": "administered"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "N1",
+      "to": "N2",
+      "data": {
+        "edge_id": "A_to_B",
+        "branch_flag": true,
+        "content": "Progression of cough led to imaging."
+      }
+    },
+    {
+      "from": "N2",
+      "to": "N3",
+      "data": {
+        "edge_id": "B_to_C",
+        "branch_flag": true,
+        "content": "Further investigation with PET-CT and biopsy to confirm diagnosis and identify genetic mutations.",
+        "transition_event": {
+          "trigger_type": "imaging",
+          "trigger_entities": [
+            "C0015204"
+          ],
+          "change_type": "progression",
+          "target_domain": "diagnosis"
+        }
+      }
+    },
+    {
+      "from": "N3",
+      "to": "N4",
+      "data": {
+        "edge_id": "C_to_D",
+        "branch_flag": true,
+        "content": "Assessment of resectability based on imaging findings.",
+        "transition_event": {
+          "trigger_type": "interpretation",
+          "trigger_entities": [
+            "C0027651",
+            "C0025439"
+          ],
+          "change_type": "other",
+          "target_domain": "procedure"
+        }
+      }
+    },
+    {
+      "from": "N4",
+      "to": "N5",
+      "data": {
+        "edge_id": "D_to_E",
+        "branch_flag": true,
+        "content": "Treatment initiated with PC chemotherapy and dacomitinib.",
+        "transition_event": {
+          "trigger_type": "medication_change",
+          "trigger_entities": [
+            "C0007785",
+            "C0007685",
+            "C3888714"
+          ],
+          "change_type": "addition",
+          "target_domain": "medication",
+          "timestamp": "2023-05"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,517 @@
+{
+  "nodes": [
+    {
+      "id": "N1",
+      "label": "Step 1",
+      "customData": {
+        "node_id": "A",
+        "node_step_index": 0,
+        "content": "73-year-old female presented with bilateral chest wall discomfort, exertional breathlessness, and chronic fatigue.",
+        "timestamp": "2025-03",
+        "clinical_data": {
+          "HPI": [
+            {
+              "summary": "73-year-old female presented with bilateral chest wall discomfort, exertional breathlessness, and chronic fatigue.",
+              "associated_symptoms": [
+                "C0231525",
+                "C0009413",
+                "C0015967"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N2",
+      "label": "Step 2",
+      "customData": {
+        "node_id": "B",
+        "node_step_index": 1,
+        "content": "Chest radiograph showed a left lung opacification.",
+        "timestamp": "2025-03",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "Radiography (procedure)",
+              "body_part": "Lung",
+              "modality": "X-ray",
+              "finding": "opacification",
+              "impression": "left lung opacification"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N3",
+      "label": "Step 3",
+      "customData": {
+        "node_id": "C",
+        "node_step_index": 2,
+        "content": "CT and PET-CT scan confirmed a 53 mm avid left upper lobe mass with associated hilar and mediastinal lymphadenopathy, staging the disease as T3N2M0.",
+        "timestamp": "2025-03",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "CT scan",
+              "body_part": "left upper lobe",
+              "modality": "CT",
+              "finding": "53 mm mass",
+              "date": null
+            },
+            {
+              "type": "PET-CT scan",
+              "body_part": "left upper lobe",
+              "modality": "PET",
+              "finding": "avid mass",
+              "date": null
+            }
+          ],
+          "diagnoses": [
+            {
+              "code": null,
+              "label": "hilar lymphadenopathy",
+              "status": "active",
+              "onset_date": null
+            },
+            {
+              "code": null,
+              "label": "mediastinal lymphadenopathy",
+              "status": "active",
+              "onset_date": null
+            },
+            {
+              "code": null,
+              "label": "T3N2M0",
+              "status": "active",
+              "onset_date": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N4",
+      "label": "Step 4",
+      "customData": {
+        "node_id": "D",
+        "node_step_index": 3,
+        "content": "Endobronchial ultrasound scan and biopsy (EBUS) sampling of station 11L confirmed lung adenocarcinoma metastasis.",
+        "timestamp": "2025-03",
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "Endobronchial ultrasound",
+              "body_part": "Lung",
+              "modality": "Ultrasound",
+              "finding": "adenocarcinoma metastasis",
+              "date": null
+            }
+          ],
+          "procedures": [
+            {
+              "name": "Biopsy",
+              "approach": "endoscopic",
+              "date": null,
+              "location": "station 11L",
+              "outcome": "adenocarcinoma metastasis"
+            }
+          ],
+          "diagnoses": [
+            {
+              "code": "C0206339",
+              "label": "Adenocarcinoma of lung",
+              "status": "active",
+              "onset_date": null
+            },
+            {
+              "code": "C0599444",
+              "label": "Metastasis",
+              "status": "active",
+              "onset_date": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N5",
+      "label": "Step 5",
+      "customData": {
+        "node_id": "E",
+        "node_step_index": 4,
+        "content": "Molecular testing revealed 60% PD-L1 positivity. Histopathology showed scattered clusters of cytologically malignant epithelial cells arranged in micropapillary nests on hematoxylin and eosin staining, against the background of inflammatory cells.",
+        "clinical_data": {
+          "labs": [
+            {
+              "test": "PD-L1 positivity",
+              "value": "60%",
+              "unit": "%"
+            }
+          ],
+          "imaging": [
+            {
+              "modality": "other",
+              "finding": "scattered clusters of cytologically malignant epithelial cells arranged in micropapillary nests",
+              "impression": "malignant epithelial cells",
+              "type": "Histopathology"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N6",
+      "label": "Step 6",
+      "customData": {
+        "node_id": "F",
+        "node_step_index": 5,
+        "content": "PD-L1 staining was positive (60%). ALK/ROS/NTRK immunohistochemistry was negative. Lung function: FEV1 51% (1.21), DLCO 73%.",
+        "timestamp": null,
+        "clinical_data": {
+          "labs": [
+            {
+              "test": "C0087045",
+              "value": "60",
+              "unit": "%",
+              "flag": "positive"
+            }
+          ],
+          "diagnoses": [
+            {
+              "code": "C0597344",
+              "label": "PD-L1 positive",
+              "status": "active"
+            }
+          ],
+          "procedures": [
+            {
+              "name": "Immunohistochemistry",
+              "outcome": "negative",
+              "location": "ALK/ROS/NTRK"
+            }
+          ],
+          "functional_status": [
+            {
+              "domain": "respiratory",
+              "description": "FEV1",
+              "score": 51,
+              "unit": "%"
+            },
+            {
+              "domain": "respiratory",
+              "description": "DLCO",
+              "score": 73,
+              "unit": "%"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N7",
+      "label": "Step 7",
+      "customData": {
+        "node_id": "G",
+        "node_step_index": 6,
+        "content": "Patient consented to radical treatment with four weeks of radiotherapy dosed at 55 Gy/20 with concurrent chemotherapy.",
+        "timestamp": null,
+        "clinical_data": {
+          "procedures": [
+            {
+              "name": "Radiotherapy",
+              "approach": "other",
+              "date": null,
+              "location": null,
+              "performed_by": null,
+              "outcome": null
+            },
+            {
+              "name": "Chemotherapy",
+              "approach": "other",
+              "date": null,
+              "location": null,
+              "performed_by": null,
+              "outcome": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N8",
+      "label": "Step 8",
+      "customData": {
+        "node_id": "H",
+        "node_step_index": 7,
+        "content": "Initial scan post radiotherapy showed a limited response to treatment. PET avidity present in speculated left apical mass.",
+        "timestamp": null,
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "scan",
+              "body_part": "apex of left lung",
+              "modality": "PET",
+              "finding": "PET avidity present in speculated left apical mass",
+              "impression": "limited response to radiotherapy"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N9",
+      "label": "Step 9",
+      "customData": {
+        "node_id": "I",
+        "node_step_index": 8,
+        "content": "CT scan one year later showed no visible tumor on axial images but apparent collapse of the left lung base.",
+        "timestamp": null,
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "Computed tomography",
+              "body_part": "Lung",
+              "modality": "CT",
+              "finding": "Collapse of the left lung base",
+              "date": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N10",
+      "label": "Step 10",
+      "customData": {
+        "node_id": "J",
+        "node_step_index": 9,
+        "content": "Post radiotherapy imaging showed complete response to treatment.",
+        "timestamp": null,
+        "clinical_data": {
+          "imaging": [
+            {
+              "modality": "other",
+              "finding": "complete response to treatment"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N11",
+      "label": "Step 11",
+      "customData": {
+        "node_id": "K",
+        "node_step_index": 10,
+        "content": "Follow-up scan five months later showed upward curving of the lower segmental bronchi and pulmonary vessels. Two small bullae initially seen in the posterior aspect of the lower lobe seemed to have relocated to the upper zone anteriorly.",
+        "timestamp": null,
+        "clinical_data": {
+          "imaging": [
+            {
+              "type": "Pulmonary CT Scan",
+              "body_part": "Lower lobe",
+              "modality": "CT",
+              "finding": "Upward curving of the lower segmental bronchi and pulmonary vessels",
+              "date": null
+            },
+            {
+              "type": "Pulmonary CT Scan",
+              "body_part": "Lower lobe",
+              "modality": "CT",
+              "finding": "Two small bullae initially seen in the posterior aspect of the lower lobe seemed to have relocated to the upper zone anteriorly.",
+              "date": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "N12",
+      "label": "Step 12",
+      "customData": {
+        "node_id": "L",
+        "node_step_index": 11,
+        "content": "Lung torsion with 180-degree rotation was diagnosed. Follow-up imaging after 12 months since previous imaging (node K) demonstrated the migration of the emphysematous bullae anteriorly and superiorly towards the apex of the lung. There was also an associated left lung base collapse.",
+        "timestamp": null,
+        "clinical_data": {
+          "diagnoses": [
+            {
+              "code": "233474001",
+              "label": "Lung torsion",
+              "status": "active"
+            }
+          ],
+          "imaging": [
+            {
+              "type": "Radiologic image",
+              "body_part": "Lung",
+              "modality": "other",
+              "finding": "Migration of emphysematous bullae anteriorly and superiorly towards the apex of the lung",
+              "date": null
+            },
+            {
+              "type": "Radiologic image",
+              "body_part": "Left lung base",
+              "modality": "other",
+              "finding": "Collapse",
+              "date": null
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "N1",
+      "to": "N2",
+      "data": {
+        "edge_id": "A_to_B",
+        "branch_flag": true,
+        "content": "Patient underwent chest radiograph.",
+        "transition_event": {
+          "trigger_type": "procedure",
+          "trigger_entities": [
+            "C0034340"
+          ],
+          "change_type": "addition",
+          "target_domain": "imaging",
+          "timestamp": "2025-03"
+        }
+      }
+    },
+    {
+      "from": "N2",
+      "to": "N3",
+      "data": {
+        "edge_id": "B_to_C",
+        "branch_flag": true,
+        "content": "Patient underwent CT and PET-CT scan.",
+        "transition_event": {
+          "trigger_type": "procedure",
+          "trigger_entities": [
+            "C0009331",
+            "C0852334"
+          ],
+          "change_type": "addition",
+          "target_domain": "imaging",
+          "timestamp": "2025-03"
+        }
+      }
+    },
+    {
+      "from": "N3",
+      "to": "N4",
+      "data": {
+        "edge_id": "C_to_D",
+        "branch_flag": true,
+        "content": "Patient underwent endobronchial ultrasound scan and biopsy (EBUS) sampling of station 11L.",
+        "transition_event": {
+          "trigger_type": "procedure",
+          "trigger_entities": [
+            "C0154564",
+            "C0005767"
+          ],
+          "change_type": "addition",
+          "target_domain": "procedure",
+          "timestamp": "2025-03"
+        }
+      }
+    },
+    {
+      "from": "N4",
+      "to": "N5",
+      "data": {
+        "edge_id": "D_to_E",
+        "branch_flag": true,
+        "content": "Molecular testing and histopathology performed.",
+        "transition_event": {
+          "trigger_type": "procedure",
+          "trigger_entities": [],
+          "change_type": "addition",
+          "target_domain": "lab"
+        }
+      }
+    },
+    {
+      "from": "N5",
+      "to": "N6",
+      "data": {
+        "edge_id": "E_to_F",
+        "branch_flag": true,
+        "content": "Lab results and lung function tests obtained.",
+        "transition_event": {
+          "trigger_type": "lab_change",
+          "trigger_entities": [
+            "C0087045"
+          ],
+          "change_type": "other",
+          "target_domain": "lab"
+        }
+      }
+    },
+    {
+      "from": "N6",
+      "to": "N7",
+      "data": {
+        "edge_id": "F_to_G",
+        "branch_flag": true,
+        "content": "Patient consented to radical treatment with four weeks of radiotherapy dosed at 55 Gy/20 with concurrent chemotherapy.",
+        "transition_event": {
+          "trigger_type": "medication_change",
+          "trigger_entities": [
+            "C0009264",
+            "C0034671"
+          ],
+          "change_type": "addition",
+          "target_domain": "medication"
+        }
+      }
+    },
+    {
+      "from": "N7",
+      "to": "N8",
+      "data": {
+        "edge_id": "G_to_H",
+        "branch_flag": true,
+        "content": "Initial scan post radiotherapy.",
+        "transition_event": {
+          "trigger_type": "procedure",
+          "trigger_entities": [
+            "C0034340"
+          ],
+          "change_type": "addition",
+          "target_domain": "imaging"
+        }
+      }
+    },
+    {
+      "from": "N8",
+      "to": "N9",
+      "data": {
+        "edge_id": "H_to_I",
+        "branch_flag": true,
+        "content": "CT scan one year later.",
+        "transition_event": {
+          "trigger_type": "procedure",
+          "trigger_entities": [
+            "C0009331"
+          ],
+          "change_type": "addition",
+          "target_domain": "imaging"
+        }
+      }
+    },
+    {
+      "from": "N9",
+      "to": "N10",
+      "data": {
+        "edge_id": "I_to_J",
+        "branch_flag": true,
+        "content": "Post radiotherapy imaging."
+      }
+    }
+  ]
+}
