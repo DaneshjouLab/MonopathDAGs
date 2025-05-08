@@ -272,7 +272,7 @@ print(gemini_api_key)
 #lm = dspy.LM('ollama_chat/llama3.1', api_base='http://localhost:11434', api_key='')
 #lm = dspy.LM(model='ollama_chat/meta-llama-3-8b-instruct', api_base='http://localhost:11434', api_key='') # 8B parameter
 
-lm = dspy.LM('gemini/gemini-2.0-flash', api_key=gemini_api_key,temperature=0.21)
+lm = dspy.LM('gemini/gemini-2.0-flash', api_key=gemini_api_key,temperature=0.21 ,cache=False)
 # lm = dspy.LM('openai/gpt-4o-high', api_key='')
 
 
