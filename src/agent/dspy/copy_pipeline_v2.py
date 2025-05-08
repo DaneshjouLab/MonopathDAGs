@@ -19,7 +19,19 @@ from src.agent.dspy.testing_more import (extract_paragraphs, recursively_decompo
 
 import pandas as pd
 
-
+import json
+import requests
+import os
+import json
+import csv
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+from testing_more import (
+    preprocess_pmc_article_text,
+    split_into_sentences,
+    PatientTimeline
+)
 
 # TO DO:
 # UMLS API Key?????? To help map
@@ -249,9 +261,9 @@ docstring_dict = {
 # =====================================
 # SELECTED LLM
 # =====================================
-from dotenv import load_dotenv
+
 load_dotenv(".config/.env")
-import os
+
 gemini_api_key = os.environ.get("GEMINI_APIKEY")
 gpt_key = os.environ.get("GPTKEY")
 
@@ -260,7 +272,7 @@ print(gemini_api_key)
 #lm = dspy.LM('ollama_chat/llama3.1', api_base='http://localhost:11434', api_key='')
 #lm = dspy.LM(model='ollama_chat/meta-llama-3-8b-instruct', api_base='http://localhost:11434', api_key='') # 8B parameter
 
-lm = dspy.LM('gemini/gemini-2.0-flash', api_key=gemini_api_key,temperature=0.2)
+lm = dspy.LM('gemini/gemini-2.0-flash', api_key=gemini_api_key,temperature=0.21)
 # lm = dspy.LM('openai/gpt-4o-high', api_key='')
 
 
@@ -364,19 +376,42 @@ class NodeEdgeGenerate(dspy.Module):
 
 
 class ClinicalDataExtractor(dspy.Module):
-    def __init__(self):
+    def __init__(self, max_retries: int = 2):
         super().__init__()
         self.extractor = dspy.Predict(nodeClinicalDataExtract)
+        self.max_retries = max_retries
 
     def forward(self, content: str = "", atomic_sentences: list[str] = []):
-        result = self.extractor(content=content, atomic_sentences=atomic_sentences)
-        clinical_data = result.get("clinical_data", {})
-        
-        if not isinstance(clinical_data, dict):
-            print("Warning: clinical_data is not a valid dictionary. Skipping.")
-            clinical_data = {}
+        attempt = 0
+        clinical_data = None
 
-        return clinical_data
+        while attempt <= self.max_retries:
+            result = self.extractor(content=content, atomic_sentences=atomic_sentences)
+            raw_output = result.get("clinical_data", {})
+
+            print(f"\n=== Attempt {attempt + 1}: Raw clinical_data output ===")
+            print(raw_output)
+
+            # --- FIX: unwrap list if needed ---
+            if isinstance(raw_output, list):
+                # Take first dict if exists
+                clinical_data = next((item for item in raw_output if isinstance(item, dict)), None)
+            elif isinstance(raw_output, dict):
+                clinical_data = raw_output
+            else:
+                clinical_data = None
+
+            # If we got valid dict → DONE
+            if isinstance(clinical_data, dict):
+                return clinical_data
+
+            print(f"⚠️ Attempt {attempt + 1}: clinical_data invalid → retrying...")
+            attempt += 1
+
+        # After retries failed → fallback
+        print(f"❌ Failed to obtain valid clinical_data after {self.max_retries + 1} attempts. Returning empty dict.")
+        return {}
+
 
 
 class BranchClassifier(dspy.Module):
@@ -675,196 +710,180 @@ class ReorganizeNodes(dspy.Signature):
 # RUN PIPELINE
 # =====================================
 
-case_report = extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024.pdf")
-# case_report = extract_text_from_pdf("samples/pdfs/npj_precision_onc_2024.pdf")
 
 
-from testing_more import preprocess_pmc_article_text,split_into_sentences, PatientTimeline
-raw_text=preprocess_pmc_article_text("./samples/html/Small Cell Lung Cancer in the Course of Idiopathic Pulmonary Fibrosis—Case Report and Literature Review - PMC.html")
-html_path ="./samples/html/Small Cell Lung Cancer in the Course of Idiopathic Pulmonary Fibrosis—Case Report and Literature Review - PMC.html"
-split_into_sentences(raw_text,10)
-paragraphs=split_into_sentences(raw_text,10)
-predict_patient_timeline = dspy.Predict(PatientTimeline)
-prev_memory = [""]
 
-for paragraph in paragraphs:
-    output = predict_patient_timeline(
-        paragraph=paragraph,
-        previous_memory=prev_memory[-3:]
+
+
+def extract_case_report_text(pdf_path: str) -> str:
+    """Extract text from a PDF case report."""
+    return extract_text_from_pdf(pdf_path)
+
+
+def preprocess_html_article(html_path: str) -> str:
+    """Preprocess a PMC HTML article."""
+    return preprocess_pmc_article_text(html_path)
+
+
+def generate_paragraphs(raw_text: str, split_length: int = 10) -> List[str]:
+    """Split preprocessed text into sentences/paragraphs."""
+    return split_into_sentences(raw_text, split_length)
+
+
+def generate_patient_timeline(paragraphs: List[str]) -> str:
+    """Run DSPy patient timeline predictor across paragraphs."""
+    predict_patient_timeline = dspy.Predict(PatientTimeline)
+    prev_memory: List[str] = [""]
+
+    for paragraph in paragraphs:
+        output = predict_patient_timeline(
+            paragraph=paragraph,
+            previous_memory=prev_memory[-3:]
+        )
+        prev_memory.append(output.pt_timeline)
+        print("-" * 30, output.pt_timeline)
+
+    return prev_memory[-1]  # Final case report timeline
+
+
+def run_node_generation(case_report: str) -> List[Dict[str, Any]]:
+    """Run node generation pipeline."""
+    generator = NodeEdgeGenerate()
+    chunked_node_module = ChunkingNodeModule(generator)
+
+    node_result = chunked_node_module(
+        case_report=case_report,
+        max_chunks=None
     )
-    
-    # Only extend memory with nodes
-    prev_memory.append(output.pt_timeline)
-    
-    # Print human-readable timeline (optional)
-    print("-"*30,output.pt_timeline)
-# the following, should be done in thiscas,e
-case_report=prev_memory[-1]
+    nodes_obj = node_result["node_output"]
+    nodes_obj = merge_memory_nodes([], nodes_obj)
 
-# Start lobal timer
-global_start = time.time()
-
-# Instantiate the filter module
-
-# Run it and get the cleaned case report text
-cleaned_text = case_report
-# Print cleaned result for debugging
-print("\n🧹 Cleaned Case Report (filtered output):")
-print("=" * 60)
-print(cleaned_text)
-print("=" * 60)
+    nodes_obj = dspy.Predict(ReorganizeNodes)(nodes_sequence=nodes_obj).node_output
+    return nodes_obj
 
 
-generator = NodeEdgeGenerate()
-chunked_node_module = ChunkingNodeModule(generator) # For node, requires chunking
+def run_edge_generation(nodes_obj: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Run edge generation pipeline."""
+    generator = NodeEdgeGenerate()
+    edge_result = generator.generate_edge(node_input=nodes_obj)
+    return edge_result["edge_output"]
 
 
-"""
-# Generate nodes in chunks to avoid overload for smaller models, use chunk module
-node_result = chunked_node_module(case_report=case_report, max_words_per_chunk=450, max_chunks=None)
-nodes_obj = node_result["node_output"]
-
-# Generate edges once all nodes are collected
-# The input into the edge generator is simply the list of dict of nodes from node_generate
-edge_result = generator.generate_edge(node_input=nodes_obj)
-edges_obj = edge_result["edge_output"]
-"""
-# ok lets start by identifying the actual components of the case r
-
-
-# Memory-enabled extraction of nodes
-node_result = chunked_node_module(
-    case_report=case_report,
-    max_chunks=None
-)
-
-nodes_obj = node_result["node_output"]
-
-# Pure-Python final merge
-nodes_obj = merge_memory_nodes([], nodes_obj)
-
-# LLM-based reorg
-nodes_obj = dspy.Predict(ReorganizeNodes)(nodes_sequence=nodes_obj).node_output
-
-# Edge generation off the clean nodes
-edge_result = generator.generate_edge(node_input=nodes_obj)
-edges_obj   = edge_result["edge_output"]
+def annotate_nodes_with_clinical_data(nodes_obj: List[Dict[str, Any]]) -> None:
+    """Append clinical data extraction to each node."""
+    clinical_data_extractor = ClinicalDataExtractor()
+    for node in nodes_obj:
+        content_str = node.get("content", "")
+        clinical_data = clinical_data_extractor(
+            content=content_str,
+            atomic_sentences=None
+        )
+        node["clinical_data"] = clinical_data
 
 
-
-
-
-# Loop through nodes and edges and extract atomic statements from content output
-
-"""
-for node in nodes_obj:
-    content_str = node.get("content", "")
-    atomic_sents = decompose_content_to_atomic_statements(content_str)
-
-    print(f"\nAtomic breakdown of content from node_id {node.get('node_id', 'unknown')}:")
-    for s in atomic_sents:
-        print(f"- {s}")
-
-
-
-for edge in edges_obj:
-    content_str = edge.get("content", "")
-    atomic_sents = decompose_content_to_atomic_statements(content_str)
-
-    print(f"\nAtomic breakdown of content from edge_id {edge.get('edge_id', 'unknown')}:")
-    for s in atomic_sents:
-        print(f"- {s}")
-
-"""
-
-# the following should be done 
-
-# Use atomic statements and content to generate clinical data dict to append to nodes
-
-clinical_data_extractor = ClinicalDataExtractor()
-
-for node in nodes_obj:
-    content_str = node.get("content", "")
-    #atomic_sents = decompose_content_to_atomic_statements(content_str)
-
-    # You can comment out `content=content_str` if you want atomic_sents only
-    clinical_data = clinical_data_extractor(
-        content=content_str,
-        atomic_sentences=None # Currently none because we have atomic_sents commented out jut to reduce run time
-    )
-    
-    node["clinical_data"] = clinical_data  # append to original node
-
-print("=" * 60)
-print("Nodes (with clinical data):")
-print("=" * 60)
-
-for i, node in enumerate(nodes_obj):
-    print(f"\n Node {i+1}:")
-    pprint(node)
-    print("-" * 60)
-
-
-print("=" * 60)
-print("Edges:")
-print("=" * 60)
-
-for i, edge in enumerate(edges_obj):
-    print(f"\n Edge {i+1}: edge_id = {edge.get('edge_id', 'N/A')}")
-    pprint(edge)
-    print("-" * 60)
-
-
-
-# Evaluate and update the first edge that triggers a branch
-if edges_obj:
-    branch_triggered = False
+def evaluate_branching(edges_obj: List[Dict[str, Any]]) -> None:
+    """Evaluate branching conditions and set branch_flag on first qualifying edge."""
+    if not edges_obj:
+        print("No edges available to evaluate.")
+        return
 
     for edge in edges_obj:
-        # Extract the content used to evaluate branching logic
         transition_content = edge.get("content", "")
         if not transition_content:
-            continue  # Skip edge if no content is available
+            continue
 
-        # Run branching classifier on this specific edge content
         branch_result = optimizedBranchClassifier(content=transition_content)
-
-        # Logging evaluation info
         print(f"\nEvaluating edge: {edge.get('edge_id', 'unknown')}")
         print(f"Content: {transition_content}")
         print(f"Branch decision: {branch_result.branch_bool}")
 
         if branch_result.branch_bool:
-            # Update branch_flag only for the first edge that qualifies
             print(f"Branch triggered — setting branch_flag = True on edge {edge['edge_id']}")
             edge['branch_flag'] = True
-            branch_triggered = True
-            break  # Stop after marking the first branching edge
+            return
 
-    if not branch_triggered:
-        print("No edges met branching criteria.")
-else:
-    print("No edges available to evaluate.")
+    print("No edges met branching criteria.")
 
 
+def print_nodes(nodes_obj: List[Dict[str, Any]]) -> None:
+    """Pretty print all nodes."""
+    print("=" * 60)
+    print("Nodes (with clinical data):")
+    print("=" * 60)
 
-print("EDGES OBJECT ++++++++++++++++++++++++++")
+    for i, node in enumerate(nodes_obj):
+        print(f"\n Node {i + 1}:")
+        pprint(node)
+        print("-" * 60)
 
-# print(edges_obj)
-# print(nodes_obj)
+
+def print_edges(edges_obj: List[Dict[str, Any]]) -> None:
+    """Pretty print all edges."""
+    print("=" * 60)
+    print("Edges:")
+    print("=" * 60)
+
+    for i, edge in enumerate(edges_obj):
+        print(f"\n Edge {i + 1}: edge_id = {edge.get('edge_id', 'N/A')}")
+        pprint(edge)
+        print("-" * 60)
 
 
-# End global timer
-global_end = time.time()
-print(f"\n=== Full DAG generation pipeline completed in {global_end - global_start:.2f} seconds ===")
+def run_pipeline(html_path: str) -> tuple[list[dict], list[dict]]:
+    """Main orchestrator function for running the entire pipeline.
 
-import json
-import requests
+    Returns:
+        nodes_obj: List of node dictionaries
+        edges_obj: List of edge dictionaries
+    """
+    global_start = time.time()
 
-import json
-import csv
-import os
-from pathlib import Path
+    # STEP 1: Extract and preprocess text
+    
+    raw_text = preprocess_html_article(html_path)
+    paragraphs = generate_paragraphs(raw_text, split_length=10)
+
+    # STEP 2: Patient timeline prediction
+    case_report = generate_patient_timeline(paragraphs)
+
+    print("\n🧹 Cleaned Case Report (filtered output):")
+    print("=" * 60)
+    print(case_report)
+    print("=" * 60)
+
+    # STEP 3: Node and edge generation
+    nodes_obj = run_node_generation(case_report)
+    annotate_nodes_with_clinical_data(nodes_obj)
+
+    edges_obj = run_edge_generation(nodes_obj)
+    evaluate_branching(edges_obj)
+
+    # STEP 4: Print outputs
+    print_nodes(nodes_obj)
+    print_edges(edges_obj)
+
+    global_end = time.time()
+    print(f"\n=== Full DAG generation pipeline completed in {global_end - global_start:.2f} seconds ===")
+
+    return nodes_obj, edges_obj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def format_nodes(raw_nodes):
     """
@@ -921,6 +940,8 @@ def append_csv_row(csv_path, row, header):
 def process_and_save_graph(raw_nodes, raw_edges, graph_id, source_file, output_dir):
     """
     Process raw graph data, save JSON, and log metadata.
+    
+
     """
     
 
@@ -946,10 +967,67 @@ def process_and_save_graph(raw_nodes, raw_edges, graph_id, source_file, output_d
     }
     append_csv_row(metadata_csv, metadata_row, header=["graph_id", "json_path", "source_file"])
 
-process_and_save_graph(
-    raw_nodes=nodes_obj,
-    raw_edges=edges_obj,
-    graph_id="graph_001",
-    source_file=html_path,
-    output_dir="./webapp/static/graphs"
-)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    input_folder = "./pmc_htmls"
+    output_dir = "./webapp/static/graphs"
+    os.makedirs(output_dir, exist_ok=True)
+
+    graph_counter = 1
+
+    for html_filename in os.listdir(input_folder):
+        if not html_filename.lower().endswith(".html"):
+            continue  # Skip non-HTML files
+
+        html_path = os.path.join(input_folder, html_filename)
+        graph_id = f"graph_{graph_counter:03d}"
+        graph_json_path = os.path.join(output_dir, f"{graph_id}.json")
+
+        # 🟢 Skip if graph JSON already exists
+        if os.path.exists(graph_json_path):
+            print(f"✅ Skipping {html_filename} → {graph_id} already exists.")
+            graph_counter += 1
+            continue
+
+        print(f"\n=== Processing {html_filename} as {graph_id} ===")
+
+        # Run pipeline and get nodes and edges
+        nodes_obj, edges_obj = run_pipeline(html_path)
+
+        # Save graph
+        process_and_save_graph(
+            raw_nodes=nodes_obj,
+            raw_edges=edges_obj,
+            graph_id=graph_id,
+            source_file=html_path,
+            output_dir=output_dir
+        )
+
+        graph_counter += 1
+
+
+
+
+
+
+# process_and_save_graph(
+#     raw_nodes=nodes_obj,
+#     raw_edges=edges_obj,
+#     graph_id="graph_001",
+#     source_file=html_path,
+#     output_dir="./webapp/static/graphs"
+# )
