@@ -12,44 +12,40 @@
             {
               "summary": "81-year-old female presented with a 10-day history of progressive chest tightness and dyspnea, worsened with physical activity, cough, and back pain.",
               "duration": "10 days",
-              "onset": null,
               "progression": "progressive",
               "associated_symptoms": [
                 "C0008031",
                 "C0013404",
                 "C0009425"
-              ],
-              "alleviating_factors": [],
-              "exacerbating_factors": [
-                "C0031270"
               ]
             }
           ],
           "social_history": [
             {
               "category": "smoking",
-              "status": "never",
-              "description": "No history of smoking"
+              "status": "never"
             }
           ],
           "diagnoses": [
             {
               "code": "C0008031",
-              "label": "Cough",
-              "status": "active",
-              "onset_date": null
+              "label": "Chest tightness",
+              "status": "active"
             },
             {
               "code": "C0013404",
               "label": "Dyspnea",
-              "status": "active",
-              "onset_date": null
+              "status": "active"
             },
             {
               "code": "C0009425",
-              "label": "Back Pain",
-              "status": "active",
-              "onset_date": null
+              "label": "Cough",
+              "status": "active"
+            },
+            {
+              "code": "C0003097",
+              "label": "Back pain",
+              "status": "active"
             }
           ]
         }
@@ -127,58 +123,22 @@
       "customData": {
         "node_id": "E",
         "node_step_index": 4,
-        "content": "Abdominal CT scan detected multiple low-density hepatic nodules of varying sizes, with the largest lesion (2.9 cm \u00d7 2.6 cm) located in the right hepatic lobe. Annular enhancement was noted in the arterial phase, while marked hypodensity was observed in the portal venous phase, demonstrating a \u201cbull\u2019s eye sign\u201d characteristic of multiple hepatic metastases. Enhanced brain CT identified an irregular heterogeneously enhancing mass within the right frontal lobe, with a maximum cross-sectional area of 2.1 cm \u00d7 1.6 cm, consistent with brain metastasis. Cell block analysis of the pleural effusion demonstrated poorly cohesive round-to-oval cells with a dispersed distribution.",
+        "content": "Abdominal CT scan detected multiple low-density hepatic nodules of varying sizes, with the largest lesion (2.9 cm \u00d7 2.6 cm) located in the right hepatic lobe. Annular enhancement was noted in the arterial phase, while marked hypodensity was observed in the portal venous phase, demonstrating a \u201cbull\u2019s eye sign\u201d characteristic of multiple hepatic metastases. Enhanced brain CT identified an irregular heterogeneously enhancing mass within the right frontal lobe, with a maximum cross-sectional area of 2.1 cm \u00d7 1.6 cm, consistent with brain metastasis.",
         "clinical_data": {
           "imaging": [
             {
-              "type": "CT scan",
-              "body_part": "abdomen",
+              "type": "Hepatic nodules",
+              "body_part": "Liver",
               "modality": "CT",
-              "finding": "multiple low-density hepatic nodules of varying sizes",
-              "impression": "multiple hepatic metastases",
-              "date": null
+              "finding": "Multiple low-density hepatic nodules of varying sizes, with the largest lesion (2.9 cm \u00d7 2.6 cm) located in the right hepatic lobe. Annular enhancement was noted in the arterial phase, while marked hypodensity was observed in the portal venous phase, demonstrating a \u201cbull\u2019s eye sign\u201d characteristic of multiple hepatic metastases.",
+              "impression": "Multiple hepatic metastases"
             },
             {
-              "type": "hepatic lesion",
-              "body_part": "right hepatic lobe",
+              "type": "Brain mass",
+              "body_part": "Brain",
               "modality": "CT",
-              "finding": "largest lesion (2.9 cm \u00d7 2.6 cm)",
-              "impression": null,
-              "date": null
-            },
-            {
-              "type": "hepatic lesion enhancement",
-              "body_part": "hepatic nodules",
-              "modality": "CT",
-              "finding": "Annular enhancement in the arterial phase, marked hypodensity in the portal venous phase, demonstrating a \u201cbull\u2019s eye sign\u201d",
-              "impression": null,
-              "date": null
-            },
-            {
-              "type": "brain mass",
-              "body_part": "right frontal lobe",
-              "modality": "CT",
-              "finding": "irregular heterogeneously enhancing mass within the right frontal lobe, with a maximum cross-sectional area of 2.1 cm \u00d7 1.6 cm",
-              "impression": "brain metastasis",
-              "date": null
-            }
-          ],
-          "labs": [
-            {
-              "test": "Cell block analysis",
-              "value": "poorly cohesive round-to-oval cells with a dispersed distribution",
-              "unit": null,
-              "flag": "abnormal",
-              "reference_range": null,
-              "timestamp": null
-            },
-            {
-              "test": "Pleural effusion",
-              "value": "poorly cohesive round-to-oval cells with a dispersed distribution",
-              "unit": null,
-              "flag": "abnormal",
-              "reference_range": null,
-              "timestamp": null
+              "finding": "Irregular heterogeneously enhancing mass within the right frontal lobe, with a maximum cross-sectional area of 2.1 cm \u00d7 1.6 cm",
+              "impression": "Brain metastasis"
             }
           ]
         }
@@ -190,8 +150,15 @@
       "customData": {
         "node_id": "F",
         "node_step_index": 5,
-        "content": "Cytomorphology of pleural",
-        "clinical_data": {}
+        "content": "Cell block analysis of the pleural effusion demonstrated poorly cohesive round-to-oval cells with a dispersed distribution exhibiting eccentrically located nuclei with dense chromatin, abundant eosinophilic cytoplasm, and nuclear morphology ranging from round to oval or slightly irregular shapes.",
+        "clinical_data": {
+          "labs": [
+            {
+              "test": "Pleural Effusion Analysis",
+              "finding": "Poorly cohesive round-to-oval cells with a dispersed distribution exhibiting eccentrically located nuclei with dense chromatin, abundant eosinophilic cytoplasm, and nuclear morphology ranging from round to oval or slightly irregular shapes."
+            }
+          ]
+        }
       }
     }
   ],
@@ -202,7 +169,7 @@
       "data": {
         "edge_id": "A_to_B",
         "branch_flag": true,
-        "content": "Patient's initial presentation led to chest CT imaging."
+        "content": "Patient underwent chest CT imaging."
       }
     },
     {
@@ -211,11 +178,11 @@
       "data": {
         "edge_id": "B_to_C",
         "branch_flag": true,
-        "content": "Detection of pleural effusion prompted thoracentesis for fluid evaluation.",
+        "content": "Thoracentesis was performed, and the drained pleural fluid was sent to the Department of Pathology for further evaluation.",
         "transition_event": {
           "trigger_type": "procedure",
           "trigger_entities": [
-            "C0040159"
+            "C0040144"
           ],
           "change_type": "addition",
           "target_domain": "procedure"
@@ -228,13 +195,7 @@
       "data": {
         "edge_id": "C_to_D",
         "branch_flag": true,
-        "content": "Post-thoracentesis imaging revealed a lung mass and potential metastases.",
-        "transition_event": {
-          "trigger_type": "imaging",
-          "trigger_entities": [],
-          "change_type": "addition",
-          "target_domain": "imaging"
-        }
+        "content": "Post-thoracic drainage chest CT was performed."
       }
     },
     {
@@ -243,9 +204,9 @@
       "data": {
         "edge_id": "D_to_E",
         "branch_flag": true,
-        "content": "Further imaging and cell block analysis revealed hepatic and brain metastases.",
+        "content": "Abdominal CT scan and enhanced brain CT were performed.",
         "transition_event": {
-          "trigger_type": "imaging",
+          "trigger_type": "procedure",
           "trigger_entities": [],
           "change_type": "addition",
           "target_domain": "imaging"
@@ -258,7 +219,13 @@
       "data": {
         "edge_id": "E_to_F",
         "branch_flag": true,
-        "content": "Cytomorphology of pleural"
+        "content": "Cell block analysis of the pleural effusion was performed.",
+        "transition_event": {
+          "trigger_type": "lab_change",
+          "trigger_entities": [],
+          "change_type": "addition",
+          "target_domain": "lab"
+        }
       }
     }
   ]

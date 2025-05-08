@@ -82,7 +82,22 @@
         </div>
     </div>
     <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+
+<!-- OK so for this you have a couple of things that should be done 
+ 
+first you need to load in the existing valid things, assyme you have a generated representable csv, or index indicating which ones you have and havent done, 
+
+so when you login you call the inforamtion on all of that. ...
+
+
+format of the informaiton assume you 
+
+
+-->
     <script>
+
+        
         let network;
         let nodes = new vis.DataSet([]);
         let edges = new vis.DataSet([]);
@@ -100,8 +115,55 @@
                 loadNodeDetails(firstNodeId);
             }
         });
-        
+        function getCookieValue(name) {
+            const cookies = document.cookie.split('; ');
+            const cookie = cookies.find(row => row.startsWith(name + '='));
+            return cookie ? cookie.split('=')[1] : null;
+          }
+          
+          const userId = getCookieValue('user_id');
+          console.log('User ID from cookie:', userId);
+        async function load_JSON_metadata(){
     
+
+            fetch('/static/graphs/graph_metadata.json')
+            .then(response => response.json())
+            .then(data => {
+              console.log('Loaded JSON:', data);
+          
+              // Example: access first graph_id
+              if (Array.isArray(data)) {
+                console.log('First graph_id:', data[0].graph_id);
+              } else {
+                console.log('Graph ID:', data.graph_id);
+              }
+            })
+            .catch(err => console.error('Error loading JSON:', err));
+        }
+        load_JSON_metadata();
+        
+        async function loadEvaluationIndex(username) {
+            const filePath = `/static/user_data/eval_index_test.json`;  // backend serves file at this path
+            const response = await fetch(filePath);
+            if (!response.ok) {
+              console.error(`Failed to load eval index for ${username}: ${response.status}`);
+              return;
+            }
+            const evalIndex = await response.json();
+            console.log('Evaluation index:', evalIndex);
+          
+            const nextGraph = evalIndex.find(item => item.status === 'incomplete');
+            console.log(nextGraph);
+            if (nextGraph) {
+              window.location.href = `/static/evaluate_graph/${nextGraph.graph_identifier}`;
+            } else {
+              alert('All graphs completed!');
+            }
+          }
+          
+          // Example: run on login
+          const loggedInUser = 'user123';
+          loadEvaluationIndex(loggedInUser);
         async function loadGraphData() {
             const response = await fetch('/api/get-graph-data');
             const data = await response.json();
@@ -125,7 +187,7 @@
                 loadNodeDetails(nodeId);
             });
         }
-    
+        
         async function loadNodeDetails(nodeId) {
             const response = await fetch(`/api/get-node/${nodeId}`);
             const data = await response.json();

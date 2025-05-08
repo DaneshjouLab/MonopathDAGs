@@ -32,7 +32,6 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, index=True)
 
-
 async def init_db():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
@@ -63,6 +62,8 @@ async def serve_node_evaluation():
     file_path = os.path.join(STATIC_DIR, "node-evaluation.html")
     with open(file_path, "r", encoding="utf-8") as f:
         return HTMLResponse(content=f.read())
+
+
 
 @app.get("/synthetic-evaluation", response_class=HTMLResponse)
 async def serve_synthetic_evaluation():
@@ -104,8 +105,9 @@ async def api_login(request: Request, response: Response, db: AsyncSession = Dep
         await db.commit()
         await db.refresh(user)
 
-    response.set_cookie(key="user_id", value=str(user.id), httponly=True, max_age=3600)
+    response.set_cookie(key="user_id", value=str(user.id),max_age=3600)
     return {"status": "ok", "user_id": user.id}
+
 
 #fine
 @app.get("/logout")
@@ -135,7 +137,9 @@ async def get_user_data(request: Request, db: AsyncSession = Depends(get_db)):
 
     return {"status": "ok", "data": {"id": user.id, "username": user.username}}
 
-# generate synthetic repors. 
+# generate synthetic reports please fix this:
+
+# you should be able to call this and have no issues, 
 @app.get("/api/get-synthetic-reports")
 async def get_synthetic_reports():
     # Example static list; replace with DB or dynamic source

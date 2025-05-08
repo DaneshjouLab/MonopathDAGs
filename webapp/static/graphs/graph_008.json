@@ -6,36 +6,17 @@
       "customData": {
         "node_id": "A",
         "node_step_index": 0,
-        "content": "37-year-old female patient reported intermittent cough and slight chest discomfort for 3 months and a painless cervical mass for 1 month. Patient underwent a left cervical lymph node puncture at another hospital one week ago. Pathological tissue showed granulomatous inflammation, with caseous necrosis and Langhans\u2019 giant cells observed.",
+        "content": "37-year-old female patient reported intermittent cough and slight chest discomfort for 3 months and painless cervical mass for 1 month.",
         "clinical_data": {
           "HPI": [
             {
-              "summary": "Intermittent cough and slight chest discomfort for 3 months and a painless cervical mass for 1 month.",
+              "summary": "Intermittent cough and slight chest discomfort for 3 months and painless cervical mass for 1 month.",
               "duration": "3 months",
-              "onset": null,
+              "onset": "3 months ago",
               "progression": "unknown",
               "associated_symptoms": [
-                "C0010200",
-                "C0231720"
+                "C0010200"
               ]
-            }
-          ],
-          "diagnoses": [
-            {
-              "code": "C0024231",
-              "label": "Lymph Node Diseases",
-              "status": "active",
-              "onset_date": null
-            }
-          ],
-          "procedures": [
-            {
-              "name": "C0162545",
-              "approach": "percutaneous",
-              "date": null,
-              "location": "Cervical Lymph Node",
-              "performed_by": null,
-              "outcome": null
             }
           ]
         }
@@ -46,43 +27,26 @@
       "label": "Step 2",
       "customData": {
         "node_id": "B",
-        "node_step_index": 3,
-        "content": "Patient has untreated congenital heart disease (patent ductus arteriosus) for 20 years and hypertension for half a year, with irregular use of valsartan for blood pressure control.",
+        "node_step_index": 1,
+        "content": "Patient underwent a left cervical lymph node puncture one week ago. Pathology showed granulomatous inflammation, with caseous necrosis and Langhans\u2019 giant cells observed.",
         "clinical_data": {
+          "procedures": [
+            {
+              "name": "Puncture",
+              "date": "one week ago",
+              "location": "left cervical lymph node"
+            }
+          ],
           "diagnoses": [
             {
-              "code": "Q25.0",
-              "label": "Patent ductus arteriosus",
-              "status": "active",
-              "onset_date": null
+              "code": "string",
+              "label": "granulomatous inflammation",
+              "status": "active"
             },
             {
-              "code": "I10",
-              "label": "Essential (primary) hypertension",
-              "status": "active",
-              "onset_date": null
-            }
-          ],
-          "medications": [
-            {
-              "drug": "C0971785",
-              "dosage": null,
-              "frequency": "irregular",
-              "modality": "oral",
-              "start_date": null,
-              "end_date": null,
-              "indication": "Hypertension"
-            }
-          ],
-          "HPI": [
-            {
-              "summary": "Patient has untreated congenital heart disease (patent ductus arteriosus) for 20 years and hypertension for half a year, with irregular use of valsartan for blood pressure control.",
-              "duration": "20 years",
-              "onset": null,
-              "progression": "unknown",
-              "associated_symptoms": [],
-              "alleviating_factors": [],
-              "exacerbating_factors": []
+              "code": "string",
+              "label": "caseous necrosis",
+              "status": "active"
             }
           ]
         }
@@ -93,42 +57,32 @@
       "label": "Step 3",
       "customData": {
         "node_id": "C",
-        "node_step_index": 4,
-        "content": "On admission, body examination found a 4x3 cm mass on the left clavicle, which was well-defined, poorly mobile, non-tender, and without surface ulceration or redness. Painless cervical lymphadenopathy. Biopsy demonstrated granuloma. Ultrasound-guided left supraclavicular lymph node puncture was performed. Histopathology showed focal distribution of epithelioid cells and a few multinucleated giant cells, which suggested granulomatous inflammation. Biopsy of left neck lymph node showed granulomatous inflammation.",
+        "node_step_index": 2,
+        "content": "Patient has untreated congenital heart disease (patent ductus arteriosus) for 20 years and hypertension for half a year, with irregular use of valsartan.",
         "clinical_data": {
-          "imaging": [
+          "diagnoses": [
             {
-              "type": "Ultrasound",
-              "body_part": "Supraclavicular lymph node",
-              "modality": "Ultrasound",
-              "finding": "granulomatous inflammation",
-              "date": null
-            }
-          ],
-          "procedures": [
-            {
-              "name": "Puncture",
-              "approach": "percutaneous",
-              "date": null,
-              "location": "left supraclavicular lymph node",
-              "outcome": "granulomatous inflammation"
+              "code": "C0023147",
+              "label": "Congenital heart disease",
+              "status": "active",
+              "onset_date": null
             },
             {
-              "name": "Biopsy",
-              "approach": "other",
-              "date": null,
-              "location": "left neck lymph node",
-              "outcome": "granulomatous inflammation"
+              "code": "C0020538",
+              "label": "Hypertension",
+              "status": "active",
+              "onset_date": null
             }
           ],
-          "physical_exam": [
+          "medications": [
             {
-              "finding": "mass on the left clavicle",
-              "size": "4x3 cm",
-              "characteristics": "well-defined, poorly mobile, non-tender, and without surface ulceration or redness"
-            },
-            {
-              "finding": "Painless cervical lymphadenopathy"
+              "drug": "C0724454",
+              "dosage": null,
+              "frequency": "irregular",
+              "modality": "oral",
+              "start_date": null,
+              "end_date": null,
+              "indication": "Hypertension"
             }
           ]
         }
@@ -139,145 +93,17 @@
       "label": "Step 4",
       "customData": {
         "node_id": "D",
-        "node_step_index": 8,
-        "content": "Physical examination of the lungs was unremarkable. Auscultation revealed a continuous murmur at the left sternal border. Laboratory tests showed normal blood carcinoembryonic antigen (CEA), squamous cell carcinoma antigen, cytokeratin 19 fragment and neuron-specific enolase (NSE). Blood routine test, liver and kidney function, electrolytes, procalcitonin (PCT), C-reactive protein (CRP) and T-lymphocyte subsets were all normal. Sputum AFB and GeneXpert MTB/RIF were negative. EB virus blood test showed increased antibody title of capsid antigen IgG antibody 750U/mL (Reference:0\u201320 U/mL), EB virus early antigen IgM antibody 2.57 COI (Cut off index reference:0-1.1) and EB virus core antigen IgG antibody 600U/mL(Reference:0\u201320 U/mL). Staining of Acid-fast and methenamine silver were all negative. Lymph node tissue for GeneXpert MTB/RIF and TB culture were all negative.",
+        "node_step_index": 3,
+        "content": "Physical examination revealed a 4x3 cm, well-defined, poorly mobile, non-tender mass on the left clavicle without surface ulceration or redness. Lungs unremarkable.",
         "clinical_data": {
-          "vitals": [
+          "physical_exam": [
             {
-              "type": "Pulmonary auscultation",
-              "value": "unremarkable",
-              "unit": null,
-              "timestamp": null
-            }
-          ],
-          "labs": [
-            {
-              "test": "Carcinoembryonic antigen",
-              "value": "normal",
-              "unit": null,
-              "flag": "normal",
-              "reference_range": null,
-              "timestamp": null
+              "body_part": "Clavicle",
+              "finding": "4x3 cm, well-defined, poorly mobile, non-tender mass on the left clavicle without surface ulceration or redness"
             },
             {
-              "test": "Squamous cell carcinoma antigen",
-              "value": "normal",
-              "unit": null,
-              "flag": "normal",
-              "reference_range": null,
-              "timestamp": null
-            },
-            {
-              "test": "Cytokeratin 19 fragment",
-              "value": "normal",
-              "unit": null,
-              "flag": "normal",
-              "reference_range": null,
-              "timestamp": null
-            },
-            {
-              "test": "Neuron-specific enolase",
-              "value": "normal",
-              "unit": null,
-              "flag": "normal",
-              "reference_range": null,
-              "timestamp": null
-            },
-            {
-              "test": "Blood routine test",
-              "value": "normal",
-              "unit": null,
-              "flag": "normal",
-              "reference_range": null,
-              "timestamp": null
-            },
-            {
-              "test": "Liver function",
-              "value": "normal",
-              "unit": null,
-              "flag": "normal",
-              "reference_range": null,
-              "timestamp": null
-            },
-            {
-              "test": "Kidney function",
-              "value": "normal",
-              "unit": null,
-              "flag": "normal",
-              "reference_range": null,
-              "timestamp": null
-            },
-            {
-              "test": "Electrolytes",
-              "value": "normal",
-              "unit": null,
-              "flag": "normal",
-              "reference_range": null,
-              "timestamp": null
-            },
-            {
-              "test": "Procalcitonin",
-              "value": "normal",
-              "unit": null,
-              "flag": "normal",
-              "reference_range": null,
-              "timestamp": null
-            },
-            {
-              "test": "C-reactive protein",
-              "value": "normal",
-              "unit": null,
-              "flag": "normal",
-              "reference_range": null,
-              "timestamp": null
-            },
-            {
-              "test": "T-lymphocyte subsets",
-              "value": "normal",
-              "unit": null,
-              "flag": "normal",
-              "reference_range": null,
-              "timestamp": null
-            },
-            {
-              "test": "Sputum AFB",
-              "value": "negative",
-              "unit": null,
-              "flag": "normal",
-              "reference_range": null,
-              "timestamp": null
-            },
-            {
-              "test": "GeneXpert MTB/RIF",
-              "value": "negative",
-              "unit": null,
-              "flag": "normal",
-              "reference_range": null,
-              "timestamp": null
-            },
-            {
-              "test": "EB virus capsid antigen IgG antibody",
-              "value": "750",
-              "unit": "U/mL",
-              "flag": "abnormal",
-              "reference_range": "0\u201320 U/mL",
-              "timestamp": null
-            },
-            {
-              "test": "EB virus early antigen IgM antibody",
-              "value": "2.57",
-              "unit": "COI",
-              "flag": "abnormal",
-              "reference_range": "0-1.1",
-              "timestamp": null
-            },
-            {
-              "test": "EB virus core antigen IgG antibody",
-              "value": "600",
-              "unit": "U/mL",
-              "flag": "abnormal",
-              "reference_range": "0\u201320 U/mL",
-              "timestamp": null
+              "body_part": "Lungs",
+              "finding": "unremarkable"
             }
           ]
         }
@@ -288,41 +114,83 @@
       "label": "Step 5",
       "customData": {
         "node_id": "E",
-        "node_step_index": 15,
-        "content": "Enhanced CT scan showed mass in the middle lobe of the right lung and multiple enlarged lymph nodes in left neck, mediastinum and right hilum. Chest CT scan showed mass(34 \u00d7 43 mm) in the middle lobe of the right lung and multiple enlarged lymph nodes in mediastinum.",
+        "node_step_index": 4,
+        "content": "Auscultation revealed a continuous murmur at the left sternal border. Laboratory tests showed normal blood CEA, squamous cell carcinoma antigen, cytokeratin 19 fragment, and NSE levels. Blood routine test, liver and kidney function, electrolytes, PCT, CRP, and T-lymphocyte subsets were all normal. Sputum AFB and GeneXpert MTB/RIF were negative.",
         "clinical_data": {
-          "imaging": [
+          "vitals": [
             {
-              "type": "Mass",
-              "body_part": "Middle lobe of the right lung",
-              "modality": "CT",
-              "finding": "Mass(34 \u00d7 43 mm)",
-              "impression": "Mass in the middle lobe of the right lung",
-              "date": null
+              "type": "Auscultation finding",
+              "value": "continuous murmur",
+              "location": "left sternal border"
+            }
+          ],
+          "labs": [
+            {
+              "test": "Carcinoembryonic Antigen Measurement",
+              "value": "normal",
+              "flag": "normal"
             },
             {
-              "type": "Lymph node enlargement",
-              "body_part": "Left neck",
-              "modality": "CT",
-              "finding": "Multiple enlarged lymph nodes",
-              "impression": "Multiple enlarged lymph nodes in left neck",
-              "date": null
+              "test": "Squamous Cell Carcinoma Antigen Measurement",
+              "value": "normal",
+              "flag": "normal"
             },
             {
-              "type": "Lymph node enlargement",
-              "body_part": "Mediastinum",
-              "modality": "CT",
-              "finding": "Multiple enlarged lymph nodes",
-              "impression": "Multiple enlarged lymph nodes in mediastinum",
-              "date": null
+              "test": "Cytokeratin-19 Fragments Measurement",
+              "value": "normal",
+              "flag": "normal"
             },
             {
-              "type": "Lymph node enlargement",
-              "body_part": "Right hilum",
-              "modality": "CT",
-              "finding": "Multiple enlarged lymph nodes",
-              "impression": "Multiple enlarged lymph nodes in right hilum",
-              "date": null
+              "test": "Neuron-Specific Enolase Measurement",
+              "value": "normal",
+              "flag": "normal"
+            },
+            {
+              "test": "Complete Blood Count",
+              "value": "normal",
+              "flag": "normal"
+            },
+            {
+              "test": "Liver Function Tests",
+              "value": "normal",
+              "flag": "normal"
+            },
+            {
+              "test": "Kidney Function Tests",
+              "value": "normal",
+              "flag": "normal"
+            },
+            {
+              "test": "Electrolyte Panel",
+              "value": "normal",
+              "flag": "normal"
+            },
+            {
+              "test": "Procalcitonin Measurement",
+              "value": "normal",
+              "flag": "normal"
+            },
+            {
+              "test": "C-Reactive Protein Measurement",
+              "value": "normal",
+              "flag": "normal"
+            },
+            {
+              "test": "T Lymphocyte Subsets",
+              "value": "normal",
+              "flag": "normal"
+            },
+            {
+              "test": "Acid-Fast Stain",
+              "specimen": "sputum",
+              "value": "negative",
+              "flag": "normal"
+            },
+            {
+              "test": "Mycobacterium tuberculosis complex DNA detection by nucleic acid probe with rifampin resistance detection by nucleic acid probe",
+              "specimen": "sputum",
+              "value": "negative",
+              "flag": "normal"
             }
           ]
         }
@@ -333,59 +201,30 @@
       "label": "Step 6",
       "customData": {
         "node_id": "F",
-        "node_step_index": 16,
-        "content": "Percutaneous lung biopsy revealed EBV-positive poorly differentiated carcinoma consistent with lymphoepithelioma. Nasopharyngoscopy excluded nasopharyngeal carcinoma. Diagnosis of Pulmonary Lymphoepithelioma-like Carcinoma (PLELC) was confirmed. PLELC (Pulmonary lymphoepithelioma-like carcinoma) was confirmed after percutaneous lung biopsy and EBV test. Lung biopsy shows lymphoepithelial carcinoma. Immunohistochemical staining of tumor cells showed CK and P40 positivity. In situ hybridization showed EBER positivity in tumor cells.",
+        "node_step_index": 5,
+        "content": "EB virus blood test showed increased antibody title of capsid antigen IgG antibody 750U/mL (Reference:0\u201320 U/mL), EB virus early antigen IgM antibody 2.57 COI (Cut off index reference:0-1.1) and EB virus core antigen IgG antibody 600U/mL(Reference:0\u201320 U/mL).",
         "clinical_data": {
-          "procedures": [
-            {
-              "name": "Percutaneous lung biopsy",
-              "approach": "percutaneous",
-              "date": null,
-              "location": "lung",
-              "performed_by": null,
-              "outcome": null
-            },
-            {
-              "name": "Nasopharyngoscopy",
-              "approach": "endoscopic",
-              "date": null,
-              "location": "nasopharynx",
-              "performed_by": null,
-              "outcome": null
-            }
-          ],
-          "diagnoses": [
-            {
-              "code": null,
-              "label": "Pulmonary Lymphoepithelioma-like Carcinoma",
-              "status": "active",
-              "onset_date": null
-            },
-            {
-              "code": null,
-              "label": "lymphoepithelial carcinoma",
-              "status": "active",
-              "onset_date": null
-            }
-          ],
           "labs": [
             {
-              "test": "EBV test",
-              "value": "positive",
-              "unit": null,
-              "flag": "abnormal",
-              "reference_range": null,
-              "timestamp": null
-            }
-          ],
-          "imaging": [
+              "test": "Epstein-Barr Virus Capsid Antigen IgG Antibody",
+              "value": "750",
+              "unit": "U/mL",
+              "reference_range": "0-20 U/mL",
+              "flag": "abnormal"
+            },
             {
-              "type": null,
-              "body_part": "lung",
-              "modality": null,
-              "finding": "lymphoepithelial carcinoma",
-              "impression": null,
-              "date": null
+              "test": "Epstein-Barr Virus Early Antigen IgM Antibody",
+              "value": "2.57",
+              "unit": "COI",
+              "reference_range": "0-1.1 COI",
+              "flag": "abnormal"
+            },
+            {
+              "test": "Epstein-Barr Virus Core Antigen IgG Antibody",
+              "value": "600",
+              "unit": "U/mL",
+              "reference_range": "0-20 U/mL",
+              "flag": "abnormal"
             }
           ]
         }
@@ -396,54 +235,22 @@
       "label": "Step 7",
       "customData": {
         "node_id": "G",
-        "node_step_index": 17,
-        "content": "Patient received chemotherapy and immunotherapy with carboplatin and paclitaxel in combination with tislelizumab.",
+        "node_step_index": 6,
+        "content": "Ultrasound-guided left supraclavicular lymph node puncture was performed. Histopathology showed focal distribution of epithelioid cells and a few multinucleated giant cells, which suggested granulomatous inflammation.",
         "clinical_data": {
-          "medications": [
-            {
-              "drug": "C0007136",
-              "dosage": null,
-              "frequency": null,
-              "modality": null,
-              "start_date": null,
-              "end_date": null,
-              "indication": null
-            },
-            {
-              "drug": "C0030393",
-              "dosage": null,
-              "frequency": null,
-              "modality": null,
-              "start_date": null,
-              "end_date": null,
-              "indication": null
-            },
-            {
-              "drug": "C5203714",
-              "dosage": null,
-              "frequency": null,
-              "modality": null,
-              "start_date": null,
-              "end_date": null,
-              "indication": null
-            }
-          ],
           "procedures": [
             {
-              "name": "C0007314",
-              "approach": null,
-              "date": null,
-              "location": null,
-              "performed_by": null,
-              "outcome": null
-            },
+              "name": "Puncture",
+              "approach": "percutaneous",
+              "location": "Left supraclavicular lymph node",
+              "modality": "Ultrasound",
+              "outcome": "Histopathology showed focal distribution of epithelioid cells and a few multinucleated giant cells, which suggested granulomatous inflammation."
+            }
+          ],
+          "imaging": [
             {
-              "name": "C4721494",
-              "approach": null,
-              "date": null,
-              "location": null,
-              "performed_by": null,
-              "outcome": null
+              "modality": "Ultrasound",
+              "body_part": "Left supraclavicular lymph node"
             }
           ]
         }
@@ -454,71 +261,75 @@
       "label": "Step 8",
       "customData": {
         "node_id": "H",
-        "node_step_index": 18,
-        "content": "Repeated CT 1.5 months later showed significant reduction of lung lesions and cervical enlarged lymph nodes. Chest CT scan showed significant improvement of the lung mass (26\u2009\u00d7\u200917 mm) and reduced lymph nodes after chemotherapy and immunotherapy. Lung lesions and cervical lymphadenopathy improved after receiving chemotherapy and checkpoint inhibitor. Patient had a favorable response to platinum-based chemotherapy. Regression of both pulmonary lesions and cervical lymphadenopathy suggests systemic efficacy.",
+        "node_step_index": 7,
+        "content": "Acid-fast and methenamine silver staining were negative. Lymph node tissue GeneXpert MTB/RIF and TB culture were negative. Biopsy demonstrated granuloma.",
         "clinical_data": {
-          "imaging": [
+          "labs": [
             {
-              "type": "CT scan",
-              "body_part": "lung",
-              "modality": "CT",
-              "finding": "significant reduction of lung lesions",
-              "date": null
+              "test": "Acid-fast stain",
+              "value": "negative"
             },
             {
-              "type": "CT scan",
-              "body_part": "cervical lymph nodes",
-              "modality": "CT",
-              "finding": "significant reduction of cervical enlarged lymph nodes",
-              "date": null
+              "test": "Methenamine silver stain",
+              "value": "negative"
             },
             {
-              "type": "Chest CT scan",
-              "body_part": "lung mass",
-              "modality": "CT",
-              "finding": "significant improvement of the lung mass (26\u2009\u00d7\u200917 mm)",
-              "date": null
+              "test": "GeneXpert MTB/RIF",
+              "value": "negative",
+              "body_part": "Lymph node"
             },
             {
-              "type": "Chest CT scan",
-              "body_part": "lymph nodes",
-              "modality": "CT",
-              "finding": "reduced lymph nodes",
-              "date": null
+              "test": "TB culture",
+              "value": "negative",
+              "body_part": "Lymph node"
             }
           ],
           "diagnoses": [
             {
-              "code": null,
-              "label": "Lung lesions",
-              "status": "active",
-              "onset_date": null
-            },
-            {
-              "code": null,
-              "label": "cervical lymphadenopathy",
-              "status": "active",
-              "onset_date": null
+              "code": "Granuloma",
+              "label": "Granuloma",
+              "status": "active"
             }
-          ],
-          "medications": [
+          ]
+        }
+      }
+    },
+    {
+      "id": "N9",
+      "label": "Step 9",
+      "customData": {
+        "node_id": "I",
+        "node_step_index": 8,
+        "content": "Enhanced CT scan showed mass in the middle lobe of the right lung and multiple enlarged lymph nodes in left neck, mediastinum and right hilum.",
+        "clinical_data": {
+          "imaging": [
             {
-              "drug": "platinum-based chemotherapy",
-              "dosage": null,
-              "frequency": null,
-              "modality": null,
-              "start_date": null,
-              "end_date": null,
-              "indication": null
+              "type": "CT scan",
+              "body_part": "middle lobe of the right lung",
+              "modality": "CT",
+              "finding": "mass",
+              "date": null
             },
             {
-              "drug": "checkpoint inhibitor",
-              "dosage": null,
-              "frequency": null,
-              "modality": null,
-              "start_date": null,
-              "end_date": null,
-              "indication": null
+              "type": "CT scan",
+              "body_part": "left neck",
+              "modality": "CT",
+              "finding": "multiple enlarged lymph nodes",
+              "date": null
+            },
+            {
+              "type": "CT scan",
+              "body_part": "mediastinum",
+              "modality": "CT",
+              "finding": "multiple enlarged lymph nodes",
+              "date": null
+            },
+            {
+              "type": "CT scan",
+              "body_part": "right hilum",
+              "modality": "CT",
+              "finding": "multiple enlarged lymph nodes",
+              "date": null
             }
           ]
         }
@@ -532,7 +343,16 @@
       "data": {
         "edge_id": "A_to_B",
         "branch_flag": true,
-        "content": "Interval of time between initial presentation and further history taking."
+        "content": "Patient underwent a left cervical lymph node puncture one week ago due to intermittent cough, slight chest discomfort, and a painless cervical mass. Pathology showed granulomatous inflammation, with caseous necrosis and Langhans\u2019 giant cells observed.",
+        "transition_event": {
+          "trigger_type": "procedure",
+          "trigger_entities": [
+            "C0024270"
+          ],
+          "change_type": "addition",
+          "target_domain": "procedure",
+          "timestamp": null
+        }
       }
     },
     {
@@ -541,7 +361,17 @@
       "data": {
         "edge_id": "B_to_C",
         "branch_flag": true,
-        "content": "Interval between history and physical exam on admission."
+        "content": "Past medical history of untreated congenital heart disease (patent ductus arteriosus) for 20 years and hypertension for half a year, with irregular use of valsartan.",
+        "transition_event": {
+          "trigger_type": "spontaneous",
+          "trigger_entities": [
+            "C0023147",
+            "C0020538"
+          ],
+          "change_type": "other",
+          "target_domain": "diagnosis",
+          "timestamp": null
+        }
       }
     },
     {
@@ -550,7 +380,14 @@
       "data": {
         "edge_id": "C_to_D",
         "branch_flag": true,
-        "content": "Interval between physical exam and lab results."
+        "content": "Physical examination revealed a 4x3 cm, well-defined, poorly mobile, non-tender mass on the left clavicle without surface ulceration or redness. Lungs unremarkable.",
+        "transition_event": {
+          "trigger_type": "spontaneous",
+          "trigger_entities": [],
+          "change_type": "progression",
+          "target_domain": "physical_exam",
+          "timestamp": null
+        }
       }
     },
     {
@@ -559,12 +396,13 @@
       "data": {
         "edge_id": "D_to_E",
         "branch_flag": true,
-        "content": "Interval between lab results and imaging.",
+        "content": "Auscultation revealed a continuous murmur at the left sternal border. Laboratory tests showed normal blood CEA, squamous cell carcinoma antigen, cytokeratin 19 fragment, and NSE levels. Blood routine test, liver and kidney function, electrolytes, PCT, CRP, and T-lymphocyte subsets were all normal. Sputum AFB and GeneXpert MTB/RIF were negative.",
         "transition_event": {
-          "trigger_type": "imaging",
+          "trigger_type": "lab_change",
           "trigger_entities": [],
-          "change_type": "addition",
-          "target_domain": "imaging"
+          "change_type": "other",
+          "target_domain": "lab",
+          "timestamp": null
         }
       }
     },
@@ -574,14 +412,15 @@
       "data": {
         "edge_id": "E_to_F",
         "branch_flag": true,
-        "content": "Interval between imaging and diagnosis.",
+        "content": "EB virus blood test showed increased antibody title of capsid antigen IgG antibody 750U/mL (Reference:0\u201320 U/mL), EB virus early antigen IgM antibody 2.57 COI (Cut off index reference:0-1.1) and EB virus core antigen IgG antibody 600U/mL(Reference:0\u201320 U/mL).",
         "transition_event": {
-          "trigger_type": "procedure",
+          "trigger_type": "lab_change",
           "trigger_entities": [
-            "C0162645"
+            "C0014474"
           ],
-          "change_type": "addition",
-          "target_domain": "diagnosis"
+          "change_type": "progression",
+          "target_domain": "lab",
+          "timestamp": null
         }
       }
     },
@@ -591,16 +430,15 @@
       "data": {
         "edge_id": "F_to_G",
         "branch_flag": true,
-        "content": "Interval between diagnosis and treatment.",
+        "content": "Ultrasound-guided left supraclavicular lymph node puncture was performed. Histopathology showed focal distribution of epithelioid cells and a few multinucleated giant cells, which suggested granulomatous inflammation.",
         "transition_event": {
-          "trigger_type": "medication_change",
+          "trigger_type": "procedure",
           "trigger_entities": [
-            "C0007136",
-            "C0030393",
-            "C5203714"
+            "C0024270"
           ],
           "change_type": "addition",
-          "target_domain": "medication"
+          "target_domain": "procedure",
+          "timestamp": null
         }
       }
     },
@@ -610,13 +448,7 @@
       "data": {
         "edge_id": "G_to_H",
         "branch_flag": true,
-        "content": "Interval between treatment and follow-up imaging.",
-        "transition_event": {
-          "trigger_type": "imaging",
-          "trigger_entities": [],
-          "change_type": "reinterpretation",
-          "target_domain": "imaging"
-        }
+        "content": "Acid-fast and methenamine silver staining were negative. Lymph node tissue GeneXpert"
       }
     }
   ]

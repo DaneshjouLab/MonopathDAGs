@@ -6,7 +6,6 @@ import os
 
 # 1. Load text from PDF
 from src.data.data_processors.pdf_to_text import extract_text_from_pdf
-# raw_text = extract_text_from_pdf("./samples/pdfs/am_journal_case_reports_2024.pdf")
 
 # 2. Use paragraph extractor
 def extract_paragraphs(text: str) -> List[dict]:
