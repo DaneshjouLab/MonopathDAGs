@@ -1,16 +1,16 @@
 from fastapi import FastAPI, Request, Response, Depends, HTTPException
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker, declarative_base
 from sqlalchemy import Column, Integer, String, select
-from .shared_graph_state import get_graph,set_graph
+from functools import wraps
 import os
+import json
 import asyncio
+import re
 
-
-#try to minimize backend computations and move ot the front end to reduce costs and such.....
-
+print("✅ BACKEND MODULE LOADED")
 
 DATABASE_URL = "sqlite+aiosqlite:///./webapp/.data/localdata.db"
 
@@ -24,7 +24,6 @@ BASE_DIR = os.path.dirname(__file__)
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
-
 # ----------------- Database Model -----------------
 
 class User(Base):
@@ -32,15 +31,34 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, index=True)
 
+class Evaluation(Base):
+    __tablename__="evaluations"
+    id = Column(Integer, primary_key=True)
+    username=Column(String)
+    graph_id=Column(String)
+    element_id=Column(String)
+    order=Column(String)
+    accuracy=Column(String)
+    
 async def init_db():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
-
 
 async def get_db():
     async with AsyncSessionLocal() as session:
         yield session
 
+# ----------------- Login Decorator -----------------
+
+def require_login_html(route_handler):
+    @wraps(route_handler)
+    async def wrapper(request: Request, *args, **kwargs):
+        user_id = request.cookies.get("user_id")
+        print(user_id)
+        if not user_id:
+            return RedirectResponse(url="/")
+        return await route_handler(request, *args, **kwargs)
+    return wrapper
 
 # ----------------- Routes -----------------
 
@@ -51,34 +69,33 @@ async def serve_root(request: Request):
         index_path = os.path.join(STATIC_DIR, "index.html")
     else:
         index_path = os.path.join(STATIC_DIR, "login.html")
-
     with open(index_path, "r", encoding="utf-8") as f:
-        html = f.read()
-    return HTMLResponse(content=html)
+        return HTMLResponse(content=f.read())
+
+
 
 
 @app.get("/node-evaluation", response_class=HTMLResponse)
-async def serve_node_evaluation():
+@require_login_html
+async def serve_node_evaluation(request: Request):
     file_path = os.path.join(STATIC_DIR, "node-evaluation.html")
     with open(file_path, "r", encoding="utf-8") as f:
         return HTMLResponse(content=f.read())
 
-
-
 @app.get("/synthetic-evaluation", response_class=HTMLResponse)
-async def serve_synthetic_evaluation():
+@require_login_html
+async def serve_synthetic_evaluation(request: Request):
     file_path = os.path.join(STATIC_DIR, "synthetic-evaluation.html")
     with open(file_path, "r", encoding="utf-8") as f:
         return HTMLResponse(content=f.read())
-##update this 
+
 @app.get("/graph-visualization", response_class=HTMLResponse)
-async def serve_graph_visualization():
+@require_login_html
+async def serve_graph_visualization(request: Request):
     file_path = os.path.join(STATIC_DIR, "graph-visualization.html")
     with open(file_path, "r", encoding="utf-8") as f:
         return HTMLResponse(content=f.read())
 
-
-#this needs to be fixed to graph visualization... cause this is wrong, 
 @app.get("/graph-data", response_class=JSONResponse)
 async def serve_graph_data():
     return get_graph()
@@ -89,8 +106,6 @@ async def update_graph_data(request: Request):
     set_graph(payload)
     return {"status": "ok"}
 
-
-#this is fine, 
 @app.post("/api/login", response_class=JSONResponse)
 async def api_login(request: Request, response: Response, db: AsyncSession = Depends(get_db)):
     data = await request.json()
@@ -104,26 +119,22 @@ async def api_login(request: Request, response: Response, db: AsyncSession = Dep
         db.add(user)
         await db.commit()
         await db.refresh(user)
-
-    response.set_cookie(key="user_id", value=str(user.id),max_age=3600)
+    await generate_eval_index(user.username, db)
+    response.set_cookie(key="user_name", value=str(user.username), max_age=3600)
+    response.set_cookie(key="user_id", value=str(user.id), max_age=3600)
     return {"status": "ok", "user_id": user.id}
 
-
-#fine
 @app.get("/logout")
 async def logout(response: Response):
     response.delete_cookie("user_id")
     return {"status": "ok", "message": "Logged out"}
 
-
-#ehh naming schema fro routes is off. 
 @app.post("/api/selection")
 async def receive_selection(request: Request):
     data = await request.json()
     print("Received selection:", data)
     return {"status": "received"}
 
-# the user-data login thing, imagine how user db should work... nodes and edge stored as objects for the thing, 
 @app.get("/api/user-data")
 async def get_user_data(request: Request, db: AsyncSession = Depends(get_db)):
     user_id = request.cookies.get("user_id")
@@ -137,12 +148,8 @@ async def get_user_data(request: Request, db: AsyncSession = Depends(get_db)):
 
     return {"status": "ok", "data": {"id": user.id, "username": user.username}}
 
-# generate synthetic reports please fix this:
-
-# you should be able to call this and have no issues, 
 @app.get("/api/get-synthetic-reports")
 async def get_synthetic_reports():
-    # Example static list; replace with DB or dynamic source
     reports = [
         {"id": 1, "title": "Synthetic Case A", "content": "Case A description..."},
         {"id": 2, "title": "Synthetic Case B", "content": "Case B description..."},
@@ -150,21 +157,45 @@ async def get_synthetic_reports():
     ]
     return {"reports": reports}
 
-#post should recieve and update the db... the writes should be easy.... loading should 
 @app.post("/api/submit-synthetic-evals")
 async def submit_synthetic_evals(request: Request):
     data = await request.json()
     print("Received synthetic evaluations:", data)
-    # TODO: save to DB or process
     return {"status": "ok"}
 
+# @app.post("/api/submit-batch-eval")
+# async def submit_batch_eval(request: Request):
+#     # updates the front end file, then move on from this... 
+#     # how are you going to update the front end? you neeed to update the front end in the following ways, 
 
+#     data = await request.json()
+#     print(data)
+#     output_file = os.path.join(BASE_DIR, "evaluations.json")
+#     existing = []
+#     if os.path.exists(output_file):
+#         with open(output_file, "r", encoding="utf-8") as f:
+#             existing = json.load(f)
+#     existing.extend(data)
+#     with open(output_file, "w", encoding="utf-8") as f:
+#         json.dump(existing, f, indent=2)
+#     return {"status": "ok", "count": len(data)}
 
-
+@app.post("/api/submit-batch-eval")
+async def submit_batch_eval(request: Request, db: AsyncSession = Depends(get_db)):
+    data = await request.json()
+    new_evals = [Evaluation(
+        username=record['username'],
+        graph_id=record.get('graph_id', ''),
+        element_id=record['element_id'],
+        order=record['order'],
+        accuracy=record['accuracy']
+    ) for record in data]
+    db.add_all(new_evals)
+    await db.commit()
+    return {"status": "ok", "count": len(new_evals)}
 
 @app.get("/api/get-graph-data")
 async def get_graph_data():
-    # Replace with real graph source or DB
     nodes = [
         {"id": 1, "label": "Start"},
         {"id": 2, "label": "Checkup"},
@@ -175,46 +206,85 @@ async def get_graph_data():
         {"from": 2, "to": 3}
     ]
     return {"nodes": nodes, "edges": edges}
+async def generate_eval_index(username: str, db: AsyncSession) -> str:
+    """
+    Generate a per-user evaluation index indicating completion status for each graph.
+    
+    Args:
+        username (str): The username for whom to generate the index.
+        db (AsyncSession): SQLAlchemy async database session.
+    
+    Returns:
+        str: Path to the generated evaluation index JSON file.
+    """
+    graph_dir = os.path.join(STATIC_DIR, "graphs")
+    output_dir = os.path.join(STATIC_DIR, "user_data")
+    os.makedirs(output_dir, exist_ok=True)
+    output_file = os.path.join(output_dir, f"{username}_eval_index.json")
+
+    index_data = []
+
+    graph_files = [
+        os.path.join(graph_dir, fname)
+        for fname in os.listdir(graph_dir)
+        if re.match(r"^graph_\d+\.json$", fname)
+
+    ]
+
+    for graph_path in graph_files:
+        graph_id = os.path.splitext(os.path.basename(graph_path))[0]
+        graph_data = _load_graph_data(graph_path)
+        total_elements = _count_graph_elements(graph_data)
+
+        evaluated_count = await _count_user_evaluations(db, username, graph_id)
+
+        status = "completed" if evaluated_count >= total_elements else "incomplete"
+        index_data.append({"graph_id": graph_id, "status": status})
+
+    _write_json_file(output_file, index_data)
+
+    return output_file
 
 
-# @app.get("/api/get-node/{node_id}")
-# async def get_node(node_id: int):
-#     # Replace with real node details + HTML content
-#     return {
-#         "description": f"Details about node {node_id}",
-#         "html_content": f"<p>Case content for node {node_id}</p>"
-#     }
-import re
-
-def clean_html(html):
-    html = re.sub(r'<script.*?>.*?</script>', '', html, flags=re.DOTALL | re.IGNORECASE)
-    html = re.sub(r'<link.*?>', '', html, flags=re.IGNORECASE)
-    html = re.sub(r'<img.*?>', '', html, flags=re.IGNORECASE)
-    return html
-
-@app.get("/api/get-node/{node_id}")
-async def get_node(node_id: int):
-    html_path = "./samples/html/Small Cell Lung Cancer in the Course of Idiopathic Pulmonary Fibrosis—Case Report and Literature Review - PMC.html"
+def _load_graph_data(graph_path: str) -> dict:
+    """
+    Load graph data JSON from file, ensure it’s a dict with 'nodes' and 'edges'.
+    
+    Returns an empty dict if invalid.
+    """
     try:
-        with open(html_path, "r", encoding="utf-8") as f:
-            
-            html_content = f.read()
-            html_stuff=clean_html(html_content)
-    except FileNotFoundError:
-        html_content = f"<p>File not found for node {node_id}</p>"
+        with open(graph_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, dict) and 'nodes' in data and 'edges' in data:
+            return data
+        else:
+            print(f"⚠️ Invalid graph structure in {graph_path}, skipping.")
+            return {"nodes": [], "edges": []}
+    except Exception as e:
+        print(f"⚠️ Failed to load {graph_path}: {e}")
+        return {"nodes": [], "edges": []}
 
-    return {
-        "description": f"Details about node {node_id}",
-        "html_content": html_stuff
-    }
 
-@app.post("/api/submit-node-eval")
-async def submit_node_eval(request: Request):
-    data = await request.json()
-    print("Received node evaluation:", data)
-    # TODO: Save to DB or process
-    return {"status": "ok"}
 
+def _count_graph_elements(graph_data: dict) -> int:
+    return len(graph_data.get("nodes", [])) + len(graph_data.get("edges", []))
+
+
+async def _count_user_evaluations(db: AsyncSession, username: str, graph_id: str) -> int:
+    """Query number of evaluated elements for a user on a graph."""
+    result = await db.execute(
+        select(Evaluation).where(
+            Evaluation.username == username,
+            Evaluation.graph_id == graph_id
+        )
+    )
+    return len(result.scalars().all())
+
+
+def _write_json_file(filepath: str, data: list) -> None:
+    """Write JSON data to a file with pretty formatting."""
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
 
 @app.on_event("startup")
 async def on_startup():
