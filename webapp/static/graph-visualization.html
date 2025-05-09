@@ -3,6 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Dynamic Graph Viewer</title>
+  <script>
+    function getCookieValue(name) {
+        const cookies = document.cookie.split('; ');
+        const cookie = cookies.find(row => row.startsWith(name + '='));
+        return cookie ? decodeURIComponent(cookie.split('=')[1]) : null;
+    }
+
+    const userId = getCookieValue('user_name');
+    if (!userId) {
+        window.location.href = '/';  // or '/login'
+    }
+</script>
   <link rel="stylesheet" href="/static/css/style.css">
   <script type="module" src="/static/js/graph.js"></script>
   

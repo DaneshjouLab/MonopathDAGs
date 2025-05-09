@@ -2,6 +2,18 @@
 <html>
 <head>
     <title>Synthetic Case Report Evaluation</title>
+    <script>
+        function getCookieValue(name) {
+            const cookies = document.cookie.split('; ');
+            const cookie = cookies.find(row => row.startsWith(name + '='));
+            return cookie ? decodeURIComponent(cookie.split('=')[1]) : null;
+        }
+    
+        const userId = getCookieValue('user_name');
+        if (!userId) {
+            window.location.href = '/';  // or '/login'
+        }
+    </script>
     <style>
         body { font-family: Arial, sans-serif; margin: 2rem; background-color: #f9f9f9; }
         .report { background: #fff; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
