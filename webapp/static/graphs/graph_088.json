@@ -29,7 +29,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_088_N0"
     },
     {
       "id": "N2",
@@ -84,7 +85,8 @@
           ]
         },
         "timestamp": "32 months after initiating osimertinib"
-      }
+      },
+      "custom_id": "graph_088_N1"
     },
     {
       "id": "N3",
@@ -111,7 +113,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_088_N2"
     },
     {
       "id": "N4",
@@ -184,7 +187,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_088_N3"
     },
     {
       "id": "N5",
@@ -234,7 +238,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_088_N4"
     },
     {
       "id": "N6",
@@ -262,7 +267,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_088_N5"
     }
   ],
   "edges": [
@@ -280,7 +286,8 @@
           "target_domain": "imaging",
           "timestamp": "Unknown"
         }
-      }
+      },
+      "custom_id": "graph_088_N1_N2"
     },
     {
       "from": "N2",
@@ -298,7 +305,8 @@
           "change_type": "progression",
           "target_domain": "symptom"
         }
-      }
+      },
+      "custom_id": "graph_088_N2_N3"
     },
     {
       "from": "N3",
@@ -313,7 +321,8 @@
           "change_type": "other",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_088_N3_N4"
     },
     {
       "from": "N4",
@@ -330,7 +339,8 @@
           "change_type": "deescalation",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_088_N4_N5"
     },
     {
       "from": "N5",
@@ -348,7 +358,8 @@
           "change_type": "addition",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_088_N5_N6"
     }
   ]
 }

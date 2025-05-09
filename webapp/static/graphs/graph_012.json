@@ -41,7 +41,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_012_N0"
     },
     {
       "id": "N2",
@@ -70,7 +71,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_012_N1"
     },
     {
       "id": "N3",
@@ -107,7 +109,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_012_N2"
     },
     {
       "id": "N4",
@@ -129,7 +132,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_012_N3"
     },
     {
       "id": "N5",
@@ -183,7 +187,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_012_N4"
     },
     {
       "id": "N6",
@@ -219,7 +224,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_012_N5"
     },
     {
       "id": "N7",
@@ -229,7 +235,8 @@
         "node_step_index": 6,
         "content": "A surgical plan was made to perform intraoperative rapid diagnosis, followed by right upper",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_012_N6"
     }
   ],
   "edges": [
@@ -240,7 +247,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Development of left cervical lymphadenopathy of unknown origin, suspected to be cervical lymph node metastasis of papillary thyroid carcinoma (PTC) six years ago."
-      }
+      },
+      "custom_id": "graph_012_N1_N2"
     },
     {
       "from": "N2",
@@ -257,7 +265,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_012_N2_N3"
     },
     {
       "from": "N3",
@@ -274,7 +283,8 @@
           "change_type": "addition",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_012_N3_N4"
     },
     {
       "from": "N4",
@@ -283,7 +293,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Two years prior to current encounter, a nodule in the right upper lobe of the lung was identified and monitored with chest CT scans. Increase in nodule density observed compared to two years prior, prompting a transbronchial biopsy; however, no definitive diagnosis was made. Tumor markers (CYFRA, CEA, SLX, ProGRP, NSE) were within normal limits."
-      }
+      },
+      "custom_id": "graph_012_N4_N5"
     },
     {
       "from": "N5",
@@ -300,7 +311,8 @@
           "change_type": "progression",
           "target_domain": "lab"
         }
-      }
+      },
+      "custom_id": "graph_012_N5_N6"
     },
     {
       "from": "N6",
@@ -309,7 +321,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "A surgical plan was made to perform intraoperative rapid diagnosis, followed by right upper"
-      }
+      },
+      "custom_id": "graph_012_N6_N7"
     }
   ]
 }

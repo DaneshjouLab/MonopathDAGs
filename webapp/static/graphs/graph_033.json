@@ -16,7 +16,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_033_N0"
     },
     {
       "id": "N2",
@@ -44,7 +45,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_033_N1"
     },
     {
       "id": "N3",
@@ -80,7 +82,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_033_N2"
     },
     {
       "id": "N4",
@@ -108,7 +111,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_033_N3"
     },
     {
       "id": "N5",
@@ -128,7 +132,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_033_N4"
     },
     {
       "id": "N6",
@@ -166,7 +171,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_033_N5"
     },
     {
       "id": "N7",
@@ -195,7 +201,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_033_N6"
     },
     {
       "id": "N8",
@@ -214,7 +221,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_033_N7"
     },
     {
       "id": "N9",
@@ -236,7 +244,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_033_N8"
     },
     {
       "id": "N10",
@@ -257,7 +266,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_033_N9"
     },
     {
       "id": "N11",
@@ -277,7 +287,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_033_N10"
     }
   ],
   "edges": [
@@ -288,7 +299,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Initial presentation and imaging."
-      }
+      },
+      "custom_id": "graph_033_N1_N2"
     },
     {
       "from": "N2",
@@ -305,7 +317,8 @@
           "change_type": "addition",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_033_N2_N3"
     },
     {
       "from": "N3",
@@ -320,7 +333,8 @@
           "change_type": "progression",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_033_N3_N4"
     },
     {
       "from": "N4",
@@ -329,7 +343,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Preoperative imaging reveals bronchobiliary fistula."
-      }
+      },
+      "custom_id": "graph_033_N4_N5"
     },
     {
       "from": "N5",
@@ -344,7 +359,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_033_N5_N6"
     },
     {
       "from": "N6",
@@ -359,7 +375,8 @@
           "change_type": "other",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_033_N6_N7"
     },
     {
       "from": "N7",
@@ -374,7 +391,8 @@
           "change_type": "resolution",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_033_N7_N8"
     },
     {
       "from": "N8",
@@ -390,7 +408,8 @@
           "target_domain": "imaging",
           "timestamp": "2025-08-13"
         }
-      }
+      },
+      "custom_id": "graph_033_N8_N9"
     },
     {
       "from": "N9",
@@ -406,7 +425,8 @@
           "target_domain": "imaging",
           "timestamp": "2025-08-13"
         }
-      }
+      },
+      "custom_id": "graph_033_N9_N10"
     },
     {
       "from": "N10",
@@ -422,7 +442,8 @@
           "target_domain": "procedure",
           "timestamp": "2025-08-13"
         }
-      }
+      },
+      "custom_id": "graph_033_N10_N11"
     }
   ]
 }

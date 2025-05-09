@@ -39,7 +39,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_045_N0"
     },
     {
       "id": "N2",
@@ -59,7 +60,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_045_N1"
     },
     {
       "id": "N3",
@@ -86,7 +88,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_045_N2"
     },
     {
       "id": "N4",
@@ -152,7 +155,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_045_N3"
     },
     {
       "id": "N5",
@@ -194,7 +198,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_045_N4"
     },
     {
       "id": "N6",
@@ -225,7 +230,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_045_N5"
     },
     {
       "id": "N7",
@@ -252,7 +258,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_045_N6"
     }
   ],
   "edges": [
@@ -272,7 +279,8 @@
           "change_type": "progression",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_045_N1_N2"
     },
     {
       "from": "N2",
@@ -287,7 +295,8 @@
           "change_type": "addition",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_045_N2_N3"
     },
     {
       "from": "N3",
@@ -302,7 +311,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_045_N3_N4"
     },
     {
       "from": "N4",
@@ -319,7 +329,8 @@
           "change_type": "addition",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_045_N4_N5"
     },
     {
       "from": "N5",
@@ -337,7 +348,8 @@
           "change_type": "addition",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_045_N5_N6"
     },
     {
       "from": "N6",
@@ -352,7 +364,8 @@
           "change_type": "resolution",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_045_N6_N7"
     }
   ]
 }

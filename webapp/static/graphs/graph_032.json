@@ -17,7 +17,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_032_N0"
     },
     {
       "id": "N2",
@@ -45,7 +46,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_032_N1"
     },
     {
       "id": "N3",
@@ -129,7 +131,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_032_N2"
     },
     {
       "id": "N4",
@@ -181,7 +184,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_032_N3"
     },
     {
       "id": "N5",
@@ -190,7 +194,8 @@
         "node_id": "E",
         "node_step_index": 4,
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_032_N4"
     }
   ],
   "edges": [
@@ -201,7 +206,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient's medical history is reviewed."
-      }
+      },
+      "custom_id": "graph_032_N1_N2"
     },
     {
       "from": "N2",
@@ -210,7 +216,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Patient's medications, social history, and physical exam are reviewed."
-      }
+      },
+      "custom_id": "graph_032_N2_N3"
     },
     {
       "from": "N3",
@@ -227,7 +234,8 @@
           "change_type": "addition",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_032_N3_N4"
     },
     {
       "from": "N4",
@@ -236,7 +244,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "No new information provided."
-      }
+      },
+      "custom_id": "graph_032_N4_N5"
     }
   ]
 }

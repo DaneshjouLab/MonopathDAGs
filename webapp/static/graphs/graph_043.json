@@ -36,7 +36,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_043_N0"
     },
     {
       "id": "N2",
@@ -78,7 +79,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_043_N1"
     },
     {
       "id": "N3",
@@ -112,7 +114,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_043_N2"
     },
     {
       "id": "N4",
@@ -130,7 +133,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_043_N3"
     },
     {
       "id": "N5",
@@ -202,7 +206,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_043_N4"
     },
     {
       "id": "N6",
@@ -250,7 +255,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_043_N5"
     }
   ],
   "edges": [
@@ -261,7 +267,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient transitioned from experiencing headaches, forgetfulness, and hand tremors to being diagnosed with metastatic lung cancer with brain lesions."
-      }
+      },
+      "custom_id": "graph_043_N1_N2"
     },
     {
       "from": "N2",
@@ -270,7 +277,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Lung cancer was further staged via MSCT of the chest, revealing a spiculated tumor and mediastinal lymphadenopathy, leading to a T4N2M1 stage 4 diagnosis."
-      }
+      },
+      "custom_id": "graph_043_N2_N3"
     },
     {
       "from": "N3",
@@ -279,7 +287,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Patient underwent surgery for a tumor in the frontal region of the left hemisphere of the brain."
-      }
+      },
+      "custom_id": "graph_043_N3_N4"
     },
     {
       "from": "N4",
@@ -288,7 +297,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "The cerebellar tumor was treated with X-knife radiosurgery. Pathohistological analysis revealed primary lung adenocarcinoma. Pembrolizumab treatment was initiated due to PD-L1 expression > 50%."
-      }
+      },
+      "custom_id": "graph_043_N4_N5"
     },
     {
       "from": "N5",
@@ -297,7 +307,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Follow-up imaging showed immune unconfirmed progressive disease (iUPD) in the upper left lobe, lymph node conglomerate, pericardial effusion, and stable disease in the endocranium."
-      }
+      },
+      "custom_id": "graph_043_N5_N6"
     }
   ]
 }

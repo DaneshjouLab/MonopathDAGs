@@ -35,7 +35,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_049_N0"
     },
     {
       "id": "N2",
@@ -55,7 +56,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_049_N1"
     },
     {
       "id": "N3",
@@ -121,7 +123,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_049_N2"
     },
     {
       "id": "N4",
@@ -156,7 +159,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_049_N3"
     },
     {
       "id": "N5",
@@ -193,7 +197,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_049_N4"
     },
     {
       "id": "N6",
@@ -242,7 +247,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_049_N5"
     }
   ],
   "edges": [
@@ -253,7 +259,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Transition from patient's history and routine checkup to discovery of lung mass."
-      }
+      },
+      "custom_id": "graph_049_N1_N2"
     },
     {
       "from": "N2",
@@ -270,7 +277,8 @@
           "change_type": "progression",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_049_N2_N3"
     },
     {
       "from": "N3",
@@ -287,7 +295,8 @@
           "change_type": "other",
           "target_domain": "lab"
         }
-      }
+      },
+      "custom_id": "graph_049_N3_N4"
     },
     {
       "from": "N4",
@@ -304,7 +313,8 @@
           "change_type": "progression",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_049_N4_N5"
     },
     {
       "from": "N5",
@@ -321,7 +331,8 @@
           "change_type": "other",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_049_N5_N6"
     }
   ]
 }

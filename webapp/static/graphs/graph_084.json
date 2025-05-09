@@ -26,7 +26,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_084_N0"
     },
     {
       "id": "N2",
@@ -43,7 +44,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_084_N1"
     },
     {
       "id": "N3",
@@ -105,7 +107,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_084_N2"
     },
     {
       "id": "N4",
@@ -124,7 +127,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_084_N3"
     },
     {
       "id": "N5",
@@ -134,7 +138,8 @@
         "node_step_index": 4,
         "content": "Bronchoscopy revealed normal bronchial tubes in the right lung.",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_084_N4"
     },
     {
       "id": "N6",
@@ -153,7 +158,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_084_N5"
     },
     {
       "id": "N7",
@@ -163,7 +169,8 @@
         "node_step_index": 6,
         "content": "Bronchoalveolar lavage fluid cytology revealed cancer cells. H&E stain revealed heterogeneous epithelioid cells with dense cells, deeply stained nuclei and little cytoplasm.",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_084_N6"
     },
     {
       "id": "N8",
@@ -188,7 +195,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_084_N7"
     },
     {
       "id": "N9",
@@ -205,7 +213,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_084_N8"
     },
     {
       "id": "N10",
@@ -238,7 +247,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_084_N9"
     }
   ],
   "edges": [
@@ -249,7 +259,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Initial presentation of right locus coeruleus, visceral inversion, sinusitis and bronchial dilatation led to further cardiac evaluation."
-      }
+      },
+      "custom_id": "graph_084_N1_N2"
     },
     {
       "from": "N2",
@@ -258,7 +269,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Electrocardiography showing a right-sided heart prompted further imaging with chest CT and 3D reconstruction of the ribs to evaluate lung and organ positioning."
-      }
+      },
+      "custom_id": "graph_084_N2_N3"
     },
     {
       "from": "N3",
@@ -281,7 +293,8 @@
           "change_type": "progression",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_084_N3_N4"
     },
     {
       "from": "N4",
@@ -303,7 +316,8 @@
           "change_type": "progression",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_084_N4_N5"
     },
     {
       "from": "N5",
@@ -320,7 +334,8 @@
           "change_type": "other",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_084_N5_N6"
     },
     {
       "from": "N6",
@@ -337,7 +352,8 @@
           "change_type": "progression",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_084_N6_N7"
     },
     {
       "from": "N7",
@@ -354,7 +370,8 @@
           "change_type": "progression",
           "target_domain": "lab"
         }
-      }
+      },
+      "custom_id": "graph_084_N7_N8"
     },
     {
       "from": "N8",
@@ -371,7 +388,8 @@
           "change_type": "addition",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_084_N8_N9"
     },
     {
       "from": "N9",
@@ -380,7 +398,8 @@
         "edge_id": "I_to_J",
         "branch_flag": true,
         "content": "Extrapulmonary auxiliary examination suggesting bone metastasis led to a final diagnosis of extensive stage"
-      }
+      },
+      "custom_id": "graph_084_N9_N10"
     }
   ]
 }

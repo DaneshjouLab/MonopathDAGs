@@ -61,7 +61,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_028_N0"
     },
     {
       "id": "N2",
@@ -95,7 +96,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_028_N1"
     },
     {
       "id": "N3",
@@ -116,7 +118,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_028_N2"
     },
     {
       "id": "N4",
@@ -180,7 +183,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_028_N3"
     },
     {
       "id": "N5",
@@ -189,7 +193,8 @@
         "node_id": "E",
         "node_step_index": 4,
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_028_N4"
     }
   ],
   "edges": [
@@ -200,7 +205,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Lung nodule incidentally found on imaging, prompting further investigation with chest CT and PET/CT scans."
-      }
+      },
+      "custom_id": "graph_028_N1_N2"
     },
     {
       "from": "N2",
@@ -215,7 +221,8 @@
           "change_type": "addition",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_028_N2_N3"
     },
     {
       "from": "N3",
@@ -234,7 +241,8 @@
           "change_type": "other",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_028_N3_N4"
     },
     {
       "from": "N4",
@@ -243,7 +251,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Post-operative period following robotic-assisted left VATS wedge resection."
-      }
+      },
+      "custom_id": "graph_028_N4_N5"
     }
   ]
 }

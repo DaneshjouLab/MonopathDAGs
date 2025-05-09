@@ -17,7 +17,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_061_N0"
     },
     {
       "id": "N2",
@@ -42,7 +43,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_061_N1"
     },
     {
       "id": "N3",
@@ -74,7 +76,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_061_N2"
     },
     {
       "id": "N4",
@@ -92,7 +95,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_061_N3"
     },
     {
       "id": "N5",
@@ -150,7 +154,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_061_N4"
     },
     {
       "id": "N6",
@@ -184,7 +189,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_061_N5"
     },
     {
       "id": "N7",
@@ -215,7 +221,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_061_N6"
     },
     {
       "id": "N8",
@@ -254,7 +261,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_061_N7"
     },
     {
       "id": "N9",
@@ -262,7 +270,8 @@
       "customData": {
         "node_id": "I",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_061_N8"
     }
   ],
   "edges": [
@@ -273,7 +282,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Initial presentation led to further investigation."
-      }
+      },
+      "custom_id": "graph_061_N1_N2"
     },
     {
       "from": "N2",
@@ -282,7 +292,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Biopsy results and further imaging revealed metastatic disease."
-      }
+      },
+      "custom_id": "graph_061_N2_N3"
     },
     {
       "from": "N3",
@@ -291,7 +302,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Molecular profiling was performed to guide treatment decisions."
-      }
+      },
+      "custom_id": "graph_061_N3_N4"
     },
     {
       "from": "N4",
@@ -300,7 +312,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Based on the tumor proportion score, the patient was started on palliative radiation and first-line chemotherapy."
-      }
+      },
+      "custom_id": "graph_061_N4_N5"
     },
     {
       "from": "N5",
@@ -309,7 +322,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "After 13 cycles of chemotherapy, imaging revealed ascites and progressive disease."
-      }
+      },
+      "custom_id": "graph_061_N5_N6"
     },
     {
       "from": "N6",
@@ -318,7 +332,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Due to disease progression, second-line therapy was initiated."
-      }
+      },
+      "custom_id": "graph_061_N6_N7"
     },
     {
       "from": "N7",
@@ -327,7 +342,8 @@
         "edge_id": "G_to_H",
         "branch_flag": true,
         "content": "Despite second-line therapy, the patient's condition continued to decline."
-      }
+      },
+      "custom_id": "graph_061_N7_N8"
     }
   ]
 }

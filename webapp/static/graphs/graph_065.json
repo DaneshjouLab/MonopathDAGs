@@ -26,7 +26,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_065_N0"
     },
     {
       "id": "N2",
@@ -46,7 +47,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_065_N1"
     },
     {
       "id": "N3",
@@ -84,7 +86,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_065_N2"
     },
     {
       "id": "N4",
@@ -122,7 +125,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_065_N3"
     },
     {
       "id": "N5",
@@ -164,7 +168,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_065_N4"
     },
     {
       "id": "N6",
@@ -185,7 +190,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_065_N5"
     }
   ],
   "edges": [
@@ -207,7 +213,8 @@
           "target_domain": "imaging",
           "timestamp": "2023-10-28"
         }
-      }
+      },
+      "custom_id": "graph_065_N1_N2"
     },
     {
       "from": "N2",
@@ -223,7 +230,8 @@
           "target_domain": "procedure",
           "timestamp": "2023-11-09"
         }
-      }
+      },
+      "custom_id": "graph_065_N2_N3"
     },
     {
       "from": "N3",
@@ -239,7 +247,8 @@
           "target_domain": "diagnosis",
           "timestamp": "2023-11-29"
         }
-      }
+      },
+      "custom_id": "graph_065_N3_N4"
     },
     {
       "from": "N4",
@@ -258,7 +267,8 @@
           "target_domain": "medication",
           "timestamp": "2023-12-04"
         }
-      }
+      },
+      "custom_id": "graph_065_N4_N5"
     },
     {
       "from": "N5",
@@ -276,7 +286,8 @@
           "change_type": "other",
           "target_domain": "symptom"
         }
-      }
+      },
+      "custom_id": "graph_065_N5_N6"
     }
   ]
 }

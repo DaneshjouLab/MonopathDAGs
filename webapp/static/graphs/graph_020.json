@@ -35,7 +35,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_020_N0"
     },
     {
       "id": "N2",
@@ -72,7 +73,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_020_N1"
     },
     {
       "id": "N3",
@@ -105,7 +107,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_020_N2"
     },
     {
       "id": "N4",
@@ -127,7 +130,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_020_N3"
     },
     {
       "id": "N5",
@@ -183,7 +187,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_020_N4"
     },
     {
       "id": "N6",
@@ -246,7 +251,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_020_N5"
     },
     {
       "id": "N7",
@@ -276,7 +282,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_020_N6"
     },
     {
       "id": "N8",
@@ -386,7 +393,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_020_N7"
     },
     {
       "id": "N9",
@@ -457,7 +465,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_020_N8"
     }
   ],
   "edges": [
@@ -468,7 +477,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient transitioned from toe redness/pain to lumbar/groin redness/pain, coughing, expectoration, and fever."
-      }
+      },
+      "custom_id": "graph_020_N1_N2"
     },
     {
       "from": "N2",
@@ -477,7 +487,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Patient was admitted to a local hospital, and initial tests suggested a possible bacterial infection."
-      }
+      },
+      "custom_id": "graph_020_N2_N3"
     },
     {
       "from": "N3",
@@ -486,7 +497,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Patient was treated with piperacillin-tazobactam."
-      }
+      },
+      "custom_id": "graph_020_N3_N4"
     },
     {
       "from": "N4",
@@ -495,7 +507,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Patient transferred to the hospital with worsening vital signs and altered mental status despite treatment."
-      }
+      },
+      "custom_id": "graph_020_N4_N5"
     },
     {
       "from": "N5",
@@ -504,7 +517,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Further testing including cultures and CT scans were performed, with initial negative results for HIV, AIGA, blood G test, GM test, and blood cultures."
-      }
+      },
+      "custom_id": "graph_020_N5_N6"
     },
     {
       "from": "N6",
@@ -513,7 +527,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Sputum specimens confirmed Burkholderia cepacia infection."
-      }
+      },
+      "custom_id": "graph_020_N6_N7"
     },
     {
       "from": "N7",
@@ -522,7 +537,8 @@
         "edge_id": "G_to_H",
         "branch_flag": true,
         "content": "Patient experienced persistent symptoms and abnormal lab values."
-      }
+      },
+      "custom_id": "graph_020_N7_N8"
     },
     {
       "from": "N8",
@@ -531,7 +547,8 @@
         "edge_id": "H_to_I",
         "branch_flag": true,
         "content": "Patient developed stupor, hypoxia, and atrial fibrillation, with worsening lab values. Antimicrobial susceptibility testing indicated sensitivity to meropenem."
-      }
+      },
+      "custom_id": "graph_020_N8_N9"
     }
   ]
 }

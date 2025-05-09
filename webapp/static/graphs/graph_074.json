@@ -19,7 +19,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_074_N0"
     },
     {
       "id": "N2",
@@ -39,7 +40,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_074_N1"
     },
     {
       "id": "N3",
@@ -70,7 +72,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_074_N2"
     },
     {
       "id": "N4",
@@ -97,7 +100,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_074_N3"
     },
     {
       "id": "N5",
@@ -124,7 +128,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_074_N4"
     },
     {
       "id": "N6",
@@ -143,7 +148,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_074_N5"
     },
     {
       "id": "N7",
@@ -185,7 +191,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_074_N6"
     }
   ],
   "edges": [
@@ -196,7 +203,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Progression from fluid collection adjacent to the spleen to a complex cystic lesion (7.6 x 11.7 cm) reported as a lymphangioma on CT scan. No associated symptoms reported."
-      }
+      },
+      "custom_id": "graph_074_N1_N2"
     },
     {
       "from": "N2",
@@ -205,7 +213,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "No therapeutic intervention initiated. Follow-up CT scan scheduled in six months. Cystic lesion remains stable at 7.6 cm."
-      }
+      },
+      "custom_id": "graph_074_N2_N3"
     },
     {
       "from": "N3",
@@ -214,7 +223,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Cystic lesion increased in size. Patient reported feeling pressure and a pulling sensation on the left side of her abdomen, rated as 4/10 for pain. Cystic lesion almost doubled in size, now measuring 11 x 22 cm, with extension into the hepatorenal space."
-      }
+      },
+      "custom_id": "graph_074_N3_N4"
     },
     {
       "from": "N4",
@@ -223,7 +233,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Ultrasound-guided aspiration performed, revealing 33 mL of clear yellow fluid. Pathology showed no evidence of malignant cells."
-      }
+      },
+      "custom_id": "graph_074_N4_N5"
     },
     {
       "from": "N5",
@@ -232,7 +243,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "MRI demonstrated a large T2 hyperintense cystic mass extending from the spleen on the left to the left hemipelvis, along with enhancing septations."
-      }
+      },
+      "custom_id": "graph_074_N5_N6"
     },
     {
       "from": "N6",
@@ -241,7 +253,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Patient received doxycycline sclerotherapy over eight months. Post-sclerotherapy ultrasound performed."
-      }
+      },
+      "custom_id": "graph_074_N6_N7"
     }
   ]
 }

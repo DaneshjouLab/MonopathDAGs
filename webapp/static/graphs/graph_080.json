@@ -71,7 +71,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_080_N0"
     },
     {
       "id": "N2",
@@ -106,7 +107,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_080_N1"
     },
     {
       "id": "N3",
@@ -199,7 +201,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_080_N2"
     }
   ],
   "edges": [
@@ -218,7 +221,8 @@
           "change_type": "addition",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_080_N1_N2"
     },
     {
       "from": "N2",
@@ -235,7 +239,8 @@
           "change_type": "progression",
           "target_domain": "symptom"
         }
-      }
+      },
+      "custom_id": "graph_080_N2_N3"
     }
   ]
 }

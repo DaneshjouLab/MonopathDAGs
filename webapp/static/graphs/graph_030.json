@@ -24,7 +24,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_030_N0"
     },
     {
       "id": "N2",
@@ -64,7 +65,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_030_N1"
     },
     {
       "id": "N3",
@@ -91,7 +93,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_030_N2"
     },
     {
       "id": "N4",
@@ -111,7 +114,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_030_N3"
     },
     {
       "id": "N5",
@@ -121,7 +125,8 @@
         "node_step_index": 4,
         "content": "Bronchoalveolar lavage (BAL) was negative.",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_030_N4"
     },
     {
       "id": "N6",
@@ -147,7 +152,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_030_N5"
     },
     {
       "id": "N7",
@@ -192,7 +198,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_030_N6"
     },
     {
       "id": "N8",
@@ -202,7 +209,8 @@
         "node_step_index": 7,
         "content": "Patient stopped nasal decongestant use after surgery.",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_030_N7"
     },
     {
       "id": "N9",
@@ -221,7 +229,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_030_N8"
     },
     {
       "id": "N10",
@@ -252,7 +261,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_030_N9"
     }
   ],
   "edges": [
@@ -263,7 +273,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient with a history of bilateral lung consolidation and a past medical history of breast cancer treated with surgery and radiotherapy."
-      }
+      },
+      "custom_id": "graph_030_N1_N2"
     },
     {
       "from": "N2",
@@ -272,7 +283,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Radiological suspicion for lipoid pneumonia arises. Patient reports using nasal decongestant (hypertonic solution at 2.2% with hyaluronic acid)."
-      }
+      },
+      "custom_id": "graph_030_N2_N3"
     },
     {
       "from": "N3",
@@ -281,7 +293,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Left lung consolidation progresses and becomes more solid. PET-FDG is positive."
-      }
+      },
+      "custom_id": "graph_030_N3_N4"
     },
     {
       "from": "N4",
@@ -290,7 +303,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Bronchoalveolar lavage (BAL) performed."
-      }
+      },
+      "custom_id": "graph_030_N4_N5"
     },
     {
       "from": "N5",
@@ -299,7 +313,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Bronchoalveolar lavage (BAL) results are negative. Fine needle aspiration biopsy (FNAB) performed."
-      }
+      },
+      "custom_id": "graph_030_N5_N6"
     },
     {
       "from": "N6",
@@ -308,7 +323,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Fine needle aspiration biopsy (FNAB) is positive for lipoid pneumonia. Chest CT scan shows bilateral pseudonodular lesions consistent with lipoid pneumonia with low central attenuation. Right lower lobe lesion measures 21 mm x 16 mm x 18 mm with ground-glass changes. Left lower lobe shows a 33 mm x 24 mm x 35 mm pseudonodular image with irregular margins. Bilateral lung lesions measure nearly 6 cm in the postero-basal segment of the left lower lobe adjacent to bronchiectasis and reticulum-nodular thickening of the interstitium."
-      }
+      },
+      "custom_id": "graph_030_N6_N7"
     },
     {
       "from": "N7",
@@ -317,7 +333,8 @@
         "edge_id": "G_to_H",
         "branch_flag": true,
         "content": "Patient stops nasal decongestant use after surgery."
-      }
+      },
+      "custom_id": "graph_030_N7_N8"
     },
     {
       "from": "N8",
@@ -326,7 +343,8 @@
         "edge_id": "H_to_I",
         "branch_flag": true,
         "content": "Chest CT scan shows a 15 mm middle lobe lesion with low central attenuation and adjacent interstitial thickening."
-      }
+      },
+      "custom_id": "graph_030_N8_N9"
     },
     {
       "from": "N9",
@@ -335,7 +353,8 @@
         "edge_id": "I_to_J",
         "branch_flag": true,
         "content": "12-month follow-up shows a radiological profile consistent with the surgical resection performed. No new suspicious consolidations are detected over time."
-      }
+      },
+      "custom_id": "graph_030_N9_N10"
     }
   ]
 }

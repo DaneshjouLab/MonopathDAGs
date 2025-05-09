@@ -25,7 +25,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_060_N0"
     },
     {
       "id": "N2",
@@ -46,7 +47,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_060_N1"
     },
     {
       "id": "N3",
@@ -86,7 +88,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_060_N2"
     },
     {
       "id": "N4",
@@ -107,7 +110,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_060_N3"
     },
     {
       "id": "N5",
@@ -135,7 +139,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_060_N4"
     },
     {
       "id": "N6",
@@ -260,7 +265,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_060_N5"
     },
     {
       "id": "N7",
@@ -298,7 +304,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_060_N6"
     },
     {
       "id": "N8",
@@ -321,7 +328,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_060_N7"
     },
     {
       "id": "N9",
@@ -339,7 +347,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_060_N8"
     },
     {
       "id": "N10",
@@ -379,7 +388,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_060_N9"
     },
     {
       "id": "N11",
@@ -397,7 +407,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_060_N10"
     }
   ],
   "edges": [
@@ -417,7 +428,8 @@
           "change_type": "progression",
           "target_domain": "symptom"
         }
-      }
+      },
+      "custom_id": "graph_060_N1_N2"
     },
     {
       "from": "N2",
@@ -434,7 +446,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_060_N2_N3"
     },
     {
       "from": "N3",
@@ -449,7 +462,8 @@
           "change_type": "other",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_060_N3_N4"
     },
     {
       "from": "N4",
@@ -464,7 +478,8 @@
           "change_type": "other",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_060_N4_N5"
     },
     {
       "from": "N5",
@@ -481,7 +496,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_060_N5_N6"
     },
     {
       "from": "N6",
@@ -498,7 +514,8 @@
           "change_type": "addition",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_060_N6_N7"
     },
     {
       "from": "N7",
@@ -517,7 +534,8 @@
           "target_domain": "symptom",
           "timestamp": "2024-06-27T00:00:00Z"
         }
-      }
+      },
+      "custom_id": "graph_060_N7_N8"
     },
     {
       "from": "N8",
@@ -533,7 +551,8 @@
             "C00"
           ]
         }
-      }
+      },
+      "custom_id": "graph_060_N8_N9"
     }
   ]
 }

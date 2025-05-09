@@ -17,7 +17,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_018_N0"
     },
     {
       "id": "N2",
@@ -43,7 +44,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_018_N1"
     },
     {
       "id": "N3",
@@ -63,7 +65,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_018_N2"
     },
     {
       "id": "N4",
@@ -83,7 +86,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_018_N3"
     },
     {
       "id": "N5",
@@ -108,7 +112,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_018_N4"
     },
     {
       "id": "N6",
@@ -140,7 +145,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_018_N5"
     },
     {
       "id": "N7",
@@ -159,7 +165,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_018_N6"
     },
     {
       "id": "N8",
@@ -185,7 +192,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_018_N7"
     },
     {
       "id": "N9",
@@ -203,7 +211,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_018_N8"
     },
     {
       "id": "N10",
@@ -234,7 +243,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_018_N9"
     }
   ],
   "edges": [
@@ -245,7 +255,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Progression from lung adenocarcinoma diagnosis to presentation with severe shoulder pain."
-      }
+      },
+      "custom_id": "graph_018_N1_N2"
     },
     {
       "from": "N2",
@@ -254,7 +265,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Shoulder pain prompts CT scan."
-      }
+      },
+      "custom_id": "graph_018_N2_N3"
     },
     {
       "from": "N3",
@@ -263,7 +275,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Further characterization of vertebral canal."
-      }
+      },
+      "custom_id": "graph_018_N3_N4"
     },
     {
       "from": "N4",
@@ -272,7 +285,8 @@
         "edge_id": "D_to_T",
         "branch_flag": true,
         "content": "Diagnosis of pathological fracture due to metastasis."
-      }
+      },
+      "custom_id": "graph_018_N4_N5"
     },
     {
       "from": "N5",
@@ -290,7 +304,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_018_N5_N6"
     },
     {
       "from": "N6",
@@ -299,7 +314,8 @@
         "edge_id": "U_to_P",
         "branch_flag": true,
         "content": "Initial CT scan to assess the lesion\u2019s size, location, and radiological characteristics."
-      }
+      },
+      "custom_id": "graph_018_N6_N7"
     },
     {
       "from": "N7",
@@ -308,7 +324,8 @@
         "edge_id": "P_to_S",
         "branch_flag": true,
         "content": "Patient positioned prone, and conscious sedation is administered using continuous intravenous infusion of fentanyl citrate."
-      }
+      },
+      "custom_id": "graph_018_N7_N8"
     },
     {
       "from": "N8",
@@ -317,7 +334,8 @@
         "edge_id": "S_to_V",
         "branch_flag": true,
         "content": "Lidocaine is administered subcutaneously at the incision site."
-      }
+      },
+      "custom_id": "graph_018_N8_N9"
     },
     {
       "from": "N9",
@@ -326,7 +344,8 @@
         "edge_id": "V_to_W",
         "branch_flag": true,
         "content": "Bupivacaine is infiltrated around the periosteum, verified with fluoroscopic guidance."
-      }
+      },
+      "custom_id": "graph_018_N9_N10"
     }
   ]
 }

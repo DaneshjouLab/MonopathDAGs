@@ -20,7 +20,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_009_N0"
     },
     {
       "id": "N2",
@@ -40,7 +41,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_009_N1"
     },
     {
       "id": "N3",
@@ -67,7 +69,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_009_N2"
     },
     {
       "id": "N4",
@@ -100,7 +103,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_009_N3"
     },
     {
       "id": "N5",
@@ -130,7 +134,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_009_N4"
     },
     {
       "id": "N6",
@@ -159,7 +164,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_009_N5"
     },
     {
       "id": "N7",
@@ -182,7 +188,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_009_N6"
     },
     {
       "id": "N8",
@@ -202,7 +209,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_009_N7"
     },
     {
       "id": "N9",
@@ -228,7 +236,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_009_N8"
     },
     {
       "id": "N10",
@@ -255,7 +264,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_009_N9"
     },
     {
       "id": "N11",
@@ -289,7 +299,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_009_N10"
     },
     {
       "id": "N12",
@@ -309,7 +320,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_009_N11"
     },
     {
       "id": "N13",
@@ -338,7 +350,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_009_N12"
     }
   ],
   "edges": [
@@ -349,7 +362,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient's chest radiograph showed a left lung opacification."
-      }
+      },
+      "custom_id": "graph_009_N1_N2"
     },
     {
       "from": "N2",
@@ -358,7 +372,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "CT and PET-CT scan confirmed a 53 mm avid left upper lobe mass with associated hilar and mediastinal lymphadenopathy (T3N2M0)."
-      }
+      },
+      "custom_id": "graph_009_N2_N3"
     },
     {
       "from": "N3",
@@ -367,7 +382,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Endobronchial ultrasound scan and biopsy (EBUS) sampling of station 11L confirmed lung adenocarcinoma metastasis."
-      }
+      },
+      "custom_id": "graph_009_N3_N4"
     },
     {
       "from": "N4",
@@ -376,7 +392,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Molecular testing showed 60% PD-L1 positivity. PD-L1 staining appeared positive. Other immunohistochemistry (ALK/ROS/NTRK) was negative. Lung function: 51% forced expiratory volume (FEV1) (1.21) and 73% diffusing capacity of the lungs for carbon monoxide (DLCO)."
-      }
+      },
+      "custom_id": "graph_009_N4_N5"
     },
     {
       "from": "N5",
@@ -385,7 +402,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Patient consented to radical treatment with four weeks of radiotherapy dosed at 55 Gy/20 with concurrent chemotherapy."
-      }
+      },
+      "custom_id": "graph_009_N5_N6"
     },
     {
       "from": "N6",
@@ -394,7 +412,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Initial scan post radiotherapy showed a limited response to treatment (Figure2)."
-      }
+      },
+      "custom_id": "graph_009_N6_N7"
     },
     {
       "from": "N7",
@@ -403,7 +422,8 @@
         "edge_id": "G_to_H",
         "branch_flag": true,
         "content": "Subsequent CT scan in a year showed that there was no tumor visible on axial images but there was apparent collapse of the left lung base (Figure3)."
-      }
+      },
+      "custom_id": "graph_009_N7_N8"
     },
     {
       "from": "N8",
@@ -412,7 +432,8 @@
         "edge_id": "H_to_I",
         "branch_flag": true,
         "content": "Post radiotherapy imaging showed complete response to treatment. Two small bullae seen in the post aspect of the lower lobe."
-      }
+      },
+      "custom_id": "graph_009_N8_N9"
     },
     {
       "from": "N9",
@@ -421,7 +442,8 @@
         "edge_id": "I_to_J",
         "branch_flag": true,
         "content": "Five months later follow-up scan showed upward curving of the lower segmental bronchi and pulmonary vessels."
-      }
+      },
+      "custom_id": "graph_009_N9_N10"
     },
     {
       "from": "N10",
@@ -430,7 +452,8 @@
         "edge_id": "J_to_K",
         "branch_flag": true,
         "content": "Imaging showed two small bullae initially seen in the post aspect of the lower lobe relocated to the upper zone anteriorly. Lung torsion with 180-degree rotation was diagnosed."
-      }
+      },
+      "custom_id": "graph_009_N10_N11"
     },
     {
       "from": "N11",
@@ -439,7 +462,8 @@
         "edge_id": "K_to_L",
         "branch_flag": true,
         "content": "Follow-up imaging 12 months after previous imaging demonstrated migration of the emphysematous bullae anteriorly and superiorly towards the apex of the lung."
-      }
+      },
+      "custom_id": "graph_009_N11_N12"
     },
     {
       "from": "N12",
@@ -448,7 +472,8 @@
         "edge_id": "L_to_M",
         "branch_flag": true,
         "content": "CT imaging showed left lung base collapse and tapering/curved orientation of the lower lobe segmental bronchi and pulmonary vessels of the right lung, indicating twisting of the lobe. Lung torsion with 180-degree rotation was diagnosed, likely caused by radiotherapy. Patient was asymptomatic and managed conservatively."
-      }
+      },
+      "custom_id": "graph_009_N12_N13"
     }
   ]
 }

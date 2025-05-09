@@ -17,7 +17,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_067_N0"
     },
     {
       "id": "N2",
@@ -58,7 +59,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_067_N1"
     },
     {
       "id": "N3",
@@ -95,7 +97,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_067_N2"
     },
     {
       "id": "N4",
@@ -128,7 +131,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_067_N3"
     },
     {
       "id": "N5",
@@ -147,7 +151,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_067_N4"
     },
     {
       "id": "N6",
@@ -178,7 +183,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_067_N5"
     },
     {
       "id": "N7",
@@ -204,7 +210,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_067_N6"
     },
     {
       "id": "N8",
@@ -226,7 +233,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_067_N7"
     },
     {
       "id": "N9",
@@ -247,7 +255,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_067_N8"
     }
   ],
   "edges": [
@@ -258,7 +267,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Treatment for stage IIIA NSCLC (adenocarcinoma)."
-      }
+      },
+      "custom_id": "graph_067_N1_N2"
     },
     {
       "from": "N2",
@@ -267,7 +277,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Disease progression despite prior treatment."
-      }
+      },
+      "custom_id": "graph_067_N2_N3"
     },
     {
       "from": "N3",
@@ -276,7 +287,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Evaluation for possible gastrointestinal primary due to microcytosis."
-      }
+      },
+      "custom_id": "graph_067_N3_N4"
     },
     {
       "from": "N4",
@@ -285,7 +297,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Treatment of brain metastasis."
-      }
+      },
+      "custom_id": "graph_067_N4_N5"
     },
     {
       "from": "N5",
@@ -294,7 +307,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Empirical chemotherapy regimen initiated."
-      }
+      },
+      "custom_id": "graph_067_N5_N6"
     },
     {
       "from": "N6",
@@ -303,7 +317,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Pathological analysis of liver lesions."
-      }
+      },
+      "custom_id": "graph_067_N6_N7"
     },
     {
       "from": "N7",
@@ -312,7 +327,8 @@
         "edge_id": "G_to_H",
         "branch_flag": true,
         "content": "Treatment with docetaxel."
-      }
+      },
+      "custom_id": "graph_067_N7_N8"
     },
     {
       "from": "N8",
@@ -321,7 +337,8 @@
         "edge_id": "H_to_I",
         "branch_flag": true,
         "content": "Further characterization of liver metastasis via biopsy."
-      }
+      },
+      "custom_id": "graph_067_N8_N9"
     }
   ]
 }

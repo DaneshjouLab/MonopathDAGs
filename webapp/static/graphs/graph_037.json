@@ -72,7 +72,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_037_N0"
     },
     {
       "id": "N2",
@@ -109,7 +110,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_037_N1"
     },
     {
       "id": "N3",
@@ -134,7 +136,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_037_N2"
     },
     {
       "id": "N4",
@@ -163,7 +166,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_037_N3"
     },
     {
       "id": "N5",
@@ -201,7 +205,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_037_N4"
     },
     {
       "id": "N6",
@@ -259,7 +264,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_037_N5"
     },
     {
       "id": "N7",
@@ -286,7 +292,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_037_N6"
     },
     {
       "id": "N8",
@@ -315,7 +322,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_037_N7"
     },
     {
       "id": "N9",
@@ -357,7 +365,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_037_N8"
     },
     {
       "id": "N10",
@@ -367,7 +376,8 @@
         "node_step_index": 9,
         "content": "Patient started",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_037_N9"
     }
   ],
   "edges": [
@@ -388,7 +398,8 @@
           "change_type": "progression",
           "target_domain": "symptom"
         }
-      }
+      },
+      "custom_id": "graph_037_N1_N2"
     },
     {
       "from": "N2",
@@ -407,7 +418,8 @@
           "change_type": "addition",
           "target_domain": "lab"
         }
-      }
+      },
+      "custom_id": "graph_037_N2_N3"
     },
     {
       "from": "N3",
@@ -424,7 +436,8 @@
           "change_type": "addition",
           "target_domain": "lab"
         }
-      }
+      },
+      "custom_id": "graph_037_N3_N4"
     },
     {
       "from": "N4",
@@ -441,7 +454,8 @@
           "change_type": "addition",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_037_N4_N5"
     },
     {
       "from": "N5",
@@ -460,7 +474,8 @@
           "change_type": "addition",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_037_N5_N6"
     },
     {
       "from": "N6",
@@ -477,7 +492,8 @@
           "change_type": "resolution",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_037_N6_N7"
     },
     {
       "from": "N7",
@@ -494,7 +510,8 @@
           "change_type": "progression",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_037_N7_N8"
     },
     {
       "from": "N8",
@@ -511,7 +528,8 @@
           "change_type": "addition",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_037_N8_N9"
     }
   ]
 }

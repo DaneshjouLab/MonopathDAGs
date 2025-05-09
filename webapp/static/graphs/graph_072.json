@@ -17,7 +17,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_072_N0"
     },
     {
       "id": "N2",
@@ -53,7 +54,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_072_N1"
     },
     {
       "id": "N3",
@@ -75,7 +77,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_072_N2"
     },
     {
       "id": "N4",
@@ -201,7 +204,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_072_N3"
     },
     {
       "id": "N5",
@@ -230,7 +234,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_072_N4"
     },
     {
       "id": "N6",
@@ -264,7 +269,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_072_N5"
     },
     {
       "id": "N7",
@@ -289,7 +295,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_072_N6"
     },
     {
       "id": "N8",
@@ -319,7 +326,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_072_N7"
     },
     {
       "id": "N9",
@@ -392,7 +400,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_072_N8"
     },
     {
       "id": "N10",
@@ -402,7 +411,8 @@
         "node_step_index": 9,
         "content": "Treatment",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_072_N9"
     }
   ],
   "edges": [
@@ -413,7 +423,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient received gyroknife radiotherapy for left and right lung malignancies 12 times."
-      }
+      },
+      "custom_id": "graph_072_N1_N2"
     },
     {
       "from": "N2",
@@ -428,7 +439,8 @@
           "change_type": "addition",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_072_N2_N3"
     },
     {
       "from": "N3",
@@ -443,7 +455,8 @@
           "change_type": "addition",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_072_N3_N4"
     },
     {
       "from": "N4",
@@ -458,7 +471,8 @@
           "change_type": "addition",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_072_N4_N5"
     },
     {
       "from": "N5",
@@ -473,7 +487,8 @@
           "change_type": "escalation",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_072_N5_N6"
     },
     {
       "from": "N6",
@@ -488,7 +503,8 @@
           "change_type": "deescalation",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_072_N6_N7"
     },
     {
       "from": "N7",
@@ -503,7 +519,8 @@
           "change_type": "discontinuation",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_072_N7_N8"
     },
     {
       "from": "N8",
@@ -512,7 +529,8 @@
         "edge_id": "H_to_I",
         "branch_flag": true,
         "content": "After 16 cycles of anlotinib treatment, laboratory parameters showed improvement in GADA, ICA, IAA, Fasting blood glucose, Hemoglobin A1c, Hemoglobin, and Serum albumin."
-      }
+      },
+      "custom_id": "graph_072_N8_N9"
     },
     {
       "from": "N9",
@@ -521,7 +539,8 @@
         "edge_id": "I_to_J",
         "branch_flag": true,
         "content": "Treatment"
-      }
+      },
+      "custom_id": "graph_072_N9_N10"
     }
   ]
 }

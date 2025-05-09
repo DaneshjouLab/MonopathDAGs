@@ -30,7 +30,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_070_N0"
     },
     {
       "id": "N2",
@@ -54,7 +55,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_070_N1"
     },
     {
       "id": "N3",
@@ -115,7 +117,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_070_N2"
     },
     {
       "id": "N4",
@@ -168,7 +171,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_070_N3"
     },
     {
       "id": "N5",
@@ -187,7 +191,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_070_N4"
     },
     {
       "id": "N6",
@@ -212,7 +217,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_070_N5"
     },
     {
       "id": "N7",
@@ -229,7 +235,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_070_N6"
     },
     {
       "id": "N8",
@@ -247,7 +254,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_070_N7"
     },
     {
       "id": "N9",
@@ -275,7 +283,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_070_N8"
     },
     {
       "id": "N10",
@@ -285,7 +294,8 @@
         "node_step_index": 9,
         "content": "Patient returned to work with 80% of her previous time work 12 months after being discharged.",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_070_N9"
     },
     {
       "id": "N11",
@@ -326,7 +336,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_070_N10"
     },
     {
       "id": "N12",
@@ -386,7 +397,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_070_N11"
     }
   ],
   "edges": [
@@ -397,7 +409,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient developed memory problems following COVID-19 infection, leading to lumpectomy 2 days later."
-      }
+      },
+      "custom_id": "graph_070_N1_N2"
     },
     {
       "from": "N2",
@@ -406,7 +419,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Lumpectomy revealed infiltrative breast carcinoma of mixed type (80% non-specific, 20% lobular), histoprognostic grade I (2-2-1), histological tumour size of 30 mm along the long axis, lymphocytic stromal infiltrate estimated at 10%, without endovascular carcinomatous emboli and no involvement of perineural sheaths. Pathology report revealed ductal carcinoma in situ, intermediate grade, cribriform type, representing 10% of the total tumour surface. Immunohistochemistry showed oestrogen receptors (95%), progesterone receptors (80%), proliferation index (10%), and no HER2 overexpression (score 0). Right axillary sentinel lymph nodes showed no metastasis (0/5)."
-      }
+      },
+      "custom_id": "graph_070_N2_N3"
     },
     {
       "from": "N3",
@@ -426,7 +440,8 @@
           "change_type": "addition",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_070_N3_N4"
     },
     {
       "from": "N4",
@@ -435,7 +450,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "PET scan was performed to further investigate the breast cancer diagnosis."
-      }
+      },
+      "custom_id": "graph_070_N4_N5"
     },
     {
       "from": "N5",
@@ -444,7 +460,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "PET scan identified breast tumour, leading to resection of breast tumour with immunohistopathological analysis. Pathological stage (UICC, eighth edition 2017) was determined as pT2 N0 (sn) G1 R."
-      }
+      },
+      "custom_id": "graph_070_N5_N6"
     },
     {
       "from": "N6",
@@ -453,7 +470,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Following resection, immunosuppressive treatment was started within 24 hours of admission."
-      }
+      },
+      "custom_id": "graph_070_N6_N7"
     },
     {
       "from": "N7",
@@ -462,7 +480,8 @@
         "edge_id": "G_to_H",
         "branch_flag": true,
         "content": "PNS care score was calculated, indicating a possible PNS."
-      }
+      },
+      "custom_id": "graph_070_N7_N8"
     },
     {
       "from": "N8",
@@ -471,7 +490,8 @@
         "edge_id": "H_to_I",
         "branch_flag": true,
         "content": "Patient recovered gradually, with no recurrence of headaches or focal epileptic seizures since hospitalisation. Partial retrograde and anterograde amnesia persisted during the initial week, followed by a slow and steady improvement."
-      }
+      },
+      "custom_id": "graph_070_N8_N9"
     },
     {
       "from": "N9",
@@ -480,7 +500,8 @@
         "edge_id": "I_to_J",
         "branch_flag": true,
         "content": "Patient's condition improved to the point where she returned to work with 80% of her previous time work 12 months after being discharged."
-      }
+      },
+      "custom_id": "graph_070_N9_N10"
     },
     {
       "from": "N10",
@@ -489,7 +510,8 @@
         "edge_id": "J_to_K",
         "branch_flag": true,
         "content": "Neuropsychological evaluation at baseline showed impairment in verbal episodic memory (Free and Cued Selective Reminding Test) and visual episodic memory (recall of the Rey\u2013Osterrieth complex figure). After 6 months of treatment, objective cognitive improvement was observed."
-      }
+      },
+      "custom_id": "graph_070_N10_N11"
     },
     {
       "from": "N11",
@@ -498,7 +520,8 @@
         "edge_id": "K_to_L",
         "branch_flag": true,
         "content": "Whole-body FDG-18 PET scan revealed a moderately hypermetabolic lesion in the right breast. Breast biopsy revealed non-specific (ductal) infiltrative breast carcinoma, histoprognostic grade (SBRm/Nottingham) grade II (3-2-1), without ductal carcinoma in situ. Immunohistochemistry showed oestrogen receptors (100"
-      }
+      },
+      "custom_id": "graph_070_N11_N12"
     }
   ]
 }

@@ -38,7 +38,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_016_N0"
     },
     {
       "id": "N2",
@@ -95,7 +96,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_016_N1"
     },
     {
       "id": "N3",
@@ -136,7 +138,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_016_N2"
     },
     {
       "id": "N4",
@@ -158,7 +161,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_016_N3"
     },
     {
       "id": "N5",
@@ -186,7 +190,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_016_N4"
     },
     {
       "id": "N6",
@@ -215,7 +220,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_016_N5"
     },
     {
       "id": "N7",
@@ -223,7 +229,8 @@
       "customData": {
         "node_id": "G",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_016_N6"
     }
   ],
   "edges": [
@@ -234,7 +241,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Progression of malignant melanoma and detection of metastasis in the left axillary lymph node."
-      }
+      },
+      "custom_id": "graph_016_N1_N2"
     },
     {
       "from": "N2",
@@ -251,7 +259,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_016_N2_N3"
     },
     {
       "from": "N3",
@@ -269,7 +278,8 @@
           "target_domain": "imaging",
           "timestamp": "2017-11"
         }
-      }
+      },
+      "custom_id": "graph_016_N3_N4"
     },
     {
       "from": "N4",
@@ -287,7 +297,8 @@
           "target_domain": "imaging",
           "timestamp": "2020-06"
         }
-      }
+      },
+      "custom_id": "graph_016_N4_N5"
     },
     {
       "from": "N5",
@@ -305,7 +316,8 @@
           "target_domain": "imaging",
           "timestamp": "2021-04"
         }
-      }
+      },
+      "custom_id": "graph_016_N5_N6"
     },
     {
       "from": "N6",
@@ -314,7 +326,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Surgical resection of lung lesion."
-      }
+      },
+      "custom_id": "graph_016_N6_N7"
     }
   ]
 }

@@ -49,7 +49,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_004_N0"
     },
     {
       "id": "N2",
@@ -68,7 +69,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_004_N1"
     },
     {
       "id": "N3",
@@ -78,7 +80,8 @@
         "node_step_index": 2,
         "content": "Thoracentesis was performed, and the drained pleural fluid was sent to the Department of Pathology for further evaluation.",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_004_N2"
     },
     {
       "id": "N4",
@@ -115,7 +118,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_004_N3"
     },
     {
       "id": "N5",
@@ -142,7 +146,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_004_N4"
     },
     {
       "id": "N6",
@@ -159,7 +164,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_004_N5"
     }
   ],
   "edges": [
@@ -170,7 +176,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient underwent chest CT imaging."
-      }
+      },
+      "custom_id": "graph_004_N1_N2"
     },
     {
       "from": "N2",
@@ -187,7 +194,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_004_N2_N3"
     },
     {
       "from": "N3",
@@ -196,7 +204,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Post-thoracic drainage chest CT was performed."
-      }
+      },
+      "custom_id": "graph_004_N3_N4"
     },
     {
       "from": "N4",
@@ -211,7 +220,8 @@
           "change_type": "addition",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_004_N4_N5"
     },
     {
       "from": "N5",
@@ -226,7 +236,8 @@
           "change_type": "addition",
           "target_domain": "lab"
         }
-      }
+      },
+      "custom_id": "graph_004_N5_N6"
     }
   ]
 }

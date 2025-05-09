@@ -20,7 +20,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_027_N0"
     },
     {
       "id": "N2",
@@ -42,7 +43,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_027_N1"
     },
     {
       "id": "N3",
@@ -63,7 +65,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_027_N2"
     },
     {
       "id": "N4",
@@ -115,7 +118,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_027_N3"
     },
     {
       "id": "N5",
@@ -166,7 +170,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_027_N4"
     },
     {
       "id": "N6",
@@ -177,7 +182,8 @@
         "content": "Complete blood examination revealed no significant abnormalities.",
         "timestamp": null,
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_027_N5"
     },
     {
       "id": "N7",
@@ -198,7 +204,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_027_N6"
     },
     {
       "id": "N8",
@@ -220,7 +227,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_027_N7"
     },
     {
       "id": "N9",
@@ -249,7 +257,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_027_N8"
     },
     {
       "id": "N10",
@@ -278,7 +287,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_027_N9"
     },
     {
       "id": "N11",
@@ -345,7 +355,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_027_N10"
     },
     {
       "id": "N12",
@@ -374,7 +385,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_027_N11"
     }
   ],
   "edges": [
@@ -385,7 +397,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "No significant interval change."
-      }
+      },
+      "custom_id": "graph_027_N1_N2"
     },
     {
       "from": "N2",
@@ -400,7 +413,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_027_N2_N3"
     },
     {
       "from": "N3",
@@ -415,7 +429,8 @@
           "change_type": "addition",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_027_N3_N4"
     },
     {
       "from": "N4",
@@ -430,7 +445,8 @@
           "change_type": "progression",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_027_N4_N5"
     },
     {
       "from": "N5",
@@ -439,7 +455,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Initial workup, including complete blood examination."
-      }
+      },
+      "custom_id": "graph_027_N5_N6"
     },
     {
       "from": "N6",
@@ -454,7 +471,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_027_N6_N7"
     },
     {
       "from": "N7",
@@ -469,7 +487,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_027_N7_N8"
     },
     {
       "from": "N8",
@@ -484,7 +503,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_027_N8_N9"
     },
     {
       "from": "N9",
@@ -502,7 +522,8 @@
           "target_domain": "symptom",
           "timestamp": "2024-01-09"
         }
-      }
+      },
+      "custom_id": "graph_027_N9_N10"
     },
     {
       "from": "N10",
@@ -511,7 +532,8 @@
         "edge_id": "J_to_K",
         "branch_flag": true,
         "content": "Review of patient's medical history and current medications."
-      }
+      },
+      "custom_id": "graph_027_N10_N11"
     },
     {
       "from": "N11",
@@ -529,7 +551,8 @@
           "target_domain": "symptom",
           "timestamp": "2024-01-09"
         }
-      }
+      },
+      "custom_id": "graph_027_N11_N12"
     }
   ]
 }

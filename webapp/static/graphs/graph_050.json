@@ -75,7 +75,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_050_N0"
     },
     {
       "id": "N2",
@@ -140,7 +141,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_050_N1"
     },
     {
       "id": "N3",
@@ -188,7 +190,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_050_N2"
     },
     {
       "id": "N4",
@@ -216,7 +219,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_050_N3"
     }
   ],
   "edges": [
@@ -236,7 +240,8 @@
           "target_domain": "procedure",
           "timestamp": "2022-03-10T00:00:00Z"
         }
-      }
+      },
+      "custom_id": "graph_050_N1_N2"
     },
     {
       "from": "N2",
@@ -255,7 +260,8 @@
           "change_type": "addition",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_050_N2_N3"
     },
     {
       "from": "N3",
@@ -273,7 +279,8 @@
           "target_domain": "diagnosis",
           "timestamp": "2022-04-01T00:00:00Z"
         }
-      }
+      },
+      "custom_id": "graph_050_N3_N4"
     }
   ]
 }

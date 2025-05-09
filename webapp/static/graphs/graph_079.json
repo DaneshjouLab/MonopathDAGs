@@ -16,7 +16,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_079_N0"
     },
     {
       "id": "N2",
@@ -61,7 +62,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_079_N1"
     },
     {
       "id": "N3",
@@ -116,7 +118,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_079_N2"
     },
     {
       "id": "N4",
@@ -169,7 +172,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_079_N3"
     },
     {
       "id": "N5",
@@ -206,7 +210,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_079_N4"
     },
     {
       "id": "N6",
@@ -255,7 +260,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_079_N5"
     },
     {
       "id": "N7",
@@ -283,7 +289,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_079_N6"
     }
   ],
   "edges": [
@@ -294,7 +301,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Initial presentation and diagnosis of stage IVa EGFR L858R-mutated NSCLC."
-      }
+      },
+      "custom_id": "graph_079_N1_N2"
     },
     {
       "from": "N2",
@@ -315,7 +323,8 @@
           "target_domain": "medication",
           "timestamp": "2019-10-11T00:00:00Z"
         }
-      }
+      },
+      "custom_id": "graph_079_N2_N3"
     },
     {
       "from": "N3",
@@ -334,7 +343,8 @@
           "target_domain": "medication",
           "timestamp": "2020-04-28T00:00:00Z"
         }
-      }
+      },
+      "custom_id": "graph_079_N3_N4"
     },
     {
       "from": "N4",
@@ -353,7 +363,8 @@
           "target_domain": "medication",
           "timestamp": "2020-08-03T00:00:00Z"
         }
-      }
+      },
+      "custom_id": "graph_079_N4_N5"
     },
     {
       "from": "N5",
@@ -373,7 +384,8 @@
           "target_domain": "medication",
           "timestamp": "2020-10-10T00:00:00Z"
         }
-      }
+      },
+      "custom_id": "graph_079_N5_N6"
     },
     {
       "from": "N6",
@@ -382,7 +394,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Patient achieved pathological complete response (pCR) and prolonged survival, with high PD-L1 expression and increased immune cell infiltration."
-      }
+      },
+      "custom_id": "graph_079_N6_N7"
     }
   ]
 }

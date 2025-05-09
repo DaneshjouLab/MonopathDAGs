@@ -45,7 +45,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_078_N0"
     },
     {
       "id": "N2",
@@ -74,7 +75,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_078_N1"
     },
     {
       "id": "N3",
@@ -111,7 +113,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_078_N2"
     },
     {
       "id": "N4",
@@ -130,7 +133,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_078_N3"
     },
     {
       "id": "N5",
@@ -179,7 +183,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_078_N4"
     },
     {
       "id": "N6",
@@ -200,7 +205,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_078_N5"
     },
     {
       "id": "N7",
@@ -220,7 +226,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_078_N6"
     }
   ],
   "edges": [
@@ -240,7 +247,8 @@
           "change_type": "progression",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_078_N1_N2"
     },
     {
       "from": "N2",
@@ -257,7 +265,8 @@
           "change_type": "progression",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_078_N2_N3"
     },
     {
       "from": "N3",
@@ -274,7 +283,8 @@
           "change_type": "progression",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_078_N3_N4"
     },
     {
       "from": "N4",
@@ -291,7 +301,8 @@
           "change_type": "other",
           "target_domain": "lab"
         }
-      }
+      },
+      "custom_id": "graph_078_N4_N5"
     },
     {
       "from": "N5",
@@ -307,7 +318,8 @@
           "target_domain": "procedure",
           "timestamp": "2021-04-15T00:00:00Z"
         }
-      }
+      },
+      "custom_id": "graph_078_N5_N6"
     },
     {
       "from": "N6",
@@ -324,7 +336,8 @@
           "change_type": "reinterpretation",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_078_N6_N7"
     }
   ]
 }

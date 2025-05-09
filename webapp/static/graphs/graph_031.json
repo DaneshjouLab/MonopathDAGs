@@ -73,7 +73,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_031_N0"
     },
     {
       "id": "N2",
@@ -94,7 +95,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_031_N1"
     },
     {
       "id": "N3",
@@ -113,7 +115,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_031_N2"
     },
     {
       "id": "N4",
@@ -138,7 +141,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_031_N3"
     },
     {
       "id": "N5",
@@ -167,7 +171,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_031_N4"
     },
     {
       "id": "N6",
@@ -186,7 +191,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_031_N5"
     },
     {
       "id": "N7",
@@ -211,7 +217,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_031_N6"
     },
     {
       "id": "N8",
@@ -221,7 +228,8 @@
         "node_step_index": 7,
         "content": "Discharged post-operative Day 9.",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_031_N7"
     },
     {
       "id": "N9",
@@ -240,7 +248,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_031_N8"
     }
   ],
   "edges": [
@@ -251,7 +260,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient underwent CT thorax, abdomen, and pelvis."
-      }
+      },
+      "custom_id": "graph_031_N1_N2"
     },
     {
       "from": "N2",
@@ -260,7 +270,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Patient underwent PET scan."
-      }
+      },
+      "custom_id": "graph_031_N2_N3"
     },
     {
       "from": "N3",
@@ -269,7 +280,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Diagnosis of stage 1a (cT1cN0M0) lung adenocarcinoma."
-      }
+      },
+      "custom_id": "graph_031_N3_N4"
     },
     {
       "from": "N4",
@@ -278,7 +290,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Patient underwent VATS right upper lobectomy and right lower lobe superior segmentectomy."
-      }
+      },
+      "custom_id": "graph_031_N4_N5"
     },
     {
       "from": "N5",
@@ -287,7 +300,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Wedge resection of the lower lobe nodule sent for frozen section."
-      }
+      },
+      "custom_id": "graph_031_N5_N6"
     },
     {
       "from": "N6",
@@ -296,7 +310,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Histology results."
-      }
+      },
+      "custom_id": "graph_031_N6_N7"
     },
     {
       "from": "N7",
@@ -305,7 +320,8 @@
         "edge_id": "G_to_H",
         "branch_flag": true,
         "content": "Patient discharged post-operative Day 9."
-      }
+      },
+      "custom_id": "graph_031_N7_N8"
     },
     {
       "from": "N8",
@@ -314,7 +330,8 @@
         "edge_id": "H_to_I",
         "branch_flag": true,
         "content": "Reviewed 2 weeks post-discharge and planned for surveillance with his respiratory physician. Post-operative CT thorax, abdomen, pelvis."
-      }
+      },
+      "custom_id": "graph_031_N8_N9"
     }
   ]
 }

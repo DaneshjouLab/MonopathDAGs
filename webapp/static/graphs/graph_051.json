@@ -25,7 +25,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_051_N0"
     },
     {
       "id": "N2",
@@ -44,7 +45,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_051_N1"
     },
     {
       "id": "N3",
@@ -73,7 +75,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_051_N2"
     },
     {
       "id": "N4",
@@ -113,7 +116,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_051_N3"
     },
     {
       "id": "N5",
@@ -133,7 +137,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_051_N4"
     },
     {
       "id": "N6",
@@ -166,7 +171,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_051_N5"
     },
     {
       "id": "N7",
@@ -269,7 +275,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_051_N6"
     },
     {
       "id": "N8",
@@ -298,7 +305,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_051_N7"
     },
     {
       "id": "N9",
@@ -318,7 +326,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_051_N8"
     },
     {
       "id": "N10",
@@ -328,7 +337,8 @@
         "node_step_index": 9,
         "content": "Patient experienced no active bleeding postoperatively, and follow-up over 6 months showed no recurrence of hemoptysis.",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_051_N9"
     },
     {
       "id": "N11",
@@ -348,7 +358,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_051_N10"
     },
     {
       "id": "N12",
@@ -356,7 +367,8 @@
       "customData": {
         "node_id": "L",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_051_N11"
     }
   ],
   "edges": [
@@ -367,7 +379,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient had an enhanced CT scan two months prior to admission."
-      }
+      },
+      "custom_id": "graph_051_N1_N2"
     },
     {
       "from": "N2",
@@ -376,7 +389,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Biopsy performed to evaluate the tumor."
-      }
+      },
+      "custom_id": "graph_051_N2_N3"
     },
     {
       "from": "N3",
@@ -385,7 +399,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Patient started treatment for squamous cell carcinoma of the lung."
-      }
+      },
+      "custom_id": "graph_051_N3_N4"
     },
     {
       "from": "N4",
@@ -394,7 +409,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Follow-up CT scan to assess treatment response."
-      }
+      },
+      "custom_id": "graph_051_N4_N5"
     },
     {
       "from": "N5",
@@ -403,7 +419,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Patient presents with hemoptysis."
-      }
+      },
+      "custom_id": "graph_051_N5_N6"
     },
     {
       "from": "N6",
@@ -412,7 +429,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Further evaluation of hemoptysis and blood loss, including lab tests and imaging."
-      }
+      },
+      "custom_id": "graph_051_N6_N7"
     },
     {
       "from": "N7",
@@ -421,7 +439,8 @@
         "edge_id": "G_to_H",
         "branch_flag": true,
         "content": "Patient underwent emergency endovascular intervention due to pseudoaneurysm."
-      }
+      },
+      "custom_id": "graph_051_N7_N8"
     },
     {
       "from": "N8",
@@ -430,7 +449,8 @@
         "edge_id": "H_to_I",
         "branch_flag": true,
         "content": "Post-procedure angiography to confirm successful embolization."
-      }
+      },
+      "custom_id": "graph_051_N8_N9"
     },
     {
       "from": "N9",
@@ -439,7 +459,8 @@
         "edge_id": "I_to_J",
         "branch_flag": true,
         "content": "Post-operative monitoring for bleeding and recurrence of hemoptysis."
-      }
+      },
+      "custom_id": "graph_051_N9_N10"
     },
     {
       "from": "N10",
@@ -448,7 +469,8 @@
         "edge_id": "J_to_K",
         "branch_flag": true,
         "content": "Follow-up CT scan to assess tumor response post-embolization."
-      }
+      },
+      "custom_id": "graph_051_N10_N11"
     },
     {
       "from": "N11",
@@ -457,7 +479,8 @@
         "edge_id": "K_to_L",
         "branch_flag": true,
         "content": "Further follow-up and monitoring."
-      }
+      },
+      "custom_id": "graph_051_N11_N12"
     }
   ]
 }

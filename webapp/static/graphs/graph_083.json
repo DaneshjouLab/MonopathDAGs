@@ -47,7 +47,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_083_N0"
     },
     {
       "id": "N2",
@@ -104,7 +105,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_083_N1"
     },
     {
       "id": "N3",
@@ -191,7 +193,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_083_N2"
     },
     {
       "id": "N4",
@@ -234,7 +237,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_083_N3"
     },
     {
       "id": "N5",
@@ -267,7 +271,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_083_N4"
     },
     {
       "id": "N6",
@@ -293,7 +298,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_083_N5"
     },
     {
       "id": "N7",
@@ -324,7 +330,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_083_N6"
     },
     {
       "id": "N8",
@@ -358,7 +365,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_083_N7"
     },
     {
       "id": "N9",
@@ -389,7 +397,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_083_N8"
     }
   ],
   "edges": [
@@ -400,7 +409,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient's cough persisted for one month. Chest CT revealed a 3.1 cm right lower lobe tumor, lymphadenopathy, right pleural effusion, pericardial effusion, and scattered nodules in bilateral breasts. CA19-9 level was 282 U/mL."
-      }
+      },
+      "custom_id": "graph_083_N1_N2"
     },
     {
       "from": "N2",
@@ -417,7 +427,8 @@
           "change_type": "addition",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_083_N2_N3"
     },
     {
       "from": "N3",
@@ -426,7 +437,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "IHC of lung and bilateral breast specimens: positive for TTF-1 and E-cadherin; negative for ER, PgR, and HER2. ALK immunostaining was positive. FISH analysis detected ALK rearrangement with isolated red and green signals along with fused red/green signals. ALK copy number gain was noted in both specimens."
-      }
+      },
+      "custom_id": "graph_083_N3_N4"
     },
     {
       "from": "N4",
@@ -443,7 +455,8 @@
           "change_type": "addition",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_083_N4_N5"
     },
     {
       "from": "N5",
@@ -460,7 +473,8 @@
           "change_type": "other",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_083_N5_N6"
     },
     {
       "from": "N6",
@@ -469,7 +483,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Chest CT findings at six months after alectinib treatment: tumor size reduction in the lower right lobe and resolution of the pleural effusion."
-      }
+      },
+      "custom_id": "graph_083_N6_N7"
     },
     {
       "from": "N7",
@@ -486,7 +501,8 @@
           "change_type": "deescalation",
           "target_domain": "lab"
         }
-      }
+      },
+      "custom_id": "graph_083_N7_N8"
     },
     {
       "from": "N8",
@@ -495,7 +511,8 @@
         "edge_id": "H_to_I",
         "branch_flag": true,
         "content": "Patient diagnosed with ALK rearrangement-positive pulmonary adenocarcinoma with bilateral scattered breast metastases. CA19-9 levels decreased."
-      }
+      },
+      "custom_id": "graph_083_N8_N9"
     }
   ]
 }

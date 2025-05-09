@@ -42,7 +42,8 @@
           ]
         },
         "timestamp": "2022-11"
-      }
+      },
+      "custom_id": "graph_026_N0"
     },
     {
       "id": "N2",
@@ -63,7 +64,8 @@
           ]
         },
         "timestamp": "2022-11"
-      }
+      },
+      "custom_id": "graph_026_N1"
     },
     {
       "id": "N3",
@@ -113,7 +115,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_026_N2"
     },
     {
       "id": "N4",
@@ -142,7 +145,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_026_N3"
     },
     {
       "id": "N5",
@@ -174,7 +178,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_026_N4"
     },
     {
       "id": "N6",
@@ -195,7 +200,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_026_N5"
     }
   ],
   "edges": [
@@ -206,7 +212,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Initial presentation with abnormal chest CT scan leading to further investigation."
-      }
+      },
+      "custom_id": "graph_026_N1_N2"
     },
     {
       "from": "N2",
@@ -223,7 +230,8 @@
           "change_type": "progression",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_026_N2_N3"
     },
     {
       "from": "N3",
@@ -240,7 +248,8 @@
           "change_type": "progression",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_026_N3_N4"
     },
     {
       "from": "N4",
@@ -257,7 +266,8 @@
           "change_type": "addition",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_026_N4_N5"
     },
     {
       "from": "N5",
@@ -274,7 +284,8 @@
           "change_type": "progression",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_026_N5_N6"
     }
   ]
 }

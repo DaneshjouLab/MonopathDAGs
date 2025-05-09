@@ -34,7 +34,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_062_N0"
     },
     {
       "id": "N2",
@@ -54,7 +55,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_062_N1"
     },
     {
       "id": "N3",
@@ -71,7 +73,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_062_N2"
     },
     {
       "id": "N4",
@@ -126,7 +129,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_062_N3"
     },
     {
       "id": "N5",
@@ -196,7 +200,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_062_N4"
     },
     {
       "id": "N6",
@@ -233,7 +238,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_062_N5"
     }
   ],
   "edges": [
@@ -244,7 +250,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient's chronic recurrent dry cough prompted a chest CT scan."
-      }
+      },
+      "custom_id": "graph_062_N1_N2"
     },
     {
       "from": "N2",
@@ -253,7 +260,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Detection of pulmonary masses on CT led to admission to oncology for further evaluation and treatment."
-      }
+      },
+      "custom_id": "graph_062_N2_N3"
     },
     {
       "from": "N3",
@@ -262,7 +270,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "As part of the evaluation, the patient's medical history was reviewed, revealing no history of hypertension, coronary heart disease, diabetes, cerebral venous thrombosis or hemorrhage, tuberculosis, chronic hepatitis B virus infection and other diseases."
-      }
+      },
+      "custom_id": "graph_062_N3_N4"
     },
     {
       "from": "N4",
@@ -271,7 +280,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Vitals and labs were taken as part of the evaluation."
-      }
+      },
+      "custom_id": "graph_062_N4_N5"
     },
     {
       "from": "N5",
@@ -280,7 +290,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Additional labs were taken as part of the evaluation."
-      }
+      },
+      "custom_id": "graph_062_N5_N6"
     }
   ]
 }

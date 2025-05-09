@@ -23,7 +23,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_019_N0"
     },
     {
       "id": "N2",
@@ -74,7 +75,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_019_N1"
     },
     {
       "id": "N3",
@@ -98,7 +100,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_019_N2"
     },
     {
       "id": "N4",
@@ -118,7 +121,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_019_N3"
     },
     {
       "id": "N5",
@@ -148,7 +152,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_019_N4"
     },
     {
       "id": "N6",
@@ -168,7 +173,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_019_N5"
     },
     {
       "id": "N7",
@@ -192,7 +198,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_019_N6"
     },
     {
       "id": "N8",
@@ -220,7 +227,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_019_N7"
     },
     {
       "id": "N9",
@@ -242,7 +250,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_019_N8"
     }
   ],
   "edges": [
@@ -253,7 +262,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Initiation of chemotherapy regimen for small-cell lung cancer."
-      }
+      },
+      "custom_id": "graph_019_N1_N2"
     },
     {
       "from": "N2",
@@ -270,7 +280,8 @@
           "change_type": "other",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_019_N2_N3"
     },
     {
       "from": "N3",
@@ -287,7 +298,8 @@
           "change_type": "other",
           "target_domain": "symptom"
         }
-      }
+      },
+      "custom_id": "graph_019_N3_N4"
     },
     {
       "from": "N4",
@@ -304,7 +316,8 @@
           "change_type": "progression",
           "target_domain": "symptom"
         }
-      }
+      },
+      "custom_id": "graph_019_N4_N5"
     },
     {
       "from": "N5",
@@ -321,7 +334,8 @@
           "change_type": "addition",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_019_N5_N6"
     },
     {
       "from": "N6",
@@ -338,7 +352,8 @@
           "change_type": "addition",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_019_N6_N7"
     },
     {
       "from": "N7",
@@ -355,7 +370,8 @@
           "change_type": "addition",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_019_N7_N8"
     },
     {
       "from": "N8",
@@ -373,7 +389,8 @@
           "change_type": "progression",
           "target_domain": "symptom"
         }
-      }
+      },
+      "custom_id": "graph_019_N8_N9"
     }
   ]
 }

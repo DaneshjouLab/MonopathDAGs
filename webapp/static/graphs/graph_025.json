@@ -8,7 +8,8 @@
         "node_step_index": 0,
         "content": "68-year-old male admitted to the hospital in June 2022 with correct upper lung occupancy on physical examination.",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_025_N0"
     },
     {
       "id": "N2",
@@ -42,7 +43,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_025_N1"
     },
     {
       "id": "N3",
@@ -95,7 +97,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_025_N2"
     },
     {
       "id": "N4",
@@ -114,7 +117,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_025_N3"
     },
     {
       "id": "N5",
@@ -133,7 +137,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_025_N4"
     },
     {
       "id": "N6",
@@ -152,7 +157,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_025_N5"
     },
     {
       "id": "N7",
@@ -171,7 +177,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_025_N6"
     },
     {
       "id": "N8",
@@ -198,7 +205,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_025_N7"
     },
     {
       "id": "N9",
@@ -217,7 +225,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_025_N8"
     },
     {
       "id": "N10",
@@ -247,7 +256,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_025_N9"
     }
   ],
   "edges": [
@@ -258,7 +268,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient progressed from initial presentation to undergoing PET-CT imaging."
-      }
+      },
+      "custom_id": "graph_025_N1_N2"
     },
     {
       "from": "N2",
@@ -267,7 +278,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "PET-CT findings led to CT-guided puncture and fine-needle aspiration for definitive diagnoses."
-      }
+      },
+      "custom_id": "graph_025_N2_N3"
     },
     {
       "from": "N3",
@@ -276,7 +288,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Patient underwent treatments, followed by a chest CT to assess disease status."
-      }
+      },
+      "custom_id": "graph_025_N3_N4"
     },
     {
       "from": "N4",
@@ -285,7 +298,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Post-treatment, patient underwent surgery, followed by a chest CT to assess for tumor recurrence."
-      }
+      },
+      "custom_id": "graph_025_N4_N5"
     },
     {
       "from": "N5",
@@ -294,7 +308,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Patient underwent thyroid color ultrasonography to evaluate thyroid nodules."
-      }
+      },
+      "custom_id": "graph_025_N5_N6"
     },
     {
       "from": "N6",
@@ -303,7 +318,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Patient underwent postoperative thyroid ultrasound to assess for tumor recurrence."
-      }
+      },
+      "custom_id": "graph_025_N6_N7"
     },
     {
       "from": "N7",
@@ -312,7 +328,8 @@
         "edge_id": "G_to_H",
         "branch_flag": true,
         "content": "Patient underwent PET-CT scans, revealing a primary tumor mass in the right neck subcutaneous at the time of diagnosis."
-      }
+      },
+      "custom_id": "graph_025_N7_N8"
     },
     {
       "from": "N8",
@@ -321,7 +338,8 @@
         "edge_id": "H_to_I",
         "branch_flag": true,
         "content": "Patient underwent ultrasound, revealing a hypoechoic mass in the V region of the right neck."
-      }
+      },
+      "custom_id": "graph_025_N8_N9"
     },
     {
       "from": "N9",
@@ -330,7 +348,8 @@
         "edge_id": "I_to_J",
         "branch_flag": true,
         "content": "Ultrasound findings led to puncture biopsies for further evaluation."
-      }
+      },
+      "custom_id": "graph_025_N9_N10"
     }
   ]
 }

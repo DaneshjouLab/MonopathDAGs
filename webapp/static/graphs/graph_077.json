@@ -42,7 +42,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_077_N0"
     },
     {
       "id": "N2",
@@ -68,7 +69,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_077_N1"
     },
     {
       "id": "N3",
@@ -99,7 +101,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_077_N2"
     },
     {
       "id": "N4",
@@ -173,7 +176,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_077_N3"
     }
   ],
   "edges": [
@@ -194,7 +198,8 @@
           "target_domain": "imaging",
           "timestamp": "2023-09-10T00:00:00Z"
         }
-      }
+      },
+      "custom_id": "graph_077_N1_N2"
     },
     {
       "from": "N2",
@@ -212,7 +217,8 @@
           "change_type": "addition",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_077_N2_N3"
     },
     {
       "from": "N3",
@@ -233,7 +239,8 @@
           "change_type": "addition",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_077_N3_N4"
     }
   ]
 }

@@ -22,7 +22,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_069_N0"
     },
     {
       "id": "N2",
@@ -42,7 +43,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_069_N1"
     },
     {
       "id": "N3",
@@ -71,7 +73,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_069_N2"
     },
     {
       "id": "N4",
@@ -110,7 +113,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_069_N3"
     },
     {
       "id": "N5",
@@ -139,7 +143,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_069_N4"
     },
     {
       "id": "N6",
@@ -182,7 +187,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_069_N5"
     },
     {
       "id": "N7",
@@ -210,7 +216,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_069_N6"
     },
     {
       "id": "N8",
@@ -250,7 +257,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_069_N7"
     }
   ],
   "edges": [
@@ -261,7 +269,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient with persistent dry cough and smoking history underwent contrast enhanced chest CT."
-      }
+      },
+      "custom_id": "graph_069_N1_N2"
     },
     {
       "from": "N2",
@@ -270,7 +279,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Chest CT findings led to biopsy of the lesion under tracheoscopy."
-      }
+      },
+      "custom_id": "graph_069_N2_N3"
     },
     {
       "from": "N3",
@@ -279,7 +289,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Lung adenocarcinoma diagnosis led to whole body scan and clinical classification as stage IVB NSCLC. Zoledronic acid was administered."
-      }
+      },
+      "custom_id": "graph_069_N3_N4"
     },
     {
       "from": "N4",
@@ -288,7 +299,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Stage IVB NSCLC diagnosis prompted EGFR testing."
-      }
+      },
+      "custom_id": "graph_069_N4_N5"
     },
     {
       "from": "N5",
@@ -297,7 +309,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Detection of EGFR exon 19 deletion led to treatment with gefitinib."
-      }
+      },
+      "custom_id": "graph_069_N5_N6"
     },
     {
       "from": "N6",
@@ -306,7 +319,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "After 11 months on gefitinib, tissue biopsy was performed to investigate resistance mechanisms."
-      }
+      },
+      "custom_id": "graph_069_N6_N7"
     },
     {
       "from": "N7",
@@ -315,7 +329,8 @@
         "edge_id": "G_to_H",
         "branch_flag": true,
         "content": "Detection of T790M mutation led to switch to osimertinib."
-      }
+      },
+      "custom_id": "graph_069_N7_N8"
     }
   ]
 }

@@ -16,7 +16,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_041_N0"
     },
     {
       "id": "N2",
@@ -52,7 +53,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_041_N1"
     },
     {
       "id": "N3",
@@ -73,7 +75,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_041_N2"
     },
     {
       "id": "N4",
@@ -94,7 +97,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_041_N3"
     },
     {
       "id": "N5",
@@ -123,7 +127,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_041_N4"
     },
     {
       "id": "N6",
@@ -166,7 +171,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_041_N5"
     }
   ],
   "edges": [
@@ -177,7 +183,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient transitioned from presenting with recurrent abdominal pain to undergoing imaging that suggested a potential malignant tumor in the small intestine."
-      }
+      },
+      "custom_id": "graph_041_N1_N2"
     },
     {
       "from": "N2",
@@ -186,7 +193,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Further imaging at a tertiary hospital refined the diagnosis, suggesting small intestinal malignancy with lymph node metastasis and possible pelvic peritoneal involvement."
-      }
+      },
+      "custom_id": "graph_041_N2_N3"
     },
     {
       "from": "N3",
@@ -195,7 +203,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Assessment for respiratory symptoms was negative."
-      }
+      },
+      "custom_id": "graph_041_N3_N4"
     },
     {
       "from": "N4",
@@ -204,7 +213,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Comprehensive chest CT identified a space-occupying lesion in the left upper lobe, highly indicative of lung cancer, with enlarged mediastinal lymph nodes, suggesting potential metastasis."
-      }
+      },
+      "custom_id": "graph_041_N4_N5"
     },
     {
       "from": "N5",
@@ -213,7 +223,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Needle biopsies were performed on the lung, mediastinal lymph nodes, and the small intestinal mass, revealing high-grade neuroendocrine carcinoma, with suspected small-cell carcinoma."
-      }
+      },
+      "custom_id": "graph_041_N5_N6"
     }
   ]
 }

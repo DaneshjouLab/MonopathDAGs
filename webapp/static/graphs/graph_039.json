@@ -52,7 +52,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_039_N0"
     },
     {
       "id": "N2",
@@ -107,7 +108,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_039_N1"
     },
     {
       "id": "N3",
@@ -124,7 +126,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_039_N2"
     },
     {
       "id": "N4",
@@ -181,7 +184,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_039_N3"
     },
     {
       "id": "N5",
@@ -212,7 +216,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_039_N4"
     },
     {
       "id": "N6",
@@ -222,7 +227,8 @@
         "node_step_index": 5,
         "content": "After three weeks of antibiotic treatment with no improvement, the patient was referred to our department for surgical intervention.",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_039_N5"
     },
     {
       "id": "N7",
@@ -277,7 +283,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_039_N6"
     },
     {
       "id": "N8",
@@ -321,7 +328,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_039_N7"
     }
   ],
   "edges": [
@@ -332,7 +340,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient developed a large mass in the right lower lung field, not present one year prior, along with moderate pleural effusion. Elevated WBC count and CRP concentration were also noted."
-      }
+      },
+      "custom_id": "graph_039_N1_N2"
     },
     {
       "from": "N2",
@@ -341,7 +350,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Due to the mass and pleural effusion, the patient was admitted to the hospital and underwent intercostal tube drainage."
-      }
+      },
+      "custom_id": "graph_039_N2_N3"
     },
     {
       "from": "N3",
@@ -358,7 +368,8 @@
           "change_type": "addition",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_039_N3_N4"
     },
     {
       "from": "N4",
@@ -375,7 +386,8 @@
           "change_type": "progression",
           "target_domain": "symptom"
         }
-      }
+      },
+      "custom_id": "graph_039_N4_N5"
     },
     {
       "from": "N5",
@@ -384,7 +396,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "After three weeks of antibiotic treatment with no improvement, the patient was referred for surgical intervention."
-      }
+      },
+      "custom_id": "graph_039_N5_N6"
     },
     {
       "from": "N6",
@@ -393,7 +406,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Blood examination showed high inflammatory reaction (WBC count and CRP concentration increased). Tumor markers and markers of infectious disease were not elevated."
-      }
+      },
+      "custom_id": "graph_039_N6_N7"
     },
     {
       "from": "N7",
@@ -402,7 +416,8 @@
         "edge_id": "G_to_H",
         "branch_flag": true,
         "content": "Chest CT showed the right lower lobe lesion had increased in size, with fluids within the mass. Diagnosis was pulmonary suppuration or lung cancer with infection, and surgical intervention was planned to control infection."
-      }
+      },
+      "custom_id": "graph_039_N7_N8"
     }
   ]
 }

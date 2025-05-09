@@ -16,7 +16,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_038_N0"
     },
     {
       "id": "N2",
@@ -48,7 +49,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_038_N1"
     },
     {
       "id": "N3",
@@ -70,7 +72,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_038_N2"
     },
     {
       "id": "N4",
@@ -96,7 +99,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_038_N3"
     },
     {
       "id": "N5",
@@ -114,7 +118,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_038_N4"
     },
     {
       "id": "N6",
@@ -143,7 +148,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_038_N5"
     },
     {
       "id": "N7",
@@ -153,7 +159,8 @@
         "node_step_index": 6,
         "content": "Damp-dispelling herbs were removed to protect Yin, and herbs clearing the Qi system were replaced with Bubali Cornu and Sophorae Flavescentis Radix to enhance the removal of heat-toxin. Mori Cortex, Aurantii Fructus, and Ophiopogonis Radix were added.",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_038_N6"
     },
     {
       "id": "N8",
@@ -194,7 +201,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_038_N7"
     },
     {
       "id": "N9",
@@ -202,7 +210,8 @@
       "customData": {
         "node_id": "I",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_038_N8"
     }
   ],
   "edges": [
@@ -221,7 +230,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_038_N1_N2"
     },
     {
       "from": "N2",
@@ -238,7 +248,8 @@
           "change_type": "deescalation",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_038_N2_N3"
     },
     {
       "from": "N3",
@@ -256,7 +267,8 @@
           "change_type": "progression",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_038_N3_N4"
     },
     {
       "from": "N4",
@@ -273,7 +285,8 @@
           "change_type": "addition",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_038_N4_N5"
     },
     {
       "from": "N5",
@@ -290,7 +303,8 @@
           "change_type": "addition",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_038_N5_N6"
     },
     {
       "from": "N6",
@@ -311,7 +325,8 @@
           "change_type": "other",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_038_N6_N7"
     },
     {
       "from": "N7",
@@ -323,7 +338,8 @@
         "transition_event": {
           "trigger_type": "medication_change"
         }
-      }
+      },
+      "custom_id": "graph_038_N7_N8"
     }
   ]
 }

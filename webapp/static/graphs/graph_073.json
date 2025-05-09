@@ -77,7 +77,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_073_N0"
     },
     {
       "id": "N2",
@@ -107,7 +108,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_073_N1"
     },
     {
       "id": "N3",
@@ -148,7 +150,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_073_N2"
     },
     {
       "id": "N4",
@@ -180,7 +183,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_073_N3"
     },
     {
       "id": "N5",
@@ -220,7 +224,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_073_N4"
     },
     {
       "id": "N6",
@@ -269,7 +274,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_073_N5"
     },
     {
       "id": "N7",
@@ -350,7 +356,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_073_N6"
     },
     {
       "id": "N8",
@@ -377,7 +384,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_073_N7"
     },
     {
       "id": "N9",
@@ -387,7 +395,8 @@
         "node_step_index": 8,
         "content": "Patient died of his illness on hospital day 62.",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_073_N8"
     },
     {
       "id": "N10",
@@ -419,7 +428,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_073_N9"
     }
   ],
   "edges": [
@@ -430,7 +440,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Patient's condition worsened, leading to pneumonia and acute hypoxic respiratory failure requiring intubation."
-      }
+      },
+      "custom_id": "graph_073_N1_N2"
     },
     {
       "from": "N2",
@@ -447,7 +458,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_073_N2_N3"
     },
     {
       "from": "N3",
@@ -465,7 +477,8 @@
           "change_type": "progression",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_073_N3_N4"
     },
     {
       "from": "N4",
@@ -474,7 +487,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Hospital day 52: Recurrent fevers and transfer back to the ICU for septic shock management. Blood cultures grew MSSA. Transesophageal echocardiogram negative for endocarditis."
-      }
+      },
+      "custom_id": "graph_073_N4_N5"
     },
     {
       "from": "N5",
@@ -491,7 +505,8 @@
           "change_type": "addition",
           "target_domain": "lab"
         }
-      }
+      },
+      "custom_id": "graph_073_N5_N6"
     },
     {
       "from": "N6",
@@ -510,7 +525,8 @@
           "change_type": "addition",
           "target_domain": "medication"
         }
-      }
+      },
+      "custom_id": "graph_073_N6_N7"
     },
     {
       "from": "N7",
@@ -519,7 +535,8 @@
         "edge_id": "G_to_H",
         "branch_flag": true,
         "content": "Chest X-ray revealed bilateral airspace opacities suggestive of multifocal pneumonia or pulmonary edema but lacked the nodular lesions with surrounding ground-glass halos that are considered characteristic of early invasive aspergillosis. Chest CT showed No halo sign present, No clear cavitary lesions, Bilateral airspace opacities consistent with multifocal pneumonia or edema, No significant pleural effusions."
-      }
+      },
+      "custom_id": "graph_073_N7_N8"
     },
     {
       "from": "N8",
@@ -528,7 +545,8 @@
         "edge_id": "H_to_I",
         "branch_flag": true,
         "content": "Patient died of his illness on hospital day 62."
-      }
+      },
+      "custom_id": "graph_073_N8_N9"
     },
     {
       "from": "N8",
@@ -537,7 +555,8 @@
         "edge_id": "H_to_J",
         "branch_flag": true,
         "content": "PICC line removed. Caspofungin started empirically for suspected candidemia."
-      }
+      },
+      "custom_id": "graph_073_N8_N10"
     }
   ]
 }

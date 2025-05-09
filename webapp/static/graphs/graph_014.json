@@ -30,7 +30,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_014_N0"
     },
     {
       "id": "N2",
@@ -65,7 +66,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_014_N1"
     },
     {
       "id": "N3",
@@ -87,7 +89,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_014_N2"
     }
   ],
   "edges": [
@@ -105,7 +108,8 @@
           "target_domain": "imaging",
           "timestamp": "2023-05-29T00:00:00Z"
         }
-      }
+      },
+      "custom_id": "graph_014_N1_N2"
     },
     {
       "from": "N2",
@@ -124,7 +128,8 @@
           "target_domain": "procedure",
           "timestamp": "2023-06-27T00:00:00Z"
         }
-      }
+      },
+      "custom_id": "graph_014_N2_N3"
     }
   ]
 }

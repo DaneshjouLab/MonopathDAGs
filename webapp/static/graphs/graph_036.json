@@ -16,7 +16,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_036_N0"
     },
     {
       "id": "N2",
@@ -59,7 +60,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_036_N1"
     },
     {
       "id": "N3",
@@ -94,7 +96,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_036_N2"
     },
     {
       "id": "N4",
@@ -147,7 +150,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_036_N3"
     },
     {
       "id": "N5",
@@ -220,7 +224,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_036_N4"
     },
     {
       "id": "N6",
@@ -278,7 +283,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_036_N5"
     },
     {
       "id": "N7",
@@ -320,7 +326,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_036_N6"
     },
     {
       "id": "N8",
@@ -407,7 +414,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_036_N7"
     },
     {
       "id": "N9",
@@ -458,7 +466,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_036_N8"
     },
     {
       "id": "N10",
@@ -479,7 +488,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_036_N9"
     },
     {
       "id": "N11",
@@ -503,7 +513,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_036_N10"
     }
   ],
   "edges": [
@@ -514,7 +525,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Transition from birth to diagnosis of acquired von Willebrand syndrome (AVWS) at age 53, following repeated episodes of lower gastrointestinal bleeding due to digestive angiodysplasia. No prior personal or family history of bleeding."
-      }
+      },
+      "custom_id": "graph_036_N1_N2"
     },
     {
       "from": "N2",
@@ -533,7 +545,8 @@
           "change_type": "other",
           "target_domain": "lab"
         }
-      }
+      },
+      "custom_id": "graph_036_N2_N3"
     },
     {
       "from": "N3",
@@ -551,7 +564,8 @@
           "target_domain": "lab",
           "timestamp": "2005"
         }
-      }
+      },
+      "custom_id": "graph_036_N3_N4"
     },
     {
       "from": "N4",
@@ -572,7 +586,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_036_N4_N5"
     },
     {
       "from": "N5",
@@ -590,7 +605,8 @@
           "target_domain": "symptom",
           "timestamp": "2020"
         }
-      }
+      },
+      "custom_id": "graph_036_N5_N6"
     },
     {
       "from": "N6",
@@ -607,14 +623,16 @@
           "change_type": "addition",
           "target_domain": "symptom"
         }
-      }
+      },
+      "custom_id": "graph_036_N6_N7"
     },
     {
       "from": "N7",
       "to": "N8",
       "data": {
         "edge_id": "G_to_H"
-      }
+      },
+      "custom_id": "graph_036_N7_N8"
     }
   ]
 }

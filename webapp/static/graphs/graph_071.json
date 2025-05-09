@@ -103,7 +103,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_071_N0"
     },
     {
       "id": "N2",
@@ -182,7 +183,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_071_N1"
     }
   ],
   "edges": [
@@ -201,7 +203,8 @@
           "change_type": "addition",
           "target_domain": "procedure"
         }
-      }
+      },
+      "custom_id": "graph_071_N1_N2"
     }
   ]
 }

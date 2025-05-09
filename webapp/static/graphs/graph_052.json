@@ -48,7 +48,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_052_N0"
     },
     {
       "id": "N2",
@@ -86,7 +87,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_052_N1"
     },
     {
       "id": "N3",
@@ -179,7 +181,8 @@
           "allergies": [],
           "diagnoses": []
         }
-      }
+      },
+      "custom_id": "graph_052_N2"
     },
     {
       "id": "N4",
@@ -253,7 +256,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_052_N3"
     }
   ],
   "edges": [
@@ -272,7 +276,8 @@
           "change_type": "progression",
           "target_domain": "diagnosis"
         }
-      }
+      },
+      "custom_id": "graph_052_N1_N2"
     },
     {
       "from": "N2",
@@ -281,7 +286,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Patient presented with a palpable lump on the right thoracic wall, localized pain, and coarse breath sounds in both lungs. Lab abnormalities included elevated WBC, decreased RBC and hemoglobin, elevated total protein and globulin, decreased albumin, elevated glucose and C-reactive protein, and elevated squamous cell carcinoma antigen."
-      }
+      },
+      "custom_id": "graph_052_N2_N3"
     },
     {
       "from": "N3",
@@ -296,7 +302,8 @@
           "change_type": "progression",
           "target_domain": "imaging"
         }
-      }
+      },
+      "custom_id": "graph_052_N3_N4"
     }
   ]
 }

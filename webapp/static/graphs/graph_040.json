@@ -18,7 +18,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_040_N0"
     },
     {
       "id": "N2",
@@ -77,7 +78,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_040_N1"
     },
     {
       "id": "N3",
@@ -103,7 +105,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_040_N2"
     },
     {
       "id": "N4",
@@ -121,7 +124,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_040_N3"
     },
     {
       "id": "N5",
@@ -153,7 +157,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_040_N4"
     },
     {
       "id": "N6",
@@ -174,7 +179,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_040_N5"
     },
     {
       "id": "N7",
@@ -203,7 +209,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_040_N6"
     },
     {
       "id": "N8",
@@ -222,7 +229,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_040_N7"
     },
     {
       "id": "N9",
@@ -255,7 +263,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_040_N8"
     },
     {
       "id": "N10",
@@ -275,7 +284,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_040_N9"
     },
     {
       "id": "N11",
@@ -292,7 +302,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_040_N10"
     },
     {
       "id": "N12",
@@ -326,7 +337,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_040_N11"
     }
   ],
   "edges": [
@@ -337,7 +349,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Progression from enlarged right paratracheal node to hypotension, elevated leukocyte count, lactate, creatinine, and liver enzymes 23 days after undergoing EBUS-TBNA."
-      }
+      },
+      "custom_id": "graph_040_N1_N2"
     },
     {
       "from": "N2",
@@ -346,7 +359,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Development of new opacities in the left lower lung field and diagnosis of pneumosepsis."
-      }
+      },
+      "custom_id": "graph_040_N2_N3"
     },
     {
       "from": "N3",
@@ -355,7 +369,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Development of unstable, narrow complex tachycardia."
-      }
+      },
+      "custom_id": "graph_040_N3_N4"
     },
     {
       "from": "N4",
@@ -364,7 +379,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Diagnosis of large pericardial effusion and features of tamponade on bedside echocardiogram."
-      }
+      },
+      "custom_id": "graph_040_N4_N5"
     },
     {
       "from": "N5",
@@ -373,7 +389,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Emergent pericardiocentesis with insertion of pericardial drain and evacuation of 350 mL of purulent fluid."
-      }
+      },
+      "custom_id": "graph_040_N5_N6"
     },
     {
       "from": "N6",
@@ -382,7 +399,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Pericardial fluid cytology was negative, but cultures grew Streptococcus mitis-group, Actinomyces odontolyticus, Prevotella melaninogenica, and Lancefieldella rimae."
-      }
+      },
+      "custom_id": "graph_040_N6_N7"
     },
     {
       "from": "N7",
@@ -391,7 +409,8 @@
         "edge_id": "G_to_H",
         "branch_flag": true,
         "content": "Repeat CT scan of the chest revealed a large loculated rim-enhancing fluid collection within the mediastinum and pericardium, with multiple internal locules of gas and thickening with enhancement in the pericardium and mediastinal soft tissue."
-      }
+      },
+      "custom_id": "graph_040_N7_N8"
     },
     {
       "from": "N8",
@@ -400,7 +419,8 @@
         "edge_id": "H_to_I",
         "branch_flag": true,
         "content": "Development of progressive septic shock due to inability to obtain source control. Mediastinal fluid collection was not amenable to drainage via interventional radiology."
-      }
+      },
+      "custom_id": "graph_040_N8_N9"
     },
     {
       "from": "N9",
@@ -409,7 +429,8 @@
         "edge_id": "I_to_J",
         "branch_flag": true,
         "content": "HRCT of the chest at the level of the aortic arch demonstrating large loculated fluid collection within the mediastinum. The necrotic station 4R appeared indistinguishable from the collection."
-      }
+      },
+      "custom_id": "graph_040_N9_N10"
     },
     {
       "from": "N10",
@@ -418,7 +439,8 @@
         "edge_id": "J_to_K",
         "branch_flag": true,
         "content": "Benefit-to-risk ratio of sternotomy and surgical drainage was deemed limited after consulting with cardiac surgery. Patient opted for palliative measures and passed away surrounded by her family."
-      }
+      },
+      "custom_id": "graph_040_N10_N11"
     },
     {
       "from": "N11",
@@ -427,7 +449,8 @@
         "edge_id": "K_to_L",
         "branch_flag": true,
         "content": "HRCT of the chest at the level of the carina with visible mediastinal gas and loculations. HRCT of the chest showing multiple internal locules of gas within the pericardial effusion. HRCT of the lower chest demonstrating pericardial thickening and bilateral pleural effusions."
-      }
+      },
+      "custom_id": "graph_040_N11_N12"
     }
   ]
 }

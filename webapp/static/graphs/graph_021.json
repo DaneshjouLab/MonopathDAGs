@@ -33,7 +33,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_021_N0"
     },
     {
       "id": "N2",
@@ -73,7 +74,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_021_N1"
     },
     {
       "id": "N3",
@@ -135,7 +137,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_021_N2"
     },
     {
       "id": "N4",
@@ -184,7 +187,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_021_N3"
     },
     {
       "id": "N5",
@@ -221,7 +225,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_021_N4"
     },
     {
       "id": "N6",
@@ -252,7 +257,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_021_N5"
     },
     {
       "id": "N7",
@@ -320,7 +326,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_021_N6"
     },
     {
       "id": "N8",
@@ -363,7 +370,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_021_N7"
     }
   ],
   "edges": [
@@ -374,7 +382,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Transition from HIV diagnosis to initiation of antiretroviral therapy."
-      }
+      },
+      "custom_id": "graph_021_N1_N2"
     },
     {
       "from": "N2",
@@ -383,7 +392,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Persistence of low-level viremia and detection of K103N mutation despite antiretroviral therapy, with self-reported adherence of 82%."
-      }
+      },
+      "custom_id": "graph_021_N2_N3"
     },
     {
       "from": "N3",
@@ -392,7 +402,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Development and diagnosis of stage IVB lung squamous cell carcinoma with hepatic metastases."
-      }
+      },
+      "custom_id": "graph_021_N3_N4"
     },
     {
       "from": "N4",
@@ -401,7 +412,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Initiation of combination chemotherapy (carboplatin and paclitaxel) with pembrolizumab."
-      }
+      },
+      "custom_id": "graph_021_N4_N5"
     },
     {
       "from": "N5",
@@ -410,7 +422,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Development of Grade 3 myelosuppression and Grade 2 peripheral neuropathy, likely secondary to chemotherapy."
-      }
+      },
+      "custom_id": "graph_021_N5_N6"
     },
     {
       "from": "N6",
@@ -419,7 +432,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Increase in HIV-1 RNA and decline in CD4+ T cell count. Modification of antiretroviral regimen to include albuvirtide. Adjustment of cancer treatment to PD-1 inhibitor monotherapy due to chemotherapy intolerance. Imaging shows large left hilar mass and multiple nodular densities in both lungs."
-      }
+      },
+      "custom_id": "graph_021_N6_N7"
     },
     {
       "from": "N7",
@@ -428,7 +442,8 @@
         "edge_id": "G_to_H",
         "branch_flag": true,
         "content": "Follow-up chest CT showing evolution of the left hilar mass. Improvement in ANC. Hepatic function parameters within normal range."
-      }
+      },
+      "custom_id": "graph_021_N7_N8"
     }
   ]
 }

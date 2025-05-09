@@ -17,7 +17,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_053_N0"
     },
     {
       "id": "N2",
@@ -36,7 +37,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_053_N1"
     },
     {
       "id": "N3",
@@ -84,7 +86,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_053_N2"
     },
     {
       "id": "N4",
@@ -184,7 +187,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_053_N3"
     },
     {
       "id": "N5",
@@ -209,7 +213,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_053_N4"
     },
     {
       "id": "N6",
@@ -335,7 +340,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_053_N5"
     },
     {
       "id": "N7",
@@ -385,7 +391,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_053_N6"
     }
   ],
   "edges": [
@@ -405,7 +412,8 @@
           "target_domain": "procedure",
           "timestamp": "2023-10"
         }
-      }
+      },
+      "custom_id": "graph_053_N1_N2"
     },
     {
       "from": "N2",
@@ -425,7 +433,8 @@
           "target_domain": "medication",
           "timestamp": "2023-12"
         }
-      }
+      },
+      "custom_id": "graph_053_N2_N3"
     },
     {
       "from": "N3",
@@ -444,7 +453,8 @@
           "target_domain": "medication",
           "timestamp": "2024-10-21"
         }
-      }
+      },
+      "custom_id": "graph_053_N3_N4"
     },
     {
       "from": "N4",
@@ -466,7 +476,8 @@
           "target_domain": "symptom",
           "timestamp": "2024-11-28"
         }
-      }
+      },
+      "custom_id": "graph_053_N4_N5"
     },
     {
       "from": "N5",
@@ -484,7 +495,8 @@
           "target_domain": "symptom",
           "timestamp": "2024-12-01"
         }
-      }
+      },
+      "custom_id": "graph_053_N5_N6"
     },
     {
       "from": "N6",
@@ -498,7 +510,8 @@
           "trigger_entities": [],
           "change_type": ""
         }
-      }
+      },
+      "custom_id": "graph_053_N6_N7"
     }
   ]
 }

@@ -8,7 +8,8 @@
         "node_step_index": 0,
         "content": "Patient's cancer had no driver gene mutations.",
         "clinical_data": {}
-      }
+      },
+      "custom_id": "graph_056_N0"
     },
     {
       "id": "N2",
@@ -58,7 +59,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_056_N1"
     },
     {
       "id": "N3",
@@ -99,7 +101,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_056_N2"
     },
     {
       "id": "N4",
@@ -120,7 +123,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_056_N3"
     },
     {
       "id": "N5",
@@ -140,7 +144,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_056_N4"
     },
     {
       "id": "N6",
@@ -196,7 +201,8 @@
             }
           ]
         }
-      }
+      },
+      "custom_id": "graph_056_N5"
     },
     {
       "id": "N7",
@@ -342,7 +348,8 @@
             {}
           ]
         }
-      }
+      },
+      "custom_id": "graph_056_N6"
     }
   ],
   "edges": [
@@ -353,7 +360,8 @@
         "edge_id": "A_to_B",
         "branch_flag": true,
         "content": "Initiation of first-line chemotherapy."
-      }
+      },
+      "custom_id": "graph_056_N1_N2"
     },
     {
       "from": "N2",
@@ -362,7 +370,8 @@
         "edge_id": "B_to_C",
         "branch_flag": true,
         "content": "Progression to second-line chemotherapy."
-      }
+      },
+      "custom_id": "graph_056_N2_N3"
     },
     {
       "from": "N3",
@@ -371,7 +380,8 @@
         "edge_id": "C_to_D",
         "branch_flag": true,
         "content": "Development of perianal abscess leading to chemotherapy delay and surgical intervention."
-      }
+      },
+      "custom_id": "graph_056_N3_N4"
     },
     {
       "from": "N4",
@@ -380,7 +390,8 @@
         "edge_id": "D_to_E",
         "branch_flag": true,
         "content": "Post-surgical complication: onset of dyspnea."
-      }
+      },
+      "custom_id": "graph_056_N4_N5"
     },
     {
       "from": "N5",
@@ -389,7 +400,8 @@
         "edge_id": "E_to_F",
         "branch_flag": true,
         "content": "Progression of dyspnea leading to admission, with associated vital sign abnormalities (hypotension, hypoxemia, tachycardia)."
-      }
+      },
+      "custom_id": "graph_056_N5_N6"
     },
     {
       "from": "N6",
@@ -398,7 +410,8 @@
         "edge_id": "F_to_G",
         "branch_flag": true,
         "content": "Lab abnormalities including elevated D-dimer, C-reactive protein, brain natriuretic peptide, and CEA levels, along with abnormal CBC and arterial blood gas results."
-      }
+      },
+      "custom_id": "graph_056_N6_N7"
     }
   ]
 }
