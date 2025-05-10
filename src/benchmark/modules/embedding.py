@@ -35,12 +35,7 @@ class TrajectoryEmbedder:
         device (str): Computation device ('cuda' or 'cpu').
     """
 
-    def __init__(
-        self,
-        model_name=TRAJECTORY_EMBEDDING_MODEL,
-        text_path=None,
-        device=None,
-    ):
+    def __init__(self, model=TRAJECTORY_EMBEDDING_MODEL, text_field_path="content", device=None):
         """
         Initializes the TrajectoryEmbedder with a specified model and text path.
         Args:
@@ -49,15 +44,28 @@ class TrajectoryEmbedder:
                 attributes (e.g., ["data", "commentary"]).
             device (str): Computation device ('cuda' or 'cpu').
         """
-        self.model_name = model_name
-        self.text_path = text_path or ["content"]  # Default to flat structure
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
-        self.text_path = text_path
-        logger.info("Loading embedding model: %s on %s", model_name, self.device)
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.model = AutoModel.from_pretrained(model_name).to(self.device)
+        self.text_field = text_field_path
+        logger.info(f"Loading embedding model: {model} on {self.device}")
+        self.tokenizer = AutoTokenizer.from_pretrained(model)
+        self.model = AutoModel.from_pretrained(model).to(self.device)
         self.model.eval()
 
+    def _get_nested_text(self, data: dict) -> Optional[str]:
+        """Extracts text from a nested dictionary based on the specified path.
+        Args:
+            data (dict): Node attributes.
+        Returns:
+            Optional[str]: Extracted text or None if not found.
+        """
+        try:
+            keys = self.text_field.split(".")
+            for k in keys:
+                data = data[k]
+            return data if isinstance(data, str) else None
+        except Exception:
+            return None
+        
     def embed_text(self, text: str) -> torch.Tensor:
         """"Embeds a single text string using the transformer model.
         Args:
@@ -65,9 +73,7 @@ class TrajectoryEmbedder:
         Returns:
             torch.Tensor: The embedding of the text.
         """
-        inputs = self.tokenizer(
-            text, return_tensors="pt", truncation=True, padding=True
-        ).to(self.device)
+        inputs = self.tokenizer(text, return_tensors="pt", truncation=True, padding=True).to(self.device)
         with torch.no_grad():
             outputs = self.model(**inputs)
         return outputs.last_hidden_state[0][0]
@@ -93,15 +99,13 @@ class TrajectoryEmbedder:
         Returns:
             Optional[torch.Tensor]: The pooled embedding of the graph.
         """
-        texts = []
-        for _, data in graph.nodes(data=True):
-            t = self.extract_text(data)
-            if t:
-                texts.append(t)
-
+        texts = [
+            self._get_nested_text(data)
+            for _, data in graph.nodes(data=True)
+            if self._get_nested_text(data)
+        ]
         if not texts:
             logger.warning("No valid node texts found for embedding.")
             return None
-
         node_embs = torch.stack([self.embed_text(t) for t in texts])
         return node_embs.mean(dim=0).cpu()

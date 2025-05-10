@@ -126,9 +126,7 @@ def run_pipeline(
     if config.get("trajectory_embedding"):
         try:
             logger.info("Starting trajectory embedding")
-            embedder = TrajectoryEmbedder(
-                model_name=TRAJECTORY_EMBEDDING_MODEL, text_path=TEXT_FIELD_PATH
-            )
+            embedder = TrajectoryEmbedder()
             emb = embedder.embed_graph(graph)
             results["trajectory_embedding"] = emb.tolist() if emb is not None else None
             logger.info("Trajectory embedding completed")

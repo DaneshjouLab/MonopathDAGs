@@ -27,13 +27,12 @@ from benchmark.modules.logging_utils import setup_logger
 logger = setup_logger(__name__)
 
 ORIGINAL_TEXT = (
-    "A patient presents with chest pain. ECG was abnormal."
-    "Treated and sent to cath lab."
+    "A patient"
 )
 
 
 if __name__ == "__main__":
-    current_graph_path = "/Users/bikia/Documents/Code/DynamicData/samples/json_output/am_journal_case_reports_2024"
+    current_graph_path = "/Users/bikia/Documents/Code/DynamicData/webapp/static/graphs/graph_001.json"
     graph, ok = load_graph_from_file(current_graph_path)
 
     if ok:
@@ -45,4 +44,4 @@ if __name__ == "__main__":
         }
         results = run_pipeline(graph, ORIGINAL_TEXT, cfg)
         # data_display(results)
-        save_results(results, "output/results/results0.json")
+        save_results(results, "output/results/results_001.json")

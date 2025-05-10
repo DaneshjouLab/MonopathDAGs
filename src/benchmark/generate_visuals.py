@@ -11,6 +11,10 @@ import os
 import json
 import numpy as np
 
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parents[1]))  # Adds 'src' to sys.path
+
 from benchmark.modules.visualization_utils import (
     plot_bertscore_f1,
     plot_tsne_embeddings,
@@ -18,7 +22,7 @@ from benchmark.modules.visualization_utils import (
     summarize_metrics_table
 )
 
-RESULTS_DIR = "output/"
+RESULTS_DIR = "output/results"
 
 # Lists to collect metrics
 graph_ids = []

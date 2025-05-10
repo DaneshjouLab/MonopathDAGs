@@ -9,6 +9,8 @@
 
 """This modules containes I/O utilities for loading and saving data."""
 
+# Standard library imports
+import csv
 import json
 import os
 from typing import Any
@@ -33,7 +35,8 @@ def load_graph_from_file(path: str) -> tuple[nx.DiGraph, bool]:
         with open(path, encoding=UTF_8) as f:
             data = json.load(f)
             converted_data = convert_to_node_link_format(data) 
-        return json_graph.node_link_graph(converted_data, directed=True), True
+            normalized_data = normalize_graph_for_networkx(converted_data)
+        return json_graph.node_link_graph(normalized_data, directed=True), True
     except Exception as e:
         logger.error("Error loading graph: %s", e)
         return nx.DiGraph(), False
@@ -115,14 +118,11 @@ def data_display(results: dict[str, Any]) -> None:
 
 def convert_to_node_link_format(original_json: dict) -> dict:
     """
-    Convert a custom-formatted graph JSON with 'node_id' and 'edges'
-    into NetworkX node-link format with 'id' and 'links'.
-
+    Convert a JSON object to the node-link format used by networkx.
     Args:
-        original_json (dict): Your original graph dictionary.
-
+        original_json (dict): The original JSON object.
     Returns:
-        dict: A transformed JSON compatible with networkx.node_link_graph().
+        dict: The converted JSON object in node-link format.
     """
     converted = {
         "directed": True,
@@ -133,16 +133,48 @@ def convert_to_node_link_format(original_json: dict) -> dict:
 
     for node in original_json.get("nodes", []):
         new_node = dict(node)  # copy
-        new_node["id"] = new_node.pop("node_id", None)
+        new_node["id"] = (
+            new_node.get("node_id")
+            or new_node.get("id")
+            or new_node.get("customData", {}).get("node_id")
+        )
         converted["nodes"].append(new_node)
 
     for edge in original_json.get("edges", []):
         new_edge = dict(edge)  # copy
-        new_edge["source"] = new_edge.pop("from_node", None)
-        new_edge["target"] = new_edge.pop("to_node", None)
+        new_edge["source"] = new_edge.pop("from", None)
+        new_edge["target"] = new_edge.pop("to", None)
         converted["links"].append(new_edge)
 
     return converted
+
+
+def normalize_graph_for_networkx(raw_graph: dict) -> dict:
+    """
+    Normalize the graph for use with networkx.
+    Args:
+        raw_graph (dict): The raw graph data.
+    Returns:
+        dict: The normalized graph data.
+        """
+    for node in raw_graph["nodes"]:
+        # Promote content and timestamp from customData
+        if "customData" in node:
+            custom = node["customData"]
+            if "content" in custom:
+                node["content"] = custom["content"]
+            if "timestamp" in custom:
+                node["timestamp"] = custom["timestamp"]
+            node.update(custom)
+            del node["customData"]
+
+    for edge in raw_graph["links"]:
+        if "from" in edge:
+            edge["source"] = edge.pop("from")
+        if "to" in edge:
+            edge["target"] = edge.pop("to")
+
+    return raw_graph
 
 def save_embedding_vector(vec: list[float], out_path: str, metadata: dict = None):
     """
@@ -158,3 +190,43 @@ def save_embedding_vector(vec: list[float], out_path: str, metadata: dict = None
     with open(out_path, "a", encoding=UTF_8) as f:
         json.dump(row, f)
         f.write("\n")
+
+def build_graph_to_text_mapping(metadata_csv_path: str, html_root_dir: str) -> dict[str, str]:
+    """
+    Build a mapping from graph ID (e.g., 'graph_006') to full HTML file path.
+
+    Args:
+        metadata_csv_path (str): Path to the graph_metadata.csv file.
+        html_root_dir (str): Base path for the HTML files.
+
+    Returns:
+        dict: Mapping from graph ID to corresponding HTML file path.
+    """
+    graph_to_html = {}
+
+    with open(metadata_csv_path, newline='', encoding='utf-8') as csvfile:
+        reader = csv.reader(csvfile)
+        for row in reader:
+            graph_id = row[0].strip()
+            html_rel_path = row[2].strip().replace("./pmc_htmls", html_root_dir)
+            graph_to_html[graph_id] = html_rel_path
+
+    return graph_to_html
+
+def extract_original_text_from_html(html_path: str) -> str:
+    """
+    Placeholder function to extract original case report text from HTML.
+
+    Args:
+        html_path (str): Path to the HTML file.
+
+    Returns:
+        str: Raw text extracted (currently placeholder).
+    """
+    try:
+        with open(html_path, encoding='utf-8') as f:
+            html = f.read()
+            # TODO: replace with BeautifulSoup parsing
+            return f"[PLACEHOLDER] Text extracted from: {Path(html_path).name}"
+    except Exception as e:
+        return f"[ERROR] Failed to extract from {html_path}: {e}"

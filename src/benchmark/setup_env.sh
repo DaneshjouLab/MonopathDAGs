@@ -18,5 +18,8 @@ else
     echo "No requirements.txt found. Skipping dependency installation."
 fi
 
-echo "Running main..."
-python3 main.py
+# echo "Running main..."
+# python3 batch_run.py
+
+echo "Generating plots..."
+python3 generate_visuals.py
