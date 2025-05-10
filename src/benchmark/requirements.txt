@@ -11,3 +11,6 @@ numpy
 scipy
 bs4
 evaluate
+rouge_score
+absl-py
+nltk

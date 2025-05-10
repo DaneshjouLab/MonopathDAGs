@@ -73,7 +73,14 @@ class TrajectoryEmbedder:
         Returns:
             torch.Tensor: The embedding of the text.
         """
-        inputs = self.tokenizer(text, return_tensors="pt", truncation=True, padding=True).to(self.device)
+        inputs = self.tokenizer(
+            text,
+            return_tensors="pt",
+            truncation=True,
+            padding=True,
+            max_length=512
+        ).to(self.device)
+
         with torch.no_grad():
             outputs = self.model(**inputs)
         return outputs.last_hidden_state[0][0]

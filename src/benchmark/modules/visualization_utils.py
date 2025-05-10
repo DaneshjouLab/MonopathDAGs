@@ -21,6 +21,7 @@ PLOTS_DIR = "output/plots"
 
 os.makedirs(PLOTS_DIR, exist_ok=True)
 
+
 def plot_bertscore_f1(graph_ids, bertscore_f1, export_path=None):
     """Bar plot of BERTScore F1 for each graph, with summary statistics saved to CSV."""
     # Calculate statistics
@@ -30,7 +31,7 @@ def plot_bertscore_f1(graph_ids, bertscore_f1, export_path=None):
         "Median": np.median(f1_array),
         "Standard Deviation": np.std(f1_array),
         "25th Percentile (Q1)": np.percentile(f1_array, 25),
-        "75th Percentile (Q3)": np.percentile(f1_array, 75)
+        "75th Percentile (Q3)": np.percentile(f1_array, 75),
     }
 
     # Print stats
@@ -56,13 +57,17 @@ def plot_bertscore_f1(graph_ids, bertscore_f1, export_path=None):
 
 def plot_tsne_embeddings(embeddings, graph_ids):
     """2D t-SNE scatterplot for graph embeddings."""
-    tsne_results = TSNE(n_components=2, perplexity=2, random_state=42).fit_transform(embeddings)
+    tsne_results = TSNE(n_components=2, perplexity=2, random_state=42).fit_transform(
+        embeddings
+    )
     _, ax = plt.subplots()
-    sns.scatterplot(x=tsne_results[:, 0], y=tsne_results[:, 1], hue=graph_ids, s=100, ax=ax)
+    sns.scatterplot(
+        x=tsne_results[:, 0], y=tsne_results[:, 1], hue=graph_ids, s=100, ax=ax
+    )
     ax.set_title("t-SNE of Trajectory Embeddings")
     ax.set_xlabel("Dimension 1")
     ax.set_ylabel("Dimension 2")
-    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+    plt.legend(bbox_to_anchor=(1.05, 1), loc="upper left")
     plt.savefig(os.path.join(PLOTS_DIR, "trajectory_tsne.png"))
     plt.close()
 
@@ -83,12 +88,52 @@ def plot_topology_distributions(node_counts, edge_counts):
     plt.close()
 
 
-def summarize_metrics_table(graph_ids, bertscore_f1, node_counts, edge_counts):
-    """Create and return a summary DataFrame of key metrics per graph."""
-    df = pd.DataFrame({
-        "Graph ID": graph_ids,
-        "BERTScore F1": bertscore_f1,
-        "Nodes": node_counts,
-        "Edges": edge_counts
-    })
+def compute_string_similarity(
+    reference_texts, candidate_texts, metrics=["rouge", "bleu"]
+):
+    """Compute string similarity metrics (ROUGE, BLEU) between reference and candidate texts.
+
+    Args:
+        reference_texts (list of str): Ground truth strings.
+        candidate_texts (list of str): Generated strings.
+        metrics (list of str): Metrics to compute (default: ["rouge", "bleu"]).
+
+    Returns:
+        dict: Dictionary of metric names and scores.
+    """
+    results = {}
+    if "rouge" in metrics:
+        rouge = evaluate.load("rouge")
+        rouge_result = rouge.compute(
+            predictions=candidate_texts, references=reference_texts
+        )
+        results.update({f"ROUGE-{k.upper()}": v for k, v in rouge_result.items()})
+
+    if "bleu" in metrics:
+        bleu = evaluate.load("bleu")
+        bleu_result = bleu.compute(
+            predictions=candidate_texts, references=reference_texts
+        )
+        results["BLEU"] = bleu_result["bleu"]
+
+    return results
+
+
+def summarize_metrics_table(graph_ids, bertscore_f1, bertscore_precision,
+    bertscore_recall, bleu, rouge1, rougeL, node_counts, edge_counts, output_csv_path):
+    """Create and return a summary DataFrame of key metrics per graph, and save it as a CSV."""
+    df = pd.DataFrame(
+        {
+            "Graph ID": graph_ids,
+            "BERTScore F1": bertscore_f1,
+            "BERTScore Precision": bertscore_precision,
+            "BERTScore Recall": bertscore_recall,
+            "BLEU": bleu,
+            "ROUGE-1": rouge1,
+            "ROUGE-L": rougeL,
+            "Nodes": node_counts,
+            "Edges": edge_counts,
+        }
+    )
+    df.to_csv(output_csv_path, index=False)
     return df

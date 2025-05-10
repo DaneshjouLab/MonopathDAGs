@@ -16,6 +16,7 @@ import os
 from typing import Any
 import warnings
 import re
+import pandas as pd
 
 # Third-party imports
 import networkx as nx
@@ -62,6 +63,7 @@ def load_graph_from_file(path: str) -> tuple[nx.DiGraph, bool]:
         return nx.DiGraph(), False
 
 
+
 def save_results(results: dict, path: str) -> None:
     """
     Save the pipeline results to a JSON file.
@@ -70,9 +72,8 @@ def save_results(results: dict, path: str) -> None:
         path (str): The path to the output file.
     """
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding=UTF_8) as f:
-        json.dump(results, f, indent=2)
-
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(results, f, indent=2, allow_nan=False)
 
 def data_display(results: dict[str, Any]) -> None:
     """
@@ -275,3 +276,43 @@ def extract_case_presentation_from_file(filepath: str) -> str:
     with open(filepath, "r", encoding="utf-8") as file:
         html = file.read()
     return extract_case_presentation(html)
+
+def summarize_metrics_statistics(
+    csv_path: str = "output/plots/metrics_summary.csv",
+    output_path: str = "output/plots/metrics_summary_stats.csv"
+) -> pd.DataFrame:
+    """
+    Reads the metrics summary CSV and returns + saves descriptive statistics
+    (mean, std, min, max) for all numeric metrics.
+
+    Args:
+        csv_path (str): Path to the metrics_summary.csv file.
+        output_path (str): Path to save the output CSV of statistics.
+
+    Returns:
+        pd.DataFrame: A summary DataFrame with statistics per metric.
+    """
+    if not os.path.exists(csv_path):
+        raise FileNotFoundError(f"Metrics summary file not found at: {csv_path}")
+
+    df = pd.read_csv(csv_path, on_bad_lines='skip')
+
+    # Drop non-numeric columns
+    numeric_df = df.select_dtypes(include=["number"])
+
+    # Compute descriptive statistics
+    summary_stats = numeric_df.agg(['mean', 'std', 'min', 'max']).T
+    summary_stats = summary_stats.rename(columns={
+        "mean": "Mean",
+        "std": "Std Dev",
+        "min": "Min",
+        "max": "Max"
+    })
+
+    # Save to CSV
+    print(f"Saving metrics summary stats to: {os.path.abspath(output_path)}")
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    summary_stats.to_csv(output_path)
+
+    return summary_stats

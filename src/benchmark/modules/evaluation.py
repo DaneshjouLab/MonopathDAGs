@@ -8,10 +8,15 @@
 # pylint: disable=too-few-public-methods
 
 """This module contains evaluation classes for BERTScore and graph topology validation."""
-from typing import Any
+from typing import Any, Optional
 from transformers import AutoTokenizer, AutoModel
 import networkx as nx
-from bert_score import score
+from bert_score import score as bert_score_fn
+from nltk.tokenize import RegexpTokenizer
+from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
+from rouge_score import rouge_scorer
+import numpy as np
+
 
 # Local application imports
 from .config import Graph
@@ -19,67 +24,79 @@ from .logging_utils import setup_logger
 
 logger = setup_logger(__name__)
 
+MAX_BERT_TOKENS = 512
 
 class BERTScoreEvaluator:
     """
-    Computes BERTScore (precision, recall, F1) between original and reconstructed texts.
-
-    Usage:
-        evaluator = BERTScoreEvaluator(model_type="BERTSCORE_MODEL")
-        results = evaluator.evaluate(
-            refs=["ground truth text"],
-            cands=["model generated text"]
-        )
-        # results -> {"precision": [...], "recall": [...], "f1": [...]}
+    Computes BERTScore (precision, recall, F1) using a custom model (e.g., Bio_ClinicalBERT),
+    truncating inputs longer than the model's max input length (512 tokens).
     """
 
-    def __init__(self, model_type: str, device: str = None):
+    def __init__(self, model_type: str, device: Optional[str] = None):
         self.model_type = model_type
-        self.device = device  # 'cuda', 'cpu', or None for auto-detection
-
-        # ── Ensure the checkpoint is available locally ──
-        # This will pull the tokenizer & model into ~/.cache/huggingface if missing.
-        AutoTokenizer.from_pretrained(self.model_type)
-        AutoModel.from_pretrained(self.model_type)
-
-    def evaluate(self, refs: list[str], cands: list[str]) -> dict[str, list[float]]:
-        """
-        Args:
-          refs: list of reference texts.
-          cands: list of candidate texts.
-
-        Returns:
-          Dict with keys "precision", "recall", "f1" mapping to lists of scores.
-        """
-        if not refs or not cands:
-            logger.warning("Empty references or candidates list")
-            return {"precision": [], "recall": [], "f1": []}
-
-        if len(refs) != len(cands):
-            logger.warning(
-                f"Mismatched list lengths: refs={len(refs)}, cands={len(cands)}"
-            )
+        self.device = device or "cpu"
 
         try:
-            precision, recall, f1_score = score(
-                cands,
-                refs,
-                model_type=self.model_type,
-                device=self.device,
-                verbose=False,
-            )
+            self.tokenizer = AutoTokenizer.from_pretrained(self.model_type)
+            AutoModel.from_pretrained(self.model_type)  # ensure model download
+            logger.info(f"Model {self.model_type} loaded successfully.")
+        except Exception as e:
+            logger.warning(f"Could not preload model: {self.model_type} — {e}")
+
+    def truncate(self, text: str, max_tokens: int = MAX_BERT_TOKENS) -> str:
+        """
+        Truncates a text to the first `max_tokens` tokens using the model's tokenizer.
+        """
+        tokens = self.tokenizer.tokenize(text)
+        truncated_tokens = tokens[:max_tokens - 2]  # Reserve 2 tokens for [CLS] and [SEP]
+        return self.tokenizer.convert_tokens_to_string(truncated_tokens)
+
+    def evaluate(self, refs: list[str], cands: list[str]) -> dict[str, float]:
+        """
+        Computes BERTScore (mean) between reference and candidate texts.
+
+        Args:
+            refs (list of str): Reference texts.
+            cands (list of str): Candidate/generated texts.
+
+        Returns:
+            dict[str, float]: Average precision, recall, and F1 scores.
+        """
+        if not refs or not cands:
+            logger.warning("Empty references or candidates list.")
+            return {"precision": 0.0, "recall": 0.0, "f1": 0.0}
+
+        if len(refs) != len(cands):
+            logger.warning(f"Mismatched list lengths: refs={len(refs)}, cands={len(cands)}")
+            min_len = min(len(refs), len(cands))
+            refs = refs[:min_len]
+            cands = cands[:min_len]
+
+        # Truncate long sequences to avoid tensor mismatch
+        refs = [self.truncate(r) for r in refs]
+        cands = [self.truncate(c) for c in cands]
+
+        try:
+            model_kwargs = {
+                "model_type": self.model_type,
+                "device": self.device,
+                "lang": "en",
+                "rescale_with_baseline": False,
+                "verbose": False,
+                "num_layers": 12  # Required for Bio_ClinicalBERT
+            }
+
+            precision, recall, f1 = bert_score_fn(cands, refs, **model_kwargs)
 
             return {
-                "precision": precision.tolist(),
-                "recall": recall.tolist(),
-                "f1": f1_score.tolist(),
+                "precision": float(precision.mean().item()),
+                "recall": float(recall.mean().item()),
+                "f1": float(f1.mean().item()),
             }
+
         except Exception as e:
-            logger.error(f"BERTScore evaluation failed: {str(e)}")
-            raise
-
-
-# GRAPH TOPOLOGY VALIDATION
+            logger.error(f"BERTScore evaluation failed: {e}")
+            return {"precision": 0.0, "recall": 0.0, "f1": 0.0}
 
 
 class TopologyValidator:
@@ -149,4 +166,44 @@ class TopologyValidator:
             "edge_count": edge_count,
             "avg_in_degree": avg_in_deg,
             "density": density,
+        }
+
+
+class StringSimilarityEvaluator:
+    def __init__(self):
+        self.smoothie = SmoothingFunction().method4
+        self.rouge = rouge_scorer.RougeScorer(['rouge1', 'rougeL'], use_stemmer=True)
+        self.tokenizer = RegexpTokenizer(r'\w+')
+
+    def evaluate(self, refs, cands):
+        if not refs or not cands or len(refs) != len(cands):
+            raise ValueError("References and candidates must be non-empty lists of equal length.")
+
+        bleu_scores = []
+        rouge1_scores = []
+        rougeL_scores = []
+
+        for ref, cand in zip(refs, cands):
+            ref_tokens = self.tokenizer.tokenize(ref.lower().strip())
+            cand_tokens = self.tokenizer.tokenize(cand.lower().strip())
+
+            if not ref_tokens or not cand_tokens:
+                bleu_scores.append(0.0)
+                rouge1_scores.append(0.0)
+                rougeL_scores.append(0.0)
+                continue
+
+            bleu = sentence_bleu([ref_tokens], cand_tokens, smoothing_function=self.smoothie)
+            scores = self.rouge.score(ref, cand)
+
+            bleu_scores.append(bleu)
+            rouge1_scores.append(scores['rouge1'].fmeasure)
+            rougeL_scores.append(scores['rougeL'].fmeasure)
+
+            print(f"BLEU: {bleu}, ROUGE-1: {scores['rouge1'].fmeasure}, ROUGE-L: {scores['rougeL'].fmeasure}")
+
+        return {
+            "bleu": float(np.mean(bleu_scores)),
+            "rouge1": float(np.mean(rouge1_scores)),
+            "rougeL": float(np.mean(rougeL_scores))
         }

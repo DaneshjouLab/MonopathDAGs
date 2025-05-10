@@ -18,14 +18,13 @@ from networkx.readwrite import json_graph
 
 # Local application imports
 from .reconstruction import LLMReconstructor
-from .evaluation import BERTScoreEvaluator, TopologyValidator
+from .evaluation import BERTScoreEvaluator, StringSimilarityEvaluator, TopologyValidator
 from .embedding import TrajectoryEmbedder
 from .regex_utils import RegexValidator
 from .config import (
     LM_MODEL,
     LM_API_BASE,
     LM_API_KEY,
-    BERTSCORE_MODEL,
     TEXT_FIELD_PATH,
     TRAJECTORY_EMBEDDING_MODEL,
     Graph,
@@ -44,13 +43,15 @@ def run_pipeline(
     Evaluates:
       1. LLM-based narrative reconstruction
       2. BERTScore (fidelity)
-      3. Graph topology validation
-      4. Optional regex check
-      5. Trajectory-level embedding
+      3. BLEU/ROUGE string similarity
+      4. Graph topology validation
+      5. Optional regex check
+      6. Trajectory-level embedding
 
     Returns:
         dict: Structured results with intermediate metrics.
     """
+    
     results = {"status": "success", "errors": []}
 
     # Validate input types
@@ -81,21 +82,50 @@ def run_pipeline(
             results["status"] = "partial"
             results["errors"].append(msg)
 
+    # print("========= ORIGINAL TEXT =========:", original_text[:100])
+    # print("========= NARRATIVE: =========", narrative[:100])
+
     # Fidelity Evaluation using BERTScore
     if config.get("bertscore") and narrative:
         try:
             logger.info("Starting BERTScore evaluation")
-            model_name = config.get("bertscore_model", BERTSCORE_MODEL)
-            evaluator = BERTScoreEvaluator(model_type=model_name)
+            evaluator = BERTScoreEvaluator(model_type=TRAJECTORY_EMBEDDING_MODEL)
             results["bertscore"] = evaluator.evaluate(
                 refs=[original_text], cands=[narrative]
             )
+            print(results["bertscore"])
             logger.info("BERTScore evaluation completed")
+
         except Exception as e:
             msg = f"BERTScore evaluation failed: {str(e)}"
             logger.error(msg)
             results["status"] = "partial"
             results["errors"].append(msg)
+
+
+    # String Similarity (BLEU / ROUGE)
+    if config.get("string_similarity") and narrative and original_text:
+        try:
+            logger.info("Starting BLEU/ROUGE string similarity evaluation")
+
+            string_evaluator = StringSimilarityEvaluator()
+            similarity_scores = string_evaluator.evaluate(
+                refs=[original_text], cands=[narrative]
+            )
+
+            # Store individual metrics in separate result fields
+            results["bleu"] = similarity_scores.get("bleu", 0.0)
+            results["rouge1"] = similarity_scores.get("rouge1", 0.0)
+            results["rougeL"] = similarity_scores.get("rougeL", 0.0)
+
+            logger.info(f"String similarity evaluation completed: BLEU={results['bleu']:.4f}, "
+                        f"ROUGE-1={results['rouge1']:.4f}, ROUGE-L={results['rougeL']:.4f}")
+        except Exception as e:
+            msg = f"String similarity evaluation failed: {str(e)}"
+            logger.error(msg)
+            results["status"] = "partial"
+            results.setdefault("errors", []).append(msg)
+
 
     # Graph Topology Validation
     if config.get("topology"):

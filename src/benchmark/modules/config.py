@@ -18,9 +18,6 @@ LM_MODEL     = "ollama/llama3.2"
 LM_API_BASE  = "http://localhost:11434"
 LM_API_KEY   = ""  # or your local key if required
 
-# BERTScore settings
-BERTSCORE_MODEL = "bert-base-uncased"
-
 # Trajectory Embedding settings
 TRAJECTORY_EMBEDDING_MODEL = "emilyalsentzer/Bio_ClinicalBERT"
 TEXT_FIELD_PATH = ["data", "commentary"]  # e.g., node["data"]["commentary"]

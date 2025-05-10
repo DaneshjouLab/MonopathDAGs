@@ -15,6 +15,7 @@ import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parents[1]))  # Adds 'src' to sys.path
 
+
 from benchmark.modules.visualization_utils import (
     plot_bertscore_f1,
     plot_tsne_embeddings,
@@ -22,11 +23,18 @@ from benchmark.modules.visualization_utils import (
     summarize_metrics_table
 )
 
-RESULTS_DIR = "output/results"
+RESULTS_DIR = "output/results/testset_results"
+PLOTS_DIR = "output/plots"
+os.makedirs(PLOTS_DIR, exist_ok=True)
 
 # Lists to collect metrics
 graph_ids = []
 bertscore_f1s = []
+bertscore_precisions = []
+bertscore_recalls = []
+bleu_scores = []
+rouge1_scores = []
+rougeL_scores = []
 trajectory_embeddings = []
 node_counts = []
 edge_counts = []
@@ -41,8 +49,26 @@ for fname in os.listdir(RESULTS_DIR):
         graph_ids.append(graph_id)
 
         # Get BERTScore F1
-        f1 = result.get("bertscore", {}).get("f1", [np.nan])[0]
+        bertscore = result.get("bertscore", {})
+
+        f1 = bertscore.get("f1", np.nan)
+        precision = bertscore.get("precision", np.nan)
+        recall = bertscore.get("recall", np.nan)
+
         bertscore_f1s.append(f1)
+        bertscore_precisions.append(precision)
+        bertscore_recalls.append(recall)
+
+
+        # Get BLEU
+        bleu = result.get("bleu", np.nan)
+        bleu_scores.append(bleu)
+
+        # Get ROUGE
+        rouge1 = result.get("rouge1", np.nan)
+        rougel = result.get("rougeL", np.nan)
+        rouge1_scores.append(rouge1)
+        rougeL_scores.append(rougel)
 
         # Get embedding
         emb = result.get("trajectory_embedding")
@@ -67,6 +93,18 @@ if len(trajectory_embeddings) > 1:
 
 plot_topology_distributions(node_counts, edge_counts)
 
-summary_df = summarize_metrics_table(graph_ids, bertscore_f1s, node_counts, edge_counts)
+# Create and save summary table
+summary_df = summarize_metrics_table(
+    graph_ids,
+    bertscore_f1s,
+    bertscore_precisions,
+    bertscore_recalls,
+    bleu_scores,
+    rouge1_scores,
+    rougeL_scores,
+    node_counts,
+    edge_counts,
+    output_csv_path=os.path.join(PLOTS_DIR, "metrics_summary.csv")
+)
 print("\n=== Summary Table ===")
 print(summary_df)

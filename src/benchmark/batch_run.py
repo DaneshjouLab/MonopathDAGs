@@ -21,17 +21,20 @@ from modules.io_utils import (
     save_results,
     build_graph_to_text_mapping,
     extract_case_presentation_from_file,
+    summarize_metrics_statistics
 )
 
 logger = setup_logger(__name__)
 
 
 # Input directory: All graph files
-GRAPH_INPUT_DIR = Path(__file__).resolve().parents[2] / "webapp/static/graphs"
+GRAPH_INPUT_DIR = Path(__file__).resolve().parents[2] / "webapp/static/graphs/"
 
 # Output directory: Results
-RESULTS_OUTPUT_DIR = Path("output/results")
+RESULTS_OUTPUT_DIR = Path("output/results/")
 RESULTS_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+METRIC_SUMMARY_OUTPUT_DIR = Path("output/results/plots/metric_summary.csv")
+
 
 # Paths
 METADATA_CSV_PATH = Path(__file__).resolve().parents[2] / "webapp/static/graphs/mapping/graph_metadata.csv"
@@ -45,7 +48,7 @@ if __name__ == "__main__":
     if not graph_files:
         logger.warning("No JSON files found in input directory.")
     else:
-        for fpath in graph_files:  #[:5]:  Limit to first 5 files for demonstration
+        for fpath in graph_files:
             graph_id = fpath.stem
             html_path = graph_to_html.get(graph_id)
 
@@ -65,12 +68,15 @@ if __name__ == "__main__":
             cfg = {
                 "reconstruct_params": {"include_nodes": True, "include_edges": True},
                 "bertscore": True,
+                "string_similarity": True,
                 "topology": True,
                 "trajectory_embedding": True,
             }
 
             results = run_pipeline(graph, reference_case_text, cfg)
+
             output_path = RESULTS_OUTPUT_DIR / f"results_{graph_id}.json"
             save_results(results, output_path)
-
+        
+        
         logger.info("Batch benchmarking completed.")
