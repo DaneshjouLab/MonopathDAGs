@@ -3,13 +3,13 @@
   "reconstructed_narrative": "**Clinical Case Report**\n\n**Patient Demographics:**\nThe patient is a 56-year-old non-smoking male with pulmonary carcinosarcoma.\n\n**Initial Presentation (Step 1):**\nOn January 28, 2023, the patient presented at The Third People\u2019s Hospital of Yunnan Province with a progressively enlarging mass in the right neck. Imaging findings revealed multiple nodular shadows of various sizes within the right cervical region posterior to the sternocleidomastoid muscle and adjacent to the carotid artery sheath, which partially fused.\n\n**Diagnosis (Step 2):**\nCT scans confirmed the presence of a pulmonary malignancy with cervical and mediastinal lymph node metastasis. The largest mass measured approximately 3.8 cm x 2.6 cm with indistinct margins and uneven ring-shaped enhancement.\n\n**Biopsy and Pathological Diagnosis (Step 3):**\nA CT-guided puncture biopsy of the mass in the left inferior lobe of the lung was performed, which led to a pathological diagnosis of lung carcinosarcoma.\n\n**Immunohistochemistry and NGS Testing (Step 4):**\nImmunohistochemistry revealed a Ki-67 index of 80%, while Next-Generation Sequencing (NGS) detected mutations in the TMB gene. These results further supported the presence of pulmonary carcinomas.\n\n**Timeline:**\n\n* January 28, 2023: Patient presents with progressively enlarging neck mass and imaging findings consistent with pulmonary malignancy.\n* January 28, 2023: CT-guided puncture biopsy is performed to confirm diagnosis.\n* (Date not specified): Immunohistochemistry and NGS testing are performed.\n\n**Outcomes:**\nThe patient's condition remains active, with ongoing management of the pulmonary carcinosarcoma. The results of immunohistochemistry and NGS testing have provided valuable information for further treatment planning.\n\nNote: The timeline is incomplete as some dates were not specified in the original data.",
   "bertscore": {
     "precision": [
-      0.3337828814983368
+      0.547805905342102
     ],
     "recall": [
-      0.4093906879425049
+      0.6741754412651062
     ],
     "f1": [
-      0.3677407205104828
+      0.6044565439224243
     ]
   },
   "topology": {

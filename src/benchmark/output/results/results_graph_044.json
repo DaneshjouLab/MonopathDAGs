@@ -3,13 +3,13 @@
   "reconstructed_narrative": "**Clinical Case Report**\n\n**Patient Demographics:**\nThe patient is a 44-year-old man with a significant smoking history of 24 years. He has no other notable medical history.\n\n**Initial Presentation (Step 1):**\nThe patient presented to the emergency department due to cough, dyspnea, and throat pain. This was his first visit to the hospital in two weeks, during which he had undergone noncontrast CT scans that showed a 5.0 x 5.0 cm tumor in the superior-to-anterior mediastinum.\n\n**Imaging Findings (Step 2):**\nFollow-up imaging revealed an enlarged shadow in the right upper mediastinum on chest radiography, which was later confirmed by CT scan to be a mediastinal mass.\n\n**Progression of Disease (Steps 3-5):**\nOver two weeks, the tumor grew from 5.0 x 5.0 cm to 9.0 x 7.0 cm in size, causing compression and narrowing of the right brachiocephalic vein and superior vena cava, as well as left deviation of the trachea.\n\n**Symptom Onset (Step 4):**\nThe patient developed respiratory symptoms, including cough, dyspnea, and throat pain, which prompted further imaging to evaluate the cause of these symptoms.\n\n**Imaging Evaluation (Steps 5-6):**\nNoncontrast CT scans two weeks prior to admission showed a tumor in the superior-to-anterior mediastinum. Dynamic CT scans at admission revealed a weakly enhanced tumor in the superior-to-middle mediastinum, which had grown to 9.0 x 7.0 cm over two weeks.\n\n**Laboratory Findings (Step 6):**\nLaboratory tests revealed slightly elevated levels of lactate dehydrogenase (LDH) and C-reactive protein (CRP), indicating inflammation or infection. Tumor markers, including CYFRA, pro-GRP, CEA, and CA19-9, were all negative.\n\n**Current Status:**\nThe patient is currently undergoing further evaluation and treatment for the mediastinal mass. The exact treatment plan has not been disclosed in this report.\n\n**Outcomes:**\nThe patient's current condition and potential outcomes are unknown at this time. Further follow-up will be necessary to determine the effectiveness of any treatments and to monitor for any changes in the patient's condition.",
   "bertscore": {
     "precision": [
-      0.32771092653274536
+      0.692764401435852
     ],
     "recall": [
-      0.4161722660064697
+      0.7154231071472168
     ],
     "f1": [
-      0.3666817843914032
+      0.7039114236831665
     ]
   },
   "topology": {

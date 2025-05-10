@@ -9,3 +9,4 @@ seaborn
 matplotlib
 numpy
 scipy
+bs4

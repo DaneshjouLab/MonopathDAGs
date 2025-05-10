@@ -3,13 +3,13 @@
   "reconstructed_narrative": "**Clinical Case Report**\n\n**Patient Demographics:**\nThe patient is a 65-year-old woman with a history of palmoplantar pustulosis. She presented with a breast mass and a chest mass, which led to further investigation and diagnosis.\n\n**Initial Diagnosis (Step 1):**\nThe patient's initial presentation was characterized by a breast mass and a chest mass. Histopathological analysis of biopsy specimens from both the lung mass and the breast mass revealed small cell carcinoma (SCLC) in both lesions. Comprehensive staging, including contrast-enhanced MRI of the brain and FDG-PET, led to a diagnosis of stage cT2aN3M1c SCLC with multiple bone, peritoneal, and skin metastases.\n\n**Timeline of Diagnoses:**\n\n* **Step 1 (N1):** Patient presented with breast mass and chest mass.\n* **Step 2 (N2):** Histopathological analysis revealed small cell carcinoma in both lesions. Comprehensive staging confirmed stage cT2aN3M1c SCLC.\n\n**Treatment Initiation (Step 3):**\nThe patient initiated first-line treatment with carboplatin, etoposide, and durvalumab. Administration sequence: durvalumab, followed by ETP, and then CBDCA. During the first course of treatment, the patient experienced anaphylactic shock while receiving an ETP infusion on day 1.\n\n**Treatment Modification (Step 4):**\nDue to anaphylactic shock during etoposide infusion, treatment was switched to combination therapy with cisplatin (CDDP) and irinotecan (CPT-11).\n\n**Current Status:**\nThe patient is currently undergoing treatment with a modified regimen. The patient's condition is being closely monitored for any signs of disease progression or adverse reactions.\n\n**Outcomes:**\nWhile the patient has experienced anaphylactic shock during treatment, they are still receiving ongoing care and management. Further follow-up will be necessary to assess the effectiveness of the current treatment regimen and make any necessary adjustments.\n\nNote: The case report is based on the provided data and may not reflect the actual clinical scenario or outcomes.",
   "bertscore": {
     "precision": [
-      0.33418387174606323
+      0.5255064368247986
     ],
     "recall": [
-      0.4088182747364044
+      0.6934730410575867
     ],
     "f1": [
-      0.3677525520324707
+      0.5979174375534058
     ]
   },
   "topology": {

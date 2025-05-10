@@ -3,13 +3,13 @@
   "reconstructed_narrative": "**Clinical Case Report**\n\n**Patient Demographics:**\nThe patient is an adult with a diagnosis of stage III Non-Small Cell Lung Carcinoma (NSCLC) accompanied by an upper esophageal stricture. The patient's demographic information is not explicitly provided in the data, but based on the clinical presentation and treatment plan, it can be inferred that the patient is likely an older adult.\n\n**Timeline of Diagnoses:**\n\n1. **Step 1:** The patient was diagnosed with stage III NSCLC and upper esophageal stricture around the same time.\n2. **Step 2 (Two months later):** An initial MRI performed revealed no abnormalities, but the patient's diagnosis of NSCLC remained active.\n3. **Step 3 (One year after Step 1):** Follow-up CT scans showed metastatic spread throughout the brain after presentation to the ED with neurological weakness.\n4. **Step 4:** The patient was admitted to hospital and started on dexamethasone, continued treatment for hypokalemia, and placed on neutropenic precautions. Pantoprazole and enoxaparin sodium were initiated due to possible hemorrhages and deep vein thrombosis prophylaxis.\n5. **Step 5:** MRI confirmed multiple new brain metastases with vasogenic edema and possible hemorrhagic components. The patient's oncologist confirmed metastasis to the brain and bone, and dexamethasone was increased to 6 mg every eight hours. Enoxaparin sodium was discontinued due to possible hemorrhages; mechanical prophylaxis started with thromboembolic deterrent stockings and sequential compression devices.\n6. **Step 6:** The patient tolerated radiation therapy well and docetaxel was re-initiated.\n7. **Step 7 (Refractory disease):** CT scans revealed new developments in the liver and possibly pancreas, indicating refractory disease to second-line docetaxel.\n8. **Step 8 (Hospice care recommendation):** The oncologist discussed a third-line option and recommended hospice care.\n\n**Timeline of Treatments:**\n\n1. **Dexamethasone:** Initially started at 4 mg twice daily, increased to 6 mg every eight hours due to metastasis.\n2. **Docetaxel:** Re-initiated after radiation therapy, with no specified dosage or frequency.\n3. **Pantoprazole and Enoxaparin Sodium:** Initiated for possible hemorrhages and deep vein thrombosis prophylaxis.\n\n**Outcomes:**\n\n1. **Radiation Therapy:** The patient tolerated the treatment well, indicating a positive response to radiation therapy.\n2. **Hospice Care Recommendation:** The oncologist recommended hospice care due to refractory disease, indicating a poor prognosis for the patient's overall health and quality of life.\n\nIn conclusion, this patient was diagnosed with stage III NSCLC accompanied by an upper esophageal stricture and underwent multiple treatments, including radiation therapy, dexamethasone, docetaxel, pantoprazole, and enoxaparin sodium. Despite initial positive responses to treatment, the patient's disease progressed, leading to a recommendation for hospice care due to refractory disease.",
   "bertscore": {
     "precision": [
-      0.3270224332809448
+      0.5511878728866577
     ],
     "recall": [
-      0.4040271043777466
+      0.5822768211364746
     ],
     "f1": [
-      0.3614691495895386
+      0.5663059949874878
     ]
   },
   "topology": {
