@@ -23,7 +23,7 @@ from benchmark.modules.visualization_utils import (
     summarize_metrics_table
 )
 
-RESULTS_DIR = "output/results/testset_results"
+RESULTS_DIR = "output/results/"
 PLOTS_DIR = "output/plots"
 os.makedirs(PLOTS_DIR, exist_ok=True)
 
