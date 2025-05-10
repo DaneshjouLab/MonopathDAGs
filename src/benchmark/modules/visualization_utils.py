@@ -13,14 +13,36 @@ import os
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
+import numpy as np
 from sklearn.manifold import TSNE
+import evaluate
 
 PLOTS_DIR = "output/plots"
 
 os.makedirs(PLOTS_DIR, exist_ok=True)
 
-def plot_bertscore_f1(graph_ids, bertscore_f1):
-    """Bar plot of BERTScore F1 for each graph."""
+def plot_bertscore_f1(graph_ids, bertscore_f1, export_path=None):
+    """Bar plot of BERTScore F1 for each graph, with summary statistics saved to CSV."""
+    # Calculate statistics
+    f1_array = np.array(bertscore_f1)
+    stats = {
+        "Mean": np.mean(f1_array),
+        "Median": np.median(f1_array),
+        "Standard Deviation": np.std(f1_array),
+        "25th Percentile (Q1)": np.percentile(f1_array, 25),
+        "75th Percentile (Q3)": np.percentile(f1_array, 75)
+    }
+
+    # Print stats
+    for k, v in stats.items():
+        print(f"{k}: {v:.3f}")
+
+    # Save to CSV if export path is given
+    if export_path is not None:
+        stats_df = pd.DataFrame([stats])
+        stats_df.to_csv(export_path, index=False)
+
+    # Plotting
     _, ax = plt.subplots()
     sns.barplot(x=graph_ids, y=bertscore_f1, ax=ax)
     ax.set_title("BERTScore F1 per Graph")
