@@ -12,6 +12,9 @@ Usage:
 
 Author: [Your Name or Lab]
 """
+#TODO: need full pipeline function from reading a pandas df and then running through each node and other thing,,
 
+# need to build more on the backend to pull a new sample each time. 
+# need to build it such that I submit the information to the df, and store it in a s3 bucket or something. 
 if __name__ == "__main__":
     pass

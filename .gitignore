@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+.__pycache__
 # C extensions
 *.so
 
@@ -172,3 +172,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+todo.md
+
+*.DS_Store
+.env

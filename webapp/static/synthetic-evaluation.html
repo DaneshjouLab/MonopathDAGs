@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Synthetic Case Report Evaluation</title>
+    <script>
+        function getCookieValue(name) {
+            const cookies = document.cookie.split('; ');
+            const cookie = cookies.find(row => row.startsWith(name + '='));
+            return cookie ? decodeURIComponent(cookie.split('=')[1]) : null;
+        }
+    
+        const userId = getCookieValue('user_name');
+        if (!userId) {
+            window.location.href = '/';  // or '/login'
+        }
+    </script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; background-color: #f9f9f9; }
+        .report { background: #fff; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+        .question-group { margin: 1rem 0; }
+        .nav-buttons { margin-top: 1rem; }
+        button { margin-right: 0.5rem; padding: 0.5rem 1rem; }
+    </style>
+</head>
+<body>
+    <h2>Evaluate Synthetic Case Reports</h2>
+    <div class="report">
+        <h3 id="report-title"></h3>
+        <p id="report-content"></p>
+    </div>
+    <form id="rating-form"></form>
+
+    <div class="nav-buttons">
+        <button onclick="prevReport()">Previous</button>
+        <button onclick="nextReport()">Next</button>
+        <button onclick="submitRatings()">Submit All</button>
+    </div>
+
+    <script>
+        let reports = [];
+        let currentIndex = 0;
+        const questions = ["Accuracy", "Clarity", "Relevance"];
+        const answers = {};
+
+        async function loadReports() {
+            const response = await fetch('/api/get-synthetic-reports');
+            const data = await response.json();
+            reports = data.reports;
+            renderReport();
+        }
+
+        function renderReport() {
+            const report = reports[currentIndex];
+            document.getElementById('report-title').textContent = report.title;
+            document.getElementById('report-content').textContent = report.content;
+
+            const form = document.getElementById('rating-form');
+            form.innerHTML = '';
+
+            questions.forEach(q => {
+                const group = document.createElement('div');
+                group.className = 'question-group';
+                group.innerHTML = `<strong>${q}:</strong><br>`;
+
+                for (let i = 0; i <= 5; i++) {
+                    const inputId = `${report.id}-${q}-${i}`;
+                    group.innerHTML += `
+                        <label>
+                            <input type="radio" name="${q}" value="${i}" id="${inputId}" ${getStoredAnswer(report.id, q) == i ? 'checked' : ''}>
+                            ${i}
+                        </label>
+                    `;
+                }
+                form.appendChild(group);
+            });
+        }
+
+        function storeCurrentAnswers() {
+            const reportId = reports[currentIndex].id;
+            if (!answers[reportId]) answers[reportId] = {};
+            questions.forEach(q => {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                if (selected) {
+                    answers[reportId][q] = selected.value;
+                }
+            });
+        }
+
+        function getStoredAnswer(reportId, question) {
+            return answers[reportId] ? answers[reportId][question] : null;
+        }
+
+        function nextReport() {
+            storeCurrentAnswers();
+            if (currentIndex < reports.length - 1) {
+                currentIndex++;
+                renderReport();
+            }
+        }
+
+        function prevReport() {
+            storeCurrentAnswers();
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderReport();
+            }
+        }
+
+        async function submitRatings() {
+            storeCurrentAnswers();
+            const payload = { ratings: answers };
+
+            const response = await fetch('/api/submit-synthetic-evals', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (response.ok) {
+                alert('All ratings submitted!');
+            } else {
+                alert('Submission failed.');
+            }
+        }
+
+        loadReports();
+    </script>
+</body>
+</html>
