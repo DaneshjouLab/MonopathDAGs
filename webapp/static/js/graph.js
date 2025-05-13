@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const graph = await fetchGraphData();
         initGraph(graph);
     } catch (error) {
-        console.error("Error initializing graph:", error);
+        console.warn("⚠️ No initial graph loaded. Initializing empty graph.");
+        initGraph({ nodes: [], edges: [] });
     }
 });
 
@@ -48,6 +49,7 @@ function initGraph(graph) {
 export function updateGraphData(newNodes, newEdges) {
     if (!network) {
         console.warn('Network is not initialized yet.');
+        
         return;
     }
     // cleaning up old memory in case i held onto it. 

@@ -49,24 +49,27 @@ class LLMReconstructor:
     """
 
     def __init__(
-        self,
-        model_name: str,
-        api_base: str,
-        api_key: str,
-        prompt_tpl: str = (
-            "Reconstruct the clinical case report from this data:\n\n{payload}\n\n"
-            "Write a coherent narrative including patient demographics, "
-            "timeline of diagnoses, treatments, and outcomes."
-        ),
-        max_retries: int = 3,
-    ):
+    self,
+    model_name: str,
+    api_key: str,
+    api_base: str = None,
+    prompt_tpl: str = (
+        "Reconstruct the clinical case report from this data:\n\n{payload}\n\n"
+        "Write a coherent narrative including patient demographics, "
+        "timeline of diagnoses, treatments, and outcomes."
+    ),
+    max_retries: int = 3,):
         try:
-            self.lm = dspy.LM(model_name, api_base=api_base, api_key=api_key)
+            if api_base:
+                self.lm = dspy.LM(model_name, api_base=api_base, api_key=api_key)
+            else:
+                self.lm = dspy.LM(model_name, api_key=api_key)
             self.prompt_tpl = prompt_tpl
             self.max_retries = max_retries
         except Exception as e:
             logger.error("Error initializing LLM: %s", e)
             raise
+
 
     def _build_payload(
         self,
@@ -174,3 +177,4 @@ class LLMReconstructor:
 
         # This should never be reached due to the exception above, but added for completeness
         return "Failed to reconstruct narrative due to LLM service errors."
+    

@@ -90,7 +90,7 @@
     const totalGraphs = 900;
 
     document.getElementById('nextSampleButton').addEventListener('click', async () => {
-        const graphFile = `/static/graphs/graph_${String(currentGraphIndex).padStart(3, '0')}.json`;
+        const graphFile = `/static/user_data/graph_test.json`;
 
         try {
             const response = await fetch(graphFile);

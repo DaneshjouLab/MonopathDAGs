@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker, declarative_base
-from sqlalchemy import Column, Integer, String, select
+from sqlalchemy import Column, Integer, String, select,UniqueConstraint
 from functools import wraps
 import os
 import json
@@ -27,11 +27,13 @@ app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 # ----------------- Database Model -----------------
 
 class User(Base):
+
     __tablename__ = "users"
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, index=True)
 
 class Evaluation(Base):
+
     __tablename__="evaluations"
     id = Column(Integer, primary_key=True)
     username=Column(String)
@@ -39,7 +41,27 @@ class Evaluation(Base):
     element_id=Column(String)
     order=Column(String)
     accuracy=Column(String)
-    
+
+
+
+class EvaluationSyntheticCases(Base):
+
+
+    __tablename__="synthetic_cases"
+    id = Column(Integer, primary_key=True)
+    username=Column(String)
+    graph_id=Column(String)
+    element_id=Column(String)
+    Q1=Column(String)
+    Q2=Column(String)
+    Q3=Column(String)
+    Q4=Column(String)
+    Q5=Column(String)
+    __table_args__ = (
+        UniqueConstraint("username", "element_id", name="uq_username_element_id"),
+    )
+
+
 async def init_db():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
@@ -120,6 +142,13 @@ async def api_login(request: Request, response: Response, db: AsyncSession = Dep
         await db.commit()
         await db.refresh(user)
     await generate_eval_index(user.username, db)
+    await generate_filtered_synth_eval_index(
+    username=user.username,
+    db=db,
+    jsonl_path=os.path.join(STATIC_DIR, "synthetic_outputs", "index.jsonl"),
+    filter_fn=None  # or a custom function if needed
+)
+
     response.set_cookie(key="user_name", value=str(user.username), max_age=3600)
     response.set_cookie(key="user_id", value=str(user.id), max_age=3600)
     return {"status": "ok", "user_id": user.id}
@@ -157,11 +186,47 @@ async def get_synthetic_reports():
     ]
     return {"reports": reports}
 
+
+
 @app.post("/api/submit-synthetic-evals")
-async def submit_synthetic_evals(request: Request):
+async def submit_synthetic_evals(request: Request, db: AsyncSession = Depends(get_db)):
     data = await request.json()
-    print("Received synthetic evaluations:", data)
-    return {"status": "ok"}
+
+    for record in data:
+        stmt = select(EvaluationSyntheticCases).where(
+            EvaluationSyntheticCases.username == record['username'],
+            EvaluationSyntheticCases.element_id == record['element_id']
+        )
+        result = await db.execute(stmt)
+        existing = result.scalar_one_or_none()
+
+        if existing:
+            updated = False
+            for key in ["Q1", "Q2", "Q3", "Q4", "Q5"]:
+                new_val = record.get(key)
+                old_val = getattr(existing, key)
+                if new_val != old_val:
+                    setattr(existing, key, new_val)
+                    updated = True
+            if updated:
+                db.add(existing)
+        else:
+            new_entry = EvaluationSyntheticCases(
+                username=record['username'],
+                graph_id=record.get('graph_id', ''),
+                element_id=record['element_id'],
+                Q1=record.get('Q1'),
+                Q2=record.get('Q2'),
+                Q3=record.get('Q3'),
+                Q4=record.get('Q4'),
+                Q5=record.get('Q5')
+            )
+            db.add(new_entry)
+
+    await db.commit()
+    return {"status": "ok", "count": len(data)}
+
+
 
 # @app.post("/api/submit-batch-eval")
 # async def submit_batch_eval(request: Request):
@@ -241,6 +306,111 @@ async def generate_eval_index(username: str, db: AsyncSession) -> str:
         status = "completed" if evaluated_count >= total_elements else "incomplete"
         index_data.append({"graph_id": graph_id, "status": status})
 
+    _write_json_file(output_file, index_data)
+
+    return output_file
+
+
+
+from typing import Callable, Optional
+
+def load_jsonl_index(
+    jsonl_path: str,
+    filter_fn: Optional[Callable[[dict], bool]] = None
+) -> list[dict]:
+    """
+    Load JSONL entries with optional filtering.
+
+    Args:
+        jsonl_path (str): Path to JSONL file.
+        filter_fn (Callable): Function that takes a record dict and returns True to include.
+
+    Returns:
+        List[dict]: Filtered list of {graph_id, uid} dicts.
+    """
+    entries = []
+    try:
+        with open(jsonl_path, "r", encoding="utf-8") as f:
+            for line in f:
+                record = json.loads(line.strip())
+                if "graph_id" in record and "uid" in record:
+                    if filter_fn is None or filter_fn(record):
+                        entries.append({
+                            "graph_id": record["graph_id"],
+                            "uid": record["uid"]
+                        })
+    except Exception as e:
+        print(f"⚠️ Error reading JSONL file: {e}")
+    return entries
+async def get_evaluated_uids(db: AsyncSession, username: str) -> set[str]:
+    """
+    Return UIDs (element_ids) for which the user submitted full evaluations (Q1–Q5 all present).
+    """
+    result = await db.execute(
+        select(EvaluationSyntheticCases).where(
+            EvaluationSyntheticCases.username == username
+        )
+    )
+    rows = result.scalars().all()
+
+    completed_uids = {
+        row.element_id
+        for row in rows
+        if all([
+            row.Q1, row.Q2, row.Q3, row.Q4, row.Q5
+        ])
+    }
+    return completed_uids
+
+
+async def generate_filtered_synth_eval_index(
+    username: str,
+    db: AsyncSession,
+    jsonl_path: str,
+    filter_fn: Optional[Callable[[dict], bool]] = None
+) -> str:
+    """
+    Generate a user-specific evaluation index from a filtered set of JSONL entries.
+
+    Args:
+        username (str): User ID.
+        db (AsyncSession): Active database session.
+        jsonl_path (str): Path to JSONL index file.
+        filter_fn (Callable, optional): Optional filter function to limit entries.
+
+    Returns:
+        str: Path to saved JSON index.
+    """
+    def load_jsonl_index(path: str) -> list[dict]:
+        entries = []
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                for line in f:
+                    record = json.loads(line.strip())
+                    if all(k in record for k in ["graph_id", "uid", "text_file", "is_control"]):
+                        if filter_fn is None or filter_fn(record):
+                            entries.append(record)
+        except Exception as e:
+            print(f"⚠️ Error reading JSONL file: {e}")
+        return entries
+
+    entries = load_jsonl_index(jsonl_path)
+    evaluated_uids = await get_evaluated_uids(db, username)
+
+    index_data = [
+        {
+            "graph_id": entry["graph_id"],
+            "uid": entry["uid"],
+            "text_file": entry["text_file"],
+            "group": "control" if entry.get("is_control", False) else "sample",
+            "status": "completed" if entry["uid"] in evaluated_uids else "incomplete"
+        }
+        for entry in entries
+    ]
+
+    output_dir = os.path.join(STATIC_DIR, "user_data")
+    os.makedirs(output_dir, exist_ok=True)
+    output_file = os.path.join(output_dir, f"{username}_synth_eval_index.json")
     _write_json_file(output_file, index_data)
 
     return output_file

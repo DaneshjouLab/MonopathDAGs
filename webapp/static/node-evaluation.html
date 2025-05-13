@@ -90,7 +90,7 @@
         }
 
         async function loadGraphMetadata() {
-            const res = await fetch('/static/graphs/graph_metadata_true.json');
+            const res = await fetch('/static/graphs/mapping/graph_metadata_true.json');
             if (!res.ok) throw new Error('Metadata fetch failed.');
             return await res.json();
         }
