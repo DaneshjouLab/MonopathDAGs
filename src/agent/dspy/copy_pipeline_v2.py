@@ -1,5 +1,14 @@
 
 from __future__ import annotations
+
+# Utility: Check if a graph JSON exists anywhere under static/graphs by filename
+def graph_json_exists(json_path: str) -> bool:
+    """Check if a graph JSON exists anywhere under static/graphs by filename."""
+    import glob
+    graph_filename = os.path.basename(json_path)
+    search_path = os.path.join("webapp", "static", "graphs", "**", graph_filename)
+    matches = glob.glob(search_path, recursive=True)
+    return any(os.path.exists(match) for match in matches)
 import csv
 import random
 import dspy
@@ -32,25 +41,6 @@ from testing_more import (
     split_into_sentences,
     PatientTimeline
 )
-
-# TO DO:
-# UMLS API Key?????? To help map
-# Modify code so that if the variable is a null value, just delete it
-# Build ordered data structure to store all the nodes and edges chronilogically, so that branchClassifier can go back and change the branch_flags
-# Need to do better job with the clinical data, it is not putting anything in right now
-
-
-# Make sure chunking is working - DONE
-# Need the content extraction to be more exhuastive - Does not work, but probs a model problem
-# Then convert content to atomic - yah but model problem
-# And then view the atomic statements in aggregate to fill in clinical data - yah
-# Clinical data needs to be standalone signature and module - DONE
-
-# NOW NEED TO MAKE BRANCH CLASSIFY
-# MAKE EDGES FINE AND CORRECT LABELS
-# MAKE NEAT
-# Make atomic less intensive please
-# Right now commented out atomic so it doesn't keep killing my computer
 
 # =====================================
 # DOCSTRING CONTENT
@@ -272,7 +262,7 @@ print(gemini_api_key)
 #lm = dspy.LM('ollama_chat/llama3.1', api_base='http://localhost:11434', api_key='')
 #lm = dspy.LM(model='ollama_chat/meta-llama-3-8b-instruct', api_base='http://localhost:11434', api_key='') # 8B parameter
 
-lm = dspy.LM('gemini/gemini-2.0-flash', api_key=gemini_api_key,temperature=0.21 ,cache=False)
+lm = dspy.LM('gemini/gemini-2.0-flash', api_key=gemini_api_key,temperature=0.21,cache=False)
 # lm = dspy.LM('openai/gpt-4o-high', api_key='')
 
 
@@ -283,10 +273,48 @@ dspy.configure(lm=lm, adapter=dspy.ChatAdapter())
 # DSPY SIGNATURES
 # =====================================
 
+# redo this as an implicit action
+"""
+get the hpi. -> parallel, 
+get the patient timeline, in action, 
+have validatory
+k so hpi information consolidated:::
+
+
+lets say you have the following 
+cool, just cause you got the timeline doesnt mean it is detailed enough, you might have missed things... 
+
+so next up is parse through the doc again, this time around you are trying to generate somethign, more novel 
+
+
+1: text good, but for each loop you should validate that we have enough information, 
+    a) build as if it is an agent 
+    b) build it as if you are making sure you have validation, 
+
+    should i try it as an llm, 
+2: build it as if you are going through a full on crisis. 
+
+3: dspy is inherently decalritive. 
+
+
+ok lets try out your new strat, 
+
+psuedo code:
+you are creating a patinent timelien, 
+
+no you need to generate at a node, level ... how would you do that. 
+
+# you could always build an agent that spins up or managees them,
+
+"""
+
+
 class nodeConstruct(dspy.Signature):
     text_input: str = dspy.InputField(desc="body of text extracted from a case report")
     node_memory: list[dict] = dspy.InputField(optional=True, desc="List of nodes generated so far (memory). Use as context when generating new nodes so there is no duplication.") # Sliding window, grows as we make new nodes
     node_output = dspy.OutputField(type=list[dict], desc="A list of node dictionaries with node_id, node_step_index, content, optional timestamp and clinical_data")
+
+
 
 
 class edgeConstruct(dspy.Signature):
@@ -322,18 +350,19 @@ class NodeEdgeGenerate(dspy.Module):
     def __init__(self):
         super().__init__()
         self.node_module = dspy.Predict(nodeConstruct)
-        #self.edge_module = dspy.Predict(edgeConstruct)
+        
         self.edge_module = dspy.Predict(edgeConstruct, examples=edge_fewshot_examples) # With some examples to reinforce structure
 
-
+    #  right now you 
     def generate_node(self, text_input, node_memory=None):
+
         # Call the LLM to get raw nodes
         result = self.node_module(
             text_input=text_input,
             node_memory=node_memory or []
         )
         nodes = result.get("node_output", [])
-
+       
         # If the LLM returns a JSON string, parse it
         if isinstance(nodes, str):
             try:
@@ -381,7 +410,7 @@ class ClinicalDataExtractor(dspy.Module):
         self.extractor = dspy.Predict(nodeClinicalDataExtract)
         self.max_retries = max_retries
 
-    def forward(self, content: str = "", atomic_sentences: list[str] = []):
+    def forward(self, content: str = "", atomic_sentences: list[str] = ['']):
         attempt = 0
         clinical_data = None
 
@@ -582,22 +611,7 @@ def decompose_content_to_atomic_statements(content_block: str) -> list[str]:
     return atomic_statements
 
 
-# Move these up to the right section later
 
-
-# Filter out irrelevant content (author list, conclusion, references, etc.)
-
-# Right now the model is too weak and this is just devolving into summarization, so not going to use for now
-
-
-
-
-# Use dspy to chunk and and generate nodes intelligently
-class ChunkedNodeGenerator(dspy.Signature):
-    case_report: str = dspy.InputField(desc="Full clinical case report text")
-    max_words_per_chunk: int = dspy.InputField(desc="Maximum number of words per chunk", default=250)
-    max_chunks: int = dspy.InputField(desc="Maximum number of chunks to process (optional)", default=None)
-    node_output: list[dict] = dspy.OutputField(desc="List of generated node dictionaries")
 
 
 class ChunkingNodeModule(dspy.Module):
@@ -648,14 +662,17 @@ class ChunkingNodeModule(dspy.Module):
 
 def merge_memory_nodes(prev_nodes: List[Dict], new_nodes: List[Dict]) -> List[Dict]:
     """
+    passed in previous nodes, new nodes, 
     Merge `new_nodes` into `prev_nodes` by:
       1. Appending truly new nodes.
       2. For matching node_ids, concatenating content and merging clinical_data.
       3. Re-assigning node_ids (“A”, “B”, …) and step_indices.
+    
+
     """
-    # shallow-copy previous
+    # shallow-copy previous, nodes
     merged = [n.copy() for n in prev_nodes]
-    #lookup dictionary for merged. 
+    #lookup dictionary for merged. assume there is a node id, make map 
     lookup = {n["node_id"]: n for n in merged}
     # for cand in new nodes, 
     for cand in new_nodes:
@@ -686,7 +703,7 @@ def merge_memory_nodes(prev_nodes: List[Dict], new_nodes: List[Dict]) -> List[Di
 
 
 # Does final pass through completed sequence of nodes and helps to organize them
-# problems with thios, we make heavy assumptions on the Node_ID being correct, which is close, 
+# problems with this, we make heavy assumptions on the Node_ID being correct, which is close, 
 
 
 class ReorganizeNodes(dspy.Signature):
@@ -756,8 +773,9 @@ def run_node_generation(case_report: str) -> List[Dict[str, Any]]:
         max_chunks=None
     )
     nodes_obj = node_result["node_output"]
+    print("++"*30, nodes_obj,"-"*30)
     nodes_obj = merge_memory_nodes([], nodes_obj)
-
+    print("++"*30, nodes_obj,"-"*30)
     nodes_obj = dspy.Predict(ReorganizeNodes)(nodes_sequence=nodes_obj).node_output
     return nodes_obj
 
@@ -839,10 +857,11 @@ def run_pipeline(html_path: str) -> tuple[list[dict], list[dict]]:
     global_start = time.time()
 
     # STEP 1: Extract and preprocess text
+  
     
     raw_text = preprocess_html_article(html_path)
     paragraphs = generate_paragraphs(raw_text, split_length=10)
-
+    
     # STEP 2: Patient timeline prediction
     case_report = generate_patient_timeline(paragraphs)
 
@@ -922,6 +941,9 @@ def save_json_file(data, output_path):
         json.dump(data, f, indent=2)
     print(f"✅ Saved graph JSON: {output_path}")
 
+
+
+
 def append_csv_row(csv_path, row, header):
     """
     Append a row to a CSV file, creating the file if it doesn't exist.
@@ -937,35 +959,90 @@ def append_csv_row(csv_path, row, header):
         writer.writerow(row)
     print(f"✅ Updated CSV: {csv_path}")
 
-def process_and_save_graph(raw_nodes, raw_edges, graph_id, source_file, output_dir):
+def process_and_save_graph(raw_nodes, raw_edges, source_file, output_dir, metadata_csv="mapping/graph_metadata.csv"):
     """
-    Process raw graph data, save JSON, and log metadata.
-    
+    Process raw graph data, save JSON, and log metadata based on source_file uniqueness.
+    """
+    output_dir = Path(output_dir)
+    metadata_path = output_dir / metadata_csv
+    metadata_rows = []
 
-    """
-    
+    if metadata_path.exists():
+        with metadata_path.open("r", encoding="utf-8") as f:
+            metadata_rows = list(csv.DictReader(f))
+
+    normalized_source_file = os.path.normpath(source_file)
+
+    # Check if source_file already processed
+    existing_entry = next(
+        (row for row in metadata_rows if os.path.normpath(row["source_file"]) == normalized_source_file),
+        None
+    )
+
+    if existing_entry:
+        print(f"✅ Skipping already processed file: {source_file}")
+        return
+
+    # Assign new graph ID
+    used_ids = {
+        int(row["graph_id"].replace("graph_", ""))
+        for row in metadata_rows if row["graph_id"].startswith("graph_")
+    }
+    next_id = max(used_ids, default=0) + 1
+    graph_id = f"graph_{next_id:03d}"
+    graph_filename = f"{graph_id}.json"
+    graph_path = output_dir / graph_filename
 
     node_lookup = {
-    node["node_id"]: idx
-    for idx, node in enumerate(raw_nodes)
-    if node and "node_id" in node
-}
+        node["node_id"]: idx for idx, node in enumerate(raw_nodes) if node and "node_id" in node
+    }
     valid_raw_nodes = [node for node in raw_nodes if node and "node_id" in node]
     formatted_nodes = format_nodes(valid_raw_nodes)
     formatted_edges = format_edges(raw_edges, node_lookup)
 
-    graph_filename = f"{graph_id}.json"
-    graph_path = Path(output_dir) / graph_filename
-    metadata_csv = Path(output_dir) / "graph_metadata.csv"
-
     save_json_file({"nodes": formatted_nodes, "edges": formatted_edges}, graph_path)
 
-    metadata_row = {
+    metadata_rows.append({
         "graph_id": graph_id,
         "json_path": str(graph_path),
-        "source_file": source_file
-    }
-    append_csv_row(metadata_csv, metadata_row, header=["graph_id", "json_path", "source_file"])
+        "source_file": normalized_source_file
+    })
+
+    with metadata_path.open("w", newline='', encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["graph_id", "json_path", "source_file"])
+        writer.writeheader()
+        writer.writerows(metadata_rows)
+
+    print(f"✅ Saved new graph: {graph_id} for source: {source_file}")
+# def process_and_save_graph(raw_nodes, raw_edges, graph_id, source_file, output_dir):
+#     """
+#     Process raw graph data, save JSON, and log metadata.
+    
+
+#     """
+    
+
+#     node_lookup = {
+#     node["node_id"]: idx
+#     for idx, node in enumerate(raw_nodes)
+#     if node and "node_id" in node
+# }
+#     valid_raw_nodes = [node for node in raw_nodes if node and "node_id" in node]
+#     formatted_nodes = format_nodes(valid_raw_nodes)
+#     formatted_edges = format_edges(raw_edges, node_lookup)
+
+#     graph_filename = f"{graph_id}.json"
+#     graph_path = Path(output_dir) / graph_filename
+#     metadata_csv = Path(output_dir) / "graph_metadata.csv"
+
+#     save_json_file({"nodes": formatted_nodes, "edges": formatted_edges}, graph_path)
+
+#     # metadata_row = {
+#     #     "graph_id": graph_id,
+#     #     "json_path": str(graph_path),
+#     #     "source_file": source_file
+#     # }
+#     # append_csv_row(metadata_csv, metadata_row, header=["graph_id", "json_path", "source_file"])
 
 
 
@@ -981,43 +1058,105 @@ def process_and_save_graph(raw_nodes, raw_edges, graph_id, source_file, output_d
 
 
 
+# the following, should be done 
+
+# Redefine already_processed to use graph_json_exists for validation
+def already_processed(html_path: str, metadata_path: str) -> bool:
+    if not os.path.exists(metadata_path):
+        return False
+    with open(metadata_path, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if os.path.normpath(row["source_file"]) == os.path.normpath(html_path):
+                if graph_json_exists(row["json_path"]):
+                    return True
+    return False
 
 if __name__ == "__main__":
     input_folder = "./pmc_htmls"
     output_dir = "./webapp/static/graphs"
+    metadata_csv = os.path.join(output_dir, "mapping", "graph_metadata.csv")
+
     os.makedirs(output_dir, exist_ok=True)
 
-    graph_counter = 1
+    html_files = [
+        f for f in os.listdir(input_folder)
+        if f.lower().endswith(".html")
+    ]
 
-    for html_filename in os.listdir(input_folder):
-        if not html_filename.lower().endswith(".html"):
-            continue  # Skip non-HTML files
-
+    for count, html_filename in enumerate(tqdm(html_files[:500], desc="Processing HTML files")):
         html_path = os.path.join(input_folder, html_filename)
-        graph_id = f"graph_{graph_counter:03d}"
-        graph_json_path = os.path.join(output_dir, f"{graph_id}.json")
 
-        # 🟢 Skip if graph JSON already exists
-        if os.path.exists(graph_json_path):
-            print(f"✅ Skipping {html_filename} → {graph_id} already exists.")
-            graph_counter += 1
+        if already_processed(html_path, metadata_csv):
+            print(f"⏩ Skipping: {html_filename} — already processed.")
             continue
 
-        print(f"\n=== Processing {html_filename} as {graph_id} ===")
+        max_retries = 1
+        attempts = 0
+        success = False
+        while not success and attempts < max_retries:
+            try:
+                print(f"\n=== Processing: {html_filename} (Attempt {attempts + 1}) ===")
+                nodes_obj, edges_obj = run_pipeline(html_path)
+                process_and_save_graph(
+                    raw_nodes=nodes_obj,
+                    raw_edges=edges_obj,
+                    source_file=html_path,
+                    output_dir=output_dir
+                )
+                success = True
+            except Exception as e:
+                print(f"❌ Error processing {html_filename} (Attempt {attempts + 1}): {e}")
+                print("🔁 Retrying...")
+                attempts += 1
+        if not success:
+            print(f"⏭️ Failed to process {html_filename} after {max_retries} attempts. Skipping.")
+# if __name__ == "__main__":
+#     html_path = "pmc_htmls/A_Case_Report_of_Intravitreal_Aflibercept_for_Iris_Metastasis_from_Small_Cell_Lu_PMC11919313.html"
+#     nodes_obj, edges_obj = run_pipeline(html_path)
+#     process_and_save_graph(   
+#             raw_nodes=nodes_obj,
+#             raw_edges=edges_obj,
+#             graph_id="graph_test",
+#             source_file=html_path,
+#             output_dir="webapp/static/user_data"
+#         )
+#     print(nodes_obj,edges_obj)
+    # input_folder = "./pmc_htmls"
+    # output_dir = "./webapp/static/graphs"
+    # os.makedirs(output_dir, exist_ok=True)
 
-        # Run pipeline and get nodes and edges
-        nodes_obj, edges_obj = run_pipeline(html_path)
+    # graph_counter = 1
 
-        # Save graph
-        process_and_save_graph(
-            raw_nodes=nodes_obj,
-            raw_edges=edges_obj,
-            graph_id=graph_id,
-            source_file=html_path,
-            output_dir=output_dir
-        )
+    # for html_filename in os.listdir(input_folder):
+    #     if not html_filename.lower().endswith(".html"):
+    #         continue  # Skip non-HTML files
 
-        graph_counter += 1
+    #     html_path = os.path.join(input_folder, html_filename)
+    #     graph_id = f"graph_{graph_counter:03d}"
+    #     graph_json_path = os.path.join(output_dir, f"{graph_id}.json")
+
+    #     # 🟢 Skip if graph JSON already exists
+    #     if os.path.exists(graph_json_path):
+    #         print(f"✅ Skipping {html_filename} → {graph_id} already exists.")
+    #         graph_counter += 1
+    #         continue
+
+    #     print(f"\n=== Processing {html_filename} as {graph_id} ===")
+
+    #     # Run pipeline and get nodes and edges
+    #     nodes_obj, edges_obj = run_pipeline(html_path)
+
+    #     # Save graph
+    #     process_and_save_graph(
+    #         raw_nodes=nodes_obj,
+    #         raw_edges=edges_obj,
+    #         graph_id=graph_id,
+    #         source_file=html_path,
+    #         output_dir=output_dir
+    #     )
+
+    #     graph_counter += 1
 
 
 
