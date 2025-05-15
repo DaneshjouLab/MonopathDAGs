@@ -5,7 +5,7 @@ __pycache__/
 .__pycache__
 # C extensions
 *.so
-
+pmc_htmls/
 # Distribution / packaging
 .Python
 build/
