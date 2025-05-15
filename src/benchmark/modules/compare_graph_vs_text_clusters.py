@@ -4,6 +4,13 @@
 #
 # SPDX-License-Identifier: MIT
 #
+
+"""This modules compares the clustering of graph embeddings and text embeddings.
+It loads the graph and text embeddings, reduces their dimensions using PCA or UMAP,
+clusters them using KMeans, and evaluates the clustering performance using various metrics.
+It also visualizes the clusters using t-SNE and generates a summary of the clusters with metadata.
+"""
+
 # Standard library imports
 import json
 import numpy as np
@@ -121,8 +128,15 @@ def plot_tsne(embeddings, labels, method_label):
     perplexity = min(5, n_samples - 1)
     tsne = TSNE(n_components=2, perplexity=perplexity, random_state=42)
     reduced = tsne.fit_transform(embeddings)
+
+    # Convert numeric labels to "Cluster 1", "Cluster 2", etc.
+    unique_labels = np.unique(labels)
+    label_map = {label: f"Cluster {i+1}" for i, label in enumerate(unique_labels)}
+    cluster_labels = [label_map[label] for label in labels]
+
+    # Plot
     plt.figure(figsize=(8, 6))
-    sns.scatterplot(x=reduced[:, 0], y=reduced[:, 1], hue=labels, palette="tab10")
+    sns.scatterplot(x=reduced[:, 0], y=reduced[:, 1], hue=cluster_labels, palette="tab10")
     plt.title(f"t-SNE of {method_label} Embeddings")
     plt.tight_layout()
     plt.savefig(PLOTS_DIR / f"tsne_{method_label.lower()}.png")
@@ -184,10 +198,32 @@ def summarize_cluster_metadata(shared_ids, glabels, label_type="graph"):
 
     # Optional: Heatmap of top cancer types
     cancer_counts = {}
+    specific_counts = {}
     for cluster_id, group in joined.groupby("graph_cluster"):
-        cancer_list = [c for c in "|".join(group["cancers"].dropna().astype(str)).split("|") if c.strip()]
+        cancer_list = []
+        specific_list = []
+        for val in group["cancers"].dropna():
+            try:
+                items = eval(val) if isinstance(val, str) and val.startswith("[") else [val]
+                cancer_list.extend([item.strip() for item in items if item.strip()])
+            except:
+                continue
+        for val in group["specific_cancers"].dropna():
+            try:
+                items = eval(val) if isinstance(val, str) and val.startswith("[") else [val]
+                specific_list.extend([item.strip() for item in items if item.strip()])
+            except:
+                continue
+        for val in group["cancers"].dropna():
+            try:
+                items = eval(val) if isinstance(val, str) and val.startswith("[") else [val]
+                cancer_list.extend([item.strip() for item in items if item.strip()])
+            except Exception as e:
+                continue
         counts = Counter(cancer_list)
+        specific = Counter(specific_list)
         cancer_counts[cluster_id] = counts
+        specific_counts[cluster_id] = specific
 
     all_cancers = sorted({cancer for counts in cancer_counts.values() for cancer in counts})
     heatmap_data = pd.DataFrame(index=sorted(cancer_counts.keys()), columns=all_cancers).fillna(0.0)
@@ -205,9 +241,25 @@ def summarize_cluster_metadata(shared_ids, glabels, label_type="graph"):
     plt.close()
     print(f"✅ Cancer type heatmap saved to {PLOTS_DIR / f'{label_type}_cancer_type_heatmap.png'}")
 
+    # Specific cancer heatmap
+    all_specifics = sorted({c for s in specific_counts.values() for c in s})
+    specific_data = pd.DataFrame(index=sorted(specific_counts.keys()), columns=all_specifics).fillna(0.0)
+    for cluster_id, counts in specific_counts.items():
+        for name, count in counts.items():
+            specific_data.at[cluster_id, name] = count / sum(counts.values())
+
+    plt.figure(figsize=(12, 6))
+    sns.heatmap(specific_data, annot=True, fmt=".2f", cmap="OrRd")
+    plt.title(f"Top Specific Cancers per Cluster ({label_type})")
+    plt.ylabel("Cluster")
+    plt.xlabel("Specific Cancer Type")
+    plt.tight_layout()
+    plt.savefig(PLOTS_DIR / f"{label_type}_specific_cancer_type_heatmap.png")
+    plt.close()
+    print(f"✅ Specific cancer heatmap saved to {PLOTS_DIR / f'{label_type}_specific_cancer_type_heatmap.png'}")
+
 
 def plot_score_comparison(score_dicts, shared_ids, glabels, tlabels):
-    
     summarize_cluster_metadata(shared_ids, glabels, label_type="graph")
     summarize_cluster_metadata(shared_ids, tlabels, label_type="text")
 
@@ -228,11 +280,14 @@ def plot_score_comparison(score_dicts, shared_ids, glabels, tlabels):
     output_path = RESULTS_DIR / "cluster_labels_with_metadata.csv"
     output_df.to_csv(output_path, index=False)
     print(f"✅ Cluster labels with metadata saved to {output_path}")
-    metrics = ["Silhouette", "Calinski-Harabasz", "Davies-Bouldin"]
+
+    # Updated metrics (excluding Davies-Bouldin)
+    metrics = ["Silhouette", "Calinski-Harabasz"]
     data = []
     for label, scores in score_dicts.items():
-        for metric, value in zip(metrics, scores):
+        for metric, value in zip(metrics, scores):  # Expecting only 2 values per label
             data.append({"Metric": metric, "Type": label, "Score": value})
+    
     df = pd.DataFrame(data)
     plt.figure(figsize=(8, 5))
     sns.barplot(x="Metric", y="Score", hue="Type", data=df)
@@ -241,8 +296,6 @@ def plot_score_comparison(score_dicts, shared_ids, glabels, tlabels):
     plt.savefig(PLOTS_DIR / "clustering_score_comparison.png")
     plt.close()
 
-
-from sklearn.metrics import adjusted_rand_score
 
 def main():
     print("Loading graph embeddings...")

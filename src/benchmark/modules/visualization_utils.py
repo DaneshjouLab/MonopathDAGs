@@ -23,7 +23,7 @@ os.makedirs(PLOTS_DIR, exist_ok=True)
 
 
 def plot_bertscore_f1(graph_ids, bertscore_f1, export_path=None):
-    """Bar plot of BERTScore F1 for each graph, with summary statistics saved to CSV."""
+    """Histogram of BERTScore F1 values across all graphs, with summary statistics saved to CSV."""
     # Calculate statistics
     f1_array = np.array(bertscore_f1)
     stats = {
@@ -43,17 +43,16 @@ def plot_bertscore_f1(graph_ids, bertscore_f1, export_path=None):
         stats_df = pd.DataFrame([stats])
         stats_df.to_csv(export_path, index=False)
 
-    # Plotting
-    _, ax = plt.subplots()
-    sns.barplot(x=graph_ids, y=bertscore_f1, ax=ax)
-    ax.set_title("BERTScore F1 per Graph")
-    ax.set_ylabel("F1 Score")
-    ax.set_ylim(0, 1)
-    plt.xticks(rotation=45)
+    # Plotting histogram
+    plt.figure(figsize=(8, 6))
+    sns.histplot(f1_array, bins=20, kde=True)
+    plt.title("Distribution of BERTScore F1 Scores")
+    plt.xlabel("F1 Score")
+    plt.ylabel("Frequency")
+    plt.xlim(0, 1)
     plt.tight_layout()
-    plt.savefig(os.path.join(PLOTS_DIR, "bertscore_f1_barplot.png"))
+    plt.savefig(os.path.join(PLOTS_DIR, "bertscore_f1_histogram.png"))
     plt.close()
-
 
 def plot_tsne_embeddings(embeddings, graph_ids):
     """2D t-SNE scatterplot for graph embeddings."""
