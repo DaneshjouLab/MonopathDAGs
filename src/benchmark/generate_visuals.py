@@ -85,7 +85,6 @@ if trajectory_embeddings:
     trajectory_embeddings = np.array(trajectory_embeddings)
 
 # Generate Visualizations
-
 plot_bertscore_f1(graph_ids, bertscore_f1s)
 
 if len(trajectory_embeddings) > 1:

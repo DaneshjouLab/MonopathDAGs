@@ -21,7 +21,6 @@ from modules.io_utils import (
     save_results,
     build_graph_to_text_mapping,
     extract_case_presentation_from_file,
-    summarize_metrics_statistics
 )
 
 logger = setup_logger(__name__)
