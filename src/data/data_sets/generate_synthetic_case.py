@@ -299,6 +299,14 @@ def resolve_graph_path(original_path: str, fallback_root: str = "webapp/static/g
     matches = glob(f"{fallback_root}/**/{filename}", recursive=True)
     return matches[0] if matches else None
 
+from pathlib import Path
+
+def already_processed(graph_id: str, is_control: bool, output_dir: Path) -> bool:
+    """
+    Check if a synthetic case for a graph ID and control/sample mode already exists.
+    """
+    suffix = "control" if is_control else "sample"
+    return any(f.name.startswith(f"{graph_id}__{suffix}__") for f in output_dir.glob("*.txt"))
 
 def run_batch(csv_path: str, models: list[dict], output_dir: str):
     """
@@ -309,6 +317,7 @@ def run_batch(csv_path: str, models: list[dict], output_dir: str):
         models (list[dict]): List of models with 'model_name' and 'api_key'.
         output_dir (str): Where to store output txt and metadata.
     """
+
     output_path = Path(output_dir)
     with open(csv_path, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)
@@ -339,79 +348,86 @@ def run_batch(csv_path: str, models: list[dict], output_dir: str):
                 api_key = model_entry["api_key"]
 
                 # === CONTROL ===
-                control_lm = LM(model_name, api_key=api_key)
+                if already_processed(graph_id, True, output_path):
+                    print(f"⏩ Skipping control for {graph_id}, already processed")
+                else:
+                    control_lm = LM(model_name, api_key=api_key)
+                    try:
+                        control_nodes = control_lm(
+                            constructor.loader.get("generate_control_nodes").replace("{{ html }}", html_content)
+                        )
+                        control_prompt = constructor.loader.get("path2text").replace("{{ path }}", str(control_nodes))
+                        control_text = control_lm(control_prompt)
+                        if isinstance(control_text, list):
+                            control_text = control_text[0]
 
-                try:
-                    control_nodes = control_lm(
-                        constructor.loader.get("generate_control_nodes").replace("{{ html }}", html_content)
-                    )
-                    control_prompt = constructor.loader.get("path2text").replace("{{ path }}", str(control_nodes))
-                    control_text = control_lm(control_prompt)
-                    if isinstance(control_text, list):
-                        control_text = control_text[0]
-
-                    save_text_and_metadata(
-                        control_text,
-                        {
-                            "graph_id": graph_id,
-                            "html_file": html_path,
-                            "is_control": True,
-                            "model": model_name,
-                            "node_path_used": None,
-                            "node_path_true": None
-                        },
-                        output_dir=output_path
-                    )
-                except Exception as e:
-                    print(f"⚠️ Error in control generation for {graph_id} with {model_name}: {e}")
-                    continue
+                        save_text_and_metadata(
+                            control_text,
+                            {
+                                "graph_id": graph_id,
+                                "html_file": html_path,
+                                "is_control": True,
+                                "model": model_name,
+                                "node_path_used": None,
+                                "node_path_true": None
+                            },
+                            output_dir=output_path
+                        )
+                    except Exception as e:
+                        print(f"⚠️ Error in control generation for {graph_id} with {model_name}: {e}")
+                        continue
 
                 # === SAMPLE ===
-                try:
-                    reconstructor = LLMReconstructor(
-                        model_name=model_name,
-                        api_key=api_key,
-                        prompt_tpl=(
-                            "Reconstruct the clinical case report from this data:\n\n{payload}\n\n"
-                            "Write a coherent narrative including patient demographics, "
-                            "timeline of diagnoses, treatments, and outcomes. "
-                            "Do not include anything else other than the full case."
+                if already_processed(graph_id, False, output_path):
+                    print(f"⏩ Skipping sample for {graph_id}, already processed")
+                else:
+                    try:
+                        reconstructor = LLMReconstructor(
+                            model_name=model_name,
+                            api_key=api_key,
+                            prompt_tpl=(
+                                "Reconstruct the clinical case report from this data:\n\n{payload}\n\n"
+                                "Write a coherent narrative including patient demographics, "
+                                "timeline of diagnoses, treatments, and outcomes. "
+                                "Do not include anything else other than the full case."
+                            )
                         )
-                    )
 
-                    paths = constructor.generate_paths()
-                    if not paths:
-                        print(f"⚠️ No valid paths in graph: {graph_id}")
+                        paths = constructor.generate_paths()
+                        if not paths:
+                            print(f"⚠️ No valid paths in graph: {graph_id}")
+                            continue
+                        path = paths[0]
+
+                        sample_text = reconstructor.reconstruct(
+                            graph,
+                            include_nodes=True,
+                            include_edges=True,
+                            node_ids=path["path"],
+                            node_attrs=["content"]
+                        )
+
+                        save_text_and_metadata(
+                            sample_text,
+                            {
+                                "graph_id": graph_id,
+                                "html_file": html_path,
+                                "is_control": False,
+                                "model": model_name,
+                                "node_path_used": path["path"],
+                                "node_path_true": None
+                            },
+                            output_dir=output_path
+                        )
+                    except Exception as e:
+                        print(f"⚠️ Error in sample generation for {graph_id} with {model_name}: {e}")
                         continue
-                    path = paths[0]
-
-                    sample_text = reconstructor.reconstruct(
-                        graph,
-                        include_nodes=True,
-                        include_edges=True,
-                        node_ids=path["path"],
-                        node_attrs=["content"]
-                    )
-
-                    save_text_and_metadata(
-                        sample_text,
-                        {
-                            "graph_id": graph_id,
-                            "html_file": html_path,
-                            "is_control": False,
-                            "model": model_name,
-                            "node_path_used": path["path"],
-                            "node_path_true": None
-                        },
-                        output_dir=output_path
-                    )
-                except Exception as e:
-                    print(f"⚠️ Error in sample generation for {graph_id} with {model_name}: {e}")
-                    continue
 
 
 
 if __name__ == "__main__":
+
+    #RUN AS MODULE TO WORK
     load_dotenv(".config/.env")
 
     models = [
