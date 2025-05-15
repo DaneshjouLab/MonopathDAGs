@@ -31,8 +31,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import umap
 from sklearn.metrics import adjusted_rand_score
-from sklearn.metrics import adjusted_rand_score
 from collections import Counter
+from matplotlib.patches import Polygon
+from scipy.spatial import ConvexHull
 
 # Local application imports
 from modules.embedding import TrajectoryEmbedder
@@ -91,7 +92,6 @@ def load_metadata_features(shared_ids):
     return encoded
 
 
-
 def reduce_dimensions(data, method="pca", n_components=10):
     if method == "pca":
         reducer = PCA(n_components=n_components)
@@ -123,25 +123,85 @@ def cluster_and_evaluate(embedding_matrix, method_label):
     return best_k, best_labels, best_scores
 
 
-def plot_tsne(embeddings, labels, method_label):
-    n_samples = embeddings.shape[0]
-    perplexity = min(5, n_samples - 1)
-    tsne = TSNE(n_components=2, perplexity=perplexity, random_state=42)
+# def plot_tsne(embeddings, labels, method_label):
+#     n_samples = embeddings.shape[0]
+#     perplexity = min(5, n_samples - 1)
+#     tsne = TSNE(n_components=2, perplexity=perplexity, random_state=42)
+#     reduced = tsne.fit_transform(embeddings)
+
+#     # Convert numeric labels to "Cluster 1", "Cluster 2", etc.
+#     unique_labels = np.unique(labels)
+#     label_map = {label: f"Cluster {i+1}" for i, label in enumerate(unique_labels)}
+#     cluster_labels = [label_map[label] for label in labels]
+
+#     # Plot
+#     plt.figure(figsize=(8, 6))
+#     sns.scatterplot(x=reduced[:, 0], y=reduced[:, 1], hue=cluster_labels, palette="tab10")
+#     plt.title(f"t-SNE of {method_label} Embeddings")
+#     plt.tight_layout()
+#     plt.savefig(PLOTS_DIR / f"tsne_{method_label.lower()}.png")
+#     plt.close()
+
+def plot_tsne(embeddings, labels, shared_ids, label_type="graph"):
+    metadata_path = Path("output/results/graph_html_metadata.csv")
+    meta_df = pd.read_csv(metadata_path)
+    meta_df["graph_id"] = meta_df["graph_id"].str.replace("graph_", "")
+    meta_df = meta_df[meta_df["graph_id"].isin(shared_ids)]
+
+    tsne = TSNE(n_components=2, perplexity=min(5, len(shared_ids)-1), random_state=42)
     reduced = tsne.fit_transform(embeddings)
 
-    # Convert numeric labels to "Cluster 1", "Cluster 2", etc.
-    unique_labels = np.unique(labels)
-    label_map = {label: f"Cluster {i+1}" for i, label in enumerate(unique_labels)}
-    cluster_labels = [label_map[label] for label in labels]
+    cluster_df = pd.DataFrame({
+        "graph_id": shared_ids,
+        "x": reduced[:, 0],
+        "y": reduced[:, 1],
+        "cluster": labels
+    })
+    joined = cluster_df.merge(meta_df, on="graph_id")
 
-    # Plot
-    plt.figure(figsize=(8, 6))
-    sns.scatterplot(x=reduced[:, 0], y=reduced[:, 1], hue=cluster_labels, palette="tab10")
-    plt.title(f"t-SNE of {method_label} Embeddings")
+    # Preprocess categories
+    def extract_first_category(val):
+        if pd.isna(val): return "unknown"
+        try:
+            items = eval(val) if val.startswith("[") else [val]
+            return items[0] if items else "unknown"
+        except:
+            return "unknown"
+
+    joined["cancer"] = joined["cancers"].apply(extract_first_category)
+    joined["metastasis"] = joined["has_metastasis"].map({True: True, "TRUE": True, False: False, "FALSE": False})
+
+    # Assign colors and markers
+    cancer_palette = {c: col for c, col in zip(joined["cancer"].unique(), sns.color_palette("tab10", n_colors=joined["cancer"].nunique()))}
+    marker_map = {True: 'o', False: 'x'}
+
+    plt.figure(figsize=(10, 8))
+    for (cancer, metastasis), group in joined.groupby(["cancer", "metastasis"]):
+        plt.scatter(
+            group["x"], group["y"],
+            label=f"{cancer} | {'Met+' if metastasis else 'Met-'}",
+            marker=marker_map.get(metastasis, 'o'),
+            color=cancer_palette[cancer],
+            alpha=0.75,
+            edgecolor="k"
+        )
+
+    # Draw convex hulls per cluster
+    for cluster_id in sorted(joined["cluster"].unique()):
+        cluster_points = joined[joined["cluster"] == cluster_id][["x", "y"]].values
+        if len(cluster_points) >= 3:
+            hull = ConvexHull(cluster_points)
+            polygon = Polygon(cluster_points[hull.vertices], closed=True, fill=False, edgecolor='gray', linewidth=1.5, linestyle='--')
+            plt.gca().add_patch(polygon)
+
+    plt.title(f"t-SNE of {label_type.capitalize()} Embeddings\nColored by Cancer Type, Marker by Metastasis")
+    plt.xlabel("t-SNE-1")
+    plt.ylabel("t-SNE-2")
+    plt.legend(bbox_to_anchor=(1.05, 1), loc="upper left", fontsize="small")
     plt.tight_layout()
-    plt.savefig(PLOTS_DIR / f"tsne_{method_label.lower()}.png")
+    plt.savefig(PLOTS_DIR / f"tsne_{label_type}_metadata_clusters.png")
     plt.close()
-
+    print(f"✅ Saved: tsne_{label_type}_metadata_clusters.png")
 
 def summarize_cluster_metadata(shared_ids, glabels, label_type="graph"):
     meta_df = pd.read_csv(METADATA_CSV)
@@ -322,8 +382,8 @@ def main():
         gk, glabels, g_scores = cluster_and_evaluate(reduced_graph, f"Graph-{method.upper()}")
         tk, tlabels, t_scores = cluster_and_evaluate(reduced_text, f"Text-{method.upper()}")
 
-        plot_tsne(reduced_graph, glabels, f"Graph-{method.upper()}")
-        plot_tsne(reduced_text, tlabels, f"Text-{method.upper()}")
+        plot_tsne(reduced_graph, glabels, shared_ids, label_type=f"Graph-{method.upper()}")
+        plot_tsne(reduced_text, tlabels, shared_ids, label_type=f"Text-{method.upper()}")
 
         score_dicts[f"Graph-{method.upper()}"] = g_scores[gk]
         score_dicts[f"Text-{method.upper()}"] = t_scores[tk]
