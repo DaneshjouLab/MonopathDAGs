@@ -25,4 +25,4 @@ fi
 # python3 generate_visuals.py
 
 echo "Generating similarity and clustering results..."
-python3 modules/similarity_and_clustering.py
+python3 modules/compare_graph_vs_text_clusters.py
