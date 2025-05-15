@@ -88,41 +88,45 @@
             const indexPath = `/static/user_data/${username}_synth_eval_index.json`;
             const response = await fetch(indexPath);
             const evalIndex = await response.json();
-
+        
+            // Store full metadata globally for submission
+            window.allReports = evalIndex;
+        
+            // Only show incomplete ones
+            const incomplete = evalIndex.filter(entry => {
+                const fromFile = entry.status === "completed";
+                const fromLocal = isReportComplete(entry.uid);
+                return !(fromFile || fromLocal);
+            });
+        
             reports = await Promise.all(
-                evalIndex
-                    .filter(entry => {
-                        const fromFile = entry.status === "completed";
-                        const fromLocal = isReportComplete(entry.uid);
-                        return !(fromFile || fromLocal);
-                    })
-                    .map(async entry => {
-                        const filePath = `/static/synthetic_outputs/${entry.text_file}`;
-                        try {
-                            const res = await fetch(filePath);
-                            if (!res.ok) return null;
-                            const text = await res.text();
-                            return {
-                                uid: entry.uid,
-                                graph_id: entry.graph_id,
-                                group: entry.group,
-                                text: text
-                            };
-                        } catch (_) {
-                            return null;
-                        }
-                    })
+                incomplete.map(async entry => {
+                    const filePath = `/static/synthetic_outputs/${entry.text_file}`;
+                    try {
+                        const res = await fetch(filePath);
+                        if (!res.ok) return null;
+                        const text = await res.text();
+                        return {
+                            uid: entry.uid,
+                            graph_id: entry.graph_id,
+                            group: entry.group,
+                            text: text
+                        };
+                    } catch (_) {
+                        return null;
+                    }
+                })
             );
-
+        
             reports = reports.filter(r => r !== null);
-
+        
             if (currentIndex >= reports.length || isReportComplete(reports[currentIndex]?.uid)) {
                 currentIndex = findNextIncomplete(0);
             }
-
+        
             renderReport();
         }
-
+        
         function renderReport() {
             if (!reports.length || currentIndex >= reports.length) {
                 document.getElementById('report-title').textContent = "[No Report]";
@@ -209,23 +213,29 @@
 
         async function submitRatings() {
             storeCurrentAnswers();
-
-            const payload = Object.entries(answers).map(([uid, ratings]) => {
-                const report = reports.find(r => r.uid === uid);
-                return {
-                    username: username,
-                    graph_id: report.graph_id,
-                    element_id: report.uid,
-                    ...ratings
-                };
-            });
-
+        
+            const payload = Object.entries(answers)
+                .map(([uid, ratings]) => {
+                    const report = window.allReports.find(r => String(r.uid).trim() === String(uid).trim());
+                    if (!report) {
+                        console.warn("‼️ No metadata for UID:", uid);
+                        return null;
+                    }
+                    return {
+                        username: username,
+                        graph_id: report.graph_id,
+                        element_id: uid,
+                        ...ratings
+                    };
+                })
+                .filter(Boolean);
+        
             const response = await fetch('/api/submit-synthetic-evals', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             });
-
+        
             if (response.ok) {
                 localStorage.removeItem(storageKey);
                 localStorage.removeItem(indexKey);
@@ -233,6 +243,7 @@
                 alert('Submission failed.');
             }
         }
+        
 
         loadReports();
     </script>

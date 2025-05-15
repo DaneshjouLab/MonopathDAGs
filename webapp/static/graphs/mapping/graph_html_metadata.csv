@@ -1,0 +1,960 @@
+graph_id,source_file,timeline_1,timeline_2,timeline_3,cancers,specific_cancers,has_metastasis,metastasis_locations
+graph_001,Intriguing_Encounter__Unveiling_Squamous_Cell_Carcinoma_Lung_with_Rare_Bilateral_PMC12020972.html,"44-year-old male diagnosed as squamous cell carcinoma of the lung
+Pituitary metastasis identified on 18F-FDG PET/CT
+Renal metastasis identified on 18F-FDG PET/CT
+Right-sided chest pain for 2 months
+Dry cough for 2 months
+Fever (on-off) for 2 months
+Hematuria for 2 months
+No history of Antitubercular treatment (ATT) intake
+Tobacco chewer for >20 years
+Decreased air entry on the right side of the lung
+Contrast-enhanced computed tomography (CECT) thorax revealed a heterogeneous lesion in the mediastinal region abutting the horizontal fissure and cavitation within
+Lesion associated with multiple centrilobular nodules arranged in a linear branching pattern
+Bronchoscopy done with bronchoscopic-guided biopsy
+Bronchoalveolar lavage (BAL) fluid samples taken
+BAL sample sent for cytopathological examination was negative for malignant cells
+18F-FDG PET/CT scan revealed FDG-avid well-defined soft tissue primary mass measuring 5.6 cm x 7.7 cm x 8.3 cm in size with spiculated margins in the upper lobe of the right lung with collapse and consolidation of right lung
+FDG avid metastases to mediastinal, abdominopelvic lymph nodes and right-sided pleural deposits
+Multiple sub-centimetric to centimetric-sized bilateral lung nodules were noted
+It was associated with multiple FDG avid brain lesions involving the bilateral cerebral cortex, cerebellum and pituitary
+FDG avid bilateral hypodense few (3 in number) soft tissue density bilateral renal masses (Figure 1b, largest measuring 2.8 cm x 2.6 cm)
+Multiple lytic skeletal lesions [Figure 1d], few of them with soft tissue component involvement were noted","44-year-old male diagnosed as squamous cell carcinoma of the lung
+Pituitary metastasis identified on 18F-FDG PET/CT
+Renal metastasis identified on 18F-FDG PET/CT
+Right-sided chest pain for 2 months
+Dry cough for 2 months
+Fever (on-off) for 2 months
+Hematuria for 2 months
+No history of Antitubercular treatment (ATT) intake
+Tobacco chewer for >20 years
+Decreased air entry on the right side of the lung
+Contrast-enhanced computed tomography (CECT) thorax revealed a heterogeneous lesion in the mediastinal region abutting the horizontal fissure and cavitation within
+Lesion associated with multiple centrilobular nodules arranged in a linear branching pattern
+Bronchoscopy done with bronchoscopic-guided biopsy
+Bronchoalveolar lavage (BAL) fluid samples taken
+BAL sample sent for cytopathological examination was negative for malignant cells
+18F-FDG PET/CT scan revealed FDG-avid well-defined soft tissue primary mass measuring 5.6 cm x 7.7 cm x 8.3 cm in size with spiculated margins in the upper lobe of the right lung with collapse and consolidation of right lung
+FDG avid metastases to mediastinal, abdominopelvic lymph nodes and right-sided pleural deposits
+Multiple sub-centimetric to centimetric-sized bilateral lung nodules were noted
+It was associated with multiple FDG avid brain lesions involving the bilateral cerebral cortex, cerebellum and pituitary
+FDG avid bilateral hypodense few (3 in number) soft tissue density bilateral renal masses (Figure 1b, largest measuring 2.8 cm x 2.6 cm)
+Multiple lytic skeletal lesions [Figure 1d], few of them with soft tissue component involvement were noted","44-year-old male diagnosed as squamous cell carcinoma of the lung
+Pituitary metastasis identified on 18F-FDG PET/CT
+Renal metastasis identified on 18F-FDG PET/CT
+Right-sided chest pain for 2 months
+Dry cough for 2 months
+Fever (on-off) for 2 months
+Hematuria for 2 months
+No history of Antitubercular treatment (ATT) intake
+Tobacco chewer for >20 years
+Decreased air entry on the right side of the lung
+Contrast-enhanced computed tomography (CECT) thorax revealed a heterogeneous lesion in the mediastinal region abutting the horizontal fissure and cavitation within
+Lesion associated with multiple centrilobular nodules arranged in a linear branching pattern
+Bronchoscopy done with bronchoscopic-guided biopsy
+Bronchoalveolar lavage (BAL) fluid samples taken
+BAL sample sent for cytopathological examination was negative for malignant cells
+18F-FDG PET/CT scan revealed FDG-avid well-defined soft tissue primary mass measuring 5.6 cm x 7.7 cm x 8.3 cm in size with spiculated margins in the upper lobe of the right lung with collapse and consolidation of right lung
+FDG avid metastases to mediastinal, abdominopelvic lymph nodes and right-sided pleural deposits
+Multiple sub-centimetric to centimetric-sized bilateral lung nodules were noted
+It was associated with multiple FDG avid brain lesions involving the bilateral cerebral cortex, cerebellum and pituitary
+FDG avid bilateral hypodense few (3 in number) soft tissue density bilateral renal masses (Figure 1b, largest measuring 2.8 cm x 2.6 cm)
+Multiple lytic skeletal lesions [Figure 1d], few of them with soft tissue component involvement were noted","[""lung cancer""]","[""squamous cell carcinoma""]",True,"[[""brain"", ""bilateral cerebral cortex""], [""brain"", ""cerebellum""], [""brain"", ""pituitary""], [""kidneys"", ""bilateral renal masses""], [""skeleton"", ""lytic skeletal lesions""], [""lymph nodes"", ""mediastinal lymph nodes""], [""lymph nodes"", ""abdominopelvic lymph nodes""], [""pleura"", ""right-sided pleural deposits""]]"
+graph_002,_A_Case_of_Multiple_Primary_Pulmonary_Neuroendocrine_Carcinoma_with_EML4_ALK_Fus_PMC11986677.html,"* 2019-03-19: 大细胞神经内分泌癌（大肿瘤）在右肺下叶发现，患者接受手术切除
+* 2022-04-27: 病灶稳定，无肿瘤复发或转移
+* 2023-08-01: 左主支气管略狭窄
+* 2023-10-14: 支气管镜检查发现左主支气管新生物阻塞管腔约50%，病理提示为小细胞肺癌（SCLC）
+* 2024-05-01: 开始服用阿来替尼600 mg bid，化疗3个周期后停止
+* 2024-10-01: 复查胸腹部CT、单光子发射计算机断层扫描全身骨显象均未发现疾病新进展","[""* 2019-03-19: 大细胞神经内分泌癌（大肿瘤）在右肺下叶发现，患者接受手术切除\n* 2022-04-27: 病灶稳定，无肿瘤复发或转移\n* 2023-08-01: 左主支气管略狭窄\n* 2023-10-14: 支气管镜检查发现左主支气管新生物阻塞管腔约50%，病理提示为小细胞肺癌（SCLC）\n* 2024-05-01: 开始服用阿来替尼600 mg bid，化疗3个周期后停止\n* 2024-10-01: 复查胸腹部CT、单光子发射计算机断层扫描全身骨显象均未发现疾病新进展""]",,"[""\u764c"", ""\u80bf\u7624"", ""\u6076\u6027\u80bf\u7624""]","[""\u5927\u7ec6\u80de\u795e\u7ecf\u5185\u5206\u6ccc\u764c"", ""\u5c0f\u7ec6\u80de\u80ba\u764c""]",False,[]
+graph_003,Management_of_malignant_inferior_vena_cava_syndrome__IVCS__by_endovascular_bridg_PMC12019825.html,"A 73-year-old male patient underwent a procedure to relieve significant stenosis of the suprahepatic IVC due to compression. Under local anesthesia, a 5F sheath was inserted into the right basilic vein and a 10F sheath into the right common femoral vein. Venography showed a significant compression of the suprahepatic IVC. The IVC stenosis was passed using a 0,035-inch hydrophilic guidewire and a multipurpose catheter. Initially, mechanical thrombectomy was performed to exclude possible thrombosis; however, no thrombotic material was extracted. After placing a stiffer exchange guidewire with its distal tip positioned in the right subclavian vein, 3 uncovered self-expanding nitinol sinus-XL stents (OptiMed, Ettlingen, Germany) were deployed in tandem from the SVC to the IVC with an overlap between the stents. Using venography measurements, stents measuring 18 × 80 mm, 18 × 60 mm, and 16 × 80 mm were placed in a cephalic-to-caudal orientation. The final venography revealed adequate flow through the vena cava and bridging stents.","A 73-year-old male patient underwent a procedure to relieve significant stenosis of the suprahepatic IVC due to compression. Under local anesthesia, a 5F sheath was inserted into the right basilic vein and a 10F sheath into the right common femoral vein. Venography showed a significant compression of the suprahepatic IVC. The IVC stenosis was passed using a 0,035-inch hydrophilic guidewire and a multipurpose catheter. Initially, mechanical thrombectomy was performed to exclude possible thrombosis; however, no thrombotic material was extracted. After placing a stiffer exchange guidewire with its distal tip positioned in the right subclavian vein, 3 uncovered self-expanding nitinol sinus-XL stents (OptiMed, Ettlingen, Germany) were deployed in tandem from the SVC to the IVC with an overlap between the stents. Using venography measurements, stents measuring 18 × 80 mm, 18 × 60 mm, and 16 × 80 mm were placed in a cephalic-to-caudal orientation. The final venography revealed adequate flow through the vena cava and bridging stents.
+
+Diagnosed with SCLC 15 months previously. Received 6 cycles of carboplatin/etoposide chemotherapy, followed by thoracic radiotherapy and prophylactic cranial irradiation. Lost 20 kg of body weight within 12 months. Performance status was recorded (4) on the Eastern Cooperative Oncology Group scale on the day of admission. Vital signs: systolic/diastolic blood pressure 100/70 mmHg, heart rate 90 bpm, oxygen saturation 89%, body temperature 36,9°C/98° F. Laboratory results: hemoglobin 12,6 g/dl (normal range 14-18 g/dl), platelets 260 × 103/μl (150-450 × 103/μl), alkaline phosphatase 94 U/L (26-112 U/L), alanine aminotransferase 40 U/L (5-35 U/L), aspartate aminotransferase 34 U/L (<40 U/L), total bilirubin 1.2 mg/dl, and creatinine 0.9 mg/dl. A large tumor involving the right lower and middle lung lobe measured (17,6 × 19,3 × 18,6) mm (maximal axial x coronal x sagittal dimension), which causes significant compression of the IVC (yellow arrows) mainly at the level of its entry into the right heart atrium. Multiple enlarged mediastinal lymph nodes, infiltration of the visceral pleura and right hemidiaphragm, ascites, and peritoneal metastases were other salient findings underlining disease progression.
+
+Three self-expanding stents (yellow arrows) were positioned in tandem from the superior vena cava (SVC) (red arrow shows the most cephalic part of the stents) to the IVC to restore venous patency. Fig. 3. The final venography revealed adequate flow through the bridging stents (yellow arrows). The patient's IVCS symptoms, mainly trunk and lower limb edema, were significantly alleviated within 48 h. Low-molecular-weight heparin was administered for anticoagulation.
+
+The patient died with a large tumor involving the right lower and middle lung lobe measured (17,6 × 19,3 × 18,6) mm (maximal axial x coronal x sagittal dimension), which causes significant compression of the IVC (yellow arrows) mainly at the level of its entry into the right heart atrium.","- Diagnosed with SCLC 15 months previously
+- Received 6 cycles of carboplatin/etoposide chemotherapy, followed by thoracic radiotherapy and prophylactic cranial irradiation
+- Lost 20 kg of body weight within 12 months
+- Performance status was recorded (4) on the Eastern Cooperative Oncology Group scale on the day of admission
+- Underwent a procedure to relieve significant stenosis of the suprahepatic IVC due to compression
+- Three self-expanding stents were positioned in tandem from the superior vena cava (SVC) to the IVC to restore venous patency
+- The patient's IVCS symptoms, mainly trunk and lower limb edema, were significantly alleviated within 48 h
+- Low-molecular-weight heparin was administered for anticoagulation
+- The patient died with a large tumor involving the right lower and middle lung lobe measured (17,6 × 19,3 × 18,6) mm (maximal axial x coronal x sagittal dimension), which causes significant compression of the IVC (yellow arrows) mainly at the level of its entry into the right heart atrium","[""SCLC""]","[""Small Cell Lung Cancer""]",True,"[[""mediastinal lymph nodes"", ""enlarged""], [""visceral pleura"", ""infiltration""], [""right hemidiaphragm"", ""infiltration""], [""peritoneum"", ""metastases""]]"
+graph_004,Metastatic_INI_1_deficient_undifferentiated_lung_cancer_with_EGFR_19del_mutation_PMC12021797.html,"81-year-old female patient with a 10-day history of progressive chest tightness and dyspnea worsened with physical activity
+Chest computed tomography (CT) imaging revealed a large left-sided pleural effusion
+Thoracentesis was performed, and the drained pleural fluid was sent to the Department of Pathology for further evaluation
+Following thoracic drainage, a subsequent chest CT scan revealed a heterogeneous mass in the left inferior lobe, measuring approximately 6.7 cm × 2.8 cm in its largest cross-section
+Contrast-enhanced imaging demonstrated irregular enhancement patterns suggestive of a left lung tumor
+Pulmonary window analysis identified multiple nodular high-density foci scattered across both lungs, raising suspicion for bilateral pulmonary metastases
+Mediastinal window assessment further revealed bilateral mediastinal lymphadenopathy and enlarged lymph nodes at the left pulmonary hilum, consistent with lymph node metastasis
+An abdominal CT scan detected multiple low-density hepatic nodules of varying sizes, with the largest lesion (2.9 cm × 2.6 cm) located in the right hepatic lobe
+Annular enhancement was noted in the arterial phase, while marked hypodensity was observed in the portal venous phase, demonstrating a “bull’s eye sign” characteristic of multiple hepatic metastases
+Additionally, an enhanced brain CT identified an irregular heterogeneously enhancing mass within the right frontal lobe, with a maximum cross-sectional area of 2.1 cm × 1.6 cm, consistent with brain metastasis
+Genetic testing revealed a mutation in the EGFR gene
+Next-generation sequencing (NGS) analysis showed that the patient's tumor had a high level of PD-L1 expression
+The patient underwent treatment with osimertinib, an EGFR tyrosine kinase inhibitor","81-year-old female patient with a 10-day history of progressive chest tightness and dyspnea worsened with physical activity
+Chest computed tomography (CT) imaging revealed a large left-sided pleural effusion
+Thoracentesis was performed, and the drained pleural fluid was sent to the Department of Pathology for further evaluation
+Following thoracic drainage, a subsequent chest CT scan revealed a heterogeneous mass in the left inferior lobe, measuring approximately 6.7 cm × 2.8 cm in its largest cross-section
+Contrast-enhanced imaging demonstrated irregular enhancement patterns suggestive of a left lung tumor
+Pulmonary window analysis identified multiple nodular high-density foci scattered across both lungs, raising suspicion for bilateral pulmonary metastases
+Mediastinal window assessment further revealed bilateral mediastinal lymphadenopathy and enlarged lymph nodes at the left pulmonary hilum, consistent with lymph node metastasis
+An abdominal CT scan detected multiple low-density hepatic nodules of varying sizes, with the largest lesion (2.9 cm × 2.6 cm) located in the right hepatic lobe
+Annular enhancement was noted in the arterial phase, while marked hypodensity was observed in the portal venous phase, demonstrating a “bull’s eye sign” characteristic of multiple hepatic metastases
+Additionally, an enhanced brain CT identified an irregular heterogeneously enhancing mass within the right frontal lobe, with a maximum cross-sectional area of 2.1 cm × 1.6 cm, consistent with brain metastasis
+Genetic testing revealed a mutation in the EGFR gene
+Next-generation sequencing (NGS) analysis showed that the patient's tumor had a high level of PD-L1 expression
+The patient underwent treatment with osimertinib, an EGFR tyrosine kinase inhibitor","81-year-old female patient with a 10-day history of progressive chest tightness and dyspnea worsened with physical activity
+Chest computed tomography (CT) imaging revealed a large left-sided pleural effusion
+Thoracentesis was performed, and the drained pleural fluid was sent to the Department of Pathology for further evaluation
+Following thoracic drainage, a subsequent chest CT scan revealed a heterogeneous mass in the left inferior lobe, measuring approximately 6.7 cm × 2.8 cm in its largest cross-section
+Contrast-enhanced imaging demonstrated irregular enhancement patterns suggestive of a left lung tumor
+Pulmonary window analysis identified multiple nodular high-density foci scattered across both lungs, raising suspicion for bilateral pulmonary metastases
+Mediastinal window assessment further revealed bilateral mediastinal lymphadenopathy and enlarged lymph nodes at the left pulmonary hilum, consistent with lymph node metastasis
+An abdominal CT scan detected multiple low-density hepatic nodules of varying sizes, with the largest lesion (2.9 cm × 2.6 cm) located in the right hepatic lobe
+Annular enhancement was noted in the arterial phase, while marked hypodensity was observed in the portal venous phase, demonstrating a “bull’s eye sign” characteristic of multiple hepatic metastases
+Additionally, an enhanced brain CT identified an irregular heterogeneously enhancing mass within the right frontal lobe, with a maximum cross-sectional area of 2.1 cm × 1.6 cm, consistent with brain metastasis
+Genetic testing revealed a mutation in the EGFR gene
+Next-generation sequencing (NGS) analysis showed that the patient's tumor had a high level of PD-L1 expression
+The patient underwent treatment with osimertinib, an EGFR tyrosine kinase inhibitor","[""lung cancer""]","[""non-small cell lung cancer""]",True,"[[""liver"", ""multiple low-density hepatic nodules""], [""lymph nodes"", ""bilateral mediastinal lymphadenopathy""], [""brain"", ""irregular heterogeneously enhancing mass""]]"
+graph_005,Neoadjuvant_Targeted_Therapy_with_Dacomitinib_in_a_Stage_IIIA_Non_Small_Cell_Lun_PMC11980937.html,"A 54-year-old Chinese male with 30 years of smoking history presented with a worsening cough for 3 months, with a performance status score of 1. Enhanced computed tomography (CT) revealed a 22 mm × 12 mm × 16 mm mass in the right upper lobe with invasion in the right hilum and mediastinal (Figure 1AandB), which were confirmed by positron emission tomography-CT (PET-CT) scan. Immunohistochemistry (IHC) analysis of the biopsy from the lesion in the upper right lobe of the lung was positive for TTF-1, NpA, CK7, CD5/6 and Ki67 (60%); and negative for p40, p63 and CD56. The patient was diagnosed with stage IIIA lung adenocarcinoma (cT1cN2M0). Follow-up targeted NGS analysis of his lung lesion biopsy identified an EGFRG719X with a mutant allele frequency (MAF) of 3.8%. Two cycles of PC chemotherapy (pemetrexed with 0.9g d1 and carboplatin with 600mg d1) and dacomitinib (30mg) were given.
+
+The patient underwent video-assisted thoracic surgery (VATS) with right upper lobectomy in July 2023. The tumor was located in the right upper lobe, measuring approximately 1.5*1.5 cm with unclear boundaries. Postoperative pathology results indicated that 10% of the tumor cells remained alive, surrounded by significant fibrosis, necrosis, as well as inflammatory and immune cells. After chemotherapy and dacomitinib induction, there were no lymph node metastases, and the pathological stage was ypT1bN0M0. Two cycles of PC chemotherapy were administered, followed by targeted therapy with dacomitinib as adjuvant treatment for 2 more years in accordance with the diagnosis and treatment guidelines. At the final follow-up in September 2024, no adverse events or disease progression had occurred. A progression-free survival (PFS) of more than 14 months was achieved.","A 54-year-old Chinese male with 30 years of smoking history presented with a worsening cough for 3 months, with a performance status score of 1. Enhanced computed tomography (CT) revealed a 22 mm × 12 mm × 16 mm mass in the right upper lobe with invasion in the right hilum and mediastinal (Figure 1AandB), which were confirmed by positron emission tomography-CT (PET-CT) scan. Immunohistochemistry (IHC) analysis of the biopsy from the lesion in the upper right lobe of the lung was positive for TTF-1, NpA, CK7, CD5/6 and Ki67 (60%); and negative for p40, p63 and CD56. The patient was diagnosed with stage IIIA lung adenocarcinoma (cT1cN2M0). Follow-up targeted NGS analysis of his lung lesion biopsy identified an EGFRG719X with a mutant allele frequency (MAF) of 3.8%. Two cycles of PC chemotherapy (pemetrexed with 0.9g d1 and carboplatin with 600mg d1) and dacomitinib (30mg) were given.
+
+The patient underwent video-assisted thoracic surgery (VATS) with right upper lobectomy in July 2023. The tumor was located in the right upper lobe, measuring approximately 1.5*1.5 cm with unclear boundaries. Postoperative pathology results indicated that 10% of the tumor cells remained alive, surrounded by significant fibrosis, necrosis, as well as inflammatory and immune cells. After chemotherapy and dacomitinib induction, there were no lymph node metastases, and the pathological stage was ypT1bN0M0. Two cycles of PC chemotherapy were administered, followed by targeted therapy with dacomitinib as adjuvant treatment for 2 more years in accordance with the diagnosis and treatment guidelines. At the final follow-up in September 2024, no adverse events or disease progression had occurred. A progression-free survival (PFS) of more than 14 months was achieved.
+
+The patient received two cycles of PC chemotherapy (pemetrexed with 0.9g d1 and carboplatin with 600mg d1) and dacomitinib (30mg). The patient underwent video-assisted thoracic surgery (VATS) with right upper lobectomy in July 2023.","A 54-year-old Chinese male with 30 years of smoking history presented with a worsening cough for 3 months, with a performance status score of 1. Enhanced computed tomography (CT) revealed a 22 mm × 12 mm × 16 mm mass in the right upper lobe with invasion in the right hilum and mediastinal (Figure 1AandB), which were confirmed by positron emission tomography-CT (PET-CT) scan. Immunohistochemistry (IHC) analysis of the biopsy from the lesion in the upper right lobe of the lung was positive for TTF-1, NpA, CK7, CD5/6 and Ki67 (60%); and negative for p40, p63 and CD56. The patient was diagnosed with stage IIIA lung adenocarcinoma (cT1cN2M0). Follow-up targeted NGS analysis of his lung lesion biopsy identified an EGFRG719X with a mutant allele frequency (MAF) of 3.8%. Two cycles of PC chemotherapy (pemetrexed with 0.9g d1 and carboplatin with 600mg d1) and dacomitinib (30mg) were given.
+
+The patient underwent video-assisted thoracic surgery (VATS) with right upper lobectomy in July 2023. The tumor was located in the right upper lobe, measuring approximately 1.5*1.5 cm with unclear boundaries. Postoperative pathology results indicated that 10% of the tumor cells remained alive, surrounded by significant fibrosis, necrosis, as well as inflammatory and immune cells. After chemotherapy and dacomitinib induction, there were no lymph node metastases, and the pathological stage was ypT1bN0M0. Two cycles of PC chemotherapy were administered, followed by targeted therapy with dacomitinib as adjuvant treatment for 2 more years in accordance with the diagnosis and treatment guidelines. At the final follow-up in September 2024, no adverse events or disease progression had occurred. A progression-free survival (PFS) of more than 14 months was achieved.
+
+The patient received two cycles of PC chemotherapy (pemetrexed with 0.9g d1 and carboplatin with 600mg d1) and dacomitinib (30mg). The patient underwent video-assisted thoracic surgery (VATS) with right upper lobectomy in July 2023.","[""Lung Cancer""]","[""Lung Adenocarcinoma""]",False,[]
+graph_006,Lung_cancer_with_diabetes_mellitus_and_polymyalgia_rheumatica_during_long_term_n_PMC12001326.html,"<?xml version=""1.0"" encoding=""UTF-8""?><patientTimeline><event date=""June 2014""><text>Lung cancer (stage IV) diagnosed</text></event><event date=""July 2014""><text>Radiation therapy for pelvic lesion (45 Gy/15 Fr)</text></event><event date=""July 2014""><text>Chemotherapy (carboplatin + paclitaxel + bevacizumab for four courses)</text></event><event date=""July 2014""><text>Bevacizumab maintenance therapy</text></event><event date=""after 15 cycles of maintenance therapy""><text>Right adrenal metastasis larger</text></event><event date=""after 15 cycles of maintenance therapy""><text>New left adrenal metastasis observed</text></event><event date=""January 2018""><text>Re-enlargement of the right adrenal metastasis detected</text></event><event date=""January 2018""><text>Radiation therapy for the right adrenal lesion (50 Gy/25 Fr)</text></event><event date=""January 2018""><text>Chemotherapy (two courses of docetaxel monotherapy) administered</text></event><event date=""February 2019""><text>Enlargement of the left adrenal metastasis detected</text></event><event date=""February 2019""><text>Nivolumab monotherapy as fifth-line therapy initiated</text></event><event date=""May 2022""><text>Diabetes mellitus (DM) diagnosed: Blood glucose level increased to 468 mg/dl, Urinary ketones negative, pancreatic amylase not elevated, and autoantibodies including anti-glutamic acid decarboxylase (GAD) antibodies negative</text></event><event date=""four years and 5 months after starting nivolumab treatment""><text>Polymyalgia rheumatica (PMR) diagnosed: Muscle pain in the femoral area and neck appeared, which did not improve with nonsteroidal anti-inflammatory drugs. CT and magnetic resonance imaging showed no obvious cancer progression</text></event><event date=""four years and 5 months after starting nivolumab treatment""><text>Nivolumab treatment continued</text></event></patientTimeline>","<?xml version=""1.0"" encoding=""UTF-8""?><patientTimeline><event date=""June 2014""><text>Lung cancer (stage IV) diagnosed</text></event><event date=""July 2014""><text>Radiation therapy for pelvic lesion (45 Gy/15 Fr)</text></event><event date=""July 2014""><text>Chemotherapy (carboplatin + paclitaxel + bevacizumab for four courses)</text></event><event date=""July 2014""><text>Bevacizumab maintenance therapy</text></event><event date=""after 15 cycles of maintenance therapy""><text>Right adrenal metastasis larger</text></event><event date=""after 15 cycles of maintenance therapy""><text>New left adrenal metastasis observed</text></event><event date=""January 2018""><text>Re-enlargement of the right adrenal metastasis detected</text></event><event date=""January 2018""><text>Radiation therapy for the right adrenal lesion (50 Gy/25 Fr)</text></event><event date=""January 2018""><text>Chemotherapy (two courses of docetaxel monotherapy) administered</text></event><event date=""February 2019""><text>Enlargement of the left adrenal metastasis detected</text></event><event date=""February 2019""><text>Nivolumab monotherapy as fifth-line therapy initiated</text></event><event date=""May 2022""><text>Diabetes mellitus (DM) diagnosed: Blood glucose level increased to 468 mg/dl, Urinary ketones negative, pancreatic amylase not elevated, and autoantibodies including anti-glutamic acid decarboxylase (GAD) antibodies negative</text></event><event date=""four years and 5 months after starting nivolumab treatment""><text>Polymyalgia rheumatica (PMR) diagnosed: Muscle pain in the femoral area and neck appeared, which did not improve with nonsteroidal anti-inflammatory drugs. CT and magnetic resonance imaging showed no obvious cancer progression</text></event><event date=""four years and 5 months after starting nivolumab treatment""><text>Nivolumab treatment continued</text></event></patientTimeline>","[
+  {
+    ""date"": ""June 2014"",
+    ""text"": ""Lung cancer (stage IV) diagnosed""
+  },
+  {
+    ""date"": ""July 2014"",
+    ""text"": ""Radiation therapy for pelvic lesion (45 Gy/15 Fr)""
+  },
+  {
+    ""date"": ""July 2014"",
+    ""text"": ""Chemotherapy (carboplatin + paclitaxel + bevacizumab for four courses)""
+  },
+  {
+    ""date"": ""July 2014"",
+    ""text"": ""Bevacizumab maintenance therapy""
+  },
+  {
+    ""date"": ""after 15 cycles of maintenance therapy"",
+    ""text"": ""Right adrenal metastasis larger""
+  },
+  {
+    ""date"": ""after 15 cycles of maintenance therapy"",
+    ""text"": ""New left adrenal metastasis observed""
+  },
+  {
+    ""date"": ""January 2018"",
+    ""text"": ""Re-enlargement of the right adrenal metastasis detected""
+  },
+  {
+    ""date"": ""January 2018"",
+    ""text"": ""Radiation therapy for the right adrenal lesion (50 Gy/25 Fr)""
+  },
+  {
+    ""date"": ""January 2018"",
+    ""text"": ""Chemotherapy (two courses of docetaxel monotherapy) administered""
+  },
+  {
+    ""date"": ""February 2019"",
+    ""text"": ""Enlargement of the left adrenal metastasis detected""
+  },
+  {
+    ""date"": ""February 2019"",
+    ""text"": ""Nivolumab monotherapy as fifth-line therapy initiated""
+  },
+  {
+    ""date"": ""May 2022"",
+    ""text"": ""Diabetes mellitus (DM) diagnosed: Blood glucose level increased to 468 mg/dl, Urinary ketones negative, pancreatic amylase not elevated, and autoantibodies including anti-glutamic acid decarboxylase (GAD) antibodies negative""
+  },
+  {
+    ""date"": ""four years and 5 months after starting nivolumab treatment"",
+    ""text"": ""Polymyalgia rheumatica (PMR) diagnosed: Muscle pain in the femoral area and neck appeared, which did not improve with nonsteroidal anti-inflammatory drugs. CT and magnetic resonance imaging showed no obvious cancer progression""
+  },
+  {
+    ""date"": ""four years and 5 months after starting nivolumab treatment"",
+    ""text"": ""Nivolumab treatment continued""
+  }
+]","[""Lung cancer""]","[""stage IV lung cancer""]",True,"[[""right adrenal"", ""re-enlargement""], [""left adrenal"", ""enlargement""]]"
+graph_007,Case_Report__A_novel_ELMOD3_ALK_and_EML4_ALK_double_fusion_responses_to_neoadjuv_PMC12034634.html,"2020-04-20: Patient comes to hospital for physical examination
+2020-05-02: Diagnosis of stage IIIA (T2aN2M0) lung adenocarcinoma confirmed
+2020: NGS analysis identifies ELMOD3-ALK and EML4-ALK double fusion in tumor tissue
+2020: Patient starts treatment with targeted therapy for ALK fusion
+2023-01-15: Patient receives new treatment plan, including combination of chemotherapy and immunotherapy","2020-04-20: Patient comes to hospital for physical examination
+2020-05-02: Diagnosis of stage IIIA (T2aN2M0) lung adenocarcinoma confirmed
+2020: NGS analysis identifies ELMOD3-ALK and EML4-ALK double fusion in tumor tissue
+2020: Patient starts treatment with targeted therapy for ALK fusion
+2023-01-15: Patient receives new treatment plan, including combination of chemotherapy and immunotherapy","2020-04-20: Patient comes to hospital for physical examination
+2020-05-02: Diagnosis of stage IIIA (T2aN2M0) lung adenocarcinoma confirmed
+2020: NGS analysis identifies ELMOD3-ALK and EML4-ALK double fusion in tumor tissue
+2020: Patient starts treatment with targeted therapy for ALK fusion
+2023-01-15: Patient receives new treatment plan, including combination of chemotherapy and immunotherapy","[""Lung Cancer""]","[""Lung Adenocarcinoma""]",False,[]
+graph_008,Case_report__pulmonary_lymphoepithelial_carcinoma_mimicking_tuberculosis__PMC11987468.html,"The patient was a 37-year-old woman who presented with intermittent cough and slight chest discomfort for 3 months. She also had a painless cervical mass for 1 month. The pathological tissue showed granulomatous inflammation, caseous necrosis, and Langhans' giant cells observed on left cervical lymph node puncture.","37-year-old woman with intermittent cough and slight chest discomfort for 3 months; painless cervical mass for 1 month; pathological tissue showed granulomatous inflammation, caseous necrosis, and Langhans’ giant cells observed on left cervical lymph node puncture; untreated congenital heart disease (patent ductus arteriosus) for 20 years; hypertension for half a year with irregular use of valsartan; mass measuring approximately 4*3 cm on the left clavicle, well-defined, poorly mobile, non-tender, and without surface ulceration or redness; Physical examination of the lungs was unremarkable. A continuous murmur was auscultated at the left sternal border; Laboratory tests of blood carcinoembryonic antigen (CEA), squamous cell carcinoma antigen, cytokeratin 19 fragment and neuron-specific enolase (NSE) were all normal; Blood routine test, liver and kidney function, electrolytes, procalcitonin (PCT), C-reactive protein (CRP) and T-lymphocyte subsets were all normal; Sputum for acid-fast bacilli (AFB) and GeneXpert MTB/RIF were negative; Blood test of EB virus showed increased antibody title of capsid antigen IgG antibody 750U/mL (Reference:0–20 U/mL), EB virus early antigen IgM antibody 2.57 COI (Cut off index reference:0-1.1) and EB virus core antigen IgG antibody 600U/mL(Reference:0–20 U/mL); Repeated ultrasound-guided left supraclavicular lymph node puncture was performed; Histopathology showed focal distribution of epithelioid cells and a few multinucleated giant cells, which suggested granulomatous inflammation (Fig.1); Staining of Acid-fast and methenamine silver were all negative; Lymph node tissue for GeneXpert MTB/RIF and TB culture were all negative; Chest CT scan showed mass(34 × 43 mm) in the middle lobe of the right lung (A,D; blue arrows) and multiple enlarged lymph nodes in mediastinum (B,C; red arrows); Lung biopsy shows lymphoepithelial carcinoma. The tumor cells are densely nestled, the tumor cells have a blurred boundary, large alveoli, eosinophilic nuclei, and the mesenchymal is accompanied by lymphocyte infiltration. (HE staining, 400×)); Immunohistochemical staining shows CK positive in tumor cells (200×); Immunohistochemical staining showed P40 positive in tumor cells (200×); In situ hybridization showed EBER positive in tumor cells (200×); Chest CT scan showed a significant improvement of the lung mass(26 × 17 mm)and reduced lymph nodes after chemotherapy and immunotherapy; Biopsy of left neck lymph node showed granulomatous inflammation. Enhanced CT scan showed mass in the middle lobe of the right lung and multiple enlarged lymph nodes in left neck, mediastinum and right hilum. Percutaneous lung biopsy was performed, showing EBV-positive poorly differentiated carcinoma consistent with lymphoepithelioma. Nasopharyngoscopy excluded nasopharyngeal carcinoma. Repeated CT 1.5 months later showed significant reduction of lung lesions and cervical enlarged lymph nodes.","37-year-old woman with intermittent cough and slight chest discomfort for 3 months; painless cervical mass for 1 month; pathological tissue showed granulomatous inflammation, caseous necrosis, and Langhans’ giant cells observed on left cervical lymph node puncture; untreated congenital heart disease (patent ductus arteriosus) for 20 years; hypertension for half a year with irregular use of valsartan; mass measuring approximately 4*3 cm on the left clavicle, well-defined, poorly mobile, non-tender, and without surface ulceration or redness; Physical examination of the lungs was unremarkable. A continuous murmur was auscultated at the left sternal border; Laboratory tests of blood carcinoembryonic antigen (CEA), squamous cell carcinoma antigen, cytokeratin 19 fragment and neuron-specific enolase (NSE) were all normal; Blood routine test, liver and kidney function, electrolytes, procalcitonin (PCT), C-reactive protein (CRP) and T-lymphocyte subsets were all normal; Sputum for acid-fast bacilli (AFB) and GeneXpert MTB/RIF were negative; Blood test of EB virus showed increased antibody title of capsid antigen IgG antibody 750U/mL (Reference:0–20 U/mL), EB virus early antigen IgM antibody 2.57 COI (Cut off index reference:0-1.1) and EB virus core antigen IgG antibody 600U/mL(Reference:0–20 U/mL); Repeated ultrasound-guided left supraclavicular lymph node puncture was performed; Histopathology showed focal distribution of epithelioid cells and a few multinucleated giant cells, which suggested granulomatous inflammation (Fig.1); Staining of Acid-fast and methenamine silver were all negative; Lymph node tissue for GeneXpert MTB/RIF and TB culture were all negative; Chest CT scan showed mass(34 × 43 mm) in the middle lobe of the right lung (A,D; blue arrows) and multiple enlarged lymph nodes in mediastinum (B,C; red arrows); Lung biopsy shows lymphoepithelial carcinoma. The tumor cells are densely nestled, the tumor cells have a blurred boundary, large alveoli, eosinophilic nuclei, and the mesenchymal is accompanied by lymphocyte infiltration. (HE staining, 400×)); Immunohistochemical staining shows CK positive in tumor cells (200×); Immunohistochemical staining showed P40 positive in tumor cells (200×); In situ hybridization showed EBER positive in tumor cells (200×); Chest CT scan showed a significant improvement of the lung mass(26 × 17 mm)and reduced lymph nodes after chemotherapy and immunotherapy; Biopsy of left neck lymph node showed granulomatous inflammation. Enhanced CT scan showed mass in the middle lobe of the right lung and multiple enlarged lymph nodes in left neck, mediastinum and right hilum. Percutaneous lung biopsy was performed, showing EBV-positive poorly differentiated carcinoma consistent with lymphoepithelioma. Nasopharyngoscopy excluded nasopharyngeal carcinoma. Repeated CT 1.5 months later showed significant reduction of lung lesions and cervical enlarged lymph nodes.","[""lymphoepithelial carcinoma""]","[""EBV-positive poorly differentiated carcinoma"", ""nasopharyngeal carcinoma""]",True,"[[""lung"", ""middle lobe""], [""lymph nodes"", ""mediastinum""], [""lymph nodes"", ""left neck""], [""lymph nodes"", ""right hilum""]]"
+graph_009,Radiotherapy_for_Lung_Cancer__An_Unrecognized_Cause_of_Lung_Torsion__PMC11962223.html,"A 73-year-old lady presented with a long history of bilateral chest wall discomfort, exertional breathlessness, and chronic fatigue. She was found to have a left lung opacification on chest radiograph, which prompted a computed tomography scan and positron emission tomography-computed tomography (PET-CT) scan, which confirmed an avid 53 mm left upper lobe mass with associated hilar and mediastinal lymphadenopathy staging the disease as T3N2M0. An endobronchial ultrasound scan and biopsy (EBUS) sampling of station 11L confirmed lung adenocarcinoma metastasis. It appeared positive on the PD-L1 staining. Other immunohistochemistry (ALK/ROS/NTRK) was negative. Her lung function at this point was 51% forced expiratory volume (FEV1) (1.21) and 73% diffusing capacity of the lungs for carbon monoxide (DLCO). She consented to radical treatment with four weeks of radiotherapy dosed at 55 Gy/20 with concurrent chemotherapy. Her initial scan post radiotherapy showed a limited response to treatment, but her subsequent CT scan in a year showed that there was no tumor visible on axial images but there was apparent collapse of the left lung base. Post radiotherapy imaging showed complete response to treatment. It also showed two small bullae seen in the post aspect of the lower lobe. Five months later, she had a follow-up scan (Figures 4,5). Coronal views showed upward curving of the lower segmental bronchi and pulmonary vessels. The two small bullae initially seen in the post aspect of the lower lobe seemed to have relocated to the upper zone anteriorly. Lung torsion with 180-degree rotation was diagnosed. The patient was clinically well; hence, it did not warrant surgical referral.","A 73-year-old lady presented with a long history of bilateral chest wall discomfort, exertional breathlessness, and chronic fatigue. She was found to have a left lung opacification on chest radiograph, which prompted a computed tomography scan and positron emission tomography-computed tomography (PET-CT) scan, which confirmed an avid 53 mm left upper lobe mass with associated hilar and mediastinal lymphadenopathy staging the disease as T3N2M0. An endobronchial ultrasound scan and biopsy (EBUS) sampling of station 11L confirmed lung adenocarcinoma metastasis. It appeared positive on the PD-L1 staining. Other immunohistochemistry (ALK/ROS/NTRK) was negative. Her lung function at this point was 51% forced expiratory volume (FEV1) (1.21) and 73% diffusing capacity of the lungs for carbon monoxide (DLCO). She consented to radical treatment with four weeks of radiotherapy dosed at 55 Gy/20 with concurrent chemotherapy. Her initial scan post radiotherapy showed a limited response to treatment, but her subsequent CT scan in a year showed that there was no tumor visible on axial images but there was apparent collapse of the left lung base. Post radiotherapy imaging showed complete response to treatment. It also showed two small bullae seen in the post aspect of the lower lobe. Five months later, she had a follow-up scan (Figures 4,5). Coronal views showed upward curving of the lower segmental bronchi and pulmonary vessels. The two small bullae initially seen in the post aspect of the lower lobe seemed to have relocated to the upper zone anteriorly. Lung torsion with 180-degree rotation was diagnosed. The patient was clinically well; hence, it did not warrant surgical referral.","A 73-year-old lady presented with a long history of bilateral chest wall discomfort, exertional breathlessness, and chronic fatigue. She was found to have a left lung opacification on chest radiograph, which prompted a computed tomography scan and positron emission tomography-computed tomography (PET-CT) scan, which confirmed an avid 53 mm left upper lobe mass with associated hilar and mediastinal lymphadenopathy staging the disease as T3N2M0. An endobronchial ultrasound scan and biopsy (EBUS) sampling of station 11L confirmed lung adenocarcinoma metastasis. It appeared positive on the PD-L1 staining. Other immunohistochemistry (ALK/ROS/NTRK) was negative. Her lung function at this point was 51% forced expiratory volume (FEV1) (1.21) and 73% diffusing capacity of the lungs for carbon monoxide (DLCO). She consented to radical treatment with four weeks of radiotherapy dosed at 55 Gy/20 with concurrent chemotherapy. Her initial scan post radiotherapy showed a limited response to treatment, but her subsequent CT scan in a year showed that there was no tumor visible on axial images but there was apparent collapse of the left lung base. Post radiotherapy imaging showed complete response to treatment. It also showed two small bullae seen in the post aspect of the lower lobe. Five months later, she had a follow-up scan (Figures 4,5). Coronal views showed upward curving of the lower segmental bronchi and pulmonary vessels. The two small bullae initially seen in the post aspect of the lower lobe seemed to have relocated to the upper zone anteriorly. Lung torsion with 180-degree rotation was diagnosed. The patient was clinically well; hence, it did not warrant surgical referral.","[""lung adenocarcinoma""]","[""lung adenocarcinoma""]",True,"[[""hilar"", ""lymphadenopathy""], [""mediastinal"", ""lymphadenopathy""]]"
+graph_010,Re_do_robot_assisted_salvage_lobectomy_after_esophagectomy_with_gastric_pull_up__PMC11980297.html,"55-year-old female underwent esophagectomy with gastric pull-up reconstruction for squamous cell carcinoma (SCC) of the esophagus (cT3N2M0, stage IIIB)
+Six years later, computed tomography (CT) scan showed stage IA Thyroid Transcription Factor-1 (TTF-1) positive adenocarcinoma in the left upper lobe treated by stereotactic radiotherapy
+Two years later, a SCC of the right upper lobe (RUL) was found with tumor diameter of 54 mm and high Programmed Death-Ligand 1 (PD-L1) expression
+Pembrolizumab initiated with curative intent but showed no biological response
+Salvage lobectomy including complete mediastinal lymph node dissection performed
+Positioned in left lateral decubitus position, adhesions in closure-line of the previous thoracotomy and thus RATS was deemed feasible.
+After standard port placement (Fig.2A), docking and instrument placement (Tip-up fenestrated grasper™, Cadière forceps™, Maryland bipolar dissector™ and the Monopolar spatula™) adhesiolysis between the lung and the chest wall and taking down dense adhesions between the lung and the intrathoracic gastric pull-up the nasogastric tube was exposed (Fig.2B).
+The nasogastric tube was placed in the gastric pull-up as a safety measure.
+Meticulous dissection of its vascularization enabled subsequent standard lobectomy of the RUL with complete lymph node dissection (R4, 7, 10 and 11).
+After removal of the specimen and chest tube placement, a Ropivacaine® intercostal nerve block levels T4 to T9 was installed.
+Total operative time was 3 h 44 min with 50 ml blood loss.","55-year-old female underwent esophagectomy with gastric pull-up reconstruction for squamous cell carcinoma (SCC) of the esophagus (cT3N2M0, stage IIIB)
+Six years later, computed tomography (CT) scan showed stage IA Thyroid Transcription Factor-1 (TTF-1) positive adenocarcinoma in the left upper lobe treated by stereotactic radiotherapy
+Two years later, a SCC of the right upper lobe (RUL) was found with tumor diameter of 54 mm and high Programmed Death-Ligand 1 (PD-L1) expression
+Pembrolizumab initiated with curative intent but showed no biological response
+Salvage lobectomy including complete mediastinal lymph node dissection performed
+Positioned in left lateral decubitus position, adhesions in closure-line of the previous thoracotomy and thus RATS was deemed feasible.
+After standard port placement (Fig.2A), docking and instrument placement (Tip-up fenestrated grasper™, Cadière forceps™, Maryland bipolar dissector™ and the Monopolar spatula™) adhesiolysis between the lung and the chest wall and taking down dense adhesions between the lung and the intrathoracic gastric pull-up the nasogastric tube was exposed (Fig.2B).
+The nasogastric tube was placed in the gastric pull-up as a safety measure.
+Meticulous dissection of its vascularization enabled subsequent standard lobectomy of the RUL with complete lymph node dissection (R4, 7, 10 and 11).
+After removal of the specimen and chest tube placement, a Ropivacaine® intercostal nerve block levels T4 to T9 was installed.
+Total operative time was 3 h 44 min with 50 ml blood loss.","55-year-old female underwent esophagectomy with gastric pull-up reconstruction for squamous cell carcinoma (SCC) of the esophagus (cT3N2M0, stage IIIB)
+Six years later, computed tomography (CT) scan showed stage IA Thyroid Transcription Factor-1 (TTF-1) positive adenocarcinoma in the left upper lobe treated by stereotactic radiotherapy
+Two years later, a SCC of the right upper lobe (RUL) was found with tumor diameter of 54 mm and high Programmed Death-Ligand 1 (PD-L1) expression
+Pembrolizumab initiated with curative intent but showed no biological response
+Salvage lobectomy including complete mediastinal lymph node dissection performed
+Positioned in left lateral decubitus position, adhesions in closure-line of the previous thoracotomy and thus RATS was deemed feasible.
+After standard port placement (Fig.2A), docking and instrument placement (Tip-up fenestrated grasper™, Cadière forceps™, Maryland bipolar dissector™ and the Monopolar spatula™) adhesiolysis between the lung and the chest wall and taking down dense adhesions between the lung and the intrathoracic gastric pull-up the nasogastric tube was exposed (Fig.2B).
+The nasogastric tube was placed in the gastric pull-up as a safety measure.
+Meticulous dissection of its vascularization enabled subsequent standard lobectomy of the RUL with complete lymph node dissection (R4, 7, 10 and 11).
+After removal of the specimen and chest tube placement, a Ropivacaine® intercostal nerve block levels T4 to T9 was installed.
+Total operative time was 3 h 44 min with 50 ml blood loss.","[""Squamous cell carcinoma"", ""Adenocarcinoma""]","[""Esophageal squamous cell carcinoma"", ""Thyroid Transcription Factor-1 positive adenocarcinoma"", ""Squamous cell carcinoma of the right upper lobe""]",False,[]
+graph_011,Efficacy_of_Selpercatinib_in_Non_small_Cell_Lung_Cancer_With_Bilateral_Internal__PMC12021377.html,"<?xml version=""1.0"" encoding=""UTF-8""?><patientTimeline><event date=""2024-07""><description>Three new intracranial lesions were identified, accompanied by clinical manifestations of paresthesia and reduced muscular strength in the lower limbs.</description></event><event date=""2023-12""><description>Near-complete resolution of multiple supratentorial and infratentorial nodular lesions, with the absence of gadolinium enhancement, except for a faint residual signal at the cisternal segment of the right eighth cranial nerve</description></event><event date=""2022-03""><description>Significant symptomatic improvement within one week of treatment, including complete hearing recovery and a substantial reduction of dizziness and headache complaints.</description></event><event date=""2021-12""><description>Fourth-line treatment with selpercatinib (160 mg twice daily) was initiated</description></event><event date=""2020-11""><description>Disease progression was identified with the emergence of a new growing nodule measuring 11 mm in its longest diameter.</description></event><event date=""2016""><description>First-line systemic therapy with a platinum-based doublet, completing six cycles with a partial tumor response according to Response Evaluation Criteria in Solid Tumors (RECIST) criteria</description></event></patientTimeline>","<?xml version=""1.0"" encoding=""UTF-8""?><patientTimeline><event date=""2024-07""><description>Three new intracranial lesions were identified, accompanied by clinical manifestations of paresthesia and reduced muscular strength in the lower limbs.</description></event><event date=""2023-12""><description>Near-complete resolution of multiple supratentorial and infratentorial nodular lesions, with the absence of gadolinium enhancement, except for a faint residual signal at the cisternal segment of the right eighth cranial nerve</description></event><event date=""2022-03""><description>Significant symptomatic improvement within one week of treatment, including complete hearing recovery and a substantial reduction of dizziness and headache complaints.</description></event><event date=""2021-12""><description>Fourth-line treatment with selpercatinib (160 mg twice daily) was initiated</description></event><event date=""2020-11""><description>Disease progression was identified with the emergence of a new growing nodule measuring 11 mm in its longest diameter.</description></event><event date=""2016""><description>First-line systemic therapy with a platinum-based doublet, completing six cycles with a partial tumor response according to Response Evaluation Criteria in Solid Tumors (RECIST) criteria</description></event></patientTimeline>","<patientTimeline>
+  <event date=""2024-07"">
+    <description>Three new intracranial lesions were identified, accompanied by clinical manifestations of paresthesia and reduced muscular strength in the lower limbs.</description>
+  </event>
+  <event date=""2023-12"">
+    <description>Near-complete resolution of multiple supratentorial and infratentorial nodular lesions, with the absence of gadolinium enhancement, except for a faint residual signal at the cisternal segment of the right eighth cranial nerve</description>
+  </event>
+  <event date=""2022-03"">
+    <description>Significant symptomatic improvement within one week of treatment, including complete hearing recovery and a substantial reduction of dizziness and headache complaints.</description>
+  </event>
+  <event date=""2021-12"">
+    <description>Fourth-line treatment with selpercatinib (160 mg twice daily) was initiated</description>
+  </event>
+  <event date=""2020-11"">
+    <description>Disease progression was identified with the emergence of a new growing nodule measuring 11 mm in its longest diameter.</description>
+  </event>
+  <event date=""2016"">
+    <description>First-line systemic therapy with a platinum-based doublet, completing six cycles with a partial tumor response according to Response Evaluation Criteria in Solid Tumors (RECIST) criteria</description>
+  </event>
+</patientTimeline>","[""adenocarcinoma""]","[""lung cancer""]",True,"[[""brain"", ""intracranial""], [""bone"", ""osseous""], [""liver"", ""hepatic""], [""lymph nodes"", ""lymphatic""], [""lung"", ""pulmonary""]]"
+graph_012,Multiple_Lung_Metastases_of_Papillary_Thyroid_Carcinoma_Detected_by_Detailed_Pat_PMC11971052.html,"79-year-old male patient with:
+- Height: 174 cm
+- Weight: 65 kg
+- BMI: 21.5 kg/m²
+- Smoking history: two packs per day for 55 years (Brinkman Index of 1100)
+- Medical history:
+  - Total thyroidectomy performed five years earlier for papillary thyroid carcinoma (PTC) with comorbidities of chronic obstructive pulmonary disease and hypertension
+  - Left cervical lymphadenopathy of unknown origin six years ago
+  - Subsequent investigations revealed suspected cervical lymph node metastasis of PTC.
+  - Five years ago, the patient underwent total thyroidectomy and left cervical lymph node dissection. Histopathological findings revealed multiple papillary thyroid microcarcinomas (pT1a [m], pEx0, pN1b 4/10, pStage IVA) with negative surgical margins.
+  - The patient was treated with radioiodine therapy (Iodine-131).
+  - Two years ago, a nodule in the right upper lobe of the lung was identified, which was followed up with chest CT scans. Compared to two years prior, an increase in nodule density was observed, prompting a transbronchial biopsy; however, no definitive diagnosis was made.
+  - Tumor markers (CYFRA, CEA, SLX, ProGRP, NSE) were within normal limits.
+  - Serum thyroglobulin levels showed a gradual increase over time, with a preoperative value of 47.7 ng/mL.
+  - Chest X-rays showed no abnormalities, while chest CT scans revealed an irregular nodule measuring 15×14 mm in the S1 segment of the right upper lobe (Figure1).
+  - No hilar lymphadenopathy was detected.
+  - FDG-PET was not performed.
+  - Pulmonary function and electrocardiogram tests showed no abnormalities.
+
+An irregular nodule 15 x 14 mm in size was seen in the S1 upper lobe of the right lung (arrow). The surgery was performed under general anesthesia in the left lateral decubitus position with video-assisted thoracoscopy. The tumor was partially resected using an automatic stapler and submitted for rapid diagnosis. The diagnosis of adenocarcinoma was confirmed, and a right upper lobectomy with mediastinal lymph node dissection (ND-1b) was performed. The operation lasted 2 hours and 30 minutes.
+
+Histopathological examination revealed adenocarcinoma.
+Adenocarcinoma cells were found in the resected tissue.
+Immunohistochemistry showed positive staining for TTF-1, indicating lung origin of the tumor.
+The patient's postoperative course was uneventful, with no complications noted.
+5 years ago: Total thyroidectomy performed for papillary thyroid carcinoma (PTC) with comorbidities of chronic obstructive pulmonary disease and hypertension.
+2 years ago: A nodule in the right upper lobe of the lung was identified, which was followed up with chest CT scans. Compared to two years prior, an increase in nodule density was observed, prompting a transbronchial biopsy; however, no definitive diagnosis was made.
+6 months post-surgery: No evidence of recurrence.","<?xml version=""1.0"" encoding=""UTF-8""?><patientTimeline><event date=""5 years ago""><description>Total thyroidectomy performed for papillary thyroid carcinoma (PTC) with comorbidities of chronic obstructive pulmonary disease and hypertension.</description></event><event date=""2 years ago""><description>A nodule in the right upper lobe of the lung was identified, which was followed up with chest CT scans. Compared to two years prior, an increase in nodule density was observed, prompting a transbronchial biopsy; however, no definitive diagnosis was made.</description></event><event date=""6 months post-surgery""><description>No evidence of recurrence.</description></event></patientTimeline>","79-year-old male patient with:
+- Height: 174 cm
+- Weight: 65 kg
+- BMI: 21.5 kg/m²
+- Smoking history: two packs per day for 55 years (Brinkman Index of 1100)
+- Medical history:
+  - Total thyroidectomy performed five years earlier for papillary thyroid carcinoma (PTC) with comorbidities of chronic obstructive pulmonary disease and hypertension
+  - Left cervical lymphadenopathy of unknown origin six years ago
+  - Subsequent investigations revealed suspected cervical lymph node metastasis of PTC
+  - Five years ago, the patient underwent total thyroidectomy and left cervical lymph node dissection. Histopathological findings revealed multiple papillary thyroid microcarcinomas (pT1a [m], pEx0, pN1b 4/10, pStage IVA) with negative surgical margins.
+  - The patient was treated with radioiodine therapy (Iodine-131)
+  - Two years ago, a nodule in the right upper lobe of the lung was identified, which was followed up with chest CT scans. Compared to two years prior, an increase in nodule density was observed, prompting a transbronchial biopsy; however, no definitive diagnosis was made.
+  - Tumor markers (CYFRA, CEA, SLX, ProGRP, NSE) were within normal limits
+  - Serum thyroglobulin levels showed a gradual increase over time, with a preoperative value of 47.7 ng/mL
+  - Chest X-rays showed no abnormalities, while chest CT scans revealed an irregular nodule measuring 15×14 mm in the S1 segment of the right upper lobe (Figure1)
+  - No hilar lymphadenopathy was detected
+  - FDG-PET was not performed
+  - Pulmonary function and electrocardiogram tests showed no abnormalities
+
+An irregular nodule 15 x 14 mm in size was seen in the S1 upper lobe of the right lung (arrow). The surgery was performed under general anesthesia in the left lateral decubitus position with video-assisted thoracoscopy. The tumor was partially resected using an automatic stapler and submitted for rapid diagnosis. The diagnosis of adenocarcinoma was confirmed, and a right upper lobectomy with mediastinal lymph node dissection (ND-1b) was performed. The operation lasted 2 hours and 30 minutes.
+
+Histopathological examination revealed adenocarcinoma.
+Adenocarcinoma cells were found in the resected tissue.
+Immunohistochemistry showed positive staining for TTF-1, indicating lung origin of the tumor.
+The patient's postoperative course was uneventful, with no complications noted.
+5 years ago: Total thyroidectomy performed for papillary thyroid carcinoma (PTC) with comorbidities of chronic obstructive pulmonary disease and hypertension.
+2 years ago: A nodule in the right upper lobe of the lung was identified, which was followed up with chest CT scans. Compared to two years prior, an increase in nodule density was observed, prompting a transbronchial biopsy; however, no definitive diagnosis was made.
+6 months post-surgery: No evidence of recurrence.","[""papillary thyroid carcinoma"", ""adenocarcinoma""]","[""pT1a [m] papillary thyroid microcarcinomas"", ""lung adenocarcinoma""]",True,"[[""cervical lymph nodes"", ""papillary thyroid carcinoma""]]"
+graph_013,Brain_Metastasis_From_Advanced_Stage_Lung_Carcinoma__Differentiating_From_Stroke_PMC11955559.html,"Patient's medical history:
+- Diagnosed with stage III NSCLC in the right upper lobe bronchus that had spread throughout the middle and lower lobes (15 months ago)
+- PET/CT scans revealed a right supraclavicular node, right upper paratracheal node, multiple additional paratracheal nodes, and enlarged para-aortic nodes
+- Upper esophageal stricture treated with dilatation during an esophagogastroduodenoscopy (1 year ago)
+- Initiated docetaxel for refractory complications with stage III NSCLC (2 days ago)
+
+Recent medical events:
+- Diagnosed with hypokalemia, given potassium supplement and ondansetron for nausea
+- Marked unilateral weakness in left upper extremity, grip strength of 2/5 versus 5/5 strength in the right upper extremity
+- Leukopenia, WBC of 1.12 K/μL
+- Potassium level still low but increased since previous ED visit
+- COVID-19 and flu tests all negative
+- Urine testing revealed trace blood and bacteria and was positive for cannabis
+- Non-contrast CT results revealed multifocal intracranial lesions with associated vasogenic edema with mild mass effect, consistent with metastatic disease
+- CT angiography (CTA) performed, revealing no flow-limiting stenosis or occlusion of major intracranial or cervical arteries
+- Multiple bilateral pulmonary nodules and a partially imaged right upper lobe mass were seen, along with asymmetrically enlarged right level IIb nodes, suspicious for metastasis in this clinical setting
+
+Current medications:
+- Docetaxel for refractory complications with stage III NSCLC
+- Potassium supplement for hypokalemia
+- Ondansetron for nausea","15 months ago: Diagnosed with stage III NSCLC in the right upper lobe bronchus that had spread throughout the middle and lower lobes. PET/CT scans revealed a right supraclavicular node, right upper paratracheal node, multiple additional paratracheal nodes, and enlarged para-aortic nodes.
+1 year ago: Upper esophageal stricture treated with dilatation during an esophagogastroduodenoscopy.
+2 days ago: Initiated docetaxel for refractory complications with stage III NSCLC.
+Current visit: Diagnosed with hypokalemia, given potassium supplement and ondansetron for nausea. Marked unilateral weakness in left upper extremity, grip strength of 2/5 versus 5/5 strength in the right upper extremity.
+Current visit: Leukopenia, WBC of 1.12 K/μL. Potassium level still low but increased since previous ED visit.
+Current visit: COVID-19 and flu tests all negative.
+Current visit: Urine testing revealed trace blood and bacteria and was positive for cannabis.
+Current visit: Non-contrast CT results revealed multifocal intracranial lesions with associated vasogenic edema with mild mass effect, consistent with metastatic disease.
+Current visit: CT angiography (CTA) performed, revealing no flow-limiting stenosis or occlusion of major intracranial or cervical arteries.
+Current visit: Multiple bilateral pulmonary nodules and a partially imaged right upper lobe mass were seen, along with asymmetrically enlarged right level IIb nodes, suspicious for metastasis in this clinical setting.","15 months ago: Diagnosed with stage III NSCLC in the right upper lobe bronchus that had spread throughout the middle and lower lobes. PET/CT scans revealed a right supraclavicular node, right upper paratracheal node, multiple additional paratracheal nodes, and enlarged para-aortic nodes.
+1 year ago: Upper esophageal stricture treated with dilatation during an esophagogastroduodenoscopy.
+2 days ago: Initiated docetaxel for refractory complications with stage III NSCLC.
+Current visit: Diagnosed with hypokalemia, given potassium supplement and ondansetron for nausea. Marked unilateral weakness in left upper extremity, grip strength of 2/5 versus 5/5 strength in the right upper extremity.
+Current visit: Leukopenia, WBC of 1.12 K/μL. Potassium level still low but increased since previous ED visit.
+Current visit: COVID-19 and flu tests all negative.
+Current visit: Urine testing revealed trace blood and bacteria and was positive for cannabis.
+Current visit: Non-contrast CT results revealed multifocal intracranial lesions with associated vasogenic edema with mild mass effect, consistent with metastatic disease.
+Current visit: CT angiography (CTA) performed, revealing no flow-limiting stenosis or occlusion of major intracranial or cervical arteries.
+Current visit: Multiple bilateral pulmonary nodules and a partially imaged right upper lobe mass were seen, along with asymmetrically enlarged right level IIb nodes, suspicious for metastasis in this clinical setting.","[""NSCLC""]","[""stage III NSCLC""]",True,"[[""brain"", ""multifocal intracranial lesions""], [""lung"", ""bilateral pulmonary nodules""], [""lymph nodes"", ""asymmetrically enlarged right level IIb nodes""]]"
+graph_014,Successful_treatment_of_an_elderly_patient_with_lung_squamous_cell_carcinoma_by__PMC11973309.html,"A 73-year-old man presenting with paroxysmal cough and sputum accompanied by chest pain, weight loss, and exertional asthma was admitted to a local hospital on February 13, 2023. A chest computed tomography (CT) scan revealed a mass in the right upper lobe of the lung, raising the suspicion of a malignant tumor (MT). Subsequent positron electron tomography (PET)-CT indicated an irregular lobulated soft tissue mass in the apical segment of the right lung upper lobe, measuring approximately 4.1×3.5 cm and showing increased fluorodeoxyglucose (FDG) uptake (SUV value) and spiculated margins, suggestive of lung cancer (likely squamous cell carcinoma). There were tiny nodular shadows about 0.3 cm in diameter surrounding the mass, and the possibility of metastasis was not ruled out. Several enlarged lymph nodes were visible in regions 10R, 4R, and 2R, the largest measuring approximately 1.7 cm in diameter. that showed varying degrees of increased FDG uptake, suggesting possible metastasis in some lymph nodes. On March 3, 2023, a CT-guided biopsy of the right upper lobe lung mass was performed at our hospital. According to the pathology report (Figure 1), combined with the patient’s medical history and immunohistochemical markers, squamous cell carcinoma was considered (Note: CK7-, CK20-, CK5/6-, NapsinA-, CD56-, P40+, Syn-, CgA-, CD56-, TTF-1-, Ki-67 75%). As shown in the microscopic cellular morphology and tissue architecture ofFigure 1, the entire field demonstrates complete loss of normal pulmonary tissue structure.","Diagnosed with stage cT2bN2M0 right lung squamous cell carcinoma on March 14, 2023. Immunotherapy combined with chemotherapy was started: paclitaxel liposome 240 mg on d1, carboplatin 500 mg on d1, and tislelizumab 200 mg on d2, every 3 weeks (q3w). Grade III thrombocytopenia occurred post-treatment, with a nadir of 30 × 10^9/L. Immunotherapy regimen was adjusted for the first cycle: tislelizumab 200 mg on d0 + paclitaxel liposome 120 mg on d1, 90 mg on d8 + carboplatin 150 mg on d2, 100 mg on d3-5, every 3 weeks (q3w). However, on May 16, 2023, bacteremia and herpes zoster infection were observed, so antitumor treatment was halted.","Vancomycin was given for anti-infection and anti-viral treatment. After active treatment, the first reexamination on May 29, 2023, with a repeat enhanced chest CT showed an irregular thin-walled cystic lesion in the right upper lobe with fine line compartments, measuring approximately 32×25×27 mm, with enlarged and moderately enhanced lymph nodes in the 10R, 4R, and 2R regions. Compared to the March 3, 2023 CT, the solid component of the right upper lobe mass had essentially disappeared, and the mediastinal lymph nodes were similar in size. Response assessment indicated partial remission, and the second cycle of immunotherapy combined with chemotherapy was administered on June 27, 2023.","[""malignant tumor"", ""lung cancer""]","[""squamous cell carcinoma""]",True,"[[""squamous cell carcinoma"", ""lymph nodes""]]"
+graph_015,A_case_of_obstructive_shock_and_transient_ischemic_attack_from_intracardiac_meta_PMC11981378.html,"- Patient presented to ER 8 days after initial diagnosis of intracardiac metastasis of NSCLC.
+- On admission, patient appeared lethargic, tachycardic with irregular rhythm, decreased breath sounds on the right, and tender right upper quadrant due to rib fractures. Heart rate was 110 bpm, blood pressure 96/60 mmHg, respiratory rate 22, and saturation of 100%. Patient treated for hypotension with IV fluids.
+- CT of head negative for acute intracranial processes. CT of abdomen and pelvis showed mildly displaced rib fractures, right kidney interpolar cyst with new areas of internal hyperdensity (suspected benign cysts). No other new presentations appreciated.
+- Laboratory values during the admission:
+  - Hemoglobin (g/dL): 9.6, 9.9, 10.4
+  - Hematocrit (%): 28.3, 30.2, 31.4
+  - Platelets (K/uL): 146, 128, 170
+  - WBC (K/uL): 19.5, 16.29, 20.71
+  - Sodium (mEq/L): 129, 128, 127
+  - Potassium (mEq/L): 3.7, 4, 4.7
+  - Chloride (mEq/L): 102, 100, 101
+  - Bicarbonate (mmol/L): 24, 23, 25
+  - Glucose (mg/dL): 120, 130, 110
+  - Creatinine (mg/dL): 1.2, 1.3, 1.1
+  - Urea nitrogen (mg/dL): 20, 22, 18
+  - Calcium (mg/dL): 9.5, 10.2, 9.8
+  - Phosphate (mg/dL): 4.2, 4.5, 4.0
+  - Lactate dehydrogenase (LDH) (U/L): 250, 280, 220
+  - Aspartate aminotransferase (AST) (U/L): 40, 45, 35
+  - Alanine aminotransferase (ALT) (U/L): 30, 35, 25
+  - Total bilirubin (mg/dL): 1.2, 1.5, 1.0
+  - Direct bilirubin (mg/dL): 0.8, 1.0, 0.7
+  - Alkaline phosphatase (ALP) (U/L): 120, 140, 100
+  - Gamma-glutamyl transferase (GGT) (U/L): 50, 60, 40
+
+2 days post-ER admission: Patient developed symptoms suggestive of a transient ischemic attack (TIA) with right facial droop and left pronator drift.
+CT-Angiography did not show any large vessel occlusion or acute intracranial process.
+The deficits resolved in 6 hours; however, the patient still had ongoing tachycardia and uncontrolled atrial fibrillation.
+
+Patient was diagnosed with locally advanced non-small cell lung cancer (NSCLC) stage IIIB (T4N2Mx) metastatic non-small cell lung carcinoma of squamous cell histology.
+Endobronchial ultrasound-guided fine-needle aspiration confirmed the diagnosis.
+CT angiogram revealed a large hypermetabolic mass in the right lower lobe extending into the mediastinum with enlarged hypermetabolic subcarinal nodes, irregular mass measuring approximately 8.7 × 4.6 cm, partial atelectasis of the right middle and lower lobes, small to moderate low-density right pleural effusion.
+Tumor thrombus in the left atrium measuring 3.4 × 6.3 cm, interfering with the mitral valve function.
+Echocardiogram showed that the mass was invading into the left atrium.
+
+Patient underwent palliative care for symptom management.
+
+2 days post-ER admission: TIA with right facial droop and left pronator drift
+CT-Angiography: no large vessel occlusion or acute intracranial process
+Discharged to hospice care","<?xml version=""1.0"" encoding=""UTF-8""?><timeline><event date=""initial diagnosis"">Patient presented to ER with intracardiac metastasis of NSCLC</event><event date=""2 days post-ER admission"">Transient ischemic attack (TIA) with right facial droop and left pronator drift</event><event date=""after TIA"">CT-Angiography showed no large vessel occlusion or acute intracranial process; patient discharged to hospice care</event></timeline>","Patient presented to ER with intracardiac metastasis of NSCLC (initial diagnosis)
+2 days post-ER admission: Transient ischemic attack (TIA) with right facial droop and left pronator drift
+after TIA: CT-Angiography showed no large vessel occlusion or acute intracranial process; patient discharged to hospice care","[""non-small cell lung cancer""]","[""squamous cell histology""]",True,"[[""left atrium"", ""tumor thrombus""], [""right lower lobe"", ""large hypermetabolic mass""], [""mediastinum"", ""enlarged hypermetabolic subcarinal nodes""]]"
+graph_016,Precise_Localization_of_the_Subsolid_Lesion_by_Colour_Marking_under_CT_Guided_Co_PMC12040305.html,"51-year-old female patient with a subsolid pulmonary lesion. The lesion was followed up for 4 years and subsequently resected videothoracoscopically after preoperative labeling with a mixture of blue dye and contrast agent.
+Born in 1970, underwent resection of malignant melanoma in April 2013.
+Suspicious lymph node (LU) in the left axilla detected on ultrasound, biopsy confirmed metastasis of malignant melanoma. PET/CT showed solitary finding in the left axilla. Dissection of the left axilla performed, only one of 19 LNs affected by metastasis. Molecular genetic testing revealed BRAF mutation at codon 600, targeted therapy with BRAF inhibitors deployed.
+Routine CT scan of lungs in November 2017 detected new asymptomatic lesion in segment S10 of right lower lobe, measuring 7 mm in size. Follow-up CT scan in June 2020 showed lesion changed character to subsolid lesion with solid component. PET/CT scan in July 2020 confirmed persistence of the lesion without increased metabolic activity.
+A further follow-up in April 2021 confirmed persistence and additionally showed a slight size progression of the solid component of the lesion.
+The resection lines from the tumor margin to the resection margins were adequate, with the smallest measured dimension of 13 mm. No metastatic process was found in the examined mediastinal lymphatic nodes. The postoperative course was uneventful, and the patient was discharged to home care on the fourth day after surgery.
+She continues to be followed up regularly and remains free of signs of disease recurrence.","51-year-old female patient with a subsolid pulmonary lesion. The lesion was followed up for 4 years and subsequently resected videothoracoscopically after preoperative labeling with a mixture of blue dye and contrast agent.
+Born in 1970, underwent resection of malignant melanoma in April 2013.
+Suspicious lymph node (LU) in the left axilla detected on ultrasound, biopsy confirmed metastasis of malignant melanoma. PET/CT showed solitary finding in the left axilla. Dissection of the left axilla performed, only one of 19 LNs affected by metastasis. Molecular genetic testing revealed BRAF mutation at codon 600, targeted therapy with BRAF inhibitors deployed.
+Routine CT scan of lungs in November 2017 detected new asymptomatic lesion in segment S10 of right lower lobe, measuring 7 mm in size. Follow-up CT scan in June 2020 showed lesion changed character to subsolid lesion with solid component. PET/CT scan in July 2020 confirmed persistence of the lesion without increased metabolic activity.
+A further follow-up in April 2021 confirmed persistence and additionally showed a slight size progression of the solid component of the lesion.
+The resection lines from the tumor margin to the resection margins were adequate, with the smallest measured dimension of 13 mm. No metastatic process was found in the examined mediastinal lymphatic nodes. The postoperative course was uneventful, and the patient was discharged to home care on the fourth day after surgery.
+She continues to be followed up regularly and remains free of signs of disease recurrence.","51-year-old female patient with a subsolid pulmonary lesion. The lesion was followed up for 4 years and subsequently resected videothoracoscopically after preoperative labeling with a mixture of blue dye and contrast agent.
+Born in 1970, underwent resection of malignant melanoma in April 2013.
+Suspicious lymph node (LU) in the left axilla detected on ultrasound, biopsy confirmed metastasis of malignant melanoma. PET/CT showed solitary finding in the left axilla. Dissection of the left axilla performed, only one of 19 LNs affected by metastasis. Molecular genetic testing revealed BRAF mutation at codon 600, targeted therapy with BRAF inhibitors deployed.
+Routine CT scan of lungs in November 2017 detected new asymptomatic lesion in segment S10 of right lower lobe, measuring 7 mm in size. Follow-up CT scan in June 2020 showed lesion changed character to subsolid lesion with solid component. PET/CT scan in July 2020 confirmed persistence of the lesion without increased metabolic activity.
+A further follow-up in April 2021 confirmed persistence and additionally showed a slight size progression of the solid component of the lesion.
+The resection lines from the tumor margin to the resection margins were adequate, with the smallest measured dimension of 13 mm. No metastatic process was found in the examined mediastinal lymphatic nodes. The postoperative course was uneventful, and the patient was discharged to home care on the fourth day after surgery.
+She continues to be followed up regularly and remains free of signs of disease recurrence.","[""malignant melanoma""]","[""melanoma"", ""lung cancer""]",True,"[[""left axilla"", ""lymph node""], [""right lower lobe"", ""lung""]]"
+graph_017,Developing_an_Integrated_Service_Planning_Tool__Lessons_Learnt_from_Planning_the_PMC12023144.html,None,None,None,[],[],False,[]
+graph_018,Combined_use_of_SpineJack_and_microwave_ablation_with_CT_and_C_arm_in_the_treatm_PMC12035686.html,"2023: Primary lung adenocarcinoma diagnosis
+2023: Severe debilitating shoulder pain (VAS 9) in low dorsal area
+2023: Compression fracture of T8 vertebral body, multiple fracture lines with mixed lytic-sclerotic tumor component
+Computed tomography scan with axial and sagittal plane reconstructions showing a compression fracture of the T8 vertebral body with multiple fracture lines and mixed lytic-sclerotic tumor component
+Bilateral vertebral microwave ablation and SpineJack implantation at the same level to enable debulking of the lesion, and vertebral stabilization in a single procedure
+Administer cefazolin 2 g intravenously (IV) 30 minutes before the procedure to prevent infection.
+Pink arrow: An acrylic plug is left in place after the drill is removed, allowing preparation for the subsequent implant channel preparation.
+Brown arrows: Two SpineJack expandable titanium implants are inserted and gradually deployed under fluoroscopic guidance, restoring vertebral height and reducing kyphosis.
+Post-procedural fluoroscopy image and multiplanar CT scan: Post cementation lateral fluoroscopic imaging and CT scan, with multiplanar (MPR) reconstruction scan to assess implant placement, cement distribution, and symmetry of vertebral body expansion. This scan also helps identify potential complications such as cement leakage.
+Lidocaine (1–2%) is administered subcutaneously at the incision site using a 22-gauge intramuscular needle
+Using an 18-gauge spinal needle (88 mm), infiltrate bupivacaine (0.25%–0.5%) around the periosteum to provide deeper anesthesia
+Needle placement is verified with fluoroscopic and CT guidance (Orange arrows inFigs. 1, 2)
+11-gauge vertebroplasty needles are inserted transpedicularly, guided under real-time fluoroscopy to reach the anterior third of the vertebral body with final CT scan check
+A 20 cm microwave antenna is inserted through the vertebroplasty needle, ensuring the antenna covers the entire lesion. Ablation is performed using a 2.45 GHz microwave generator to target the tumor
+Kirschner wire is inserted into the vertebral body after removing the vertebroplasty needle’s inner cannula, advancing under fluoroscopic guidance to the anterior third of the vertebral body","2023: Primary lung adenocarcinoma diagnosis
+2023: Severe debilitating shoulder pain (VAS 9) in low dorsal area
+2023: Compression fracture of T8 vertebral body, multiple fracture lines with mixed lytic-sclerotic tumor component
+Computed tomography scan with axial and sagittal plane reconstructions showing a compression fracture of the T8 vertebral body with multiple fracture lines and mixed lytic-sclerotic tumor component
+Bilateral vertebral microwave ablation and SpineJack implantation at the same level to enable debulking of the lesion, and vertebral stabilization in a single procedure
+Administer cefazolin 2 g intravenously (IV) 30 minutes before the procedure to prevent infection.
+Pink arrow: An acrylic plug is left in place after the drill is removed, allowing preparation for the subsequent implant channel preparation.
+Brown arrows: Two SpineJack expandable titanium implants are inserted and gradually deployed under fluoroscopic guidance, restoring vertebral height and reducing kyphosis.
+Post-procedural fluoroscopy image and multiplanar CT scan: Post cementation lateral fluoroscopic imaging and CT scan, with multiplanar (MPR) reconstruction scan to assess implant placement, cement distribution, and symmetry of vertebral body expansion. This scan also helps identify potential complications such as cement leakage.
+Lidocaine (1–2%) is administered subcutaneously at the incision site using a 22-gauge intramuscular needle
+Using an 18-gauge spinal needle (88 mm), infiltrate bupivacaine (0.25%–0.5%) around the periosteum to provide deeper anesthesia
+Needle placement is verified with fluoroscopic and CT guidance (Orange arrows inFigs. 1, 2)
+11-gauge vertebroplasty needles are inserted transpedicularly, guided under real-time fluoroscopy to reach the anterior third of the vertebral body with final CT scan check
+A 20 cm microwave antenna is inserted through the vertebroplasty needle, ensuring the antenna covers the entire lesion. Ablation is performed using a 2.45 GHz microwave generator to target the tumor
+Kirschner wire is inserted into the vertebral body after removing the vertebroplasty needle’s inner cannula, advancing under fluoroscopic guidance to the anterior third of the vertebral body","2023: Primary lung adenocarcinoma diagnosis
+2023: Severe debilitating shoulder pain (VAS 9) in low dorsal area
+2023: Compression fracture of T8 vertebral body, multiple fracture lines with mixed lytic-sclerotic tumor component
+Computed tomography scan with axial and sagittal plane reconstructions showing a compression fracture of the T8 vertebral body with multiple fracture lines and mixed lytic-sclerotic tumor component
+Bilateral vertebral microwave ablation and SpineJack implantation at the same level to enable debulking of the lesion, and vertebral stabilization in a single procedure
+Administer cefazolin 2 g intravenously (IV) 30 minutes before the procedure to prevent infection.
+Pink arrow: An acrylic plug is left in place after the drill is removed, allowing preparation for the subsequent implant channel preparation.
+Brown arrows: Two SpineJack expandable titanium implants are inserted and gradually deployed under fluoroscopic guidance, restoring vertebral height and reducing kyphosis.
+Post-procedural fluoroscopy image and multiplanar CT scan: Post cementation lateral fluoroscopic imaging and CT scan, with multiplanar (MPR) reconstruction scan to assess implant placement, cement distribution, and symmetry of vertebral body expansion. This scan also helps identify potential complications such as cement leakage.
+Lidocaine (1–2%) is administered subcutaneously at the incision site using a 22-gauge intramuscular needle
+Using an 18-gauge spinal needle (88 mm), infiltrate bupivacaine (0.25%–0.5%) around the periosteum to provide deeper anesthesia
+Needle placement is verified with fluoroscopic and CT guidance (Orange arrows inFigs. 1, 2)
+11-gauge vertebroplasty needles are inserted transpedicularly, guided under real-time fluoroscopy to reach the anterior third of the vertebral body with final CT scan check
+A 20 cm microwave antenna is inserted through the vertebroplasty needle, ensuring the antenna covers the entire lesion. Ablation is performed using a 2.45 GHz microwave generator to target the tumor
+Kirschner wire is inserted into the vertebral body after removing the vertebroplasty needle’s inner cannula, advancing under fluoroscopic guidance to the anterior third of the vertebral body","[""lung cancer""]","[""adenocarcinoma""]",True,"[[""bone"", ""spine""], [""bone"", ""vertebral body""]]"
+graph_019,Immune_checkpoint_inhibitor_induced_anti_Hu_antibody_associated_gastrointestinal_PMC11996632.html,"The patient was diagnosed with SCLC (cT1N3M1a) on 2023-07. Chemotherapy commenced on August 3, 2023, with four cycles of etoposide 160 mg (days 1–3), carboplatin (400 mg) on day 1, and serplulimab 300 mg on day 1 (Q3W). The patient received serplulimab maintenance therapy (Q3W) after completing the initial four cycles. Follow-up evaluations after 18 cycles showed partial response (PR). However, after two cycles of serplulimab treatment, the patient intermittently (every 2–3 months) experienced hard stools and occasional constipation. These symptoms were not considered significant at the time and were relieved with glycerin suppositories. After completing 18 cycles (September 9, 2024), the patient was admitted to our gastroenterology department due to “no bowel movement for 5 d.” Abdominal computed tomography (CT) revealed diffuse dilatation and gas accumulation in the bowel, particularly the colon, suggesting incomplete intestinal obstruction. Gastroscopy showed chronic atrophic gastritis (C2) with bile reflux, and colonoscopy revealed a subpedunculated polyp approximately 1.5 cm in size, 20 cm from the anus, with smooth mucosa in the sigmoid colon. The patient underwent laparoscopic exploration and mesenteric lymph node biopsy on November 12, 2024. Intraoperative findings included significant bowel dilation and gas accumulation with no evidence of small bowel tumors or inflammatory diseases. The colon and rectum appeared normal, with slight swelling of the small bowel mesentery and numerous enlarged lymph nodes (Figure 2). Pathological examination of the lymph nodes revealed reactive hyperplasia (Figure 3), suggesting a functional gastrointestinal disorder. Therefore, ICI-related GIPO was suspected. Testing for antibodies related to serum paraneoplastic syndrome using the CAN and TBA methods detected anti-Hu antibodies at a dilution of 1:1000. The patient was diagnosed with anti-Hu antibody-related GIPO induced by serplulimab. The patient received intravenous methylprednisolone sodium succinate at a dosage of 40 mg daily for 5 d, but no symptom relief was observed. The family declined high-dose steroid pulse therapy (1000 mg). The patient died 22 d later without an autopsy being performed.","2023-07: Patient diagnosed with SCLC (cT1N3M1a) and starts chemotherapy on August 3, 2023.
+2023-08: Chemotherapy commenced with four cycles of etoposide, carboplatin, and serplulimab.
+2024-09: After completing 18 cycles, patient experiences severe constipation and is admitted to the gastroenterology department.
+2024-11: Laparoscopic exploration and mesenteric lymph node biopsy reveal reactive hyperplasia in lymph nodes.
+Patient received serplulimab maintenance therapy (Q3W) after completing the initial four cycles.
+Follow-up evaluations after 18 cycles showed partial response (PR).
+However, after two cycles of serplulimab treatment, the patient intermittently (every 2–3 months) experienced hard stools and occasional constipation.
+These symptoms were not considered significant at the time and were relieved with glycerin suppositories.
+Abdominal computed tomography (CT) revealed diffuse dilatation and gas accumulation in the bowel, particularly the colon, suggesting incomplete intestinal obstruction.
+Gastroscopy showed chronic atrophic gastritis (C2) with bile reflux, and colonoscopy revealed a subpedunculated polyp approximately 1.5 cm in size, 20 cm from the anus, with smooth mucosa in the sigmoid colon.
+The patient underwent laparoscopic exploration and mesenteric lymph node biopsy on November 12, 2024.
+Intraoperative findings included significant bowel dilation and gas accumulation with no evidence of small bowel tumors or inflammatory diseases.
+The colon and rectum appeared normal, with slight swelling of the small bowel mesentery and numerous enlarged lymph nodes (Figure 2).
+Pathological examination of the lymph nodes revealed reactive hyperplasia (Figure 3), suggesting a functional gastrointestinal disorder.
+Testing for antibodies related to serum paraneoplastic syndrome using the CAN and TBA methods detected anti-Hu antibodies at a dilution of 1:1000.
+The patient was diagnosed with anti-Hu antibody-related GIPO induced by serplulimab.
+The patient received intravenous methylprednisolone sodium succinate at a dosage of 40 mg daily for 5 d, but no symptom relief was observed.
+The family declined high-dose steroid pulse therapy (1000 mg).
+The patient died 22 d later without an autopsy being performed.","2023-07: Patient diagnosed with SCLC (cT1N3M1a) and starts chemotherapy on August 3, 2023.
+2023-08: Chemotherapy commenced with four cycles of etoposide 160 mg (days 1–3), carboplatin (400 mg) on day 1, and serplulimab 300 mg on day 1 (Q3W).
+2024-09: After completing 18 cycles, patient experiences severe constipation and is admitted to the gastroenterology department.
+2024-11: Laparoscopic exploration and mesenteric lymph node biopsy reveal reactive hyperplasia in lymph nodes.
+Patient received serplulimab maintenance therapy (Q3W) after completing the initial four cycles.
+Follow-up evaluations after 18 cycles showed partial response (PR).
+However, after two cycles of serplulimab treatment, the patient intermittently (every 2–3 months) experienced hard stools and occasional constipation.
+These symptoms were not considered significant at the time and were relieved with glycerin suppositories.
+Abdominal computed tomography (CT) revealed diffuse dilatation and gas accumulation in the bowel, particularly the colon, suggesting incomplete intestinal obstruction.
+Gastroscopy showed chronic atrophic gastritis (C2) with bile reflux, and colonoscopy revealed a subpedunculated polyp approximately 1.5 cm in size, 20 cm from the anus, with smooth mucosa in the sigmoid colon.
+The patient underwent laparoscopic exploration and mesenteric lymph node biopsy on November 12, 2024.
+Intraoperative findings included significant bowel dilation and gas accumulation with no evidence of small bowel tumors or inflammatory diseases.
+The colon and rectum appeared normal, with slight swelling of the small bowel mesentery and numerous enlarged lymph nodes (Figure 2).
+Pathological examination of the lymph nodes revealed reactive hyperplasia (Figure 3), suggesting a functional gastrointestinal disorder.
+Testing for antibodies related to serum paraneoplastic syndrome using the CAN and TBA methods detected anti-Hu antibodies at a dilution of 1:1000.
+The patient was diagnosed with anti-Hu antibody-related GIPO induced by serplulimab.
+The patient received intravenous methylprednisolone sodium succinate at a dosage of 40 mg daily for 5 d, but no symptom relief was observed.
+The family declined high-dose steroid pulse therapy (1000 mg).
+The patient died 22 d later without an autopsy being performed.","[""SCLC""]","[""Small Cell Lung Cancer""]",True,[]
+graph_020,Disseminated_talaromycosis_in_HIV_negative_patients_with_lung_cancer__a_rare_cas_PMC12023669.html,"Patient Timeline:
+* Admitted to local hospital (2022-01-01)
+* No improvement after 1 week of empirical anti-infective treatment with piperacillin-tazobactam (4.5 g q8 h) (2022-01-02)
+* Transferred to our hospital (2022-01-03)
+* Physical examination revealed: body temperature 39.1 °C, heart rate 136 beats per minute, respiratory rate 36 breaths/minute, blood pressure 140/75 mmHg, oxygen saturation 85% (2022-01-04)
+* Blood tests, CSF analysis, chest/brain CT scans yielded negative results for HIV, AIGA, blood G test, GM test, and blood cultures (2022-01-05)
+* Serial sputum cultures conducted over three consecutive days: initial specimen excluded due to inadequacy (WBC < 10/LPF, epithelial cells 201/LPF), Candida albicans isolated from this specimen discarded as contaminant (2022-01-06)
+* Subsequent valid specimens exhibited cellular profiles consistent with Burkholderia cepacia complex infection (2022-01-07)
+* Treatment initiated: Amphotericin B lipid complex (5 mg/kg/day) ×20 days + Meropenem (1 g q8h)×10 days (2022-01-08)
+* A mass in the upper left lung and multiple nodules in both lungs, with bilateral pleural effusion slightly reduced from before, with no other significant changes (Fig.2b) (Week 5) (2022-01-09)
+* The mass in the upper left lung and multiple nodules in both lungs were similar to previous findings, with a small amount of pleural effusion in the left side slightly reduced from before, with the rest remaining unchanged (Fig.2c) (Week 6) (2022-01-10)
+* Terminal Decline: 81081, 1391, 7010, 422 (2022-01-11)","Patient Timeline:
+* Admitted to local hospital (2022-01-01)
+* No improvement after 1 week of empirical anti-infective treatment with piperacillin-tazobactam (4.5 g q8 h) (2022-01-02)
+* Transferred to our hospital (2022-01-03)
+* Physical examination revealed: body temperature 39.1 °C, heart rate 136 beats per minute, respiratory rate 36 breaths/minute, blood pressure 140/75 mmHg, oxygen saturation 85% (2022-01-04)
+* Blood tests, CSF analysis, chest/brain CT scans yielded negative results for HIV, AIGA, blood G test, GM test, and blood cultures (2022-01-05)
+* Serial sputum cultures conducted over three consecutive days: initial specimen excluded due to inadequacy (WBC < 10/LPF, epithelial cells 201/LPF), Candida albicans isolated from this specimen discarded as contaminant (2022-01-06)
+* Subsequent valid specimens exhibited cellular profiles consistent with Burkholderia cepacia complex infection (2022-01-07)
+* Treatment initiated: Amphotericin B lipid complex (5 mg/kg/day) ×20 days + Meropenem (1 g q8h)×10 days (2022-01-08)
+* A mass in the upper left lung and multiple nodules in both lungs, with bilateral pleural effusion slightly reduced from before, with no other significant changes (Fig.2b) (Week 5) (2022-01-09)
+* The mass in the upper left lung and multiple nodules in both lungs were similar to previous findings, with a small amount of pleural effusion in the left side slightly reduced from before, with the rest remaining unchanged (Fig.2c) (Week 6) (2022-01-10)
+* Terminal Decline: 81081, 1391, 7010, 422 (2022-01-11)","Patient Timeline:
+* Admitted to local hospital (2022-01-01)
+* No improvement after 1 week of empirical anti-infective treatment with piperacillin-tazobactam (4.5 g q8 h) (2022-01-02)
+* Transferred to our hospital (2022-01-03)
+* Physical examination revealed: body temperature 39.1 °C, heart rate 136 beats per minute, respiratory rate 36 breaths/minute, blood pressure 140/75 mmHg, oxygen saturation 85% (2022-01-04)
+* Blood tests, CSF analysis, chest/brain CT scans yielded negative results for HIV, AIGA, blood G test, GM test, and blood cultures (2022-01-05)
+* Serial sputum cultures conducted over three consecutive days: initial specimen excluded due to inadequacy (WBC < 10/LPF, epithelial cells 201/LPF), Candida albicans isolated from this specimen discarded as contaminant (2022-01-06)
+* Subsequent valid specimens exhibited cellular profiles consistent with Burkholderia cepacia complex infection (2022-01-07)
+* Treatment initiated: Amphotericin B lipid complex (5 mg/kg/day) ×20 days + Meropenem (1 g q8h)×10 days (2022-01-08)
+* A mass in the upper left lung and multiple nodules in both lungs, with bilateral pleural effusion slightly reduced from before, with no other significant changes (Fig.2b) (Week 5) (2022-01-09)
+* The mass in the upper left lung and multiple nodules in both lungs were similar to previous findings, with a small amount of pleural effusion in the left side slightly reduced from before, with the rest remaining unchanged (Fig.2c) (Week 6) (2022-01-10)
+* Terminal Decline: 81081, 1391, 7010, 422 (2022-01-11)",[],[],False,[]
+graph_021,Therapeutic_efficacy_of_albuvirtide_based_antiretroviral_therapy_in_people_livin_PMC12008952.html,"Patient 1:
+- HIV diagnosis: April 2021
+- Initial antiretroviral therapy (TLE regimen): May 2021
+- Lung cancer diagnosis: February 2023
+- Cancer treatment initiation: November 2023
+- ABT introduction: November 2023
+- HIV-1 RNA: <20 copies/mL by March 2024
+- CD4+ T cell count: 281 cells/µL by March 2024
+- CEA: 1.26 ng/mL by April 2024
+- CA15-3: 22.40 U/mL by April 2024
+- Complete viral suppression (HIV-1 RNA <20 copies/mL) achieved by May 2024
+- CD4+ T cell count: 312.24 cells/µL by May 2024
+- Sustained viral suppression (HIV-1 RNA <20 copies/mL) and CD4+ T cell count of 327.83 cells/µL by June 2024
+
+Patient 2:
+- HIV diagnosis: November 2019
+- Initial antiretroviral therapy: Not specified
+- Breast cancer diagnosis: August 2023
+- Lung mass confirmed with TPS 40% PD-L1 expression
+- Stage IVB (cT4N2M1c) disease
+- Combination therapy with PD-1 inhibitor and chemotherapy initiated in November 2023
+- Initial regimen consisted of carboplatin (AUC 5, day 1) and paclitaxel (175 mg/m², day 1)
+- Pembrolizumab (200 mg, day 1) administered concurrently
+- Modification of antiretroviral regimen to incorporate albuvirtide in November 2023
+- HIV-1 RNA: <20 copies/mL by January 2024
+- CD4+ T cell count: 121 cells/µL by January 2024
+
+Current patient:
+- Lung cancer diagnosis: February 2023
+- Cancer treatment initiation: November 2023
+- ABT introduction: November 2023
+- HIV-1 RNA: <20 copies/mL by May 2024
+- CD4+ T cell count: 312.24 cells/µL by May 2024","Patient 1:
+- HIV diagnosis: April 2021
+- Initial antiretroviral therapy (TLE regimen): May 2021
+- Lung cancer diagnosis: February 2023
+- Cancer treatment initiation: November 2023
+- ABT introduction: November 2023
+- HIV-1 RNA: <20 copies/mL by March 2024
+- CD4+ T cell count: 281 cells/µL by March 2024
+- CEA: 1.26 ng/mL by April 2024
+- CA15-3: 22.40 U/mL by April 2024
+- Complete viral suppression (HIV-1 RNA <20 copies/mL) achieved by May 2024
+- CD4+ T cell count: 312.24 cells/µL by May 2024
+- Sustained viral suppression (HIV-1 RNA <20 copies/mL) and CD4+ T cell count of 327.83 cells/µL by June 2024
+
+Patient 2:
+- HIV diagnosis: November 2019
+- Initial antiretroviral therapy: Not specified
+- Breast cancer diagnosis: August 2023
+- Lung mass confirmed with TPS 40% PD-L1 expression
+- Stage IVB (cT4N2M1c) disease
+- Combination therapy with PD-1 inhibitor and chemotherapy initiated in November 2023
+- Initial regimen consisted of carboplatin (AUC 5, day 1) and paclitaxel (175 mg/m², day 1)
+- Pembrolizumab (200 mg, day 1) administered concurrently
+- Modification of antiretroviral regimen to incorporate albuvirtide in November 2023
+- HIV-1 RNA: <20 copies/mL by January 2024
+- CD4+ T cell count: 121 cells/µL by January 2024
+
+Current patient:
+- Lung cancer diagnosis: February 2023
+- Cancer treatment initiation: November 2023
+- ABT introduction: November 2023
+- HIV-1 RNA: <20 copies/mL by May 2024
+- CD4+ T cell count: 312.24 cells/µL by May 2024","Patient 1:\n- HIV diagnosis: April 2021\n- Initial antiretroviral therapy (TLE regimen): May 2021\n- Lung cancer diagnosis: February 2023\n- Cancer treatment initiation: November 2023\n- ABT introduction: November 2023\n- HIV-1 RNA: <20 copies/mL by March 2024\n- CD4+ T cell count: 281 cells/µL by March 2024\n- CEA: 1.26 ng/mL by April 2024\n- CA15-3: 22.40 U/mL by April 2024\n- Complete viral suppression (HIV-1 RNA <20 copies/mL) achieved by May 2024\n- CD4+ T cell count: 312.24 cells/µL by May 2024\n- Sustained viral suppression (HIV-1 RNA <20 copies/mL) and CD4+ T cell count of 327.83 cells/µL by June 2024
+
+Patient 2:\n- HIV diagnosis: November 2019\n- Initial antiretroviral therapy: Not specified\n- Breast cancer diagnosis: August 2023\n- Lung mass confirmed with TPS 40% PD-L1 expression\n- Stage IVB (cT4N2M1c) disease\n- Combination therapy with PD-1 inhibitor and chemotherapy initiated in November 2023\n- Initial regimen consisted of carboplatin (AUC 5, day 1) and paclitaxel (175 mg/m², day 1)\n- Pembrolizumab (200 mg, day 1) administered concurrently\n- Modification of antiretroviral regimen to incorporate albuvirtide in November 2023\n- HIV-1 RNA: <20 copies/mL by January 2024\n- CD4+ T cell count: 121 cells/µL by January 2024
+
+Current patient:\n- Lung cancer diagnosis: February 2023\n- Cancer treatment initiation: November 2023\n- ABT introduction: November 2023\n- HIV-1 RNA: <20 copies/mL by May 2024\n- CD4+ T cell count: 312.24 cells/µL by May 2024","[""Lung cancer"", ""Breast cancer""]","[""Stage IVB (cT4N2M1c) disease""]",True,"[[""Lung"", ""TPS 40% PD-L1 expression""]]"
+graph_022,Metastasis_of_Small_Cell_Lung_Cancer_to_the_External_Auditory_Canal__A_Case_Repo_PMC11965702.html,"A 77-year-old man was presented with left-sided hearing loss, otalgia, and a red mass in the left EAC that persisted for several weeks. Physical examination revealed a red, soft mass measuring approximately 20 mm occupying the left EAC. Computed tomography (CT) revealed masses in the left EAC and middle ear, as well as in the right upper lung lobe and pancreatic body. The mass in the EAC filled the entire canal and extended into the mastoid, as observed on both CT and magnetic resonance imaging (MRI). Laboratory tests showed normal Span-1 and DUPAN2 levels, whereas ProGRP and NSE levels were elevated to 698 pg/mL and 31.1 ng/mL, respectively. Pure-tone audiometry (PTA) revealed bilateral mixed hearing loss, with an average threshold of 72.5 dB in the right ear and 78.8 dB in the left ear at 500, 1000, 2000, and 4000 Hz.
+
+Biopsies were obtained from the EAC, lung, and pancreatic lesions to differentiate between primary and metastatic EAC carcinoma. Hematoxylin and eosin staining of all lesions revealed small round cell tumors with a high nuclear-to-cytoplasmic ratio (Figure 4). Immunohistochemical staining demonstrated positivity for synaptophysin, chromogranin A, and cytokeratin AE1/3, whereas CK20 was negative in all lesions. The biopsy specimens confirmed small cell lung cancer (SCLC), and thyroid transcription factor‐1 (TTF‐1) positivity in the EAC and pancreatic lesions suggested a primary tumor in the lung.
+
+Chemotherapy with carboplatin, etoposide, and zoledronic acid for bone metastases reduced the size of metastatic lesions, including those in the EAC and middle ear. Hearing impairment and otalgia also improved, with PTA showing an improvement in left‐sided mixed hearing loss, reducing the average threshold to 57.5 dB.
+
+The patient survived for 15 months, which is longer than the previously reported survival of approximately 6 months. The favorable response to initial chemotherapy suggests that response to first-line treatment plays a crucial role in overall survival.
+
+Initially, the patient experienced severe hearing loss and regained the ability to understand conversations as the tumor shrank. Otalgia also resolved, allowing the discontinuation of opioid therapy.
+
+The introduction of immune checkpoint inhibitors may have contributed to the improved survival outcome.
+
+Autopsy findings revealed that EAC lesions had resolved grossly.","A 77-year-old man was presented with left-sided hearing loss, otalgia, and a red mass in the left EAC that persisted for several weeks. Physical examination revealed a red, soft mass measuring approximately 20 mm occupying the left EAC. Computed tomography (CT) revealed masses in the left EAC and middle ear, as well as in the right upper lung lobe and pancreatic body. The mass in the EAC filled the entire canal and extended into the mastoid, as observed on both CT and magnetic resonance imaging (MRI). Laboratory tests showed normal Span-1 and DUPAN2 levels, whereas ProGRP and NSE levels were elevated to 698 pg/mL and 31.1 ng/mL, respectively. Pure-tone audiometry (PTA) revealed bilateral mixed hearing loss, with an average threshold of 72.5 dB in the right ear and 78.8 dB in the left ear at 500, 1000, 2000, and 4000 Hz.
+
+Biopsies were obtained from the EAC, lung, and pancreatic lesions to differentiate between primary and metastatic EAC carcinoma. Hematoxylin and eosin staining of all lesions revealed small round cell tumors with a high nuclear-to-cytoplasmic ratio (Figure 4). Immunohistochemical staining demonstrated positivity for synaptophysin, chromogranin A, and cytokeratin AE1/3, whereas CK20 was negative in all lesions. The biopsy specimens confirmed small cell lung cancer (SCLC), and thyroid transcription factor‐1 (TTF‐1) positivity in the EAC and pancreatic lesions suggested a primary tumor in the lung.
+
+Chemotherapy with carboplatin, etoposide, and zoledronic acid for bone metastases reduced the size of metastatic lesions, including those in the EAC and middle ear. Hearing impairment and otalgia also improved, with PTA showing an improvement in left‐sided mixed hearing loss, reducing the average threshold to 57.5 dB.
+
+The patient survived for 15 months, which is longer than the previously reported survival of approximately 6 months. The favorable response to initial chemotherapy suggests that response to first-line treatment plays a crucial role in overall survival.
+
+Initially, the patient experienced severe hearing loss and regained the ability to understand conversations as the tumor shrank. Otalgia also resolved, allowing the discontinuation of opioid therapy.
+
+The introduction of immune checkpoint inhibitors may have contributed to the improved survival outcome.
+
+Autopsy findings revealed that EAC lesions had resolved grossly.","A 77-year-old man was presented with left-sided hearing loss, otalgia, and a red mass in the left EAC that persisted for several weeks. Physical examination revealed a red, soft mass measuring approximately 20 mm occupying the left EAC. Computed tomography (CT) revealed masses in the left EAC and middle ear, as well as in the right upper lung lobe and pancreatic body. The mass in the EAC filled the entire canal and extended into the mastoid, as observed on both CT and magnetic resonance imaging (MRI). Laboratory tests showed normal Span-1 and DUPAN2 levels, whereas ProGRP and NSE levels were elevated to 698 pg/mL and 31.1 ng/mL, respectively. Pure-tone audiometry (PTA) revealed bilateral mixed hearing loss, with an average threshold of 72.5 dB in the right ear and 78.8 dB in the left ear at 500, 1000, 2000, and 4000 Hz.
+
+Biopsies were obtained from the EAC, lung, and pancreatic lesions to differentiate between primary and metastatic EAC carcinoma. Hematoxylin and eosin staining of all lesions revealed small round cell tumors with a high nuclear-to-cytoplasmic ratio (Figure 4). Immunohistochemical staining demonstrated positivity for synaptophysin, chromogranin A, and cytokeratin AE1/3, whereas CK20 was negative in all lesions. The biopsy specimens confirmed small cell lung cancer (SCLC), and thyroid transcription factor-1 (TTF-1) positivity in the EAC and pancreatic lesions suggested a primary tumor in the lung.
+
+Chemotherapy with carboplatin, etoposide, and zoledronic acid for bone metastases reduced the size of metastatic lesions, including those in the EAC and middle ear. Hearing impairment and otalgia also improved, with PTA showing an improvement in left-sided mixed hearing loss, reducing the average threshold to 57.5 dB.
+
+The patient survived for 15 months, which is longer than the previously reported survival of approximately 6 months. The favorable response to initial chemotherapy suggests that response to first-line treatment plays a crucial role in overall survival.
+
+Initially, the patient experienced severe hearing loss and regained the ability to understand conversations as the tumor shrank. Otalgia also resolved, allowing the discontinuation of opioid therapy.
+
+The introduction of immune checkpoint inhibitors may have contributed to the improved survival outcome.
+
+Autopsy findings revealed that EAC lesions had resolved grossly.","[""lung cancer""]","[""small cell lung cancer""]",True,"[[""EAC"", ""left ear""], [""middle ear"", ""left ear""], [""pancreatic body"", ""pancreas""]]"
+graph_023,Presumed_Choroidal_Metastasis_of_Primary_Cutaneous_Melanoma__A_Case_Report__PMC12002729.html,"At age 36: Diagnosed with stage IB cutaneous melanoma on back. Lesion was histologically grade 2 with no ulceration. Lymph node scintigraphy showed no lymphatic spread of disease. 4 sentinel lymph nodes removed. No signs of disease relapse or recurrence in yearly follow-up visits.
+Positron emission tomography-computed tomography scan at age 41: no pathological processes.
+Ultrasound scans (axillary, abdominal, pelvic) at ages 46 and 48: unremarkable.
+At age 47, referred to ophthalmologist with worsening visual acuity in right eye over last 3 months. Best corrected visual acuity was 0.7 decimal in right eye and 1.0 decimal in left eye.
+Fundoscopic examination revealed an elevated pigmented lesion in supratemporal macula (largest basal diameter: 7 mm, orange pigment on surface).
+B-scan ultrasound of the lesion showed internal homogeneity and low reflectivity with a prominence of 2.92 mm.
+Optical coherence tomography (OCT) showed subretinal fluid reaching the fovea (Fig. 1c). Given the lesion’s characteristics, a clinical diagnosis of a malignant choroidal tumor was made. While fine needle aspiration biopsy would have been beneficial for ascertaining the diagnosis, the size of the lesion would have made it challenging, and the technique was not available in our center at that time. Based on clinical findings, which indicated a malignant process, prior experience, and considering that the patient had no active malignancy, a primary choroidal melanoma was suspected.
+Two weeks after the initial presentation, the patient underwent brachytherapy with a ruthenium-106 (Ru-106) plaque, which was placed fovea sparingly. The dose to tumor apex was 88.3 Gy and 189 Gy to the sclera.
+Whole-body CT scan at age 52: numerous metastases in brain, liver, lung, and pancreas found.
+5 hyperdense lesions in forebrain, largest with diameter of 1.2 cm, other four less than 1 cm in size.
+One round 1-cm lesion characteristic of metastasis in inferior lobe of right lung.
+Three hypodense round lesions in 4a and 4b segments of liver, larger one with dimensions of 1 × 1.3 cm.
+One small lesion in caudal pancreas.
+Slightly enlarged lymph nodes in region of celiac trunk and liver hilus, not definitively classified as metastases.
+Liver biopsy of metastatic lesion attempted but unsuccessful due to small size and difficult accessibility.","- Age 36: Diagnosed with stage IB cutaneous melanoma on back.
+- Age 41: Positron emission tomography-computed tomography scan shows no pathological processes.
+- Age 46 and 48: Ultrasound scans (axillary, abdominal, pelvic) show unremarkable results.
+- Age 47: Referred to ophthalmologist with worsening visual acuity in right eye over last 3 months. 
+- Age 52: Whole-body CT scan shows numerous metastases in brain, liver, lung, and pancreas.","At age 36: Diagnosed with stage IB cutaneous melanoma on back. Lesion was histologically grade 2 with no ulceration. Lymph node scintigraphy showed no lymphatic spread of disease. 4 sentinel lymph nodes removed. No signs of disease relapse or recurrence in yearly follow-up visits.
+Positron emission tomography-computed tomography scan at age 41: no pathological processes.
+Ultrasound scans (axillary, abdominal, pelvic) at ages 46 and 48: unremarkable.
+At age 47, referred to ophthalmologist with worsening visual acuity in right eye over last 3 months. Best corrected visual acuity was 0.7 decimal in right eye and 1.0 decimal in left eye.
+Fundoscopic examination revealed an elevated pigmented lesion in supratemporal macula (largest basal diameter: 7 mm, orange pigment on surface).
+B-scan ultrasound of the lesion showed internal homogeneity and low reflectivity with a prominence of 2.92 mm.
+Optical coherence tomography (OCT) showed subretinal fluid reaching the fovea (Fig. 1c). Given the lesion’s characteristics, a clinical diagnosis of a malignant choroidal tumor was made. While fine needle aspiration biopsy would have been beneficial for ascertaining the diagnosis, the size of the lesion would have made it challenging, and the technique was not available in our center at that time. Based on clinical findings, which indicated a malignant process, prior experience, and considering that the patient had no active malignancy, a primary choroidal melanoma was suspected.
+Two weeks after the initial presentation, the patient underwent brachytherapy with a ruthenium-106 (Ru-106) plaque, which was placed fovea sparingly. The dose to tumor apex was 88.3 Gy and 189 Gy to the sclera.
+Whole-body CT scan at age 52: numerous metastases in brain, liver, lung, and pancreas found.
+5 hyperdense lesions in forebrain, largest with diameter of 1.2 cm, other four less than 1 cm in size.
+One round 1-cm lesion characteristic of metastasis in inferior lobe of right lung.
+Three hypodense round lesions in 4a and 4b segments of liver, larger one with dimensions of 1 × 1.3 cm.
+One small lesion in caudal pancreas.
+Slightly enlarged lymph nodes in region of celiac trunk and liver hilus, not definitively classified as metastases.
+Liver biopsy of metastatic lesion attempted but unsuccessful due to small size and difficult accessibility.","[""cutaneous melanoma"", ""choroidal melanoma""]","[""stage IB cutaneous melanoma"", ""primary choroidal melanoma""]",True,"[[""brain"", ""forebrain""], [""liver"", ""4a and 4b segments""], [""lung"", ""inferior lobe""], [""pancreas"", ""caudal pancreas""]]"
+graph_024,Remarkable_Antitumor_Effects_and_Serious_Multiple_Immune_Related_Adverse_Events__PMC11991814.html,"Patient 1:
+- Initial diagnosis: MPM (cT1N0M0 Stage I)
+- First-line therapy initiated: nivolumab + ipilimumab
+- Developed diarrhea during second treatment cycle, diagnosed with irAE colitis (Grade 2)
+- Symptoms improved without steroid administration, resumed third cycle
+- Diarrhea relapsed during fourth cycle, considered irAE colitis (Grade 3), ICI therapy discontinued
+- Oral prednisolone initiated for 1 month to improve diarrhea symptoms
+- Resumed fifth treatment cycle, complained of headaches during sixth cycle
+- Head MRI revealed no significant abnormalities, lumbar puncture demonstrated increased spinal fluid monocytes
+- Suspected irAE meningitis or carcinomatous meningitis, selected high-dose DEX (6 mg/day) for treatment
+- After administration of DEX, headache promptly improved, cytology results showed no malignant findings
+- Diagnosed with irAE meningitis (Grade 3)
+- Tapering DEX dose caused new hepatic and renal dysfunction, increased steroid dosage to improve liver and kidney function
+
+Patient 2:
+- Initial diagnosis: MPM (cT4N1M1 Stage IV)
+- Transbronchial needle aspiration confirmed diagnosis
+- PET-CT scan after four cycles exhibited that the tumor had markedly shrunk, with only a small amount of residual uptake (Figure 6), and was judged as a partial response (PR)
+- ICI therapy was repeatedly interrupted, and steroids were required to control for multiple irAEs in this case","A 74-year-old male patient was referred with complaints of fever and dyspnea. Initial chest x-ray revealed a right-sided pleural effusion. Computed tomography (CT) scans revealed right pleural thickening, lung volume loss, and pleural effusion. Video-assisted thoracoscopic surgery confirmed the diagnosis of MPM (cT1N0M0 Stage I). First-line therapy initiated: nivolumab + ipilimumab. Developed diarrhea during second treatment cycle, diagnosed with irAE colitis (Grade 2). Symptoms improved without steroid administration, resumed third cycle. Diarrhea relapsed during fourth cycle, considered irAE colitis (Grade 3), ICI therapy discontinued. Oral prednisolone initiated for 1 month to improve diarrhea symptoms. Resumed fifth treatment cycle, complained of headaches during sixth cycle. Head MRI revealed no significant abnormalities, lumbar puncture demonstrated increased spinal fluid monocytes. Suspected irAE meningitis or carcinomatous meningitis, selected high-dose DEX (6 mg/day) for treatment. After administration of DEX, headache promptly improved, cytology results showed no malignant findings. Diagnosed with irAE meningitis (Grade 3). Tapering DEX dose caused new hepatic and renal dysfunction, increased steroid dosage to improve liver and kidney function.","Patient 1:
+- Initial diagnosis: MPM (cT1N0M0 Stage I)
+- First-line therapy initiated: nivolumab + ipilimumab
+- Developed diarrhea during second treatment cycle, diagnosed with irAE colitis (Grade 2)
+- Symptoms improved without steroid administration, resumed third cycle
+- Diarrhea relapsed during fourth cycle, considered irAE colitis (Grade 3), ICI therapy discontinued
+- Oral prednisolone initiated for 1 month to improve diarrhea symptoms
+- Resumed fifth treatment cycle, complained of headaches during sixth cycle
+- Head MRI revealed no significant abnormalities, lumbar puncture demonstrated increased spinal fluid monocytes
+- Suspected irAE meningitis or carcinomatous meningitis, selected high-dose DEX (6 mg/day) for treatment
+- After administration of DEX, headache promptly improved, cytology results showed no malignant findings
+- Diagnosed with irAE meningitis (Grade 3)
+- Tapering DEX dose caused new hepatic and renal dysfunction, increased steroid dosage to improve liver and kidney function
+
+Patient 2:
+- Initial diagnosis: MPM (cT4N1M1 Stage IV)
+- Transbronchial needle aspiration confirmed diagnosis
+- PET-CT scan after four cycles exhibited that the tumor had markedly shrunk, with only a small amount of residual uptake (Figure 6), and was judged as a partial response (PR)","[""MPM""]","[""Malignant Pleural Mesothelioma""]",True,"[[""lung"", ""pleural effusion""], [""right pleural thickening"", ""lung volume loss""]]"
+graph_025,Lung_cancer_with_supraclavicular_myxoinflammatory_fibroblastic_sarcoma_is_easily_PMC11986360.html,"June 2022: Patient admitted to hospital with correct upper lung occupancy, PET-CT suggestive of right upper lung cancer, multiple tiny nodules in both lungs, and thyroid isthmus occupancy.
+August 10, 2022: Chemotherapy changed to 45 mg targeted therapy with Dacomitinib tablets due to serious side effects.
+August 17, 2022 (1 week after treatment): Patient developed oral ulcers, and the dose of Dacomitinib tablets was adjusted to 30 mg.
+September 19, 2022: Re-examination of chest CT showed that the upper right lung tumor was smaller than before, with no noticeable change in double lung nodules.
+October 2022: Radical right upper lung resection, systematic lymph node dissection, and enlarged resection of the neck mass were performed. Postoperative pathology confirmed:
+	+ Lung-invasive adenocarcinoma (acinar type)
+	+ Right neck mass consistent with MIFS
+November 2022: Unresectable locally advanced or metastatic MIFS is considered a poor prognostic indicator.
+December 2022: The treatment of this disease is primarily localized extended resection; in cases with large masses or positive margins, postoperative radiotherapy may be supplemented to reduce recurrence and metastasis rates.","June 2022: Patient admitted to hospital with correct upper lung occupancy, PET-CT suggestive of right upper lung cancer, multiple tiny nodules in both lungs, and thyroid isthmus occupancy.
+August 10, 2022: Chemotherapy changed to 45 mg targeted therapy with Dacomitinib tablets due to serious side effects.
+August 17, 2022 (1 week after treatment): Patient developed oral ulcers, and the dose of Dacomitinib tablets was adjusted to 30 mg.
+September 19, 2022: Re-examination of chest CT showed that the upper right lung tumor was smaller than before, with no noticeable change in double lung nodules.
+October 2022: Radical right upper lung resection, systematic lymph node dissection, and enlarged resection of the neck mass were performed. Postoperative pathology confirmed:
+	+ Lung-invasive adenocarcinoma (acinar type)
+	+ Right neck mass consistent with MIFS
+November 2022: Unresectable locally advanced or metastatic MIFS is considered a poor prognostic indicator.
+December 2022: The treatment of this disease is primarily localized extended resection; in cases with large masses or positive margins, postoperative radiotherapy may be supplemented to reduce recurrence and metastasis rates.","June 2022: Patient admitted to hospital with correct upper lung occupancy, PET-CT suggestive of right upper lung cancer, multiple tiny nodules in both lungs, and thyroid isthmus occupancy.
+August 10, 2022: Chemotherapy changed to 45 mg targeted therapy with Dacomitinib tablets due to serious side effects.
+August 17, 2022 (1 week after treatment): Patient developed oral ulcers, and the dose of Dacomitinib tablets was adjusted to 30 mg.
+September 19, 2022: Re-examination of chest CT showed that the upper right lung tumor was smaller than before, with no noticeable change in double lung nodules.
+October 2022: Radical right upper lung resection, systematic lymph node dissection, and enlarged resection of the neck mass were performed. Postoperative pathology confirmed:
+	+ Lung-invasive adenocarcinoma (acinar type)
+	+ Right neck mass consistent with MIFS
+November 2022: Unresectable locally advanced or metastatic MIFS is considered a poor prognostic indicator.
+December 2022: The treatment of this disease is primarily localized extended resection; in cases with large masses or positive margins, postoperative radiotherapy may be supplemented to reduce recurrence and metastasis rates.","[""Lung Cancer"", ""MIFS""]","[""Lung-invasive adenocarcinoma (acinar type)"", ""Unresectable locally advanced or metastatic MIFS""]",True,"[[""Lungs"", ""Multiple tiny nodules""], [""Neck"", ""Right neck mass""]]"
+graph_026,Metachronous_development_of_L858R_and_T790M_EGFR_mutations_following_ALK_inhibit_PMC12000955.html,"2022: 
+- Patient admitted to hospital in November
+- 1.1-cm spiculated nodule in right middle lobe (RML)
+- Multiple pleural nodules with mild pleural thickening and fibrotic lesions in right upper lobe (RUL)
+- Chest CT images show main nodule in RML, multiple other nodules, pleural thickening, lung fibrosis in RUL
+2024: 
+- Follow-up chest CT scans during treatment with alectinib demonstrate reduction in lung mass and pleural metastatic lesions
+- In July 2024, the chest CT shows previously observed main mass in the RML, subpleural nodules, and pleural metastasis are no longer visible
+- However, CT reveals a newly developed peribronchial consolidation with ground-glass opacity in the anterior segment of the RUL
+- Positron emission tomography (PET)-CT revealed pleural, multiple enhancing nodules with lymph nodes metastasis, leading to a diagnosis of stage IV lung cancer (T2N2M1a)
+- Pathologic analysis confirmed adenocarcinoma, revealing the absence of an ALK rearrangement and the presence of newly identified EGFR mutation
+- NGS of the second tumor identified an EGFR L858R and T790M co-mutation, along with a TP53 L194R mutation
+Newly developed epidermal growth factor receptor (EGFR) mutated lesion in RUL (blue line) developed and after Stereotactic Body Radiation Therapy (SBRT), there was no uptake in PET-CT.","2022: 
+- Patient admitted to hospital in November
+- 1.1-cm spiculated nodule in right middle lobe (RML)
+- Multiple pleural nodules with mild pleural thickening and fibrotic lesions in right upper lobe (RUL)
+- Chest CT images show main nodule in RML, multiple other nodules, pleural thickening, lung fibrosis in RUL
+2024: 
+- Follow-up chest CT scans during treatment with alectinib demonstrate reduction in lung mass and pleural metastatic lesions
+- In July 2024, the chest CT shows previously observed main mass in the RML, subpleural nodules, and pleural metastasis are no longer visible
+- However, CT reveals a newly developed peribronchial consolidation with ground-glass opacity in the anterior segment of the RUL
+- Positron emission tomography (PET)-CT revealed pleural, multiple enhancing nodules with lymph nodes metastasis, leading to a diagnosis of stage IV lung cancer (T2N2M1a)
+- Pathologic analysis confirmed adenocarcinoma, revealing the absence of an ALK rearrangement and the presence of newly identified EGFR mutation
+- NGS of the second tumor identified an EGFR L858R and T790M co-mutation, along with a TP53 L194R mutation
+Newly developed epidermal growth factor receptor (EGFR) mutated lesion in RUL (blue line) developed and after Stereotactic Body Radiation Therapy (SBRT), there was no uptake in PET-CT.","2022: 
+- Patient admitted to hospital in November
+- 1.1-cm spiculated nodule in right middle lobe (RML)
+- Multiple pleural nodules with mild pleural thickening and fibrotic lesions in right upper lobe (RUL)
+- Chest CT images show main nodule in RML, multiple other nodules, pleural thickening, lung fibrosis in RUL
+2024: 
+- Follow-up chest CT scans during treatment with alectinib demonstrate reduction in lung mass and pleural metastatic lesions
+- In July 2024, the chest CT shows previously observed main mass in the RML, subpleural nodules, and pleural metastasis are no longer visible
+- However, CT reveals a newly developed peribronchial consolidation with ground-glass opacity in the anterior segment of the RUL
+- Positron emission tomography (PET)-CT revealed pleural, multiple enhancing nodules with lymph nodes metastasis, leading to a diagnosis of stage IV lung cancer (T2N2M1a)
+- Pathologic analysis confirmed adenocarcinoma, revealing the absence of an ALK rearrangement and the presence of newly identified EGFR mutation
+- NGS of the second tumor identified an EGFR L858R and T790M co-mutation, along with a TP53 L194R mutation
+Newly developed epidermal growth factor receptor (EGFR) mutated lesion in RUL (blue line) developed and after Stereotactic Body Radiation Therapy (SBRT), there was no uptake in PET-CT.","[""lung cancer""]","[""adenocarcinoma""]",True,"[[""pleura"", ""lymph nodes""]]"
+graph_027,Gastrointestinal_bleeding_due_to_small_bowel_metastasis_from_lung_adenocarcinoma_PMC11718566.html,"<patientTimeline>
+  <event date=""2019"">
+    <description>Ground-glass nodule discovered in upper lobe of right lung</description>
+  </event>
+  <event date=""July 18, 2019"">
+    <description>Thoracoscopic wedge resection of right upper and lower lung nodules under general anesthesia</description>
+  </event>
+  <event date=""July 25, 2023"">
+    <description>Right lung nodule increased in size over past 3 days compared to previous scan</description>
+  </event>
+  <event date=""July 28, 2019"">
+    <description>CT-guided percutaneous lung nodule aspiration biopsy under local anesthesia</description>
+  </event>
+  <event date=""August 8, 2023"">
+    <description>Thermal ablation of upper and middle lobe lesions in right lung under local anesthesia</description>
+  </event>
+  <event date=""January 9, 2024"">
+    <description>Acutely admitted to emergency department with black stools for 5 hours</description>
+  </event>
+  <event date=""January 9, 2024"">
+    <description>Imaging examinations revealed localized thickening of small bowel wall in left lower abdomen with multiple surrounding lymph nodes</description>
+  </event>
+  <event date=""January 9, 2024"">
+    <description>Double-balloon enteroscopy revealed small bowel occupation and bleeding along with submucosal elevation that may represent lipoma</description>
+  </event>
+  <event date=""January 9, 2024"">
+    <description>Immunohistochemical examination revealed tumor cells were positive for CDX2 and CK20 but negative for CK7</description>
+  </event>
+  <event date=""January 9, 2024"">
+    <description>Surgical resection of small bowel tumor was performed which was found to be a well-differentiated adenocarcinoma with diameter of 3 cm</description>
+  </event>
+  <event date=""January 9, 2024"">
+    <description>Adjuvant chemotherapy consisting of 5-fluorouracil (5-FU) and leucovorin for 6 cycles was administered</description>
+  </event>
+</patientTimeline>","<patientTimeline>
+    <event date=""2019"">
+        <description>Ground-glass nodule discovered in upper lobe of right lung</description>
+    </event>
+    <event date=""July 18, 2019"">
+        <description>Thoracoscopic wedge resection of right upper and lower lung nodules under general anesthesia</description>
+    </event>
+    <event date=""July 25, 2023"">
+        <description>Right lung nodule increased in size over past 3 days compared to previous scan</description>
+    </event>
+    <event date=""July 28, 2019"">
+        <description>CT-guided percutaneous lung nodule aspiration biopsy under local anesthesia</description>
+    </event>
+    <event date=""August 8, 2023"">
+        <description>Thermal ablation of upper and middle lobe lesions in right lung under local anesthesia</description>
+    </event>
+    <event date=""January 9, 2024"">
+        <description>Acutely admitted to emergency department with black stools for 5 hours</description>
+    </event>
+    <event date=""January 9, 2024"">
+        <description>Imaging examinations revealed localized thickening of small bowel wall in left lower abdomen with multiple surrounding lymph nodes</description>
+    </event>
+    <event date=""January 9, 2024"">
+        <description>Double-balloon enteroscopy revealed small bowel occupation and bleeding along with submucosal elevation that may represent lipoma</description>
+    </event>
+    <event date=""January 9, 2024"">
+        <description>Immunohistochemical examination revealed tumor cells were positive for CDX2 and CK20 but negative for CK7</description>
+    </event>
+    <event date=""January 9, 2024"">
+        <description>Surgical resection of small bowel tumor was performed which was found to be a well-differentiated adenocarcinoma with diameter of 3 cm</description>
+    </event>
+    <event date=""January 9, 2024"">
+        <description>Adjuvant chemotherapy consisting of 5-fluorouracil (5-FU) and leucovorin for 6 cycles was administered</description>
+    </event>
+</patientTimeline>","<patientTimeline>
+  <event date=""2019"">
+    <description>Ground-glass nodule discovered in upper lobe of right lung</description>
+  </event>
+  <event date=""July 18, 2019"">
+    <description>Thoracoscopic wedge resection of right upper and lower lung nodules under general anesthesia</description>
+  </event>
+  <event date=""July 25, 2023"">
+    <description>Right lung nodule increased in size over past 3 days compared to previous scan</description>
+  </event>
+  <event date=""July 28, 2019"">
+    <description>CT-guided percutaneous lung nodule aspiration biopsy under local anesthesia</description>
+  </event>
+  <event date=""August 8, 2023"">
+    <description>Thermal ablation of upper and middle lobe lesions in right lung under local anesthesia</description>
+  </event>
+  <event date=""January 9, 2024"">
+    <description>Acutely admitted to emergency department with black stools for 5 hours</description>
+  </event>
+  <event date=""January 9, 2024"">
+    <description>Imaging examinations revealed localized thickening of small bowel wall in left lower abdomen with multiple surrounding lymph nodes</description>
+  </event>
+  <event date=""January 9, 2024"">
+    <description>Double-balloon enteroscopy revealed small bowel occupation and bleeding along with submucosal elevation that may represent lipoma</description>
+  </event>
+  <event date=""January 9, 2024"">
+    <description>Immunohistochemical examination revealed tumor cells were positive for CDX2 and CK20 but negative for CK7</description>
+  </event>
+  <event date=""January 9, 2024"">
+    <description>Surgical resection of small bowel tumor was performed which was found to be a well-differentiated adenocarcinoma with diameter of 3 cm</description>
+  </event>
+  <event date=""January 9, 2024"">
+    <description>Adjuvant chemotherapy consisting of 5-fluorouracil (5-FU) and leucovorin for 6 cycles was administered</description>
+  </event>
+</patientTimeline>","[""Lung Cancer"", ""Small Bowel Cancer""]","[""Non-Small Cell Lung Cancer"", ""Well-Differentiated Adenocarcinoma""]",False,[]
+graph_028,A_Rare_Case_of_Primary_Pulmonary_Meningioma__PMC12027924.html,"84-year-old female patient diagnosed with type 2 diabetes mellitus, arthritis, and hypertension
+Incidental finding of an enlarging solitary lung nodule (0.9 × 0.8 cm) 4 years prior
+Thoracoscopic pulmonary wedge resection performed to remove the nodule
+Recent chest CT scan: lesion found to be 1.3 × 1.2 cm and well-circumscribed
+PET/CT scan revealed no metastatic or nodal involvement
+Head CT without contrast showed mild white matter hypoattenuation, but no evidence of acute hemorrhage, mass effect, or extra-axial collection
+Robotic-assisted left VATS wedge resection of the left upper lobe performed to remove the nodule
+Intraoperative pathological examination revealed a well-circumscribed nodule with negative margins consistent with the diagnosis of intrapulmonary meningioma
+Pathological examination revealed meningoepithelial cells organized in a syncytial pattern, small oval and irregular nuclei, fine powdery chromatin, inconspicuous nucleoli, and eosinophilic cytoplasm
+Immunohistochemical staining and special stains confirmed the diagnosis of PPM (psammomatous meningioma)
+The patient's recovery following surgery was uneventful, and she was discharged home on postoperative day one in stable condition
+Six months after surgery, the patient reported experiencing left hip pain that radiated down her left leg, which is being investigated further
+After the initial lobectomy of the right upper lobe, which removed a 6.5 cm nodule, the patient returned with complaints of shortness of breath
+The patient underwent a complete pneumonectomy for a recurrent meningioma in the right lung
+Immunohistochemical staining revealed positive staining for vimentin and EMA, consistent with a diagnosis of psammomatous meningioma
+The patient's recovery following surgery was uneventful, and she was discharged home on postoperative day one in stable condition","84-year-old female patient diagnosed with type 2 diabetes mellitus, arthritis, and hypertension
+Incidental finding of an enlarging solitary lung nodule (0.9 × 0.8 cm) 4 years prior
+Thoracoscopic pulmonary wedge resection performed to remove the nodule
+Recent chest CT scan: lesion found to be 1.3 × 1.2 cm and well-circumscribed
+PET/CT scan revealed no metastatic or nodal involvement
+Head CT without contrast showed mild white matter hypoattenuation, but no evidence of acute hemorrhage, mass effect, or extra-axial collection
+Robotic-assisted left VATS wedge resection of the left upper lobe performed to remove the nodule
+Intraoperative pathological examination revealed a well-circumscribed nodule with negative margins consistent with the diagnosis of intrapulmonary meningioma
+Pathological examination revealed meningoepithelial cells organized in a syncytial pattern, small oval and irregular nuclei, fine powdery chromatin, inconspicuous nucleoli, and eosinophilic cytoplasm
+Immunohistochemical staining and special stains confirmed the diagnosis of PPM (psammomatous meningioma)
+The patient's recovery following surgery was uneventful, and she was discharged home on postoperative day one in stable condition
+Six months after surgery, the patient reported experiencing left hip pain that radiated down her left leg, which is being investigated further
+After the initial lobectomy of the right upper lobe, which removed a 6.5 cm nodule, the patient returned with complaints of shortness of breath
+The patient underwent a complete pneumonectomy for a recurrent meningioma in the right lung
+Immunohistochemical staining revealed positive staining for vimentin and EMA, consistent with a diagnosis of psammomatous meningioma
+The patient's recovery following surgery was uneventful, and she was discharged home on postoperative day one in stable condition","84-year-old female patient diagnosed with type 2 diabetes mellitus, arthritis, and hypertension
+Incidental finding of an enlarging solitary lung nodule (0.9 × 0.8 cm) 4 years prior
+Thoracoscopic pulmonary wedge resection performed to remove the nodule
+Recent chest CT scan: lesion found to be 1.3 × 1.2 cm and well-circumscribed
+PET/CT scan revealed no metastatic or nodal involvement
+Head CT without contrast showed mild white matter hypoattenuation, but no evidence of acute hemorrhage, mass effect, or extra-axial collection
+Robotic-assisted left VATS wedge resection of the left upper lobe performed to remove the nodule
+Intraoperative pathological examination revealed a well-circumscribed nodule with negative margins consistent with the diagnosis of intrapulmonary meningioma
+Pathological examination revealed meningoepithelial cells organized in a syncytial pattern, small oval and irregular nuclei, fine powdery chromatin, inconspicuous nucleoli, and eosinophilic cytoplasm
+Immunohistochemical staining and special stains confirmed the diagnosis of PPM (psammomatous meningioma)
+The patient's recovery following surgery was uneventful, and she was discharged home on postoperative day one in stable condition
+Six months after surgery, the patient reported experiencing left hip pain that radiated down her left leg, which is being investigated further
+After the initial lobectomy of the right upper lobe, which removed a 6.5 cm nodule, the patient returned with complaints of shortness of breath
+The patient underwent a complete pneumonectomy for a recurrent meningioma in the right lung
+Immunohistochemical staining revealed positive staining for vimentin and EMA, consistent with a diagnosis of psammomatous meningioma
+The patient's recovery following surgery was uneventful, and she was discharged home on postoperative day one in stable condition","[""Meningioma""]","[""Psammomatous Meningioma""]",False,[]
+graph_029,Long_Term_Complete_Response_to_Pembrolizumab_in_Tumor_Mutation_Burden_High_Small_PMC11964409.html,"Patient's medical history:
+- 65-year-old woman
+- History of palmoplantar pustulosis
+- Diagnosed with small cell carcinoma (SCLC) in both lung and breast masses
+- Metastatic lesions detected in multiple bones, peritoneum, and skin
+
+Treatment timeline:
+
+1. Combination therapy with carboplatin, etoposide, and durvalumab:
+	* Anaphylactic shock experienced during treatment
+	* Symptoms improved after administration of medications
+2. Switched to combination therapy with cisplatin (CDDP) and irinotecan (CPT-11):
+	* Significant reductions in both lung and breast masses observed after 4 courses of treatment
+3. Pembrolizumab monotherapy:
+	* Initiated due to high tumor mutational burden (TMB)
+	* Successfully suppressed tumor progression and maintained complete response for over 18 months
+
+Side effects:
+
+1. Anaphylactic shock during combination therapy with carboplatin, etoposide, and durvalumab
+2. Exacerbation of pre-existing palmoplantar pustulosis after initiating pembrolizumab treatment","A 65-year-old woman with a history of palmoplantar pustulosis was referred to our hospital for the evaluation of a breast mass and a chest mass. Histopathological analysis of biopsy specimens from both the lung mass and the breast mass revealed small cell carcinoma in both lesions. Metastatic lesion from primary SCLC in right upper lobe and right breast. Stage cT2aN3M1c diagnosis based on comprehensive staging, including contrast-enhanced MRI of brain and FDG-PET. Multiple bone metastases, peritoneal metastases, and skin metastases detected by a PET-CT scan. Primary lesion in right upper lobe and heterogeneous mass in right breast revealed by enhanced chest CT examination. Diffuse proliferation of small tumor cells with high nuclear-to-cytoplasmic (N/C) ratio on hematoxylin and eosin (HE) staining. Negative synaptophysin and chromogranin staining, but positive INSM1 staining. Anaphylactic shock experienced during first course of treatment with combination therapy of carboplatin, etoposide, and durvalumab. Following the administration of these medications, the patient’s symptoms improved, and there was no recurrence of the anaphylactic reaction. Given the difficulty in continuing the same regimen, the treatment was switched to combination therapy with cisplatin (CDDP) and irinotecan (CPT-11). After four courses of this treatment, significant reductions in both the lung and breast masses were observed. Analysis of the tumor tissue using the FoundationOne panel revealed a TMB of 10 mutations per megabase (Mb), making the use of pembrolizumab feasible. Additionally, the microsatellite status was stable, and TP53V172F, PTENL128N, RB1loss, SOX2, PIK3CA, and FGF12 amplifications were detected. Pembrolizumab monotherapy successfully suppressed tumor progression and maintained a complete response for over 18 months. One week after initiating Pembrolizumab treatment, the patient developed papules and pustules on both palms and soles. This was diagnosed as an exacerbation of the patient’s pre-existing palmoplantar pustulosis. Treatment with topical steroids was initiated, and the symptoms have been well controlled.","A 65-year-old woman with a history of palmoplantar pustulosis was referred to our hospital for the evaluation of a breast mass and a chest mass. Histopathological analysis of biopsy specimens from both the lung mass and the breast mass revealed small cell carcinoma in both lesions. Metastatic lesion from primary SCLC in right upper lobe and right breast. Stage cT2aN3M1c diagnosis based on comprehensive staging, including contrast-enhanced MRI of brain and FDG-PET. Multiple bone metastases, peritoneal metastases, and skin metastases detected by a PET-CT scan. Primary lesion in right upper lobe and heterogeneous mass in right breast revealed by enhanced chest CT examination. Diffuse proliferation of small tumor cells with high nuclear-to-cytoplasmic (N/C) ratio on hematoxylin and eosin (HE) staining. Negative synaptophysin and chromogranin staining, but positive INSM1 staining. Anaphylactic shock experienced during first course of treatment with combination therapy of carboplatin, etoposide, and durvalumab. Following the administration of these medications, the patient’s symptoms improved, and there was no recurrence of the anaphylactic reaction. Given the difficulty in continuing the same regimen, the treatment was switched to combination therapy with cisplatin (CDDP) and irinotecan (CPT-11). After four courses of this treatment, significant reductions in both the lung and breast masses were observed. Analysis of the tumor tissue using the FoundationOne panel revealed a TMB of 10 mutations per megabase (Mb), making the use of pembrolizumab feasible. Additionally, the microsatellite status was stable, and TP53V172F, PTENL128N, RB1loss, SOX2, PIK3CA, and FGF12 amplifications were detected. Pembrolizumab monotherapy successfully suppressed tumor progression and maintained a complete response for over 18 months. One week after initiating Pembrolizumab treatment, the patient developed papules and pustules on both palms and soles. This was diagnosed as an exacerbation of the patient’s pre-existing palmoplantar pustulosis. Treatment with topical steroids was initiated, and the symptoms have been well controlled.","[""small cell carcinoma""]","[""small cell lung cancer"", ""breast cancer""]",True,"[[""bone"", ""multiple locations""], [""peritoneum"", """"], [""skin"", """"]]"
+graph_030,Unmasking_the_mimic__lipoid_pneumonia_imitating_primary_lung_cancer___a_case_rep_PMC11985431.html,No new patient information was extracted from the provided paragraph.,No new patient information was extracted from the provided paragraph.,No new patient information was extracted from the provided paragraph.,"[""breast cancer"", ""lung cancer"", ""large bowel cancer""]","[""breast cancer"", ""lung cancer"", ""large bowel cancer""]",False,[]
+graph_031,Situs_inversus_in_cardiothoracic_surgery_and_its_advances__a_case_report__PMC11994988.html,"A 73-year-old gentleman male with SIT and lung cancer. Tumour of his right upper and right lower lobe diagnosed on computed tomography (CT). Ex-smoker with five pack-year history having quit 40 years prior. Mild chronic obstructive pulmonary disease Type 2 diabetes mellitus Dyslipidaemia Peptic ulcer disease Gastro-oesophageal reflux disease Diverticulosis Colonic polyps Known to have SIT since his early adulthood, an incidental finding on a chest X-ray. Pre-operative CT thorax, abdomen, pelvis. A low-dose CT chest (Fig. 1) showed a nodule in the right upper lobe of 20 × 20 mm in diameter with a central solid component 7 × 4 mm and an 8-mm diameter ground glass opacity with a central solid dot in the right lower lobe. No lymphadenopathy was detected. He was referred for a CT-guided biopsy of the right upper lobe. This was followed by the standard positron emission tomography (PET) scan, which showed mild flurodeoxyglucose (FDG) uptake in the solid component of the nodule and some calcification in his mediastinal lymph nodules with no obvious nodal or distant metastasis. Given a diagnosis of lung adenocarcinoma stage 1a (cT1cN0M0), he was referred to cardiothoracic surgery for consideration of lobectomy. He was for a video-assisted thoracic surgery (VATS); specifically right upper lobectomy/trigsegmentectomy +/− right lower lobe nodule wedge resection +/− segementectomy. He underwent VATS right upper lobectomy and right lower lobe superior segmentectomy. Double-lumen intubation was employed for single lung ventilation. On inspection intraoperatively the oblique fissure of the right lung was 50% developed with morphological upper, middle and lower lobe, therefore confirming our impression it was a conventional right lung with incomplete fissure in the right chest space rather than a left lung in the right space as with usual situs inversus patients. A conventional right upper lobectomy was first performed and then attention turned to the right lower lobe nodule. The incomplete fissure made dissection of the right lower lobe apical segmental artery and bronchus challenging however, a wedge resection of the lower lobe nodule was sent for frozen section along with several lymph nodes, confirming adenocarcinoma with the absence of lymph node involvement; and he therefore progressed to a lower lobe superior segmentectomy with the view to preserve residual lung function. He was discharged post-operative Day 9. Histology confirmed moderately differentiated adenocarcinoma pT1cN0 in the right upper lobe and moderately differentiated adenocarcinoma pT1aN0 in the right lower lobe with clear margins for both. He was reviewed 2 weeks post-discharge and planned for surveillance with his respiratory physician (Fig. 2). Figure 2. Post-operative CT thorax, abdomen, pelvis.","A 73-year-old gentleman male with SIT and lung cancer. Tumour of his right upper and right lower lobe diagnosed on computed tomography (CT). Ex-smoker with five pack-year history having quit 40 years prior. Mild chronic obstructive pulmonary disease Type 2 diabetes mellitus Dyslipidaemia Peptic ulcer disease Gastro-oesophageal reflux disease Diverticulosis Colonic polyps Known to have SIT since his early adulthood, an incidental finding on a chest X-ray. Pre-operative CT thorax, abdomen, pelvis. A low-dose CT chest (Fig. 1) showed a nodule in the right upper lobe of 20 × 20 mm in diameter with a central solid component 7 × 4 mm and an 8-mm diameter ground glass opacity with a central solid dot in the right lower lobe. No lymphadenopathy was detected. He was referred for a CT-guided biopsy of the right upper lobe. This was followed by the standard positron emission tomography (PET) scan, which showed mild flurodeoxyglucose (FDG) uptake in the solid component of the nodule and some calcification in his mediastinal lymph nodules with no obvious nodal or distant metastasis. Given a diagnosis of lung adenocarcinoma stage 1a (cT1cN0M0), he was referred to cardiothoracic surgery for consideration of lobectomy. He was for a video-assisted thoracic surgery (VATS); specifically right upper lobectomy/trigsegmentectomy +/− right lower lobe nodule wedge resection +/− segementectomy. He underwent VATS right upper lobectomy and right lower lobe superior segmentectomy. Double-lumen intubation was employed for single lung ventilation. On inspection intraoperatively the oblique fissure of the right lung was 50% developed with morphological upper, middle and lower lobe, therefore confirming our impression it was a conventional right lung with incomplete fissure in the right chest space rather than a left lung in the right space as with usual situs inversus patients. A conventional right upper lobectomy was first performed and then attention turned to the right lower lobe nodule. The incomplete fissure made dissection of the right lower lobe apical segmental artery and bronchus challenging however, a wedge resection of the lower lobe nodule was sent for frozen section along with several lymph nodes, confirming adenocarcinoma with the absence of lymph node involvement; and he therefore progressed to a lower lobe superior segmentectomy with the view to preserve residual lung function. He was discharged post-operative Day 9. Histology confirmed moderately differentiated adenocarcinoma pT1cN0 in the right upper lobe and moderately differentiated adenocarcinoma pT1aN0 in the right lower lobe with clear margins for both. He was reviewed 2 weeks post-discharge and planned for surveillance with his respiratory physician (Fig. 2). Figure 2. Post-operative CT thorax, abdomen, pelvis.","A 73-year-old gentleman male with SIT and lung cancer. Tumour of his right upper and right lower lobe diagnosed on computed tomography (CT). Ex-smoker with five pack-year history having quit 40 years prior. Mild chronic obstructive pulmonary disease Type 2 diabetes mellitus Dyslipidaemia Peptic ulcer disease Gastro-oesophageal reflux disease Diverticulosis Colonic polyps Known to have SIT since his early adulthood, an incidental finding on a chest X-ray. Pre-operative CT thorax, abdomen, pelvis. A low-dose CT chest (Fig. 1) showed a nodule in the right upper lobe of 20 × 20 mm in diameter with a central solid component 7 × 4 mm and an 8-mm diameter ground glass opacity with a central solid dot in the right lower lobe. No lymphadenopathy was detected. He was referred for a CT-guided biopsy of the right upper lobe. This was followed by the standard positron emission tomography (PET) scan, which showed mild flurodeoxyglucose (FDG) uptake in the solid component of the nodule and some calcification in his mediastinal lymph nodules with no obvious nodal or distant metastasis. Given a diagnosis of lung adenocarcinoma stage 1a (cT1cN0M0), he was referred to cardiothoracic surgery for consideration of lobectomy. He underwent VATS right upper lobectomy and right lower lobe superior segmentectomy. Double-lumen intubation was employed for single lung ventilation. On inspection intraoperatively the oblique fissure of the right lung was 50% developed with morphological upper, middle and lower lobe, therefore confirming our impression it was a conventional right lung with incomplete fissure in the right chest space rather than a left lung in the right space as with usual situs inversus patients. A conventional right upper lobectomy was first performed and then attention turned to the right lower lobe nodule. The incomplete fissure made dissection of the right lower lobe apical segmental artery and bronchus challenging however, a wedge resection of the lower lobe nodule was sent for frozen section along with several lymph nodes, confirming adenocarcinoma with the absence of lymph node involvement; and he therefore progressed to a lower lobe superior segmentectomy with the view to preserve residual lung function. He was discharged post-operative Day 9. Histology confirmed moderately differentiated adenocarcinoma pT1cN0 in the right upper lobe and moderately differentiated adenocarcinoma pT1aN0 in the right lower lobe with clear margins for both. He was reviewed 2 weeks post-discharge and planned for surveillance with his respiratory physician (Fig. 2). Figure 2. Post-operative CT thorax, abdomen, pelvis.","[""Lung Cancer""]","[""Adenocarcinoma""]",False,[]
+graph_032,The_impostor_of_chest_pain__a_case_of_lung_cancer_mimicking_angina__PMC12020168.html,"Presented to the Affiliated Hospital of SWMU with recurrent cough and expectoration (19 March 2024)
+Chest CT showed a nodule in the anterior segment of the upper lobe of the right lung (14 March 2024)
+Chest CT showed a larger nodule in the anterior segment of the upper lobe of the left lung than 14 months ago (15 April 2024)
+Chest CT showed a larger nodule in the anterior segment of the upper lobe of the right lung than 14 months ago (11 April 2024)
+Irregular 2.3 × 1.9 cm nodule in the anterior segment of the upper lobe of the right lung with adjacent pleural pulling
+Red arrow shows an irregular solid nodule measuring 1.5 × 1.2 cm in diameter was found in the subpleural of the apical posterior segment of the upper lobe of the left lung
+Localized bone destruction with a soft tissue nodular shadow in the anterior branch of the left 5th rib
+Fine-needle aspiration of a soft tissue nodule in the anterior branch of his left 5th rib (2nd day after presentation)
+Pathological diagnosis clarified the nature of his subpleural solid nodule in the apical posterior segment of the upper lobe of the left lung as adenocarcinoma (3rd day after presentation)","Presented to the Affiliated Hospital of SWMU with recurrent cough and expectoration (19 March 2024)
+Chest CT showed a nodule in the anterior segment of the upper lobe of the right lung (14 March 2024)
+Chest CT showed a larger nodule in the anterior segment of the upper lobe of the left lung than 14 months ago (15 April 2024)
+Chest CT showed a larger nodule in the anterior segment of the upper lobe of the right lung than 14 months ago (11 April 2024)
+Irregular 2.3 × 1.9 cm nodule in the anterior segment of the upper lobe of the right lung with adjacent pleural pulling
+Red arrow shows an irregular solid nodule measuring 1.5 × 1.2 cm in diameter was found in the subpleural of the apical posterior segment of the upper lobe of the left lung
+Localized bone destruction with a soft tissue nodular shadow in the anterior branch of the left 5th rib
+Fine-needle aspiration of a soft tissue nodule in the anterior branch of his left 5th rib (2nd day after presentation)
+Pathological diagnosis clarified the nature of his subpleural solid nodule in the apical posterior segment of the upper lobe of the left lung as adenocarcinoma (3rd day after presentation)","Presented to the Affiliated Hospital of SWMU with recurrent cough and expectoration (19 March 2024)
+Chest CT showed a nodule in the anterior segment of the upper lobe of the right lung (14 March 2024)
+Chest CT showed a larger nodule in the anterior segment of the upper lobe of the left lung than 14 months ago (15 April 2024)
+Chest CT showed a larger nodule in the anterior segment of the upper lobe of the right lung than 14 months ago (11 April 2024)
+Irregular 2.3 × 1.9 cm nodule in the anterior segment of the upper lobe of the right lung with adjacent pleural pulling
+Red arrow shows an irregular solid nodule measuring 1.5 × 1.2 cm in diameter was found in the subpleural of the apical posterior segment of the upper lobe of the left lung
+Localized bone destruction with a soft tissue nodular shadow in the anterior branch of the left 5th rib
+Fine-needle aspiration of a soft tissue nodule in the anterior branch of his left 5th rib (2nd day after presentation)
+Pathological diagnosis clarified the nature of his subpleural solid nodule in the apical posterior segment of the upper lobe of the left lung as adenocarcinoma (3rd day after presentation)","[""adenocarcinoma""]","[""lung adenocarcinoma""]",True,"[[""left lung"", ""subpleural of the apical posterior segment""], [""left 5th rib"", ""anterior branch""]]"
