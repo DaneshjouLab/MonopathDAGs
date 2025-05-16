@@ -1,0 +1,7 @@
+A 66-year-old female non-smoker presented in May 2019 with shortness of breath and was admitted to a local hospital. Chest CT revealed a spiculated mass in the left upper lobe, multiple pulmonary nodules, mediastinal lymphadenopathy, and pericardial effusion. Lung adenocarcinoma was diagnosed through a bronchoscopic biopsy. Molecular testing detected a p.L858R mutation in epidermal growth factor (EGFR) exon 21. Metastases were confirmed in the lung, liver, pericardium, bone, brain, and distant lymph nodes. Tumor stage was cT4N3M1c (stage IV B).
+
+The patient was initially prescribed gefitinib, experiencing a progression-free period of 7 months. Due to disease progression and the detection of EGFR exon 20 p.T790M (+) in the pleural fluid, treatment was switched to osimertinib. Four months after osimertinib initiation, disease progressed with bone and brain metastases.
+
+The patient had a history of intestinal obstruction without a clear cause, undergoing abdominal surgery at age 13. Intestinal obstruction recurred twice around 2003 and 2006.
+
+Starting in August 2020, the patient received four cycles of pemetrexed, carboplatin, bevacizumab, and pembrolizumab, followed by two cycles of pemetrexed and pembrolizumab as maintenance therapy. Stable disease (SD) was achieved and persisted after 2 cycles of ICIs combined treatment.

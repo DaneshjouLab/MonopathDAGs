@@ -1,0 +1,9 @@
+A 90-year-old female presented with a dry cough. A chest radiograph revealed a lung mass in the right upper field. Further investigation with a chest CT scan showed a tumor shadow in the right upper lobe, along with swollen mediastinal lymph nodes in the right apical area. The patient's performance status (PS) was 1, and she had no smoking history.
+
+Lab tests revealed a CEA level of 5.5 ng/mL, a cytokeratin fragment level of 12.68 ng/mL, and a progastrin-releasing peptide level of 83.24 pg/mL. A PET-CT scan showed an SUVmax of 26.0 in the right upper lobe mass, 12.8 in the right hilar lymph nodes, 17.7 in the ipsilateral mediastinal lymph nodes, and 4.8 in the left adrenal gland. Based on these findings, the patient was suspected to have cT3N2M1b (ADR), stage IVA lung cancer.
+
+A CT-guided needle biopsy confirmed the diagnosis of squamous cell carcinoma. Further testing revealed an EGFR mutation (exon 21: L858R) and a PD-L1 TPS >75%.
+
+The patient was treated with three cycles of pembrolizumab. However, subsequent imaging showed an increase in the size of the primary lesion, right subclavian and mediastinal lymph nodes, and the development of a right-sided pleural effusion. The patient's performance status also worsened.
+
+The patient died six months after her initial visit.

@@ -1,0 +1,15 @@
+**Case Report: Acute Pneumothorax in a Patient with Non-Small Cell Lung Cancer Treated with Immunotherapy**
+
+This case report details the presentation, diagnosis, and management of an acute pneumothorax in a patient with non-small cell lung cancer (NSCLC) undergoing immunotherapy with pembrolizumab.
+
+The patient was diagnosed with NSCLC. Prior to this diagnosis, the patient may have been screened for other cancers such as prostate cancer and breast cancer, given the mention of these in the body of the text. The patient presented with a pulmonary nodule, prompting further investigation.
+
+Diagnostic workup likely involved bronchoscopic procedures, including radial-endobronchial ultrasound (R-EBUS) and convex probe endobronchial ultrasound (CP-EBUS), also referred to as EBUS. Electromagnetic navigation using the Veran SPiNDrive system may have been utilized to guide the bronchoscopic procedures. Other diagnostic modalities such as transthoracic needle biopsy and CONE BEAM CT may have been considered or employed. Techniques like archimedes bronchoscopic trans-parenchymal nodule biopsy or bronchoscopic transparenchymal nodule access using thin-EBUS may have been used to obtain tissue samples. The staging of the NSCLC was a crucial step in determining the appropriate treatment strategy.
+
+The patient was initiated on immunotherapy with pembrolizumab.
+
+During the course of treatment, the patient developed an acute pneumothorax, requiring immediate medical intervention.
+
+Prior to immunotherapy, the patient may have been considered for targeted therapies such as tyrosine kinase inhibitors (TKIs) if their tumor harbored mutations in epidermal growth factor (EGFR), anaplastic lymphoma kinase (ALK), ROS proto-oncogene 1 (ROS1), or proto-oncogene B-Raf (BRAF).
+
+The patient may have experienced side effects such as neutropenia, vomiting, loss of hair, fatigue, and skin rash.

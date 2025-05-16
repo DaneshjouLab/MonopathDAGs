@@ -1,0 +1,7 @@
+Case Report: Detection of Double ROS1 Translocations, SDC4-ROS1 and ROS1-GK, in a Lung Adenocarcinoma Patient and Response to Crizotinib
+
+A 40-year-old male was diagnosed with stage IIIA lung adenocarcinoma. Next-generation sequencing of tumor tissue revealed the presence of two ROS1 fusions: SDC4-ROS1 (EX2:EX32) and ROS1-GK (EX31:EX13).
+
+Given the presence of ROS1 rearrangements, the patient was administered crizotinib. The patient initially showed a partial response in lung lesions. However, at 8 months after the start of crizotinib treatment, a brain lesion was detected.
+
+The patient's response to crizotinib, while initially positive, was relatively short-lived. This may be related to the presence of the ROS1-GK rearrangement. This case suggests that patients with both SDC4-ROS1 and ROS1-GK fusions may be sensitive to crizotinib, but the presence of ROS1-GK rearrangement may affect the efficacy of crizotinib, leading to shorter progression-free survival.

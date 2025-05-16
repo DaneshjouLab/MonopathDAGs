@@ -1,0 +1,5 @@
+A patient presented with pulmonary adenocarcinoma, which subsequently metastasized to the lungs. The patient also had a history of thyroid nodules that developed into a rapidly growing thyroid tumor. This tumor was diagnosed as anaplastic thyroid carcinoma. The patient experienced neck pain, tracheal deviation, and cervical lymphadenopathy related to the thyroid tumor.
+
+The patient was initially treated with nivolumab, a PD-1 inhibitor, for the pulmonary adenocarcinoma and pulmonary metastasis. However, the anaplastic thyroid carcinoma progressed. The patient was then treated with lenvatinib for the thyroid cancer.
+
+The patient's lung cancer was further characterized as both NSCLC and SCLC. The patient also had squamous cell lung cancer. The patient received PD-1 therapy.

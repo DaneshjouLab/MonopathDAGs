@@ -1,0 +1,13 @@
+A 69-year-old Japanese man, a current smoker with a 40 pack-year history and a family history of lung cancer, presented with worsening shortness of breath. His height was 166.5 cm and bodyweight 62.0 kg.
+
+On admission, his temperature was 37.5°C, heart rate 110 bpm, blood pressure 146/106 mmHg, and oxygen saturation 91% on 4 l/min oxygen at rest. His ECOG performance status was 1. Laboratory data revealed: WBC 11700 /µl, Neutrophils 86.5 %, Lymphocytes 7.7 %, Eosinophils 0.3 %, Monocytes 5.2 %, RBC 4.65 × 106 /µl, Hb 14.4 g/dl, Ht 41.9 %, Platelets 30.9 × 104 /µl, TP 6.2 g/dl, Alb 2.8 g/dl, T-bil 1.4 mg/dl, CRP 6.46 mg/dl, AST 51 IU/l, ALT 38 IU/l, Glucose 258 mg/dl, HbA1c 7.8 %, LDH 737 IU/l, BUN 4.2 mg/dl, Cre 0.72 mg/dl, Na. Serum carcinoembryonic antigen was 7.3 ng/ml, progastrin-releasing peptide 140 pg/ml, and neuron-specific enolase 132.0 ng/ml. A chest CT scan revealed a giant left lung mass with massive left pleural effusion causing mediastinal shift to the right.
+
+Left-sided thoracentesis was performed, revealing exudative pleural effusion with lymphocyte predominance. Cytology showed adenocarcinoma cells, negative for thyroid transcription factor-1 and napsin A, but there were insufficient tumor cells for a definitive diagnosis. Dyspnea improved after left-sided chest tube drainage on the fifth day.
+
+Further cytological examination of the left pleural effusion revealed round tumor cells negative for adenocarcinoma. A subsequent left pleural effusion cytology was nondiagnostic. A transbronchial lung biopsy from left S4 on day 12 was also nondiagnostic.
+
+On day 21, a thoracoscopic pleural biopsy revealed features of small cell lung carcinoma (SCLC), adenocarcinoma, and spindle-shaped cell tumor, consistent with combined small cell lung carcinoma (C-SCLC). The PD-L1 tumor proportion score was less than 1%.
+
+Post-thoracoscopy, the patient's respiratory and general conditions rapidly worsened. The patient died on day 34. Autopsy revealed a large, erupted tumor occupying almost the entire lower lobe of the left lung with circumferential adhesion and infiltration of the left chest wall and diaphragm.
+
+Microscopic findings confirmed the presence of SCLC (60%), spindle-shaped cell tumor (30%), and adenocarcinoma (10%), leading to a final diagnosis of combined small cell lung carcinoma (C-SCLC) including three tumor components. The pleural biopsy specimen also showed small-cell lung carcinoma, adenocarcinoma, and spindle-shaped cell tumors. The small-cell lung carcinoma lesion was positive for insulinoma-associated protein 1. The tumor increased in size rapidly, and the patient's respiratory condition and performance status worsened.

@@ -1,0 +1,9 @@
+The patient had a history of an anterior-wall myocardial infarction and underwent emergency PCI in 2009. In Spring 2022, the patient underwent surgery for a hernia. In May 2022 (week 0), the patient presented with pain in the left flank and groin, and tenderness in the left axilla/hemi-thorax. A CT thorax showed four potentially malignant lesions dorsolaterally in the right lower lobe, with signs of infiltration of the thoracic wall and enlarged mediastinal lymph nodes. A CT abdomen showed multiple liver metastases; the largest with a diameter of 5.5 cm. The largest pulmonary lesions were 3x1.5 cm and 2x2 cm. An ultrasound-guided liver biopsy revealed extensive stage small cell lung cancer (ES-SCLC). The patient's ECOG performance status was 0.
+
+At week 0, the patient began treatment with Durvalumab, Etoposide, and Carboplatin (cycle 1). Initial lab values included S-NSE 48 \u00b5g/L (reference <16), GABA-BR1/2 serum 1/1000, GAD65 serum Negative, and HbA1c 41 mmol/mol.
+
+At week 4, the patient continued treatment with Durvalumab, Etoposide, and Carboplatin (cycle 1). Lab values included GABA-BR1/2 serum 1/1000, GAD65 serum Negative, and HbA1c 46 mmol/mol.
+
+At week 6, the patient demonstrated a partial response to treatment.
+
+At week 8, the patient continued treatment with Durvalumab, Etoposide, and Carboplatin (cycle 1). The patient's ECOG score was 1-2, and they had contracted COVID-19.

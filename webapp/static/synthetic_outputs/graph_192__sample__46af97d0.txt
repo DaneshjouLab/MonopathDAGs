@@ -1,0 +1,17 @@
+A 77-year-old Japanese woman with non-small-cell lung cancer (NSCLC), ECOG performance status 1, presented with a history of resection of the right middle lung lobe for lung adenocarcinoma (clinical T1aN0M0, clinical stage IA) two years prior. Pulmonary metastasis was noted during follow-up one year after resection.
+
+The patient underwent five cycles of pemetrexed therapy for the pulmonary metastasis of NSCLC. Progressive disease was noted, and she was switched to nivolumab as second-line therapy (2 mg/kg, every 2 weeks).
+
+One day after the second infusion of nivolumab, the patient presented with progressive myalgia, ophthalmoplegia, and blepharoptosis. She denied chest pain and dyspnea.
+
+The patient was taking codeine phosphate for a cough. Her Glasgow Coma Score was 15. Body mass index was 16.4 kg/m2, with no noticeable body weight changes. She had a slight fever of 37.1°C.
+
+Vitals were: Blood pressure 120/76 mmHg, pulse 76/min, respiratory rate 18/min, oxygen saturation 96%. Physical examination revealed bilateral blepharoptosis (left-side dominant) and limitation of ocular movement. Eyes could slightly move to the left, up, and down, but not to the right. Visual acuity was 0.9 (right) and 0.8 (left).
+
+Manual muscle test was 4/5 at the neck, bilateral arms, hip, and proximal muscles. No murmurs or crackles were observed. Chest radiography showed a tumor mass in the left lower lung field, and the cardiothoracic ratio was 51% without pleural effusion. Chest computed tomography demonstrated tumor masses (14 mm at the left S1+2 and 16 mm at the left S9), with no thymoma or interstitial pneumonia noted.
+
+ECG showed a bifascicular block (first-degree atrioventricular block and complete right bundle branch block) and ST-segment elevation in leads I, II, III, aVF, V3, V4, V5, and V6 without reciprocal ST-segment depression.
+
+Transthoracic echocardiography showed a preserved ejection fraction without asynergy, and no pericardial effusion or obvious myocardial edema was noted.
+
+ECG on day 3 showed trifascicular block (first-degree atrioventricular block, complete right bundle branch block, and left anterior hemiblock). ECG on day 5 showed progression to atrioventricular dissociation. ECG on day 14 showed the recovering trifascicular block, which transformed into a bifascicular block on day 26. Laboratory data showed elevated aspartate aminotransferase (757 U/L), alanine aminotransferase (225 U/L), lactate dehydrogenase (1,634 U/L), C-reactive protein (1.21 mg/dL), brain natriuretic peptide (88.1 pg/mL), creatine kinase (CK) (11,297 U/L), CK-MB (204 U/L), and troponin T (1,478 ng/L).

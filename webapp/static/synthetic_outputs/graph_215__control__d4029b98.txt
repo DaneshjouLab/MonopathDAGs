@@ -1,0 +1,9 @@
+A patient with a history of tobacco-use disorder, chronic obstructive pulmonary disease, and depression presented with shortness of breath and a productive cough. Imaging revealed postobstructive pneumonia, pleural effusion, and mediastinal lymphadenopathy. Further investigation led to a diagnosis of invasive squamous cell cancer of the lung with lymph node metastasis. The patient was treated with chemotherapy consisting of cisplatin and taxol, followed by radiation therapy.
+
+Subsequently, the patient developed severe generalized swelling and pitting edema, leading to the diagnosis of nephrotic syndrome with significant proteinuria and hypertension. Further workup revealed membranous nephropathy. Given the patient's history of cancer, the membranous nephropathy was suspected to be cancer-related.
+
+The patient was also found to have hepatitis C virus (HCV) infection, but the presence of monoclonal proteins suggested the membranous nephropathy was more likely related to the cancer than the HCV infection. Initial treatment included an angiotensin receptor blocker to manage proteinuria and hypertension.
+
+Due to the lung cancer diagnosis, the patient received durvalumab therapy, an immunotherapy. However, the patient's nephrotic syndrome persisted. Given the failure of initial management and the potential link to cancer, immunosuppressive therapy was considered for the membranous nephropathy.
+
+The patient's case is complicated by the presence of non-small cell lung cancer, treated with immunotherapy, and the subsequent development of membranous nephropathy and nephrotic syndrome. The etiology of the membranous nephropathy is uncertain, with possibilities including cancer-related autoimmune disease, or less likely, HCV infection. The patient's history of HCV infection was previously treated with pegylated interferon and oral ribavirin. The patient also developed empyema.

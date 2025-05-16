@@ -1,0 +1,9 @@
+A 71-year-old woman presented with left upper and right lower lung field nodules on chest CT. The left upper lung field nodule was diagnosed as squamous cell carcinoma with high PD-L1 expression (70%) via endobronchial ultrasound with guide sheath. 18F-fluoro-2-deoxyglucose positron emission tomography showed uptake in both nodules. The cancer stage was determined as cT3N0M1a.
+
+The patient was treated with 13 cycles of pembrolizumab every 3 weeks. Follow-up chest CT revealed a dramatic decrease in the size of the 60-mm lesion in the left upper lobe. However, the size of the 10-mm lesion in the right lower lobe had significantly increased.
+
+A CT-guided transthoracic needle biopsy (CTNB) of the right lower lung nodule was performed. Pathological findings revealed squamous cell carcinoma with nonexpression of PD-L1 in the right lower nodule.
+
+Due to the ineffective treatment of the right lower nodule, likely related to PD-L1 nonexpression, and following discussion with the cancer board, right lower lobectomy was recommended.
+
+The patient also has a history of severe bronchial asthma. She has a 20-year history of refractory asthma treated with inhaled corticosteroids (ICS), long-acting beta-agonists (LABA), long-acting muscarinic antagonists, and antiallergic drug therapy. She was occasionally treated with oral or systemic corticosteroids for exertional dyspnea. Physical examination revealed peripheral arterial blood oxygen saturation of 95% in room air and diffuse expiratory wheezing on chest auscultation.

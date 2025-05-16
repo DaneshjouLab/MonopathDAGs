@@ -1,0 +1,13 @@
+This case report describes a cohort of 22 patients (14 male, 8 female) with an average age of 74.3 years (range 59-85). The histologic types of their cancers were squamous (4), adenocarcinoma (3), small cell (1), and unknown (14). Patients received radiation doses in the range of 48-60 Gy (average 50.2 Gy). Irradiation methods included SABR (15), parallel opposing portals (3), and other methods (4). Irradiation sites were the superior lobe (8), middle lobe (1), inferior lobe (1), other sites (3), and unknown sites (9). Two patients received combination drug therapy. 18 patients had a history of symptomatic radiation pneumonitis. The onset of radiation pneumonitis occurred >6 months after irradiation in 4 patients and <6 months in 18 patients.
+
+18 patients were symptomatic, presenting with dyspnea (16), fatigue (14), fever (10), and cough (9). 3 patients were asymptomatic. 2 patients had hypoxemia (SpO₂<95% or PaO₂< 80 mmHg), and 2 patients had respiratory failure (PaO₂< 60 mmHg).
+
+13 patients received steroid therapy, and 8 of these experienced recurrence. 9 patients did not receive steroid therapy, and 1 of these experienced recurrence.
+
+Patient 4 received tangential port irradiation with a dose of 50 Gy and combination drug therapy with Gn-RHa+Tamoxifen. Eight months after irradiation, Patient 4 developed fever and cough. Lab results showed WBC 12800 /µL, CRP 4.6 mg/dL, and KL-6 105 U/mL. Imaging showed movement of a shadow. Patient 4 was treated with observation. The shadow resolved after 4 months, and there was no recurrence.
+
+Patient 5, a 72-year-old, received parallel opposing portals irradiation with a dose of 50 Gy and was asymptomatic. Lab results showed WBC 5400 /µL, CRP 0.7 mg/dL, and KL-6 433 U/mL. Imaging showed movement of a shadow. Patient 5 was treated with observation. The shadow resolved after 2 months, and there was no recurrence.
+
+Patient 6, a 52-year-old, received parallel opposing portals irradiation with a dose of 50 Gy and combination drug therapy with Docetaxel+Trastuzumab. Three months after irradiation, Patient 6 developed fever and cough. Lab results showed WBC 6800 /µL, CRP 6 mg/dL, and KL-6 390 U/mL. Imaging showed movement of a shadow. Patient 6 was treated with observation. The shadow resolved after 5 months, and there was no recurrence.
+
+Patient 7, a 52-year-old, received tangential port irradiation with a dose of 50 Gy. Four months after irradiation, Patient 7 developed fever and cough. Lab results showed WBC 6400 /µL, CRP 2.5 mg/dL, and KL-6 167 U/mL. Imaging showed movement of a shadow. Patient 7 was treated with observation. The shadow resolved after 2 months, and there was no recurrence.

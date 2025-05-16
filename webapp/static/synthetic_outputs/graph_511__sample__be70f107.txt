@@ -1,0 +1,15 @@
+An 83-year-old male was admitted on October 30, 2019, with a one-week history of cough, expectoration, and hemoptysis. His medical history included tuberculosis for more than 30 years, chronic bronchitis, and emphysema for 10 years.
+
+Chest CT revealed an irregular mass (5.3×2.6 cm) in the upper lobe of the left lung. PET/CT showed multiple lymph node and bone metastases.
+
+Transthoracic core needle biopsy of the lung mass showed tumor cell characteristics with adenoid and stratified structures and visible nuclear division. Immunohistochemistry was positive for TTF-1, CK7, SPA, napsin-A and Ki-67 (10%), and negative for villin, P63 and P40. The patient was diagnosed with stage IV (T4aN2M1) invasive lung adenocarcinoma.
+
+On December 6, 2019, next-generation sequencing (NGS) identified a novel PTH2R-ALK fusion in the patient’s tumor tissue, composed of exon 1 of the PTH2R gene and exons 20–29 of the ALK gene. Fluorescence in situ hybridization (FISH) confirmed ALK positivity.
+
+The patient started oral crizotinib 250 mg twice daily (BID) from December 12, 2019. After 10 days, the patient developed mild nausea without vomiting.
+
+Liver function reexamination revealed elevated ALT and AST levels (3-4 times higher than baseline), indicating mild liver function impairment. He was treated with polyene phosphatidylcholine for liver protection.
+
+A follow-up CT on January 18, 2020, showed the left lung mass decreased to 1.47x0.89 cm, indicating a partial response to treatment.
+
+NGS results showed the PTH2R-ALK fusion breakpoint. Fluorescence in situ hybridization (FISH) image showed a split signal with a frequency of 25% (400x magnification).

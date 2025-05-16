@@ -1,0 +1,21 @@
+A 61-year-old asymptomatic male smoker presented for low-dose lung CT lung cancer screening. The initial study identified a suspicious 1.6 cm spiculated apical right upper lobe nodule and a small right lower lobe consolidation felt to represent infection and inflammation. Lung-RADS category 4X was assigned due to the high-risk apical nodule. PET/CT and pulmonary consultation were recommended.
+
+Follow-up CT chest with contrast showed an apical nodule and a 1-2 cm right lower lobe consolidation. PET/CT demonstrated increased FDG uptake in the basilar consolidation but not in the apical nodule. No other significant abnormality was noted on whole-body PET/CT.
+
+Thoracic surgery consultation was initiated due to indeterminate radiographic features of the right upper lobe nodule. The basilar consolidation also displayed indeterminate radiologic and metabolic characteristics, suggestive of infectious, inflammatory, or neoplastic etiology. Contrast-enhanced CT chest demonstrated a spiculated nodule in the peripheral right upper lobe suspicious for primary lung malignancy.
+
+Further imaging with contrast-enhanced CT chest demonstrated a right upper lobe nodule and a right lower lobe consolidation abutting the major fissure. FDG PET/CT demonstrated increased FDG uptake in the right lower lobe consolidation, but not in the right upper lobe nodule. The radiographic and metabolic appearance was nonspecific to infectious, inflammatory, or neoplastic lesions.
+
+The thoracic surgical consultant recommended tissue sampling of both the nodule and the consolidation. CT-guided core needle biopsy was successfully performed for both lesions. Non-contrast CT performed during biopsy demonstrated the needle tip in the right lower lobe consolidation and a developing pneumothorax. The procedure was complicated by pneumothorax. The patient was immediately decompressed with a pleural catheter and had a rapid recovery, being discharged the next day.
+
+Biopsy of the apical nodule contained amyloid with a moderately cellular lymphoplasmacytic infiltrate. Amyloid was confirmed as congophilic material demonstrating classic apple-green birefringence on polarized microscopy.
+
+Pathology from the basilar nodule biopsy revealed dense lymphoid tissue with characteristics of lymphoma. Immunostaining was positive for CD20 and BCL-2, but negative for CD5, CD10, and CD42, suggesting an extranodal marginal zone lymphoma, also known as a lymphoma of the mucosa-associated lymphoid tissue (MALT).
+
+Pathologic diagnosis of the apical nodule was benign amyloid nodule or amyloidoma. Congo Red Stain, polarized microscopy under 20x magnification demonstrated congophilic material with apple-green birefringence consistent with amyloid.
+
+The patient was referred to medical and radiation oncology for extranodal marginal zone lymphoma. PET/CT showed local disease. The patient was offered definitive treatment with radiotherapy alone.
+
+Histopathology: Standard H&E stain under 40x magnification demonstrated dense lymphocytic infiltrate. Immunostaining demonstrated significantly more cells positive for kappa light chain than lambda light chain suggesting a clonal lymphocyte population consistent with lymphoma.
+
+The patient underwent radiotherapy with a total dose of 36 Gray delivered in 10 fractions for pulmonary MALT lymphoma presenting as right lower lobe consolidation. Radiotherapy was well tolerated, and follow-up CT was performed 8 weeks post-treatment.

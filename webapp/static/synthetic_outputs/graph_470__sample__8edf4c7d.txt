@@ -1,0 +1,17 @@
+A 65-year-old man with stage IV lung adenocarcinoma (bilateral lung metastases) diagnosed in February 2020, and a former smoker with a 15 pack-year history, received a vaccination for seasonal influenza. He started treatment with carboplatin, pemetrexed, and pembrolizumab on March 6, 2020.
+
+On March 13, 2020, the patient presented to the outpatient clinic reporting fever in the previous 24 hours and a productive cough. Physical examination revealed tachycardia (100 bpm), a temperature of 40°C, and fine crackles at the right lung base. His arterial oxygen partial pressure/fractional inspired oxygen (P/F) ratio in room air was 328.
+
+Blood tests showed grade 3 leukopenia and neutropenia and elevation of C-reactive protein (CRP). A chest radiograph did not demonstrate any signs of interstitial pneumonia. A nasopharyngeal swab for COVID-19 was performed.
+
+The patient was hospitalized, and treatment with granulocyte colony-stimulating factors and broad-spectrum empirical antibiotics was started.
+
+Reverse transcriptase polymerase chain reaction testing for COVID-19 nucleic acid was positive on day 2 (24 hours after admission). CRP had increased to 225 mg/L, and his IL-6 level was 101 ng/L. Blood cultures and legionella and pneumococcal urinary antigen tests were negative. The patient was prescribed Darunavir 800 mg/d, ritonavir 100 mg/d, and hydroxychloroquine 200 mg twice daily. Oxygen supplementation with a reservoir mask at 15 L/min was administered.
+
+On day 7, the patient's P/F ratio decreased to 58. A CT scan showed areas of consolidation in the right and left lower lobes, with diffuse ground glass opacities and inter- and intralobular septal thickening ("crazy paving").
+
+On days 8 and 9, the patient was given the first and second dose of tocilizumab (8 mg/kg weight every 12 hours).
+
+The P/F ratio increased to 100 the morning after the first dose of tocilizumab.
+
+The CRP level decreased from 212 mg/dL to 37 mg/dL by 48 hours after the second dose of tocilizumab. The WBC count on day 1 was 1.61 \u00d7103/mm3.

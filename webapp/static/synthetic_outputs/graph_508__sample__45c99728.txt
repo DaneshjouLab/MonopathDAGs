@@ -1,0 +1,15 @@
+A 53-year-old female was initially diagnosed with Invasive adenocarcinoma, TNM classification T4N1M1b, Stage IVA. The tumor measured 1.8 cm x 2.2 cm and was located in the lower lobe of the left lung. CT scanning also revealed ground glass nodules in the upper left lung.
+
+On May 12, 2020, the patient underwent single-hole thoracoscopic radical resection in the left upper lobe of the lung. During surgery, a 2.0 cm x 1.5 cm mass was identified in the posterior apex of the left superior lung, along with multiple micro-nodules in the right lung.
+
+Following surgery, the patient's diagnosis was revised to invasive stage IA adenocarcinoma (T1N0M0). She was treated with left upper lobectomy and systematic lymph node dissection.
+
+An NGS panel revealed an EGFR p.E746_S752delinsI mutation with 29.62% VAF in a tissue sample. The E746_S752delinsI mutation in EGFR Exon 19 was identified by NGS.
+
+Based on the EGFR mutation, the patient started Icotinib (125mg/day) on November 18, 2020.
+
+From December 8, 2020, to July 27, 2021, the patient experienced Grade II stomach pain.
+
+From December 29, 2020, to June 15, 2021, the patient experienced Grade I skin rash.
+
+From February 9, 2021, to June 15, 2021, the patient experienced Grade I liver dysfunction.

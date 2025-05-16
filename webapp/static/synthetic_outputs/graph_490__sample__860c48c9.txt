@@ -1,0 +1,19 @@
+A 60-year-old male presented with a one-month history of moderate intensity low back pain. One day prior to admission, he experienced altered sensorium and decreased response. The patient reported unintentional weight loss of 8 kg and loss of appetite in the previous 2 months. He was a regular alcohol consumer and smoker for the last 30 years, with his last drink 5 days prior to the onset of symptoms.
+
+The patient denied high-risk behavior and fever. He had no history of systemic hypertension or diabetes mellitus. On examination, his Glasgow Coma Scale was 8/15 (E2, V2, M4). He exhibited severe pallor, grade 3 clubbing, a heart rate of 100 bpm, a temperature of 37.4°C, and a blood pressure of 120/80 mmHg.
+
+Initial lab results revealed a hemoglobin of 7.8 g/dL (normocytic and normochromic), a leukocyte count of 18,000/mL (88% neutrophils, 10% lymphocytes, 2% monocytes), a platelet count of 220,000/µL, an erythrocyte sedimentation rate of 32 mm/hr, a serum alkaline phosphatase of 399 IU/L, a serum calcium of 14.0 mg/dL (serum albumin 3.8 g/dL), a phosphorus of 4.6 mg/dL, and an intact parathormone of 7.9 pg/mL. A peripheral smear showed a leukoerythroblastic blood picture. Chest X-ray and electrocardiogram were normal.
+
+HIV, hepatitis B, and hepatitis C serologies were negative. MRI of the brain showed multifocal lesions in bilateral parieto-occipital subcortical white matter and cerebellum.
+
+Detailed brain MRI findings revealed multifocal lesions in bilateral parieto-occipital subcortical white matter and cerebellum. The lesions were hypointense on T1-weighted images, hyperintense on T2-weighted and fluid-attenuated inversion recovery without any diffusion restriction and contrast enhancement, and apparent diffusion coefficient maps were hyperintense, suggesting Posterior Reversible Encephalopathy Syndrome (PRES).
+
+Cerebrospinal fluid analysis was normal.
+
+A skeletal survey showed osteolytic bone metastases in the skull, thoracic and lumbar spine, and pelvis.
+
+Bone marrow aspiration and trephine biopsy showed metastatic deposits from adenocarcinoma of the lung.
+
+The patient was treated with intravenous fluids (normal saline), steroids, furosemide, and zoledronic acid.
+
+After two weeks of treatment, the patient's serum calcium level normalized, and he regained consciousness.

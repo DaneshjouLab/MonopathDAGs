@@ -1,0 +1,9 @@
+Background: Immune-related adverse events (irAEs) are secondary reactions related to treatment with immune checkpoint inhibitors (ICIs). There have been six cases published reporting on an association between patients undergoing treatment with ICIs and the occurrence of acquired thrombotic thrombocytopenic purpura (TTP).
+
+Case report: We report a 61-year-old male receiving treatment with chemoimmunotherapy followed by pembrolizumab maintenance therapy for advanced non-small-cell lung cancer, presenting with bleeding symptoms, anemia, and thrombocytopenia.
+
+The patient was then put on maintenance therapy with pembrolizumab 200 mg every three weeks, but only completed two cycles due to the development of anorexia, unexplained weight loss of 10 lbs, and diminishing function in activities of daily living. After an extended discussion on his goals of care, the patient elected to discontinue immunotherapy and manage with surveillance imaging. However, he was subsequently found to have a T6-7 growing mass on MRI that was managed with five fractions of SBRT.
+
+Laboratory testing demonstrated hemolytic anemia, which, in combination with other findings, suggested thrombotic microangiopathy (TMA). PLASMIC scoring and specialized testing with ADAMTS13 activity and inhibitor confirmed a diagnosis of TTP.
+
+Our patient experienced an adverse reaction marked by thrombocytopenia and hematuria after drug exposure. With symptom improvement after ICI discontinuation and recurrence on readministration, a presumptive diagnosis of ICI-associated TTP was made. This case report and literature review emphasize the need for close observation of patients undergoing ICI therapy for potential rare irAEs. The further investigation aimed at the study of risk factors, disease severity, and treatment response to this form of secondary TTP is needed to guide treatment decisions.

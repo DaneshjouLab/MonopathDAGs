@@ -1,0 +1,19 @@
+In August 2021, a 68-year-old male presented with epigastric pain. An abdominal CT scan revealed a space-occupying lesion in the body of the pancreas. Enhanced CT scans of the chest and pelvis showed no abnormalities. Preoperative carbohydrate antigen 19-9 (CA199) levels were significantly elevated at 798.7 U/ml (normal range, 0-27 U/ml).
+
+The patient underwent laparoscopic radical pancreatic body-tail resection and splenectomy. Postoperative pathology confirmed moderately differentiated ductal adenocarcinoma (pT3N0M0). R0 resection was achieved.
+
+The patient declined chemotherapy and other treatments and asked for routine follow-up to monitor the lesion.
+
+Subsequently, the patient progressed with the development of a posterior cardiac annular nodule (1.7x1.3 cm). CA199 was 35.73 U/ml.
+
+Upper abdominal CT showed growth of the posterior cardiac annular nodule to 2.3x2.8 cm. CA199 level spiked to 124.8 U/ml. The patient was diagnosed with recurrent metastatic pancreatic ductal adenocarcinoma (PDAC) and had an Eastern Cooperative Oncology Group (ECOG) score of 1.
+
+The patient underwent four cycles of combination therapy, resulting in the disappearance of the posterior cardia lesion.
+
+After 20 cycles of combination therapy, no tumor relapse was observed.
+
+Next-generation sequencing (NGS) identified a BRCA2 mutation, microsatellite stability (MSS), a tumor mutational burden (TMB) of 5.76 Muts/Mb and PD-L1 negativity. The patient was initiated on a treatment regimen comprising of anlotinib (10 mg, days 1-14; 7 days off; 21-day cycle) and tislelizumab (200 mg, day 1; 20 days off; 21-day cycle).
+
+Following four cycles of combination therapy, the patient achieved a complete response (CR), with total tumor disappearance.
+
+The patient continued treatment regimen without adverse effects and remains on the regimen. Abdominal CT scans indicate complete response (CR) with a progression-free survival (PFS) duration of 14 months.

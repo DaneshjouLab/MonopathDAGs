@@ -1,0 +1,17 @@
+Between January 2014 and January 2019, 21 patients were enrolled in a study. Two patients were excluded before intervention, one with recurrence and one with new ground glass opacities, leaving 19 patients assigned to the intervention. The median age of the patients was 73 years (range, 53-83).
+
+Of the patients, 5 (23.8%) had stage IIA, 3 (14.3%) had stage IIB, and 13 (61.9%) had stage IIIA non-small cell lung cancer (NSCLC). Histopathology revealed adenocarcinoma in 14 patients (66.7%) and squamous cell carcinoma in 6 (28.6%). The cohort consisted of 15 male patients (71.4%) and 6 female patients (28.6%). ECOG performance status was 0 in 13 patients (61.9%) and 1 in 8 patients (38.1%).
+
+Inclusion criteria included being over 20 years of age, having completely resected stage II to IIIA NSCLC, an ECOG performance status of 0-1, being judged unsuitable or unwilling to receive a cisplatin-based regimen, adequate kidney function (serum creatinine ≤1.5 mg/dL), adequate liver function, and adequate bone marrow function. Surgery was completed 4-8 weeks before enrollment.
+
+Patients received four cycles of carboplatin (CBDCA) (AUC=5 mg/mL/min, on day 1) and nab-paclitaxel (nab-PTX) (100 mg/m2, on days 1, 8, and 15) as postoperative adjuvant chemotherapy every 4 weeks within 8 weeks after surgery.
+
+Chemotherapy was stopped if tumor recurrence was detected or the next cycle was delayed for more than 28 days; occurrence of drug-induced pneumonitis grade 2 or worse; detection of grade 4 or worse nonhematologic toxicities; and deterioration of the patient’s condition due to severe toxicity or worsening comorbidities.
+
+Follow-up included physical examination, laboratory tests, and chest x-ray every 3 months. Chest and abdominal computed tomography (CT) was performed every 6 months. Chest and abdominal CT, brain magnetic resonance imaging or brain CT, and 18F-FDG-PET were performed 2 years after registration.
+
+CBDCA (AUC=6 mg/mL/min, on day 1) plus nab-PTX (100 mg/m2, on days 1, 8, 15) administered every 3 weeks produced a significantly higher overall response rate, as well as a 10% improvement in overall survival, than solvent-based paclitaxel (sb-PTX). 12 patients completed the four cycles of adjuvant chemotherapy.
+
+First-step dose reduction was required in 6 patients (31.6%) owing to the occurrence of grade 3 neutropenia (n=5) and the physicians’ discretion (n=1).
+
+Nab-PTX administration on days 8 and 15 was skipped in 1 of 57 cycles and 41 of 57 cycles (71.9%), respectively, most frequently due to grade 3 or 4 neutropenia.

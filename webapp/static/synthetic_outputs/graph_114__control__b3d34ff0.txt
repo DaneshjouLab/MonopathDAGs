@@ -1,0 +1,9 @@
+A 71-year-old man was diagnosed with anaplastic lymphoma kinase (ALK) gene rearrangement-positive non-small cell lung cancer (ALK-positive NSCLC) with multiple liver and gastric metastases (cStage IVB). A biopsy of liver metastasis confirmed ALK gene rearrangements via fluorescent in situ hybridization (FISH).
+
+Initially, the patient was treated with alectinib 300 mg twice daily orally. After approximately six months, the original lung tumor shrunk, and multiple liver metastases disappeared. The patient continued alectinib to maintain tumor regression.
+
+However, 26 months after the initiation of alectinib treatment, the patient experienced seizures and consciousness disorders. Enhanced brain magnetic resonance imaging (MRI) revealed intracranial diffuse small metastases, left brainstem metastasis, and carcinomatous meningitis. The patient lost consciousness, exhibiting a Glasgow Coma Scale of 3, a performance status (PS) of 4, and dysphagia. Primary site regrowth and metastases outside the central nervous system (CNS) were not present, making another cancer tissue biopsy difficult.
+
+The patient was treated for status epilepticus for a week, but his consciousness did not improve. Systemic chemotherapy indications were limited, and the patient's family did not desire any chemotherapy except for ALK inhibitors. Given the patient's poor PS and dysphagia, oral drug administration was not possible.
+
+Lorlatinib was administered through a nasogastric tube using a simple suspension method. Within three days, the patient's consciousness improved. The patient survived for 16 months after CNS relapse.

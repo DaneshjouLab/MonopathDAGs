@@ -1,0 +1,7 @@
+A patient with a history of squamous cell carcinoma, who underwent a left upper lobe resection two years prior, developed mediastinal lymph node metastasis. This was confirmed by surgical biopsy. Immunohistochemical analysis revealed a tumour proportion score of 85% for PD-L1 expression using a murine 22C-3 antibody. Consequently, pembrolizumab treatment (200 mg every three weeks) was initiated.
+
+Fourteen months after starting pembrolizumab, the patient experienced an increase in serum amylase and lipase to grade 2 (CTCAE version 4.1). A PET-CT scan revealed a round, highly integrated lesion with rough, irregular edges at the pancreatic head. A CT scan showed slightly swollen pancreatic parenchyma and mild pancreatic duct dilation. Pancreatic tumour markers were also elevated: CA19-9 149.3 U/mL (normal 0-36.9 U/mL), SPan-1 44.7 U/mL (0-30 U/mL), and DUPAN-2 412 U/mL (0-150 U/mL).
+
+Prednisolone 90 mg (1 mg/kg/day) was then administered. Fifteen days after initiating prednisolone, a follow-up PET-CT scan showed decreased integration at the pancreatic head, with no mass-like lesion. A CT scan showed normalization of the size of the whole pancreas. Pancreatic tumour markers gradually decreased.
+
+Four months after starting prednisolone, pancreatic tumour marker levels returned to normal. Pancreatic exocrine enzymes and radiographic findings also normalized.

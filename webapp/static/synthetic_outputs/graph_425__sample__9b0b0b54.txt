@@ -1,0 +1,11 @@
+A 57-year-old Italian man with a 45 pack-year smoking history presented with recurrence of stage IV non-small-cell lung cancer (NSCLC). Eight months prior, he was diagnosed with oligometastatic adenocarcinoma in the right lung with a solitary brain metastasis (cT2aN0M1b). Next generation sequencing revealed a TP53 mutation. Fluorescence in situ hybridization for ALK was negative, but immunohistochemistry for PD-L1 was 100% positive.
+
+Initially, the cerebral lesion was surgically resected, followed by stereotactic radiotherapy (5 × 7 Gy) at the resection site. The primary tumor was surgically removed by video-assisted thoracoscopic surgery (VATS) with inferior right lobectomy. Four cycles of adjuvant chemotherapy (cisplatin–pemetrexed combination) were administered.
+
+At the end of adjuvant treatment, disease progression was noted with new pleural metastasis and a suspected pancreatic lesion. Pembrolizumab (2 mg/kg) in a 3-weekly cycle was started as second-line treatment.
+
+Three weeks after the first cycle of pembrolizumab, the patient consulted, presenting with dyspnea, pain in the right calf muscle, swelling of the lower limbs, and inability to walk for 2 days. He also reported growing general discomfort, fatigue, and bilateral weakness of the legs with exercise limitation since the first pembrolizumab administration. Clinical examination confirmed swelling of the lower legs, right more than left, with pain in the right calf.
+
+Auscultation of heart and lungs was normal. Vital parameters were normal. Blood tests revealed elevated creatine kinase (CK) 11796 U/l (ref. <190 U/l), elevated CK cardiac isoenzyme 112.5 μg/l (ref. <6.2 μg/l), and troponin 0.183 μg/l (ref. <0.013 μg/l). Liver function enzymes and LDH were also disrupted, and c-reactive protein was increased to 35 mg/l. Electrocardiogram (ECG) showed sinus rhythm with new small biphasic T-waves in V2 to V5.
+
+CT of the chest showed no pulmonary embolism or other causes of dyspnea. Venous duplex scan of the lower limbs showed no venous thrombosis in the pelvis or legs. Transthoracic echocardiography (TTE) revealed a normotrophic and normocontractile heart with normal systolic left and right ventricular function, without significant valvular disease. Nuclear magnetic resonance (NMR) of the heart was normal.

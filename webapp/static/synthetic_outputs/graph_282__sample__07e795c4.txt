@@ -1,0 +1,9 @@
+A 67-year-old male was diagnosed with advanced adenocarcinoma of the right lung (cT3N0M1a, stage IVA) in March 2021. The tumor proportion score of programmed cell death ligand-1 was 20–30%. His medical history was notable for squamous cell carcinoma of the right lung, for which he had received chemoradiotherapy and lung lobectomy of the right upper lobe 19 years prior. He also had a smoking history of 30 pack-years.
+
+In April, immunochemotherapy was initiated with nivolumab (360 mg IV every 3 weeks), ipilimumab (1 mg/kg IV every 6 weeks), carboplatin, and pemetrexed as induction therapy. He received 11 cycles of nivolumab and six cycles of ipilimumab combined with carboplatin and pemetrexed for the first two cycles (every 3 weeks). Carcinoembryonic antigen levels decreased from 23.8 ng/mL at referral to 5.2 ng/mL at the 10th cycle of nivolumab.
+
+A CT scan at the 11th cycle of nivolumab revealed stable disease.
+
+On October 20, the patient complained of dyspnea and manifested acute respiratory failure (arterial blood oxygen saturation measured by pulse oximetry was 85% under room air conditions). A chest CT scan revealed the emergence of diffuse grand-grass opacity predominantly in the left lower lobe of the lung. The primary lesions in the right lung did not progress. The serum carcinoembryonic antigen was 6.2 ng/mL.
+
+After two cycles of docetaxel and ramucirumab, diffuse grand-grass opacity in the lungs regressed. Interstitial pneumonitis induced by immunotherapy was suspected. He underwent bronchoscopy and bronchoalveolar lavage (BAL) fluid sampling. Transbronchial lung biopsy (TBLB) was withheld concerning complications.

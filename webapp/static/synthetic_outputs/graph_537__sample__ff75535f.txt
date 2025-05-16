@@ -1,0 +1,9 @@
+A 57-year-old Japanese woman with an Eastern Cooperative Oncology Group (ECOG) performance status (PS) of 3 presented with ALK-positive advanced non-small cell lung cancer (NSCLC). The diagnosis was confirmed by fluorescence in situ hybridization in abdominal lymph node tissue (ALK iScore 3 by iAEP immunohistochemistry). A CT scan revealed a 70 mm primary tumor in the right lower lobe, several mediastinal and abdominal lymph node metastases, and pleural effusion. Programmed death-ligand 1 (PD-L1) expression was 90% using the 22C3 antibody.
+
+The patient was initiated on alectinib. After 4 months of treatment, she achieved a partial response, and her ECOG-PS improved to 1.
+
+However, a CT scan 8 months after starting alectinib revealed growth of the primary tumor and mediastinal lymph node, indicating disease progression.
+
+Alectinib was discontinued, and second-line treatment with cisplatin (75 mg/m2, day 1, every 3 weeks) and pemetrexed (500 mg/m2, day 1, every 3 weeks) was initiated. After two cycles, a partial response was observed, evaluated by thorax-pelvis CT scan every 2 months. Upon completion of four cycles of cisplatin and pemetrexed, rapid progression occurred.
+
+The patient experienced growth of the primary sites and abdominal lymph node, an increase in pleural effusion, and the emergence of pleural dissemination on CT scan. Her condition weakened, with an ECOG-PS of 3 due to anorexia, dyspnea, dysphagia, and cachexia. Pleural effusion was negative for malignancy. The patient underwent a blood transfusion for grade 3 anemia (Common Terminology Criteria for Adverse Events Version (CTCAE) version 4.0) due to chronic disorder.

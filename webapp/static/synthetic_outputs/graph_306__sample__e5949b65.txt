@@ -1,0 +1,23 @@
+A 68-year-old man was diagnosed with advanced lung adenocarcinoma (KRAS mutated) with synchronous hepatic, pulmonary, and bone metastases. The patient presented with painful L1 spinal epiduritis.
+
+Treatment commenced with tridimensional conformational radiotherapy delivered to the vertebra T12 - L2, at a dose of 30 Gy in 10 fractions over 12 days.
+
+Fifteen days after radiotherapy, immunotherapy was initiated using pembrolizumab (PD-L1 expression score > 50%, no EGFR mutations nor ALK translocations).
+
+After 8 cycles (24 weeks) of pembrolizumab, CT evaluation showed an almost complete tumor response. However, the patient began to present muscle weakness in the left lower limb, paresthesia, difficulty urinating, and rapid bowel movements.
+
+MRI of the spine showed spinal cord edema with T1 hypointense signal and patchy gadolinium enhancement at T12-L1 levels. Cerebrospinal fluid analysis revealed moderately elevated proteinorachy (0.84 g/l).
+
+Intrathecal immunoglobulin synthesis was negative. Antineural antibodies were not detected. Cytology was negative for inflammatory or tumor cells. Pembrolizumab was discontinued, and the patient received oral steroid treatment (60 mg/day), tapered over 2 months.
+
+After 48 hours of steroid therapy, significant improvement of symptomatology was observed. Symptoms completely disappeared after 3 weeks.
+
+After 14 weeks, the patient remained asymptomatic, with radiological improvement in myelitis.
+
+Pulmonary disease progression was noted.
+
+Pembrolizumab was resumed.
+
+After 8 cycles of pembrolizumab, no relapse of myelitis was observed clinically nor radiologically. CT reevaluation showed partial tumor response.
+
+Initial MRI at epiduritis diagnosis showed osseous metastasis of L1 with epiduritis, but no enhancement of the spinal cord.

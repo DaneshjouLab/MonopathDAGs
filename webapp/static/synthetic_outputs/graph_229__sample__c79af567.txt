@@ -1,0 +1,15 @@
+A 50-year-old female presented with a 10-day history of low-grade intermittent fever, productive cough, involuntary movements of both upper and lower limbs, vomiting, nausea, and headache. Initial differential diagnosis included community-acquired pneumonia and acute meningoencephalitis. Empirically, the patient was started on intravenous antibiotics, anti-epileptic medications, and supportive care. On examination, the patient appeared drowsy and somnolent.
+
+Vitals revealed a temperature of 38.6°C, heart rate of 108 bpm, blood pressure of 130/80 mmHg, respiratory rate of 24 breaths per minute, and SpO2 of 95% on room air. Respiratory examination revealed bilateral crepitations on auscultation. Cardiovascular examination was unremarkable with normal heart sounds, symmetrical peripheral pulses, and no JVD or peripheral edema. Neurological examination showed a GCS of 9, equal and reactive pupils, brisk DTRs, and a bilateral extensor Babinski sign.
+
+Abdominal examination was soft, non-tender, with no organomegaly or masses, and normal bowel sounds. A chest CT revealed a miliary pattern, with a differential including interstitial lung disease, infectious processes, or inflammatory conditions. A brain MRI with contrast showed multiple ring-enhancing intracranial lesions. A preliminary diagnosis of disseminated tuberculosis was considered.
+
+Sputum samples were negative for tuberculosis based on AFB staining, culture, and GeneXpert MTB/RIF. Despite the negative sputum results, anti-tubercular therapy (ATT) was initiated with isoniazid, rifampicin, pyrazinamide, and ethambutol due to clinical suspicion. Bronchoscopy was deferred due to patient non-compliance.
+
+A repeat thorax CT showed multiple diffusely scattered tiny random nodules in bilateral lung fields. A repeat brain MRI with contrast showed multiple intra-axial, ring-enhancing T2 hyperintense lesions with surrounding vasogenic edema.
+
+During daily ward rounds, a new palpable cervical lymph node was discovered.
+
+Fine needle aspiration cytology (FNAC) of the lymph node showed features suggestive of malignancy. PET-CT imaging demonstrated metabolically active lesions in the left lung, mediastinum, cervical, and supraclavicular regions, raising suspicion for a primary lung malignancy with metastases.
+
+CT-guided biopsy of the lung lesion confirmed the diagnosis of adenocarcinoma of the lung with lymph node and neuro-parenchymal metastases.

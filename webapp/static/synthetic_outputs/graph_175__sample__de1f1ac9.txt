@@ -1,0 +1,7 @@
+A 57-year-old male presented in December 2015 with chest pain and post-activity fatigue. He was diagnosed with left lower lung adenocarcinoma (cT1N2M1a stage IVA) upon identification of cancer cells in his left pleural effusion. Next-generation sequencing (NGS) of the paraffin-embedded section from pleural effusion revealed an ALK-positive mutation (EML4-ALK fusion).
+
+The patient began self-administering crizotinib from December 30, 2015, at a dose of 250 mg twice daily. A complete response to crizotinib was observed by January 1, 2016. Bi-monthly follow-ups showed no drug-related adverse effects, including rash or hypertension. Progression-free survival (PFS) was 35 months.
+
+On November 16, 2018, chest ultrasound indicated massive left pleural effusion, discovered during evaluation for post-activity fatigue. Cytological examination of the pleural effusion found cancer cells. A CT scan showed a 1.3 cm nodule in the left lung lower lobe, indicating disease progression (PD). Circulating tumor DNA sequencing from a plasma sample showed no ALK-related mutations.
+
+DNA sequencing of a paraffin-embedded section from the pleural effusion revealed the ALK point mutation (F1174C exon23) on the Illumina high-throughput sequencing platform. Crizotinib was switched to alectinib at a dose of 600 mg twice daily, resulting in a complete response (CR).

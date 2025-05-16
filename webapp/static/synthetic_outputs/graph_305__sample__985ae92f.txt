@@ -1,0 +1,7 @@
+In May 2018, an 81-year-old female presented with a productive cough and shortness of breath that had persisted for several months. A chest CT scan revealed a 58 mm × 62 mm nodule in the left lung, accompanied by multiple smaller nodules, enlarged mediastinal lymph nodes, and pleural effusions. Based on these findings, she was diagnosed with stage IV lung adenocarcinoma.
+
+A lung biopsy specimen was sent for capture-based next-generation sequencing (NGS) using a panel of 168 cancer-related genes (Lung Plasma, Burning Rock, Guangzhou, China). The NGS analysis identified an EGFR c.2236_2250del (p.E746_A750del) mutation with an abundance of 11.52%.
+
+Consequently, the patient was started on osimertinib (80 mg, qd) as the first-line therapy. Her symptoms improved rapidly, and a chest CT evaluation performed 12 weeks later demonstrated a partial response (PR), with the lung lesion significantly decreasing in size to 38 mm × 22 mm.
+
+After 11 months of disease control, a follow-up CT scan showed an enlarged left lung mass, measuring 66 mm × 50 mm. Ultra-deep plasma-derived circulating tumor DNA (ctDNA) NGS revealed the presence of the EGFR E746_A750del mutation (abundance 0.54%) and a TP53 H179R mutation (abundance 1.32%). The patient presented with asymptomatic disease progression (PD) and refused chemotherapy. She continued osimertinib treatment at the same dosage (80 mg, qd).

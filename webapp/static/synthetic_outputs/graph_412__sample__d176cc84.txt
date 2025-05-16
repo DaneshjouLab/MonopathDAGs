@@ -1,0 +1,19 @@
+In January 2015, a 65-year-old woman presented with moderate headache and mild nausea. Her medical history included hypertension and coronary disease for 10 years, which were under control with oral medications. She was a non-smoker and non-drinker, and denied any family history of cancer. Physical examination revealed a palpable nodule in the lower right cervical zone, which was about 1.0 cm in diameter, painless, hard, and fixed with surrounding structures.
+
+Further investigation revealed multiple enlarged lymph nodes in the right lower cervical and bilateral supraclavicular zone detected by ultrasound. A chest CT scan with contrast revealed a 1.5-cm nodule in the left upper lobe of the lung, with multiple enlarged lymph nodes in the left hilum and bilateral mediastinum. Brain MRI showed a 1.2-cm nodule in the right parietal lobe with mild surrounded swelling.
+
+A PET-CT scan confirmed multiple lesions with increased FDG uptake. Ultrasound-guided core needle biopsy of the cervical lymph node indicated metastatic adenocarcinoma of the lung. Immunohistochemical (IHC) staining showed: CA125 (+), CA199 (+), CD34 (blood vessels+), CDX2 (\u2212), CK19 (+), galectin-3 (\u00b1), Ki-67 (40%+), mammoglobin (\u00b1), naspin-A (+), PAX8 (\u00b1), thyroglobulin (\u2212), and TTF-1 (+).
+
+EGFR gene detection showed L858R mutation in exon 21. Based on these findings, she was diagnosed with non-small-cell lung adenocarcinoma with clinical staging of T1N3M1b, stage IV (with synchronic brain metastasis).
+
+In February 2015, the patient started treatment with icotinib (125\u2009mg tid orally). A partial response was achieved after 1\u2009month.
+
+By October 2015, the patient complained of severe headache and nausea. CSF cytopathology confirmed leptomeningeal metastasis. Brain imaging showed no progression of primary lung tumor or metastatic brain lesion. Intrathecal chemotherapy with methotrexate was given (methotrexate 10 mg, every other day). Liquid biopsy using plasma and CSF was performed. NGS reported EGFR gene amplification, L858R mutation, and T790 M mutation in CSF, but not in plasma.
+
+In November 2015, Osimertinib was administered (80\u2009mg/day orally).
+
+After 2 months of osimertinib treatment, repeated NGS using CSF showed EGFR gene amplification and L858R mutation only, while T790\u2009M mutation was undetectable.
+
+In July 2016, the patient developed disease progression and was admitted to the hospital in a critical condition. She presented with severe headache, dizziness, nausea, and vomiting, with persistent high intracranial pressure of 240\u2009mm H2O.
+
+The patient's Eastern Cooperative Oncology Group (ECOG) performance status was 3. Intense surveillance and life-supporting care were given. Liquid biopsy using CSF showed EGFR gene amplification, L858R mutation, and a new L718Q mutation.

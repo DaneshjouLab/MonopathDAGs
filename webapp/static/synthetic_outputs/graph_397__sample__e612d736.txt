@@ -1,0 +1,17 @@
+In August 2018, a 48-year-old woman presented with lumbar acid distension, needle-like pain, numbness, and fatigue of both lower limbs. A CT scan of the chest and abdomen revealed a left superior lobe lung lesion and thoracic vertebra metastasis. Her spine was physically curved, and the spinal cord was compressed.
+
+The patient underwent T6 and T8 vertebral body shaping, T9 pedicle screw rod fixation, T8 fracture reduction, and spinal canal decompression under general anesthesia.
+
+Following surgery, a left lung biopsy revealed stage IV adenocarcinoma with an EGFR exon 19 deletion (19del) mutation detected by amplification refractory mutation system-polymerase chain reaction.
+
+The patient was then administered oral osimertinib at a dosage of 80 mg/day.
+
+One month after osimertinib treatment, the tumor shrank. During the Osimertinib treatment, the tumor continued to shrink, and the best efficacy evaluation was partial response (PR).
+
+One year and a half later, the patient presented with a headache and vomiting. An MRI of the brain showed extensive leptomeningeal metastasis (LM) with no obvious abnormalities in the brain parenchyma, indicating disease progression. The patient with NSCLC acquired resistance to first-line osimertinib.
+
+Next-generation sequencing (NGS) of CSF circulating tumor DNA (ctDNA) detected EGFR C797S/exon 19 deletion (19del) mutations.
+
+A chest and abdomen CT scan were roughly the same as before.
+
+Lumbar puncture and cytology examination detected exfoliated tumor cells from CSF.

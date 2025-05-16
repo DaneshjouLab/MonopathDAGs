@@ -1,0 +1,7 @@
+**Case 1:**
+
+A 73-year-old Japanese man diagnosed with adenocarcinoma was undergoing combination therapy. Seven days after the initial treatment, laboratory data showed acute kidney injury (AKI) with an increase in the creatinine (Cr) level from 1.17 to 1.68 mg/dL. On day 16, the patient underwent a renal biopsy, which revealed mild acute tubular injury (ATI). The mild ATI was treated with oral prednisolone (PSL) at 30 mg/day for 1 month, which ameliorated the AKI, although kidney function slightly declined, with a Cr level of 1.4-1.5 mg/dL.
+
+**Case 2:**
+
+A 66-year-old Japanese man diagnosed with adenocarcinoma received combination therapy with initial medication including esomeprazole 20 mg and celecoxib 200 mg. Twenty-seven days after the initial treatment, laboratory data revealed an increase in the Cr level from 1.09 to 1.99 mg/dL. The chemotherapy regimen was modified to pembrolizumab monotherapy. On day 41, the patient was brought to the hospital in an unconscious state. On admission (day 41), laboratory data showed a Cr level of 5.08 mg/dL and a blood urea nitrogen (BUN) level of 55.1 mg/dL. Electrolyte disorders, bacterial and viral meningitis, and malignancy were ruled out. Immune checkpoint inhibitor (ICI)-related encephalitis was suspected.

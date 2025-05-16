@@ -1,0 +1,19 @@
+A 74-year-old male with a history of recurrent mediastinal lymph node metastasis of lung adenocarcinoma, diagnosed 3 years after surgery, was admitted to the hospital. The patient had a significant smoking history of 40 cigarettes per day for 40 years (80 pack-years), having quit in his late 50s. Pulmonary function testing revealed a forced expiratory volume in 1 second that was 23.5% of the predicted value, indicating GOLD stage 4 COPD.
+
+The patient was started on concurrent chemoradiotherapy (CRT) consisting of 7 cycles of chemotherapy with weekly carboplatin (AUC = 2) and paclitaxel.
+
+Eighteen days after the start of CRT, the patient developed grade 3 esophagitis symptoms and was treated with nonsteroidal anti-inflammatory drugs and sodium alginate. He also experienced constipation secondary to chemotherapy, which was managed with magnesium oxide and sennoside.
+
+On the 32nd day of CRT, the patient developed febrile neutropenia and was administered tazobactam/piperacillin (4.5 g intravenously every 8 h) and filgrastim (75 \u03bcg/day subcutaneously).
+
+Radiation therapy was suspended for 3 days and then resumed. From the 35th day onward, the patient experienced daily vomiting, with a large amount of vomiting on the 38th day. Abdominal examination revealed distension and tenderness throughout the abdomen without signs of peritoneal irritation. Laboratory findings showed an increased lactate level (11.5 mmol/L), WBC count of 12,300/\u03bcL, CRP of 17.21 mg/dL, BUN of 46.6 mg/dL, and creatinine of 2.83 mg/dL.
+
+A contrast-enhanced CT scan revealed extensive pneumatosis from the esophagus to the stomach and upper part of the small intestine, minute gas in the portal vein, but no obvious intestinal ischemia. A nasogastric tube was inserted for gastric decompression.
+
+The lactate level subsequently reduced to 2.5 mmol/L. Conservative treatment was initiated in the intensive care unit, consisting of fasting, fluid replacement, and meropenem (1 g intravenously every 12 h) administration.
+
+Four days after the onset of pneumatosis intestinalis (PI), a CT scan showed marked improvement of the pneumatosis, and laboratory findings also improved.
+
+Upper gastrointestinal endoscopy revealed an all-around esophageal ulcer covered with a white coat, and no obvious fistula was found. The pneumatosis was attributed to the inflow of gas into the submucosa from this esophageal lesion.
+
+Oral intake was resumed, and the patient's condition improved. CRT was discontinued after 48 Gy of irradiation and 4 cycles of chemotherapy (out of the planned 7 cycles). After hospital discharge, the patient attended the hospital as an outpatient and did not relapse for PI or lung cancer.

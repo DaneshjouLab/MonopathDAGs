@@ -1,0 +1,7 @@
+A patient presented with locally advanced adenosquamous carcinoma (ASC). A pretreatment biopsy confirmed the diagnosis of ASC, which included components of both adenocarcinoma and squamous cell carcinoma. Targeted next-generation sequencing (NGS) revealed an EML4-ALK fusion. The tumor was ALK-positive.
+
+Initially, the patient received neoadjuvant chemotherapy followed by neoadjuvant ceritinib treatment. The patient achieved a partial response (PR) to ceritinib.
+
+Subsequently, the patient underwent complete surgical resection (R0) via video-assisted thoracoscopic surgery (VATS). The surgery was complicated by mild adhesions and bleeding.
+
+Post-surgical pathology confirmed the initial diagnosis. The patient tolerated ceritinib, although diarrhea was noted as a side effect. The patient achieved surgical R0 resection.

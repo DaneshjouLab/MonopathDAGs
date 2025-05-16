@@ -1,0 +1,9 @@
+A patient presented with acute severe leg and back pain. The patient's medical history included a prior surgical removal of a right breast tumor that was presumed benign. The patient also had a significant smoking history of 35 pack-years and a family history of lung cancer, with the patient's mother affected (unspecified) and a sister who died at age 51. The patient's symptoms had been worsening for the past 2 weeks.
+
+A spinal MRI revealed extensive lesions concerning for metastases. A pathologic fracture at the eleventh thoracic vertebra (T11) was noted, with a pending pathologic fracture in the right femur. The patient was subsequently admitted to the hospital for further workup and imaging.
+
+A thorax CT scan showed mass-like consolidation in the left lower lobe with adjacent satellite nodularity and interlobular septal thickening, multiple pulmonary nodules in the right lower lobe, and enlarged hilar and mediastinal lymph nodes.
+
+Next-generation sequencing (NGS) and chromosomal microarray analysis (CMA) revealed a hot-spot KRAS exon 2 p.G12D mutation and 7 DNA copy-number aberrations (CNAs) in primary and metastatic tumor specimens, along with 7 CNAs exclusive to the metastatic tumor specimen.
+
+A brain MRI demonstrated multifocal metastatic disease of the calvarium, infundibular masses, and a clival lesion.

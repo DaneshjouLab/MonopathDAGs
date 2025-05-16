@@ -1,0 +1,5 @@
+A patient presented with severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infection, manifesting as coronavirus disease 2019 (COVID-19) and associated COVID pathologies. The patient experienced COVID-19.
+
+The patient had a history of chronic obstructive pulmonary disease (COPD) and emphysema. The patient presented with dyspnea, cough, myalgia, and fever, progressing to acute respiratory failure, hypoxemia, and hypocapnia. The patient tested positive for SARS-CoV-2 and was diagnosed with COVID-19 pneumonia. Initial treatment included hydroxychloroquine, lopinavir/ritonavir, interferon beta, and corticoids. The patient developed acute dyspnea and chest pain, and was subsequently diagnosed with a left complete pneumothorax. The patient's COVID-19 infection was further complicated by a prolonged air leak.
+
+Further investigation revealed the presence of SARS-CoV-2. Imaging showed an emphysematous area. Biopsy revealed keratinizing squamous cell carcinoma in situ.

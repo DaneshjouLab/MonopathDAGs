@@ -1,0 +1,13 @@
+A 49-year-old man was referred to the hospital in December 2021 with an abdominal mass that had persisted for over three weeks. The patient reported a burning sensation in the abdomen and a sudden weight loss of 10 kg between November and December 2021. Imaging scan revealed an abdominal mass. Clinical symptoms progressively increased.
+
+The patient had a history of untreated hepatitis B for more than 30 years. His ECOG performance status was 0, and vital signs were stable. Immunohistochemical analysis of cells from the abdominal mass revealed positive staining for calretinin, Wilm’s tumor gene 1, D2-40, and cytokeratin 5/6; weakly positive staining for desmin; and negative staining for SMA, Dog-1, Bcl-2, HMB45, Melan-A, and CD99. Abdominal CT revealed a solid mass in the abdomen (8.9 cm × 5.2 cm) with multiple lesions in the omentum and abdominal cavity, as well as a cystic mass in the lower abdomen.
+
+Based on these findings, the patient was diagnosed with stage III MPeM (cT3N0M1) via core needle biopsy.
+
+From January to March 2022, the patient received pemetrexed 800 mg (day 1), cisplatin 60 mg (day 1–2), and zimberelimab 240 mg (day 1), every 3 weeks for four cycles.
+
+During treatment, the patient experienced a moderate increase in serum creatinine to 116.6 μmoI/L.
+
+Due to the elevated serum creatinine (53–106 μmoI/L) caused by cisplatin, the cisplatin dosage was reduced to 50 mg from the fifth cycle onward. The patient received three additional cycles of pemetrexed, cisplatin and zimberelimab.
+
+In April 2022, after five treatment cycles, the maximum lesion size decreased from 8.9 cm × 5.2 cm to 4.1 cm × 4.0 cm. CA125 levels decreased from 64.1 U/mL to 15.1 U/mL. Treatment efficacy was evaluated as a partial response.

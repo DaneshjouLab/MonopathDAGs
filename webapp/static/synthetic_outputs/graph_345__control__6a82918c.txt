@@ -1,0 +1,11 @@
+The clinical case report describes the toxic effects of various chemotherapy regimens and the criteria for treatment discontinuation.
+
+Cisplatin (CDDP) is associated with severe toxic effects, including emesis, neurotoxicity, and renal damage. Carboplatin (CBDCA) is presented as a feasible alternative for CDDP-unfit patients, exhibiting significantly less toxicity, including reduced nausea and vomiting. CBDCA can also be administered to patients with mild renal impairment.
+
+Nab-paclitaxel (nab-PTX) is compared to solvent-based paclitaxel (sb-PTX), with nab-PTX showing significantly less neuropathy, neutropenia, arthralgia, and myalgia.
+
+Chemotherapy was discontinued if tumor recurrence was detected, or if the following criteria were met: a delay of more than 28 days for the next cycle, occurrence of drug-induced pneumonitis grade 2 or worse, detection of grade 4 or worse nonhematologic toxicities, or deterioration of the patient’s condition due to severe toxicity or worsening comorbidities.
+
+Two patients were excluded before intervention; one experienced a recurrence, and the other presented with new ground glass opacities before starting therapy.
+
+First-step dose reduction was required in 6 patients (31.6%) due to grade 3 neutropenia (n=5) and physician's discretion (n=1).

@@ -1,0 +1,17 @@
+A 62-year-old patient with a history of deep vein thrombosis, hypertension, benign prostatic hyperplasia, and a 20 pack-year smoking history (quit 20 years ago) was diagnosed with lung adenocarcinoma after a supraclavicular lymph node biopsy. On admission, the patient's performance status was 1 on the Eastern Cooperative Oncology Group (ECOG) scale. Thoracic CT revealed a 46 × 47 mm mass in the second and sixth segments of the left lung, with multiple metastases in both lungs, and bilateral supraclavicular, subcarinal, and hilar lymphadenopathy.
+
+Over the two months prior to diagnosis, the patient complained of dyspnea on exertion and a dry cough. They also reported a weight loss of 4 kg over six months. Auscultation revealed basilar crackles on the left side. The adenocarcinoma diagnosis was confirmed (CKAE/AE3+, CK7+, TTF-1+).
+
+EGFR variant testing (cobasEGFRmutation test v2 assay) was negative. ALK protein expression immunohistochemistry (VENTANA ALK CloneD5F3) was negative. ROS1 rearrangement FISH (ZytoLight FISH-Tissue Implementation Kit and SpecROS1Dual Color Break Apart Probe) was also negative.
+
+PD-L1 expression was found on 20% of tumor cells (TPS) using Ventana antibody. A thoracic, abdominal, and pelvic CT with contrast (RECIST 1.1 criteria) showed target lesions: a tumor in the left hilum measuring 46 mm, right hilar lymph nodes measuring 47 mm, and a celiac lymph node measuring 17 mm, with a sum of the longest diameter (SLD) of 110 mm. Nontarget lesions included enlarged subcarinal, upper and lower paratracheal lymph nodes; multiple lung nodules; ground glass opacities, septal thickening, and small nodules with perilymphatic distribution.
+
+A subsegmental pulmonary embolism was revealed, and the patient was started on an anticoagulant. A cranial CT revealed no abnormalities. The disease clinical stage was initially classified as IVA (cT2bN3M1a) by the 8th Edition of TNM UICC.
+
+The patient was started on immunochemotherapy with cisplatin, pemetrexed, and pembrolizumab for 4 induction courses, followed by pembrolizumab and pemetrexed continuation.
+
+A thoracic CT scan after 3 months of treatment showed a partial response (SLD 63 mm). Treatment continued for a total of 11 courses.
+
+Subsequent CT scans (every 3 months) showed an initial partial response (SLD 63 mm) then progressive disease (SLD 76 mm).
+
+Treatment with cisplatin, pemetrexed, and pembrolizumab was discontinued due to progressive disease. A supraclavicular biopsy was performed with RNA-based targeted NGS analysis (FusionPlex®Lung v2). An EGFR exon 19 variant was detected (NM_005228.5:c.2236_2253delinsATT p.Glu746_Thr751delinsIle). No ALK; NTRK1; NTRK2; NTRK3; RET; ROS1 fusions; MET exon 14 skipping; BRAF, ERBB2, KRAS single-nucleotide polymorphisms; or insertions/deletions were observed.

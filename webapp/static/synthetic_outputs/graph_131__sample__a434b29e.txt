@@ -1,0 +1,9 @@
+A 71-year-old female presented with a six-month history of approximately 50 pounds of weight loss and occasional shortness of breath. Physical examination revealed enlarged right axillary and supraclavicular lymph nodes. Mammography showed multiple enlarged right axillary lymph nodes, but no suspicious lesions were seen in either breast.
+
+A right axillary lymph node biopsy revealed poorly differentiated metastatic adenocarcinoma. Immunohistochemical staining was positive for Cytokeratin 7 (CK7) and thyroid transcription factor-1 (TTF-1), and negative for CK20 and mammaglobin. EGFR, ROS1, and ALK were negative. PD1 and PDL1 expressions were less than 1%.
+
+A CT scan of the chest with contrast enhancement showed multiple irregular nodular opacities in bilateral lungs, with the largest measuring 10 mm, and extensive bilateral mediastinal and supraclavicular lymphadenopathy, with the largest measuring 1.8 cm. MRI of the brain and bone scans were negative for any metastases. A PET scan revealed hypermetabolic nodules in the lung and multiple suspicious nodes in the neck, chest, and abdomen, suggesting advanced stage IV lung cancer.
+
+Further characterization with a CT chest on 06/12/2017 showed a right upper lobe nodule. The same CT scan also showed right subclavian lymph nodes, with the largest measuring 19.54 mm, and right axillary lymph nodes.
+
+The patient was treated with carboplatin, pemetrexed, and paclitaxel for a total of four cycles. She responded well to the treatment, with a decrease in the size of pulmonary tumor nodules (from 11.12 to 7.97 mm) noted on the follow-up CT scan.

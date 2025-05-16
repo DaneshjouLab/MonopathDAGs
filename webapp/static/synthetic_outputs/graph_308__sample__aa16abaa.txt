@@ -1,0 +1,13 @@
+A 60-year-old male presented on January 23, 2019, with a constellation of symptoms that had developed over the preceding six weeks. These included chest pain (sharp, mostly left-sided, exacerbated by breathing and lying down), back pain (increasing with walking), abdominal distention, leg weakness and numbness, and constipation. He had been taking pain killers for approximately six weeks prior to admission.
+
+Initial examination revealed weakness and numbness of the lower limbs, suggestive of spinal cord compression. Blood count was normal: haemoglobin 138 g/L, white cell count 5.14x109/L with a normal differential, and platelets 256x109/L. Chemistry was also normal, with no evidence of renal failure or hypercalcaemia.
+
+A contrast MRI of the spine revealed widespread skeletal metastatic disease and at least three large soft-tissue deposits in the thoracic paraspinal space, the largest on the left at level T2/T3. An intervertebral deposit at T4/T5 was causing significant compression of the thoracic cord.
+
+A chest X-ray showed a left upper lobe mass, raising suspicion of a possible pulmonary tumor and showing a left apical opacity.
+
+A contrast CT scan revealed a large lobular mass with chest wall invasion, particularly involving the left third rib, measuring up to 75 mm in maximum diameter with adjacent chest wall muscular invasion. Mild to moderate left-sided pleural effusion was noted. The CT scan also showed lumbar vertebral and pelvic bony metastatic appearances.
+
+A lung biopsy was performed, revealing features of plasmablastic myeloma with infiltration by sheets of atypical plasmacytoid cells with some multinucleated forms. Skeletal muscle was also seen.
+
+Immunohistochemical staining of the lung biopsy showed cells positive for CD138 and MUM1, weakly positive for CD56, and negative for TTF1, p63, S100, AE1/AE3, CD3, CD20 and CD79a. Ki67 was remarkably high (90%).

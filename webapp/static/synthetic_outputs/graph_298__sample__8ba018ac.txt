@@ -1,0 +1,17 @@
+**Clinical Case Report**
+
+On May 30, 2023, a patient presented with nodules in the right upper lung, detected during a physical exam one week prior. The patient reported no symptoms or signs of respiratory disease in the past three months and no previous history of respiratory diseases such as recurrent wheezing, cough, expectoration, hemoptysis, or infection. The patient also denied any exposure to individuals from high-risk areas for COVID-19. Physical examination revealed a symmetrical thorax.
+
+A chest CT scan performed on May 30, 2023, revealed nodules in the upper lobe apex of the right lung, raising suspicion for sclerosing alveolar cell tumor and carcinoid. The patient was admitted with an admission diagnosis of right upper lung mass on the same day.
+
+Another chest CT scan, also performed on the day of admission, showed soft tissue density nodules (23 x 16 x 19 mm) in the right upper lung with lobulated edges, pleural traction depression, mild to moderate uneven enhancement, and small mediastinum and hilar lymph nodes. The imaging diagnosis was right upper lung nodules, likely inflammatory lesions.
+
+The day after admission, a chest MRI showed T1 and slightly longer T2 signal nodules (23 x 16 x 19 mm) in the right upper lung with lobulated edges, high intensity on DWI and ADC, adjacent pleural thickening, no enlargement of mediastinal and hilar lymph nodes, and a small amount of bilateral pleural effusion.
+
+Blood tests revealed a WBC count of 9.34 x 10^9/L, N 0.77%, and L 0.12%. Based on these findings and imaging, the diagnosis was revised to nodules in the right upper lung, likely inflammatory lesions, with tumors excluded by close follow-up, and bilateral small amount of pleural effusion. CT images showed oval soft tissue density nodules in the right upper lung with mild to moderate uneven delayed enhancement and slight thickening of adjacent pleura on enhanced scan.
+
+MRI of the right upper lung nodules showed hyperintensity on DWI and ADC. A small amount of pleural effusion was also present.
+
+The patient subsequently underwent a single-port thoracoscopic lobectomy. Post-operatively, the endotracheal tube was removed, and the patient returned to the ward awake.
+
+Pathological examination of the resected tissue revealed spindle cell hyperplasia with lymphocyte and plasma cell infiltration, local lymphoid follicle formation, and scattered alveolar epithelial cell hyperplasia. Immunohistochemistry showed tumor cells expressing CK focally (+), ALK (+ +), SMA (+ +), Desmin (\u2212), according to (\u2212), CD34 (\u2212), and Ki67 (5%). Interstitial plasma cells expressed CD138 (++), IgG (++), and IgG4 (\u2212). Alveolar epithelial cells expressed Napsin-a (+) and TTF1(+). The final diagnosis was right upper pneumonic myofibroblastoma.

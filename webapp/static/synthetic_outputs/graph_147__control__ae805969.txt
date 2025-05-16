@@ -1,0 +1,5 @@
+Malignant peritoneal mesothelioma (MPeM) is a rare cancer with a poor prognosis at advanced stage, and the standard first-line treatment for inoperable patients is chemotherapy. Although combining programmed cell death 1 (PD-1) inhibitors with chemotherapy is generally considered safe and effective in several malignant solid tumors, there are few reports regarding initial immunochemotherapy in advanced MPeM. This case report presents the first known case of a treatment-naïve patient with epithelioid subtype MPeM who benefited from initial PD-1 inhibitor plus standard chemotherapy.
+
+The patient presented with a solid mass in the lower abdomen, which was identified via Computed tomography. A core needle biopsy confirmed the diagnosis of epithelioid subtype MPeM.
+
+The patient received eight cycles of pemetrexed 800 mg (day 1), cisplatin 60/50 mg (day 1–2), and zimberelimab (PD-1 inhibitor) 240 mg (day 1) every 3 weeks. He achieved significant reduction of peritoneal tumors with remarkable improvement in symptoms, demonstrating a prolonged progression-free survival (PFS) and good tolerance to the treatment regimen.

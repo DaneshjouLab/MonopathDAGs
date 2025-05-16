@@ -1,0 +1,15 @@
+A 74-year-old man was admitted for evaluation of an abnormal nodular shadow in the right upper lobe, incidentally found on a chest CT. He had a 55 pack-year smoking history. He reported no fever, respiratory symptoms, or weight loss in the preceding 3 months. On examination, his body temperature was 37.1°C, heart rate was 88 beats/min, blood pressure was 120/66 mmHg, and peripheral oxygen saturation was 98%. A 7 x 5 cm, elastic, soft, mobile, and non-tender lymph node was palpable in the left neck. No other swollen lymph nodes were identified in the axillary or groin regions.
+
+Abdominal examination was unremarkable. Laboratory findings included a red blood cell count of 4.11 × 10^6/μl; C-reactive protein, 1.50 mg/dl; lactate dehydrogenase, 416 U/L; alkaline phosphatase, 746 U/L; neuron-specific enolase, 20.7 ng/ml, and soluble interleukin 2 receptor, 5862 U/L. Chest radiography revealed a nodular shadow approximately 2 cm in maximum diameter in the upper right field. CT of the chest revealed a 24 × 21 × 18 mm nodule with a cavity in Segment 1 of the right upper lobe. No swelling of the mediastinal lymph nodes was evident.
+
+FDG-PET showed the nodule in the right upper lobe with a maximum standardized uptake value (SUVmax) of 9.4. Strong FDG accumulation was also noted in the left cervical lymph nodes, both axillary lesions, near the pancreatic head, both external iliac arteries, and the right inguinal lymph nodes. No abnormal FDG accumulation was seen in the liver, bone, adrenal glands, or spleen. MRI of the head showed no abnormalities.
+
+Transbronchial lung biopsy (TBLB) revealed squamous cell carcinoma of the lung. A left cervical lymph node biopsy was performed. Immunohistochemistry of the lymph node revealed that CD20, CD79a, Bcl-2, and CD10 were positive, leading to a diagnosis of diffuse large B-cell lymphoma NOS.
+
+The lung cancer was staged as IA, and the malignant lymphoma was staged as IVA.
+
+The patient received two courses of R-CHOP (Rituximab + cyclophosphamide + hydroxydaunorubicin + vincristine + prednisolone) therapy for the malignant lymphoma. Soluble IL-2R normalized to 466 from 14,003 U/mL.
+
+Follow-up chest radiographs and CT of the chest revealed that the nodular shadows in the right upper lung field had increased, and new cavities appeared. FDG-PET showed that the maximum SUV in the lung tumor increased from 9.4 to 10.5, but accumulation in the lymphoma lesions remained only in the left inguinal region, with little accumulation in other areas.
+
+Surgery was then performed for the lung cancer. A right upper lobectomy and mediastinal lymph node dissection was performed.

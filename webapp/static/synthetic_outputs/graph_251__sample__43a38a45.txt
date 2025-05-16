@@ -1,0 +1,7 @@
+A 52-year-old female, a never smoker with no prior medical history, was diagnosed with bone metastatic EGFR L858R-mutated non-small cell lung cancer (NSCLC) in July 2019. Gefitinib (250 mg daily) was initiated around July 2019 and was well tolerated.
+
+In June 2020, the patient developed symptoms of intracranial hypertension, including headache, diplopia, and vomiting. Cerebrospinal fluid (CSF) analysis revealed hyperproteinorachia (0.49 g/L) and 4% adenocarcinomatous cells. Assessment showed that bone metastases and the primary lung lesion had not progressed. Molecular analysis of plasma and CSF identified the EGFR L858R mutation but did not detect the acquired T790M mutation.
+
+Osimertinib (80 mg daily) was started as a second-line treatment in combination with nineteen intrathecal methotrexate injections (15 mg biweekly). This treatment regimen was well tolerated and resulted in neurological improvement, with the disappearance of tumor cells in the CSF and normalization of proteinorachia.
+
+In October 2021, neurological symptoms reappeared, including cerebellar ataxia, diplopia, headaches, and dysarthria. CSF analysis confirmed progression of carcinomatous meningitis and high proteinorachia (8.66 g/L). Bone and lung lesions did not progress.

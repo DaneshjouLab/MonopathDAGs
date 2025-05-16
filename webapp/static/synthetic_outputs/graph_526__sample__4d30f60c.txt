@@ -1,0 +1,9 @@
+A patient in his 50s was diagnosed with non-small cell lung cancer (NSCLC), staged as T2aN2M1c, Stage IVB, with metastases to the bone. The primary site was located in the upper lobe of the right lung. The cancer size was 25 mm with invasion of the visceral pleura. Molecular testing revealed no EGFR or KRAS mutations, nor RET, ALK, ROS1, or ALK fusion genes mutations. No other driver genetic mutations were identified. The PD-L1 (22C3) tumor proportion score was 100%. The patient had a history of alcohol intake of 40 g/day up to the point of starting treatment for lung cancer and smoked 30 cigarettes per day for 30 years.
+
+The patient received four courses of carboplatin, pemetrexed, and pembrolizumab, resulting in a partial response. This was followed by four courses of maintenance therapy with pemetrexed and pembrolizumab.
+
+On day 194 after starting pembrolizumab, the patient developed a fever of 38°C and diarrhea. A CT scan revealed a ground-glass opacity in the right lung, leading to a diagnosis of immune-related pneumonitis CTCAE grade 1.
+
+The patient also received palliative radiation therapy for sacroiliac metastases, with a total dose of irradiation of 30 Gy/10 fractions.
+
+Subsequently, the patient was diagnosed with immune-related colitis CTCAE grade 2. Pemetrexed and pembrolizumab were discontinued, and he was started on prednisolone at a dose of 0.5 mg/kg/day.

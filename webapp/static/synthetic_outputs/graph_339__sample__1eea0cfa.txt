@@ -1,0 +1,7 @@
+In November 2018, a 55-year-old male presented with cough with sputum, chest distress, and breathlessness. A CT scan revealed a lung mass in the lower left lobe, and a brain MRI revealed brain metastases in the left frontal lobe and insula. On November 19, 2018, a percutaneous lung biopsy confirmed adenocarcinoma. Next-generation sequencing (NGS) revealed an EGFR 19del mutation, leading to a clinical diagnosis of stage IVa lung adenocarcinoma (cT1cN1M1b).
+
+On December 3, 2018, Gefitinib (250 mg, once a day) was initiated. Variant allele frequencies (VAFs) of the detected EGFR 19del mutation were 19.6%. By December 31st, 2018, chest CT scans showed significant reduction in the original lung mass, and the brain metastases had almost disappeared, achieving partial remission (PR) and complete remission (CR) respectively.
+
+From January 2019 to June 2019, the patient received 6 cycles of PC regimen (pemetrexed 1 g and carboplatin 500 mg). From July 2019 to November 2019, the patient was maintained with single agent pemetrexed (1 g) chemotherapy for 5 cycles, with regular follow-up showing partial remission (PR).
+
+On December 3, 2019, a brain MRI revealed a new craniocerebral metastasis. From December 18, 2019 to December 31, 2019, the patient was administered gefitinib continually (no EGFR mutation detected) combined with brain intensity modulated radiation therapy (IMRT) (DT 3000cGy/10F whole brain).

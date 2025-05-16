@@ -1,0 +1,9 @@
+A 57-year-old Chinese man was admitted to the respiratory department for hemoptysis and cough. He denied chest pain, fever, shiver, and other concomitant symptoms. His social history was significant for a 60-pack year smoking history and 30 years of significant alcohol intake, but he had been sober for 10 years. He had no other relevant medical history of note, no known genetic, congenital, or developmental abnormalities, and had received no prior treatment for his current symptoms. Physical examination revealed non-palpable/enlarged superficial lymph nodes and clear breathing sounds bilaterally without crackles.
+
+A CT scan performed on 2020-10-12 revealed an irregular large soft tissue mass (52.85 mm) in the right hilar region, invading the right main bronchus, narrowing, and truncating with atelectasis. Histological examination of a transbronchial specimen confirmed squamous cell carcinoma (SCC). No lymph node metastases or distant organ metastases were identified.
+
+Based on these findings, a diagnosis of right central lung SCC with right upper lobe atelectasis (stage cT3N0M0, IIB) was made.
+
+The treatment plan consisted of induction chemotherapy with sequential thoracic radiotherapy. The induction chemotherapy regimen was Paclitaxel (albumin-bound) 400 mg D1 combined with carboplatin 500 mg D1 on a 21-day cycle.
+
+The first treatment cycle began on 2020-10-16. After two cycles of chemotherapy, efficacy was evaluated as stable disease (Figure 1B).

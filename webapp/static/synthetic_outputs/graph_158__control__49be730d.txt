@@ -1,0 +1,9 @@
+A 65-year-old man with a history of stage IV non-small cell lung cancer, currently undergoing chemotherapy without evidence of residual viable malignancy, was admitted to the hospital complaining of sore throat and mild pain in the right upper arm for 4 days. He had been treated with nonsteroidal anti-inflammatory drugs for 3 days prior to admission, leading to acute azotemia.
+
+Initial laboratory findings revealed mild leukocytosis with an elevated C-reactive protein (14.6 mg/L) and a creatinine level of 4.0 mg/dL. His body temperature was 36.6°C, and physical examination and chest radiography were unremarkable. Influenza A virus was confirmed in a nasal swab, and he was started on talniflumate.
+
+During treatment for influenza A, the patient developed a fever as high as 38.6°C and reported worsening pain and weakness in the right upper arm. He had no history of trauma or surgery in the head or neck region. Blood cultures were taken, and empirical antibiotic therapy with intravenous ceftriaxone was initiated. Magnetic resonance imaging (MRI) of the brain showed no metastatic or ischemic lesions.
+
+To investigate potential bone metastases causing the right upper arm pain, an 18F-fluorodeoxyglucose (FDG) positron emission tomography/computed tomography (PET/CT) scan was performed. The FDG PET/CT revealed hypermetabolic lesions in the retropharyngeal space, acute osteomyelitis of the vertebral bodies of C4 and C5, and descending necrotizing mediastinitis (DNM). Blood and sputum cultures later isolated Klebsiella pneumoniae. Based on contrast-enhanced neck and chest CT, a diagnosis of deep neck infection (DNI) with DNM was confirmed.
+
+Due to his underlying condition, the antibiotic regimen was broadened to include ciprofloxacin in addition to ceftriaxone. The patient initially showed improvement, but his condition subsequently deteriorated. He died after 2 weeks from sepsis and multiorgan failure.

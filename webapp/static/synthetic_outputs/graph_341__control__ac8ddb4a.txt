@@ -1,0 +1,5 @@
+A patient was diagnosed with stage IIIA (cT1N2M0) pulmonary adenocarcinoma. The patient's medical history also included Hodgkin lymphoma. The patient's lung cancer was further classified as non-small-cell lung cancer (NSCLC), specifically nonsquamous NSCLC and lung adenocarcinoma, occupying the upper lobe of the right lung. Malignant lesions were identified. The patient underwent a lung lobectomy and tumor resection.
+
+Following treatment, the efficacy of the primary lesion was initially evaluated as stable disease, while the mediastinal lymph nodes showed a partial response. Subsequent evaluation revealed a pathological complete response (pCR) in the primary lesion and a major pathological response (MPR) in the mediastinal lymph nodes. The patient achieved pathologic remission.
+
+Despite initial positive responses, the patient experienced tumor recurrence, leading to disease progression. This was followed by local recurrence and distant recurrence, indicating distant metastatic disease. The patient experienced periods of stable disease, but ultimately progressed to progressive disease. The patient's disease-free survival (DFS) was monitored.

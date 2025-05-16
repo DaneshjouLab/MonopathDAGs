@@ -1,0 +1,9 @@
+The case report focuses on three patients with non-small cell lung cancer (NSCLC) harboring uncommon EGFR Exon 19 delins mutations. Epidermal growth factor receptor (EGFR) is a known driver gene in NSCLC, and common Exon 19 deletions (e.g., p.E746_A750 del) typically respond well to EGFR tyrosine kinase inhibitors (TKIs). However, the optimal treatment strategies for NSCLC patients with uncommon Exon 19 delins mutations are less understood.
+
+The researchers identified three novel EGFR Exon 19 mutations: p.E746_S752delinsI, p.T751_I759delinsG, and p.L747_S752delinsAA.
+
+One patient with advanced NSCLC and the EGFR p.E746_S752delinsI mutation benefited from treatment with Icotinib.
+
+Two other patients had early-stage NSCLC. One patient, harboring the p.T751_I759delinsG mutation, had an excellent recovery after receiving horacoscopic radical resection. The other patient, with the p.L747_S752delinsAA mutation, experienced a relapse after undergoing the same surgical procedure.
+
+The study highlights that patients with different Exon 19 delins mutations may have varying prognoses. The report also emphasizes the importance of next-generation sequencing (NGS) as a crucial tool for guiding clinical treatment decisions in NSCLC, as it can increase the detection of EGFR del-ins mutations compared to older screening methods. The true incidence of these mutations is currently unknown, but routine use of NGS is expected to improve detection rates.

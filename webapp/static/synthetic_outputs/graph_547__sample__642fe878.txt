@@ -1,0 +1,7 @@
+A 59-year-old male was admitted to the clinic in March 2022 with a 6-month history of persistent cough producing blood-streaked sputum, worsening over the last 2 months. His vital signs were stable, and he reported no chest heartburn or pain, dizziness, or palpitations (ECOG score: 1). He had a 10-year history of coronary heart disease with one stent implanted in the circumflex. Cardiac ultrasound indicated that cardiac function was lower than normal.
+
+A CT scan with chest contrast revealed a right hilar mass enveloping the right pulmonary artery, and the right hilar lymph node was about 2.3 cm. A pathological tissue biopsy was performed by tracheoscopy, which diagnosed stage IIIB squamous carcinoma of the right lung (pT4N2M0). Craniocerebral MRI enhancement scan and abdominal CT non-contrast scan did not reveal metastases.
+
+Cardiac ultrasound showed reduced left ventricular ejection fraction (LVEF) of 50%. Electrocardiogram (ECG), cardiac enzymes, and liver and kidney functions were normal.
+
+The patient was treated with one cycle of nab-paclitaxel 300 mg + carboplatin 400 mg + tislelizumab (PD-1 inhibitor) 200 mg. Two weeks post-treatment, cardiac enzymes were significantly elevated: creatine kinase (CK) 195 U/L (reference: 0-173), CK isoenzyme 165 U/L (reference: 0-24), lactic dehydrogenase (LDH) 238 U/L (reference: 15-220).

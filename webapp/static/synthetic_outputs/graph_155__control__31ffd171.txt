@@ -1,0 +1,11 @@
+**Case Report: Bilateral Visual Impairment following Combination Chemotherapy with Carboplatin in a Patient with Small Cell Lung Cancer**
+
+**Background:** Platinum-based combination chemotherapy, including cisplatin and carboplatin, are important cytotoxic anti-cancer agents widely used to treat various solid tumors. Carboplatin has a similar effect on survival in small cell lung cancer but generally has a milder toxicity profile compared to cisplatin. Both may cause moderate or severe neurotoxicity, but ocular neurotoxicity from carboplatin is rarely reported.
+
+**Case Presentation:** A 79-year-old man with small cell lung cancer underwent intravenous polychemotherapy consisting of atezolizumab, etoposide, and carboplatin. One week after the second cycle of chemotherapy, he reported bilateral visual loss, with visual acuity reduced to hand motion in both eyes.
+
+Dilated fundus examination revealed retinal arterial narrowing without hemorrhage. Optical coherence tomography showed diffuse choroidal and retinal thinning. Fluorescein angiography revealed significantly delayed circulation without evidence of obstructive lesions. 30-Flicker electroretinogram testing showed a complete absence of cone response in both eyes.
+
+Despite the cessation of chemotherapy, the patient's visual acuity worsened to no light perception in both eyes.
+
+**Conclusions:** Carboplatin combination chemotherapy administered at therapeutic doses can result in irreversible visual loss, a side effect that is not widely acknowledged. When using carboplatin, physicians should be aware of its potential ocular toxicity.

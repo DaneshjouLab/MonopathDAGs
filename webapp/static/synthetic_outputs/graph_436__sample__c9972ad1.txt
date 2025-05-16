@@ -1,0 +1,7 @@
+In May 2018, a 58-year-old male with a history of nephrolithiasis presented to the First Affiliated Hospital of Nanchang University with a cough producing sputum mixed with blood. A computed tomography (CT) scan revealed primary lung cancer in the upper left lung with left hilar lymph node metastasis and multiple metastatic tumors in the liver (Fig1). A pathological examination of the bronchial biopsy confirmed the diagnosis of lung squamous cell carcinoma. Cranial MRI and bone scan showed no significant abnormality. The patient was diagnosed with stage IV lung squamous cell carcinoma. Next-generation sequencing (NGS) of lung cancer tissues showed no EGFR, ALK, ROS1, MET, BRAF V600E or NTRK gene mutation. Immunohistochemistry of lung cancer tissues showed a PD-L1 tumor proportion score of 5%.
+
+In May 2018, the patient received first-line combined chemotherapy with four courses of gemcitabine and cisplatin. However, progressive disease (PD) was found in the lung and liver lesions.
+
+In August 2018, docetaxel monotherapy was administered, but he developed PD after two courses of chemotherapy.
+
+In October 2018, third-line targeted therapy with anlotinib (12 mg once a day orally for two weeks) was initiated.

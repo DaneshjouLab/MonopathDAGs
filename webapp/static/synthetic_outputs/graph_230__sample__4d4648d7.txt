@@ -1,0 +1,9 @@
+A 65-year-old male with a 47-year history of smoking two packets of cigarettes a day, and a prior diagnosis of prostatic cancer at age 56, presented with a 2-month history of cough. Initial chest X-ray revealed a tumor shadow in the right middle lung field. Further evaluation revealed an ECOG performance status of 1. Blood tests showed: WBC 8020/\u03bcL, RBC 540\u2009\u00d7\u2009104/\u03bcL, platelets 23.9\u2009\u00d7\u2009104/\u03bcL, CEA 1.5\u2009ng/mL, CYFRA 21-1 5.7\u2009ng/mL, SCC 0.9\u2009ng/mL, pro-GRP 36.3\u2009pg/mL, PSA 1.88\u2009ng/mL. Chest X-ray and CT confirmed a tumor in the right upper lobe.
+
+The patient underwent a right pneumonectomy. Post-surgical pathological diagnosis revealed right upper lobe Large Cell Neuroendocrine Carcinoma (LCNEC) pT3N1M0 stage IIIA.
+
+Following the pneumonectomy, the patient developed postoperative empyema, requiring thoracoplasty.
+
+Four months after the right pneumonectomy, chest and abdominal CT scans revealed a subcutaneous mass in the precordium and multiple subcutaneous metastases. MRI showed brain metastasis.
+
+Histopathological analysis of the subcutaneous mass revealed tumor cells arranged in sheets and nests of atypical large cells with prominent nucleoli, exhibiting neuroendocrine architectural features. Immunostaining showed: CD56 negative, synaptophysin negative, chromogranin positive. The diagnosis was LCNEC. Primary cells infiltrating the subcutaneous tumor were CD3\u2010positive T cells and CD138\u2010positive plasma cells. Further characterization of the tumor cells showed neuroendocrine architectural features, such as palisading features and necrotic areas. Immunostaining showed that tumor cells were diffusely positive for chromogranin and CD138.

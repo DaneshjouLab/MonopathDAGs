@@ -1,0 +1,13 @@
+In October 2021, an 80-year-old male developed hoarseness. By November 15, 2021, a chest CT revealed a mass in the left upper lobe, multiple nodules, mediastinal lymph node enlargement, and pleural thickening. The patient was subsequently diagnosed with lung adenocarcinoma based on a lung tumor biopsy following thoracoscopic surgery. Molecular biology testing did not detect driver gene mutation/translocation, and the PD-L1 tumor proportion score (TPS) was <1%. The tumor stage was cT4N3M1a (stage IV A).
+
+On February 1, 2022, immunotherapy with nivolumab (360 mg/bodyweight) and ipilimumab (1 mg/kg) was initiated for advanced cell lung cancer with PD-L1 level <1%.
+
+Eight months after the initiation of nivolumab and ipilimumab, a chest CT showed a reduction in the size of the primary lung lesion around the left pulmonary artery. However, a pelvic CT revealed soft tissue shadows around the abdominal aorta, bladder, and seminal vesicles that had increased in size. A PET-CT scan showed accumulation around the abdominal aorta and bladder.
+
+One month after the initiation of steroid treatment, a CT scan showed a reduction in the soft tissue shadow around the abdominal aorta.
+
+In late October 2022, the patient developed lower abdominal pain. A CT scan revealed an increased change in the soft tissue shadow around the abdominal aorta, bladder, and seminal vesicles, suggesting retroperitoneal fibrosis.
+
+A PET-CT revealed fluorodeoxyglucose (FDG) accumulation in the retroperitoneal area. Blood tests revealed a decrease in the CEA levels (CEA, 173.5 to 3.5 ng/mL), but an increase in the IgG4 levels (IgG4, 132 to 250 mg/dL; normal range, 80–140 mg/dL). Antinuclear antibodies were positive at a low titer of 1/40, whereas ACE and antineutrophil cytoplasmic antibodies were negative.
+
+On December 6, a CT-guided biopsy of the thickened retroperitoneum showed infiltration of lymphocytes and morphologically-abnormal cells, but storiform fibrosis and obliterative phlebitis were unremarkable.

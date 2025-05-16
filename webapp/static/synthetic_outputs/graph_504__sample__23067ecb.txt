@@ -1,0 +1,15 @@
+**Case 1:**
+
+In October 2016, a 55-year-old female presented with a cough. A chest CT revealed a lesion in the upper lobe of the left lung, leading to a diagnosis of lung adenocarcinoma. In November 2016, she underwent a right upper lobectomy, during which visceral pleural involvement was detected. Postoperative pathology revealed pT2aN0M0, stage IB disease. Immunohistochemistry showed TTF-1 (+), NapsinA (+), TG (\u2212), ALK (\u2212), and ROS-1 (\u2212) invasive adenocarcinoma. The patient received four cycles of adjuvant chemotherapy consisting of pemetrexed plus cisplatin.
+
+In April 2017, a follow-up contrast-enhanced CT scan showed a spinal metastasis, indicating stage IV disease. MSK-IMPACT sequencing revealed an EGFR exon 19 deletion without a KRAS mutation. Consequently, the patient was started on gefitinib (250mg/d) and achieved a stable disease state.
+
+By January 2018, a contrast-enhanced CT scan detected another spinal metastasis. Molecular genetic testing confirmed the presence of an EGFR T790M mutation and a negative PD-L1 expression. The patient was then treated with Osimertinib (80 mg/d) for 12 months, after which an extensive bone metastasis was found using bone isotope scanning.
+
+A re-biopsy of the bone metastasis showed negative results for the EGFR-T790 mutation but was positive for KRAS exon 2 (G12D, MAF:13.34%) and exon 3 (Q61H, MAF:0.43%) mutations, as well as the original EGFR exon 19 deletion (MAF:22.58%) mutation. Plasma circulating tumor DNA (ctDNA) confirmed these findings via next-generation sequencing (NGS).
+
+The patient then underwent two cycles of paclitaxel (albumin-bound) plus carboplatin for six weeks, but experienced no apparent benefits. Due to poor physical condition, the patient discontinued all anti-tumor treatments, including immune checkpoint inhibitors (ICIs).
+
+**Case 2:**
+
+In March 2017, a 54-year-old male non-smoker was diagnosed with NSCLC adenocarcinoma metastasizing to the double lung, mediastinal and the cervical lymph nodes (cT3N3M1a, stage IV). Pathological biopsy revealed TTF-1 (+), NapsinA (+), CK5/6 (-), TG (\u2212), ALK (\u2212), ROS-1 (\u2212) invasive adenocarcinoma. Next generation sequencing (NGS) on tumor biopsy tissues revealed an EGFR exon 19 deletion without a KRAS mutation. The patient was started on gefitinib (250 mg/d), which produced a partial response in the right lung on contrasted CT.

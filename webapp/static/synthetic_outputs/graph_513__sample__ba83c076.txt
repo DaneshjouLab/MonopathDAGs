@@ -1,0 +1,15 @@
+A 49-year-old woman was diagnosed with stage IB adenocarcinoma after undergoing an open right middle lobe (RML) resection and systematic lymph node dissection in 2011. Following surgery, she received four cycles of adjuvant Navelbine and cisplatin chemotherapy.
+
+Four years after the initial surgery, she was found to have ipsilateral lung metastasis. Gene detection of the specimen revealed an exon 21 Leu858Arg substitution (L858R). Consequently, oral gefitinib targeted therapy was initiated.
+
+Three months after starting gefitinib, a chest CT scan showed a significant reduction in the metastatic lesion. A three-month interval CT scan follow-up showed the lesion in a stable condition.
+
+Twenty-seven months after the start of targeted therapy, the metastatic lesion began to grow, indicating resistance to gefitinib. The patient then underwent salvage surgery consisting of VATS wedge resection of the metastatic lesion.
+
+Postoperative pathology and gene analysis revealed adenocarcinoma with both EGFR L858R and T790M mutations. An MDT discussion recommended continuing gefitinib maintenance therapy after surgery.
+
+Ten months after the salvage surgery, the patient developed brain metastasis. This was treated with osimertinib combined with stereotactic radiosurgery.
+
+Twelve months after the combined therapy, the patient developed bone and liver metastasis, along with progression of the brain metastatic lesion. Pathological findings indicated a metastatic lesion along with papillary and micropapillary adenocarcinoma (HE staining; magnification \u00d7100).
+
+The patient died of multiple organ dysfunction 9 months after the bone/liver/brain metastasis progression. Salvage resection offered the patient a 10-month progression-free survival. The patient developed definite progression after gefitinib as maintenance therapy following salvage surgery and started on osimertinib. Restart of Gefitinib maintenance therapy is acceptable after complete resection of the recurrent site.

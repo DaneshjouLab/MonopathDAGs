@@ -1,0 +1,15 @@
+A 52-year-old male with a history of psoriasis received durvalumab (10 mg/kg intravenously every 2 weeks) as adjuvant treatment for stage 3b non-small cell lung carcinoma of the right upper lobe, following chemo-radiotherapy. He completed 1 year (26 cycles) of durvalumab.
+
+At cycle 11 of durvalumab treatment, the patient reported dry mouth and sicca symptoms. Examination showed no unstimulated or stimulated parotid saliva production. Ultrasonography showed moderate changes in SG topography (HOCEVAR score 14/48). Schirmer's test was positive (4 mm tear fluid /5 min), and ocular staining score (OSS) was negative (0).
+
+A parotid salivary gland biopsy was performed. Unstimulated whole saliva was 0 ml/min, and stimulated whole saliva was 0 ml/min. Unstimulated parotid saliva was Left 0 ml/min and Right 0 ml/min. Stimulated parotid saliva was Left 0 ml/min and Right 0 ml/min. Unstimulated submandibular/sublingual saliva was Left + Right 0 ml/min, and stimulated submandibular/sublingual saliva was Left + Right 0 ml/min. The focus score (foci/4mm2) was 1.0.
+
+Parotid salivary gland biopsy results showed lymphoepithelial lesions (LELs) absent, Germinal Center absent, IgG plasma cells absent, and an ultrasound score of 14/48.
+
+Based on these findings, the patient was diagnosed with pSS. Ocular staining score (OSS) was 0, Schirmer's test (mm/5min) was 4, ANA titre was 1:160, and SSA was positive. The patient was not capable of producing unstimulated parotid saliva and produced reduced volumes of stimulated parotid saliva.
+
+The patient with pSS also demonstrated SSA autoantibody positivity, a positive ultrasound score (26/48), and positive test results for ocular dryness. Ki67 staining was performed in striated ducts of sicca control, pSS and post-anti-PD-L1 therapy tissue. High molecular weight cytokeratins (hmwCK) were used to mark SD cells. AQP5 and K7 double immunostaining of sicca control, pSS and post-anti-PD-L1 therapy tissue was also performed.
+
+Following anti PD-L1 therapy, 275 Ki67+cells/mm2 were detected, of which 85% (equal to 230 cells /mm2) were located within the ID-like epithelial structures. The remaining Ki67+cells were located in SDs. CD4 and CD8 immunostaining were also performed.
+
+Parotid salivary gland biopsy post PD-L1 blockade showed CD45+ leukocytes present throughout the biopsy, both periductally and dispersed between the epithelial cells of the parenchyma. p16+ cells were present in SG tissue at a frequency of 51/mm2, of which 95% (48 cells/mm2) were located in the ID-like epithelial structures. The parotid SG contained mostly CD4+T cell infiltrate and did not resemble pSS Parotid SG gross pathology. Sicca control parotid SGs showed dispersed, scarce CD45+cell presence, no focal CD45+cell presence, no focal lymphocytic sialadentitis, no LELs, germinal centers or IgG plasma cell presence.

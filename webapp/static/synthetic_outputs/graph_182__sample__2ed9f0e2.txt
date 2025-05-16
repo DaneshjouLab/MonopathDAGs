@@ -1,0 +1,7 @@
+A 58-year-old male presented with a right hilar lung occupying lesion found on chest CT on May 12, 2019. Biopsy of the lesion revealed adenocarcinoma. The patient also has diabetes. Systemic evaluation revealed pericardial and sacrococcygeal metastases. Next-generation sequencing identified a HER2 mutation (p.Y772_A775dupYVMA) and a BRCA2 germline mutation with PD-L1 (-) and microsatellite stability. He was diagnosed with advanced-stage lung adenocarcinoma (cT3N0M1c [pericardial and sacral metastases], stage IVB) with an Eastern Cooperative Oncology Group performance status (ECOG PS) of 1. Pericardial effusion was drained.
+
+The patient received one cycle of cisplatin, followed by six cycles of first-line chemotherapy (pemetrexed plus cisplatin plus bevacizumab) and four cycles of maintenance therapy, achieving partial response (PR) at each efficacy evaluation. Progression-free survival (PFS) from first-line treatment was 11.3 months.
+
+In May 2020, the patient had progressive disease (PD) and received a second-line immuno-chemotherapy regimen (paclitaxel albumin plus pembrolizumab plus bevacizumab), achieving partial response (PR) after two cycles. Paclitaxel albumin was discontinued due to bone pain.
+
+After two cycles of second-line immuno-chemotherapy, new frontal lobe and lung metastases were observed on imaging.

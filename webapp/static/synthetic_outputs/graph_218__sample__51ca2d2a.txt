@@ -1,0 +1,23 @@
+In May 2022, a 61-year-old female with a history of osteoporosis and a former smoker (2 packs/year) presented with severe and rapid deterioration in general condition, severe asthenia, complete anorexia, nausea, and epigastric pain. Clinical examination revealed painful hepatomegaly. Hepatic sonogram showed diffuse bilobar lesions.
+
+On June 7, a CT scan showed diffuse hepatic lesions, multiple sus and sub-diaphragmatic lymphadenopathies, pleural effusion, diffuse bone and pulmonary lesions.
+
+On June 15, a liver biopsy revealed CK7+; CK20-; TTF1+; SATB2-; GATA 3- mucus-secreting carcinoma, leading to a diagnosis of T1aN3M1c bronchopulmonary adenocarcinoma.
+
+On June 17, blood tests revealed anemia with hemoglobin at 7.5 g/dL, INR increase at 1.51, hepatic enzymes increase with gamma-glutamyltransferase at 458 U/L, alkaline phosphatase at 703 U/L, aspartate aminotransferase at 156 U/L, alanine aminotransferase at 129 U/L, total bilirubin increase at 56.9 \u00b5mol/L, and conjugated bilirubin increase at 32.6 \u00b5mol/L. Viral serologies were negative for Hepatitis B, Hepatitis C, HIV, and Cytomegalovirus. Patient's ECOG PS was 3, and oxygen was needed at 1-2 L/min.
+
+The patient was hospitalized due to suspicion of acute liver failure. Treatment was initially postponed pending tumor molecular biology results. On June 21, a liquid biopsy was performed to research ctDNA alterations.
+
+The patient developed encephalopathy due to hepatic failure and salvage chemotherapy was initiated with weekly paclitaxel/carboplatin regimen.
+
+48 hours post-chemotherapy, the patient developed a massive hematoma in front of central venous catheter associated with clinical degradation and increase of oxygen need to 4 L/min.
+
+Blood tests revealed grade 3 thrombocytopenia (platelet count decrease) according to CTCAE v5.0, leading to an initial diagnosis of disseminated intravascular coagulation (DIC).
+
+Subsequent analysis revealed anemia, negative haptoglobin, and schizocytes on blood smear, rectifying the diagnosis to paraneoplastic thrombotic microangiopathy (TMA).
+
+A new CT-scan showed massive pleural and peritoneal effusion.
+
+Antitumor treatment was stopped and focusing on best supportive care.
+
+On June 21, ctDNA analysis by ddPCR revealed EGFRDEL19 mutation with 736,400 copies/mL of plasma.

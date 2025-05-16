@@ -1,0 +1,21 @@
+A patient developed myasthenia gravis (MG) during the first cycle of treatment. Acute exacerbation of MG was observed within 24 hours. Notably, anti-acetylcholine receptor antibodies were negative, even at the onset of MG.
+
+Further investigation revealed a suspected anterior mediastinal tumor, along with lung and lymph node metastases. The patient underwent tumor resection via median sternotomy, which resulted in incomplete resection due to involvement of the left recurrent laryngeal nerve and left phrenic nerve. A mass in the neck and a nodule in the left upper lobe were also resected.
+
+Pathological examination of the resected tissues led to the diagnosis of thymoma type B2 in the anterior mediastinal tumor. The neck mass and nodule in the left lung were identified as metastases of a previous lung adenocarcinoma, positive for TTF-1 on immunohistostaining. Histopathology of the resected left lung nodule showed papillary growth of tumor cells positive for TTF-1.
+
+Further characterization of the lung cancer revealed high PD-L1 expression (tumor progression score of 100%). The tumor was negative for mutations of epidermal growth factor receptor (EGFR), anaplastic lymphoma kinase (ALK), and c-ros oncogene 1 (ROS1).
+
+Postoperative radiation therapy for residual thymic tumors was not performed. The relapsed lung cancer was treated with pembrolizumab, carboplatin, and pemetrexed.
+
+Sixteen days after initiating pembrolizumab, carboplatin, and pemetrexed, the patient developed hoarseness, dyspnea, and dysphagia, followed by ptosis, diplopia, and dysarthria within 24 hours.
+
+The Myasthenia Gravis (MG) diagnosis was confirmed via positive tensilon and repeated stimulation tests. Treatment was initiated with intravenous globulin, corticosteroids, pyridostigmine, and tacrolimus.
+
+The patient subsequently developed respiratory failure due to respiratory muscle damage, requiring intubation.
+
+Thirty days after intubation, the patient underwent tracheostomy. Plasma exchange resulted in slow improvement, and the patient was weaned from the ventilator after three months. Steroid pulse therapy and immunoglobulin therapy were repeated; however, dysphagia persisted, and enteral nutrition was continued.
+
+One year after the development of MG, malignant pleural effusion was noted. EGFR exon 19 deletion was confirmed, leading to the initiation of osimertinib.
+
+The patient died two years and seven months after the development of MG due to the progression of lung adenocarcinoma.

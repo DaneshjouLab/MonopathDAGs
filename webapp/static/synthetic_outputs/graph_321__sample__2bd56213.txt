@@ -1,0 +1,13 @@
+In June 2015, a 58-year-old woman with no smoking history and no family history of lung cancer was hospitalized after experiencing 10 days of fever and cough. A chest CT revealed two solid lesions located in the lower lobes of both the right and left lungs. The patient underwent needle biopsies of both lung lesions under CT guidance.
+
+Histological examination of the lung lesions revealed invasive adenocarcinoma in both the right and left lower lobes, based on the presence of acinar cells with abnormal nuclei. Immunohistochemistry analysis of the left lung tumor tissue showed a biomarker profile of CK7 (+), TTF-1 (+), CK5/6 (–), P63 (–). The right lung tumor tissue showed a profile of CK7 (+), TTF-1 (+), CK5/6 (–), and P63 (+). A chest CT scan revealed a 24.1 mm x 32.4 mm lesion in the right lower lung lobe and a 49.0 mm x 32.6 mm lesion in the left lower lung lobe.
+
+Hematoxylin and Eosin (H and E) staining of core needle biopsies from the right and left lower lung lobes revealed Acinar-Predominant adenocarcinoma. Subsequent resection specimens from both lungs also demonstrated Acinar-Predominant adenocarcinoma. Genetic analysis using next-generation sequencing (TruSight Tumor 15 panel, Illumina platform) was performed on paraffin-embedded primary tumor tissues from each lung lesion.
+
+Genetic analysis of the right lung tumor tissue revealed small in-frame deletions in exon 19 of the epidermal growth factor receptor (EGFR) gene. Genetic analysis of the left lung tumor tissue revealed no mutations of exons 18, 19, 20, or 21 of EGFR. These data were further confirmed by using Sanger sequencing and the amplification refractory mutation system (ARMS)-PCR technologies. The patient was considered as synchronous multiple primary lung adenocarcinoma (AC).
+
+An MRI scan indicated bone metastasis. The patient refused a bone biopsy. She was then treated with four cycles of pemetrexed (500 mg/m2 on day 1, every 3 weeks) and cisplatin (25 mg/m2 on days 1–3, every 3 weeks).
+
+Chest CT images after four cycles of chemo treatment showed a shrinkage of the tumor size from 24.1 mm x 32.4 mm to 9 mm x 9 mm in the bottom lobe of the right lung and a slight shrinkage of the tumor lesion from 49.0 mm x 32.6 mm to 41 mm x 38 mm in the bottom lobe of the left lung.
+
+An MRI scan indicated newly metastatic lesions in the brain. The patient was judged as having progressive disease (PD), and a full body examination was performed. The patient refused alternative chemotherapy protocols and whole brain radiation and was prescribed icotin.

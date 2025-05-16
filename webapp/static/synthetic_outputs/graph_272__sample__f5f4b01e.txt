@@ -1,0 +1,9 @@
+A 40-year-old woman was admitted to the hospital on March 7, 2020, with cough and hemoptysis. A chest CT revealed nodules in the upper lobe of the left lung with mediastinal lymph node metastasis. A brain MRI was performed and showed brain metastases (BM). Enlarged neck lymph nodes were observed, and pathology of a neck lymph node biopsy showed LUAD (lung adenocarcinoma). ARM-PCR in the patient's blood did not identify any driver gene mutations.
+
+From April 2, 2020, to May 6, 2020, the patient underwent brain radiotherapy (40 Gy/20 f). During brain radiotherapy, she received one cycle of chemotherapy with cisplatin (40 mg/m2, D1-3) and pemetrexed (800 mg/m2/d) starting on April 17, 2020.
+
+Following this treatment, the patient's condition worsened. She experienced difficult breathing, chest and back pain. A positron emission tomography-CT revealed a significant increase in pericardial effusion.
+
+Starting on May 8, 2020, the patient received two cycles of endostar (30 mg/m2/d, d1-7) combined with cisplatin (40 mg/m2, D1-3) and pemetrexed (800 mg/m2/d).
+
+In June 2020, NGS analysis of lung puncture tissue identified a novel CLHC1/RNT4 intergenic region, ALK(Exon20-29) (abundance 39.97%). Immunohistochemistry and fluorescence in situ hybridization confirmed ALK fusion.

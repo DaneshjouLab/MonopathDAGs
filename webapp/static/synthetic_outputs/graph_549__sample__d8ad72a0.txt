@@ -1,0 +1,9 @@
+In February 2023, a patient presented with dull pain in the left chest. The patient had a history of rheumatoid arthritis for over 7 years, which was effectively managed with stable control through oral medication. The patient's performance status score was 1, and there was no peripheral lymphadenopathy.
+
+Tumor marker analysis revealed the following values: α-fetoprotein 3.86 ng/mL; carcinoembryonic antigen 0.68 ng/mL; carbohydrate antigen (CA)199 5.20 U/mL; CA125 79.70 U/mL; CA153 27.90 U/mL.
+
+A CT scan showed a 3.3 cm x 3.6 cm x 3.5 cm lobulated mass in the anterior basal segment of the left lower lobe, with adjacent pleural thickening and adhesion, indicating the possibility of a neoplasm. MRI showed no tumors detected. CT images of the chest showed the tumor size was approximately 3.3 cm.
+
+On March 10, 2023, the patient underwent a needle biopsy. The pathological diagnosis indicated squamous cell carcinoma (SCC), with CD56(-), cytokeratin (CK)8/18(+), chromogranin A (CgA)(-), Ki-67 (+, 30%), P40(+), synaptophysin (Syn)(-), and thyroid transcription factor 1 (TTF-1)(-) on immunohistochemistry.
+
+The patient subsequently underwent radical lung cancer surgery. Postoperative pathology suggested no lymph node metastasis. The findings showed positivity for EBV encoded small RNA (EBER), CK5/6, CK8/18, Ki-67 (60%), and P40, while TTF-1 was negative, leading to a diagnosis of primary pulmonary lymphoepithelioma-like carcinoma (PPLELC). The patient was diagnosed with PPLELC (pT2aN0).

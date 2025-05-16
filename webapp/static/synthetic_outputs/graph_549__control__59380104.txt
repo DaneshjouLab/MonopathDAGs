@@ -1,0 +1,15 @@
+# Primary pulmonary lymphoepithelioma-like carcinoma misdiagnosed as lung squamous cell carcinoma: A case report
+
+A 44-year-old woman was admitted to the hospital after experiencing dull pain in her left chest for one month, starting in February 2023. She reported no other symptoms such as chest tightness or breathing difficulties at that time and did not seek medical attention.
+
+The patient had a history of rheumatoid arthritis for over seven years, which was well-managed with oral medication.
+
+Initial tumor marker analysis revealed the following: α-fetoprotein 3.86 ng/mL; carcinoembryonic antigen 0.68 ng/mL; carbohydrate antigen (CA)199 5.20 U/mL; CA125 79.70 U/mL; CA153 27.90 U/mL.
+
+Computed tomography (CT) revealed a mass shadow in the anterior basal segment of the left lower lobe. A subsequent needle biopsy suggested squamous cell carcinoma (SCC).
+
+Based on the biopsy results, the patient underwent radical tumor resection in the lower left lobe of the lung. However, postoperative pathological examination indicated lymphoepithelial carcinoma. Further testing confirmed the presence of Epstein-Barr virus (EBV) encoded small RNA.
+
+Following surgery, the patient was scheduled to receive four cycles of adjuvant chemotherapy, using the paclitaxel + carboplatin regimen. However, the patient refused further treatment.
+
+The patient's case highlights the diagnostic challenges associated with primary pulmonary lymphoepithelioma-like carcinoma (PPLELC), a rare subtype of lung SCC closely associated with EBV infection, and prone to misdiagnosis.

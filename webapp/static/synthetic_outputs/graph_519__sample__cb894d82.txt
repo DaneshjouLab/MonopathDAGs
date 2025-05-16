@@ -1,0 +1,19 @@
+A 48-year-old man with a 28-year history of smoking presented with an abnormal shadow in his left lung. He was diagnosed with lung adenocarcinoma in the left upper lobe with left adrenal metastasis (cT2aN2M1b, Stage IVA) with a PD-L1 tumor proportion score of 1-49%.
+
+The patient received four cycles of cisplatin, pemetrexed, and bevacizumab as first-line therapy, followed by pemetrexed and bevacizumab as maintenance therapy for two cycles.
+
+Despite first-line therapy, an increase in the size of the primary lung lesion was observed. Consequently, he was treated with pembrolizumab (200 mg/kg every 3 weeks) as second-line therapy.
+
+Eleven days after the second administration of pembrolizumab, the patient presented with fever and progressive fatigue and was admitted to the hospital. He exhibited conjunctival and skin icterus. Laboratory examinations revealed AST 413 U/L, ALT 175 U/L, ALP 1,033 U/L, γ-GTP 649 U/L, total bilirubin 5.4 mg/dL (including 3.9 mg/dL direct bilirubin), platelets 27,000 /μL, and fibrin degradation products 61.3 μg/mL. Viral etiology (hepatitis B and C virus or cytomegalovirus) and autoimmune origin (antinuclear and antimitochondrial antibodies) were ruled out.
+
+On admission, a chest X-ray showed a nodular shadow in the left upper lung field. Thoracic computed tomography revealed a 2.6x3.0 cm nodular shadow in the left upper lobe. Enhanced abdominal computed tomography revealed splenomegaly. Abdominal ultrasonography showed a finding suggesting a fatty liver.
+
+Prednisolone 80 mg (1 mg/kg) was administered once daily due to suspected drug-induced liver injury caused by pembrolizumab. After prednisolone administration, bilirubin, AST, and ALT decreased, but serum ALP and γ-GTP did not improve.
+
+A diagnostic liver biopsy was performed due to prolonged biliary tract involvement. Histopathology revealed inflammatory cell infiltration of the portal tract and destruction of the interlobular bile duct, with normal parenchyma architecture.
+
+Liver biopsy immunohistopathology showed inflammatory cells represented by CD8+ lymphocytes. Pathology findings suggested cholestatic liver injury.
+
+Ursodeoxycholic acid (UDCA) 900 mg daily was commenced after the pathological finding was obtained, which led to improvement of biliary tract enzymes.
+
+After 4 weeks of taking prednisolone 80 mg daily, the dosage was tapered to about 10 mg every 2 weeks without any recurrence of hepatitis.

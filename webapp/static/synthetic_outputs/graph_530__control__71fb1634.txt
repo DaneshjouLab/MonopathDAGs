@@ -1,0 +1,5 @@
+Case Report: A patient was diagnosed with stage IV (T3N0M1) lung adenocarcinoma via percutaneous biopsy. The patient had non–small cell lung cancer (NSCLC) driven by an epidermal growth factor receptor (EGFR) mutation, specifically a novel EGFR exon 20 insertion mutation D770_N771insGT and multiple brain metastases.
+
+Initially, the patient was treated with first-line osimertinib. The patient briefly responded to this treatment. Due to disease progression, particularly in the brain metastases (BMs), a second-line treatment of osimertinib plus bevacizumab was initiated. This combination therapy resulted in prolonged disease control.
+
+This case suggests that osimertinib in combination with bevacizumab may be an effective option for NSCLC patients with specific EGFRex20ins mutations and brain metastases. The VEGF pathway is a key mediator of cancer metastasis and resistance to EGFR TKIs, and the addition of anti-VEGF agents to EGFR TKIs provides an alternative treatment option for the clinical management of EGFR-mutant NSCLC.

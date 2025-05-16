@@ -1,0 +1,13 @@
+An 82-year-old woman with no symptoms, no past history of lung disease, and a never-smoker was referred to the hospital due to an abnormal shadow detected on a chest roentgenogram during a routine medical check-up. Physical and laboratory test findings were normal.
+
+Chest thin-slice computed tomography (TSCT) revealed a 6-cm-diameter pure ground-glass nodule (GGN) in the left lower lung.
+
+Positron emission tomography/computed tomography showed that the mass had an unremarkable uptake of 18F-fluorodeoxyglucose, with an early maximum standardised uptake value of 1.9.
+
+The patient underwent a left lower lobe lobectomy via video-assisted thoracotomy with lymph node dissection. The operation time was 62 minutes, and the estimated blood loss was minimal.
+
+Histologic examination of the tumor sections revealed a delicate lace-like appearance with no central scar or pleural depression. The tumor was restricted to neoplastic cells along pre-existing alveolar structures (lepidic growth), lacking stromal, vascular, and pleural invasion.
+
+Pathology revealed Lepidic adenocarcinoma (LPA) with a total tumour diameter of 6 cm and which lacked an invasive tumour component. Intra-alveolar papillary or micropapillary growth was absent. Tumour cells were cuboidal with round nuclei, but some were taller with long oval nuclei. The tumour expressed a rare EGFR exon 20 insertion V774_C775insHV mutation.
+
+Gross examination of the resected tumor revealed a 6 cm diameter mass in the dorsal region of the inferior lobe without central scarring or pleural indentation. The cut surface had a delicate lace-like appearance, suggesting well-preserved alveolar structures. Microscopically, neoplastic cells proliferated in a single layer along pre-existing alveolar structures (lepidic growth), lacking stromal invasion or papillary growth. Tumor cells were columnar with uniform-sized round to ovoid nuclei.

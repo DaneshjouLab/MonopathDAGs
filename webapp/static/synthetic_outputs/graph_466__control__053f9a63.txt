@@ -1,0 +1,16 @@
+report.
+```
+**Case Report**
+
+**Patient:** A 37-year-old male patient.
+
+**Initial Presentation:** The patient presented with an adenocarcinoma of the lung with extensive brain and bone metastases and an activating EGFR mutation (Exon 21, L858R).
+
+**Treatment and Initial Response:** As the brain metastases were symptomatic with headache and dizziness, a whole brain radiation therapy was performed. After that, afatinib treatment was initiated with 40 mg daily. The first staging showed a good tumor response.
+
+**Disease Progression:** Four months later, the patient developed dyspnea and pain due to a new hemorrhagic, malignant pleural effusion in combination with massive pulmonary embolism.
+
+**Subsequent Treatment and Response:** Subsequently, chemotherapy with cisplatin and pemetrexed was started. After the first cycle, no further thoracentesis was needed, dyspnea and pain improved, and the staging after the second cycle revealed a nearly complete remission. Following six cycles of chemotherapy, maintenance treatment with pemetrexed was subsequently continued.
+
+**Recurrence:** After a few weeks, the patient showed a local tumor recurrence as well as neurological symptoms.
+```

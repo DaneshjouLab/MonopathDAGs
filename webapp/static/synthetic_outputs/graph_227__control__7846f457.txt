@@ -1,0 +1,7 @@
+A patient presented with left-sided chest and back pain and was found to have a mass in the left lung and enlarged mediastinal lymph nodes. The patient was diagnosed with non-small cell lung cancer (NSCLC), specifically lung adenocarcinoma (ADC), which was poorly differentiated. Further investigation revealed metastases in bilateral lungs, left hilar lymph nodes, bilateral supraclavicular lymph nodes, and bone metastases. Genetic testing revealed an ALK rearrangement, specifically an ALK translocation, with HIP1-ALK fusion and ALK-RNF144A fusion identified. An RB1 loss-of-function variant was also detected.
+
+Initial treatment involved ALK inhibitors, specifically an ALK-tyrosine kinase inhibitor (ALK-TKI). The patient achieved a partial response with alectinib. However, disease progression occurred, with aggravated bone destruction and new metastases. Palliative local radiotherapy was administered to address the bone metastases.
+
+The patient subsequently underwent chemotherapy with pemetrexed and carboplatin, combined with bevacizumab (ALK-TKI combined with anti-angiogenesis). This resulted in stable disease.
+
+Later, the patient experienced further disease progression, including squamous cell carcinoma transformation. Treatment was switched to lorlatinib. Following lorlatinib, the patient was treated with albumin-bound paclitaxel and anlotinib as a combined treatment. The patient was also treated with TGRX-326.

@@ -1,0 +1,15 @@
+**Clinical Case Report: Respiratory Health Surveillance of Western Australian Mine Workers (2001-2012)**
+
+This case report summarizes respiratory health surveillance data collected from 6,951 Western Australian mine workers between 2001 and 2012. The study population had a mean age of 35.8 years (SD 10.9), with 90.4% being men. A significant proportion (79.7%) worked 12-hour shifts. The majority of the cohort (6,563) were monitored once, while 178 were monitored twice, eight monitored three times, and two monitored four times during the study period.
+
+Respiratory health surveillance was conducted using a standardized respiratory questionnaire, lung function testing, audiometric (hearing) testing, and chest x-rays in some cases. The respiratory questionnaire assessed current respiratory symptoms experienced in the last 3 months, including cough, phlegm, wheeze, breathlessness, and any other respiratory symptom.
+
+Occupational details revealed that 52.4% of the subjects were engaged in underground mining activities, 29.3% in surface production, and 18.2% were managers. A concerning finding was that approximately 84% of mine workers reported not wearing a protective mask during dusty activities. 65.5% of the mine workers were non-smokers.
+
+**Year-Specific Cohort Details:**
+
+*   **2001:** The study included 410 mine workers with a mean age of 35.9 (SD 9.9). The cohort was predominantly male (93.4%), with 6.6% being female. Occupational roles were distributed as follows: 19.5% managers, 25.9% in surface production, and 54.6% in underground mining. Mask usage was low, with 89.0% reporting not wearing a mask and only 11.0% reporting mask use.
+
+*   **2002:** The study included 558 mine workers with a mean age of 36.7 (SD 10.3). The cohort remained predominantly male (93.7%), with 6.3% being female. Occupational roles were: 17.0% managers, 23.8% in surface production, and 59.1% in underground mining. Mask usage remained low, with 88.9% reporting not wearing a mask and 11.1% reporting mask use.
+
+*   **2003:** The study included 512 mine workers with a mean age of 36.8 (SD 10.4). The cohort composition was 7.4% female and 92.6% male. Occupational roles were: 20.7% managers, 23.4% in surface production, and 55.9% in underground mining. Mask usage was still low, with 81.2% reporting not wearing a mask and 18.8% reporting mask use.

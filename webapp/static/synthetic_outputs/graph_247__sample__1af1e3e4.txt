@@ -1,0 +1,13 @@
+A 57-year-old male, a current smoker with a 39 pack-year smoking history, presented to the emergency department with fever, dry cough, and rapidly progressive dyspnea (mMRC dyspnea scale score of 4). He had been diagnosed with bilateral giant bullous emphysema (GBE) 12 years prior and followed with annual check-ups without detailed investigations.
+
+Chest X-ray on admission showed bilateral giant bullous emphysema, mediastinal shift to the right, and a mass in the right hilum. Oxygen saturation was 96% while breathing 5 L/min oxygen with a face mask. Further evaluation revealed a body temperature of 38.0°C, blood pressure of 102/75 mmHg, heart rate of 110 beats/min, and respiratory rate of 33 breaths/min. Auscultation revealed decreased breath sounds bilaterally. Chest x-ray showed compression of the left lower lobe and heart to the right, and displacement of the anterior junction line to the right, indicating rapid enlargement of the left bulla. CT revealed a monocystic left-sided bulla compressing the lower lobe, and severe destruction of the right upper lobe forming GBE with multiple septations. Three separate nodules were found in the right upper, right lower, and left lower lobes.
+
+The patient tested positive for SARS-CoV-2. C-reactive protein level was 1.41 mg/dL. Pro-gastrin-releasing peptide level was 325 pg/mL (normal range <80.9 pg/mL) and carcinoembryonic antigen level was 5.3 ng/mL (normal range <5.0 ng/mL). Serum alpha-1-antitrypsin level was normal (225 mg/dL). He was treated with remdesivir and nasal high-flow oxygen therapy (FiO2= 40%).
+
+Intracavitary drainage was performed to relieve the tension in the left bulla. Under CT guidance, a cannula was inserted into the left bulla and 2000 mL of air was drained. A chest tube was placed in the left thoracic cavity to avoid tension pneumothorax. Respiratory status improved rapidly after drainage.
+
+Post-drainage, the left lower lobe expanded with mild pneumothorax. Slight air leak was observed from the chest tube, maintaining pressure in the bulla and thoracic cavity close to atmospheric pressure. The mMRC scale score improved to 3 while breathing 1 L/min oxygen by day 14 post-procedure.
+
+The patient underwent left-sided bullectomy. Intraoperative needle biopsy of the left lower lobe nodule was performed, and histopathological evaluation indicated adenocarcinoma. The patient was discharged 16 days after the surgery following uneventful recovery.
+
+The patient's mMRC scale score on discharge was 2 on room air. Pulmonary function tests on discharge indicated: forced vital capacity of 1.76 L (46.1% of predicted); and forced expiratory volume in 1 s of 1.26 L (38.2% of predicted). A follow-up CT scan showed intracavitary drainage with a cannula.

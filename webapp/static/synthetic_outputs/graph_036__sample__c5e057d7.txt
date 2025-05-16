@@ -1,0 +1,11 @@
+The patient was born in 1945. At age 53, the patient was diagnosed with acquired von Willebrand syndrome (AVWS) after repeated episodes of lower gastrointestinal bleeding due to digestive angiodysplasia. The patient had no personal or family history of bleeding prior to diagnosis. Laboratory findings revealed a qualitative deficiency of VWF, with Factor VIII activity (FVIII:C) at 40%, VWF antigen (VWF:Ag) at 20%, and VWF activity using the ristocetin cofactor (VWF:Rco) less than 10%.
+
+In 2005, etiological assessment for VWD revealed a low abundance IgM kappa monoclonal spike in serum protein electrophoresis. Biological diagnosis of AVWS was confirmed using advanced diagnostic techniques, including VWF multimer electrophoresis, revealing a loss of high-molecular-weight multimers (HMWMs) and a VWF propeptide-to-VWF: Ag ratio of 3.95 (normal range < 2.4) in a patient with group O blood. No antibodies against VWF were detected.
+
+The patient received iterative transfusions for bleeding. Immunoglobulin infusions were ineffective. VWF concentrates administered showed mixed efficacy, with poor recovery and a short half-life. The patient underwent partial gastrectomy for fundic angiodysplasia, ileal resection, repair of an abdominal aortic aneurysm complicated by hemorrhagic shock, electrocoagulation, and ethmoidectomy.
+
+In 2020, due to the onset of angina, a transcatheter aortic valve replacement (TAVR) was performed urgently, but this did not resolve the VWF deficit. The patient was diagnosed with Heyde syndrome, defined by the triad of severe aortic stenosis, recurrent gastrointestinal bleeding due to angiodysplasia, and AVWS.
+
+The patient developed renal failure, with a glomerular filtration rate (GFR) of 40 mL/min/1.73 m2. The patient also developed iodine-induced hyperthyroidism, treated with neomercazole, and has obstructive lung disease. The monoclonal IgM spike remained consistently low.
+
+In 2014, a pulmonary nodule was detected, but the patient refused surgery. Routine annual computed tomography scans were performed. In 2022, the patient developed dyspnea and hemoptysis. Anatomopathological examination revealed non-small-cell lung carcinoma (NSCLC). The patient had KRAS G12C-mutated lung cancer and was treated with sotorasib.

@@ -1,0 +1,17 @@
+A 57-year-old man with stage III squamous cell lung cancer affecting the left mainstem bronchus, who had previously completed chemoradiation therapy, presented to the Emergency Department with acute onset of hemoptysis and severe respiratory distress. He reported a significant volume of continuous, bright red blood, exceeding 50 cc. He denied any prior history of hemoptysis, cough, fever, or chills.
+
+The patient was experiencing respiratory distress, characterized by tachypnea (40 breaths per minute), sinus tachycardia at 144 beats per minute, and oxygen saturation as low as 79 % despite 100 % Fi02 via a non-rebreather mask. Physical examination revealed dried blood in the bilateral nares and oral cavity, increased work of breathing, severe subcostal and intercostal retractions, and diminished breath sounds throughout both lung bases. His hemoglobin level was 10.9 g/dl.
+
+Laboratory findings included a normal platelet count and an INR of 1. Arterial blood gas analysis revealed respiratory acidosis: pH 7.27, pCO2 54, pO2 94, bicarbonate 25. The patient was trialed on continuous positive pressure noninvasive ventilation but was unable to tolerate the mask due to anxiety. He coughed an additional 40-60 cc of bright red blood.
+
+Due to worsening respiratory status, the patient was intubated with a standard 8.0 endotracheal tube. Oxygen saturations initially improved to 97 % on 100 % FiO2, but quickly decreased to 30 %. Frank blood was visible from the endotracheal tube.
+
+Emergent bronchoscopy revealed blood originating from the left lung. The posterior wall of the distal left mainstem bronchus was necrotic with evidence of a cavitary lesion in the superior segment of the left lower lobe extending into the lung parenchyma, through which a large vessel could be seen.
+
+A 9-French endobronchial blocker was advanced into the proximal left mainstem bronchus under direct visualization.
+
+The patient's hemoglobin levels nadired at 7.4 g/dl. Bronchoscopic image of cavitary lesion in left lower lobe superior segment showed visible pulmonary artery pseudoaneurysm. CT chest angiogram with IV contrast showed contrast enhancing pulmonary artery pseudoaneurysm within cavitary lesion. Segmental left lower lobe pseudoaneurysm without extravasation was confirmed.
+
+The patient underwent left main pulmonary artery angiography with interventional radiology demonstrating a segmental left lower lobe pulmonary artery pseudoaneurysm without extravasation. A 5-French catheter was used to select the contributing inferior and posterior pulmonary artery branches, at which point a high flow microcatheter was advanced and the segmental branch from which the pseudoaneurysm arose was embolized using platinum coils. A persistent communication to the pseudoaneurysm was seen and a mesh plug was deployed to embolize the remaining proximal branch. Repeat arteriography demonstrated no further filling of the pseudoaneurysm and preservation of the nearby segmental artery.
+
+One month after discharge, the patient suffered a cardiac arrest in the setting of recurrent massive hemoptysis and died after a brief hospitalization.

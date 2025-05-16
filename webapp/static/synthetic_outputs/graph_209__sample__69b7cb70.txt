@@ -1,0 +1,7 @@
+An 84-year-old female with a 30-year history of hypertension and type II diabetes presented with a 1.5 cm tumor in the right middle lobe of the lung, discovered on a chest CT scan at an outside hospital. An enhanced chest CT scan confirmed an irregular solid nodule in the right middle lobe and bilateral ground-glass opacity (GGO). The patient's general condition was good, with no fever or respiratory symptoms, and with clear lung sounds on auscultation bilaterally. Thoracoscopic resection of the right middle lobe was performed without event.
+
+Postoperative day 1: a repeat CT scan revealed postresection changes and bilateral GGO in the lower lobes of the lungs. White blood cell (WBC) count was 12.49 \u00d7 10^12/liter, lymphocyte count decreased to 0.4 \u00d7 10^9/liter and the differential to 5%. Slight wheezing sound on auscultation on the right side was noted.
+
+The patient experienced difficulty in breathing, chest tightness, wheezing, and dry cough. Diagnosis was suggestive of viral pneumonia, with intermittent peripheral capillary oxygen saturation between 72% and 88%. The patient was then transferred to a special isolation ward owing to a pharyngeal swab test result that was positive for the 2019 novel coronavirus (2019-nCoV).
+
+Day 2: The patient remained in the isolation ward after testing positive for COVID-19.

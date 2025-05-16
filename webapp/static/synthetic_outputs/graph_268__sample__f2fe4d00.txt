@@ -1,0 +1,9 @@
+A patient in his seventies was found to have a nodule in his right lung during a routine health examination. Transbronchial biopsy revealed squamous cell carcinoma (SCC). EGFR mutation, ALK translocation, and ROS1 mutations yielded negative results. PD-L1 tumor proportion score was 95%. He was diagnosed with stage IIIA lung SCC.
+
+The patient received concurrent radiation chemotherapy consisting of carboplatin, paclitaxel, and radiation with 60 Gy in 30 fractions. This treatment was followed by maintenance therapy with durvalumab at 2-week intervals.
+
+Six months after completion of first-line chemoradiotherapy, the patient experienced lymph node recurrence and received additional chemotherapy with nanoparticle albumin-bound paclitaxel, carboplatin, and pembrolizumab.
+
+Ten days after the administration of this chemotherapy regimen, he reported severe diarrhea. CT imaging revealed bowel wall thickening. He was diagnosed with grade 3 immune-related colitis (CTCAE).
+
+The colitis was treated with high-dose prednisolone (2mg/kg/day, tapered to lower dosage) and infliximab (5mg/kg).

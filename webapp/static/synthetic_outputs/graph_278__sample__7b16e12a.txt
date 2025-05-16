@@ -1,0 +1,23 @@
+A middle-aged woman presented with a one-month history of breathing difficulties, chest pain, cough, fever, loss of appetite, and weight loss. She had no existing health conditions, no tuberculosis exposure, and no history of smoking or substance abuse. She lives in a rural area with her husband and two children.
+
+The patient had no asbestos exposure in her living environment. Initial evaluation revealed elevated heart rate (tachycardia), normal blood pressure (normotension), slightly increased breathing rate (tachypnea), and normal blood oxygen saturation. No signs of anemia, clubbing, cyanosis, jaundice, or lymphadenopathy.
+
+Physical examination revealed a dull note on percussion and reduced breath-sound intensity, suggesting right-sided pleural effusion. Thoracocentesis and antitubercular therapy were administered, but the patient's condition did not improve. Pleural fluid analysis showed low adenosine deaminase (ADA) and exudative pleural effusion. Pleural fluid analysis: Protein 5.48 g/dL, Sugar 148 mg/dL, Adenosine deaminase 34.3 IU/L, Lactate dehydrogenase 673 IU/L, Cytology Lymphocytes 95%, neutrophils 5%, Cellblock No atypical cells.
+
+Contrast-enhanced CT chest imaging revealed right-side moderate pleural effusion, thickening of the right pleura with noticeable nodularity, and a maximum thickness of 6 mm.
+
+Medical thoracoscopy with pleural biopsy was performed.
+
+Thoracoscopy revealed whitish to yellowish nodules. Pleural biopsy was performed. Histopathology of pleural biopsy showed atypical cells in parietal pleura (hematoxylin and eosin staining, 40X magnification). Immunohistochemical markers were positive for WT1 and calretinin and negative for napsin, TTF-1, p40, and PAX8. Immunohistochemistry showed nuclear positivity with WT1.
+
+Histopathology of parietal pleural biopsy confirmed epithelioid malignant mesothelioma.
+
+FDG-PET/CT revealed metabolically active diffused right pleural thickening, nodules in the right lung parenchyma, metabolically active peritoneal deposits, and mediastinal, retroperitoneal, axillary, and right supraclavicular lymphadenopathy.
+
+Diagnosis: Synchronous pleural and peritoneal mesothelioma, stage IV.
+
+Treatment: Chemotherapy with carboplatin and pemetrexed initiated.
+
+The patient is undergoing chemotherapy with carboplatin 350 mg and pemetrexed 600 mg every three weeks. Two cycles have been completed. Regular follow-up visits are scheduled every three weeks for chemotherapy administration. The patient is able to perform routine activities.
+
+CT scans revealed anomalies in the pleura and peritoneum. Medical thoracoscopy enabled the retrieval of pleural tissue for biopsy. Histopathological examination and immunohistochemistry confirmed the diagnosis. Intercostal tube-guided drainage of pleural fluid provided symptom relief. Diagnosis was confirmed within two weeks of admission and clinical stability was achieved.

@@ -1,0 +1,9 @@
+A 70-year-old woman presented with a persistent cough lasting over 10 months. Initially, the cough was dry, but it progressed to include white, sticky sputum. She reported no fever, chills, hemoptysis, or chest pain. Her physical examination was unremarkable, and she had a normal medical, family, and psycho-social history. The patient had no hypertension, diabetes, or other basic diseases and was a non-smoker. Laboratory studies were within normal ranges.
+
+Four months after the initial presentation, a chest CT scan revealed an irregular patchy shadow (5.0 x 2.6 cm) in the right lower lobe of the lung with obstruction of the bronchus in the superior segment. Fiberoptic bronchoscopy revealed jelly-like material obstructing the bronchus in the superior segment of the right lower lobe. A bronchoscopy biopsy indicated no malignant cells.
+
+Six months after the bronchoscopy, a follow-up chest CT scan showed an irregular mass (5.2 x 2.9 cm) in the right lower lung, indicating tumor growth and suggesting malignancy. An 18F-FDG PET/CT scan showed high FDG uptake in the proximal area of the mass (SUVmax 5.1), with no increased FDG uptake distally. Based on these findings, a clinical diagnosis of pulmonary malignancy was made, and the patient was scheduled for a right lower lobectomy.
+
+During surgery, an intraoperative frozen section analysis revealed a benign tumor. A right lower lobectomy was performed with no complications. Post-surgery, the patient's persistent cough disappeared.
+
+Histological examination of the resected tissue revealed a jelly-like lesion (5.5 cm) in the right lower lobe, containing a 0.7 x 0.5 x 0.3 cm nodule diagnosed as mucinous adenoma. Immunohistochemistry showed positive staining for CK7 and P53, and negative staining for TTF-1, NapsinA, PD-L1, P40, CK5/6, and ALK(D5F3). The Ki-67 proliferation index was 2%.

@@ -1,0 +1,15 @@
+A 34-year-old male presented with a tumor in the upper lobe of the right lung and an enlarged right upper paratracheal lymph node detected via CT and PET. He was diagnosed with stage IIIB adenocarcinoma (ADC) of the lung (cT3N2M0) after pathological assessment of a CT-guided biopsy. Targeted next-generation sequencing (NGS) of 14 genes detected an EML4-ALK rearrangement (EML4: exon6-ALK:exon20) with an allele frequency of 26.2%.
+
+The patient received one cycle of neoadjuvant chemotherapy with pemetrexed (800 mg) and carboplatin (AUC=5), but the tumor did not shrink.
+
+Due to the lack of response to chemotherapy, the patient received 8 weeks of neoadjuvant targeted therapy with ceritinib (450 mg/day).
+
+Chest CT after 4 weeks of ceritinib treatment revealed a partial response (PR) with a 38% tumor shrinkage.
+
+After another 4 weeks of neoadjuvant ceritinib treatment, the lung tumor further shrank by 55%, with a decrease in SUVmax from 28.04 to 9.51. Enlarged lymph nodes subsided. Mild diarrhea was reported as an adverse effect of ceritinib treatment.
+
+After one cycle of chemotherapy, the tumor and the lymph node remained stable. After eight weeks of ceritinib treatment, the maximum diameters of primary lung (PL) tumor and right upper paratracheal lymph node (LN2R) were 25.2 and 6.4 mm, respectively, with an SUVmax of 9.51 and 2.88. Hematoxylin\u2013eosin (HE) staining of samples punctured before neoadjuvant ceritinib showed nests of tumor cells with necrosis. IHC examinations revealed positive ALK (D5F3), CK7, P63, P40, and negative TTF\u20101, supporting a diagnosis of adenocarcinoma (ADC).
+
+Following neoadjuvant ceritinib treatment, the patient underwent surgical resection. Post-operative pathology revealed a significant decrease in tumor cells, interstitial fibrosis, and scattered lymphocytes in the tumor bed. Round tumor cell nests with eosinophilic cytoplasm and vesicular nuclei were seen. IHC: ALK (D5F3)+, CK7+, TTF-1+, P63+, P40+; histology was consistent with adenocarcinoma (ASC). The right upper paratracheal lymph node also showed scattered nests of tumor cells with eosinophilic cytoplasm and vesicular nuclei. IHC: ALK (D5F3)+, CK7+, TTF-1+, P63+, P40+; histology was consistent with adenocarcinoma (ASC).
+
+Baseline biopsy revealed adenocarcinoma (ACC). Comparison of the tissue NGS sequencing results before and after ceritinib administration revealed a decrease in the allele frequency of EML4\u2010ALK, from 26.2 to 2.3%.

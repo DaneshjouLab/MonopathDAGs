@@ -1,0 +1,9 @@
+This case report describes the outcomes of three male patients with squamous cell carcinoma (SqCC) of the lung who underwent neoadjuvant therapy with the CM816 regimen.
+
+The first patient was a 76-year-old male diagnosed with SqCC of the lung [cT3N0M0, stage IIB] with a PD-L1 expression of 95% (PD-L1 IHC 22C3 pharm Dx (Dako)). He underwent neoadjuvant therapy with the CM816 regimen (carboplatin (AUC 6) + paclitaxel 200 mg/m2 + nivolumab 360 mg/body). Preoperative tumor response according to RECIST was graded as a partial response (PR). FDG uptake decreased from 18.8 to 3.7 following treatment.
+
+The second patient was a 66-year-old male diagnosed with SqCC of the lung [cT1cN1M0, stage IIB] with a PD-L1 expression of 95% (PD-L1 IHC 22C3 pharm Dx (Dako)). He underwent neoadjuvant therapy with the CM816 regimen. Preoperative tumor response according to RECIST was graded as a partial response (PR). FDG uptake decreased from 17.7 to 3.5 following treatment. Postoperative pathological evaluation revealed a pathologic complete response (pCR; 0% residual viable tumor (RVT)).
+
+The third patient was a 72-year-old male diagnosed with SqCC [cT3N1M0, stage] with a PD-L1 expression of 60% (PD-L1 IHC 22C3 pharm Dx (Dako)). He was treated with the CM816 regimen. Preoperative tumor response according to RECIST was graded as a partial response (PR). FDG uptake decreased from 19.5 to 15.1. Postoperative pathological evaluation revealed non-pCR (RVT, 15%).
+
+PET-CT performed 4 weeks after the last dose of nivolumab showed tumor shrinkage on CT for all three patients.

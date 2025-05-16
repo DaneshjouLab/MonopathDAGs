@@ -1,0 +1,15 @@
+A patient presented with worsening headache and vomiting by April 2022. A chest CT was performed to assess the patient's condition, but showed no changes compared to the previous scan. Diagnostic workup and imaging review led to a confirmed diagnosis of lung adenocarcinoma with leptomeningeal metastasis (LM). The patient was classified as having stage CT3NxM1a lung cancer according to the Eighth Edition of the TNM Classification for Lung Cancer.
+
+Treatment was initiated for the lung adenocarcinoma with leptomeningeal metastasis. A lumbar puncture was performed, revealing a CSF pressure >330 mmH2O. 30 mL of CSF was released, and intrathecal chemotherapy (ITC) was administered, consisting of dexamethasone 5 mg with pemetrexed 50 mg (day 1, day 10).
+
+The patient's headache and vomiting symptoms improved significantly, and CSF cytology was negative for malignant cells, indicating a response to the initial intrathecal chemotherapy. Systemic therapy was initiated with pemetrexed and bevacizumab as first-line treatment and maintenance therapy. Efficacy was evaluated as stable disease.
+
+Despite systemic therapy, the patient's headache and vomiting worsened by the end of cycle 6. Intrathecal chemotherapy regimen was administered multiple times. Cephalic symptoms and lung lesions remained stable. Cranial MRI showed no clear manifestations of brain parenchymal or meningeal metastases. CSF analysis revealed no malignant tumor cells.
+
+The patient then presented with worsening headache, vomiting, and transient loss of consciousness. Due to poor response to pemetrexed, the intrathecal chemotherapy regimen was switched to gemcitabine (20 mg, 1/week), resulting in relief of headache and vomiting symptoms.
+
+Second-line systemic therapy was initiated with intravenous PD-1 inhibitor tislelizumab (200 mg, 1/21 days) combined with oral anlotinib (8 mg, 1/day). Anlotinib was discontinued after one cycle due to uncontrolled hypertension.
+
+Genetic testing of the CSF using second-generation sequencing technology revealed a BRAF N581I missense mutation (abundance 13.93%) and a CDKN2A mutation (abundance 39.21%).
+
+Based on the genetic testing results, the patient was started on oral mitogen-activated extracellular signal-regulated kinase inhibitor trametinib (2 mg, once daily) as third-line systemic therapy. Intrathecal chemotherapy using gemcitabine at a dose of 20 mg every 1–2 weeks was continued. Further disease progression and treatment changes occurred.

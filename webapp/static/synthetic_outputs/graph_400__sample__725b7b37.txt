@@ -1,0 +1,17 @@
+A 76-year-old man was admitted to the hospital with a cough that had persisted for several months. He had a history of smoking 20 cigarettes per day for over 30 years, but had quit 2 years prior to admission. He reported no family history of genetic disease or tumor. Routine blood, fecal, and urine tests were normal.
+
+Comprehensive evaluations of cardiac, hepatic, renal, pulmonary, coagulation, and electrolyte functions showed no significant abnormalities. Tumor markers, including CEA, Cyfra21-1, and SCC, were within normal ranges. Physical examination indicated a Karnofsky Performance Status (KPS) of 80%, with less than 5% weight loss over three months. A contrasted CT scan revealed a 5cm x 3cm mass in the lower lobe of the right lung with uneven enhancement.
+
+Further imaging with PET/CT and cranial MRI showed no distant metastasis. No mediastinal lymph node enlargement was observed.
+
+A biopsy was performed, which revealed Lung Squamous Cell Carcinoma (LUSC). The clinical staging was determined to be T2bN0M0 IIA.
+
+The patient and his family refused surgery, radiotherapy, chemotherapy, and immune checkpoint inhibitor treatment.
+
+Next-generation sequencing (NGS) analysis was performed to identify potential targetable mutations. NGS analysis revealed an FGFR3-IER5L fusion mutation (MAF 12.5%), NF1 shift mutation (MAF=13.4%), TP53 nonsense mutation (MAF=11.1%), CSF1R splicing mutation (MAF=13.7%) and ROS1 exon 34 missense mutation (MAF=15.4%). The tumor mutation burden (TMB) was 5.3 mut/Mb and microsatellite stability (MSS) was noted.
+
+PD-L1 testing was performed, and the PD-L1 TPS was 3% detected by 22C3 antibody.
+
+The patient declined treatment with FGFR inhibitors and was administered anlotinib 12 mg orally every morning (days 1-14, with a 21-day cycle).
+
+After anlotinib treatment for 2 cycles, the patient achieved a partial response.

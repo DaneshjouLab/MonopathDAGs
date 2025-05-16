@@ -1,0 +1,9 @@
+A patient presented with a complex clinical picture involving both oncological and hepatic issues. The patient was diagnosed with Lung Adenocarcinoma, which subsequently led to the development of lung cancer. The patient experienced a constellation of symptoms including fever, progressive fatigue, and icteric skin.
+
+Further investigation revealed Cholestatic Liver Injury. The etiology of the liver injury was explored, with investigations ruling out common viral causes such as hepatitis B, hepatitis C, and cytomegalovirus. An autoimmune origin was considered, with testing for antinuclear antibodies and antimitochondrial antibodies.
+
+Imaging studies revealed a nodular shadow in the lungs, consistent with the lung adenocarcinoma. Abdominal imaging showed Splenomegaly, dilatation of the bile duct, thickening of the gallbladder wall, and fatty liver. Liver biopsy revealed inflammatory cell infiltration and destruction of the interlobular bile duct, further supporting the diagnosis of Cholestatic Liver Injury.
+
+The patient's condition was further complicated by hepatotoxicity, potentially related to treatment for the lung cancer, leading to immune-related adverse events. The patient developed hepatitis, which was ultimately characterized as autoimmune hepatitis, contributing to cholestasis and chronic cholestatic liver disease. The clinical picture was consistent with primary biliary cholangitis.
+
+The patient experienced severe liver damage and severe cholestatic liver injury, leading to complications. The patient's overall clinical course was marked by recurrent episodes of hepatitis and severe cholestatic liver injury.

@@ -1,0 +1,7 @@
+A 55-year-old woman was admitted to the hospital on January 1, 2019, with a 6-month history of coughing and sputum production, wheezing, and 3 days of left-sided back pain. Her medical history included 10-year chronic obstructive pulmonary disease and 7-year hypertension. Thirteen years prior, she underwent thymectomy and was currently taking pyridostigmine bromide plus atropine.
+
+A chest CT scan revealed an enlarged left lower lung hilum with an irregular 75.9-mm-diameter soft tissue mass in the left lower lobe. Further imaging revealed multiple partially enlarged lymph nodes in the left lung hilum and mediastinum. Serum tumor marker levels were significantly elevated: carcinoembryonic antigen (CEA) = 108.18 ng/mL, neuron-specific enolase (NSE) = 30.82 \u03bcg/L. PET-CT and brain MRI showed no signs of distant metastases.
+
+Fiberoptic bronchoscopy revealed narrowing of the opening in the dorsal segment of the left lower lobe and an obstructing mass in the opening of the basal segment. Biopsy of the mass in the left lower lung basal segmental opening under bronchoscopy indicated lung adenocarcinoma. The carcinoma was clinically staged as stage IIIB (cT4N2M0). Next-generation sequencing identified an EML4-ALK fusion mutation.
+
+Immunohistochemistry testing indicated high expression of the ALK protein in the tumor tissue samples. Hematoxylin and eosin staining of pretreatment specimens was performed. Baseline PET-CT scan showed SUVmax (LN10) = 17.3, SUVmax (LN7) = 5.6.
