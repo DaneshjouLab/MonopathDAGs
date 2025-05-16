@@ -17,42 +17,65 @@ import numpy as np
 from sklearn.manifold import TSNE
 import evaluate
 
+FONT_SIZE = 24
 PLOTS_DIR = "output/plots"
-
 os.makedirs(PLOTS_DIR, exist_ok=True)
 
 
 def plot_bertscore_f1(graph_ids, bertscore_f1, export_path=None):
-    """Histogram of BERTScore F1 values across all graphs, with summary statistics saved to CSV."""
-    # Calculate statistics
+    """
+    Histogram of BERTScore F1 values across all graphs.
+    Includes visual annotations for mean, median, and interquartile range (IQR).
+    Saves summary statistics to CSV if export_path is provided.
+    """
     f1_array = np.array(bertscore_f1)
+    
+    # Calculate summary statistics
+    mean_f1 = np.mean(f1_array)
+    median_f1 = np.median(f1_array)
+    std_f1 = np.std(f1_array)
+    q1 = np.percentile(f1_array, 25)
+    q3 = np.percentile(f1_array, 75)
+
     stats = {
-        "Mean": np.mean(f1_array),
-        "Median": np.median(f1_array),
-        "Standard Deviation": np.std(f1_array),
-        "25th Percentile (Q1)": np.percentile(f1_array, 25),
-        "75th Percentile (Q3)": np.percentile(f1_array, 75),
+        "Mean": mean_f1,
+        "Median": median_f1,
+        "Standard Deviation": std_f1,
+        "25th Percentile (Q1)": q1,
+        "75th Percentile (Q3)": q3,
     }
 
-    # Print stats
+    # Print stats to console
     for k, v in stats.items():
         print(f"{k}: {v:.3f}")
 
-    # Save to CSV if export path is given
+    # Save statistics to CSV if requested
     if export_path is not None:
-        stats_df = pd.DataFrame([stats])
-        stats_df.to_csv(export_path, index=False)
+        pd.DataFrame([stats]).to_csv(export_path, index=False)
 
-    # Plotting histogram
+    # Plot histogram
     plt.figure(figsize=(8, 6))
-    sns.histplot(f1_array, bins=20, kde=True)
-    plt.title("Distribution of BERTScore F1 Scores")
-    plt.xlabel("F1 Score")
-    plt.ylabel("Frequency")
+    sns.histplot(f1_array, bins=20, kde=True, color="steelblue", edgecolor="black")
+
+    # Plot annotations
+    plt.axvline(mean_f1, color="red", linestyle="--", linewidth=2, label=f"Mean = {mean_f1:.2f}")
+    plt.axvline(median_f1, color="green", linestyle=":", linewidth=2, label=f"Median = {median_f1:.2f}")
+    plt.axvspan(q1, q3, color="orange", alpha=0.2, label=f"IQR = [{q1:.2f}, {q3:.2f}]")
+
+    # Style and labels
+    # plt.title("Distribution of BERTScore F1 Scores", fontsize=FONT_SIZE)
+    plt.xlabel("F1 Score", fontsize=FONT_SIZE)
+    plt.ylabel("Frequency", fontsize=FONT_SIZE)
+    plt.xticks(fontsize=FONT_SIZE - 2)
+    plt.yticks(fontsize=FONT_SIZE - 2)
     plt.xlim(0, 1)
+    plt.legend(fontsize=FONT_SIZE - 3)
     plt.tight_layout()
-    plt.savefig(os.path.join(PLOTS_DIR, "bertscore_f1_histogram.png"))
+
+    # Save to file
+    plt.savefig(os.path.join(PLOTS_DIR, "bertscore_f1_histogram.png"), dpi=300)
     plt.close()
+
 
 def plot_tsne_embeddings(embeddings, graph_ids):
     """2D t-SNE scatterplot for graph embeddings."""
@@ -63,7 +86,7 @@ def plot_tsne_embeddings(embeddings, graph_ids):
     sns.scatterplot(
         x=tsne_results[:, 0], y=tsne_results[:, 1], hue=graph_ids, s=100, ax=ax
     )
-    ax.set_title("t-SNE of Trajectory Embeddings")
+    # ax.set_title("t-SNE of Trajectory Embeddings")
     ax.set_xlabel("Dimension 1")
     ax.set_ylabel("Dimension 2")
     plt.legend(bbox_to_anchor=(1.05, 1), loc="upper left")
@@ -75,13 +98,17 @@ def plot_topology_distributions(node_counts, edge_counts):
     """Histograms for node and edge counts across graphs."""
     _, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
     sns.histplot(node_counts, bins=5, ax=ax1, kde=True)
-    ax1.set_title("Node Count Distribution")
-    ax1.set_xlabel("Number of Nodes")
+    # ax1.set_title("Node Count Distribution", fontsize=FONT_SIZE)
+    ax1.set_xlabel("Number of Nodes", fontsize=FONT_SIZE-2)
+    ax1.set_ylabel("Frequency", fontsize=FONT_SIZE-2)
+    ax1.tick_params(axis='both', labelsize=FONT_SIZE - 2)
 
     sns.histplot(edge_counts, bins=5, ax=ax2, kde=True)
-    ax2.set_title("Edge Count Distribution")
-    ax2.set_xlabel("Number of Edges")
-
+    # ax2.set_title("Edge Count Distribution", fontsize=FONT_SIZE)
+    ax2.set_xlabel("Number of Edges", fontsize=FONT_SIZE-2)
+    ax2.set_ylabel("Frequency", fontsize=FONT_SIZE-2)
+    ax2.tick_params(axis='both', labelsize=FONT_SIZE - 2)
+    
     plt.tight_layout()
     plt.savefig(os.path.join(PLOTS_DIR, "topology_distributions.png"))
     plt.close()

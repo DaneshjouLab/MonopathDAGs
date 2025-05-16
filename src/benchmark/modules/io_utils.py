@@ -17,12 +17,14 @@ from typing import Any
 import warnings
 import re
 import pandas as pd
-
+from pathlib import Path
 # Third-party imports
 import networkx as nx
 from networkx.readwrite import json_graph
 from bs4 import BeautifulSoup
 from bs4 import MarkupResemblesLocatorWarning
+import ast
+import unicodedata
 
 # Local application imports
 from .logging_utils import setup_logger
@@ -233,8 +235,9 @@ def build_graph_to_text_mapping(
         reader = csv.reader(csvfile)
         for row in reader:
             graph_id = row[0].strip()
-            html_rel_path = row[2].strip().replace("./pmc_htmls", str(html_root_dir))
-            graph_to_html[graph_id] = html_rel_path
+            html_filename = Path(row[2].strip()).name  # Just get the filename
+            html_path = Path(html_root_dir) / html_filename  # Properly join
+            graph_to_html[graph_id] = str(html_path.resolve())
 
     return graph_to_html
 
@@ -316,3 +319,40 @@ def summarize_metrics_statistics(
     summary_stats.to_csv(output_path)
 
     return summary_stats
+
+def clean_cancer_column(df: pd.DataFrame, column_name: str = "cancers") -> pd.DataFrame:
+    """
+    Cleans a column of cancer types stored as stringified lists.
+    
+    Args:
+        df (pd.DataFrame): The input DataFrame.
+        column_name (str): The name of the column to clean.
+        
+    Returns:
+        pd.DataFrame: The DataFrame with a new 'cleaned_cancers' column.
+    """
+    # Abbreviation mapping
+    abbreviation_map = {
+        "sclc": "small cell lung cancer",
+        "nsclc": "non-small cell lung cancer",
+    }
+
+    def clean_entry(entry):
+        try:
+            # Convert string representation of list to actual Python list
+            items = ast.literal_eval(entry)
+        except Exception:
+            return []
+
+        cleaned_items = []
+        for item in items:
+            # Decode unicode and normalize
+            decoded = item.encode('utf-8').decode('unicode_escape')
+            normalized = unicodedata.normalize('NFKC', decoded).lower()
+            normalized = abbreviation_map.get(normalized, normalized)
+            cleaned_items.append(normalized)
+
+        return cleaned_items
+
+    df["cleaned_cancers"] = df[column_name].apply(clean_entry)
+    return df

@@ -12,6 +12,7 @@ It also visualizes the clusters using t-SNE and generates a summary of the clust
 """
 
 # Standard library imports
+import os
 import json
 import numpy as np
 import pandas as pd
@@ -38,8 +39,10 @@ from scipy.spatial import ConvexHull
 # Local application imports
 from modules.embedding import TrajectoryEmbedder
 
+FONT_SIZE = 22
+
 RESULTS_DIR = Path("output/results")
-METADATA_CSV = RESULTS_DIR / "graph_html_metadata.csv"
+METADATA_CSV = RESULTS_DIR / "graph_html_metadata_final.csv"
 PLOTS_DIR = Path("output/plots")
 PLOTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -55,22 +58,61 @@ def load_graph_embeddings():
     return graph_embeddings
 
 
-def load_text_embeddings(embedder):
-    df = pd.read_csv(METADATA_CSV)
+# def load_text_embeddings(embedder):
+#     df = pd.read_csv(METADATA_CSV)
+#     text_embeddings = {}
+#     for _, row in df.iterrows():
+#         graph_id_full = row["graph_id"]  # e.g., graph_001
+#         graph_id = graph_id_full.replace("graph_", "")
+#         text = row["timeline_1"]
+#         if pd.isna(text) or not text.strip():
+#             continue
+#         try:
+#             emb = embedder.embed_text(text).cpu().numpy()
+#             text_embeddings[graph_id] = emb
+#         except Exception as e:
+#             print(f"Failed to embed text for graph {graph_id}: {e}")
+#     return text_embeddings
+
+def load_text_embeddings(embedder, metadata_csv, results_dir="output/results"):
+    """
+    Loads text embeddings using reconstructed narratives from results JSON files.
+
+    Args:
+        embedder: An object with an `embed_text(text)` method.
+        metadata_csv (str): Path to the metadata CSV file.
+        results_dir (str): Directory where results_graph_XXX.json files are located.
+
+    Returns:
+        dict: A dictionary mapping graph_id (e.g., "001") to its embedding.
+    """
+    df = pd.read_csv(metadata_csv)
     text_embeddings = {}
+
     for _, row in df.iterrows():
         graph_id_full = row["graph_id"]  # e.g., graph_001
         graph_id = graph_id_full.replace("graph_", "")
-        text = row["timeline_1"]
-        if pd.isna(text) or not text.strip():
+        json_path = os.path.join(results_dir, f"results_graph_{graph_id}.json")
+
+        if not os.path.exists(json_path):
+            print(f"Missing file: {json_path}")
             continue
+
         try:
+            with open(json_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            text = data.get("reconstructed_narrative", "").strip()
+            if not text:
+                print(f"No reconstructed narrative for graph {graph_id}")
+                continue
+
             emb = embedder.embed_text(text).cpu().numpy()
             text_embeddings[graph_id] = emb
-        except Exception as e:
-            print(f"Failed to embed text for graph {graph_id}: {e}")
-    return text_embeddings
 
+        except Exception as e:
+            print(f"Failed to process graph {graph_id}: {e}")
+
+    return text_embeddings
 
 def load_metadata_features(shared_ids):
     df = pd.read_csv(METADATA_CSV)
@@ -122,29 +164,8 @@ def cluster_and_evaluate(embedding_matrix, method_label):
     print(f"[{method_label}] Best k={best_k}, Silhouette={best_score:.4f}")
     return best_k, best_labels, best_scores
 
-
-# def plot_tsne(embeddings, labels, method_label):
-#     n_samples = embeddings.shape[0]
-#     perplexity = min(5, n_samples - 1)
-#     tsne = TSNE(n_components=2, perplexity=perplexity, random_state=42)
-#     reduced = tsne.fit_transform(embeddings)
-
-#     # Convert numeric labels to "Cluster 1", "Cluster 2", etc.
-#     unique_labels = np.unique(labels)
-#     label_map = {label: f"Cluster {i+1}" for i, label in enumerate(unique_labels)}
-#     cluster_labels = [label_map[label] for label in labels]
-
-#     # Plot
-#     plt.figure(figsize=(8, 6))
-#     sns.scatterplot(x=reduced[:, 0], y=reduced[:, 1], hue=cluster_labels, palette="tab10")
-#     plt.title(f"t-SNE of {method_label} Embeddings")
-#     plt.tight_layout()
-#     plt.savefig(PLOTS_DIR / f"tsne_{method_label.lower()}.png")
-#     plt.close()
-
-def plot_tsne(embeddings, labels, shared_ids, label_type="graph"):
-    metadata_path = Path("output/results/graph_html_metadata.csv")
-    meta_df = pd.read_csv(metadata_path)
+def plot_tsne_cancer_type(embeddings, labels, shared_ids, label_type="graph"):
+    meta_df = pd.read_csv(METADATA_CSV)
     meta_df["graph_id"] = meta_df["graph_id"].str.replace("graph_", "")
     meta_df = meta_df[meta_df["graph_id"].isin(shared_ids)]
 
@@ -159,7 +180,6 @@ def plot_tsne(embeddings, labels, shared_ids, label_type="graph"):
     })
     joined = cluster_df.merge(meta_df, on="graph_id")
 
-    # Preprocess categories
     def extract_first_category(val):
         if pd.isna(val): return "unknown"
         try:
@@ -169,39 +189,59 @@ def plot_tsne(embeddings, labels, shared_ids, label_type="graph"):
             return "unknown"
 
     joined["cancer"] = joined["cancers"].apply(extract_first_category)
-    joined["metastasis"] = joined["has_metastasis"].map({True: True, "TRUE": True, False: False, "FALSE": False})
-
-    # Assign colors and markers
-    cancer_palette = {c: col for c, col in zip(joined["cancer"].unique(), sns.color_palette("tab10", n_colors=joined["cancer"].nunique()))}
-    marker_map = {True: 'o', False: 'x'}
+    cancer_palette = sns.color_palette("tab10", n_colors=joined["cancer"].nunique())
+    cancer_colors = dict(zip(joined["cancer"].unique(), cancer_palette))
 
     plt.figure(figsize=(10, 8))
-    for (cancer, metastasis), group in joined.groupby(["cancer", "metastasis"]):
-        plt.scatter(
-            group["x"], group["y"],
-            label=f"{cancer} | {'Met+' if metastasis else 'Met-'}",
-            marker=marker_map.get(metastasis, 'o'),
-            color=cancer_palette[cancer],
-            alpha=0.75,
-            edgecolor="k"
-        )
+    for cancer, group in joined.groupby("cancer"):
+        plt.scatter(group["x"], group["y"], label=cancer,
+                    color=cancer_colors[cancer], alpha=0.75, edgecolor="k")
 
-    # Draw convex hulls per cluster
-    for cluster_id in sorted(joined["cluster"].unique()):
-        cluster_points = joined[joined["cluster"] == cluster_id][["x", "y"]].values
-        if len(cluster_points) >= 3:
-            hull = ConvexHull(cluster_points)
-            polygon = Polygon(cluster_points[hull.vertices], closed=True, fill=False, edgecolor='gray', linewidth=1.5, linestyle='--')
-            plt.gca().add_patch(polygon)
-
-    plt.title(f"t-SNE of {label_type.capitalize()} Embeddings\nColored by Cancer Type, Marker by Metastasis")
+    plt.title(f"t-SNE of {label_type.capitalize()} Embeddings\nColored by Cancer Type")
     plt.xlabel("t-SNE-1")
     plt.ylabel("t-SNE-2")
     plt.legend(bbox_to_anchor=(1.05, 1), loc="upper left", fontsize="small")
     plt.tight_layout()
-    plt.savefig(PLOTS_DIR / f"tsne_{label_type}_metadata_clusters.png")
+    out_path = PLOTS_DIR / f"tsne_{label_type}_cancer_type.png"
+    plt.savefig(out_path, dpi=300)
     plt.close()
-    print(f"✅ Saved: tsne_{label_type}_metadata_clusters.png")
+    print(f"✅ Saved: {out_path}")
+
+
+# def plot_tsne_metastasis(embeddings, labels, shared_ids, label_type="graph"):
+#     meta_df = pd.read_csv(METADATA_CSV)
+#     meta_df["graph_id"] = meta_df["graph_id"].str.replace("graph_", "")
+#     meta_df = meta_df[meta_df["graph_id"].isin(shared_ids)]
+
+#     tsne = TSNE(n_components=2, perplexity=min(5, len(shared_ids)-1), random_state=42)
+#     reduced = tsne.fit_transform(embeddings)
+
+#     cluster_df = pd.DataFrame({
+#         "graph_id": shared_ids,
+#         "x": reduced[:, 0],
+#         "y": reduced[:, 1],
+#         "cluster": labels
+#     })
+#     joined = cluster_df.merge(meta_df, on="graph_id")
+
+#     joined["metastasis"] = joined["has_metastasis"].map({True: True, "TRUE": True, False: False, "FALSE": False})
+#     metastasis_palette = {True: "red", False: "blue"}
+
+#     plt.figure(figsize=(10, 8))
+#     for status, group in joined.groupby("metastasis"):
+#         label = "Met+" if status else "Met-"
+#         plt.scatter(group["x"], group["y"], label=label,
+#                     color=metastasis_palette[status], alpha=0.75, edgecolor="k")
+
+#     plt.title(f"t-SNE of {label_type.capitalize()} Embeddings\nColored by Metastasis Status")
+#     plt.xlabel("t-SNE-1")
+#     plt.ylabel("t-SNE-2")
+#     plt.legend(bbox_to_anchor=(1.05, 1), loc="upper left", fontsize="small")
+#     plt.tight_layout()
+#     out_path = PLOTS_DIR / f"tsne_{label_type}_metastasis.png"
+#     plt.savefig(out_path, dpi=300)
+#     plt.close()
+#     print(f"✅ Saved: {out_path}")
 
 def summarize_cluster_metadata(shared_ids, glabels, label_type="graph"):
     meta_df = pd.read_csv(METADATA_CSV)
@@ -250,7 +290,11 @@ def summarize_cluster_metadata(shared_ids, glabels, label_type="graph"):
     bar_df = pd.DataFrame(expanded)
     plt.figure(figsize=(6, 4))
     sns.barplot(data=bar_df, x="Cluster", y="Proportion", hue="Metastasis")
-    plt.title(f"{label_type.capitalize()} Clusters by Metastasis Status")
+    # plt.title(f"{label_type.capitalize()} Clusters by Metastasis Status", fontsize=FONT_SIZE)
+    plt.xlabel("Cluster", fontsize=FONT_SIZE)
+    plt.ylabel("Proportion", fontsize=FONT_SIZE)
+    plt.xticks(fontsize=FONT_SIZE-2)
+    plt.yticks(fontsize=FONT_SIZE-2)
     plt.tight_layout()
     plt.savefig(PLOTS_DIR / f"{label_type}_cluster_metastasis_barplot.png")
     plt.close()
@@ -347,14 +391,24 @@ def plot_score_comparison(score_dicts, shared_ids, glabels, tlabels):
     for label, scores in score_dicts.items():
         for metric, value in zip(metrics, scores):  # Expecting only 2 values per label
             data.append({"Metric": metric, "Type": label, "Score": value})
-    
+
     df = pd.DataFrame(data)
+    plot_path = PLOTS_DIR / "clustering_score_comparison.png"
+    csv_path = RESULTS_DIR / "clustering_score_comparison.csv"
+
+    # Save the barplot
     plt.figure(figsize=(8, 5))
     sns.barplot(x="Metric", y="Score", hue="Type", data=df)
     plt.title("Clustering Score Comparison")
     plt.tight_layout()
-    plt.savefig(PLOTS_DIR / "clustering_score_comparison.png")
+    plt.savefig(plot_path)
     plt.close()
+    print(f"✅ Clustering score comparison plot saved to {plot_path}")
+
+    # Save the score data as CSV
+    df.to_csv(csv_path, index=False)
+    print(f"✅ Clustering score comparison CSV saved to {csv_path}")
+
 
 
 def main():
@@ -363,7 +417,7 @@ def main():
 
     print("Loading text embeddings...")
     embedder = TrajectoryEmbedder()
-    text_embs = load_text_embeddings(embedder)
+    text_embs = load_text_embeddings(embedder, METADATA_CSV)
 
     shared_ids = list(set(graph_embs) & set(text_embs))
     print(f"Found {len(shared_ids)} shared graph/text pairs")
@@ -375,6 +429,20 @@ def main():
 
     score_dicts = {}
 
+    # --- No Dimensionality Reduction ---
+    gk_raw, glabels_raw, g_scores_raw = cluster_and_evaluate(graph_matrix, method_label="Graph-Raw")
+    tk_raw, tlabels_raw, t_scores_raw = cluster_and_evaluate(text_matrix, method_label="Text-Raw")
+
+    # plot_tsne_cancer_type(graph_matrix, glabels_raw, shared_ids, label_type="Graph-Raw")
+    # plot_tsne_metastasis(graph_matrix, glabels_raw, shared_ids, label_type="Graph-Raw")
+
+    # plot_tsne_cancer_type(text_matrix, tlabels_raw, shared_ids, label_type="Text-Raw")
+    # plot_tsne_metastasis(text_matrix, tlabels_raw, shared_ids, label_type="Text-Raw")
+
+    # Save metrics
+    score_dicts["Graph-Raw"] = g_scores_raw[gk_raw]
+    score_dicts["Text-Raw"] = t_scores_raw[tk_raw]
+
     for method in ["pca", "umap"]:
         reduced_graph = reduce_dimensions(graph_matrix, method=method)
         reduced_text = reduce_dimensions(text_matrix, method=method)
@@ -382,8 +450,10 @@ def main():
         gk, glabels, g_scores = cluster_and_evaluate(reduced_graph, f"Graph-{method.upper()}")
         tk, tlabels, t_scores = cluster_and_evaluate(reduced_text, f"Text-{method.upper()}")
 
-        plot_tsne(reduced_graph, glabels, shared_ids, label_type=f"Graph-{method.upper()}")
-        plot_tsne(reduced_text, tlabels, shared_ids, label_type=f"Text-{method.upper()}")
+        # plot_tsne_cancer_type(reduced_graph, glabels, shared_ids, label_type=f"Graph-{method.upper()}")
+        # plot_tsne_metastasis(reduced_graph, glabels, shared_ids, label_type=f"Graph-{method.upper()}")
+        # plot_tsne_cancer_type(reduced_text, tlabels, shared_ids, label_type=f"Text-{method.upper()}")
+        # plot_tsne_metastasis(reduced_text, tlabels, shared_ids, label_type=f"Text-{method.upper()}")
 
         score_dicts[f"Graph-{method.upper()}"] = g_scores[gk]
         score_dicts[f"Text-{method.upper()}"] = t_scores[tk]
