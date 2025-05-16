@@ -33,8 +33,6 @@ import seaborn as sns
 import umap
 from sklearn.metrics import adjusted_rand_score
 from collections import Counter
-from matplotlib.patches import Polygon
-from scipy.spatial import ConvexHull
 
 # Local application imports
 from modules.embedding import TrajectoryEmbedder
@@ -57,22 +55,6 @@ def load_graph_embeddings():
                 graph_embeddings[graph_id] = data["trajectory_embedding"]
     return graph_embeddings
 
-
-# def load_text_embeddings(embedder):
-#     df = pd.read_csv(METADATA_CSV)
-#     text_embeddings = {}
-#     for _, row in df.iterrows():
-#         graph_id_full = row["graph_id"]  # e.g., graph_001
-#         graph_id = graph_id_full.replace("graph_", "")
-#         text = row["timeline_1"]
-#         if pd.isna(text) or not text.strip():
-#             continue
-#         try:
-#             emb = embedder.embed_text(text).cpu().numpy()
-#             text_embeddings[graph_id] = emb
-#         except Exception as e:
-#             print(f"Failed to embed text for graph {graph_id}: {e}")
-#     return text_embeddings
 
 def load_text_embeddings(embedder, metadata_csv, results_dir="output/results"):
     """
@@ -208,40 +190,40 @@ def plot_tsne_cancer_type(embeddings, labels, shared_ids, label_type="graph"):
     print(f"✅ Saved: {out_path}")
 
 
-# def plot_tsne_metastasis(embeddings, labels, shared_ids, label_type="graph"):
-#     meta_df = pd.read_csv(METADATA_CSV)
-#     meta_df["graph_id"] = meta_df["graph_id"].str.replace("graph_", "")
-#     meta_df = meta_df[meta_df["graph_id"].isin(shared_ids)]
+def plot_tsne_metastasis(embeddings, labels, shared_ids, label_type="graph"):
+    meta_df = pd.read_csv(METADATA_CSV)
+    meta_df["graph_id"] = meta_df["graph_id"].str.replace("graph_", "")
+    meta_df = meta_df[meta_df["graph_id"].isin(shared_ids)]
 
-#     tsne = TSNE(n_components=2, perplexity=min(5, len(shared_ids)-1), random_state=42)
-#     reduced = tsne.fit_transform(embeddings)
+    tsne = TSNE(n_components=2, perplexity=min(5, len(shared_ids)-1), random_state=42)
+    reduced = tsne.fit_transform(embeddings)
 
-#     cluster_df = pd.DataFrame({
-#         "graph_id": shared_ids,
-#         "x": reduced[:, 0],
-#         "y": reduced[:, 1],
-#         "cluster": labels
-#     })
-#     joined = cluster_df.merge(meta_df, on="graph_id")
+    cluster_df = pd.DataFrame({
+        "graph_id": shared_ids,
+        "x": reduced[:, 0],
+        "y": reduced[:, 1],
+        "cluster": labels
+    })
+    joined = cluster_df.merge(meta_df, on="graph_id")
 
-#     joined["metastasis"] = joined["has_metastasis"].map({True: True, "TRUE": True, False: False, "FALSE": False})
-#     metastasis_palette = {True: "red", False: "blue"}
+    joined["metastasis"] = joined["has_metastasis"].map({True: True, "TRUE": True, False: False, "FALSE": False})
+    metastasis_palette = {True: "red", False: "blue"}
 
-#     plt.figure(figsize=(10, 8))
-#     for status, group in joined.groupby("metastasis"):
-#         label = "Met+" if status else "Met-"
-#         plt.scatter(group["x"], group["y"], label=label,
-#                     color=metastasis_palette[status], alpha=0.75, edgecolor="k")
+    plt.figure(figsize=(10, 8))
+    for status, group in joined.groupby("metastasis"):
+        label = "Met+" if status else "Met-"
+        plt.scatter(group["x"], group["y"], label=label,
+                    color=metastasis_palette[status], alpha=0.75, edgecolor="k")
 
-#     plt.title(f"t-SNE of {label_type.capitalize()} Embeddings\nColored by Metastasis Status")
-#     plt.xlabel("t-SNE-1")
-#     plt.ylabel("t-SNE-2")
-#     plt.legend(bbox_to_anchor=(1.05, 1), loc="upper left", fontsize="small")
-#     plt.tight_layout()
-#     out_path = PLOTS_DIR / f"tsne_{label_type}_metastasis.png"
-#     plt.savefig(out_path, dpi=300)
-#     plt.close()
-#     print(f"✅ Saved: {out_path}")
+    plt.title(f"t-SNE of {label_type.capitalize()} Embeddings\nColored by Metastasis Status")
+    plt.xlabel("t-SNE-1")
+    plt.ylabel("t-SNE-2")
+    plt.legend(bbox_to_anchor=(1.05, 1), loc="upper left", fontsize="small")
+    plt.tight_layout()
+    out_path = PLOTS_DIR / f"tsne_{label_type}_metastasis.png"
+    plt.savefig(out_path, dpi=300)
+    plt.close()
+    print(f"✅ Saved: {out_path}")
 
 def summarize_cluster_metadata(shared_ids, glabels, label_type="graph"):
     meta_df = pd.read_csv(METADATA_CSV)
@@ -435,7 +417,6 @@ def main():
 
     # plot_tsne_cancer_type(graph_matrix, glabels_raw, shared_ids, label_type="Graph-Raw")
     # plot_tsne_metastasis(graph_matrix, glabels_raw, shared_ids, label_type="Graph-Raw")
-
     # plot_tsne_cancer_type(text_matrix, tlabels_raw, shared_ids, label_type="Text-Raw")
     # plot_tsne_metastasis(text_matrix, tlabels_raw, shared_ids, label_type="Text-Raw")
 
