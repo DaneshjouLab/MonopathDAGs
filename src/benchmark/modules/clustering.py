@@ -68,7 +68,7 @@ def load_text_embeddings(embedder, metadata_csv, results_dir="output/results"):
     Returns:
         dict: A dictionary mapping graph_id (e.g., "001") to its embedding.
     """
-    df = pd.read_csv(metadata_csv)
+    df = pd.read_csv(metadata_csv, encoding='ISO-8859-1')
     text_embeddings = {}
 
     for _, row in df.iterrows():
@@ -97,7 +97,7 @@ def load_text_embeddings(embedder, metadata_csv, results_dir="output/results"):
     return text_embeddings
 
 def load_metadata_features(shared_ids):
-    df = pd.read_csv(METADATA_CSV)
+    df = pd.read_csv(METADATA_CSV, encoding='ISO-8859-1')
     df = df[df["graph_id"].str.startswith("graph_")]
     df["graph_id"] = df["graph_id"].str.replace("graph_", "")
     df = df[df["graph_id"].isin(shared_ids)].set_index("graph_id")
@@ -226,7 +226,7 @@ def plot_tsne_metastasis(embeddings, labels, shared_ids, label_type="graph"):
     print(f"✅ Saved: {out_path}")
 
 def summarize_cluster_metadata(shared_ids, glabels, label_type="graph"):
-    meta_df = pd.read_csv(METADATA_CSV)
+    meta_df = pd.read_csv(METADATA_CSV, encoding='ISO-8859-1')
     meta_df["graph_id"] = meta_df["graph_id"].str.replace("graph_", "")
     meta_df = meta_df[meta_df["graph_id"].isin(shared_ids)]
     cluster_df = pd.DataFrame({

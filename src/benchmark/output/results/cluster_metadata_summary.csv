@@ -1,5 +1,5 @@
 cluster,has_metastasis,top_cancers,top_specific_cancers
-0,"{""true"": 0.6013986013986014, ""false"": 0.3986013986013986}","['Thoracic Cancers'] (61), ['Unclassified / Rare / Foreign'] (42), ['Thoracic Cancers', 'Skin & Soft Tissue Tumors'] (11)","[] (9), [""lung cancer""] (5), [""lung adenocarcinoma""] (4)"
-1,"{""true"": 0.8487394957983193, ""false"": 0.15126050420168066}","['Thoracic Cancers'] (58), ['Unclassified / Rare / Foreign'] (24), ['Thoracic Cancers', 'Skin & Soft Tissue Tumors'] (20)","[""adenocarcinoma""] (5), [""lung adenocarcinoma""] (4), [""lung cancer""] (3)"
-2,"{""true"": 0.7222222222222222, ""false"": 0.2777777777777778}","['Thoracic Cancers'] (43), ['Unclassified / Rare / Foreign'] (18), ['Thoracic Cancers', 'Skin & Soft Tissue Tumors'] (8)","[""lung adenocarcinoma""] (6), [""lung cancer""] (4), [] (4)"
-3,"{""true"": 0.7803030303030303, ""false"": 0.2196969696969697}","['Thoracic Cancers'] (69), ['Unclassified / Rare / Foreign'] (23), ['Thoracic Cancers', 'Skin & Soft Tissue Tumors'] (16)","[""lung adenocarcinoma""] (11), [""adenocarcinoma""] (3), [""NSCLC""] (3)"
+0,"{""true"": 0.7311827956989247, ""false"": 0.26881720430107525}","['cancer'] (8), ['cancer', 'tumor'] (6), ['lung cancer'] (5)","[""lung adenocarcinoma""] (6), [""lung cancer""] (5), [] (4)"
+1,"{""true"": 0.6115107913669064, ""false"": 0.38848920863309355}","['cancer'] (11), ['lung cancer'] (8), [] (6)","[] (9), [""lung cancer""] (5), [""adenocarcinoma""] (4)"
+2,"{""true"": 0.847457627118644, ""false"": 0.15254237288135594}","['cancer', 'tumor'] (13), ['cancer'] (10), ['tumor'] (8)","[""lung adenocarcinoma""] (4), [""adenocarcinoma""] (4), [""small cell lung cancer""] (3)"
+3,"{""true"": 0.7611940298507462, ""false"": 0.23880597014925373}","['cancer', 'tumor'] (17), ['cancer'] (14), ['lung cancer'] (10)","[""lung adenocarcinoma""] (12), [""NSCLC""] (3), [""adenocarcinoma""] (3)"

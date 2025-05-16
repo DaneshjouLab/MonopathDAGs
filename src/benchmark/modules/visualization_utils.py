@@ -101,13 +101,13 @@ def plot_topology_distributions(node_counts, edge_counts):
     # ax1.set_title("Node Count Distribution", fontsize=FONT_SIZE)
     ax1.set_xlabel("Number of Nodes", fontsize=FONT_SIZE-2)
     ax1.set_ylabel("Frequency", fontsize=FONT_SIZE-2)
-    ax1.tick_params(axis='both', labelsize=FONT_SIZE - 2)
+    ax1.tick_params(axis='both', labelsize=FONT_SIZE-2)
 
     sns.histplot(edge_counts, bins=5, ax=ax2, kde=True)
     # ax2.set_title("Edge Count Distribution", fontsize=FONT_SIZE)
     ax2.set_xlabel("Number of Edges", fontsize=FONT_SIZE-2)
     ax2.set_ylabel("Frequency", fontsize=FONT_SIZE-2)
-    ax2.tick_params(axis='both', labelsize=FONT_SIZE - 2)
+    ax2.tick_params(axis='both', labelsize=FONT_SIZE-2)
     
     plt.tight_layout()
     plt.savefig(os.path.join(PLOTS_DIR, "topology_distributions.png"))
