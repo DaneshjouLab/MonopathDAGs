@@ -25,4 +25,4 @@ fi
 # python3 generate_visuals.py
 
 echo "Clustering..."
-python3 modules/compare_graph_vs_text_clusters.py
+python3 modules/clustering.py
