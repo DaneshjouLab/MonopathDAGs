@@ -1,15 +1,27 @@
-# DynamicData
+# Monopath DAGs: Structuring Patient Trajectories from Clinical Case Reports
 
-DynamicData is a modular framework for transforming clinical case reports into structured dynamic graphs and generating synthetic case narratives using large language models.
+DynamicData is a modular pipeline for converting clinical case reports into structured representations of patient trajectories in the form of Monopath Directed Acyclic Graphs (DAGs). These graphs capture temporally ordered clinical states and transitions, supporting semantic modeling, similarity retrieval, and synthetic case generation.
+
+This repository provides the tools used in our NeurIPS 2025 paper, including:
+
+- A DSPy-driven pipeline for extracting DAGs from PubMed Central (PMC) HTML case reports
+- Ontology-grounded node and edge generation using large language models
+- A synthetic generation module for producing realistic case narratives
+- Evaluation utilities for assessing semantic fidelity and structural correctness
+- The full dataset of Monopath DAGs, extracted metadata, and synthetic cases
+
+We release this framework and dataset to support research on clinically grounded trajectory modeling and structured patient representation.
 
 ---
 
-## 🔧 Installation
+##  Installation
 
 ### Clone the Repository
 
 ```
 git clone https://github.com/DaneshjouLab/DynamicData.git <project_directory>
+
+
 cd <project_directory>
 ```
 
@@ -28,19 +40,17 @@ pip install -r requirements.txt
 
 ---
 
-## Configuration
+##  Configuration
 
 Create a `.env` file to store API keys and model names.
 
-**`.config/.env`:**
+**Example `.config/.env`:**
 ```
 DSPY_MODEL="gemini/gemini-2.0-flash"
 GEMINI_APIKEY="your-gemini-api-key"
 GPTKEY="your-openai-api-key"
-ncbi_api_key="your-ncbi-key"
-Entrez_email="your-email@example.com"
-```
 
+```
 
 **Recommended `.gitignore`:**
 ```
@@ -49,77 +59,88 @@ Entrez_email="your-email@example.com"
 
 ---
 
-## 📄 Graph Generation Pipeline
+## Graph Generation Pipeline
 
-Converts full PMC HTML case reports into dynamic DAGs with node and edge information using DSPy.
+Converts PMC HTML case reports into dynamic DAGs.
 
 ### Input
 
-- Place your PMC HTML files in:
-  ```
-  ./pmc_htmls/
-  ```
+Place your HTML files in:
+```
+./pmc_htmls/
+```
 
 ### Run the pipeline
 
 ```
-python src/pipeline/generate_graphs.py
+python main.py generate-graphs --input_dir ./pmc_htmls --output_dir ./webapp/static/graphs
 ```
 
 ### Output
 
-- JSON graphs stored in:
-  ```
-  webapp/static/graphs/
-  ```
-- Metadata stored in:
-  ```
-  webapp/static/graphs/graph_metadata.csv
-  ```
+- Graph JSONs: `webapp/static/graphs/`
+- Metadata: `webapp/static/graphs/graph_metadata.csv`
 
 ---
 
-## 🧬 Synthetic Case Generation
+##  Synthetic Case Generation
 
-Generates synthetic case narratives from dynamic graphs using LLMs.
+Generates synthetic narratives from graph paths using LLMs.
 
-### Input Requirements
+### Prerequisites
 
-- Graphs must be saved in `webapp/static/graphs/`
-- Metadata must be indexed in `graph_metadata.csv`
+Ensure graph metadata CSV exists:
+```
+webapp/static/graphs/graph_metadata.csv
+```
 
-### Run the generation script
+### Run generation
 
 ```
-python src/pipeline/generate_synthetic_cases.py
+python main.py generate-synthetic \
+  --csv webapp/static/graphs/graph_metadata.csv \
+  --output_dir synthetic_outputs \
+  --model gemini/gemini-2.0-flash
 ```
 
 ### Output
 
-- Synthetic narratives and metadata stored in:
-  ```
-  synthetic_outputs/
-  ```
-
-Each output consists of:
-- `.txt` files for each generated case (control or sample)
-- `index.jsonl` recording metadata (graph ID, model used, etc.)
+- Text outputs: `synthetic_outputs/*.txt`
+- Metadata index: `synthetic_outputs/index.jsonl`
 
 ---
 
-## ⚙ Project Structure
+##  Run Web Server
+
+Serve the interface locally using FastAPI + Uvicorn:
+
+```
+python main.py run-server
+```
+
+Access at:
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## Project Structure
 
 ```
 DynamicData/
 ├── .config/                      # API keys and model config
-├── pmc_htmls/                    # Input HTML articles
-├── webapp/static/graphs/        # Output graph JSONs and metadata
-├── synthetic_outputs/           # Output synthetic case reports
+├── webapp/
+│   ├── static/
+│   │   ├── pmc_htmls/            # Input HTML articles
+│   │   ├── graphs/               # Output graph JSONs and metadata
+│   │   ├── synthetic_outputs/    # Output synthetic case reports
+│   │   └── user_data/            # Temporary user data
 ├── src/
-│   ├── pipeline/                # Main execution scripts
-│   ├── agent/                   # DSPy programs
-│   ├── data/                    # Preprocessing logic
-│   └── benchmark/modules/       # Graph reconstruction + utils
+│   ├── pipeline/                 # Main execution scripts
+│   ├── agent/                    # DSPy programs
+│   ├── data/                     # Preprocessing logic
+│   └── benchmark/modules/        # Graph reconstruction + utils
 ├── requirements.txt
 └── README.md
 ```
@@ -129,13 +150,13 @@ DynamicData/
 ## 🧪 Citation
 
 ```
-@software{dynamicdata2025,
-  author = {Daneshjou Lab},
-  title = {DynamicData: A Framework for Patient Timeline Graph Construction and Simulation},
-  year = {2025},
-  url = {https://github.com/DaneshjouLab/DynamicData}
+@misc{zhou2025monopath,
+title = {Monopath DAGs: Structuring Patient Trajectories from Clinical Case Reports},
+author = {Zhou, Anson and Fanous, Aaron and Bikia, Vasiliki and Xu, Sonnet and Agarwal, Ank A. and Fanous, Noah and Huang, Lyndon and Luu, Jonathan and Tolbert, Preston and Alsentzer, Emily and Daneshjou, Roxana},
+note = {Manuscript under review},
+year = {2025},
+url = {https://github.com/DaneshjouLab/DynamicData}
 }
-```
 
 ---
 

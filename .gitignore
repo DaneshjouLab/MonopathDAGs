@@ -178,3 +178,6 @@ todo.md
 
 *.DS_Store
 .env
+
+.continue*
+.vscode*
