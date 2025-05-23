@@ -21,8 +21,8 @@ fi
 # echo "Running batch run..."
 # python3 batch_run.py
 
-# echo "Generating plots..."
+# echo "Generating fidelity plots..."
 # python3 generate_visuals.py
 
-echo "Generating similarity and clustering results..."
-python3 modules/compare_graph_vs_text_clusters.py
+echo "Clustering..."
+python3 modules/clustering.py

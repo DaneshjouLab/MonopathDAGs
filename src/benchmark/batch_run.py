@@ -72,6 +72,7 @@ if __name__ == "__main__":
                 "trajectory_embedding": True,
             }
 
+            print(f"Looking for file at: {html_path}")
             results = run_pipeline(graph, reference_case_text, cfg)
 
             output_path = RESULTS_OUTPUT_DIR / f"results_{graph_id}.json"

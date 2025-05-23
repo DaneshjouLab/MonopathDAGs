@@ -10,6 +10,7 @@
 import os
 import json
 import numpy as np
+import pandas as pd
 
 import sys
 from pathlib import Path
@@ -39,6 +40,9 @@ trajectory_embeddings = []
 node_counts = []
 edge_counts = []
 
+# To store skipped graphs
+skipped_graphs = []
+
 # Iterate over each result file
 for fname in os.listdir(RESULTS_DIR):
     if fname.endswith(".json"):
@@ -46,7 +50,7 @@ for fname in os.listdir(RESULTS_DIR):
         with open(os.path.join(RESULTS_DIR, fname), "r", encoding="utf-8") as f:
             result = json.load(f)
 
-        graph_ids.append(graph_id)
+        
 
         # Get BERTScore F1
         bertscore = result.get("bertscore", {})
@@ -55,6 +59,12 @@ for fname in os.listdir(RESULTS_DIR):
         precision = bertscore.get("precision", np.nan)
         recall = bertscore.get("recall", np.nan)
 
+        # Skip graphs with any zero BERTScore value
+        if (f1 == 0.0 or precision == 0.0 or recall == 0.0):
+            skipped_graphs.append(graph_id)
+            continue
+            
+        graph_ids.append(graph_id)
         bertscore_f1s.append(f1)
         bertscore_precisions.append(precision)
         bertscore_recalls.append(recall)
@@ -74,11 +84,28 @@ for fname in os.listdir(RESULTS_DIR):
         emb = result.get("trajectory_embedding")
         if emb:
             trajectory_embeddings.append(emb)
+        else:
+            # To keep everything aligned, we must remove the last added entries
+            graph_ids.pop()
+            bertscore_f1s.pop()
+            bertscore_precisions.pop()
+            bertscore_recalls.pop()
+            bleu_scores.pop()
+            rouge1_scores.pop()
+            rougeL_scores.pop()
+            node_counts.pop()
+            edge_counts.pop()
 
         # Get topology stats
         topo = result.get("topology", {})
         node_counts.append(topo.get("node_count", 0))
         edge_counts.append(topo.get("edge_count", 0))
+
+# Save skipped graph IDs to Excel
+if skipped_graphs:
+    skipped_df = pd.DataFrame({"skipped_graph_id": skipped_graphs})
+    skipped_df.to_csv(os.path.join(PLOTS_DIR, "skipped_due_to_bertscore_zero.csv"), index=False)
+
 
 # Convert embedding list to numpy array if not empty
 if trajectory_embeddings:
@@ -87,8 +114,8 @@ if trajectory_embeddings:
 # Generate Visualizations
 plot_bertscore_f1(graph_ids, bertscore_f1s)
 
-if len(trajectory_embeddings) > 1:
-    plot_tsne_embeddings(trajectory_embeddings, graph_ids)
+# if len(trajectory_embeddings) > 1:
+#     plot_tsne_embeddings(trajectory_embeddings, graph_ids)
 
 plot_topology_distributions(node_counts, edge_counts)
 
@@ -107,3 +134,5 @@ summary_df = summarize_metrics_table(
 )
 print("\n=== Summary Table ===")
 print(summary_df)
+if skipped_graphs:
+    print(f"\nSkipped {len(skipped_graphs)} graphs due to zero BERTScore values.")

@@ -25,7 +25,6 @@ from .config import (
     LM_MODEL,
     LM_API_BASE,
     LM_API_KEY,
-    TEXT_FIELD_PATH,
     TRAJECTORY_EMBEDDING_MODEL,
     Graph,
 )

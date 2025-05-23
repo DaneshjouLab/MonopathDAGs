@@ -1,11 +1,12 @@
-# 📊 Benchmarking Pipeline for Graph-Based Biomedical Case Reports
+# 📊 Benchmarking Pipeline for Monopath DAGs Case Reports
 
-This repository contains a benchmarking framework for analyzing and visualizing the performance of NLP models (e.g., `BERTScore`) on biomedical case reports represented as graphs. It includes tools for:
+This repository provides a benchmarking framework for evaluating and visualizing graph- and text-based embeddings of biomedical case reports. It supports clustering analysis, embedding evaluation, and metadata-driven visualization.
 
-- Computing similarity scores (e.g., `BERTScore`, `ROUGE`, `BLEU`)
-- Visualizing results (`F1` plots, `t-SNE`, topology distributions)
-- Summarizing metrics in tables
-- Preparing data for downstream evaluations
+- Load and embed patient trajectories from structured graphs and reconstructed narratives
+- Apply dimensionality reduction (PCA, UMAP) and K-means clustering
+- Evaluate clustering quality with Calinski-Harabasz Index
+- Visualize t-SNE projections, cluster compositions by cancer type and metastasis status
+- Generate cluster summaries, barplots, and heatmaps
 
 ---
 
@@ -47,17 +48,17 @@ src/
         ├── reconstruciton.py        # Graph or text reconstruction methods from processed data
         ├── regex_utils.py           # Utility functions for pattern matching and extraction using regular expressions
         ├── run_benchmark.py         # Orchestrates the full benchmarking pipeline
-        └── visualization.py         # Plotting functions for visual summaries and metric reporting
+        ├── clustering.py            # Clustering of graph embeddings and text embeddings
+        └── visualization_utils.py   # Plotting functions for visual summaries and metric reporting
 ```
 
 ---
 
 ## 📉 Outputs
 
-- `output/plots/bertscore_f1_barplot.png` – Bar chart of BERTScore F1 scores
-- `output/plots/trajectory_tsne.png` – 2D t-SNE embedding of graph trajectories
+- `output/plots/bertscore_f1_histogram.png` – Bar chart of BERTScore F1 scores
 - `output/plots/topology_distributions.png` – Histograms of node and edge counts
-- `bertscore_stats.csv` – Summary statistics of BERTScore F1 (optional export)
+- `output/plots/metrics_summary.csv` – Summary statistics of BERTScore F1 (optional export)
 
 ---
 
