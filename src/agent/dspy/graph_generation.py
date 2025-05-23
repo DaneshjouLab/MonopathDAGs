@@ -18,7 +18,7 @@ from src.data.data_processors.pdf_to_text import extract_text_from_pdf
 from src.agent.dspy.testing_more import (extract_paragraphs, recursively_decompose_to_atomic_sentences)
 
 import pandas as pd
-
+import configparser
 import json
 import requests
 import os
@@ -32,26 +32,6 @@ from testing_more import (
     split_into_sentences,
     PatientTimeline
 )
-
-# TO DO:
-# UMLS API Key?????? To help map
-# Modify code so that if the variable is a null value, just delete it
-# Build ordered data structure to store all the nodes and edges chronilogically, so that branchClassifier can go back and change the branch_flags
-# Need to do better job with the clinical data, it is not putting anything in right now
-
-
-# Make sure chunking is working - DONE
-# Need the content extraction to be more exhuastive - Does not work, but probs a model problem
-# Then convert content to atomic - yah but model problem
-# And then view the atomic statements in aggregate to fill in clinical data - yah
-# Clinical data needs to be standalone signature and module - DONE
-
-# NOW NEED TO MAKE BRANCH CLASSIFY
-# MAKE EDGES FINE AND CORRECT LABELS
-# MAKE NEAT
-# Make atomic less intensive please
-# Right now commented out atomic so it doesn't keep killing my computer
-
 # =====================================
 # DOCSTRING CONTENT
 # =====================================
@@ -88,8 +68,6 @@ docstring_dict = {
     - Keep imaging content packaged in one node if no clear temporal change is indicated
     - Keep pathology / histology content packaged in one node if no clear temporal change is indicated
     - node_memory is a running memory that updates as we add new nodes; use it to preserve context, merge overlapping details, and avoid redundant or stale states
-
-
 
     Output format:
     Return a list of node dictionaries, in this order from top to bottom, each with:
@@ -256,28 +234,35 @@ docstring_dict = {
     - Edge initiating a new branch: branch_flag = True
     """
 }
+# remove and place in an n
 
+def load_docstrings_from_ini(file_path):
+    config = configparser.ConfigParser()
+    config.read(file_path)
+
+    docstring_dict.update({
+        "dag_primer": config.get("Docstrings", "dag_primer"),
+        "node_instructions": config.get("Docstrings", "node_instructions"),
+        "edge_instructions": config.get("Docstrings", "edge_instructions"),
+        "node_clinical_data_instructions": config.get("Docstrings", "node_clinical_data_instructions"),
+        "branch_instructions": config.get("Docstrings", "branch_instructions")
+    })
+
+# Example usage
+load_docstrings_from_ini("/path/to/your/docstrings.ini")
+# i would still fix this up because the docstring can be too long, 
 
 # =====================================
 # SELECTED LLM
 # =====================================
 
-load_dotenv(".config/.env")
-
-gemini_api_key = os.environ.get("GEMINI_APIKEY")
-gpt_key = os.environ.get("GPTKEY")
-
-print(gemini_api_key)
-#lm = dspy.LM('ollama_chat/llama3.2', api_base='http://localhost:11434', api_key='')
-#lm = dspy.LM('ollama_chat/llama3.1', api_base='http://localhost:11434', api_key='')
-#lm = dspy.LM(model='ollama_chat/meta-llama-3-8b-instruct', api_base='http://localhost:11434', api_key='') # 8B parameter
-
-lm = dspy.LM('gemini/gemini-2.0-flash', api_key=gemini_api_key,temperature=0.21 ,cache=False)
-# lm = dspy.LM('openai/gpt-4o-high', api_key='')
 
 
 
-dspy.configure(lm=lm, adapter=dspy.ChatAdapter())
+
+
+
+
 
 # =====================================
 # DSPY SIGNATURES
@@ -530,6 +515,8 @@ teleprompter = BootstrapFewShot(
     max_rounds=1
 )
 
+
+
 # Try bootstrapping few-shot examples
 teleprompter.compile(
     dspy.Predict(branchClassify),  # compile only returns optimized Predict, not needed here
@@ -582,17 +569,8 @@ def decompose_content_to_atomic_statements(content_block: str) -> list[str]:
     return atomic_statements
 
 
-# Move these up to the right section later
 
 
-# Filter out irrelevant content (author list, conclusion, references, etc.)
-
-# Right now the model is too weak and this is just devolving into summarization, so not going to use for now
-
-
-
-
-# Use dspy to chunk and and generate nodes intelligently
 class ChunkedNodeGenerator(dspy.Signature):
     case_report: str = dspy.InputField(desc="Full clinical case report text")
     max_words_per_chunk: int = dspy.InputField(desc="Maximum number of words per chunk", default=250)
@@ -974,30 +952,30 @@ def process_and_save_graph(raw_nodes, raw_edges, graph_id, source_file, output_d
 
 
 
+def generate_all_graphs(input_folder: str, output_dir: str):
+
+    DSPY_MODEL = os.environ.get("DSPY_MODEL", "gemini/gemini-2.0-flash") 
+    gemini_api_key = os.environ.get("GEMINIAPIKEY")
 
 
+    if "ollama" in DSPY_MODEL:
+        lm = dspy.LM(DSPY_MODEL, api_base='http://localhost:11434', api_key='')
+    else:
+        lm = dspy.LM(DSPY_MODEL, api_key=gemini_api_key, temperature=0.21, cache=False)
 
+    dspy.configure(lm=lm, adapter=dspy.ChatAdapter())
 
-
-
-
-
-if __name__ == "__main__":
-    input_folder = "./pmc_htmls"
-    output_dir = "./webapp/static/graphs"
     os.makedirs(output_dir, exist_ok=True)
-
     graph_counter = 1
 
     for html_filename in os.listdir(input_folder):
         if not html_filename.lower().endswith(".html"):
-            continue  # Skip non-HTML files
+            continue
 
         html_path = os.path.join(input_folder, html_filename)
         graph_id = f"graph_{graph_counter:03d}"
         graph_json_path = os.path.join(output_dir, f"{graph_id}.json")
 
-        # 🟢 Skip if graph JSON already exists
         if os.path.exists(graph_json_path):
             print(f"✅ Skipping {html_filename} → {graph_id} already exists.")
             graph_counter += 1
@@ -1005,10 +983,8 @@ if __name__ == "__main__":
 
         print(f"\n=== Processing {html_filename} as {graph_id} ===")
 
-        # Run pipeline and get nodes and edges
         nodes_obj, edges_obj = run_pipeline(html_path)
 
-        # Save graph
         process_and_save_graph(
             raw_nodes=nodes_obj,
             raw_edges=edges_obj,
@@ -1020,14 +996,15 @@ if __name__ == "__main__":
         graph_counter += 1
 
 
+if __name__ == "__main__":
+    env_path = os.environ.get("config_path")
+    load_dotenv(env_path)
+    generate_all_graphs(
+        input_folder="./pmc_htmls",
+        output_dir="./webapp/static/graphs"
+    )
 
 
 
 
-# process_and_save_graph(
-#     raw_nodes=nodes_obj,
-#     raw_edges=edges_obj,
-#     graph_id="graph_001",
-#     source_file=html_path,
-#     output_dir="./webapp/static/graphs"
-# )
+
