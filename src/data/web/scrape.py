@@ -10,8 +10,10 @@ from requests.exceptions import RequestException
 # ========================
 # SETTINGS
 # ========================
-ncbi_api_key = "ff2586a14ad1644469727515414c2d5ebd07"
-Entrez.email = "anzhou812@gmail.com"
+
+
+ncbi_api_key = os.environ.get("ncbi_api_key")
+Entrez.email = os.environ.get("anzhou812@gmail.com")
 Entrez.api_key = ncbi_api_key
 
 MAX_ARTICLES = 100

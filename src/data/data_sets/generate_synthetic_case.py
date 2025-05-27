@@ -2,28 +2,31 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-"""
-Overview generate and produce snthetic cases from graph. 
-For the benchmark we need the following, 
 
 
-"""
-from typing import List,Dict, Any
+from typing import List,Dict, Any, Optional
+from configparser import ConfigParser
+
+from pathlib import Path
+import os
+import logging
+
+import csv
+import uuid
+import json
+
+from networkx import DiGraph
+from dotenv import load_dotenv
+from dspy import LM
 from ...benchmark.modules.io_utils import load_graph_from_file
 from ...benchmark.modules.reconstruction import LLMReconstructor
-from configparser import ConfigParser
-from networkx import DiGraph
-
-
+logging.basicConfig(level=logging.WARNING)
 class SyntheticConstructor():
     """
     Constructs and generates synthetic case reports from either text or graph. 
 
-
-    1: organize and thing about what you need to get done, 
-    # this should 
-
     functions:
+
     init
     generate_synthetic_
 
@@ -37,8 +40,8 @@ class SyntheticConstructor():
         
 
         self.graph = graph
-        # self.llm_object
-        self.loader = PromptLoader("./.config/prompts.ini")
+       
+        self.loader = PromptLoader(ini_path)
 
 
     def generate_paths(self) -> List[Dict[str, Any]]:
@@ -103,20 +106,30 @@ class SyntheticConstructor():
 
 
     def pre_process_html(self,html):
+        """_summary_
 
+        Args:
+            html (_type_): _description_
+        """
         pass
     
-    def generate_control_nodes(self,path,lm):
-        # this function should generate the control ndoes, 
-        # should be able to create the following...
-        # generate controls 
-        # llm(text)-> generate text from itm->->  the following should be generated from this and then some what ever else you should do in this case
+    def generate_control_nodes(self,path,lm, pre_process):
+        """
+        Generates the controlnodes
+        
+
+        Args:
+            path (_type_): _description_
+            lm (_type_): _description_
+        Returns:
+
+        """
         
         # load html
         text_2_use=load_html_from_path(path)
 
         
-        # pre-process the html
+        # pre-process the html if you need to 
         # processed_html=self.pre_process_html(text_2_use)
         prompt_control_nodes = self.loader.get("generate_control_nodes")
         rendered_prompt = prompt_control_nodes.replace("{{ html }}", text_2_use)
@@ -180,9 +193,14 @@ class SyntheticConstructor():
         return result
    
 
-from pathlib import Path
-
 class PromptLoader:
+    """A class for loading prompts from a configuration file.
+
+    This class reads a configuration file to load and retrieve prompt strings
+    based on section names. It ensures that the case of the section names is preserved
+    during the reading process.
+
+    """
     def __init__(self, config_path: str):
         self.config = ConfigParser()
         self.config.optionxform = str  # preserve case
@@ -193,11 +211,9 @@ class PromptLoader:
             raise KeyError(f"Prompt section '{key}' not found.")
         return self.config[key]['prompt'].strip()
 
-import os
-import logging
-from typing import Optional
 
-logging.basicConfig(level=logging.WARNING)
+
+
 
 def load_html_from_path(path: str) -> Optional[str]:
     """
@@ -256,13 +272,6 @@ def load_html_from_path(path: str) -> Optional[str]:
 #     node_attrs=["content"]
 # )
 #     print(constructor.generate_control_nodes(html_path, lm))
-import csv
-import os
-import uuid
-import json
-from pathlib import Path
-from dotenv import load_dotenv
-from dspy import LM
 
 
 
@@ -412,6 +421,8 @@ def run_batch(csv_path: str, models: list[dict], output_dir: str):
 
 
 if __name__ == "__main__":
+
+    
     load_dotenv(".config/.env")
 
     models = [
@@ -425,5 +436,5 @@ if __name__ == "__main__":
     run_batch(
         csv_path="webapp/static/graphs/mapping/graph_metadata.csv",
         models=models,
-        output_dir="synthetic_outputs"
+        output_dir="./webapp/static/synthetic_outputs"
     )
